@@ -1,0 +1,56 @@
+# 福祉情報ウォッチ — 毎朝の自動巡回（P3）
+#
+# 巡回 → 差分検知 → 要約・重要度判定 → メール送信 → 状態のコミット
+#
+# ⚠️ 状態のコミットはメール送信の「後」に置く。
+#    送信に失敗した日は状態が更新されないため、翌日の実行で同じ新着を
+#    もう一度検知して再送する（＝失敗しても取りこぼさない）。
+
+name: daily
+
+on:
+  schedule:
+    # ⚠️ cron は UTC 指定。JST 07:00 = UTC 22:00（前日）
+    #    Actions の cron は指定時刻ちょうどには動かない（数分〜十数分の遅延が仕様）
+    - cron: "0 22 * * *"
+  workflow_dispatch: {} # 手動実行（検証用）
+
+permissions:
+  contents: write # data/*.json をコミットして push するために必要
+
+concurrency:
+  group: daily
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: 巡回と差分検知
+        run: node scripts/crawl.js
+
+      - name: 要約と重要度判定
+        run: node scripts/summarize.js
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: メール送信
+        run: node scripts/notify.js
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+
+      - name: 状態をコミット
+        run: |
+          git config user.name "fukushi-watch"
+          git config user.email "actions@users.noreply.github.com"
+          N=$(node -p "require('./data/diff-latest.json').newItems.length")
+          git add data/
+          git diff --cached --quiet || { git commit -m "巡回: 新規${N}件 [auto]"; git push; }
