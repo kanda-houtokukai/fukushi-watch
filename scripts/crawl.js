@@ -27,9 +27,9 @@ const DIFF_PATH = join(ROOT, "data", "diff-latest.json");
 const USER_AGENT =
   "fukushi-watch/0.1 (+https://github.com/kanda-houtokukai/fukushi-watch)";
 
-// 1源あたり state に保持する項目数の上限（一覧の先頭ページは10件。
-// ページから消えた項目をしばらく覚えておき、再掲載を新規と誤認しないための余裕）
-const MAX_ITEMS_PER_SOURCE = 100;
+// 1源あたり state に保持する項目数の上限（一覧の先頭ページは10件＝約10日分。
+// ページから消えた項目を約1か月分覚えておき、再掲載を新規と誤認しないための余裕）
+const MAX_ITEMS_PER_SOURCE = 300;
 
 // ---------------------------------------------------------------------------
 // 監視対象台帳（docs/sources.md）の読み込み
