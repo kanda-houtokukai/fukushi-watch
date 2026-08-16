@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-08-16T10:57:24.749Z",
+      "lastCrawled": "2026-08-16T11:00:57.079Z",
       "items": [
         {
           "hash": "5d9291de1e028a38",
@@ -76,7 +76,7 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-08-16T10:57:24.969Z",
+      "lastCrawled": "2026-08-16T11:00:57.271Z",
       "items": [
         {
           "hash": "c63c47f51f7662d8",
@@ -3581,7 +3581,7 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-08-16T10:57:25.259Z",
+      "lastCrawled": "2026-08-16T11:00:57.578Z",
       "items": [
         {
           "hash": "4935822a0d8b059c",
@@ -4982,6 +4982,464 @@
           "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22417&ct=010010030&from=rss",
           "date": "2026-03-09",
           "category": "行政資料"
+        }
+      ]
+    },
+    "福岡県（障がい福祉）": {
+      "lastCrawled": "2026-08-16T11:00:57.674Z",
+      "items": [
+        {
+          "hash": "05297299880739a6",
+          "title": "補装具申請様式（PDF、wordファイル、Excelファイル）",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/hoso-gu.html",
+          "date": "2026年8月4日更新",
+          "category": ""
+        },
+        {
+          "hash": "0b9ec62bd822a93c",
+          "title": "福岡県障がい者活躍推進計画（第２期）について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/syougaisyakatsuyakusuisinkeikaku.html",
+          "date": "2026年8月3日更新",
+          "category": ""
+        },
+        {
+          "hash": "737dfe0703d8fba2",
+          "title": "令和8年度来所判定日程表（整形外科）",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/shogaishakoseiso-raishohanteir7.html",
+          "date": "2026年8月3日更新",
+          "category": ""
+        },
+        {
+          "hash": "ce809c93be5768c7",
+          "title": "令和８年熊本地震による被災に伴う介護給付費等（療養介護医療費、障害児通所給付費及び障害児入所給付費等を含む。）の取扱いについて",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/shogai-kaigokyufu.html",
+          "date": "2026年8月3日更新",
+          "category": ""
+        },
+        {
+          "hash": "1b2b284a7435d7a9",
+          "title": "令和８年熊本地震により被災した障がいのある人等に対する支給決定等について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/shogai-hisai.html",
+          "date": "2026年8月3日更新",
+          "category": ""
+        },
+        {
+          "hash": "bdeded0f5d0ee932",
+          "title": "介護職員等が喀痰吸引等を実施するための事業者登録について 【障害者総合支援法・児童福祉法】",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/touroku-16.html",
+          "date": "2026年4月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "16be3ab672ee672d",
+          "title": "【第３号研修】特定の者に対する喀痰吸引等の研修の講師要件について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kakutan-dvd.html",
+          "date": "2026年4月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "b62a11b2c92619d3",
+          "title": "登録喀痰吸引研修機関の登録申請等について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/tourokukennsyuukikann.html",
+          "date": "2024年11月18日更新",
+          "category": ""
+        },
+        {
+          "hash": "91958c7854a633ab",
+          "title": "福岡県相談支援従事者等専門コース別研修事業者について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/soudanshiensenmon.html",
+          "date": "2024年10月17日更新",
+          "category": ""
+        },
+        {
+          "hash": "15c62e20f695b73a",
+          "title": "障がい福祉サービス等従業者養成研修関係",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kenshu.html",
+          "date": "2022年1月11日更新",
+          "category": ""
+        },
+        {
+          "hash": "483ed0e0b42d3ebb",
+          "title": "指定自立支援医療機関名簿（精神通院医療）",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/seishintuuin2704.html",
+          "date": "2026年8月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "d9a8ca16a2b719ad",
+          "title": "指定自立支援医療機関（育成医療・更生医療）の申請について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/ziritushien28.html",
+          "date": "2026年7月13日更新",
+          "category": ""
+        },
+        {
+          "hash": "8bdd1a7d535b7e43",
+          "title": "指定自立支援医療機関名簿（育成医療・更生医療）",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/jiritsu-r4-4.html",
+          "date": "2026年7月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "2c3ae741e0d9f496",
+          "title": "指定自立支援医療機関（精神通院医療）指定・指定更新・変更・辞退について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/jiritsukikanseishin.html",
+          "date": "2021年4月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "0c0e10bcc76b2bd5",
+          "title": "【就労継続支援A型及びB型事業所】令和7年度工賃（賃金）実績報告を提出してください",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/r7kouchinjisseki.html",
+          "date": "2026年7月17日更新",
+          "category": ""
+        },
+        {
+          "hash": "94b69e570b497070",
+          "title": "令和８年度障がい福祉サービス等報酬改定について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/syougaikaiteir8.html",
+          "date": "2026年6月12日更新",
+          "category": ""
+        },
+        {
+          "hash": "6a11ab896f1233dd",
+          "title": "指定障がい福祉サービス事業所、指定障がい児通所支援事業所、指定障がい児入所支援施設及び指定障がい児相談支援事業所等における災害時情報共有システムについて",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/syougai-saigaisystem.html",
+          "date": "2026年6月11日更新",
+          "category": ""
+        },
+        {
+          "hash": "98244abd3909e453",
+          "title": "【障がい福祉】福岡県障がい福祉従業者処遇改善緊急支援事業費補助金について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/syogu-kinnkyu.html",
+          "date": "2026年6月8日更新",
+          "category": ""
+        },
+        {
+          "hash": "1cc66d5744a0e270",
+          "title": "【者】 障がい福祉サービス事業所指定申請書類及び関係通知等",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/syougai-shitei.html",
+          "date": "2026年4月22日更新",
+          "category": ""
+        },
+        {
+          "hash": "04534d7440125732",
+          "title": "【農福連携】農業大学校における障がいのある人向け農業体験の参加者を募集します",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/noudai-nougyoutaiken2026.html",
+          "date": "2026年6月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "039259e143c9eceb",
+          "title": "「工賃向上計画」（令和６年度以降）の作成について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kouchinkuojyou-r6.html",
+          "date": "2026年3月30日更新",
+          "category": ""
+        },
+        {
+          "hash": "fd7973f72a772d62",
+          "title": "IT業務を発注して障がいのある方の自立を支える力に！",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/it-kyodozyuchu.html",
+          "date": "2026年3月5日更新",
+          "category": ""
+        },
+        {
+          "hash": "86b74cc75af7f819",
+          "title": "福岡県における工賃（賃金）実績報告額について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/shogaishisetsukouchin.html",
+          "date": "2026年1月30日更新",
+          "category": ""
+        },
+        {
+          "hash": "2b42e4ca5cfd2b37",
+          "title": "「まごころ製品」ロゴマークについて",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/magokorologomark.html",
+          "date": "2025年4月11日更新",
+          "category": ""
+        }
+      ]
+    },
+    "福岡県（子ども・青少年）": {
+      "lastCrawled": "2026-08-16T11:00:57.710Z",
+      "items": [
+        {
+          "hash": "991bae94228d9d6e",
+          "title": "【福岡県 風しん情報】先天性風しん症候群の発生を予防するために",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kansen2013040801.html",
+          "date": "2026年8月13日更新",
+          "category": ""
+        },
+        {
+          "hash": "0d2771b0e294af1d",
+          "title": "令和８年熊本地震に伴う災害の被災者に係る公費負担医療及び妊婦健康診査等の母子保健サービスの取扱い等について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/0728kouhifutaniryoutou.html",
+          "date": "2026年7月30日更新",
+          "category": ""
+        },
+        {
+          "hash": "c097585255eadb06",
+          "title": "【妊娠希望者等とその同居者向け】風しん抗体検査が無料で受けられます",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/fushinkoutai-2019.html",
+          "date": "2026年7月21日更新",
+          "category": ""
+        },
+        {
+          "hash": "5619efa74bce9197",
+          "title": "令和８年６月２４日からの大雨に伴う災害の被災者に係る公費負担医療及び妊婦健康診査等の母子保健サービスの取扱い等について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/0624koutekihutaniryoutou.html",
+          "date": "2026年6月26日更新",
+          "category": ""
+        },
+        {
+          "hash": "9e8e22b265afaae7",
+          "title": "エイズ／ＨＩＶ対策の情報ページ",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/hiv-2025.html",
+          "date": "2026年6月8日更新",
+          "category": ""
+        },
+        {
+          "hash": "2198d705d0664f9b",
+          "title": "福岡県保育士等キャリアアップ研修の指定に係る申請について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/careerupshitei.html",
+          "date": "2026年8月3日更新",
+          "category": ""
+        },
+        {
+          "hash": "987254c4fdc2d6d4",
+          "title": "令和８年度福岡県子育て支援員研修を開催します",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kosodateshienin2026.html",
+          "date": "2026年7月23日更新",
+          "category": ""
+        },
+        {
+          "hash": "48500353cb33b71d",
+          "title": "令和８年度ふくおか子育てマイスター認定研修会を開催します",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/fukuoka-kosodate.html",
+          "date": "2026年7月21日更新",
+          "category": ""
+        },
+        {
+          "hash": "f4976669898434bd",
+          "title": "保育年報",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/hoiku-nenpou.html",
+          "date": "2026年7月17日更新",
+          "category": ""
+        },
+        {
+          "hash": "3b24d5423c797556",
+          "title": "よかパパ料理・育児セミナーに出席しました",
+          "url": "https://www.pref.fukuoka.lg.jp/site/chiji-top/yokapaparyoriikuzisemina20260704.html",
+          "date": "2026年7月4日更新",
+          "category": ""
+        },
+        {
+          "hash": "2198d705d0664f9b",
+          "title": "福岡県保育士等キャリアアップ研修の指定に係る申請について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/careerupshitei.html",
+          "date": "2026年8月3日更新",
+          "category": ""
+        },
+        {
+          "hash": "f92504a07909188f",
+          "title": "福岡県地域限定保育士試験について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/chiikigenteihoikushi.html",
+          "date": "2026年7月29日更新",
+          "category": ""
+        },
+        {
+          "hash": "3fee3f73c59fe0fd",
+          "title": "保育士試験受験資格認定書について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/tiji-nintei.html",
+          "date": "2026年6月25日更新",
+          "category": ""
+        },
+        {
+          "hash": "e27dfbce230ef476",
+          "title": "「保育実習受入れガイドブック」を作成しました",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/ukeireguidebook.html",
+          "date": "2026年6月19日更新",
+          "category": ""
+        },
+        {
+          "hash": "5fc11f1a4095d6ff",
+          "title": "令和８年度保育所等に勤務する職員等を対象とした障がい児保育対象及び医療的ケア研修",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kensyu0608.html",
+          "date": "2026年6月8日更新",
+          "category": ""
+        },
+        {
+          "hash": "a2d2ad4c99d93e54",
+          "title": "令和８年度第３回福岡県社会福祉審議会児童福祉専門分科会こども権利擁護部会を開催しました",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kodomokennri20260702.html",
+          "date": "2026年7月2日更新",
+          "category": ""
+        },
+        {
+          "hash": "736e151b9314d0c8",
+          "title": "令和８年度第３回福岡県社会福祉審議会児童福祉専門分科会の開催について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/bunnkakai20260702.html",
+          "date": "2026年7月2日更新",
+          "category": ""
+        },
+        {
+          "hash": "4a88c4f9a4df580f",
+          "title": "令和８年度第２回福岡県社会福祉審議会児童福祉専門分科会の開催について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/bunnkakai20260507.html",
+          "date": "2026年5月7日更新",
+          "category": ""
+        },
+        {
+          "hash": "7a27f4b25d0c12e2",
+          "title": "令和８年度第２回福岡県社会福祉審議会児童福祉専門分科会こども権利擁護部会を開催しました",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kodomokennri20260507.html",
+          "date": "2026年5月7日更新",
+          "category": ""
+        },
+        {
+          "hash": "58b07580fc4b5859",
+          "title": "令和8年度第1回福岡県社会福祉審議会児童福祉専門分科会こども権利擁護部会を開催しました",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kodomokennri20260402.html",
+          "date": "2026年4月2日更新",
+          "category": ""
+        },
+        {
+          "hash": "55e58a015b7f679d",
+          "title": "（ひとり親世帯の方、離婚を考えている方向け）困ったときの相談窓口",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/hitorioya-madoguchi.html",
+          "date": "2026年4月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "49dc58b6cd62d754",
+          "title": "養育費に関するお悩みはありませんか？",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/hitoriyouikuhi2026.html",
+          "date": "2026年4月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "d1130c8033bda68c",
+          "title": "ひとり親家庭の家賃支払いを支援します！（住宅支援資金貸付）",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/hitorioya-jukyo.html",
+          "date": "2026年4月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "2bcfb589f22cba51",
+          "title": "ひとり親家庭の方を対象に給付金を支給します",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/hitorioyakyuuhukin.html",
+          "date": "2026年4月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "2918ba8677fe6fdc",
+          "title": "ひとり親家庭の医療費を助成します",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/hitorioyairyo.html",
+          "date": "2026年4月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "6de941e33b38d532",
+          "title": "有害図書類の指定について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/yugaitosyo.html",
+          "date": "2026年8月13日更新",
+          "category": ""
+        },
+        {
+          "hash": "18532694ec5f137a",
+          "title": "福岡県青少年健全育成条例について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/jourei-r7.html",
+          "date": "2026年8月11日更新",
+          "category": ""
+        },
+        {
+          "hash": "324cfd3ade1d0561",
+          "title": "放課後児童支援員認定資格研修修了証の未返納者について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/houkago-torikeshi.html",
+          "date": "2026年8月10日更新",
+          "category": ""
+        },
+        {
+          "hash": "a43a067a5a556689",
+          "title": "【県庁ロビー】けんちょう保育園・清水保育園の園児によるダンスと太鼓の演奏",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/hoikuen-event.html",
+          "date": "2026年8月10日更新",
+          "category": ""
+        },
+        {
+          "hash": "26c8acb26dbaf880",
+          "title": "ニッセイ財団「児童・少年の健全育成助成」及び「生き生きシニア活動顕彰」贈呈式を行いました",
+          "url": "https://www.pref.fukuoka.lg.jp/site/chiji-top/nissei-zouteishiki2026.html",
+          "date": "2026年8月3日更新",
+          "category": ""
+        },
+        {
+          "hash": "b94269d37639815e",
+          "title": "ふくおかなつやすみチャレンジフェスタ（7月21日-8月21日）",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/challenge-festa.html",
+          "date": "2026年7月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "5608df8f967a87f4",
+          "title": "一輪車乗り方教室を開きます！",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/ichirinsya.html",
+          "date": "2026年7月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "2bb5ecabf3e5b503",
+          "title": "（７月１０日更新）高校生∞（無限大）チャレンジ ポータル",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/koukouseichallenge-portal.html",
+          "date": "2026年4月14日更新",
+          "category": ""
+        },
+        {
+          "hash": "0c37013dd7d5df50",
+          "title": "福岡ソフトバンクホークスからオリジナル文具が贈呈されます！文具贈呈式に参加する児童を募集します！",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/hks2026.html",
+          "date": "2026年4月7日更新",
+          "category": ""
+        },
+        {
+          "hash": "967f811506e0a366",
+          "title": "「未来子どもチャレンジ応援プロジェクト」マスコットキャラクター原案作成チームがキャラクター「ふくおかめ」を報告しました",
+          "url": "https://www.pref.fukuoka.lg.jp/site/chiji-top/fukuokame.html",
+          "date": "2026年3月27日更新",
+          "category": ""
+        },
+        {
+          "hash": "ba63fdb7fb4e4377",
+          "title": "ふくおかなつやすみチャレンジフェスタ2026「建設体験・わくわくものづくり広場～ドローンや建設機械に触れてみよう！～」",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/natsuyasumi-doboku-r8.html",
+          "date": "2026年7月22日更新",
+          "category": ""
+        },
+        {
+          "hash": "a677ca2a5764e857",
+          "title": "「こどもの居場所づくりセミナー」を開催します！",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/ibasho-seminar2026-1.html",
+          "date": "2026年7月2日更新",
+          "category": ""
+        },
+        {
+          "hash": "8e8f7d5677fb0f39",
+          "title": "こどもの権利啓発教材について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kodomonokenri.html",
+          "date": "2026年5月22日更新",
+          "category": ""
+        },
+        {
+          "hash": "6aef4ac7e8e40145",
+          "title": "県内４地域で「こどもの居場所づくりセミナー」を開催します！",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kodomonoibasyosuishinseminar.html",
+          "date": "2026年2月17日更新",
+          "category": ""
+        },
+        {
+          "hash": "8c1389754e11f12b",
+          "title": "こどもの居場所づくりをサポートします！",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kodomonoibasyosuishin.html",
+          "date": "2025年12月1日更新",
+          "category": ""
         }
       ]
     }

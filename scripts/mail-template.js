@@ -64,7 +64,7 @@ function itemBlock(it) {
   return `
 <div style="padding-top:18px;">
   <a href="${esc(it.url)}" style="font-family:${FONT};font-size:15px;font-weight:600;color:${LINK};text-decoration:none;line-height:1.55;">${esc(it.title)}</a>
-  <div style="font-family:${FONT};font-size:12px;color:${SUB};padding-top:4px;">${esc(it.category)} ・ ${esc(it.date)} ・ ${esc(it.source)}</div>
+  <div style="font-family:${FONT};font-size:12px;color:${SUB};padding-top:4px;">${[it.category, it.date, it.source].filter(Boolean).map(esc).join(" ・ ")}</div>
   <div style="font-family:${FONT};font-size:13px;color:#4a463f;line-height:1.75;padding-top:7px;">${esc(it.summary)}</div>
   <div style="font-family:${FONT};font-size:13px;padding-top:5px;">
     <a href="${esc(it.url)}" style="color:${LINK};text-decoration:none;">原本を確認する →</a>
@@ -77,7 +77,7 @@ function lowLine(it) {
   return `
 <div style="font-family:${FONT};font-size:13px;color:#6b675f;line-height:1.9;padding-top:6px;">・
   <a href="${esc(it.url)}" style="color:#6b675f;text-decoration:underline;">${esc(it.title)}</a>
-  <span style="color:${FAINT};">［${esc(it.category)}・${esc(it.source)}］</span>
+  <span style="color:${FAINT};">［${[it.category, it.source].filter(Boolean).map(esc).join("・")}］</span>
 </div>`;
 }
 

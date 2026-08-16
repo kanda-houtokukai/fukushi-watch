@@ -173,10 +173,33 @@ function parseWamRss(xml) {
   return items;
 }
 
+/**
+ * fukuoka-life: 福岡県の分野別更新一覧（/life/3/27/ 障がい福祉・/life/3/39/ 子ども・青少年）
+ * <span class="article_date">…</span><span class="article_title"><a href>…</a></span> の並び。
+ * カテゴリ表記は無いため空文字で通す（設計どおり）。日付は「2026年8月4日更新」の文字列のまま。
+ */
+function parseFukuokaLife(html, baseUrl) {
+  const items = [];
+  const re =
+    /<span class="article_date">([^<]*)<\/span><span class="article_title"><a href="([^"]+)">([^<]*)<\/a>/g;
+  for (const [, date, href, rawTitle] of html.matchAll(re)) {
+    const title = decodeEntities(rawTitle.replace(/\s+/g, " ").trim());
+    if (!title || !href) continue;
+    items.push({
+      title,
+      url: new URL(decodeEntities(href), baseUrl).href, // 相対URL(/contents/…)を絶対化
+      date: date.trim(),
+      category: "",
+    });
+  }
+  return items;
+}
+
 const PARSERS = {
   "cfa-cards": parseCfaCards,
   "mhlw-news": parseMhlwNews,
   "wam-rss": parseWamRss,
+  "fukuoka-life": parseFukuokaLife,
 };
 
 // ---------------------------------------------------------------------------
