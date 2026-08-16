@@ -9,7 +9,7 @@
 <style>
   :root{
     --ink:#17181a; --sub:#75716b; --faint:#a8a49d; --rule:#e6e3de;
-    --paper:#fcfcfb; --high:#a04a32; --mid:#8a867f; --low:#d4d0c9; --link:#1f4e79;
+    --paper:#fcfcfb; --high:#a04a32; --mid-bar:#8a867f; --low-bar:#d4d0c9; --link:#1f4e79;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
@@ -20,35 +20,34 @@
   .wrap{max-width:680px;margin:0 auto;padding:0 20px 80px}
 
   header{padding:26px 0 0}
-  .brand{display:flex;justify-content:space-between;align-items:baseline}
   .brand h1{font-size:13px;font-weight:600;letter-spacing:.28em;color:var(--sub)}
-  .brand button{font-size:12px;color:var(--faint);background:none;border:none;
-    letter-spacing:.1em;cursor:pointer;font-family:inherit}
   .tagline{font-size:12.5px;color:var(--sub);margin-top:10px;line-height:1.7}
   .tagline a{color:var(--sub)}
 
-  /* 日付レール（B案から移植: 高中低の積み上げバー） */
+  /* 日付レール(高中低の積み上げバー・立ち上がりの動き) */
   .rail{display:flex;gap:6px;overflow-x:auto;padding:20px 0 4px;scrollbar-width:none}
   .rail::-webkit-scrollbar{display:none}
   .dcell{flex:0 0 46px;text-align:center;cursor:pointer;padding:6px 0 8px;
     border:1px solid transparent;background:none;font-family:inherit}
   .dcell .bar{height:34px;display:flex;flex-direction:column;justify-content:flex-end;
     width:12px;margin:0 auto 6px;gap:1px}
-  .dcell .bar i{display:block;width:100%}
-  .dcell .bar .bh{background:var(--high)} .dcell .bar .bm{background:var(--mid)} .dcell .bar .bl{background:var(--low)}
+  .dcell .bar i{display:block;width:100%;transform-origin:bottom}
+  .rail.rise .bar i{animation:grow .45s ease-out backwards;animation-delay:var(--d,0s)}
+  @keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+  .dcell .bar .bh{background:var(--high)} .dcell .bar .bm{background:var(--mid-bar)} .dcell .bar .bl{background:var(--low-bar)}
   .dcell .bar .b0{height:2px;background:var(--rule)}
   .dcell .d{font-size:11.5px;color:var(--sub);font-variant-numeric:tabular-nums;white-space:nowrap}
   .dcell.sel{border-color:var(--ink);background:#fff}
   .dcell.sel .d{color:var(--ink);font-weight:700}
 
-  /* 日付見出し＝主役 */
   .day{margin-top:12px;border-top:2px solid var(--ink);padding-top:18px}
   .day-row{display:flex;justify-content:space-between;align-items:flex-end;gap:4px 10px;flex-wrap:wrap}
-  .day .counts{white-space:nowrap}
   .day h2{font-size:26px;font-weight:700;letter-spacing:.02em;line-height:1.3}
   .day h2 small{font-size:15px;font-weight:400;color:var(--sub)}
-  .day .counts{font-size:13px;color:var(--sub);font-variant-numeric:tabular-nums;text-align:right}
+  .day .counts{font-size:13px;color:var(--sub);font-variant-numeric:tabular-nums;white-space:nowrap}
   .day .counts b{color:var(--high);font-weight:700}
+  /* 巡回の総量: 公式の記録として日付の下に静かに置く */
+  .ledger{font-size:12px;color:var(--faint);margin-top:8px;font-variant-numeric:tabular-nums}
   .daynav{display:flex;gap:8px;margin-top:14px}
   .daynav button,.daynav select{flex:1;text-align:center;font-size:13px;padding:9px 4px;
     border:1px solid var(--rule);color:var(--ink);background:#fff;cursor:pointer;
@@ -56,33 +55,65 @@
   .daynav select{flex:0 0 42%;text-align:center;text-align-last:center}
   .daynav button:disabled{color:var(--faint);cursor:default}
 
-  .chips{display:flex;gap:8px;margin:18px 0 6px}
+  .chips{display:flex;gap:8px;margin:18px 0 6px;flex-wrap:wrap}
+  #fieldChips{margin-top:0}
   .chip{font-size:13px;padding:6px 14px;border:1px solid var(--rule);background:#fff;
     color:var(--sub);cursor:pointer;font-family:inherit}
   .chip.on{border-color:var(--ink);color:var(--ink);font-weight:600}
-  #fieldChips{margin-top:0}
 
-  .sec{margin-top:22px}
-  .sec-h{font-size:13px;font-weight:700;letter-spacing:.08em;
-    border-bottom:1px solid var(--rule);padding-bottom:8px}
-  .sec-h .note{font-weight:400;color:var(--sub);letter-spacing:0}
-  .sec-h.hi{color:var(--high)}
-  article{padding:18px 0;border-bottom:1px solid var(--rule)}
-  article h3{font-size:16px;line-height:1.55;font-weight:600}
-  article h3 a{color:var(--ink);text-decoration:none}
+  /* 絞り込みの遷移: 消える項目が薄れ、残る項目が詰まる(0.2秒) */
+  .it{transition:opacity .2s ease, max-height .25s ease, margin .25s ease, padding .25s ease;
+    overflow:hidden;max-height:900px}
+  .it.hide{opacity:0;max-height:0 !important;margin:0 !important;
+    padding-top:0 !important;padding-bottom:0 !important;border-width:0 !important;pointer-events:none}
+  @media (prefers-reduced-motion: reduce){.it{transition:none}.rail.rise .bar i{animation:none}}
+
+  /* 情報源の識別(ロゴ不使用): 設置主体の種別を枠線の系統で分ける */
+  .srcmark{font-size:10.5px;border:1px solid var(--faint);padding:0 4px;margin-right:4px;
+    color:var(--sub);letter-spacing:.05em;vertical-align:.06em}
+  .srcmark.dokuho{border-style:dashed}
+  .srcmark.ken{border-style:double;border-width:3px;padding:0 3px}
   .meta{font-size:12px;color:var(--faint);margin-top:4px}
-  .sum{font-size:13.5px;color:#4c4842;margin-top:8px}
-  .orig{display:inline-block;font-size:13px;color:var(--link);text-decoration:none;margin-top:8px}
+  .meta .ft{color:var(--faint)}
 
-  details.low summary{list-style:none;cursor:pointer;font-size:13px;font-weight:700;
-    letter-spacing:.08em;border-bottom:1px solid var(--rule);padding-bottom:8px;color:var(--sub)}
-  details.low summary::-webkit-details-marker{display:none}
-  details.low summary .hint{font-weight:400;color:var(--faint);letter-spacing:0}
-  details.low[open] summary .hint{display:none}
-  .lowline{padding:10px 0;border-bottom:1px solid var(--rule);font-size:13.5px;color:#5c5852}
-  .lowline a{color:#5c5852}
-  .lowline .src{color:var(--faint);font-size:12px}
-  .lowline .lo{color:var(--faint);text-decoration:none}
+  /* トップ記事(本日の最重要): この1件だけ要約を主役に組む */
+  .top-art{padding:22px 0 24px;border-bottom:2px solid var(--ink)}
+  .top-art .kicker{font-size:12px;font-weight:700;color:var(--high);letter-spacing:.12em}
+  .top-art .lead{font-size:19px;line-height:1.6;font-weight:650;margin-top:10px}
+  .top-art .meta{margin-top:8px}
+  .top-art .orig-line{font-size:11.5px;color:var(--faint);margin-top:8px;line-height:1.7}
+  .top-art .orig-line a{color:var(--faint)}
+  .top-art .orig{display:inline-block;font-size:13px;color:var(--link);text-decoration:none;margin-top:8px}
+
+  /* 高(トップ以外) */
+  .hi-art{padding:16px 0;border-bottom:1px solid var(--rule)}
+  .hi-art h3{font-size:16.5px;line-height:1.5;font-weight:700}
+  .hi-art h3 a{color:var(--ink);text-decoration:none}
+  .hi-art .sum{font-size:13px;color:#4c4842;margin-top:6px}
+  .hi-art .orig{display:inline-block;font-size:12.5px;color:var(--link);text-decoration:none;margin-top:6px}
+
+  /* 中(案Aの階層) */
+  .mid-art{padding:14px 0;border-bottom:1px solid var(--rule)}
+  .mid-art h3{font-size:15px;line-height:1.55;font-weight:600}
+  .mid-art h3 a{color:var(--ink);text-decoration:none}
+  .mid-art .sum{font-size:12.5px;color:#5c5852;margin-top:5px}
+  .mid-art .meta{margin-top:3px}
+
+  /* 低: 背景色の索引に畳む(重さの差をレイアウトで示す中心部分) */
+  .low-wrap{margin-top:20px;background:#f6f5f1;padding:12px 14px;
+    transition:opacity .2s ease, max-height .25s ease, margin .25s ease, padding .25s ease;
+    overflow:hidden;max-height:1600px}
+  .low-wrap.hide{opacity:0;max-height:0;margin:0;padding:0;pointer-events:none}
+  .low-h{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--faint)}
+  .low-it{font-size:11.5px;color:#8a867f;line-height:1.9}
+  .low-it a{color:#8a867f}
+  .low-it .lo{color:#b5b1aa;text-decoration:none}
+
+  .sec-h{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--sub);
+    padding:24px 0 6px;border-bottom:1px solid var(--rule);
+    transition:opacity .2s ease, max-height .25s ease, padding .25s ease;overflow:hidden;max-height:60px}
+  .sec-h.hi{color:var(--high);font-size:13px}
+  .sec-h.hide{opacity:0;max-height:0;padding:0;border-width:0}
 
   .empty{margin-top:26px;padding:26px 0;border-bottom:1px solid var(--rule);
     font-size:14px;color:var(--sub)}
@@ -100,9 +131,7 @@
 <body>
 <div class="wrap">
   <header>
-    <div class="brand">
-      <h1>福祉情報ウォッチ</h1>
-    </div>
+    <div class="brand"><h1>福祉情報ウォッチ</h1></div>
     <p class="tagline">こども家庭庁・厚生労働省・WAM NET・福岡県の新着を毎朝7時に自動巡回し、AIが要約と重要度を付けて記録しています。<a href="#about">仕組み →</a></p>
   </header>
 
@@ -113,6 +142,7 @@
       <h2 id="dayTitle">読み込み中…</h2>
       <div class="counts" id="dayCounts"></div>
     </div>
+    <div class="ledger" id="ledger"></div>
     <nav class="daynav">
       <button id="prevDay">← 前の記録</button>
       <select id="monthSel" aria-label="月の選択"></select>
@@ -126,7 +156,6 @@
     <button class="chip" data-f="中">◇ 中</button>
     <button class="chip" data-f="低">◊ 低</button>
   </div>
-  <!-- 分野の切り替え（P6）: 絞り込み=選んだ分野＋共通。最後の選択を記憶する -->
   <div class="chips" id="fieldChips" aria-label="分野の切り替え">
     <button class="chip on" data-fd="all">全分野</button>
     <button class="chip" data-fd="保育">保育</button>
@@ -139,7 +168,7 @@
 
   <section class="about" id="about">
     <h2>このサイトについて</h2>
-    <p>「福祉情報ウォッチ」は、福祉に関わる行政の公開情報を毎朝ひとまわりして、前日から増えた分だけを取り出す個人開発の記録装置です。要約と重要度（高＝対応・確認を／中＝把握を／低＝参考）はAIが付けています。</p>
+    <p>「福祉情報ウォッチ」は、福祉に関わる行政の公開情報を毎朝ひとまわりして、前日から増えた分だけを取り出す個人開発の記録装置です。要約と重要度（高＝対応・確認を／中＝把握を／低＝参考）はAIが付けています。人事異動も報酬改定も同じ重さでは並べない——重要度の差を紙面の組みで示すのがこのサイトの方針です。</p>
     <table>
       <tr><td>こども家庭庁 新着情報（全カテゴリ）</td><td>毎朝7時</td></tr>
       <tr><td>厚生労働省 新着情報（全カテゴリ）</td><td>毎朝7時</td></tr>
@@ -155,12 +184,12 @@
 (() => {
   "use strict";
   const $ = (id) => document.getElementById(id);
-  const FIELD_KEY = "fukushi-watch-field"; // 最後に選んだ分野を記憶（P6）
+  const FIELD_KEY = "fukushi-watch-field";
   const state = {
     index: null, months: {}, day: null, filter: "all",
     field: localStorage.getItem(FIELD_KEY) || "all",
   };
-  const RAIL_DAYS = 21; // レールに出す直近の日数
+  const RAIL_DAYS = 21;
 
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -176,25 +205,38 @@
     if (!res.ok) throw new Error(`${path}: HTTP ${res.status}`);
     return res.json();
   }
-
   async function monthData(month) {
     if (!state.months[month]) {
       state.months[month] = await fetchJson(`data/history/${month}.json`);
     }
     return state.months[month];
   }
-
   const recordedDays = () => Object.keys(state.index.days).sort();
+
+  /* 情報源の種別(ロゴ不使用の識別): 設置主体を枠線の系統で分ける */
+  function srcMark(source) {
+    const s = source ?? "";
+    let type = "国", cls = "";
+    if (s.includes("WAM")) { type = "独法"; cls = "dokuho"; }
+    else if (s.startsWith("福岡県") || s.includes("県")) { type = "県"; cls = "ken"; }
+    return `<span class="srcmark ${cls}">${type}</span>${esc(s)}`;
+  }
+  const fieldTags = (it) => {
+    const f = it.fields ?? [];
+    return f.length ? `　<span class="ft">［${f.map(esc).join("・")}］</span>` : "";
+  };
+  const metaLine = (it) =>
+    `${srcMark(it.source)}${it.category ? " ・ " + esc(it.category) : ""} ・ ${esc(it.date)}${fieldTags(it)}`;
 
   function renderRail() {
     const days = recordedDays().slice(-RAIL_DAYS);
-    $("rail").innerHTML = days.map((d) => {
+    $("rail").innerHTML = days.map((d, i) => {
       const c = state.index.days[d];
       const px = (n) => Math.min(30, n * 3);
       const bar = c.t === 0
         ? '<i class="b0"></i>'
         : ['h','m','l'].map((k) =>
-            c[k] ? `<i class="b${k}" style="height:${px(c[k])}px"></i>` : "").join("");
+            c[k] ? `<i class="b${k}" style="height:${px(c[k])}px;--d:${i * 0.06}s"></i>` : "").join("");
       return `<button class="dcell${d === state.day ? " sel" : ""}" data-day="${d}">
         <span class="bar">${bar}</span><span class="d">${fmtDay(d).short}</span></button>`;
     }).join("");
@@ -211,29 +253,78 @@
     $("monthSel").value = state.day.slice(0, 7);
   }
 
-  // 分野切替: 選んだ分野に効くもの＋「共通」を表示。分野なし(旧データ含む)は全分野でのみ表示
-  function inField(it) {
-    if (state.field === "all") return true;
-    const f = it.fields ?? [];
-    return f.includes(state.field) || f.includes("共通");
+  /* 直近7日間の記録(選択日を末尾とする7暦日・公式記録調) */
+  function renderLedger() {
+    const [y, m, d] = state.day.split("-").map(Number);
+    const end = Date.UTC(y, m - 1, d);
+    let t = 0, h = 0, mi = 0, l = 0;
+    for (let i = 0; i < 7; i++) {
+      const dt = new Date(end - i * 86400000);
+      const key = dt.toISOString().slice(0, 10);
+      const c = state.index.days[key];
+      if (c) { t += c.t; h += c.h; mi += c.m; l += c.l; }
+    }
+    $("ledger").textContent = `直近7日間の記録 ${t}件（高${h}・中${mi}・低${l}）`;
   }
 
-  function itemBlock(it) {
-    const meta = [it.category, it.date, it.source].filter(Boolean).map(esc).join(" ・ ")
-      + ((it.fields ?? []).length ? `　<span>［${it.fields.map(esc).join("・")}］</span>` : "");
-    return `<article>
-      <h3><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></h3>
-      <div class="meta">${meta}</div>
-      <p class="sum">${esc(it.summary)}</p>
+  /* トップ記事の選定: その日の「高」のうち日付が最新のもの(同日付なら巡回順の先頭)。
+     高が0件の日はトップ記事を立てない(「最重要」の看板は高にしか与えない)。 */
+  function pickTop(sorted) {
+    return sorted.find((it) => it.importance === "高") ?? null;
+  }
+
+  function topBlock(it) {
+    return `<article class="it top-art" data-imp="高" data-fields="${(it.fields ?? []).join(",")}">
+      <div class="kicker">◆ 本日の最重要</div>
+      <div class="lead">${esc(it.summary)}</div>
+      <div class="meta">${metaLine(it)}</div>
+      <div class="orig-line">原題: <a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></div>
       <a class="orig" href="${esc(it.url)}" target="_blank" rel="noopener">原本を確認する →</a>
     </article>`;
   }
-
+  function hiBlock(it) {
+    return `<article class="it hi-art" data-imp="高" data-fields="${(it.fields ?? []).join(",")}">
+      <h3><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></h3>
+      <div class="sum">${esc(it.summary)}</div>
+      <div class="meta">${metaLine(it)}</div>
+      <a class="orig" href="${esc(it.url)}" target="_blank" rel="noopener">原本を確認する →</a>
+    </article>`;
+  }
+  function midBlock(it) {
+    return `<article class="it mid-art" data-imp="中" data-fields="${(it.fields ?? []).join(",")}">
+      <h3><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></h3>
+      <div class="sum">${esc(it.summary)}</div>
+      <div class="meta">${metaLine(it)}</div>
+    </article>`;
+  }
   function lowLine(it) {
     const src = [it.category, it.source].filter(Boolean).map(esc).join("・");
-    return `<div class="lowline">・<a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a>
-      <span class="src">［${src}］</span>
+    return `<div class="it low-it" data-imp="低" data-fields="${(it.fields ?? []).join(",")}">・<a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a>
+      <span style="color:#b5b1aa">［${src}］</span>
       <a class="lo" href="${esc(it.url)}" target="_blank" rel="noopener">原本→</a></div>`;
+  }
+
+  /* 絞り込み: 再描画せず .hide の付け外しで遷移させる(0.2秒) */
+  function applyFilters() {
+    const fd = state.field, f = state.filter;
+    document.querySelectorAll("#list .it").forEach((el) => {
+      const fields = (el.dataset.fields || "").split(",").filter(Boolean);
+      const okField = fd === "all" || fields.includes(fd) || fields.includes("共通");
+      const okImp = f === "all" || el.dataset.imp === f;
+      el.classList.toggle("hide", !(okField && okImp));
+    });
+    // 空になったセクション見出し・低の箱も畳む
+    document.querySelectorAll("#list .sec-h").forEach((h) => {
+      const sec = h.dataset.sec;
+      const any = [...document.querySelectorAll(`#list .it[data-imp="${sec}"]:not(.top-art)`)]
+        .some((el) => !el.classList.contains("hide"));
+      h.classList.toggle("hide", !any);
+    });
+    const lowWrap = document.querySelector("#list .low-wrap");
+    if (lowWrap) {
+      const anyLow = [...lowWrap.querySelectorAll(".it")].some((el) => !el.classList.contains("hide"));
+      lowWrap.classList.toggle("hide", !anyLow);
+    }
   }
 
   async function renderDay() {
@@ -254,28 +345,28 @@
           ? `新着${items.length}件 ─ <b>高${c["高"]}</b>・中${c["中"]}・低${c["低"]}`
           : "新着なし")
       : "記録なし";
-
-    const inScope = items.filter(inField);
-    const shown = state.filter === "all" ? inScope
-      : inScope.filter((it) => it.importance === state.filter);
+    renderLedger();
 
     if (!rec) {
       $("list").innerHTML = `<div class="empty">この日の記録はありません（記録は2026年8月に始まりました）。</div>`;
     } else if (items.length === 0) {
       $("list").innerHTML = `<div class="empty">この日の監視対象に新しい掲載はありませんでした。巡回は正常に動作しています。</div>`;
-    } else if (shown.length === 0) {
-      $("list").innerHTML = `<div class="empty">この条件（重要度・分野）に当てはまる項目はこの日はありません。</div>`;
     } else {
-      const hi = shown.filter((i) => i.importance === "高");
-      const mid = shown.filter((i) => i.importance === "中");
-      const low = shown.filter((i) => i.importance === "低");
+      const order = { 高: 0, 中: 1, 低: 2 };
+      const sorted = [...items].sort(
+        (a, b) => order[a.importance] - order[b.importance] || (a.date < b.date ? 1 : -1)
+      );
+      const top = pickTop(sorted);
+      const hi = sorted.filter((i) => i.importance === "高" && i !== top);
+      const mid = sorted.filter((i) => i.importance === "中");
+      const low = sorted.filter((i) => i.importance === "低");
       $("list").innerHTML = [
-        hi.length ? `<section class="sec"><div class="sec-h hi">◆ 高 <span class="note">── 対応・確認を</span></div>${hi.map(itemBlock).join("")}</section>` : "",
-        mid.length ? `<section class="sec"><div class="sec-h">◇ 中 <span class="note">── 把握を</span></div>${mid.map(itemBlock).join("")}</section>` : "",
-        low.length ? `<section class="sec"><details class="low"${state.filter === "低" ? " open" : ""}>
-          <summary>◊ 低 ── 参考 ${low.length}件 <span class="hint">（タップで開く）</span></summary>
-          ${low.map(lowLine).join("")}</details></section>` : "",
+        top ? topBlock(top) : "",
+        hi.length ? `<div class="sec-h hi" data-sec="高">◆ 高 <span style="font-weight:400;color:var(--sub)">── 対応・確認を</span></div>${hi.map(hiBlock).join("")}` : "",
+        mid.length ? `<div class="sec-h" data-sec="中">◇ 中 <span style="font-weight:400;color:var(--sub)">── 把握を</span></div>${mid.map(midBlock).join("")}` : "",
+        low.length ? `<div class="low-wrap it-wrap"><div class="low-h">◊ 低 ── 参考（${low.length}件）</div>${low.map(lowLine).join("")}</div>` : "",
       ].join("");
+      applyFilters();
     }
 
     const days = recordedDays();
@@ -308,7 +399,7 @@
     if (!b) return;
     state.filter = b.dataset.f;
     $("chips").querySelectorAll(".chip").forEach((x) => x.classList.toggle("on", x === b));
-    renderDay();
+    applyFilters();
   });
   $("fieldChips").addEventListener("click", (e) => {
     const b = e.target.closest(".chip");
@@ -316,9 +407,8 @@
     state.field = b.dataset.fd;
     try { localStorage.setItem(FIELD_KEY, state.field); } catch {}
     $("fieldChips").querySelectorAll(".chip").forEach((x) => x.classList.toggle("on", x === b));
-    renderDay();
+    applyFilters();
   });
-  // 記憶していた分野選択を復元
   $("fieldChips").querySelectorAll(".chip").forEach((x) =>
     x.classList.toggle("on", x.dataset.fd === state.field));
 
@@ -328,6 +418,7 @@
       const days = recordedDays();
       state.day = days[days.length - 1];
       await renderDay();
+      $("rail").classList.add("rise"); // 初回だけレールを立ち上げる
     } catch (e) {
       $("dayTitle").textContent = "記録を読み込めませんでした";
       $("list").innerHTML = `<div class="empty">履歴データの取得に失敗しました。時間をおいて再読み込みしてください。</div>`;
