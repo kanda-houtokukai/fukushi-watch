@@ -23,6 +23,7 @@ import { buildMail } from "./mail-template.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const REPORT_PATH = join(ROOT, "data", "report-latest.json");
+const MAIL_SETTINGS_PATH = join(ROOT, "data", "mail-settings.json");
 
 const SMTP_HOST = "smtp.gmail.com";
 const SMTP_PORT = 465;
@@ -177,9 +178,37 @@ function smtpSend({ user, pass, to, message }) {
 // メイン
 // ---------------------------------------------------------------------------
 
+/**
+ * 分野設定による重み付け（P6）。絞り込みではない:
+ * 設定分野と交わらない「分野限定」の項目だけを、メール上で低に落として残す。
+ * 「共通」タグと分野なし（空配列）の項目は降格しない。
+ * ⚠️ ここで書き換えるのはメール用のメモリ上のコピーのみ。report-latest.json には
+ *    書き戻さない（履歴には分野中立の判定をそのまま残す＝archive.js が後で読む）。
+ */
+function applyFieldWeighting(report) {
+  let selected = [];
+  try {
+    if (existsSync(MAIL_SETTINGS_PATH)) {
+      selected = JSON.parse(readFileSync(MAIL_SETTINGS_PATH, "utf8")).fields ?? [];
+    }
+  } catch {
+    selected = []; // 設定が壊れていても全分野扱いで送る（メールを止めない）
+  }
+  if (selected.length === 0) return report; // 設定なし=全分野（降格しない）
+  const items = (report.items ?? []).map((it) => {
+    const fields = it.fields ?? []; // 旧データは分野なし扱い
+    if (fields.length === 0 || fields.includes("共通")) return it;
+    const hit = fields.some((f) => selected.includes(f));
+    return hit ? it : { ...it, importance: "低" };
+  });
+  return { ...report, items };
+}
+
 async function main() {
   const { user, pass, to } = loadEnv();
-  const report = JSON.parse(readFileSync(REPORT_PATH, "utf8"));
+  const report = applyFieldWeighting(
+    JSON.parse(readFileSync(REPORT_PATH, "utf8"))
+  );
   const { subject, html } = buildMail(report);
   const message = buildMessage({ from: user, to, subject, html });
 

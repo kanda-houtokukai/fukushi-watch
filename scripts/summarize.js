@@ -93,6 +93,8 @@ function preferModel(candidates, preferred) {
 // プロンプトと応答の処理
 // ---------------------------------------------------------------------------
 
+const FIELD_VOCAB = ["保育", "障害", "高齢", "児童", "共通"];
+
 function buildPrompt(items) {
   const list = items.map((it, i) => ({
     index: i,
@@ -100,21 +102,30 @@ function buildPrompt(items) {
     category: it.category,
     date: it.date,
   }));
-  return `あなたは社会福祉法人（障害福祉・児童発達支援・保育を運営）の情報担当者です。
+  return `あなたは福祉事業（保育・障害福祉・高齢者福祉・児童福祉）の情報担当者です。
 行政サイトの新着情報の一覧（タイトル・カテゴリ・日付のみ。本文はありません）から、
 各項目について次を判定してください。
 
 1. summary: その項目が何の情報かの日本語の説明（1〜2文。タイトルの繰り返しでなく、
-   法人にとって何の話かが分かる補足を含める）
-2. importance: 実務上の重要度を3段階で判定
-   - 「高」= 法人に対応・確認の行動が必要になりうる
+   福祉事業者にとって何の話かが分かる補足を含める）
+2. importance: 福祉事業者一般にとっての実務上の重要度を3段階で判定（分野は問わない）
+   - 「高」= 事業者に対応・確認の行動が必要になりうる
      （報酬改定・基準/法令改正・義務化・監査/指導方針・加算/補助金と申請期限・
       虐待防止/安全/感染症の通知・パブコメ募集）
    - 「中」= 行動は不要だが先々に効くので把握しておくべき
-     （審議会/検討会・調査/統計・ガイドライン案・こども施策の方針文書）
-   - 「低」= 実務への影響が薄い（人事異動・調達情報・採用・行事/イベント・広報）
+     （審議会/検討会・調査/統計・ガイドライン案・福祉施策の方針文書）
+   - 「低」= 実務への影響が薄い（人事異動・調達情報・採用・行事/イベント・広報・
+      福祉と関係のない行政情報）
    - 迷ったら「中」に倒す
-3. reason: 判定理由（1行）
+3. fields: その情報が効く分野のタグ。次の5値のみ使用し、配列で返す（複数可）
+   - 「保育」「障害」「高齢」「児童」= 特定分野に効くもの。2分野以上に効くなら列挙する
+     （例: 児童発達支援の話題→["障害","児童"]、母子保健→["児童"]、介護報酬→["高齢"]）
+   - 「共通」= 分野を問わず福祉事業の運営に効くもの
+     （虐待防止・処遇改善・感染症対策・災害対応・BCP・福祉現場の労務など）
+   - 空配列 [] = 福祉事業の運営に関係がないものだけ
+     （薬事・年金・一般労働政策・省庁の人事・調達・採用など）
+   - ⚠️迷ったら空配列でなく「共通」に倒す（分野で絞ったとき重要情報が消える事故を防ぐ）
+4. reason: 判定理由（1行）
 
 入力（${items.length}件）:
 ${JSON.stringify(list, null, 1)}
@@ -122,7 +133,7 @@ ${JSON.stringify(list, null, 1)}
 出力の規則:
 - JSONの配列のみを出力する。前置き・後書き・コードフェンスは一切禁止
 - 必ず入力と同じ${items.length}件を、index を含めて返す
-- 形式: [{"index":0,"summary":"…","importance":"高|中|低","reason":"…"}, …]`;
+- 形式: [{"index":0,"summary":"…","importance":"高|中|低","fields":["障害"],"reason":"…"}, …]`;
 }
 
 /** 応答テキストから JSON を安全に取り出す（```json フェンスが付く前提で除去） */
@@ -150,6 +161,15 @@ function parseResponse(text, expectedCount) {
     }
     if (typeof it.summary !== "string" || !it.summary.trim()) {
       throw new Error(`summary が空の項目があります (index=${it.index})`);
+    }
+    // ★ fields の語彙検証（5値のみ・配列必須。空配列=福祉と無関係、は許可）
+    if (!Array.isArray(it.fields)) {
+      throw new Error(`fields が配列ではありません (index=${it.index})`);
+    }
+    for (const f of it.fields) {
+      if (!FIELD_VOCAB.includes(f)) {
+        throw new Error(`不正な分野タグ: ${JSON.stringify(f)} (index=${it.index})`);
+      }
     }
   }
   return arr;
@@ -216,34 +236,45 @@ async function main() {
   );
   console.log(`モデル候補（試行順）: ${models.join(", ")}`);
 
-  const prompt = buildPrompt(items);
-  let judged, usedModel;
-  const errors = [];
-  for (const model of models) {
-    try {
-      console.log(`試行: ${model}`);
-      const text = await generate(apiKey, model, prompt);
-      judged = parseResponse(text, items.length);
-      usedModel = model;
-      break;
-    } catch (e) {
-      errors.push(`${model}: ${e.message}`);
-      console.log(`  失敗（次の候補へ）: ${e.message.slice(0, 120)}`);
-    }
+  // ★ 出力が長くなるほど件数抜け・JSON崩れが起きやすいため、25件を超えたら分割する
+  const BATCH = 25;
+  const batches = [];
+  for (let i = 0; i < items.length; i += BATCH) {
+    batches.push(items.slice(i, i + BATCH));
   }
-  // ★ 全滅なら失敗として終了する（空の要約で正常終了しない）
-  if (!judged) {
-    throw new Error(`全モデルで失敗しました:\n${errors.join("\n")}`);
+  if (batches.length > 1) {
+    console.log(`${items.length}件を${batches.length}リクエストに分割して判定します`);
   }
 
-  const byIndex = new Map(judged.map((j) => [j.index, j]));
-  const report = {
-    generatedAt: new Date().toISOString(),
-    model: usedModel,
-    items: items.map((it, i) => {
+  let usedModel = null;
+  const judgedAll = [];
+  for (const batch of batches) {
+    const prompt = buildPrompt(batch);
+    let judged;
+    const errors = [];
+    // 直前のバッチで成功したモデルを最初に試す
+    const order = usedModel ? preferModel(models, usedModel) : models;
+    for (const model of order) {
+      try {
+        console.log(`試行: ${model}（${batch.length}件）`);
+        const text = await generate(apiKey, model, prompt);
+        judged = parseResponse(text, batch.length);
+        usedModel = model;
+        break;
+      } catch (e) {
+        errors.push(`${model}: ${e.message}`);
+        console.log(`  失敗（次の候補へ）: ${e.message.slice(0, 120)}`);
+      }
+    }
+    // ★ 全滅なら失敗として終了する（空の要約で正常終了しない）
+    if (!judged) {
+      throw new Error(`全モデルで失敗しました:\n${errors.join("\n")}`);
+    }
+    const byIndex = new Map(judged.map((j) => [j.index, j]));
+    batch.forEach((it, i) => {
       const j = byIndex.get(i);
       if (!j) throw new Error(`応答に index=${i} がありません`);
-      return {
+      judgedAll.push({
         hash: it.hash,
         source: it.source,
         title: it.title,
@@ -252,9 +283,16 @@ async function main() {
         category: it.category,
         summary: j.summary.trim(),
         importance: j.importance,
+        fields: j.fields, // 分野タグ（保育/障害/高齢/児童/共通・空=福祉と無関係）
         reason: (j.reason ?? "").trim(),
-      };
-    }),
+      });
+    });
+  }
+
+  const report = {
+    generatedAt: new Date().toISOString(),
+    model: usedModel,
+    items: judgedAll,
   };
   writeFileSync(REPORT_PATH, JSON.stringify(report, null, 2) + "\n");
 
