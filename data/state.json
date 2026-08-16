@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-08-16T11:44:54.031Z",
+      "lastCrawled": "2026-08-16T22:19:59.031Z",
       "items": [
         {
           "hash": "5d9291de1e028a38",
@@ -76,7 +76,7 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-08-16T11:44:54.922Z",
+      "lastCrawled": "2026-08-16T22:19:59.279Z",
       "items": [
         {
           "hash": "c63c47f51f7662d8",
@@ -3581,7 +3581,7 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-08-16T11:44:56.300Z",
+      "lastCrawled": "2026-08-16T22:20:00.263Z",
       "items": [
         {
           "hash": "4935822a0d8b059c",
@@ -4986,8 +4986,15 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-08-16T11:44:57.867Z",
+      "lastCrawled": "2026-08-16T22:20:01.329Z",
       "items": [
+        {
+          "hash": "f5ad4357dc776e94",
+          "title": "令和８年度高次脳機能障がい支援者養成研修を実施します",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/koujinou2026kenshu.html",
+          "date": "2026年8月17日更新",
+          "category": ""
+        },
         {
           "hash": "05297299880739a6",
           "title": "補装具申請様式（PDF、wordファイル、Excelファイル）",
@@ -5013,13 +5020,6 @@
           "hash": "ce809c93be5768c7",
           "title": "令和８年熊本地震による被災に伴う介護給付費等（療養介護医療費、障害児通所給付費及び障害児入所給付費等を含む。）の取扱いについて",
           "url": "https://www.pref.fukuoka.lg.jp/contents/shogai-kaigokyufu.html",
-          "date": "2026年8月3日更新",
-          "category": ""
-        },
-        {
-          "hash": "1b2b284a7435d7a9",
-          "title": "令和８年熊本地震により被災した障がいのある人等に対する支給決定等について",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/shogai-hisai.html",
           "date": "2026年8月3日更新",
           "category": ""
         },
@@ -5155,11 +5155,18 @@
           "url": "https://www.pref.fukuoka.lg.jp/contents/magokorologomark.html",
           "date": "2025年4月11日更新",
           "category": ""
+        },
+        {
+          "hash": "1b2b284a7435d7a9",
+          "title": "令和８年熊本地震により被災した障がいのある人等に対する支給決定等について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/shogai-hisai.html",
+          "date": "2026年8月3日更新",
+          "category": ""
         }
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-08-16T11:44:58.248Z",
+      "lastCrawled": "2026-08-16T22:20:01.587Z",
       "items": [
         {
           "hash": "991bae94228d9d6e",
@@ -5443,5 +5450,6 @@
         }
       ]
     }
-  }
+  },
+  "preferredModel": "gemini-3.6-flash"
 }
