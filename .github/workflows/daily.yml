@@ -47,6 +47,9 @@ jobs:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           MAIL_TO: ${{ secrets.MAIL_TO }}
 
+      - name: 履歴に記録
+        run: node scripts/archive.js
+
       - name: 状態をコミット
         run: |
           git config user.name "fukushi-watch"

@@ -7,6 +7,7 @@
   "scripts": {
     "crawl": "node scripts/crawl.js",
     "summarize": "node scripts/summarize.js",
-    "notify": "node scripts/notify.js"
+    "notify": "node scripts/notify.js",
+    "archive": "node scripts/archive.js"
   }
 }
