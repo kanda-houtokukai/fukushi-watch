@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-08-16T10:56:48.043Z",
+      "lastCrawled": "2026-08-16T10:57:24.749Z",
       "items": [
         {
           "hash": "5d9291de1e028a38",
@@ -76,7 +76,7 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-08-16T10:56:48.278Z",
+      "lastCrawled": "2026-08-16T10:57:24.969Z",
       "items": [
         {
           "hash": "c63c47f51f7662d8",
@@ -3577,6 +3577,1411 @@
           "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/kokka-kousei/index.html",
           "date": "2026-06-15",
           "category": "採用情報"
+        }
+      ]
+    },
+    "WAM NET": {
+      "lastCrawled": "2026-08-16T10:57:25.259Z",
+      "items": [
+        {
+          "hash": "4935822a0d8b059c",
+          "title": "第191回 先進医療技術審査部会（令和8年8月20日開催予定）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22790&ct=070010030&from=rss",
+          "date": "2026-08-14",
+          "category": "行政資料"
+        },
+        {
+          "hash": "5cda717ad4971a10",
+          "title": "第158回 社会保障審議会 障害者部会（令和8年8月19日開催予定）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22791&ct=070010040&from=rss",
+          "date": "2026-08-14",
+          "category": "行政資料"
+        },
+        {
+          "hash": "2f0b5ed92c1284a5",
+          "title": "風しん最新情報（令和8年8月12日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22788&ct=030100130&from=rss",
+          "date": "2026-08-13",
+          "category": "行政資料"
+        },
+        {
+          "hash": "732e37ade2106a7e",
+          "title": "麻しん最新情報（令和8年8月12日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22789&ct=030100110&from=rss",
+          "date": "2026-08-13",
+          "category": "行政資料"
+        },
+        {
+          "hash": "05bddddb67e82178",
+          "title": "介護保険最新情報Vol.1534（PDF：342KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0812091514658/ksvol.1534.pdf?from=rss",
+          "date": "2026-08-12",
+          "category": "行政資料"
+        },
+        {
+          "hash": "9ba42ba8538c15eb",
+          "title": "第158回 社会保障審議会 障害者部会（令和8年8月19日開催予定）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22784&ct=070010040&from=rss",
+          "date": "2026-08-10",
+          "category": "行政資料"
+        },
+        {
+          "hash": "42405f924dcb23d7",
+          "title": "介護保険最新情報Vol.1533（PDF：690KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0810091742207/ksvol.1533.pdf?from=rss",
+          "date": "2026-08-10",
+          "category": "行政資料"
+        },
+        {
+          "hash": "5d8ac06d687101ff",
+          "title": "第262回 社会保障審議会 介護給付費分科会（令和8年8月5日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22778&ct=010010020&from=rss",
+          "date": "2026-08-06",
+          "category": "行政資料"
+        },
+        {
+          "hash": "663a3c2314ebebce",
+          "title": "第14回 こども家庭審議会 科学技術部会 ヒト受精胚を用いる生殖補助医療研究等に関する専門委員会（令和8年8月5日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22777&ct=090080225&from=rss",
+          "date": "2026-08-05",
+          "category": "行政資料"
+        },
+        {
+          "hash": "f6cf2c704017c48e",
+          "title": "風しん最新情報（令和8年8月4日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22775&ct=030100130&from=rss",
+          "date": "2026-08-04",
+          "category": "行政資料"
+        },
+        {
+          "hash": "28f511c12fd92825",
+          "title": "麻しん最新情報（令和8年8月4日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22776&ct=030100110&from=rss",
+          "date": "2026-08-04",
+          "category": "行政資料"
+        },
+        {
+          "hash": "8220ba65873169a1",
+          "title": "介護保険最新情報Vol.1532（PDF：13.5MB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0803092128989/ksvol.1532.pdf?from=rss",
+          "date": "2026-08-03",
+          "category": "行政資料"
+        },
+        {
+          "hash": "5107e8a6dad927a1",
+          "title": "介護保険最新情報Vol.1531（PDF：1.4MB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0803092020378/ksvol.1531.pdf?from=rss",
+          "date": "2026-08-03",
+          "category": "行政資料"
+        },
+        {
+          "hash": "b72e7006813fe0f0",
+          "title": "介護保険最新情報Vol.1530（PDF：512KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0731093631520/ksvol.1530.pdf?from=rss",
+          "date": "2026-07-31",
+          "category": "行政資料"
+        },
+        {
+          "hash": "fed931f2f86c2bcf",
+          "title": "「介護情報基盤との連携におけるインタフェース仕様書（第2.1版）」について",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22709&ct=020050030&from=rss",
+          "date": "2026-07-30",
+          "category": "行政資料"
+        },
+        {
+          "hash": "78becb9aa72988fb",
+          "title": "成年後見制度利用促進専門家会議 第１回地域における権利擁護の支援体制に係るワーキング・グループ（令和8年7月30日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22767&ct=100100170&from=rss",
+          "date": "2026-07-30",
+          "category": "行政資料"
+        },
+        {
+          "hash": "9e7ceb6abda1bfe3",
+          "title": "第59回 社会保障審議会 生活保護基準部会（令和8年7月29日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22766&ct=010010220&from=rss",
+          "date": "2026-07-30",
+          "category": "行政資料"
+        },
+        {
+          "hash": "f2dace0838179e18",
+          "title": "介護保険最新情報Vol.1529（PDF：1.9MB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0730092333872/ksvol.1529.pdf?from=rss",
+          "date": "2026-07-30",
+          "category": "行政資料"
+        },
+        {
+          "hash": "4f2efdd7257226f7",
+          "title": "麻しん最新情報（令和8年7月28日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22761&ct=030100110&from=rss",
+          "date": "2026-07-29",
+          "category": "行政資料"
+        },
+        {
+          "hash": "f13a4bd211264f21",
+          "title": "第45回 匿名医療情報等の提供に関する専門委員会（令和8年8月3日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22755&ct=010010265&from=rss",
+          "date": "2026-07-28",
+          "category": "行政資料"
+        },
+        {
+          "hash": "ecd38121ff212ece",
+          "title": "風しん最新情報（令和8年7月28日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22760&ct=030100130&from=rss",
+          "date": "2026-07-28",
+          "category": "行政資料"
+        },
+        {
+          "hash": "b72ad3eecdcb2a05",
+          "title": "第21回 がん診療提供体制のあり方に関する検討会（令和8年7月27日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22758&ct=030100405&from=rss",
+          "date": "2026-07-28",
+          "category": "行政資料"
+        },
+        {
+          "hash": "8cb24eb698a7eb0f",
+          "title": "第129回 社会保障審議会 医療部会（令和8年7月24日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22753&ct=010010040&from=rss",
+          "date": "2026-07-27",
+          "category": "行政資料"
+        },
+        {
+          "hash": "da3ecb24b2eb96e3",
+          "title": "第112回厚生科学審議会予防接種・ワクチン分科会副反応検討部会、令和8年度第4回薬事審議会医薬品等安全対策部会安全対策調査会（合同開催）（令和8年7月24日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22754&ct=010020265&from=rss",
+          "date": "2026-07-27",
+          "category": "行政資料"
+        },
+        {
+          "hash": "abc58a6fcd064ffc",
+          "title": "第20回 こども家庭審議会 障害児支援部会（令和8年7月22日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22742&ct=090080200&from=rss",
+          "date": "2026-07-24",
+          "category": "行政資料"
+        },
+        {
+          "hash": "c33686ab6cc8ff20",
+          "title": "介護保険最新情報Vol.1528（PDF：286KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0730092238927/ksvol.1528.pdf?from=rss",
+          "date": "2026-07-24",
+          "category": "行政資料"
+        },
+        {
+          "hash": "0a30468826139b54",
+          "title": "第11回 健康・医療・介護情報利活用検討会 介護情報利活用ワーキンググループ（令和8年7月23日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22752&ct=020060200&from=rss",
+          "date": "2026-07-24",
+          "category": "行政資料"
+        },
+        {
+          "hash": "c8b72a9dd2a4bb97",
+          "title": "第261回 社会保障審議会 介護給付費分科会（令和8年7月23日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22751&ct=010010020&from=rss",
+          "date": "2026-07-24",
+          "category": "行政資料"
+        },
+        {
+          "hash": "55dffecb0fb391f2",
+          "title": "介護保険最新情報Vol.1527（PDF：128KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0724093017152/ksvol.1527.pdf?from=rss",
+          "date": "2026-07-24",
+          "category": "行政資料"
+        },
+        {
+          "hash": "3a9210209d02a0f7",
+          "title": "第13回 こども家庭審議会 科学技術部会 ヒト受精胚を用いる生殖補助医療研究等に関する専門委員会（令和8年7月23日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22735&ct=090080225&from=rss",
+          "date": "2026-07-23",
+          "category": "行政資料"
+        },
+        {
+          "hash": "b2506ddf388c739b",
+          "title": "介護保険最新情報Vol.1526（PDF：169KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0723093330752/ksvol.1526.pdf?from=rss",
+          "date": "2026-07-23",
+          "category": "行政資料"
+        },
+        {
+          "hash": "3d718b866b8f5a87",
+          "title": "第66回 厚生科学審議会 予防接種・ワクチン分科会（令和8年7月23日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22737&ct=010020130&from=rss",
+          "date": "2026-07-23",
+          "category": "行政資料"
+        },
+        {
+          "hash": "22abf72f1b5aae82",
+          "title": "令和8年度 事業主団体との協議の場（令和8年7月22日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22736&ct=090080300&from=rss",
+          "date": "2026-07-23",
+          "category": "行政資料"
+        },
+        {
+          "hash": "cdd1fbe6e8e2f94a",
+          "title": "第149回 厚生科学審議会 科学技術部会（令和8年7月22日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22726&ct=010020020&from=rss",
+          "date": "2026-07-22",
+          "category": "行政資料"
+        },
+        {
+          "hash": "1d6a57b1394e11e1",
+          "title": "第137回 中央社会保険医療協議会 保険医療材料専門部会（令和8年7月22日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22727&ct=010050050&from=rss",
+          "date": "2026-07-22",
+          "category": "行政資料"
+        },
+        {
+          "hash": "a822659a49b622f7",
+          "title": "風しん最新情報（令和8年7月21日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22722&ct=030100130&from=rss",
+          "date": "2026-07-21",
+          "category": "行政資料"
+        },
+        {
+          "hash": "933e8b634734409b",
+          "title": "麻しん最新情報（令和8年7月21日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22723&ct=030100110&from=rss",
+          "date": "2026-07-21",
+          "category": "行政資料"
+        },
+        {
+          "hash": "5662bce16d230df9",
+          "title": "第23回 新型インフルエンザ等対策推進会議（令和8年7月16日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22713&ct=030100360&from=rss",
+          "date": "2026-07-17",
+          "category": "行政資料"
+        },
+        {
+          "hash": "79d365f32049a27a",
+          "title": "第47回 がん検診のあり方に関する検討会（令和8年7月16日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22716&ct=030100395&from=rss",
+          "date": "2026-07-17",
+          "category": "行政資料"
+        },
+        {
+          "hash": "c48b2c2979878936",
+          "title": "第30回 社会保障審議会「生活困窮者自立支援及び生活保護部会」（令和8年7月17日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22714&ct=010010430&from=rss",
+          "date": "2026-07-17",
+          "category": "行政資料"
+        },
+        {
+          "hash": "4294547200654f91",
+          "title": "介護保険最新情報Vol.1525（PDF：335KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0715093202378/ksvol.1525.pdf?from=rss",
+          "date": "2026-07-15",
+          "category": "行政資料"
+        },
+        {
+          "hash": "df0fb897bf8a568b",
+          "title": "介護保険最新情報Vol.1524（PDF：273KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0715093026337/ksvol.1524.pdf?from=rss",
+          "date": "2026-07-15",
+          "category": "行政資料"
+        },
+        {
+          "hash": "999d2440d2d3e837",
+          "title": "介護保険最新情報Vol.1523（PDF：198KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0714091210443/ksvol.1523.pdf?from=rss",
+          "date": "2026-07-14",
+          "category": "行政資料"
+        },
+        {
+          "hash": "f307167d90dd9df4",
+          "title": "麻しん最新情報（令和8年7月14日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22703&ct=030100110&from=rss",
+          "date": "2026-07-14",
+          "category": "行政資料"
+        },
+        {
+          "hash": "af3ab733676808b2",
+          "title": "風しん最新情報（令和8年7月14日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22702&ct=030100130&from=rss",
+          "date": "2026-07-14",
+          "category": "行政資料"
+        },
+        {
+          "hash": "82c48db188a87dc1",
+          "title": "第4回 孤独・孤立対策推進本部（令和8年7月10日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22698&ct=100100145&from=rss",
+          "date": "2026-07-13",
+          "category": "行政資料"
+        },
+        {
+          "hash": "ea7d50faf65317af",
+          "title": "第157回 社会保障審議会 障害者部会（令和8年7月10日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22679&ct=010010090&from=rss",
+          "date": "2026-07-10",
+          "category": "行政資料"
+        },
+        {
+          "hash": "357e3090fa55cd62",
+          "title": "介護保険最新情報Vol.1522",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22694&ct=020060090&from=rss",
+          "date": "2026-07-10",
+          "category": "行政資料"
+        },
+        {
+          "hash": "c8bbcece23750bb5",
+          "title": "第260回 社会保障審議会 介護給付費分科会（令和8年7月9日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22680&ct=010010020&from=rss",
+          "date": "2026-07-10",
+          "category": "行政資料"
+        },
+        {
+          "hash": "6da19e352cc1e7c3",
+          "title": "介護保険最新情報Vol.1521（PDF：2.0MB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0709090059177/ksvol.1521.pdf?from=rss",
+          "date": "2026-07-09",
+          "category": "行政資料"
+        },
+        {
+          "hash": "7c95ce1690ddfdc9",
+          "title": "第190回 先進医療技術審査部会（令和8年7月9日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22685&ct=030010150&from=rss",
+          "date": "2026-07-09",
+          "category": "行政資料"
+        },
+        {
+          "hash": "2391777d4252007e",
+          "title": "風しん最新情報（令和8年7月7日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22672&ct=030100130&from=rss",
+          "date": "2026-07-08",
+          "category": "行政資料"
+        },
+        {
+          "hash": "d3b2b5f176523ea7",
+          "title": "第106回 厚生科学審議会 感染症部会（令和8年7月8日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22677&ct=010020080&from=rss",
+          "date": "2026-07-08",
+          "category": "行政資料"
+        },
+        {
+          "hash": "6563cba53dfb4745",
+          "title": "第44回 匿名医療情報等の提供に関する専門委員会（令和8年7月6日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22675&ct=010010265&from=rss",
+          "date": "2026-07-08",
+          "category": "行政資料"
+        },
+        {
+          "hash": "8893a33929dcba51",
+          "title": "麻しん最新情報（令和8年7月7日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22674&ct=030100110&from=rss",
+          "date": "2026-07-08",
+          "category": "行政資料"
+        },
+        {
+          "hash": "8ec9dff3cec62453",
+          "title": "第88回 障害者政策委員会（令和8年7月8日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22673&ct=050020110&from=rss",
+          "date": "2026-07-08",
+          "category": "行政資料"
+        },
+        {
+          "hash": "5a4608a043830860",
+          "title": "第14回 精神保健医療福祉の今後の施策推進に関する検討会（令和8年7月6日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22666&ct=050010020&from=rss",
+          "date": "2026-07-06",
+          "category": "行政資料"
+        },
+        {
+          "hash": "2c815911542d050b",
+          "title": "介護保険最新情報Vol.1520（PDF：1.3MB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0703091147807/ksvol.1520.pdf?from=rss",
+          "date": "2026-07-03",
+          "category": "行政資料"
+        },
+        {
+          "hash": "78d3b25b52038395",
+          "title": "第155回 先進医療会議（令和8年7月2日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22659&ct=030010140&from=rss",
+          "date": "2026-07-03",
+          "category": "行政資料"
+        },
+        {
+          "hash": "16c647572f0d3660",
+          "title": "風しん最新情報（令和8年6月30日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22652&ct=030100130&from=rss",
+          "date": "2026-07-01",
+          "category": "行政資料"
+        },
+        {
+          "hash": "e5e1d0a515e3d830",
+          "title": "第58回 社会保障審議会 生活保護基準部会（令和8年6月30日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22656&ct=010010220&from=rss",
+          "date": "2026-07-01",
+          "category": "行政資料"
+        },
+        {
+          "hash": "1c9347529c678edc",
+          "title": "麻しん最新情報（令和8年6月30日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22655&ct=030100110&from=rss",
+          "date": "2026-07-01",
+          "category": "行政資料"
+        },
+        {
+          "hash": "80c440382f7e572a",
+          "title": "介護保険最新情報Vol.1519（PDF：2.1MB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0701095233753/ksvol.1519.pdf?from=rss",
+          "date": "2026-07-01",
+          "category": "行政資料"
+        },
+        {
+          "hash": "9b5e6ba7fb764c22",
+          "title": "第135回 社会保障審議会 介護保険部会（令和8年6月29日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22642&ct=010010030&from=rss",
+          "date": "2026-06-29",
+          "category": "行政資料"
+        },
+        {
+          "hash": "9d27bf43e9861128",
+          "title": "第259回 社会保障審議会 介護給付費分科会（令和8年6月29日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22643&ct=010010020&from=rss",
+          "date": "2026-06-29",
+          "category": "行政資料"
+        },
+        {
+          "hash": "e8eefdf499ccd7ba",
+          "title": "介護保険最新情報Vol.1516（PDF：157KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0626090952949/ksvol.1516.pdf?from=rss",
+          "date": "2026-06-26",
+          "category": "行政資料"
+        },
+        {
+          "hash": "260b3ab89d4965ca",
+          "title": "介護保険最新情報Vol.1518（PDF：473KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0626091806101/ksvol.1518.pdf?from=rss",
+          "date": "2026-06-26",
+          "category": "行政資料"
+        },
+        {
+          "hash": "8b3978f9d5b09798",
+          "title": "介護保険最新情報Vol.1517（PDF：329KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0626091329375/ksvol.1517.pdf?from=rss",
+          "date": "2026-06-26",
+          "category": "行政資料"
+        },
+        {
+          "hash": "b98bad9f607a222f",
+          "title": "第8回 匿名障害福祉及び障害児福祉情報等の提供に関する専門委員会（令和8年6月25日）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22633&ct=090070175&from=rss",
+          "date": "2026-06-25",
+          "category": "行政資料"
+        },
+        {
+          "hash": "e3a483cb305612fe",
+          "title": "風しん最新情報（令和8年6月23日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22624&ct=030100130&from=rss",
+          "date": "2026-06-24",
+          "category": "行政資料"
+        },
+        {
+          "hash": "228f498d9f6b65eb",
+          "title": "第76回 中央社会保険医療協議会 診療報酬改定結果検証部会（令和8年6月24日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22631&ct=010050030&from=rss",
+          "date": "2026-06-24",
+          "category": "行政資料"
+        },
+        {
+          "hash": "39173a4a8bf97f83",
+          "title": "介護保険最新情報Vol.1515（PDF：6.2MB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0624094432779/ksvol.1515.pdf?from=rss",
+          "date": "2026-06-24",
+          "category": "行政資料"
+        },
+        {
+          "hash": "ab5c511087f82f8e",
+          "title": "介護保険最新情報Vol.1514（PDF：504KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0624094252830/ksvol.1514.pdf?from=rss",
+          "date": "2026-06-24",
+          "category": "行政資料"
+        },
+        {
+          "hash": "a112db0899292186",
+          "title": "麻しん最新情報（令和8年6月23日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22628&ct=030100110&from=rss",
+          "date": "2026-06-24",
+          "category": "行政資料"
+        },
+        {
+          "hash": "ce7349ec5eb824e7",
+          "title": "介護保険最新情報Vol.1513（PDF：248KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0623092037328/ksvol.1513.pdf?from=rss",
+          "date": "2026-06-23",
+          "category": "行政資料"
+        },
+        {
+          "hash": "800cd2d280e7501a",
+          "title": "第25回 匿名医療・介護情報等の提供に関する委員会（令和8年6月25日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22623&ct=010010495&from=rss",
+          "date": "2026-06-23",
+          "category": "行政資料"
+        },
+        {
+          "hash": "6409bf68eaf1b7fd",
+          "title": "介護保険最新情報Vol.1512（PDF：195KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0619091527830/ksvol.1512.pdf?from=rss",
+          "date": "2026-06-19",
+          "category": "行政資料"
+        },
+        {
+          "hash": "b8599d8431b39d42",
+          "title": "第22回 こども家庭審議会 こどもの居場所部会（令和8年6月18日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22616&ct=090080220&from=rss",
+          "date": "2026-06-19",
+          "category": "行政資料"
+        },
+        {
+          "hash": "1a84b03057261438",
+          "title": "第212回 社会保障審議会 医療保険部会（令和8年6月18日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22615&ct=010010050&from=rss",
+          "date": "2026-06-19",
+          "category": "行政資料"
+        },
+        {
+          "hash": "3418fa8079426273",
+          "title": "第128回 社会保障審議会 医療部会（令和8年6月17日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22612&ct=010010040&from=rss",
+          "date": "2026-06-18",
+          "category": "行政資料"
+        },
+        {
+          "hash": "10eb06586388c590",
+          "title": "風しん最新情報（令和8年6月16日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22610&ct=030100130&from=rss",
+          "date": "2026-06-17",
+          "category": "行政資料"
+        },
+        {
+          "hash": "222fd77192f20a5f",
+          "title": "麻しん最新情報（令和8年6月16日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22611&ct=030100110&from=rss",
+          "date": "2026-06-17",
+          "category": "行政資料"
+        },
+        {
+          "hash": "83bdfc5f54a20947",
+          "title": "介護保険最新情報Vol.1511（PDF：334KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0616090724170/ksvol.1511.pdf?from=rss",
+          "date": "2026-06-16",
+          "category": "行政資料"
+        },
+        {
+          "hash": "36306692dee3a949",
+          "title": "第258回 社会保障審議会 介護給付費分科会（令和8年6月15日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22603&ct=010010020&from=rss",
+          "date": "2026-06-15",
+          "category": "行政資料"
+        },
+        {
+          "hash": "f905e4f382998bb7",
+          "title": "介護保険事務処理システム変更に係る参考資料（高額医療・高額介護合算制度）（令和８年６月12日事務連絡）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22602&ct=020050010&from=rss",
+          "date": "2026-06-12",
+          "category": "行政資料"
+        },
+        {
+          "hash": "3fe154d307eb549a",
+          "title": "風しん最新情報（令和8年6月9日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22595&ct=030100130&from=rss",
+          "date": "2026-06-10",
+          "category": "行政資料"
+        },
+        {
+          "hash": "d700bfcc6ddd9e30",
+          "title": "第66回 厚生科学審議会 疾病対策部会 指定難病検討委員会（令和8年6月10日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22599&ct=010020245&from=rss",
+          "date": "2026-06-10",
+          "category": "行政資料"
+        },
+        {
+          "hash": "bc9eeebc483014f1",
+          "title": "第105回 厚生科学審議会 感染症部会（令和8年6月10日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22598&ct=010020080&from=rss",
+          "date": "2026-06-10",
+          "category": "行政資料"
+        },
+        {
+          "hash": "a86e703749a0378f",
+          "title": "第6回 こども政策推進会議（令和8年6月9日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22597&ct=090080110&from=rss",
+          "date": "2026-06-10",
+          "category": "行政資料"
+        },
+        {
+          "hash": "b0835ac25036507d",
+          "title": "麻しん最新情報（令和8年6月9日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22596&ct=030100110&from=rss",
+          "date": "2026-06-10",
+          "category": "行政資料"
+        },
+        {
+          "hash": "5cca79501885afa9",
+          "title": "第43回 匿名医療情報等の提供に関する専門委員会（令和8年6月8日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22594&ct=010010265&from=rss",
+          "date": "2026-06-09",
+          "category": "行政資料"
+        },
+        {
+          "hash": "a7373dceb540c4e2",
+          "title": "第24回 匿名介護情報等の提供に関する専門委員会（令和8年6月8日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22592&ct=010010255&from=rss",
+          "date": "2026-06-08",
+          "category": "行政資料"
+        },
+        {
+          "hash": "3d5d065508ce062a",
+          "title": "介護保険最新情報Vol.1510（PDF：4.3MB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0608095519920/ksvol.1510.pdf?from=rss",
+          "date": "2026-06-08",
+          "category": "行政資料"
+        },
+        {
+          "hash": "5acbcb6438f0eeb2",
+          "title": "介護保険最新情報Vol.1509（PDF：360KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0604095935715/ksvol.1509.pdf?from=rss",
+          "date": "2026-06-04",
+          "category": "行政資料"
+        },
+        {
+          "hash": "71b8787373253ad3",
+          "title": "介護保険最新情報Vol.1508（PDF：372KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0604095758517/ksvol.1508.pdf?from=rss",
+          "date": "2026-06-04",
+          "category": "行政資料"
+        },
+        {
+          "hash": "96b1429091e6c5f2",
+          "title": "風しん最新情報（令和8年6月3日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22574&ct=030100130&from=rss",
+          "date": "2026-06-03",
+          "category": "行政資料"
+        },
+        {
+          "hash": "088f3d939092ae47",
+          "title": "第42回 匿名医療情報等の提供に関する専門委員会（令和8年6月3日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22586&ct=010010265&from=rss",
+          "date": "2026-06-03",
+          "category": "行政資料"
+        },
+        {
+          "hash": "79fbcea8f613e0aa",
+          "title": "麻しん最新情報（令和8年6月3日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22576&ct=030100110&from=rss",
+          "date": "2026-06-03",
+          "category": "行政資料"
+        },
+        {
+          "hash": "3cb6e6de24d8a76a",
+          "title": "介護保険最新情報Vol.1507（PDF：571KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0602085753432/ksvol.1507.pdf?from=rss",
+          "date": "2026-06-02",
+          "category": "行政資料"
+        },
+        {
+          "hash": "98e68b9a2166ab15",
+          "title": "介護保険最新情報Vol.1506（PDF：699KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0602085932175/ksvol.1506.pdf?from=rss",
+          "date": "2026-06-02",
+          "category": "行政資料"
+        },
+        {
+          "hash": "b968987b52705c49",
+          "title": "第5回 孤独・孤立対策推進会議（令和8年5月28日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22581&ct=100100150&from=rss",
+          "date": "2026-05-29",
+          "category": "行政資料"
+        },
+        {
+          "hash": "8f509dd1851a0b9b",
+          "title": "介護保険最新情報Vol.1505（PDF：184KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0528110341716/ksvol.1505.pdf?from=rss",
+          "date": "2026-05-28",
+          "category": "行政資料"
+        },
+        {
+          "hash": "b4d163b77a6f8a4a",
+          "title": "「介護保険資格確認等WEBサービスとの連携におけるAPI仕様書（暫定版）」について",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22558&ct=020050030&from=rss",
+          "date": "2026-05-27",
+          "category": "行政資料"
+        },
+        {
+          "hash": "f0b832fc91d74929",
+          "title": "第65回 厚生科学審議会 疾病対策部会 指定難病検討委員会（令和8年5月26日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22570&ct=010020245&from=rss",
+          "date": "2026-05-26",
+          "category": "行政資料"
+        },
+        {
+          "hash": "ed4801c5c2f58c89",
+          "title": "第104回 厚生科学審議会 感染症部会",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22573&ct=010020080&from=rss",
+          "date": "2026-05-26",
+          "category": "行政資料"
+        },
+        {
+          "hash": "75c1b8d9a8b92b9a",
+          "title": "第57回 社会保障審議会 生活保護基準部会（令和8年5月26日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22572&ct=010010220&from=rss",
+          "date": "2026-05-26",
+          "category": "行政資料"
+        },
+        {
+          "hash": "4fbad7fa22dd2ecd",
+          "title": "介護保険事務処理システム変更に係る参考資料（確定版）（令和８年５月25日事務連絡）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22560&ct=020050010&from=rss",
+          "date": "2026-05-25",
+          "category": "行政資料"
+        },
+        {
+          "hash": "a65ce568a051c551",
+          "title": "介護保険最新情報Vol.1504（PDF：250KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0525110923482/ksvol.1504.pdf?from=rss",
+          "date": "2026-05-25",
+          "category": "行政資料"
+        },
+        {
+          "hash": "4fb16e001549a3f4",
+          "title": "第257回 社会保障審議会 介護給付費分科会（令和8年5月25日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22567&ct=010010020&from=rss",
+          "date": "2026-05-25",
+          "category": "行政資料"
+        },
+        {
+          "hash": "5b11e776dd1ad88f",
+          "title": "第148回 厚生科学審議会 科学技術部会（令和8年5月21日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22566&ct=010020020&from=rss",
+          "date": "2026-05-21",
+          "category": "行政資料"
+        },
+        {
+          "hash": "2103af23c05713d9",
+          "title": "風しん最新情報（令和8年5月19日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22561&ct=030100130&from=rss",
+          "date": "2026-05-20",
+          "category": "行政資料"
+        },
+        {
+          "hash": "03f7546e1364fcb4",
+          "title": "麻しん最新情報（令和8年5月19日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22563&ct=030100110&from=rss",
+          "date": "2026-05-20",
+          "category": "行政資料"
+        },
+        {
+          "hash": "c881a43e1026b901",
+          "title": "第65回 厚生科学審議会 予防接種・ワクチン分科会（令和8年5月20日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22562&ct=010020130&from=rss",
+          "date": "2026-05-20",
+          "category": "行政資料"
+        },
+        {
+          "hash": "60a1f13d08cc981c",
+          "title": "第77回 中央社会保険医療協議会 費用対効果評価専門部会（令和8年5月13日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22559&ct=010050070&from=rss",
+          "date": "2026-05-19",
+          "category": "行政資料"
+        },
+        {
+          "hash": "5edfd2da75c9d9ec",
+          "title": "風しん最新情報（令和8年5月14日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22553&ct=030100130&from=rss",
+          "date": "2026-05-15",
+          "category": "行政資料"
+        },
+        {
+          "hash": "9324d4c4c79119e6",
+          "title": "麻しん最新情報（令和8年5月14日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22554&ct=030100110&from=rss",
+          "date": "2026-05-15",
+          "category": "行政資料"
+        },
+        {
+          "hash": "e5ff56a5eac0df03",
+          "title": "介護保険最新情報Vol.1503（PDF：177KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0514102447457/ksvol.1503.pdf?from=rss",
+          "date": "2026-05-14",
+          "category": "行政資料"
+        },
+        {
+          "hash": "2119a501b3b7c5cc",
+          "title": "第650回 中央社会保険医療協議会 総会（令和8年5月13日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22550&ct=010050010&from=rss",
+          "date": "2026-05-13",
+          "category": "行政資料"
+        },
+        {
+          "hash": "a09f83f64e9c8fe4",
+          "title": "第41回 匿名医療情報等の提供に関する専門委員会（令和8年5月11日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22547&ct=010010265&from=rss",
+          "date": "2026-05-12",
+          "category": "行政資料"
+        },
+        {
+          "hash": "5c9cbef10d9dc635",
+          "title": "介護保険最新情報Vol.1502",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22548&ct=020060090&from=rss",
+          "date": "2026-05-12",
+          "category": "行政資料"
+        },
+        {
+          "hash": "5ce8e89dcea17fb3",
+          "title": "風しん最新情報（令和8年5月8日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22541&ct=030100130&from=rss",
+          "date": "2026-05-11",
+          "category": "行政資料"
+        },
+        {
+          "hash": "bc108f59d95f64cd",
+          "title": "麻しん最新情報（令和8年5月8日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22545&ct=030100110&from=rss",
+          "date": "2026-05-11",
+          "category": "行政資料"
+        },
+        {
+          "hash": "b57f9277642b1e0d",
+          "title": "介護保険最新情報Vol.1501（PDF：226KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0511093732129/ksvol.1501.pdf?from=rss",
+          "date": "2026-05-11",
+          "category": "行政資料"
+        },
+        {
+          "hash": "2c7159d14cc0a77a",
+          "title": "介護保険最新情報Vol.1500（PDF：3.7MB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0501092716377/ksvol.1500.pdf?from=rss",
+          "date": "2026-05-01",
+          "category": "行政資料"
+        },
+        {
+          "hash": "4832f077960aefdb",
+          "title": "介護保険最新情報Vol.1499（PDF：199KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0501092523535/ksvol.1499.pdf?from=rss",
+          "date": "2026-05-01",
+          "category": "行政資料"
+        },
+        {
+          "hash": "21ed40e3a693c4c0",
+          "title": "抗体製剤を予防接種法上の予防接種に用いる医薬品の一つに位置づけることに関する提言のとりまとめについて",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22535&ct=010020270&from=rss",
+          "date": "2026-05-01",
+          "category": "行政資料"
+        },
+        {
+          "hash": "a8cad8fd15eedf26",
+          "title": "介護保険事務処理システム変更に係る参考資料（その３）（令和8年4月30日事務連絡）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22523&ct=020050010&from=rss",
+          "date": "2026-04-30",
+          "category": "行政資料"
+        },
+        {
+          "hash": "e4bba30c1922b6e7",
+          "title": "第77回 厚生科学審議会 予防接種・ワクチン分科会 予防接種基本方針部会（令和8年4月30日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22532&ct=010020270&from=rss",
+          "date": "2026-04-30",
+          "category": "行政資料"
+        },
+        {
+          "hash": "a42fd8c6fb5ce32a",
+          "title": "第127回 社会保障審議会 医療部会（令和8年4月28日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22528&ct=010010040&from=rss",
+          "date": "2026-04-30",
+          "category": "行政資料"
+        },
+        {
+          "hash": "43324f67415d9122",
+          "title": "麻しん最新情報（令和8年4月28日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22527&ct=030100110&from=rss",
+          "date": "2026-04-30",
+          "category": "行政資料"
+        },
+        {
+          "hash": "e1ce5447d196bf95",
+          "title": "介護保険最新情報Vol.1498（PDF：142KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/043009441368/ksvol.1498.pdf?from=rss",
+          "date": "2026-04-30",
+          "category": "行政資料"
+        },
+        {
+          "hash": "2d6d77b76f1e3dad",
+          "title": "介護保険最新情報Vol.1497（PDF：1.2MB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0430094233949/ksvol.1497.pdf?from=rss",
+          "date": "2026-04-30",
+          "category": "行政資料"
+        },
+        {
+          "hash": "7cf2a352724c5ef7",
+          "title": "風しん最新情報（令和8年4月28日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22524&ct=030100130&from=rss",
+          "date": "2026-04-30",
+          "category": "行政資料"
+        },
+        {
+          "hash": "2d0eae5152bbbcc5",
+          "title": "介護保険最新情報Vol.1496（PDF：1.8MB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0428101304747/ksvol.1496.pdf?from=rss",
+          "date": "2026-04-28",
+          "category": "行政資料"
+        },
+        {
+          "hash": "a1b3e88d3ad8eb30",
+          "title": "第22回 新型インフルエンザ等対策推進会議（令和8年4月27日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22521&ct=030100360&from=rss",
+          "date": "2026-04-28",
+          "category": "行政資料"
+        },
+        {
+          "hash": "cef8178acc1d5e92",
+          "title": "第256回 社会保障審議会 介護給付費分科会（令和8年4月27日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22517&ct=010010020&from=rss",
+          "date": "2026-04-27",
+          "category": "行政資料"
+        },
+        {
+          "hash": "c502b788745fc615",
+          "title": "第26回 厚生科学審議会 新型インフルエンザ対策に関する小委員会（令和8年4月23日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22516&ct=010020210&from=rss",
+          "date": "2026-04-24",
+          "category": "行政資料"
+        },
+        {
+          "hash": "ab8f363853533705",
+          "title": "第33回 社会保障審議会福祉部会（令和8年4月23日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22510&ct=010010110&from=rss",
+          "date": "2026-04-23",
+          "category": "行政資料"
+        },
+        {
+          "hash": "c622ef0c73f81608",
+          "title": "第103回 厚生科学審議会 感染症部会（令和8年4月22日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22512&ct=010020080&from=rss",
+          "date": "2026-04-23",
+          "category": "行政資料"
+        },
+        {
+          "hash": "23e7b9c1e91e3b9d",
+          "title": "第111回 厚生科学審議会 予防接種・ワクチン分科会副反応検討部会（令和8年04月22日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22511&ct=010020265&from=rss",
+          "date": "2026-04-23",
+          "category": "行政資料"
+        },
+        {
+          "hash": "2943b2a812609adf",
+          "title": "麻しん最新情報（令和8年4月21日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22507&ct=030100110&from=rss",
+          "date": "2026-04-22",
+          "category": "行政資料"
+        },
+        {
+          "hash": "549c37ea781551d3",
+          "title": "風しん最新情報（令和8年4月21日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22503&ct=030100130&from=rss",
+          "date": "2026-04-21",
+          "category": "行政資料"
+        },
+        {
+          "hash": "a2435d634faadd88",
+          "title": "介護保険最新情報Vol.1495（PDF：363KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0421114945287/ksvol.1495.pdf?from=rss",
+          "date": "2026-04-21",
+          "category": "行政資料"
+        },
+        {
+          "hash": "42c206cc2528304b",
+          "title": "介護保険事務処理システム変更に係る参考資料（その２）（令和8年4月20日事務連絡）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22490&ct=020050010&from=rss",
+          "date": "2026-04-20",
+          "category": "行政資料"
+        },
+        {
+          "hash": "bea8a2bca2c3a203",
+          "title": "麻しん最新情報（令和8年4月15日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=21485&ct=030100110&from=rss",
+          "date": "2026-04-15",
+          "category": "行政資料"
+        },
+        {
+          "hash": "59d2c4dc66411025",
+          "title": "風しん最新情報（令和8年4月15日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=21486&ct=030100130&from=rss",
+          "date": "2026-04-15",
+          "category": "行政資料"
+        },
+        {
+          "hash": "84d891533f6b87af",
+          "title": "第56回 社会保障審議会 生活保護基準部会（令和8年4月14日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22491&ct=010010220&from=rss",
+          "date": "2026-04-15",
+          "category": "行政資料"
+        },
+        {
+          "hash": "b2a7b9725dec4d86",
+          "title": "介護保険最新情報Vol.1494（PDF：1.8MB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/041410424885/ksvol.1494.pdf?from=rss",
+          "date": "2026-04-14",
+          "category": "行政資料"
+        },
+        {
+          "hash": "63b90ce3e5e6fe7a",
+          "title": "介護保険最新情報Vol.1493（PDF：638KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0413110639610/ksvol.1493.pdf?from=rss",
+          "date": "2026-04-13",
+          "category": "行政資料"
+        },
+        {
+          "hash": "0c19413efe5a5a7c",
+          "title": "介護保険最新情報Vol.1492（PDF：638KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0410171330379/ksvol.1492.pdf?from=rss",
+          "date": "2026-04-10",
+          "category": "行政資料"
+        },
+        {
+          "hash": "711a050f07af4cfc",
+          "title": "令和7年度 全国こども政策関係部局長会議",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22483&ct=090080370&from=rss",
+          "date": "2026-04-09",
+          "category": "行政資料"
+        },
+        {
+          "hash": "4337befba3d75b76",
+          "title": "令和7年度 全国こども政策主管課長会議",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22484&ct=090110010&from=rss",
+          "date": "2026-04-09",
+          "category": "行政資料"
+        },
+        {
+          "hash": "2e0256ae23b72768",
+          "title": "第649回 中央社会保険医療協議会 総会（令和8年4月8日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22479&ct=010050010&from=rss",
+          "date": "2026-04-08",
+          "category": "行政資料"
+        },
+        {
+          "hash": "ac0064d9a2033103",
+          "title": "第44回 社会保障審議会 介護給付費分科会 介護事業経営調査委員会（令和8年4月8日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22481&ct=010010330&from=rss",
+          "date": "2026-04-08",
+          "category": "行政資料"
+        },
+        {
+          "hash": "d8e3315d5c914df0",
+          "title": "第63回 中央社会保険医療協議会 調査実施小委員会（令和8年4月8日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22480&ct=010050040&from=rss",
+          "date": "2026-04-08",
+          "category": "行政資料"
+        },
+        {
+          "hash": "5fae02d83add591c",
+          "title": "インフルエンザ最新情報（令和8年4月6日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=6683&ct=030100310&from=rss",
+          "date": "2026-04-06",
+          "category": "行政資料"
+        },
+        {
+          "hash": "8c330366aa9da871",
+          "title": "介護保険最新情報Vol.1491（PDF：313KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/040614594837/ksvol.1491.pdf?from=rss",
+          "date": "2026-04-06",
+          "category": "行政資料"
+        },
+        {
+          "hash": "04759851e331797a",
+          "title": "介護保険最新情報Vol.1487（PDF：198KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0401160946635/ksvol.1487.pdf?from=rss",
+          "date": "2026-04-01",
+          "category": "行政資料"
+        },
+        {
+          "hash": "f03e77f137fee3d9",
+          "title": "第255回 社会保障審議会 介護給付費分科会（令和8年3月30日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22474&ct=010010020&from=rss",
+          "date": "2026-04-01",
+          "category": "行政資料"
+        },
+        {
+          "hash": "9f07d2b5e4fcbbf5",
+          "title": "第13回 こども家庭審議会 こども・若者参画及び意見反映専門委員会（令和8年3月27日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22473&ct=090080285&from=rss",
+          "date": "2026-04-01",
+          "category": "行政資料"
+        },
+        {
+          "hash": "cab289383eee30bb",
+          "title": "介護保険最新情報Vol.1490（PDF：319KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0401164300730/ksvol.1490.pdf?from=rss",
+          "date": "2026-04-01",
+          "category": "行政資料"
+        },
+        {
+          "hash": "a1ddeece02cfd1a7",
+          "title": "介護保険最新情報Vol.1489（PDF：558KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0401163928453/ksvol.1489.pdf?from=rss",
+          "date": "2026-04-01",
+          "category": "行政資料"
+        },
+        {
+          "hash": "462facf940709830",
+          "title": "介護保険最新情報Vol.1488（PDF：701KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0401161917381/ksvol.1488.pdf?from=rss",
+          "date": "2026-04-01",
+          "category": "行政資料"
+        },
+        {
+          "hash": "52c8a3c601fe58b8",
+          "title": "介護保険最新情報Vol.1486（PDF：198KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0331124858172/ksvol.1486.pdf?from=rss",
+          "date": "2026-03-31",
+          "category": "行政資料"
+        },
+        {
+          "hash": "950a6e9fe1ada5d7",
+          "title": "介護保険最新情報Vol.1485（PDF：1,035KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0327105604952/ksvol.1485.pdf?from=rss",
+          "date": "2026-03-27",
+          "category": "行政資料"
+        },
+        {
+          "hash": "dfb071bc31baa20f",
+          "title": "障害保健福祉関係主管課長会議（令和8年3月26日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22467&ct=050010010&from=rss",
+          "date": "2026-03-27",
+          "category": "行政資料"
+        },
+        {
+          "hash": "b5abaf00c86d1939",
+          "title": "令和7年度 事業主団体との協議の場（令和8年3月13日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22466&ct=090080300&from=rss",
+          "date": "2026-03-27",
+          "category": "行政資料"
+        },
+        {
+          "hash": "5de0b1fb5ef083f7",
+          "title": "第126回 社会保障審議会 医療部会（令和8年3月26日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22465&ct=010010040&from=rss",
+          "date": "2026-03-27",
+          "category": "行政資料"
+        },
+        {
+          "hash": "c7ca74b21e9a10bc",
+          "title": "地域医療構想及び医療計画等に関する検討会のとりまとめ（令和8年3月19日公表）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22457&ct=030020210&from=rss",
+          "date": "2026-03-24",
+          "category": "行政資料"
+        },
+        {
+          "hash": "f39880e35afe4c3a",
+          "title": "第46回 がん検診のあり方に関する検討会（令和8年3月23日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22460&ct=030100395&from=rss",
+          "date": "2026-03-24",
+          "category": "行政資料"
+        },
+        {
+          "hash": "848d9b96635e229a",
+          "title": "介護保険最新情報Vol.1484（PDF：1,595KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0324081416346/ksvol.1484.pdf?from=rss",
+          "date": "2026-03-24",
+          "category": "行政資料"
+        },
+        {
+          "hash": "64aed17c22dc274b",
+          "title": "第10回 健康・医療・介護情報利活用検討会 介護情報利活用ワーキンググループ（令和8年3月18日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22452&ct=020060200&from=rss",
+          "date": "2026-03-23",
+          "category": "行政資料"
+        },
+        {
+          "hash": "dbc4546302d4a63a",
+          "title": "第4回 孤独・孤立対策推進会議（令和8年3月19日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22454&ct=100100150&from=rss",
+          "date": "2026-03-23",
+          "category": "行政資料"
+        },
+        {
+          "hash": "ed323f8261a43d12",
+          "title": "介護保険最新情報Vol.1483（PDF：505KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0319122907708/ksvol.1483.pdf?from=rss",
+          "date": "2026-03-19",
+          "category": "行政資料"
+        },
+        {
+          "hash": "c10fec54f0b2b323",
+          "title": "第14回 こども家庭審議会 子ども・子育て支援等分科会（令和8年3月18日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22451&ct=090080185&from=rss",
+          "date": "2026-03-19",
+          "category": "行政資料"
+        },
+        {
+          "hash": "a146afaa58fc337d",
+          "title": "第147回 厚生科学審議会 科学技術部会（令和8年3月17日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22450&ct=010020020&from=rss",
+          "date": "2026-03-19",
+          "category": "行政資料"
+        },
+        {
+          "hash": "3cef5c6294fab68a",
+          "title": "令和7年度 第3回 こどもの事故防止に関する関係府省庁連絡会議（令和8年3月17日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22448&ct=090080140&from=rss",
+          "date": "2026-03-19",
+          "category": "行政資料"
+        },
+        {
+          "hash": "b56f4dad662b381a",
+          "title": "第211回 社会保障審議会 医療保険部会（令和8年3月19日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22447&ct=010010050&from=rss",
+          "date": "2026-03-19",
+          "category": "行政資料"
+        },
+        {
+          "hash": "e6a0fa9e704d351b",
+          "title": "介護保険最新情報Vol.1482（PDF：505KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0318130504271/ksvol.1482.pdf?from=rss",
+          "date": "2026-03-18",
+          "category": "行政資料"
+        },
+        {
+          "hash": "d7360ecae931ca29",
+          "title": "介護保険最新情報Vol.1481（PDF：634KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0316102919190/ksvol.1481.pdf?from=rss",
+          "date": "2026-03-16",
+          "category": "行政資料"
+        },
+        {
+          "hash": "48d370e91542ac6e",
+          "title": "介護保険最新情報Vol.1480（PDF：1.4MB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0316110245781/ksvol.1480.pdf?from=rss",
+          "date": "2026-03-16",
+          "category": "行政資料"
+        },
+        {
+          "hash": "0ea361d643e7db04",
+          "title": "介護保険最新情報Vol.1479（PDF：1.5MB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0316101558228/ksvol.1479.pdf?from=rss",
+          "date": "2026-03-16",
+          "category": "行政資料"
+        },
+        {
+          "hash": "db77f9ac5855efe0",
+          "title": "介護保険最新情報Vol.1478（PDF：5.0MB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0316100447369/ksvol.1478.pdf?from=rss",
+          "date": "2026-03-16",
+          "category": "行政資料"
+        },
+        {
+          "hash": "10f70d01f5730f27",
+          "title": "介護保険最新情報Vol.1477（PDF：136KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0316095840247/ksvol.1477.pdf?from=rss",
+          "date": "2026-03-16",
+          "category": "行政資料"
+        },
+        {
+          "hash": "9dd432a79a953365",
+          "title": "介護保険最新情報Vol.1476（PDF：378KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0316095050684/ksvol.1476.pdf?from=rss",
+          "date": "2026-03-16",
+          "category": "行政資料"
+        },
+        {
+          "hash": "02a0e0d5af23bc39",
+          "title": "介護保険最新情報Vol.1475（PDF：251KB）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0316104418570/ksvol.1475.pdf?from=rss",
+          "date": "2026-03-16",
+          "category": "行政資料"
+        },
+        {
+          "hash": "ba53f34e7e4d3c52",
+          "title": "第24回 匿名医療・介護情報等の提供に関する委員会（令和8年3月16日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22441&ct=010010495&from=rss",
+          "date": "2026-03-16",
+          "category": "行政資料"
+        },
+        {
+          "hash": "1052cfecf6922327",
+          "title": "第29回 健康・医療・介護情報利活用検討会 医療等情報利活用ワーキンググループ",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22429&ct=030030190&from=rss",
+          "date": "2026-03-12",
+          "category": "行政資料"
+        },
+        {
+          "hash": "997145a108a4b804",
+          "title": "第28回 健康・医療・介護情報利活用検討会 医療等情報利活用ワーキンググループ（令和8年3月12日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22428&ct=030030190&from=rss",
+          "date": "2026-03-12",
+          "category": "行政資料"
+        },
+        {
+          "hash": "a79ceddc65f154bc",
+          "title": "第185回 先進医療技術審査部会（令和8年3月12日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22433&ct=030010150&from=rss",
+          "date": "2026-03-12",
+          "category": "行政資料"
+        },
+        {
+          "hash": "0ea179982d988dc4",
+          "title": "第184回 先進医療技術審査部会（令和8年2月9日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22432&ct=030010150&from=rss",
+          "date": "2026-03-12",
+          "category": "行政資料"
+        },
+        {
+          "hash": "51f1a7258538afaa",
+          "title": "全国介護保険・高齢者保健福祉担当課長会議（令和8年3月11日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22431&ct=020010070&from=rss",
+          "date": "2026-03-12",
+          "category": "行政資料"
+        },
+        {
+          "hash": "cbb6acfb8fd9834d",
+          "title": "第648回 中央社会保険医療協議会 総会（令和8年3月11日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22423&ct=010050010&from=rss",
+          "date": "2026-03-11",
+          "category": "行政資料"
+        },
+        {
+          "hash": "cc731a1d1d98cc40",
+          "title": "令和7年度 全国高齢者医療主管課（部）長及び国民健康保険主管課（部）長並びに後期高齢者医療広域連合事務局長会議(令和8年3月11日開催)",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22426&ct=030105030&from=rss",
+          "date": "2026-03-11",
+          "category": "行政資料"
+        },
+        {
+          "hash": "f002dbd68117ec12",
+          "title": "第102回 厚生科学審議会 感染症部会（令和8年3月11日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22419&ct=010020080&from=rss",
+          "date": "2026-03-10",
+          "category": "行政資料"
+        },
+        {
+          "hash": "b29ceabf4e75b2b8",
+          "title": "令和7年度 第3回 介護保険福祉用具・住宅改修評価検討会（令和8年3月9日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22421&ct=020020060&from=rss",
+          "date": "2026-03-10",
+          "category": "行政資料"
+        },
+        {
+          "hash": "61c019e60d98b3cf",
+          "title": "第76回 厚生科学審議会 予防接種・ワクチン分科会 予防接種基本方針部会（令和8年3月9日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22420&ct=010020270&from=rss",
+          "date": "2026-03-10",
+          "category": "行政資料"
+        },
+        {
+          "hash": "6e2abab4ce397af0",
+          "title": "第23回 匿名介護情報等の提供に関する専門委員会（令和8年3月9日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22412&ct=010010255&from=rss",
+          "date": "2026-03-09",
+          "category": "行政資料"
+        },
+        {
+          "hash": "52b48bdef2f7c607",
+          "title": "第125回 社会保障審議会 医療部会（令和8年3月9日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22418&ct=010010040&from=rss",
+          "date": "2026-03-09",
+          "category": "行政資料"
+        },
+        {
+          "hash": "17a7b5757476cc7d",
+          "title": "第134回 社会保障審議会 介護保険部会（令和8年3月9日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22417&ct=010010030&from=rss",
+          "date": "2026-03-09",
+          "category": "行政資料"
         }
       ]
     }

@@ -141,9 +141,42 @@ function parseMhlwNews(html) {
   return items;
 }
 
+/** RSS/HTML内の文字参照を実体に戻す（&amp; 等。リンクのクエリ結合に必須） */
+function decodeEntities(s) {
+  return s
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'");
+}
+
+/**
+ * wam-rss: WAM NET 行政資料の新着RSS（UTF-8）
+ * 厚労省・こども家庭庁の福祉関連通知/事務連絡の集約。RSSは機械取得が前提の口。
+ * カテゴリはフィードに無いため「行政資料」で固定する。
+ */
+function parseWamRss(xml) {
+  const items = [];
+  for (const [, body] of xml.matchAll(/<item[ >]([\s\S]*?)<\/item>/g)) {
+    const title = body.match(/<title>([\s\S]*?)<\/title>/)?.[1];
+    const link = body.match(/<link>([\s\S]*?)<\/link>/)?.[1];
+    const date = body.match(/<(?:dc:date|pubDate)>([\s\S]*?)<\//)?.[1];
+    if (!title || !link) continue;
+    items.push({
+      title: decodeEntities(title.replace(/\s+/g, " ").trim()),
+      url: decodeEntities(link.trim()),
+      date: (date ?? "").trim().slice(0, 10), // 例 2026-08-14（元はISO文字列）
+      category: "行政資料",
+    });
+  }
+  return items;
+}
+
 const PARSERS = {
   "cfa-cards": parseCfaCards,
   "mhlw-news": parseMhlwNews,
+  "wam-rss": parseWamRss,
 };
 
 // ---------------------------------------------------------------------------

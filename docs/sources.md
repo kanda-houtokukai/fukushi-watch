@@ -19,7 +19,7 @@
 |---|---|---|---|---|
 | 1 | こども家庭庁 | https://www.cfa.go.jp/news | cfa-cards | 巡回中 |
 | 2 | 厚生労働省 | https://www.mhlw.go.jp/stf/new-info/ | mhlw-news | 巡回中 |
-| 3 | WAM NET | 未確定（調査で確定） | 未定（確定時に決定） | URL未確定 |
+| 3 | WAM NET | https://www.wam.go.jp/gyoseiShiryou/new_rss | wam-rss | 巡回中 |
 | 4 | 福岡県 | 未確定（調査で確定） | 未定（確定時に決定） | URL未確定 |
 | 5 | 報酬改定関連 | 未確定（調査で確定） | 未定（確定時に決定） | URL未確定 |
 
