@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>P7 デザイン比較</title>
+<link rel="stylesheet" href="common.css">
+<style>
+  .card{display:block;border:1px solid var(--rule);background:#fff;padding:18px 20px;
+    margin-top:14px;text-decoration:none;color:var(--ink)}
+  .card b{font-size:16px}
+  .card p{font-size:13px;color:var(--sub);margin-top:6px;line-height:1.7}
+</style>
+</head>
+<body>
+<div class="mocknote">デザイン比較用モック ─ 判断が終わったらこのページごと撤去します</div>
+<div class="wrap">
+  <header><div class="brand"><h1>福祉情報ウォッチ</h1></div></header>
+  <section class="day"><div class="day-row"><h2>デザイン比較<small>（3案）</small></h2></div>
+  <div class="ledger">情報の重さを紙面のレイアウトに定着させる。ラベルでなく、大きさ・余白・組みで濃淡を作る3つの思想。</div>
+  </section>
+  <a class="card" href="a.html"><b>案A: 見出しの階層</b>
+    <p>タイトルが主役のまま、文字サイズと余白の落差を最大化。高は20pxでゆったり、低は12pxで詰める。現行からの距離が最も近い深化形。</p></a>
+  <a class="card" href="b.html"><b>案B: 要約が主役</b>
+    <p>主従の逆転。行政の原題（「〜について掲載しました」）は情報量がないため、AIの要約を見出しとして組み、原題は小さな出典行へ降ろす。読み物として最速だが、思い切った判断。</p></a>
+  <a class="card" href="c.html"><b>案C: 紙面の濃淡</b>
+    <p>新聞一面型。その日の最重要1件を特大のトップ記事に立て、以降は段階的に濃度を下げ、低は背景色の索引に畳む。一瞥の情報量が最も多い。</p></a>
+  <div class="footnote">共通で入っているもの: 分野切替の0.2秒遷移（チップをタップ）・日付レールの立ち上がり・「直近7日間の記録」行（公式記録調）・情報源の種別記号（［国］実線／［独法］破線／［県］二重線）。</div>
+</div>
+</body>
+</html>

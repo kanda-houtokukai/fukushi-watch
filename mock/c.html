@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>案C: 紙面の濃淡</title>
+<link rel="stylesheet" href="common.css">
+<style>
+  /* 案C: 新聞一面型。その日の最重要1件を特大のトップ記事として組み、
+     以降は段階的に濃度を下げる。低は罫線も外した索引に畳む */
+  .c-top{padding:24px 0 26px;border-bottom:2px solid var(--ink)}
+  .c-top .kicker{font-size:12px;font-weight:700;color:var(--high);letter-spacing:.12em}
+  .c-top h3{font-size:23px;line-height:1.45;font-weight:700;margin-top:8px}
+  .c-top h3 a{color:var(--ink);text-decoration:none}
+  .c-top .sum{font-size:14.5px;color:#43403a;margin-top:12px;line-height:1.85}
+  .c-top .meta{margin-top:8px}
+  .c-top .orig{display:inline-block;font-size:13px;color:var(--link);text-decoration:none;margin-top:10px}
+  .c-hi{padding:16px 0;border-bottom:1px solid var(--rule)}
+  .c-hi h3{font-size:16.5px;line-height:1.5;font-weight:700}
+  .c-hi h3 a{color:var(--ink);text-decoration:none}
+  .c-hi .sum{font-size:13px;color:#4c4842;margin-top:6px}
+  .c-hi .meta{margin-top:4px}
+  .c-mid{padding:11px 0;border-bottom:1px solid var(--rule)}
+  .c-mid h3{font-size:13.5px;line-height:1.6;font-weight:500}
+  .c-mid h3 a{color:#3a3733;text-decoration:none}
+  .c-mid .meta{margin-top:2px;font-size:11px}
+  .c-low-wrap{margin-top:18px;background:#f6f5f1;padding:12px 14px}
+  .c-low-h{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--faint)}
+  .c-low{font-size:11.5px;color:#8a867f;line-height:1.9}
+  .c-low a{color:#8a867f}
+  .sec-h{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--sub);padding:22px 0 4px}
+  .sec-h.hi{color:var(--high)}
+</style>
+</head>
+<body>
+<div id="shell"></div>
+<script src="data.js"></script>
+<script src="shared.js"></script>
+<script>
+renderShell("案C: 紙面の濃淡");
+const { items } = window.MOCK;
+const esc = window.mockEsc;
+const hi = items.filter(i=>i.imp==="高"), mid = items.filter(i=>i.imp==="中"), low = items.filter(i=>i.imp==="低");
+const topItem = hi[0], rest = hi.slice(1);
+document.getElementById("list").innerHTML = `
+  <article class="it c-top" data-fields="${topItem.fields.join(",")}">
+    <div class="kicker">◆ 本日の最重要</div>
+    <h3><a href="#">${esc(topItem.title)}</a></h3>
+    <div class="sum">${esc(topItem.sum)}</div>
+    <div class="meta">${window.srcMark(topItem)} ・ ${esc(topItem.date)}${window.fieldTags(topItem)}</div>
+    <a class="orig" href="#">原本を確認する →</a>
+  </article>
+  <div class="sec-h hi">◆ 高 ── 対応・確認を</div>
+  ${rest.map(it=>`
+  <article class="it c-hi" data-fields="${it.fields.join(",")}">
+    <h3><a href="#">${esc(it.title)}</a></h3>
+    <div class="sum">${esc(it.sum)}</div>
+    <div class="meta">${window.srcMark(it)} ・ ${esc(it.date)}${window.fieldTags(it)}</div>
+  </article>`).join("")}
+  <div class="sec-h">◇ 中 ── 把握を</div>
+  ${mid.map(it=>`
+  <article class="it c-mid" data-fields="${it.fields.join(",")}">
+    <h3><a href="#">${esc(it.title)}</a></h3>
+    <div class="meta">${window.srcMark(it)} ・ ${esc(it.date)}${window.fieldTags(it)}</div>
+  </article>`).join("")}
+  <div class="c-low-wrap it" data-fields="">
+    <div class="c-low-h">◊ 低 ── 参考（${low.length}件）</div>
+    ${low.map(it=>`
+    <div class="c-low it" data-fields="${it.fields.join(",")}">・<a href="#">${esc(it.title)}</a> <span style="color:#b5b1aa">${window.srcMark(it)}</span></div>`).join("")}
+  </div>
+`;
+</script>
+</body>
+</html>
