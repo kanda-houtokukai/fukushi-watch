@@ -77,7 +77,7 @@ function lowLine(it) {
   return `
 <div style="font-family:${FONT};font-size:13px;color:#6b675f;line-height:1.9;padding-top:6px;">・
   <a href="${esc(it.url)}" style="color:#6b675f;text-decoration:underline;">${esc(it.title)}</a>
-  <span style="color:${FAINT};">［${esc(it.category)}］</span>
+  <span style="color:${FAINT};">［${esc(it.category)}・${esc(it.source)}］</span>
 </div>`;
 }
 
