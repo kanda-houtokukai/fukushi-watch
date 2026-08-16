@@ -1,0 +1,10 @@
+{
+  "name": "fukushi-watch",
+  "private": true,
+  "version": "0.1.0",
+  "description": "行政の福祉関連情報の監視ボット",
+  "type": "module",
+  "scripts": {
+    "crawl": "node scripts/crawl.js"
+  }
+}
