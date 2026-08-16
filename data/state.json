@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-08-16T10:45:03.882Z",
+      "lastCrawled": "2026-08-16T10:56:48.043Z",
       "items": [
         {
           "hash": "5d9291de1e028a38",
@@ -72,6 +72,3511 @@
           "url": "https://www.cfa.go.jp/procurement/portal",
           "date": "2026-08-06",
           "category": "調達情報"
+        }
+      ]
+    },
+    "厚生労働省": {
+      "lastCrawled": "2026-08-16T10:56:48.278Z",
+      "items": [
+        {
+          "hash": "c63c47f51f7662d8",
+          "title": "第40回キャリアコンサルタント登録制度等に関する検討会 更新講習（技能講習）作業部会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75340.html",
+          "date": "2026-08-14",
+          "category": "報道発表"
+        },
+        {
+          "hash": "8208b3178df9c227",
+          "title": "薬事審議会 指定薬物部会を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74927.html",
+          "date": "2026-08-14",
+          "category": "審議会等"
+        },
+        {
+          "hash": "d20ff5bdf02cb1e9",
+          "title": "新型コロナウイルス感染症に関する報道発表資料を更新しました",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00485.html",
+          "date": "2026-08-14",
+          "category": "報道発表"
+        },
+        {
+          "hash": "3cca143f5a29604c",
+          "title": "新型コロナウイルス感染症の定点当たり報告数の推移を更新しました",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/houkokusuunosuii.html",
+          "date": "2026-08-14",
+          "category": "その他"
+        },
+        {
+          "hash": "44a050f1da516836",
+          "title": "令和８年８月14日付幹部名簿",
+          "url": "https://www.mhlw.go.jp/kouseiroudoushou/kanbumeibo/index.html",
+          "date": "2026-08-14",
+          "category": "その他"
+        },
+        {
+          "hash": "5f51187fd43d75bf",
+          "title": "令和８年熊本地震により被災した学生・生徒の皆様へ",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/jakunen/75497.html",
+          "date": "2026-08-14",
+          "category": "その他"
+        },
+        {
+          "hash": "f51a7747ae1af5eb",
+          "title": "定期の予防接種実施者数",
+          "url": "https://www.mhlw.go.jp/topics/bcg/other/5.html",
+          "date": "2026-08-14",
+          "category": "政策分野"
+        },
+        {
+          "hash": "d077a8e991cf0a5f",
+          "title": "薬事工業生産動態統計令和8年5月分月報について",
+          "url": "https://www.mhlw.go.jp/toukei/list/105-1c.html",
+          "date": "2026-08-14",
+          "category": "統計情報"
+        },
+        {
+          "hash": "b57d57485b7fe6c6",
+          "title": "採用情報（期間業務職員（医薬局）募集情報）",
+          "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-iyakukyoku02-ippangyouseijimuhojo.html",
+          "date": "2026-08-14",
+          "category": "採用情報"
+        },
+        {
+          "hash": "a61306f28584f7d2",
+          "title": "輸入食品に対する検査命令の実施 （コートジボワール産ごまの種子）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75455.html",
+          "date": "2026-08-13",
+          "category": "その他"
+        },
+        {
+          "hash": "75060f781c747084",
+          "title": "薬事審議会 医療機器・再生医療等製品安全対策部会を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75293.html",
+          "date": "2026-08-13",
+          "category": "審議会等"
+        },
+        {
+          "hash": "adae4cecdd19884c",
+          "title": "第78回ハンセン病元患者家族補償金認定審査会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75507.html",
+          "date": "2026-08-13",
+          "category": "審議会等"
+        },
+        {
+          "hash": "7a7717f3a9295ffa",
+          "title": "労働基準監督官採用試験広報HP",
+          "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/kantokukan.html",
+          "date": "2026-08-12",
+          "category": "採用情報"
+        },
+        {
+          "hash": "47015b6da579f644",
+          "title": "医薬品等安全性関連情報",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iyakuhin/iyaku/index.html",
+          "date": "2026-08-12",
+          "category": "政策分野"
+        },
+        {
+          "hash": "59d7370130eaf42a",
+          "title": "食品中の放射性物質の検査結果について（１５０７報）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75302.html",
+          "date": "2026-08-12",
+          "category": "報道発表"
+        },
+        {
+          "hash": "1765bb74bc0ecaa2",
+          "title": "（開催案内）第119回厚生科学審議会 再生医療等評価部会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74653.html",
+          "date": "2026-08-12",
+          "category": "審議会等"
+        },
+        {
+          "hash": "def2e9cc7cbecc32",
+          "title": "落札者等の公示落札者等の公示（「令和８年度歯科医師臨床研修におけるオンライン届出システムの構築に係る事業一式」他８件）",
+          "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/e-wto-rakusatu/newpage_10456.html",
+          "date": "2026-08-12",
+          "category": "その他"
+        },
+        {
+          "hash": "63750f74b9678c99",
+          "title": "第５回 医療放射線の適正管理に関する検討会（議事録）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75451.html",
+          "date": "2026-08-12",
+          "category": "その他"
+        },
+        {
+          "hash": "d65df5f0c1303d30",
+          "title": "薬事審議会 医療機器・体外診断薬部会を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75394.html",
+          "date": "2026-08-10",
+          "category": "審議会等"
+        },
+        {
+          "hash": "42a57002c91097ac",
+          "title": "令和８年7月24日 第112回厚生科学審議会予防接種・ワクチン分科会副反応検討部会、令和8年度第4回薬事審議会医薬品等安全対策部会安全対策調査会（合同開催）議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75356.html",
+          "date": "2026-08-10",
+          "category": "その他"
+        },
+        {
+          "hash": "8562b560734d7fcb",
+          "title": "WEBマガジン「厚生労働」（CLOSE UP更新）",
+          "url": "https://www.mhlw.go.jp/web_magazine/",
+          "date": "2026-08-10",
+          "category": "その他"
+        },
+        {
+          "hash": "9e154ba904b4a3a8",
+          "title": "第９回 がんゲノム医療中核拠点病院等の指定要件に関するワーキンググループ（議事録）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75424.html",
+          "date": "2026-08-10",
+          "category": "審議会等"
+        },
+        {
+          "hash": "43fb674842fd610c",
+          "title": "認知症普及啓発ドキュメンタリー映像『one day of life』完成披露上映会を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_260810_00013.html",
+          "date": "2026-08-07",
+          "category": "その他"
+        },
+        {
+          "hash": "4a7cd36ce927b83c",
+          "title": "第210回労働政策審議会労働条件分科会 議事録（2026年7月14日）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75380.html",
+          "date": "2026-08-07",
+          "category": "審議会等"
+        },
+        {
+          "hash": "2b6a24d069135d59",
+          "title": "厚生労働省栄養系技官採用サイト",
+          "url": "https://www.mhlw.go.jp/general/saiyo/eiyoukei/index.html",
+          "date": "2026-08-07",
+          "category": "採用情報"
+        },
+        {
+          "hash": "245c480d87984a8c",
+          "title": "第29回精神保健福祉士国家試験の施行について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75291.html",
+          "date": "2026-08-07",
+          "category": "報道発表"
+        },
+        {
+          "hash": "460ab84c2b41ef04",
+          "title": "第39回社会福祉士国家試験の施行について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75098.html",
+          "date": "2026-08-07",
+          "category": "報道発表"
+        },
+        {
+          "hash": "dd1cf17b2b307b66",
+          "title": "令和７年度医薬品販売制度実態把握調査結果について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75385.html",
+          "date": "2026-08-07",
+          "category": "その他"
+        },
+        {
+          "hash": "431bf28d04390ef8",
+          "title": "全国戦没者追悼式の開催（８／15（土））",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75283.html",
+          "date": "2026-08-07",
+          "category": "報道発表"
+        },
+        {
+          "hash": "6cfd6089b6fb55de",
+          "title": "令和７年度「厚生年金保険・国民年金の収支決算の概要」を公表します",
+          "url": "https://www.mhlw.go.jp/stf/houdou_kouhou/newpage_00007.html",
+          "date": "2026-08-07",
+          "category": "報道発表"
+        },
+        {
+          "hash": "75dc4669e01474e8",
+          "title": "戦没者慰霊事業の実施状況（令和８年度）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75362.html",
+          "date": "2026-08-07",
+          "category": "報道発表"
+        },
+        {
+          "hash": "68551a81e4fbd80f",
+          "title": "病院報告（令和８(2026)年5月分概数）",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/byouin/m26/05.html",
+          "date": "2026-08-07",
+          "category": "統計情報"
+        },
+        {
+          "hash": "9158d8a99d6a8cf7",
+          "title": "令和７年「労働安全衛生調査（実態調査）」の結果を公表します",
+          "url": "https://www.mhlw.go.jp/toukei/list/r07-46-50b.html",
+          "date": "2026-08-07",
+          "category": "統計情報"
+        },
+        {
+          "hash": "5c2eeca2c692c3fc",
+          "title": "令和８(2026)年度人口動態統計特殊報告 「日本における人口動態（昭和30～令和６(1955～2024)年）-外国人を含む人口動態統計-」の概況",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/tokusyu/gaikoku26/index.html",
+          "date": "2026-08-07",
+          "category": "統計情報"
+        },
+        {
+          "hash": "ebccc2814810b4fd",
+          "title": "ロシア連邦政府等から提供された抑留者に関する資料を日本側の資料と照合し、抑留中に死亡した者の個人を特定しました",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75088.html",
+          "date": "2026-08-07",
+          "category": "報道発表"
+        },
+        {
+          "hash": "5b97a565a10c1c43",
+          "title": "令和８年度第２回「団体等検定制度についての出張相談会」を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74944.html",
+          "date": "2026-08-07",
+          "category": "報道発表"
+        },
+        {
+          "hash": "4982912fda3455c0",
+          "title": "ロシア連邦政府等から提供された抑留者に関する資料について（資料の一覧や死亡者名簿が閲覧できます）",
+          "url": "https://www.mhlw.go.jp/topics/bukyoku/syakai/soren/index.html",
+          "date": "2026-08-07",
+          "category": "政策分野"
+        },
+        {
+          "hash": "616159579a35e41f",
+          "title": "第12回厚生科学審議会食品衛生監視部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi/2024giji_00017.html",
+          "date": "2026-08-07",
+          "category": "審議会等"
+        },
+        {
+          "hash": "c0fecda3b25cd997",
+          "title": "UHCについて",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/kokusai/who/newpage_who_uhc.html",
+          "date": "2026-08-07",
+          "category": "政策分野"
+        },
+        {
+          "hash": "930bb76e9f5a03a3",
+          "title": "マイジョブ・カードに係る改修及び運用保守業務一式（令和９年度分）",
+          "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-iken/newpage_10475.html",
+          "date": "2026-08-07",
+          "category": "その他"
+        },
+        {
+          "hash": "240f2eacd9af5c27",
+          "title": "新型インフルエンザワクチン原液の一部製剤化",
+          "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/b-wto-zuikei/newpage_10466.html",
+          "date": "2026-08-07",
+          "category": "その他"
+        },
+        {
+          "hash": "0e1e6100fe5b8f80",
+          "title": "新型インフルエンザワクチン原液（免疫増強剤混合用Ｈ５Ｎ１株）の買上",
+          "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/b-wto-zuikei/newpage_10465.html",
+          "date": "2026-08-07",
+          "category": "その他"
+        },
+        {
+          "hash": "82366b0bda83bf39",
+          "title": "令和8年度 厚生労働科学研究費補助金公募要項（3次）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75086.html",
+          "date": "2026-08-07",
+          "category": "政策分野"
+        },
+        {
+          "hash": "0c5d98bd4511b133",
+          "title": "第76回労働政策審議会職業安定分科会雇用対策基本問題部会建設労働専門委員会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75319.html",
+          "date": "2026-08-06",
+          "category": "審議会等"
+        },
+        {
+          "hash": "189b01cafce7e23d",
+          "title": "特定一般教育訓練の指定講座を公表しました（令和８年10月１日付け指定）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75309.html",
+          "date": "2026-08-06",
+          "category": "報道発表"
+        },
+        {
+          "hash": "43d4fb6d1d7fc80a",
+          "title": "専門実践教育訓練の指定講座を公表しました（令和８年10 月１日付け指定）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75305.html",
+          "date": "2026-08-06",
+          "category": "報道発表"
+        },
+        {
+          "hash": "9b172ad45ac484de",
+          "title": "労働基準監督署等が自動車運転者を使用する事業場に対して行った令和７年の監督指導、送検等の状況を公表します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75192.html",
+          "date": "2026-08-06",
+          "category": "報道発表"
+        },
+        {
+          "hash": "ec39285e4120237d",
+          "title": "第124回コーデックス連絡協議会 (開催案内）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_70031.html",
+          "date": "2026-08-06",
+          "category": "報道発表"
+        },
+        {
+          "hash": "93bd333585eafa9b",
+          "title": "「令和８年熊本地震」で多大な被害を受けた地域での 労働保険料等の申告・納期限等の延長を行います",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75332.html",
+          "date": "2026-08-05",
+          "category": "報道発表"
+        },
+        {
+          "hash": "4a2dd3d89430ab4f",
+          "title": "第67回厚生科学審議会疾病対策部会指定難病検討委員会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75317.html",
+          "date": "2026-08-05",
+          "category": "審議会等"
+        },
+        {
+          "hash": "e8cacc492c27072b",
+          "title": "第６回労働基準法における「労働者」に関する研究会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74078.html",
+          "date": "2026-08-05",
+          "category": "審議会等"
+        },
+        {
+          "hash": "db1a7567f20897bc",
+          "title": "第93回労働政策審議会勤労者生活分科会中小企業退職金共済部会議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75008.html",
+          "date": "2026-08-05",
+          "category": "審議会等"
+        },
+        {
+          "hash": "0b7ab261acdfd29b",
+          "title": "薬事審議会 要指導・一般用医薬品部会を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75007.html",
+          "date": "2026-08-05",
+          "category": "審議会等"
+        },
+        {
+          "hash": "04fc935950105d16",
+          "title": "映画『平行と垂直』とタイアップします",
+          "url": "https://www.mhlw.go.jp/stf/houdou/tie-up_heikoutosuichoku.html",
+          "date": "2026-08-05",
+          "category": "報道発表"
+        },
+        {
+          "hash": "5acaf6c976310535",
+          "title": "第７回 医療扶助・健康管理支援等に関する検討会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75308.html",
+          "date": "2026-08-05",
+          "category": "審議会等"
+        },
+        {
+          "hash": "c7946f18005f08ba",
+          "title": "「障害福祉関係手続共通化システムの改修・運用保守・移行支援【フェーズ２】一式（令和９年度）」に係る意見招請の公示について",
+          "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-iken/newpage_10467.html",
+          "date": "2026-08-05",
+          "category": "その他"
+        },
+        {
+          "hash": "874ea94d2901cc77",
+          "title": "公募公示（国立吉備高原職業リハビリテーションセンターにおける自動販売機設置・運営業務）",
+          "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/e-oth-kikakukoubo/newpage_10464.html",
+          "date": "2026-08-05",
+          "category": "その他"
+        },
+        {
+          "hash": "74c7dc53e291cc70",
+          "title": "被保護者調査（令和８年５月分概数）",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/hihogosya/m2026/05.html",
+          "date": "2026-08-05",
+          "category": "統計情報"
+        },
+        {
+          "hash": "929f2b1515d61d03",
+          "title": "人事労務マガジン 定例第190号",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75242.html",
+          "date": "2026-08-05",
+          "category": "その他"
+        },
+        {
+          "hash": "c9c2e7b3fc146e59",
+          "title": "毎月勤労統計調査ー2026（令和8）年６月分結果速報",
+          "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/monthly/r08/2606p/2606p.html",
+          "date": "2026-08-05",
+          "category": "統計情報"
+        },
+        {
+          "hash": "00b5cef352806805",
+          "title": "令和８年８月４日付大臣会見概要",
+          "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00962.html",
+          "date": "2026-08-04",
+          "category": "大臣会見等"
+        },
+        {
+          "hash": "2c12d457027d293c",
+          "title": "事業場における労働者の健康保持増進の在り方に関する検討会 第４回資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75295.html",
+          "date": "2026-08-04",
+          "category": "審議会等"
+        },
+        {
+          "hash": "f880ba2f1508dfc3",
+          "title": "第３回ゲノム編集技術等を用いたヒト受精胚等の取扱い等に関する合同会議（第11回ゲノム編集技術等を用いたヒト受精胚等の臨床利用のあり方に関する専門委員会、第24回ヒト受精胚を用いる遺伝性・先天性疾患研究に関する専門委員会） 資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75232.html",
+          "date": "2026-08-04",
+          "category": "審議会等"
+        },
+        {
+          "hash": "0b613925c328d352",
+          "title": "「人口動態統計月報（概数）」令和８（2026）年３月分",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/m2026/03.html",
+          "date": "2026-08-04",
+          "category": "統計情報"
+        },
+        {
+          "hash": "ce2e75db60e5c491",
+          "title": "第３７回肝炎対策推進協議会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75244.html",
+          "date": "2026-08-04",
+          "category": "審議会等"
+        },
+        {
+          "hash": "76ca8450535e50b2",
+          "title": "食品中の放射性物質の検査結果について（１５０６報）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75055.html",
+          "date": "2026-08-04",
+          "category": "報道発表"
+        },
+        {
+          "hash": "4c052fe1e0341f45",
+          "title": "労災レセプト電算処理システム マスタコード",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/rousai/rezeptsystem/index.html",
+          "date": "2026-08-04",
+          "category": "政策分野"
+        },
+        {
+          "hash": "c9d4cfa4d87f14e2",
+          "title": "第130回労働政策審議会労働条件分科会労災保険部会資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75267.html",
+          "date": "2026-08-04",
+          "category": "審議会等"
+        },
+        {
+          "hash": "54795b82fdc9cd28",
+          "title": "令和8年度の広報の取組について（自殺対策）",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/jisatsu/r8_torikumi.html",
+          "date": "2026-08-04",
+          "category": "トピックス"
+        },
+        {
+          "hash": "effd17d23e87976f",
+          "title": "最低賃金に関するデータ・統計",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/toukei_00001.html",
+          "date": "2026-08-04",
+          "category": "その他"
+        },
+        {
+          "hash": "2175cb11c6fb9b32",
+          "title": "2028（令和10）年度「技能五輪全国大会」を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74390.html",
+          "date": "2026-08-04",
+          "category": "報道発表"
+        },
+        {
+          "hash": "19c08a7a21d0a425",
+          "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75243.html",
+          "date": "2026-08-03",
+          "category": "報道発表"
+        },
+        {
+          "hash": "582e979432db9d84",
+          "title": "第３７回肝炎対策推進協議会（オンライン開催）（資料）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75241.html",
+          "date": "2026-08-03",
+          "category": "審議会等"
+        },
+        {
+          "hash": "d2e5d9a752f6b7db",
+          "title": "第１回厚生労働省ヘルスケアＡＸ・ＤＸ推進本部の開催案内",
+          "url": "https://www.mhlw.go.jp/stf/shingi/0001210262_00099.html",
+          "date": "2026-08-03",
+          "category": "報道発表"
+        },
+        {
+          "hash": "b2e73f20fa043f1e",
+          "title": "原子力災害対策特別措置法第20条第２項の規定に基づく食品の出荷制限の解除",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75150.html",
+          "date": "2026-08-03",
+          "category": "その他"
+        },
+        {
+          "hash": "a0c29bf24c2ecfda",
+          "title": "令和７(2025)年労働争議統計調査の概況",
+          "url": "https://www.mhlw.go.jp/toukei/list/14-r07.html",
+          "date": "2026-08-03",
+          "category": "統計情報"
+        },
+        {
+          "hash": "096645ffb6be7163",
+          "title": "令和8年度健康増進普及月間記念イベントを開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74941.html",
+          "date": "2026-08-03",
+          "category": "報道発表"
+        },
+        {
+          "hash": "f2aeb7363283d789",
+          "title": "令和８年度「輝くテレワーク賞」の募集を開始します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74936.html",
+          "date": "2026-08-03",
+          "category": "報道発表"
+        },
+        {
+          "hash": "cec81c4215399ce7",
+          "title": "戦没者慰霊事業のお知らせ（令和８年８月実施分）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74673.html",
+          "date": "2026-08-03",
+          "category": "報道発表"
+        },
+        {
+          "hash": "fd26fca6d2b5de68",
+          "title": "「第21回若年者ものづくり競技大会」の入賞者が決定しました",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74526.html",
+          "date": "2026-08-03",
+          "category": "報道発表"
+        },
+        {
+          "hash": "f8950906bd46d8e0",
+          "title": "資格・試験情報",
+          "url": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/index.html",
+          "date": "2026-08-03",
+          "category": "その他"
+        },
+        {
+          "hash": "dd8a3add326577b7",
+          "title": "「若年層における仕事と育児の両立に関する意識調査（速報）」を公表しました",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kodomo/shokuba_kosodate/jigyou_ryouritsu/topics/tp100618-1_00008.html",
+          "date": "2026-08-03",
+          "category": "トピックス"
+        },
+        {
+          "hash": "e75c4538c7dbf506",
+          "title": "WEBマガジン「厚生労働」（特集「戦没者慰霊」ほか）",
+          "url": "https://www.mhlw.go.jp/web_magazine/",
+          "date": "2026-08-03",
+          "category": "その他"
+        },
+        {
+          "hash": "03dd46e01806c9d4",
+          "title": "採用情報（任期付職員（感染症対策課 課長補佐又は主査（感染症対策担当））募集情報）",
+          "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/ninkituki/ninki-kansensyoutaisakutantou.html",
+          "date": "2026-08-03",
+          "category": "採用情報"
+        },
+        {
+          "hash": "7f37b655abbc093e",
+          "title": "独立行政法人役員（理事長・監事）の任命理由等（公募によらない場合）",
+          "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/dokuhou_yakuin_riyu.html",
+          "date": "2026-08-03",
+          "category": "採用情報"
+        },
+        {
+          "hash": "5f39245d13e86d45",
+          "title": "報道発表資料 2026年8月",
+          "url": "https://www.mhlw.go.jp/stf/houdou/houdou_list_202608.html",
+          "date": "2026-08-01",
+          "category": "報道発表"
+        },
+        {
+          "hash": "256d66ec5b0e97eb",
+          "title": "雇用保険の基本手当日額の変更",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74837.html",
+          "date": "2026-07-31",
+          "category": "報道発表"
+        },
+        {
+          "hash": "6df2d23997f08fb7",
+          "title": "令和８年７月３１日付大臣会見概要",
+          "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00961.html",
+          "date": "2026-07-31",
+          "category": "大臣会見等"
+        },
+        {
+          "hash": "ede131290d06aff0",
+          "title": "平成30年食品衛生法改正の施行後５年を目途とした検討のとりまとめ",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75197.html",
+          "date": "2026-07-31",
+          "category": "審議会等"
+        },
+        {
+          "hash": "0a7e172dc33ca404",
+          "title": "令和８年８月１日からの基本手当日額等の適用について",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000160564_00050.html",
+          "date": "2026-07-31",
+          "category": "その他"
+        },
+        {
+          "hash": "f853c9a700087ac5",
+          "title": "労働基準関係法令違反に係る公表事案",
+          "url": "https://www.mhlw.go.jp/kinkyu/151106.html",
+          "date": "2026-07-31",
+          "category": "政策分野"
+        },
+        {
+          "hash": "d5fc8ce177a2d2ef",
+          "title": "令和８年度 第１回化学物質管理に係る専門家検討会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75199.html",
+          "date": "2026-07-31",
+          "category": "審議会等"
+        },
+        {
+          "hash": "e3f21a532b41dbd1",
+          "title": "令和７年度雇用均等基本調査",
+          "url": "https://www.mhlw.go.jp/toukei/list/71-r07.html",
+          "date": "2026-07-31",
+          "category": "統計情報"
+        },
+        {
+          "hash": "db742abc972666ab",
+          "title": "令和８年度第４回化学物質管理に係る専門家検討会を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75092.html",
+          "date": "2026-07-31",
+          "category": "審議会等"
+        },
+        {
+          "hash": "ee1fe4c43244c099",
+          "title": "労働災害発生状況",
+          "url": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei11/rousai-hassei/index.html",
+          "date": "2026-07-31",
+          "category": "統計情報"
+        },
+        {
+          "hash": "9a897b2e03eba4c4",
+          "title": "再生医療等の安全性の確保等に関する法律に基づく改善命令等について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74981.html",
+          "date": "2026-07-31",
+          "category": "報道発表"
+        },
+        {
+          "hash": "744ee6476740bcb8",
+          "title": "「高齢者におけるポリファーマシー対策の普及啓発資材について」の通知発出について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74909.html",
+          "date": "2026-07-31",
+          "category": "報道発表"
+        },
+        {
+          "hash": "a86d91dcdafc9436",
+          "title": "医療施設動態調査（令和8(2026)年5月末概数）",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/iryosd/m26/is2605.html",
+          "date": "2026-07-31",
+          "category": "統計情報"
+        },
+        {
+          "hash": "f8d7e056d43b357c",
+          "title": "令和８年 民間主要企業春季賃上げ要求・妥結状況を公表します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74889.html",
+          "date": "2026-07-31",
+          "category": "その他"
+        },
+        {
+          "hash": "eb4c0b54f68fc680",
+          "title": "令和８年度第７回「石綿に係る疾病の業務上外に関する検討会」を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74567.html",
+          "date": "2026-07-31",
+          "category": "審議会等"
+        },
+        {
+          "hash": "293686e438100ec2",
+          "title": "令和７年度「能力開発基本調査」の結果を公表します",
+          "url": "https://www.mhlw.go.jp/stf/houdou/newpage_00233.html",
+          "date": "2026-07-31",
+          "category": "報道発表"
+        },
+        {
+          "hash": "8c18d210db8713ac",
+          "title": "緊急避妊薬のスイッチOTC化に係る環境整備のための調査事業 結果報告書",
+          "url": "https://www.mhlw.go.jp/stf/newpage_40123.html",
+          "date": "2026-07-31",
+          "category": "その他"
+        },
+        {
+          "hash": "88e2039826d31c1e",
+          "title": "強制抑留の実態調査等に関する取組状況（令和７年度）を公表しました",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75034.html",
+          "date": "2026-07-31",
+          "category": "報道発表"
+        },
+        {
+          "hash": "ad7b58ab99c1da53",
+          "title": "第４回ＯＴＣ類似薬の保険給付の見直しの実施に向けた技術的検討会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75104.html",
+          "date": "2026-07-31",
+          "category": "審議会等"
+        },
+        {
+          "hash": "d2834cc3d65ef72e",
+          "title": "毎月勤労統計調査［地方調査］－令和８年２月分結果概要",
+          "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/monthly/r08/0802/index.html",
+          "date": "2026-07-31",
+          "category": "統計情報"
+        },
+        {
+          "hash": "034cb23ce96b2e04",
+          "title": "「共育（トモイク）プロジェクト」リーフレット",
+          "url": "https://www.mhlw.go.jp/bunya/koyoukintou/pamphlet/10.html",
+          "date": "2026-07-31",
+          "category": "政策分野"
+        },
+        {
+          "hash": "70356d8e877fe471",
+          "title": "父親の仕事と育児両立読本～ワーク・ライフ・バランス ガイド～",
+          "url": "https://www.mhlw.go.jp/bunya/koyoukintou/pamphlet/09.html",
+          "date": "2026-07-31",
+          "category": "政策分野"
+        },
+        {
+          "hash": "af46cd6735a670d1",
+          "title": "国会会議録について",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/kaigiroku/index.html",
+          "date": "2026-07-31",
+          "category": "その他"
+        },
+        {
+          "hash": "534594f2fc47d479",
+          "title": "臓器移植実施体制推進支援事業について",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/ishoku/zissitaisei_00001.html",
+          "date": "2026-07-31",
+          "category": "その他"
+        },
+        {
+          "hash": "887b35ab4cb1e5ae",
+          "title": "生涯現役地域づくり環境整備事業の実施地域の募集について～令和８年度第２次募集～",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/koureisha/koureisha-koyou_00031.html",
+          "date": "2026-07-31",
+          "category": "その他"
+        },
+        {
+          "hash": "e514ad40ef38971e",
+          "title": "一般職業紹介状況(令和8年6月分)について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74767.html",
+          "date": "2026-07-31",
+          "category": "報道発表"
+        },
+        {
+          "hash": "234dfe8ad794af1e",
+          "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75157.html",
+          "date": "2026-07-30",
+          "category": "報道発表"
+        },
+        {
+          "hash": "1f02685b0c1bb05b",
+          "title": "令和８年度第３回医薬品等安全対策部会安全対策調査会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75120.html",
+          "date": "2026-07-30",
+          "category": "その他"
+        },
+        {
+          "hash": "bfd68d55e73764c0",
+          "title": "第24回 医薬品等行政評価・監視委員会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75135.html",
+          "date": "2026-07-30",
+          "category": "審議会等"
+        },
+        {
+          "hash": "3e384e4e31db06c4",
+          "title": "令和８年熊本地震について 倒産等による未払賃金の立替払制度について、申請手続の簡略化を行っています",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/16849_00002.html",
+          "date": "2026-07-30",
+          "category": "その他"
+        },
+        {
+          "hash": "0414c8a002264e0e",
+          "title": "先進医療会議の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74733.html",
+          "date": "2026-07-30",
+          "category": "審議会等"
+        },
+        {
+          "hash": "a4577a68c573403f",
+          "title": "無歯科医地区等調査（令和７年度）の結果について",
+          "url": "https://www.mhlw.go.jp/toukei/list/77-16.html",
+          "date": "2026-07-30",
+          "category": "統計情報"
+        },
+        {
+          "hash": "4a7318706b335542",
+          "title": "無医地区等調査（令和７年度）の結果について",
+          "url": "https://www.mhlw.go.jp/toukei/list/76-16.html",
+          "date": "2026-07-30",
+          "category": "統計情報"
+        },
+        {
+          "hash": "98920fb30c6603fe",
+          "title": "第１回毎月勤労統計調査の調査手法の検討等に関するワーキンググループ資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74499.html",
+          "date": "2026-07-30",
+          "category": "その他"
+        },
+        {
+          "hash": "d7ba6fc6058bb7ef",
+          "title": "検体採取の結果について（５月）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74428.html",
+          "date": "2026-07-30",
+          "category": "トピックス"
+        },
+        {
+          "hash": "3c808bc84034921e",
+          "title": "オンライン・ハローワークシステム（第２期）操作用端末賃貸借及び端末保守一式",
+          "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-iken/newpage_10460.html",
+          "date": "2026-07-30",
+          "category": "その他"
+        },
+        {
+          "hash": "33df3e17d5f9e488",
+          "title": "説明会情報の更新（総合職（数理・デジタル系））",
+          "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/suuri.html",
+          "date": "2026-07-30",
+          "category": "採用情報"
+        },
+        {
+          "hash": "eb68a7e55f9dabe4",
+          "title": "第15回医師養成過程を通じた医師の偏在対策等に関する検討会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75085.html",
+          "date": "2026-07-30",
+          "category": "審議会等"
+        },
+        {
+          "hash": "8477c337e0580b29",
+          "title": "令和８年熊本地震を受けた食品表示法に基づく食品表示基準の運用について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75067.html",
+          "date": "2026-07-29",
+          "category": "その他"
+        },
+        {
+          "hash": "fbafccea2cd8705f",
+          "title": "第41回医療ニーズの高い医療機器等の早期導入に関する検討会 配付資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75051.html",
+          "date": "2026-07-29",
+          "category": "審議会等"
+        },
+        {
+          "hash": "285aba7b95ef671a",
+          "title": "第11回厚生科学審議会食品衛生監視部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi/2024giji_00015.html",
+          "date": "2026-07-29",
+          "category": "審議会等"
+        },
+        {
+          "hash": "c3cf8e50b86237e1",
+          "title": "第３回ゲノム編集技術等を用いたヒト受精胚等の取扱い等に関する合同会議（第11回ゲノム編集技術等を用いたヒト受精胚等の臨床利用のあり方に関する専門委員会、第24回ヒト受精胚を用いる遺伝性・先天性疾患研究に関する専門委員会）の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74969.html",
+          "date": "2026-07-29",
+          "category": "審議会等"
+        },
+        {
+          "hash": "3950525048783cba",
+          "title": "第３回ゲノム編集技術等を用いたヒト受精胚等の取扱い等に関する合同会議（第11回ゲノム編集技術等を用いたヒト受精胚等の臨床利用のあり方に関する専門委員会、第24回ヒト受精胚を用いる遺伝性・先天性疾患研究に関する専門委員会）の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74951.html",
+          "date": "2026-07-29",
+          "category": "審議会等"
+        },
+        {
+          "hash": "24b8504821bec9e6",
+          "title": "介護給付費等実態統計月報（令和８（2026）年４月審査分）",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/kaigo/kyufu/2026/04.html",
+          "date": "2026-07-29",
+          "category": "統計情報"
+        },
+        {
+          "hash": "836c5794fbf0be2d",
+          "title": "第149回脳死下での臓器提供事例に係る検証会議を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74655.html",
+          "date": "2026-07-29",
+          "category": "審議会等"
+        },
+        {
+          "hash": "93cd570424b49f46",
+          "title": "採用情報（任期付職員（国際課 海外広報専門官（情報分析担当））募集情報）",
+          "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/ninkituki/ninki-kaigaikouhousenmonkan.html",
+          "date": "2026-07-29",
+          "category": "採用情報"
+        },
+        {
+          "hash": "3926c57ac8f793ae",
+          "title": "第59回社会保障審議会生活保護基準部会 資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74872.html",
+          "date": "2026-07-29",
+          "category": "審議会等"
+        },
+        {
+          "hash": "8601e3b298f6c91d",
+          "title": "雇用・労働に関する特例措置や支援制度（令和８年熊本地震について）",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000134526_00005.html",
+          "date": "2026-07-29",
+          "category": "その他"
+        },
+        {
+          "hash": "a16f6354173734bf",
+          "title": "有料老人ホームにおける望ましいサービス提供のあり方に関する検討会（第８回）の資料について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74992.html",
+          "date": "2026-07-29",
+          "category": "審議会等"
+        },
+        {
+          "hash": "11a93ce85b5c3999",
+          "title": "中央最低賃金審議会 (中央最低賃金審議会)",
+          "url": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127939.html",
+          "date": "2026-07-29",
+          "category": "審議会等"
+        },
+        {
+          "hash": "12de240068018131",
+          "title": "令和８年度地域別最低賃金額改定の目安について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74920.html",
+          "date": "2026-07-28",
+          "category": "報道発表"
+        },
+        {
+          "hash": "8d753efcbb2820bc",
+          "title": "第75回中央最低賃金審議会 資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75021.html",
+          "date": "2026-07-28",
+          "category": "審議会等"
+        },
+        {
+          "hash": "8b985f98065c5648",
+          "title": "第７５回中央最低賃金審議会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74896.html",
+          "date": "2026-07-28",
+          "category": "審議会等"
+        },
+        {
+          "hash": "b10dbcd100d66873",
+          "title": "最高裁判決を踏まえた保護費の追加給付に係る申出手続について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75020.html",
+          "date": "2026-07-28",
+          "category": "その他"
+        },
+        {
+          "hash": "5653f34e7b5799c0",
+          "title": "第41回医療ニーズの高い医療機器等の早期導入に関する検討会 配付資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75016.html",
+          "date": "2026-07-28",
+          "category": "審議会等"
+        },
+        {
+          "hash": "357a783adf45db88",
+          "title": "令和８年度社会福祉推進事業の採択団体について（追加公募分）",
+          "url": "https://www.mhlw.go.jp/stf/houdou/0000206134_00039.html",
+          "date": "2026-07-28",
+          "category": "政策分野"
+        },
+        {
+          "hash": "8637798a20fc4722",
+          "title": "第262回社会保障審議会介護給付費分科会（Web会議）を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75006.html",
+          "date": "2026-07-28",
+          "category": "審議会等"
+        },
+        {
+          "hash": "c58fc738ea3a6eec",
+          "title": "「労働安全衛生法に基づく化学物質管理に関する説明会」の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74553.html",
+          "date": "2026-07-28",
+          "category": "政策分野"
+        },
+        {
+          "hash": "c9cee4374840424b",
+          "title": "食品中の放射性物質の検査結果について（１５０５報）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74967.html",
+          "date": "2026-07-28",
+          "category": "報道発表"
+        },
+        {
+          "hash": "a4b19b2e3000e5fe",
+          "title": "原子力災害対策特別措置法第20条第２項の規定に基づく食品の出荷制限の解除",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74794.html",
+          "date": "2026-07-28",
+          "category": "その他"
+        },
+        {
+          "hash": "900d1dc8d5ef0382",
+          "title": "技能実習法に基づく行政処分等を行いました",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74685.html",
+          "date": "2026-07-28",
+          "category": "報道発表"
+        },
+        {
+          "hash": "d75f5608d233a956",
+          "title": "薬事審議会血液事業部会令和８年度第１回適正使用調査会（資料 ）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74433.html",
+          "date": "2026-07-28",
+          "category": "審議会等"
+        },
+        {
+          "hash": "c9a2d1b7efa0a605",
+          "title": "令和８年７月２７日付大臣会見概要",
+          "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00959.html",
+          "date": "2026-07-28",
+          "category": "大臣会見等"
+        },
+        {
+          "hash": "1485cccc3435c20a",
+          "title": "令和８年７月２８日付大臣会見概要",
+          "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00958.html",
+          "date": "2026-07-28",
+          "category": "大臣会見等"
+        },
+        {
+          "hash": "2b62d565b0a9dd0f",
+          "title": "令和８年度中央最低賃金審議会目安に関する小委員会（第６回）資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74965.html",
+          "date": "2026-07-28",
+          "category": "審議会等"
+        },
+        {
+          "hash": "bcbd8af4bcea4cfb",
+          "title": "中央最低賃金審議会 (目安に関する小委員会)",
+          "url": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127941.html",
+          "date": "2026-07-28",
+          "category": "審議会等"
+        },
+        {
+          "hash": "cc122138f2122c54",
+          "title": "第３回介護保険制度における預貯金等の把握等に係る検討の場の資料について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74993.html",
+          "date": "2026-07-28",
+          "category": "その他"
+        },
+        {
+          "hash": "7436b322fe4cabb0",
+          "title": "社会福祉施設職員等退職手当共済制度の在り方に関する検討会（第３回） 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74917.html",
+          "date": "2026-07-28",
+          "category": "審議会等"
+        },
+        {
+          "hash": "42aa35be5542becc",
+          "title": "令和８年度中央最低賃金審議会目安に関する小委員会（第６回）の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74883.html",
+          "date": "2026-07-27",
+          "category": "審議会等"
+        },
+        {
+          "hash": "0951eb59ea55d370",
+          "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74957.html",
+          "date": "2026-07-27",
+          "category": "報道発表"
+        },
+        {
+          "hash": "fa3ab443c25b408e",
+          "title": "第31回キャリアコンサルタント登録制度等に関する検討会 会議資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74955.html",
+          "date": "2026-07-27",
+          "category": "審議会等"
+        },
+        {
+          "hash": "0c23d19b517b690f",
+          "title": "第５回 小児がん拠点病院等の指定要件に関するワーキンググループ（議事録）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74953.html",
+          "date": "2026-07-27",
+          "category": "審議会等"
+        },
+        {
+          "hash": "6db9f920f452146f",
+          "title": "第５回国立研究開発法人等審議会 国立健康危機管理研究機構評価部会 開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74948.html",
+          "date": "2026-07-27",
+          "category": "審議会等"
+        },
+        {
+          "hash": "abb0c7dbff0b5d00",
+          "title": "第3回介護保険制度における預貯金等の把握等に係る検討の場の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74905.html",
+          "date": "2026-07-27",
+          "category": "その他"
+        },
+        {
+          "hash": "bf93f2be7e5d8767",
+          "title": "労働者派遣事業の許可を取り消しました（関係派遣先派遣割合報告書未提出）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74156.html",
+          "date": "2026-07-27",
+          "category": "報道発表"
+        },
+        {
+          "hash": "ad61876f892f251e",
+          "title": "第２１回がん診療提供体制のあり方に関する検討会（資料）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74912.html",
+          "date": "2026-07-27",
+          "category": "審議会等"
+        },
+        {
+          "hash": "5cf61697aa315164",
+          "title": "第23回 医薬品等行政評価・監視委員会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74926.html",
+          "date": "2026-07-27",
+          "category": "審議会等"
+        },
+        {
+          "hash": "93e4e843c05936bb",
+          "title": "令和８年度中央最低賃金審議会目安に関する小委員会（第５回）資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74915.html",
+          "date": "2026-07-27",
+          "category": "審議会等"
+        },
+        {
+          "hash": "49ec73c431daf27a",
+          "title": "第３回事業場における労働者の健康保持増進の在り方に関する検討会議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74919.html",
+          "date": "2026-07-24",
+          "category": "審議会等"
+        },
+        {
+          "hash": "4d711c1051aadf5e",
+          "title": "令和８年７月２４日付大臣会見概要",
+          "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00957.html",
+          "date": "2026-07-24",
+          "category": "大臣会見等"
+        },
+        {
+          "hash": "6e1d937e1dd592d5",
+          "title": "「人口動態統計速報」令和８（2026）年05月分",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/s2026/05.html",
+          "date": "2026-07-24",
+          "category": "統計情報"
+        },
+        {
+          "hash": "4ab3ef9ac7598117",
+          "title": "令和７(2025)年簡易生命表の概況",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/life/life25/index.html",
+          "date": "2026-07-24",
+          "category": "統計情報"
+        },
+        {
+          "hash": "babe686b50a64588",
+          "title": "第103回「電離放射線障害の業務上外に関する検討会」を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74689.html",
+          "date": "2026-07-24",
+          "category": "審議会等"
+        },
+        {
+          "hash": "f44a9b8054f78732",
+          "title": "令和８年度第１回薬事審議会 化学物質安全対策部会（ペーパーレス）を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74609.html",
+          "date": "2026-07-24",
+          "category": "審議会等"
+        },
+        {
+          "hash": "04d939776f42309b",
+          "title": "第129回社会保障審議会医療部会 資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74887.html",
+          "date": "2026-07-24",
+          "category": "審議会等"
+        },
+        {
+          "hash": "ece0cca0c3e4e6a5",
+          "title": "第９５回がん対策推進協議会（議事録）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74895.html",
+          "date": "2026-07-24",
+          "category": "審議会等"
+        },
+        {
+          "hash": "168a41d591e76bbd",
+          "title": "全世代型リ・スキリング国民運動に関する第二回有識者会議を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74856.html",
+          "date": "2026-07-24",
+          "category": "審議会等"
+        },
+        {
+          "hash": "bb29299a6ef7b566",
+          "title": "毎月勤労統計調査ー2026（令和８）年５月分結果確報",
+          "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/monthly/r08/2605r/2605r.html",
+          "date": "2026-07-24",
+          "category": "統計情報"
+        },
+        {
+          "hash": "4d6ebdc9342c0d63",
+          "title": "2026年6月29日 第135回社会保障審議会介護保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74845.html",
+          "date": "2026-07-24",
+          "category": "審議会等"
+        },
+        {
+          "hash": "6a5fe55eb0b6249f",
+          "title": "社会保障審議会（介護保険部会）",
+          "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126734.html",
+          "date": "2026-07-24",
+          "category": "審議会等"
+        },
+        {
+          "hash": "f0cff00c798b29f9",
+          "title": "令和８年度中央最低賃金審議会目安に関する小委員会（第５回）の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74757.html",
+          "date": "2026-07-23",
+          "category": "審議会等"
+        },
+        {
+          "hash": "ee620f1ec4f1bd8c",
+          "title": "令和８年７月２３日付大臣会見概要",
+          "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00955.html",
+          "date": "2026-07-23",
+          "category": "大臣会見等"
+        },
+        {
+          "hash": "5773b53614fe1675",
+          "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74882.html",
+          "date": "2026-07-23",
+          "category": "報道発表"
+        },
+        {
+          "hash": "0dc67899276ad1e8",
+          "title": "第１回障害福祉分野における人材確保・生産性向上に関する検討会（資料）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74877.html",
+          "date": "2026-07-23",
+          "category": "審議会等"
+        },
+        {
+          "hash": "f94f366384ecc676",
+          "title": "「U.E.N.O.Plan～攻めの予防医療厚生労働省関係施策～ : Understand, Exercise, Nourish and Optimize for Better Health」 を公表します",
+          "url": "https://www.mhlw.go.jp/stf/index_00154.html",
+          "date": "2026-07-23",
+          "category": "報道発表"
+        },
+        {
+          "hash": "6e27bdda243415cf",
+          "title": "令和８年度中央最低賃金審議会目安に関する小委員会（第３回）資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74828.html",
+          "date": "2026-07-23",
+          "category": "審議会等"
+        },
+        {
+          "hash": "bc61f3c3d7959270",
+          "title": "第８回有料老人ホームにおける望ましいサービス提供のあり方に関する検討会を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74671.html",
+          "date": "2026-07-23",
+          "category": "審議会等"
+        },
+        {
+          "hash": "e3b7c275f570dbeb",
+          "title": "医療用医薬品の流通改善に関する懇談会（第42回）資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74838.html",
+          "date": "2026-07-23",
+          "category": "審議会等"
+        },
+        {
+          "hash": "2d54b3a2febfd76e",
+          "title": "医療用医薬品の流通の改善に関する懇談会",
+          "url": "https://www.mhlw.go.jp/stf/shingi/other-isei_127251.html",
+          "date": "2026-07-23",
+          "category": "審議会等"
+        },
+        {
+          "hash": "6174eb047ea9ea94",
+          "title": "薬事審議会 医薬品等安全対策部会を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74589.html",
+          "date": "2026-07-23",
+          "category": "審議会等"
+        },
+        {
+          "hash": "322fd2198db7955d",
+          "title": "健康・医療・介護情報利活用検討会 第34回医療等情報利活用ワーキンググループ、及び第11回介護情報利活用ワーキンググループ資料について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74842.html",
+          "date": "2026-07-23",
+          "category": "審議会等"
+        },
+        {
+          "hash": "1adde68dc72f6f02",
+          "title": "第３回厚生科学審議会科学技術部会 ヒト受精胚を用いる研究に関する審査専門委員",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74819.html",
+          "date": "2026-07-22",
+          "category": "その他"
+        },
+        {
+          "hash": "b631e9470462aa54",
+          "title": "中東情勢を踏まえた医療用手袋の放出について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73131.html",
+          "date": "2026-07-22",
+          "category": "政策分野"
+        },
+        {
+          "hash": "b33f1e3195c6cf83",
+          "title": "第41回 医療ニーズの高い医療機器等の早期導入に関する検討会を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74825.html",
+          "date": "2026-07-22",
+          "category": "審議会等"
+        },
+        {
+          "hash": "0bdcd7e2df8d6b93",
+          "title": "困難な問題を抱える女性への支援に関する検討会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74384.html",
+          "date": "2026-07-22",
+          "category": "審議会等"
+        },
+        {
+          "hash": "7837d16badb45852",
+          "title": "令和８年７月２１日付大臣会見概要",
+          "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00954.html",
+          "date": "2026-07-22",
+          "category": "大臣会見等"
+        },
+        {
+          "hash": "10e2a2b1eae32137",
+          "title": "第261回社会保障審議会介護給付費分科会（Web会議）を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74597.html",
+          "date": "2026-07-22",
+          "category": "審議会等"
+        },
+        {
+          "hash": "3be34784a2d63067",
+          "title": "第1回困難な問題を抱える女性検討会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74574.html",
+          "date": "2026-07-22",
+          "category": "報道発表"
+        },
+        {
+          "hash": "0bbe807256703600",
+          "title": "薬事審議会 日本薬局方部会を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74571.html",
+          "date": "2026-07-22",
+          "category": "審議会等"
+        },
+        {
+          "hash": "a993161e3ad72732",
+          "title": "採用情報（期間業務職員（化学物質審査専門員）募集情報）",
+          "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-iyakukyoku02-kagakubussitusinsasenmonin.html",
+          "date": "2026-07-22",
+          "category": "採用情報"
+        },
+        {
+          "hash": "dfd9fd4a2b419eb8",
+          "title": "第２回死因究明等推進計画検証等推進会議を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74808.html",
+          "date": "2026-07-21",
+          "category": "審議会等"
+        },
+        {
+          "hash": "687ded9f7309a974",
+          "title": "令和８年７月２１日付大臣会見概要",
+          "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00953.html",
+          "date": "2026-07-21",
+          "category": "大臣会見等"
+        },
+        {
+          "hash": "9a2b0d39835bc839",
+          "title": "第35回厚生科学審議会予防接種・ワクチン分科会予防接種基本方針部会ワクチン評価に関する小委員会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73980.html",
+          "date": "2026-07-21",
+          "category": "審議会等"
+        },
+        {
+          "hash": "74d9e631dbfdfb61",
+          "title": "第３回ＯＴＣ類似薬の保険給付の見直しの実施に向けた技術的検討会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74541.html",
+          "date": "2026-07-21",
+          "category": "審議会等"
+        },
+        {
+          "hash": "356b24eaa18c3f04",
+          "title": "第６回障害者の地域生活支援も踏まえた障害者支援施設の在り方に係る検討会（資料）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74747.html",
+          "date": "2026-07-21",
+          "category": "審議会等"
+        },
+        {
+          "hash": "e24e0966dcdec04a",
+          "title": "第10回匿名感染症関連情報の第三者提供に関する小委員会（持ち回り）を開催しました",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73969.html",
+          "date": "2026-07-21",
+          "category": "審議会等"
+        },
+        {
+          "hash": "541c358fd31eeafe",
+          "title": "第２１回がん診療提供体制のあり方に関する検討会（開催案内）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74749.html",
+          "date": "2026-07-21",
+          "category": "審議会等"
+        },
+        {
+          "hash": "49184c110dc40bfb",
+          "title": "第110回社会保障審議会年金数理部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74739.html",
+          "date": "2026-07-21",
+          "category": "審議会等"
+        },
+        {
+          "hash": "b93386907c6bd4eb",
+          "title": "「知って、肝炎プロジェクト」健康デー２０２６を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74737.html",
+          "date": "2026-07-21",
+          "category": "報道発表"
+        },
+        {
+          "hash": "b906dffc6845c658",
+          "title": "食品中の放射性物質の検査結果について（１５０４報）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74657.html",
+          "date": "2026-07-21",
+          "category": "報道発表"
+        },
+        {
+          "hash": "f7935e8c0af9b981",
+          "title": "第31回キャリアコンサルタント登録制度等に関する検討会を７月28日に開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74631.html",
+          "date": "2026-07-21",
+          "category": "報道発表"
+        },
+        {
+          "hash": "db6780011773f215",
+          "title": "「第１回毎月勤労統計調査の調査手法の検討等に関するワーキンググループ」の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74420.html",
+          "date": "2026-07-21",
+          "category": "審議会等"
+        },
+        {
+          "hash": "6902636cd74ce62c",
+          "title": "毎月勤労統計調査の調査手法の検討等に関するワーキンググループ",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74415.html",
+          "date": "2026-07-21",
+          "category": "審議会等"
+        },
+        {
+          "hash": "519bf5f9bc7e61c0",
+          "title": "介護福祉士国家試験の受験資格を得て母国に帰国したＥＰＡ介護福祉士候補者の方に関する第39回介護福祉士国家試験の受験手続きについて",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73957.html",
+          "date": "2026-07-21",
+          "category": "その他"
+        },
+        {
+          "hash": "05c5deb1b7478b83",
+          "title": "日本人のための食事ガイド（仮称）ワーキンググループの開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74475.html",
+          "date": "2026-07-21",
+          "category": "審議会等"
+        },
+        {
+          "hash": "0084cd92082d8984",
+          "title": "第129回社会保障審議会医療部会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74780.html",
+          "date": "2026-07-21",
+          "category": "審議会等"
+        },
+        {
+          "hash": "43dcc5d544f7a589",
+          "title": "WEBマガジン「厚生労働」（特集「全国安全週間」ほか）",
+          "url": "https://www.mhlw.go.jp/web_magazine/",
+          "date": "2026-07-21",
+          "category": "その他"
+        },
+        {
+          "hash": "1a3dcd3a75382b96",
+          "title": "官庁訪問（デジタル・電気・電子区分）",
+          "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/kokka-den/kantyouhouhon.html",
+          "date": "2026-07-21",
+          "category": "採用情報"
+        },
+        {
+          "hash": "fd60ea9d9fd2a40d",
+          "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74773.html",
+          "date": "2026-07-17",
+          "category": "報道発表"
+        },
+        {
+          "hash": "ce20d99a258e5b93",
+          "title": "令和８年度中央最低賃金審議会目安に関する小委員会（第４回）の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74624.html",
+          "date": "2026-07-17",
+          "category": "審議会等"
+        },
+        {
+          "hash": "1181cee79046fbf6",
+          "title": "令和８年７月１７日付大臣会見概要",
+          "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00952.html",
+          "date": "2026-07-17",
+          "category": "大臣会見等"
+        },
+        {
+          "hash": "c8d7bbc18cdeb2b7",
+          "title": "世界メンタルヘルスデー JAPAN 2026 特設サイト",
+          "url": "https://www.mhlw.go.jp/kokoro/mental_health_day/index.html",
+          "date": "2026-07-17",
+          "category": "その他"
+        },
+        {
+          "hash": "f989818a4e627ea4",
+          "title": "令和８年度（令和７年度補正予算からの繰越分）医療施設等施設整備費補助金の交付額の二次内示について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74759.html",
+          "date": "2026-07-17",
+          "category": "報道発表"
+        },
+        {
+          "hash": "a6ba0b57572422af",
+          "title": "労働基準法における「労働者」に関する研究会 第６回資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74075.html",
+          "date": "2026-07-17",
+          "category": "審議会等"
+        },
+        {
+          "hash": "2004fdaba27dd095",
+          "title": "第20回化粧品規制協力国際会議（ICCR）が開催されました",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74751.html",
+          "date": "2026-07-17",
+          "category": "その他"
+        },
+        {
+          "hash": "ac93ea87416ffa01",
+          "title": "令和８年度 「こども霞が関見学デー」の詳細が決まりました",
+          "url": "https://www.mhlw.go.jp/stf/houdou/newpage_00238.html",
+          "date": "2026-07-17",
+          "category": "報道発表"
+        },
+        {
+          "hash": "4098b438e9eaa512",
+          "title": "令和８年度中央最低賃金審議会目安に関する小委員会（第３回）資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74712.html",
+          "date": "2026-07-17",
+          "category": "審議会等"
+        },
+        {
+          "hash": "ee1fc8a568dc84f2",
+          "title": "第３回厚生科学審議会科学技術部会ヒト受精胚を用いる研究に関する審査委員会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74628.html",
+          "date": "2026-07-17",
+          "category": "審議会等"
+        },
+        {
+          "hash": "fc116772eec86a3a",
+          "title": "薬事審議会 医薬品第一部会を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74610.html",
+          "date": "2026-07-17",
+          "category": "審議会等"
+        },
+        {
+          "hash": "5c95c4ed84423e77",
+          "title": "第396回労働政策審議会職業安定分科会労働力需給制度部会（開催案内）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74582.html",
+          "date": "2026-07-17",
+          "category": "審議会等"
+        },
+        {
+          "hash": "310143b715149774",
+          "title": "「第140回労働政策審議会障害者雇用分科会」を開催します（開催案内）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74539.html",
+          "date": "2026-07-17",
+          "category": "審議会等"
+        },
+        {
+          "hash": "cd53b120619166de",
+          "title": "令和８年度第４回薬事審議会化学物質安全対策部会化学物質調査会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74493.html",
+          "date": "2026-07-17",
+          "category": "審議会等"
+        },
+        {
+          "hash": "f1d2466699e985e8",
+          "title": "「第３１回社会保障審議会資金運用部会」を開催します（ペーパーレス）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_shikinunyo31.html",
+          "date": "2026-07-17",
+          "category": "審議会等"
+        },
+        {
+          "hash": "c07e9b32ccd99e5c",
+          "title": "第77回補装具評価検討会 開催案内",
+          "url": "https://www.mhlw.go.jp/stf/74hosougu_00003.html",
+          "date": "2026-07-17",
+          "category": "その他"
+        },
+        {
+          "hash": "87a127180c391bb1",
+          "title": "第76回補装具評価検討会 開催案内",
+          "url": "https://www.mhlw.go.jp/stf/74hosougu_00002.html",
+          "date": "2026-07-17",
+          "category": "その他"
+        },
+        {
+          "hash": "4373a771fcc065f9",
+          "title": "「第302回原子爆弾被爆者医療分科会」の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74057.html",
+          "date": "2026-07-17",
+          "category": "審議会等"
+        },
+        {
+          "hash": "30d92dc7f0f17231",
+          "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74740.html",
+          "date": "2026-07-16",
+          "category": "報道発表"
+        },
+        {
+          "hash": "95535824f0439fa8",
+          "title": "派遣関係団体との意見交換会",
+          "url": "https://www.mhlw.go.jp/stf/houdou/newpage_74736.html",
+          "date": "2026-07-16",
+          "category": "その他"
+        },
+        {
+          "hash": "294182879239eaaf",
+          "title": "ＵＨＣナレッジハブの第四回調整委員会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74734.html",
+          "date": "2026-07-16",
+          "category": "その他"
+        },
+        {
+          "hash": "14d08e88e5b34c80",
+          "title": "令和８年度第１回 厚生科学審議会医薬品医療機器制度部会の開催について（Web併用）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74333.html",
+          "date": "2026-07-16",
+          "category": "審議会等"
+        },
+        {
+          "hash": "d57a6c046c48b5ef",
+          "title": "第１回栄養・食生活に関する専門委員会について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74281.html",
+          "date": "2026-07-16",
+          "category": "審議会等"
+        },
+        {
+          "hash": "1ebf0e02b0f607ef",
+          "title": "第66回厚生科学審議会予防接種・ワクチン分科会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73893.html",
+          "date": "2026-07-16",
+          "category": "審議会等"
+        },
+        {
+          "hash": "b982b31991830ddd",
+          "title": "「特定共同指導・共同指導における指摘事項」を更新しました",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/shidou_kansa.html",
+          "date": "2026-07-16",
+          "category": "政策分野"
+        },
+        {
+          "hash": "8e7b42cecd38e299",
+          "title": "第４７回がん検診のあり方に関する検討会（資料）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74679.html",
+          "date": "2026-07-16",
+          "category": "審議会等"
+        },
+        {
+          "hash": "9e2b8e3af9332bff",
+          "title": "社会福祉施設職員等退職手当共済制度の在り方に関する検討会（第４回）配布資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74644.html",
+          "date": "2026-07-16",
+          "category": "審議会等"
+        },
+        {
+          "hash": "0cdb992db988348c",
+          "title": "第22回 医薬品等行政評価・監視委員会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74675.html",
+          "date": "2026-07-15",
+          "category": "審議会等"
+        },
+        {
+          "hash": "326c21a739a2db21",
+          "title": "「第13回厚生科学審議会食品衛生監視部会」の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74568.html",
+          "date": "2026-07-15",
+          "category": "審議会等"
+        },
+        {
+          "hash": "603f0350dd08c993",
+          "title": "薬事審議会血液事業部会令和８年度第１回適正使用調査会（ペーパーレス・Web併用）の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74364.html",
+          "date": "2026-07-15",
+          "category": "審議会等"
+        },
+        {
+          "hash": "256ddf5155530e35",
+          "title": "2025年国民生活基礎調査の概況",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/k-tyosa/k-tyosa25/index.html",
+          "date": "2026-07-15",
+          "category": "統計情報"
+        },
+        {
+          "hash": "9bf14d3f8451def1",
+          "title": "第５４回特定石綿被害建設業務労働者等認定審査会 開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74225.html",
+          "date": "2026-07-15",
+          "category": "審議会等"
+        },
+        {
+          "hash": "90330ded28b04e82",
+          "title": "第13回戦没者遺骨鑑定センター運営会議の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74030.html",
+          "date": "2026-07-15",
+          "category": "審議会等"
+        },
+        {
+          "hash": "489f200c14b8cc5b",
+          "title": "第４回2040年に向けた看護職員の養成・確保の在り方に関する検討会の開催について：開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74023.html",
+          "date": "2026-07-15",
+          "category": "審議会等"
+        },
+        {
+          "hash": "e886e43615da2232",
+          "title": "第10回 歯科医療提供体制等に関する検討会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74658.html",
+          "date": "2026-07-15",
+          "category": "審議会等"
+        },
+        {
+          "hash": "1650d8d06aa4aa47",
+          "title": "「医療用医薬品の流通改善に関する懇談会」第42回会合の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74606.html",
+          "date": "2026-07-15",
+          "category": "報道発表"
+        },
+        {
+          "hash": "7a52ecf16c5c448c",
+          "title": "人事労務マガジン 特集第246号 「同一労働同一賃金」に関する改正省令・告示が公布されました",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74681.html",
+          "date": "2026-07-15",
+          "category": "その他"
+        },
+        {
+          "hash": "718d89467b291774",
+          "title": "「グッドキャリア企業アワード2026」の応募受付終了",
+          "url": "https://www.mhlw.go.jp/career-award/",
+          "date": "2026-07-15",
+          "category": "その他"
+        },
+        {
+          "hash": "c3edb1470b94144d",
+          "title": "令和８年度 全国介護保険担当課長会議資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74620.html",
+          "date": "2026-07-15",
+          "category": "審議会等"
+        },
+        {
+          "hash": "31d5d6eb0d3bb699",
+          "title": "全国介護保険担当課長会議",
+          "url": "https://www.mhlw.go.jp/stf/shingi/other-rouken_204736.html",
+          "date": "2026-07-15",
+          "category": "審議会等"
+        },
+        {
+          "hash": "2b099c8b049ba3a7",
+          "title": "令和８年度第１回社会復帰促進等事業に関する検討会（開催案内）",
+          "url": "https://www.mhlw.go.jp/stf/shingi2_00099.html",
+          "date": "2026-07-14",
+          "category": "審議会等"
+        },
+        {
+          "hash": "a87dc334a525deb0",
+          "title": "第30回 社会保障審議会「生活困窮者自立支援及び生活保護部会」（資料）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74640.html",
+          "date": "2026-07-14",
+          "category": "審議会等"
+        },
+        {
+          "hash": "2b9b5890f03ce9e0",
+          "title": "第112回厚生科学審議会予防接種・ワクチン分科会副反応検討部会、令和８年度第４回薬事審議会医薬品等安全対策部会安全対策調査会（合同開催）（ペーパーレス、Web会議）の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74639.html",
+          "date": "2026-07-14",
+          "category": "審議会等"
+        },
+        {
+          "hash": "751b6297cdba8017",
+          "title": "エッセンシャルワーカー業職種の生産性向上に向けた労働行政としての支援のあり方に関する検討会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74633.html",
+          "date": "2026-07-14",
+          "category": "その他"
+        },
+        {
+          "hash": "9db52878ff3d244a",
+          "title": "令和８年７月１４日付大臣会見概要",
+          "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00951.html",
+          "date": "2026-07-14",
+          "category": "大臣会見等"
+        },
+        {
+          "hash": "36f608a475486ca6",
+          "title": "ヒト受精胚を用いる遺伝性・先天性疾患研究に関する専門委員会（第23回）の資料について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74575.html",
+          "date": "2026-07-14",
+          "category": "審議会等"
+        },
+        {
+          "hash": "495b76a24ef07d76",
+          "title": "第２回ゲノム編集技術等を用いたヒト受精胚等の取扱い等に関する合同会議（第10回ゲノム編集技術等を用いたヒト受精胚等の臨床利用のあり方に関する専門委員会、第23回ヒト受精胚を用いる遺伝性・先天性疾患研究に関する専門委員会） 資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74562.html",
+          "date": "2026-07-14",
+          "category": "審議会等"
+        },
+        {
+          "hash": "8fda15972738203f",
+          "title": "第１２回がん診療連携拠点病院等の指定要件に関するワーキンググループ（資料）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74598.html",
+          "date": "2026-07-14",
+          "category": "審議会等"
+        },
+        {
+          "hash": "8f4941bbd17a3d3c",
+          "title": "食品中の放射性物質の検査結果について（１５０３報）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74544.html",
+          "date": "2026-07-14",
+          "category": "報道発表"
+        },
+        {
+          "hash": "af43f1d202d36ae7",
+          "title": "第１６回厚生科学審議会結核部会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000068982_00002.html",
+          "date": "2026-07-14",
+          "category": "審議会等"
+        },
+        {
+          "hash": "29cb0018c3cad1a9",
+          "title": "第80回厚生科学審議会疾病対策部会臓器移植委員会 (Web会議) を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74077.html",
+          "date": "2026-07-14",
+          "category": "審議会等"
+        },
+        {
+          "hash": "25530f3382daf59b",
+          "title": "第31回労働政策審議会安全衛生分科会じん肺部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74615.html",
+          "date": "2026-07-14",
+          "category": "審議会等"
+        },
+        {
+          "hash": "c916c149b42bea17",
+          "title": "薬事工業生産動態統計令和8年4月分月報について",
+          "url": "https://www.mhlw.go.jp/toukei/list/105-1c.html",
+          "date": "2026-07-14",
+          "category": "統計情報"
+        },
+        {
+          "hash": "ef0cf0899a41d9a0",
+          "title": "公募公示（公共料金等の支払いに係るクレジットカードの利用一式）",
+          "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/e-oth-kikakukoubo/newpage_10453.html",
+          "date": "2026-07-14",
+          "category": "その他"
+        },
+        {
+          "hash": "9028801f891205c9",
+          "title": "第77回ハンセン病元患者家族補償金認定審査会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74627.html",
+          "date": "2026-07-14",
+          "category": "審議会等"
+        },
+        {
+          "hash": "078951d97b4b13ec",
+          "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74585.html",
+          "date": "2026-07-13",
+          "category": "報道発表"
+        },
+        {
+          "hash": "0c5e7bc57f2bbc2e",
+          "title": "落札者等の公示（「診療報酬改定ＤＸに関する工程管理等支援業務一式（令和８年度）」他４件）",
+          "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/e-wto-rakusatu/newpage_10443.html",
+          "date": "2026-07-13",
+          "category": "その他"
+        },
+        {
+          "hash": "1bf1bb5a124c17a5",
+          "title": "第８回受動喫煙対策専門委員会について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74556.html",
+          "date": "2026-07-13",
+          "category": "審議会等"
+        },
+        {
+          "hash": "78a32513dc94ed47",
+          "title": "薬事審議会 医薬品第二部会を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74355.html",
+          "date": "2026-07-13",
+          "category": "審議会等"
+        },
+        {
+          "hash": "e0f513e95cc0f0db",
+          "title": "第１回 令和８年度医師の働き方改革の推進等に関する検討会：資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74139.html",
+          "date": "2026-07-13",
+          "category": "審議会等"
+        },
+        {
+          "hash": "7d64670aadf1be92",
+          "title": "採用情報（期間業務職員（社会・援護局（援護））募集情報）",
+          "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-syakai_engokyoku-boueijoshuhojo.html",
+          "date": "2026-07-13",
+          "category": "採用情報"
+        },
+        {
+          "hash": "244d7f66133ed5ec",
+          "title": "令和８年度第１回医道審議会医師分科会医師専門研修部会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74560.html",
+          "date": "2026-07-10",
+          "category": "審議会等"
+        },
+        {
+          "hash": "6abfa11ffe04c2e9",
+          "title": "令和８年７月１０日付大臣会見概要",
+          "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00950.html",
+          "date": "2026-07-10",
+          "category": "大臣会見等"
+        },
+        {
+          "hash": "39afaa76eff8ffee",
+          "title": "令和８年度中央最低賃金審議会目安に関する小委員会（第３回）の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74276.html",
+          "date": "2026-07-10",
+          "category": "審議会等"
+        },
+        {
+          "hash": "6503d715b88cd807",
+          "title": "アーカイブ動画のご案内【医療機関・地域関係者向け情報】「夜間・休日ワンストップ窓口／希少言語に対応した遠隔通訳サービス」第１回オンライン説明会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74542.html",
+          "date": "2026-07-10",
+          "category": "トピックス"
+        },
+        {
+          "hash": "d161c7f63a4e69a9",
+          "title": "抗インフルエンザウイルス薬（ラピアクタ点滴静注液バイアル150㎎）405,000人分の購入",
+          "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/b-wto-zuikei/newpage_10447.html",
+          "date": "2026-07-10",
+          "category": "その他"
+        },
+        {
+          "hash": "acbcc06214e4c5ef",
+          "title": "「人口動態統計月報（概数）」令和８（2026）年２月分",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/m2026/02.html",
+          "date": "2026-07-10",
+          "category": "統計情報"
+        },
+        {
+          "hash": "82ab10858b401365",
+          "title": "「人口動態統計月報（概数）」令和８（2026）年１月分",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/m2026/01.html",
+          "date": "2026-07-10",
+          "category": "統計情報"
+        },
+        {
+          "hash": "3c96ca0d424c6552",
+          "title": "「社会福祉施設職員等退職手当共済制度の在り方に関する検討会」（第４回）を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74368.html",
+          "date": "2026-07-10",
+          "category": "審議会等"
+        },
+        {
+          "hash": "3c3e4a01af1d4768",
+          "title": "令和８年度第６回「石綿に係る疾病の業務上外に関する検討会」を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74059.html",
+          "date": "2026-07-10",
+          "category": "審議会等"
+        },
+        {
+          "hash": "87cf40658568181c",
+          "title": "第６回「労働基準法における「労働者」に関する研究会」を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73959.html",
+          "date": "2026-07-10",
+          "category": "審議会等"
+        },
+        {
+          "hash": "36690f95061b408c",
+          "title": "令和８年度中央最低賃金審議会目安に関する小委員会（第２回）資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74463.html",
+          "date": "2026-07-10",
+          "category": "審議会等"
+        },
+        {
+          "hash": "9489eb33d76ea7d4",
+          "title": "第１回療養病床の在り方等に関する検討会",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000091003.html",
+          "date": "2026-07-10",
+          "category": "その他"
+        },
+        {
+          "hash": "fcd17b79eafb2bbf",
+          "title": "毎月勤労統計調査［地方調査］－令和８年１月分結果概要",
+          "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/monthly/r08/0801/index.html",
+          "date": "2026-07-10",
+          "category": "統計情報"
+        },
+        {
+          "hash": "556eec557af1950d",
+          "title": "WEBマガジン「厚生労働」（特集「全国安全週間」ほか）",
+          "url": "https://www.mhlw.go.jp/web_magazine/",
+          "date": "2026-07-10",
+          "category": "その他"
+        },
+        {
+          "hash": "0f30f294aabdc7e8",
+          "title": "第４７回がん検診のあり方に関する検討会（開催案内）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74397.html",
+          "date": "2026-07-10",
+          "category": "審議会等"
+        },
+        {
+          "hash": "507f893c9f768bed",
+          "title": "「創薬力向上のための官民協議会」を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74372.html",
+          "date": "2026-07-09",
+          "category": "報道発表"
+        },
+        {
+          "hash": "3415719baa1077ee",
+          "title": "第16回厚生科学審議会結核部会 資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74497.html",
+          "date": "2026-07-09",
+          "category": "審議会等"
+        },
+        {
+          "hash": "6e442b8816b43a4b",
+          "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74494.html",
+          "date": "2026-07-09",
+          "category": "報道発表"
+        },
+        {
+          "hash": "e007f5615b16475e",
+          "title": "第２回ゲノム編集技術等を用いたヒト受精胚等の取扱い等に関する合同会議（第10回ゲノム編集技術等を用いたヒト受精胚等の臨床利用のあり方に関する専門委員会、第23回ヒト受精胚を用いる遺伝性・先天性疾患研究に関する専門委員会）の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74414.html",
+          "date": "2026-07-09",
+          "category": "審議会等"
+        },
+        {
+          "hash": "144ef83f121d860c",
+          "title": "第２回ゲノム編集技術等を用いたヒト受精胚等の取扱い等に関する合同会議（第10回ゲノム編集技術等を用いたヒト受精胚等の臨床利用のあり方に関する専門委員会、第23回ヒト受精胚を用いる遺伝性・先天性疾患研究に関する専門委員会）の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74398.html",
+          "date": "2026-07-09",
+          "category": "審議会等"
+        },
+        {
+          "hash": "e8d1c50c05fa788f",
+          "title": "2026 ＭＤＳＡＰフォーラムを開催しました",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74461.html",
+          "date": "2026-07-09",
+          "category": "報道発表"
+        },
+        {
+          "hash": "16e953491338d3b5",
+          "title": "病院報告（令和８(2026)年4月分概数）",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/byouin/m26/04.html",
+          "date": "2026-07-09",
+          "category": "統計情報"
+        },
+        {
+          "hash": "af4c50211b17490b",
+          "title": "令和８年度第３回化学物質管理に係る専門家検討会を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74297.html",
+          "date": "2026-07-09",
+          "category": "審議会等"
+        },
+        {
+          "hash": "7453b31d54129081",
+          "title": "地域医療構想の実現に向けた重点支援区域の12回目の選定を行いました",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74194.html",
+          "date": "2026-07-09",
+          "category": "報道発表"
+        },
+        {
+          "hash": "283443aabcf01454",
+          "title": "「第21回若年者ものづくり競技大会」（富山県）を８月１日・２日に開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73992.html",
+          "date": "2026-07-09",
+          "category": "報道発表"
+        },
+        {
+          "hash": "18af8db8a421246b",
+          "title": "公的年金制度一覧",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000128073.html",
+          "date": "2026-07-09",
+          "category": "その他"
+        },
+        {
+          "hash": "b22b205cc5c40061",
+          "title": "第187回市町村セミナーの資料について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74440.html",
+          "date": "2026-07-08",
+          "category": "その他"
+        },
+        {
+          "hash": "4fa0b16d3825e97c",
+          "title": "硫黄島戦没者遺骨引渡式の開催",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74373.html",
+          "date": "2026-07-08",
+          "category": "報道発表"
+        },
+        {
+          "hash": "0fc7fe5787fcac00",
+          "title": "「創薬力向上のための官民協議会」を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74371.html",
+          "date": "2026-07-08",
+          "category": "報道発表"
+        },
+        {
+          "hash": "e8ed06a975cd3d79",
+          "title": "第１２回がん診療連携拠点病院等の指定要件に関するワーキンググループ（開催案内）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74283.html",
+          "date": "2026-07-08",
+          "category": "審議会等"
+        },
+        {
+          "hash": "50e63f1972484c6c",
+          "title": "第260回社会保障審議会介護給付費分科会（Web会議）を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74169.html",
+          "date": "2026-07-08",
+          "category": "審議会等"
+        },
+        {
+          "hash": "065152290befe6e0",
+          "title": "「第36回 労働政策審議会勤労者生活分科会」を開催します（開催案内）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74128.html",
+          "date": "2026-07-08",
+          "category": "審議会等"
+        },
+        {
+          "hash": "f2c65940813d44a5",
+          "title": "第１回 令和８年度医師の働き方改革の推進等に関する検討会：開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74111.html",
+          "date": "2026-07-08",
+          "category": "審議会等"
+        },
+        {
+          "hash": "8ebf710c0800db0f",
+          "title": "令和８年度医師の働き方改革の推進等に関する検討会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74108.html",
+          "date": "2026-07-08",
+          "category": "審議会等"
+        },
+        {
+          "hash": "3b265b239792751e",
+          "title": "第４回 小児がん拠点病院等の指定要件に関するワーキンググループ（議事録）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74409.html",
+          "date": "2026-07-08",
+          "category": "審議会等"
+        },
+        {
+          "hash": "22319315b3e39d5f",
+          "title": "資料招請（年金業務システム（フェーズ２）に係る設計・開発等（記録照会サブシステムに係る設計・開発業務 一式（その３）））",
+          "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-siryo/newpage_10451.html",
+          "date": "2026-07-08",
+          "category": "その他"
+        },
+        {
+          "hash": "9485a2b73816a64f",
+          "title": "第８回 がんゲノム医療中核拠点病院等の指定要件に関するワーキンググループ（議事録）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74407.html",
+          "date": "2026-07-08",
+          "category": "審議会等"
+        },
+        {
+          "hash": "16bffc2c1f4edd92",
+          "title": "第５回社会保障審議会療養病床の在り方等に関する特別部会",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000143287.html",
+          "date": "2026-07-08",
+          "category": "その他"
+        },
+        {
+          "hash": "1f403b2c0d990cd0",
+          "title": "第11回がん診療連携拠点病院等の指定要件に関するワーキンググループ（議事録）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74405.html",
+          "date": "2026-07-08",
+          "category": "審議会等"
+        },
+        {
+          "hash": "22e3a420b4e61c63",
+          "title": "令和８年７月７日付大臣会見概要",
+          "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00948.html",
+          "date": "2026-07-07",
+          "category": "大臣会見等"
+        },
+        {
+          "hash": "144d3c96c520f722",
+          "title": "第５回療養病床の在り方等に関する検討会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000104725.html",
+          "date": "2026-07-07",
+          "category": "審議会等"
+        },
+        {
+          "hash": "7c80f302ad8eae49",
+          "title": "「第１回 薬剤師のキャリアパスに関する懇談会」の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74335.html",
+          "date": "2026-07-07",
+          "category": "審議会等"
+        },
+        {
+          "hash": "9e5195fa845cdfd6",
+          "title": "食品中の放射性物質の検査結果について（１５０２報）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74271.html",
+          "date": "2026-07-07",
+          "category": "報道発表"
+        },
+        {
+          "hash": "7f775e4f2f2cb04d",
+          "title": "第210回労働政策審議会労働条件分科会 開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74270.html",
+          "date": "2026-07-07",
+          "category": "審議会等"
+        },
+        {
+          "hash": "d0a06b754dfaac76",
+          "title": "第148回脳死下での臓器提供事例に係る検証会議を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74096.html",
+          "date": "2026-07-07",
+          "category": "審議会等"
+        },
+        {
+          "hash": "6e927e6fe212fcaf",
+          "title": "人材確保と雇用仲介事業の利用状況に関するアンケート調査について",
+          "url": "https://www.mhlw.go.jp/stf/houdou/0000199493_00025.html",
+          "date": "2026-07-07",
+          "category": "その他"
+        },
+        {
+          "hash": "4dd3d86739acd058",
+          "title": "第７回療養病床の在り方等に関する検討会",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000109350.html",
+          "date": "2026-07-07",
+          "category": "その他"
+        },
+        {
+          "hash": "804ba771e21a72ac",
+          "title": "第２回ＯＴＣ類似薬の保険給付の見直しの実施に向けた技術的検討会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74182.html",
+          "date": "2026-07-07",
+          "category": "審議会等"
+        },
+        {
+          "hash": "abe809eab30b967f",
+          "title": "在宅酸素療法における火気の取扱いについて",
+          "url": "https://www.mhlw.go.jp/stf/houdou/2r98520000003m15_1.html",
+          "date": "2026-07-07",
+          "category": "報道発表"
+        },
+        {
+          "hash": "38dc6976f636a3f5",
+          "title": "第７回受動喫煙対策専門委員会について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74357.html",
+          "date": "2026-07-07",
+          "category": "審議会等"
+        },
+        {
+          "hash": "2dab83adf567c5b5",
+          "title": "毎月勤労統計調査ー2026（令和8）年５月分結果速報",
+          "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/monthly/r08/2605p/2605p.html",
+          "date": "2026-07-07",
+          "category": "統計情報"
+        },
+        {
+          "hash": "0dfc0fd77816b3e7",
+          "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74363.html",
+          "date": "2026-07-06",
+          "category": "報道発表"
+        },
+        {
+          "hash": "07f520261f4efebd",
+          "title": "令和８年７月３日付大臣会見概要",
+          "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00947.html",
+          "date": "2026-07-06",
+          "category": "大臣会見等"
+        },
+        {
+          "hash": "46ff10b444749680",
+          "title": "第９回 がんゲノム医療中核拠点病院等の指定要件に関するワーキンググループ（資料）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74280.html",
+          "date": "2026-07-06",
+          "category": "審議会等"
+        },
+        {
+          "hash": "dc9ff93225d19aec",
+          "title": "第21回成年後見制度利用促進専門家会議 開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74250.html",
+          "date": "2026-07-06",
+          "category": "審議会等"
+        },
+        {
+          "hash": "a770686d42a096eb",
+          "title": "第12回 柔道整復療養費のオンライン請求導入等に関するワーキング・グループの開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74350.html",
+          "date": "2026-07-06",
+          "category": "その他"
+        },
+        {
+          "hash": "1299eb9fb55b61fc",
+          "title": "第５回医療放射線の適正管理に関する検討会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74349.html",
+          "date": "2026-07-06",
+          "category": "その他"
+        },
+        {
+          "hash": "5deb3c9e06599cac",
+          "title": "第３回 医療関係職種の安定的な養成・確保に関する検討会：資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74334.html",
+          "date": "2026-07-03",
+          "category": "審議会等"
+        },
+        {
+          "hash": "be960db3410ca02c",
+          "title": "令和８年７月３日付大臣会見概要",
+          "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00946.html",
+          "date": "2026-07-03",
+          "category": "大臣会見等"
+        },
+        {
+          "hash": "995afdbe1cb03ce0",
+          "title": "「2040年に向けた地域医療構想」について",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000080850_00014.html",
+          "date": "2026-07-03",
+          "category": "その他"
+        },
+        {
+          "hash": "0092bcacf594f0c9",
+          "title": "令和８年度老人保健健康増進等事業（老人保健事業推進費等補助金）の国庫補助協議（追加公募）について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74285.html",
+          "date": "2026-07-03",
+          "category": "政策分野"
+        },
+        {
+          "hash": "56dc5849b5e66dfb",
+          "title": "第67回厚生科学審議会疾病対策部会指定難病検討委員会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74251.html",
+          "date": "2026-07-03",
+          "category": "審議会等"
+        },
+        {
+          "hash": "c5f8f36c04d09f3a",
+          "title": "令和８年度中央最低賃金審議会目安に関する小委員会（第２回）の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74202.html",
+          "date": "2026-07-03",
+          "category": "審議会等"
+        },
+        {
+          "hash": "5f0fcc30238343b5",
+          "title": "ロシア連邦政府等から提供された抑留者に関する資料を日本側の資料と照合し、抑留中に死亡した者の個人を特定しました",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74017.html",
+          "date": "2026-07-03",
+          "category": "報道発表"
+        },
+        {
+          "hash": "5269870577970a09",
+          "title": "令和８年患者調査へのご協力をお願いします",
+          "url": "https://www.mhlw.go.jp/stf/10-20-oshirase-2026.html",
+          "date": "2026-07-03",
+          "category": "統計情報"
+        },
+        {
+          "hash": "604c0b33738a699e",
+          "title": "令和７年度 消費生活協同組合（連合会）実態調査 結果公表",
+          "url": "https://www.mhlw.go.jp/toukei/list/98-1.html",
+          "date": "2026-07-03",
+          "category": "統計情報"
+        },
+        {
+          "hash": "352cf1375426eee0",
+          "title": "資料招請（年金業務システム（フェーズ2）に係る設計・開発等(年金記録管理サブシステムに係る設計・開発業務 一式（その5）、保険料債権管理サブシステムに係る設計・開発業務 一式（その5）、データベース構築及びデータ移行業務 一式（その4）、…",
+          "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-siryo/newpage_10449.html",
+          "date": "2026-07-03",
+          "category": "その他"
+        },
+        {
+          "hash": "bfa2eb33c554f190",
+          "title": "事業場における労働者の健康保持増進の在り方に関する検討会 第３回資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74258.html",
+          "date": "2026-07-02",
+          "category": "審議会等"
+        },
+        {
+          "hash": "eef1353494fcf974",
+          "title": "医薬品等行政評価・監視委員会 5周年シンポジウム 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74255.html",
+          "date": "2026-07-02",
+          "category": "審議会等"
+        },
+        {
+          "hash": "b18190d88a3dd7cb",
+          "title": "第７回労働政策審議会（労働条件分科会「組織再編に伴う労働関係の調整に関する部会」）（資料）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74253.html",
+          "date": "2026-07-02",
+          "category": "その他"
+        },
+        {
+          "hash": "b8520cbbb3b5070f",
+          "title": "第１回介護保険制度における預貯金等の把握等に係る検討の場議事要旨",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74235.html",
+          "date": "2026-07-02",
+          "category": "審議会等"
+        },
+        {
+          "hash": "26b114000cb707c7",
+          "title": "令和８年度社会福祉施設等施設整備費補助金の内示について（令和８年度当初予算等）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74201.html",
+          "date": "2026-07-02",
+          "category": "その他"
+        },
+        {
+          "hash": "98a950eec91a01fa",
+          "title": "第11回ユース年金学会を共催します",
+          "url": "https://www.mhlw.go.jp/stf/youth_nenkin_00006.html",
+          "date": "2026-07-02",
+          "category": "報道発表"
+        },
+        {
+          "hash": "01f1517d152bfe58",
+          "title": "第36回特定石綿被害建設業務労働者等認定審査会専門委員会 開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74025.html",
+          "date": "2026-07-02",
+          "category": "審議会等"
+        },
+        {
+          "hash": "79097778fb080708",
+          "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74249.html",
+          "date": "2026-07-02",
+          "category": "報道発表"
+        },
+        {
+          "hash": "78b2d5dbd098bde6",
+          "title": "2026年５月20日 第３回人口動態統計のICD-11準拠の統計分類適用に係るワーキンググループ 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74224.html",
+          "date": "2026-07-02",
+          "category": "審議会等"
+        },
+        {
+          "hash": "7840a063555e3bab",
+          "title": "第３回療養病床の在り方等に関する検討会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000099304.html",
+          "date": "2026-07-01",
+          "category": "審議会等"
+        },
+        {
+          "hash": "c9bbabfcd549a853",
+          "title": "第７回医療扶助・健康管理支援等に関する検討会の開催について（報道発表）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74135.html",
+          "date": "2026-07-01",
+          "category": "審議会等"
+        },
+        {
+          "hash": "cd85e304fba5aec7",
+          "title": "第184回医学的検証作業グループ",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74095.html",
+          "date": "2026-07-01",
+          "category": "審議会等"
+        },
+        {
+          "hash": "186a77bcf2652060",
+          "title": "戦没者慰霊事業のお知らせ（令和８年７月実施分）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74082.html",
+          "date": "2026-07-01",
+          "category": "報道発表"
+        },
+        {
+          "hash": "9158ab900359aea7",
+          "title": "原子力災害対策特別措置法第20条第２項の規定に基づく食品の出荷制限等の解除",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73972.html",
+          "date": "2026-07-01",
+          "category": "その他"
+        },
+        {
+          "hash": "4c30f954c529d056",
+          "title": "「第15回 健康寿命をのばそう！アワード」（生活習慣病予防分野）の応募受付を開始します。",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73944.html",
+          "date": "2026-07-01",
+          "category": "報道発表"
+        },
+        {
+          "hash": "abebf1b8d5ce95be",
+          "title": "第８回 歯科技工士の業務のあり方等に関する検討会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74220.html",
+          "date": "2026-07-01",
+          "category": "審議会等"
+        },
+        {
+          "hash": "cf72be9dfcb2e7f2",
+          "title": "第187回労働政策審議会安全衛生分科会（開催案内）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74211.html",
+          "date": "2026-07-01",
+          "category": "審議会等"
+        },
+        {
+          "hash": "ee09072b1f461a57",
+          "title": "被保護者調査（令和８年４月分概数）",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/hihogosya/m2026/04.html",
+          "date": "2026-07-01",
+          "category": "統計情報"
+        },
+        {
+          "hash": "cce22e2f750355aa",
+          "title": "WEBマガジン「厚生労働」",
+          "url": "https://www.mhlw.go.jp/web_magazine/",
+          "date": "2026-07-01",
+          "category": "その他"
+        },
+        {
+          "hash": "b8c26a233bce0666",
+          "title": "労働経済動向調査にご協力をお願いします ～令和８(2026)年８月調査～",
+          "url": "https://www.mhlw.go.jp/toukei/oshirase/260701.html",
+          "date": "2026-07-01",
+          "category": "統計情報"
+        },
+        {
+          "hash": "1e812eaf4b80e939",
+          "title": "人事労務マガジン 定例第189号",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74181.html",
+          "date": "2026-07-01",
+          "category": "その他"
+        },
+        {
+          "hash": "1596d10e265bbc42",
+          "title": "令和８年６月３０日付大臣会見概要",
+          "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00944.html",
+          "date": "2026-06-30",
+          "category": "大臣会見等"
+        },
+        {
+          "hash": "4c19f55312aa88aa",
+          "title": "令和８年度医療施設等施設整備費補助金の交付額の内示について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74196.html",
+          "date": "2026-06-30",
+          "category": "報道発表"
+        },
+        {
+          "hash": "0fa489c1350de87c",
+          "title": "令和８年度（令和７年度補正予算からの繰越分）医療施設等施設整備費補助金の交付額の内示について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74193.html",
+          "date": "2026-06-30",
+          "category": "報道発表"
+        },
+        {
+          "hash": "5c32581c8b0a04d6",
+          "title": "第２回療養病床の在り方等に関する検討会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000096142.html",
+          "date": "2026-06-30",
+          "category": "審議会等"
+        },
+        {
+          "hash": "cfc34f40dbf90d61",
+          "title": "令和８年度（令和８年度当初予算分、令和７年度からの繰越分）医療提供体制施設整備交付金の交付額の内示について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74150.html",
+          "date": "2026-06-30",
+          "category": "報道発表"
+        },
+        {
+          "hash": "181ea360efecb491",
+          "title": "第２回療養病床の在り方等に関する検討会",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000096887.html",
+          "date": "2026-06-30",
+          "category": "その他"
+        },
+        {
+          "hash": "12c6ad31f1b4c2f0",
+          "title": "労働災害発生状況",
+          "url": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei11/rousai-hassei/index.html",
+          "date": "2026-06-30",
+          "category": "統計情報"
+        },
+        {
+          "hash": "34d36ce656dc687c",
+          "title": "食品中の放射性物質の検査結果について（１５０１報）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74143.html",
+          "date": "2026-06-30",
+          "category": "報道発表"
+        },
+        {
+          "hash": "004be864c691370c",
+          "title": "第９回がんゲノム医療中核拠点病院等の指定要件に関するワーキンググループ（開催案内）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74113.html",
+          "date": "2026-06-30",
+          "category": "審議会等"
+        },
+        {
+          "hash": "924dc485b7d2d720",
+          "title": "最近の調剤医療費（電算処理分）の動向 令和7年度2月号",
+          "url": "https://www.mhlw.go.jp/topics/medias/c-med/2026/02/",
+          "date": "2026-06-30",
+          "category": "政策分野"
+        },
+        {
+          "hash": "2f6e8d5eed5d0680",
+          "title": "最近の歯科医療費（電算処理分）の動向 令和7年度2月号",
+          "url": "https://www.mhlw.go.jp/topics/medias/shika_iryou/2026/02/",
+          "date": "2026-06-30",
+          "category": "政策分野"
+        },
+        {
+          "hash": "26af889f3e2d17c3",
+          "title": "最近の医科医療費（電算処理分）の動向 令和7年度2月号",
+          "url": "https://www.mhlw.go.jp/topics/medias/ika_iryou/2026/02/",
+          "date": "2026-06-30",
+          "category": "政策分野"
+        },
+        {
+          "hash": "6295c1e70bbf1938",
+          "title": "最近の医療費の動向-MEDIAS-令和7年度2月号",
+          "url": "https://www.mhlw.go.jp/topics/medias/month/26/02.html",
+          "date": "2026-06-30",
+          "category": "政策分野"
+        },
+        {
+          "hash": "540e618c5ca9fc80",
+          "title": "令和７(2025)年労使間の交渉等に関する実態調査の概況",
+          "url": "https://www.mhlw.go.jp/toukei/list/18-r07gaiyou.html",
+          "date": "2026-06-30",
+          "category": "統計情報"
+        },
+        {
+          "hash": "b165e436951493ff",
+          "title": "労働者派遣法違反に係る告発について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74041.html",
+          "date": "2026-06-30",
+          "category": "報道発表"
+        },
+        {
+          "hash": "33d5b5f7add32ac7",
+          "title": "医療施設動態調査（令和8(2026)年4月末概数）",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/iryosd/m26/is2604.html",
+          "date": "2026-06-30",
+          "category": "統計情報"
+        },
+        {
+          "hash": "449883a26b5f53c1",
+          "title": "令和８年度第１回献血推進調査会 資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73942.html",
+          "date": "2026-06-30",
+          "category": "審議会等"
+        },
+        {
+          "hash": "95f4f6ff1a9a1e1f",
+          "title": "技能実習法に基づく行政処分等を行いました",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73906.html",
+          "date": "2026-06-30",
+          "category": "報道発表"
+        },
+        {
+          "hash": "b8b7881730bd85da",
+          "title": "令和８年医療施設静態調査へのご協力をお願いします",
+          "url": "https://www.mhlw.go.jp/toukei/list/dl/79-1_2026.html",
+          "date": "2026-06-30",
+          "category": "統計情報"
+        },
+        {
+          "hash": "a6fc013eee7ef18e",
+          "title": "令和7年度環境物品等の調達の実績の概要について",
+          "url": "https://www.mhlw.go.jp/sinsei/chotatu/kankyo/",
+          "date": "2026-06-30",
+          "category": "その他"
+        },
+        {
+          "hash": "80bc1798709a263c",
+          "title": "第２回社会保障審議会療養病床の在り方等に関する特別部会",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000128367.html",
+          "date": "2026-06-30",
+          "category": "その他"
+        },
+        {
+          "hash": "c814981bf83ef39d",
+          "title": "資料招請（年金業務システム（経過管理・電子決裁及び基盤サブシステム）の機能改善に係る設計・改修等業務）",
+          "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-siryo/newpage_10446.html",
+          "date": "2026-06-30",
+          "category": "その他"
+        },
+        {
+          "hash": "73fa92c13ca4ed55",
+          "title": "第58回社会保障審議会生活保護基準部会 資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74157.html",
+          "date": "2026-06-30",
+          "category": "審議会等"
+        },
+        {
+          "hash": "b13b599e59c537ac",
+          "title": "一般職業紹介状況(令和8年5月分)について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74004.html",
+          "date": "2026-06-30",
+          "category": "報道発表"
+        },
+        {
+          "hash": "aca55470f4500261",
+          "title": "第２回介護保険制度における預貯金等の把握等に係る検討の場の資料について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74167.html",
+          "date": "2026-06-30",
+          "category": "審議会等"
+        },
+        {
+          "hash": "1dab25912d052b95",
+          "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74160.html",
+          "date": "2026-06-29",
+          "category": "報道発表"
+        },
+        {
+          "hash": "6c6933229ad5303f",
+          "title": "令和７年一般労働者の実労働日数階級別のサンプルサイズの割合",
+          "url": "https://www.mhlw.go.jp/toukei/list/chinginkouzou_sankou_size.html",
+          "date": "2026-06-29",
+          "category": "統計情報"
+        },
+        {
+          "hash": "de6af818a234f11b",
+          "title": "令和７年産業、事業所規模別母集団数、標本数、有効回答率",
+          "url": "https://www.mhlw.go.jp/toukei/list/chinginkouzou_sankou.html",
+          "date": "2026-06-29",
+          "category": "統計情報"
+        },
+        {
+          "hash": "351ba0dd87724ded",
+          "title": "抗菌薬等医薬品備蓄体制整備事業 実施事業者の公募について（２次公募）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74146.html",
+          "date": "2026-06-29",
+          "category": "政策分野"
+        },
+        {
+          "hash": "0b7812cdbf20ed57",
+          "title": "厚生科学審議会科学技術部会全ゲノム解析等の推進に関する専門委員会（第26回）資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74126.html",
+          "date": "2026-06-29",
+          "category": "審議会等"
+        },
+        {
+          "hash": "b5b6bbf5c0a6c57b",
+          "title": "第135回社会保障審議会介護保険部会の資料について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74114.html",
+          "date": "2026-06-29",
+          "category": "審議会等"
+        },
+        {
+          "hash": "57f5da0a12747d10",
+          "title": "令和８年６月２６日付大臣会見概要",
+          "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00943.html",
+          "date": "2026-06-26",
+          "category": "大臣会見等"
+        },
+        {
+          "hash": "45ff48cfdb42e131",
+          "title": "令和８年度ハンセン病問題対策協議会の資料について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74137.html",
+          "date": "2026-06-26",
+          "category": "審議会等"
+        },
+        {
+          "hash": "f00c359600185e21",
+          "title": "第６回 医療扶助・健康管理支援等に関する検討会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74136.html",
+          "date": "2026-06-26",
+          "category": "審議会等"
+        },
+        {
+          "hash": "e226de3064fe196a",
+          "title": "令和８年度地域介護・福祉空間整備等施設整備交付金（一次協議分）の内示について",
+          "url": "https://www.mhlw.go.jp/stf/hard2026-1_00001.html",
+          "date": "2026-06-26",
+          "category": "報道発表"
+        },
+        {
+          "hash": "b89f776d4dff5bd9",
+          "title": "第187回市町村職員を対象とするセミナー「精神障害にも対応した地域包括ケアシステムの構築について」（オンライン会議）開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74087.html",
+          "date": "2026-06-26",
+          "category": "その他"
+        },
+        {
+          "hash": "85f9dcf940a64127",
+          "title": "第２回介護保険制度における預貯金等の把握等に係る検討の場の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74054.html",
+          "date": "2026-06-26",
+          "category": "その他"
+        },
+        {
+          "hash": "e9e885877b3de56e",
+          "title": "令和７(2025)年社会医療診療行為別統計の概況",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/sinryo/tyosa25/",
+          "date": "2026-06-26",
+          "category": "統計情報"
+        },
+        {
+          "hash": "4c2ac465c4767bce",
+          "title": "第７回労働政策審議会労働条件分科会「組織再編に伴う労働関係の調整に関する部会」(開催案内)",
+          "url": "https://www.mhlw.go.jp/stf/shinngi_00020.html",
+          "date": "2026-06-26",
+          "category": "審議会等"
+        },
+        {
+          "hash": "30c034c875a650c1",
+          "title": "令和８年度第５回「石綿に係る疾病の業務上外に関する検討会」を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73866.html",
+          "date": "2026-06-26",
+          "category": "審議会等"
+        },
+        {
+          "hash": "8512c886657bf27c",
+          "title": "第114回ＩＬＯ総会結果（概要）",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/kokusai/ilo/ilo_soukai2026.html",
+          "date": "2026-06-26",
+          "category": "政策分野"
+        },
+        {
+          "hash": "3422c91efab3fa69",
+          "title": "令和８年度中央最低賃金審議会目安に関する小委員会（第１回）資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74088.html",
+          "date": "2026-06-26",
+          "category": "審議会等"
+        },
+        {
+          "hash": "16857b198b419baf",
+          "title": "第74回中央最低賃金審議会 資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74079.html",
+          "date": "2026-06-26",
+          "category": "審議会等"
+        },
+        {
+          "hash": "b29bb9cb975f79cb",
+          "title": "2016年10月26日 第４回社会保障審議会療養病床の在り方等に関する特別部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000145518.html",
+          "date": "2026-06-26",
+          "category": "その他"
+        },
+        {
+          "hash": "88e54faef6604aef",
+          "title": "公募公示（労働委員会会館乗用エレベーター３号機冠水復旧工事）",
+          "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/k-oth-kikakukoubo/newpage_10444.html",
+          "date": "2026-06-26",
+          "category": "その他"
+        },
+        {
+          "hash": "30e7da68f46eb6b0",
+          "title": "毎月勤労統計調査［地方調査］－令和７年平均結果概要",
+          "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/monthly/r07/year.html",
+          "date": "2026-06-26",
+          "category": "統計情報"
+        },
+        {
+          "hash": "37a03659857c8085",
+          "title": "第３７回肝炎対策推進協議会（オンライン開催）（資料）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73997.html",
+          "date": "2026-06-26",
+          "category": "審議会等"
+        },
+        {
+          "hash": "5d1a51ba965fd443",
+          "title": "社会福祉施設職員等退職手当共済制度の在り方に関する検討会（第３回）配布資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74080.html",
+          "date": "2026-06-26",
+          "category": "審議会等"
+        },
+        {
+          "hash": "4134e2a4301649eb",
+          "title": "第２回事業場における労働者の健康保持増進の在り方に関する検討会議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74072.html",
+          "date": "2026-06-26",
+          "category": "審議会等"
+        },
+        {
+          "hash": "80f558c8095dda44",
+          "title": "全世代型リ・スキリング国民運動に関する有識者会議を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74104.html",
+          "date": "2026-06-25",
+          "category": "審議会等"
+        },
+        {
+          "hash": "67d4251c7ca62215",
+          "title": "第３回 医療関係職種の安定的な養成・確保に関する検討会：開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74106.html",
+          "date": "2026-06-25",
+          "category": "審議会等"
+        },
+        {
+          "hash": "c277ad32abd038f9",
+          "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74100.html",
+          "date": "2026-06-25",
+          "category": "報道発表"
+        },
+        {
+          "hash": "756826b38f7f20f6",
+          "title": "第186回市町村セミナーの資料について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74092.html",
+          "date": "2026-06-25",
+          "category": "その他"
+        },
+        {
+          "hash": "2952f553e54dd551",
+          "title": "薬事審議会血液事業部会令和８年度第１回運営委員会（資料）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73826.html",
+          "date": "2026-06-25",
+          "category": "審議会等"
+        },
+        {
+          "hash": "068811943e7f7457",
+          "title": "開催案内ー第５回医療放射線の適正管理に関する検討会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74083.html",
+          "date": "2026-06-25",
+          "category": "審議会等"
+        },
+        {
+          "hash": "e1cf325375f80fa4",
+          "title": "介護給付費等実態統計月報（令和８（2026）年３月審査分）",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/kaigo/kyufu/2026/03.html",
+          "date": "2026-06-24",
+          "category": "統計情報"
+        },
+        {
+          "hash": "2a140c6bfd212357",
+          "title": "「第12回厚生科学審議会食品衛生監視部会」の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73927.html",
+          "date": "2026-06-24",
+          "category": "審議会等"
+        },
+        {
+          "hash": "d8a97967a5c50727",
+          "title": "「第26回厚生科学審議会科学技術部会全ゲノム解析等の推進に関する専門委員会（ハイブリッドにて開催）」を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73883.html",
+          "date": "2026-06-24",
+          "category": "その他"
+        },
+        {
+          "hash": "1607736ea216ed4d",
+          "title": "公益事業に関する争議行為の予告公表ページについて更新されました",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudouseisaku/sougikoui/index.html",
+          "date": "2026-06-24",
+          "category": "政策分野"
+        },
+        {
+          "hash": "62ea2d1bc7544714",
+          "title": "毎月勤労統計調査ー2026（令和８）年４月分結果確報",
+          "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/monthly/r08/2604r/2604r.html",
+          "date": "2026-06-24",
+          "category": "統計情報"
+        },
+        {
+          "hash": "c18b5657e7c4bffe",
+          "title": "第７４回中央最低賃金審議会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74013.html",
+          "date": "2026-06-23",
+          "category": "審議会等"
+        },
+        {
+          "hash": "88e991fbc9510d33",
+          "title": "第209回労働政策審議会労働条件分科会 議事録（2026年5月13日）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73976.html",
+          "date": "2026-06-23",
+          "category": "審議会等"
+        },
+        {
+          "hash": "4e26b025eabf62ed",
+          "title": "第73回中央最低賃金審議会 資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74002.html",
+          "date": "2026-06-23",
+          "category": "審議会等"
+        },
+        {
+          "hash": "c9dcc58a96ee9b28",
+          "title": "第３回目安制度の在り方に関する全員協議会 資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73994.html",
+          "date": "2026-06-23",
+          "category": "審議会等"
+        },
+        {
+          "hash": "0e40db6e5e8d1b1d",
+          "title": "第７３回中央最低賃金審議会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73830.html",
+          "date": "2026-06-23",
+          "category": "審議会等"
+        },
+        {
+          "hash": "c00c675f8c0b9839",
+          "title": "「人口動態統計速報」令和８（2026）年04月分",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/s2026/04.html",
+          "date": "2026-06-23",
+          "category": "統計情報"
+        },
+        {
+          "hash": "aedc4cae1327308a",
+          "title": "中央最低賃金審議会(目安制度の在り方に関する全員協議会)",
+          "url": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127940.html",
+          "date": "2026-06-23",
+          "category": "審議会等"
+        },
+        {
+          "hash": "31bdfd22f0e49ea0",
+          "title": "第135回社会保障審議会介護保険部会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73967.html",
+          "date": "2026-06-23",
+          "category": "審議会等"
+        },
+        {
+          "hash": "1df7a32a2f548b09",
+          "title": "食品中の放射性物質の検査結果について（１５００報）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73937.html",
+          "date": "2026-06-23",
+          "category": "報道発表"
+        },
+        {
+          "hash": "8de9f7cf1a62d4b4",
+          "title": "労働経済動向調査（令和８(2026)年５月）の概況",
+          "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/koyou/keizai/2605/",
+          "date": "2026-06-23",
+          "category": "統計情報"
+        },
+        {
+          "hash": "c90d5aeb9e8f4948",
+          "title": "「第93回 労働政策審議会勤労者生活分科会中小企業退職金共済部会」を開催します（開催案内）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73820.html",
+          "date": "2026-06-23",
+          "category": "審議会等"
+        },
+        {
+          "hash": "a5ca9fdcb3bb5ccd",
+          "title": "雇用環境・均等行政情報システムの運用・保守業務（ヘルプデスク含む）一式（令和９年度開始）",
+          "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-iken/newpage_10438.html",
+          "date": "2026-06-23",
+          "category": "その他"
+        },
+        {
+          "hash": "ad257432e6520500",
+          "title": "第５回 小児がん拠点病院等の指定要件に関するワーキンググループ（資料）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73981.html",
+          "date": "2026-06-23",
+          "category": "審議会等"
+        },
+        {
+          "hash": "7ed5ca4f2fc7b966",
+          "title": "令和８年６月２２日付大臣会見概要",
+          "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00941.html",
+          "date": "2026-06-22",
+          "category": "大臣会見等"
+        },
+        {
+          "hash": "1a2369d0cf8e1152",
+          "title": "第10回厚生科学審議会食品衛生監視部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi/2024giji_00014.html",
+          "date": "2026-06-22",
+          "category": "審議会等"
+        },
+        {
+          "hash": "60e2304888b31b19",
+          "title": "第259回社会保障審議会介護給付費分科会（Web会議）を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73998.html",
+          "date": "2026-06-22",
+          "category": "審議会等"
+        },
+        {
+          "hash": "04767a043b51158b",
+          "title": "社会福祉施設職員等退職手当共済制度の在り方に関する検討会（第２回） 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73962.html",
+          "date": "2026-06-22",
+          "category": "審議会等"
+        },
+        {
+          "hash": "ec5676cf1cb03c54",
+          "title": "「社会福祉施設職員等退職手当共済制度の在り方に関する検討会」（第３回）を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73907.html",
+          "date": "2026-06-22",
+          "category": "審議会等"
+        },
+        {
+          "hash": "0f3c7bbe1ea15e2f",
+          "title": "第23回年金広報検討会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73828.html",
+          "date": "2026-06-22",
+          "category": "審議会等"
+        },
+        {
+          "hash": "89c9fc3c0672e371",
+          "title": "薬事審議会 再生医療等製品・生物由来技術部会を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73806.html",
+          "date": "2026-06-22",
+          "category": "審議会等"
+        },
+        {
+          "hash": "de7f614e2b97fb04",
+          "title": "2024年度 特定健康診査・特定保健指導の実施状況",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/newpage_00082.html",
+          "date": "2026-06-22",
+          "category": "その他"
+        },
+        {
+          "hash": "088bae93c568ddee",
+          "title": "WEBマガジン「厚生労働」",
+          "url": "https://www.mhlw.go.jp/web_magazine/",
+          "date": "2026-06-22",
+          "category": "その他"
+        },
+        {
+          "hash": "38d3bd8368052522",
+          "title": "キャリアコンサルタントになりたい方へ（キャリアコンサルタント試験日程を更新しました）",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/career_consultant01.html",
+          "date": "2026-06-22",
+          "category": "政策分野"
+        },
+        {
+          "hash": "8b5334566b709b3f",
+          "title": "令和８年６月１９日付大臣会見概要",
+          "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00940.html",
+          "date": "2026-06-19",
+          "category": "大臣会見等"
+        },
+        {
+          "hash": "f7ca9d1f043f433b",
+          "title": "落札者等の公示（「年金生活者支援給付金に関する周知・広報等業務一式」（他１２件）",
+          "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/e-wto-rakusatu/newpage_10436.html",
+          "date": "2026-06-19",
+          "category": "その他"
+        },
+        {
+          "hash": "d52ddc38365c5dca",
+          "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73966.html",
+          "date": "2026-06-19",
+          "category": "報道発表"
+        },
+        {
+          "hash": "424b758386e1a3ff",
+          "title": "第５回セルフケア・セルフメディケーション推進に関する有識者検討会 議事要旨",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73961.html",
+          "date": "2026-06-19",
+          "category": "審議会等"
+        },
+        {
+          "hash": "39c502272abf61b2",
+          "title": "第40回労働政策審議会労働政策基本部会を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73930.html",
+          "date": "2026-06-19",
+          "category": "審議会等"
+        },
+        {
+          "hash": "614452689407bfaa",
+          "title": "第３７回肝炎対策推進協議会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73787.html",
+          "date": "2026-06-19",
+          "category": "審議会等"
+        },
+        {
+          "hash": "4fc0c72fd93863cb",
+          "title": "第３回目安制度の在り方に関する全員協議会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73779.html",
+          "date": "2026-06-19",
+          "category": "審議会等"
+        },
+        {
+          "hash": "eea610d0b041aa91",
+          "title": "「雇用の分野における障害者の差別禁止・合理的配慮の提供義務に係る相談等実績（令和７年度）」を公表します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73696.html",
+          "date": "2026-06-19",
+          "category": "その他"
+        },
+        {
+          "hash": "1147812b5abc4f26",
+          "title": "令和７年度ハローワークを通じた障害者の職業紹介状況などを公表します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73694.html",
+          "date": "2026-06-19",
+          "category": "報道発表"
+        },
+        {
+          "hash": "fb7c0f29eb1757ae",
+          "title": "公募公示（厚生年金保険の標準報酬月額等級の上限引上げに係る年金業務システム（経過管理・電子決裁及び基盤サブシステム）の設計・改修等業務 一式）",
+          "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-oth-kikakukoubo/newpage_10435.html",
+          "date": "2026-06-19",
+          "category": "その他"
+        },
+        {
+          "hash": "1dc74fe60b0b4076",
+          "title": "第９５回がん対策推進協議会（資料）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73926.html",
+          "date": "2026-06-18",
+          "category": "審議会等"
+        },
+        {
+          "hash": "7c37ff5c29c61b10",
+          "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73941.html",
+          "date": "2026-06-18",
+          "category": "報道発表"
+        },
+        {
+          "hash": "3939465ab5af0685",
+          "title": "第28回所属集団判定会議の開催",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73618.html",
+          "date": "2026-06-18",
+          "category": "審議会等"
+        },
+        {
+          "hash": "51b8f493a2ade43f",
+          "title": "公募公示（年金業務システム（フェーズ２）に係る設計・開発等（基盤サブシステム（共通プラットフォーム）に係る設計・開発及び環境構築並びに基盤製品に係る賃貸借及び保守業務 一式（その５）））",
+          "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-oth-kikakukoubo/newpage_10434.html",
+          "date": "2026-06-18",
+          "category": "その他"
+        },
+        {
+          "hash": "d22fda6d70bbd850",
+          "title": "適時調査の調査書等を更新しました。",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/shidou_kansa_jissi.html",
+          "date": "2026-06-18",
+          "category": "政策分野"
+        },
+        {
+          "hash": "b1181b1a854d962c",
+          "title": "【医系技官採用】令和8年度 夏の職場経験（医師および医学生を対象）の受付を開始しました。",
+          "url": "https://www.mhlw.go.jp/kouseiroudoushou/saiyou/ikei/index.html",
+          "date": "2026-06-17",
+          "category": "採用情報"
+        },
+        {
+          "hash": "78daec619cf1456b",
+          "title": "第62回献血運動推進全国大会の開催についてお知らせします",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73921.html",
+          "date": "2026-06-17",
+          "category": "報道発表"
+        },
+        {
+          "hash": "cac7fbffcaf3a7cd",
+          "title": "危険ドラッグの成分３物質を新たに指定薬物に指定",
+          "url": "https://www.mhlw.go.jp/stf/houdou/0000212707_00053.html",
+          "date": "2026-06-17",
+          "category": "報道発表"
+        },
+        {
+          "hash": "3e2dac7b9e02628a",
+          "title": "指定薬物を含有する危険ドラッグの発見について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73898.html",
+          "date": "2026-06-17",
+          "category": "報道発表"
+        },
+        {
+          "hash": "4e85403a1ded9313",
+          "title": "第５回小児がん拠点病院等の指定要件に関するワーキンググループ（開催案内）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73862.html",
+          "date": "2026-06-17",
+          "category": "審議会等"
+        },
+        {
+          "hash": "ee4871cb294940cf",
+          "title": "「令和７年度 石綿による疾病に関する労災保険給付などの請求・決定状況まとめ（速報値）」を公表します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73803.html",
+          "date": "2026-06-17",
+          "category": "報道発表"
+        },
+        {
+          "hash": "43bbbcc4530e8a9d",
+          "title": "「第11回厚生科学審議会食品衛生監視部会」の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73635.html",
+          "date": "2026-06-17",
+          "category": "審議会等"
+        },
+        {
+          "hash": "dd28b9449678920b",
+          "title": "第５３回特定石綿被害建設業務労働者等認定審査会 開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73422.html",
+          "date": "2026-06-17",
+          "category": "審議会等"
+        },
+        {
+          "hash": "30570ce303651a2b",
+          "title": "薬事審議会血液事業部会令和８年度第１回献血推進調査会（ペーパーレス・Web併用）の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73143.html",
+          "date": "2026-06-17",
+          "category": "審議会等"
+        },
+        {
+          "hash": "4bfbdfbcd770ab4f",
+          "title": "第32回身元特定ＤＮＡ鑑定会議の開催",
+          "url": "https://www.mhlw.go.jp/stf/newpage_72665.html",
+          "date": "2026-06-17",
+          "category": "審議会等"
+        },
+        {
+          "hash": "c18424bb04e9e8ff",
+          "title": "第1回ＯＴＣ類似薬の保険給付の見直しの実施に向けた技術的検討会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73912.html",
+          "date": "2026-06-17",
+          "category": "審議会等"
+        },
+        {
+          "hash": "e0d4ea71dbfdd4c8",
+          "title": "人事労務マガジン 特集第245号 中小企業事業者の皆さまへ 高年齢者の労働災害防止のための設備改善等を支援する補助金 ～令和8年度「エイジフレンドリー補助金」の受け付けが始まりました～",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73723.html",
+          "date": "2026-06-17",
+          "category": "その他"
+        },
+        {
+          "hash": "52677ca658a6cf9f",
+          "title": "第128回社会保障審議会医療部会 資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73902.html",
+          "date": "2026-06-16",
+          "category": "審議会等"
+        },
+        {
+          "hash": "3f4f70ca647ac1c0",
+          "title": "令和８年６月１６日付大臣会見概要",
+          "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00939.html",
+          "date": "2026-06-16",
+          "category": "大臣会見等"
+        },
+        {
+          "hash": "316fb60f41df168a",
+          "title": "「公的年金財政状況報告－令和６（2024）年度－」について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73183.html",
+          "date": "2026-06-16",
+          "category": "審議会等"
+        },
+        {
+          "hash": "9f9d98c2cf62c038",
+          "title": "令和８年度薬剤師臨床研修の効果的な実施のための調査検討事業実施法人の公募について",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000210087_00047.html",
+          "date": "2026-06-16",
+          "category": "政策分野"
+        },
+        {
+          "hash": "297e238914fab437",
+          "title": "看護系技官採用サイト更新",
+          "url": "https://www.mhlw.go.jp/general/saiyo/kangokei/",
+          "date": "2026-06-16",
+          "category": "採用情報"
+        },
+        {
+          "hash": "bb8e0b999e632370",
+          "title": "第６６回 厚生科学審議会疾病対策部会 指定難病検討委員会（持ち回り）が開催されました",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73719.html",
+          "date": "2026-06-16",
+          "category": "審議会等"
+        },
+        {
+          "hash": "6024ebabcb03c261",
+          "title": "令和８年度「こども霞が関見学デー」を開催します",
+          "url": "https://www.mhlw.go.jp/stf/houdou/newpage_00231.html",
+          "date": "2026-06-16",
+          "category": "報道発表"
+        },
+        {
+          "hash": "54e9a4bb5b6c4efb",
+          "title": "令和８年度「安全衛生に係る優良事業場、団体又は 功労者に対する厚生労働大臣表彰」の受賞者を決定しました",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73861.html",
+          "date": "2026-06-16",
+          "category": "その他"
+        },
+        {
+          "hash": "f1b191da63b76174",
+          "title": "食品中の放射性物質の検査結果について（１４９９報）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73850.html",
+          "date": "2026-06-16",
+          "category": "報道発表"
+        },
+        {
+          "hash": "8d72e4409f3e1804",
+          "title": "令和７年「労働災害動向調査（事業所調査（事業所規模100人以上）及び総合工事業調査）」の結果を公表します",
+          "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/saigai/25/",
+          "date": "2026-06-16",
+          "category": "統計情報"
+        },
+        {
+          "hash": "a476c53699a48e00",
+          "title": "第212回社会保障審議会医療保険部会（ペーパーレス）の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73831.html",
+          "date": "2026-06-16",
+          "category": "審議会等"
+        },
+        {
+          "hash": "a35a1ca5c8ac6074",
+          "title": "「行政事業レビュー（公開プロセス）」の実施について",
+          "url": "https://www.mhlw.go.jp/stf/houdou_kouhou/04872_00012.html",
+          "date": "2026-06-16",
+          "category": "審議会等"
+        },
+        {
+          "hash": "a466381472638eed",
+          "title": "第395回労働政策審議会職業安定分科会労働力需給制度部会（開催案内）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73770.html",
+          "date": "2026-06-16",
+          "category": "審議会等"
+        },
+        {
+          "hash": "0118d95ed2917704",
+          "title": "第23回年金広報検討会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73640.html",
+          "date": "2026-06-16",
+          "category": "審議会等"
+        },
+        {
+          "hash": "3c60082d71c34ec9",
+          "title": "採用情報（期間業務職員（保険局）募集情報）",
+          "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-hokenkyoku02.html",
+          "date": "2026-06-16",
+          "category": "採用情報"
+        },
+        {
+          "hash": "84ae075699ac83ad",
+          "title": "第24回 医薬品等行政評価・監視委員会資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73877.html",
+          "date": "2026-06-15",
+          "category": "審議会等"
+        },
+        {
+          "hash": "1d84491c54f144be",
+          "title": "「第139回労働政策審議会障害者雇用分科会」を開催します（開催案内）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73706.html",
+          "date": "2026-06-15",
+          "category": "審議会等"
+        },
+        {
+          "hash": "035e6fe74f378f52",
+          "title": "令和８年度第１回医道審議会医師分科会医師専門研修部会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73874.html",
+          "date": "2026-06-15",
+          "category": "審議会等"
+        },
+        {
+          "hash": "e178b309342f7940",
+          "title": "第15回医師養成過程を通じた医師の偏在対策等に関する検討会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73873.html",
+          "date": "2026-06-15",
+          "category": "審議会等"
+        },
+        {
+          "hash": "16b9d6a25625a357",
+          "title": "（開催案内）第118回厚生科学審議会 再生医療等評価部会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73786.html",
+          "date": "2026-06-15",
+          "category": "審議会等"
+        },
+        {
+          "hash": "7ec8819509360233",
+          "title": "薬事審議会 指定薬物部会を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73769.html",
+          "date": "2026-06-15",
+          "category": "審議会等"
+        },
+        {
+          "hash": "7f49127adae1878b",
+          "title": "第３回2040年に向けた看護職員の養成・確保の在り方に関する検討会の開催について：開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73736.html",
+          "date": "2026-06-15",
+          "category": "審議会等"
+        },
+        {
+          "hash": "e3e0df479b862baa",
+          "title": "「第301回原子爆弾被爆者医療分科会」の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73651.html",
+          "date": "2026-06-15",
+          "category": "審議会等"
+        },
+        {
+          "hash": "07c4678924465d62",
+          "title": "後期高齢者医療事業状況報告",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/iryouhoken/database/seido/kouki_houkoku.html",
+          "date": "2026-06-15",
+          "category": "統計情報"
+        },
+        {
+          "hash": "8eb2a7c9cce79eaa",
+          "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73871.html",
+          "date": "2026-06-15",
+          "category": "報道発表"
+        },
+        {
+          "hash": "f33bb417b23d34e7",
+          "title": "柔道整復療養費に係る明細書を有償交付する施術所について",
+          "url": "https://www.mhlw.go.jp/bunya/iryouhoken/jyuudou/ryouyouhi_yusyokouhu_sejutsusho.html",
+          "date": "2026-06-15",
+          "category": "政策分野"
+        },
+        {
+          "hash": "1aa537ee18638dd9",
+          "title": "2026年度官庁訪問情報（一般職・労働行政）を更新しました",
+          "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/kokka-roudou/index.html",
+          "date": "2026-06-15",
+          "category": "採用情報"
+        },
+        {
+          "hash": "f172ac324736fba1",
+          "title": "2026年度官庁訪問情報（一般職・厚生行政）を更新しました",
+          "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/kokka-kousei/index.html",
+          "date": "2026-06-15",
+          "category": "採用情報"
         }
       ]
     }

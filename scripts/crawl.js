@@ -119,8 +119,31 @@ function parseCfaCards(html, baseUrl) {
   return items;
 }
 
+/**
+ * mhlw-news: 厚生労働省 /stf/new-info/ の新着一覧
+ * ページ内のHTMLコメント <!--YYYYMMDDHHMM [カテゴリ] 絶対URL タイトル--> が
+ * 一覧の機械可読な複製になっており、これを一次情報として抽出する。
+ * コメントが将来消えても、0件ガードで構造変化として必ず検知される。
+ */
+function parseMhlwNews(html) {
+  const items = [];
+  const re = /<!--(\d{12}) \[([^\]]*)\] (https?:\/\/\S+) (.*?)-->/g;
+  for (const [, stamp, category, url, rawTitle] of html.matchAll(re)) {
+    const title = rawTitle.replace(/\s+/g, " ").trim();
+    if (!title) continue;
+    items.push({
+      title,
+      url,
+      date: `${stamp.slice(0, 4)}-${stamp.slice(4, 6)}-${stamp.slice(6, 8)}`,
+      category,
+    });
+  }
+  return items;
+}
+
 const PARSERS = {
   "cfa-cards": parseCfaCards,
+  "mhlw-news": parseMhlwNews,
 };
 
 // ---------------------------------------------------------------------------
@@ -158,54 +181,70 @@ async function main() {
 
   const state = loadState();
   const newItems = [];
+  const crawlErrors = []; // 1源の失敗は記録して続行する（後述の全滅チェックで使う）
 
   for (const source of active) {
-    const parse = PARSERS[source.method];
-    if (!parse) {
-      throw new Error(
-        `源「${source.name}」の巡回方法「${source.method}」に対応するパーサがありません`
-      );
-    }
-
-    console.log(`巡回: ${source.name} (${source.url})`);
-    const html = await fetchHtml(source.url);
-    const items = parse(html, source.url).map((it) => ({
-      hash: itemHash(it),
-      ...it,
-    }));
-
-    // ★ 抽出0件は「成功・差分なし」ではなく構造変化の疑いとしてエラー終了
-    if (items.length === 0) {
-      throw new Error(
-        `源「${source.name}」から項目を1件も抽出できませんでした。` +
-          `ページの構造が変わった疑いがあります（サイレント0件は許可しない）`
-      );
-    }
-
-    const prev = state.sources[source.name];
-    if (!prev) {
-      // 初回: 全項目をベースラインとして保存（差分は報告しない）
-      console.log(`  初回巡回: ${items.length}件をベースラインとして保存`);
-    } else {
-      const known = new Set(prev.items.map((it) => it.hash));
-      const fresh = items.filter((it) => !known.has(it.hash));
-      console.log(`  取得${items.length}件 / 新規${fresh.length}件`);
-      newItems.push(...fresh.map((it) => ({ source: source.name, ...it })));
-    }
-
-    // state更新: 今回の項目＋過去の項目（重複除去）を上限まで保持
-    const merged = [...items];
-    const seen = new Set(items.map((it) => it.hash));
-    for (const old of prev?.items ?? []) {
-      if (!seen.has(old.hash) && merged.length < MAX_ITEMS_PER_SOURCE) {
-        merged.push(old);
-        seen.add(old.hash);
+    try {
+      const parse = PARSERS[source.method];
+      if (!parse) {
+        throw new Error(
+          `巡回方法「${source.method}」に対応するパーサがありません`
+        );
       }
+
+      console.log(`巡回: ${source.name} (${source.url})`);
+      const html = await fetchHtml(source.url);
+      const items = parse(html, source.url).map((it) => ({
+        hash: itemHash(it),
+        ...it,
+      }));
+
+      // ★ 抽出0件は「成功・差分なし」ではなく構造変化の疑いとして失敗扱い
+      if (items.length === 0) {
+        throw new Error(
+          `項目を1件も抽出できませんでした。` +
+            `ページの構造が変わった疑いがあります（サイレント0件は許可しない）`
+        );
+      }
+
+      const prev = state.sources[source.name];
+      if (!prev) {
+        // 初回: 全項目をベースラインとして保存（差分は報告しない）
+        console.log(`  初回巡回: ${items.length}件をベースラインとして保存`);
+      } else {
+        const known = new Set(prev.items.map((it) => it.hash));
+        const fresh = items.filter((it) => !known.has(it.hash));
+        console.log(`  取得${items.length}件 / 新規${fresh.length}件`);
+        newItems.push(...fresh.map((it) => ({ source: source.name, ...it })));
+      }
+
+      // state更新: 今回の項目＋過去の項目（重複除去）を上限まで保持
+      // ★ 失敗した源はこのブロックに到達しないため、既存の記録はそのまま残る
+      const merged = [...items];
+      const seen = new Set(items.map((it) => it.hash));
+      for (const old of prev?.items ?? []) {
+        if (!seen.has(old.hash) && merged.length < MAX_ITEMS_PER_SOURCE) {
+          merged.push(old);
+          seen.add(old.hash);
+        }
+      }
+      state.sources[source.name] = {
+        lastCrawled: new Date().toISOString(),
+        items: merged,
+      };
+    } catch (e) {
+      // ★ 1源の失敗で他の源まで止めない。記録して次の源へ
+      console.error(`  失敗（続行）: ${source.name}: ${e.message}`);
+      crawlErrors.push({ source: source.name, error: e.message });
     }
-    state.sources[source.name] = {
-      lastCrawled: new Date().toISOString(),
-      items: merged,
-    };
+  }
+
+  // ★ 全滅した場合だけはエラー終了する（部分的な失敗は diff に記録して正常終了）
+  if (crawlErrors.length === active.length) {
+    throw new Error(
+      `全${active.length}源の巡回に失敗しました:\n` +
+        crawlErrors.map((c) => `  ${c.source}: ${c.error}`).join("\n")
+    );
   }
 
   mkdirSync(dirname(STATE_PATH), { recursive: true });
@@ -213,14 +252,14 @@ async function main() {
   writeFileSync(
     DIFF_PATH,
     JSON.stringify(
-      { generatedAt: new Date().toISOString(), newItems },
+      { generatedAt: new Date().toISOString(), newItems, crawlErrors },
       null,
       2
     ) + "\n"
   );
 
   console.log(
-    `完了: 新規${newItems.length}件 → ${DIFF_PATH.replace(ROOT + "/", "")}`
+    `完了: 新規${newItems.length}件（巡回失敗${crawlErrors.length}源） → ${DIFF_PATH.replace(ROOT + "/", "")}`
   );
 }
 
