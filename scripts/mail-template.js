@@ -65,8 +65,9 @@ function itemBlock(it) {
 <div style="padding-top:18px;">
   <a href="${esc(it.url)}" style="font-family:${FONT};font-size:15px;font-weight:600;color:${LINK};text-decoration:none;line-height:1.55;">${esc(it.title)}</a>
   <div style="font-family:${FONT};font-size:12px;color:${SUB};padding-top:4px;">${esc(it.category)} ・ ${esc(it.date)} ・ ${esc(it.source)}</div>
-  <div style="font-family:${FONT};font-size:13px;color:#4a463f;line-height:1.75;padding-top:7px;">${esc(it.summary)}
-    <a href="${esc(it.url)}" style="color:${LINK};text-decoration:none;white-space:nowrap;">原本を確認する →</a>
+  <div style="font-family:${FONT};font-size:13px;color:#4a463f;line-height:1.75;padding-top:7px;">${esc(it.summary)}</div>
+  <div style="font-family:${FONT};font-size:13px;padding-top:5px;">
+    <a href="${esc(it.url)}" style="color:${LINK};text-decoration:none;">原本を確認する →</a>
   </div>
 </div>`;
 }
@@ -131,7 +132,7 @@ export function buildMail(report) {
             ? section("◇", "中", "把握を", "#6b675f", mid.map(itemBlock).join(""))
             : "",
           low.length
-            ? section("・", "低", "参考", "#6b675f", low.map(lowLine).join(""))
+            ? section("◊", "低", "参考", "#6b675f", low.map(lowLine).join(""))
             : "",
         ].join("");
 
