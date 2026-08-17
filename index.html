@@ -115,6 +115,23 @@
   .empty{margin-top:26px;padding:26px 0;border-bottom:1px solid var(--rule);
     font-size:14px;color:var(--sub)}
 
+  /* 報道(P9): 波線の区切り・薄い背景の箱・〔報〕印章。見出しと出典のみ */
+  .press-rule{height:8px;margin:36px 0 12px;
+    background:radial-gradient(circle at 4px -2px, transparent 5px, var(--rule) 5px, var(--rule) 6.5px, transparent 7px);
+    background-size:14px 10px;background-repeat:repeat-x}
+  .press-head{display:flex;align-items:baseline;gap:8px}
+  .press-head .name{font-size:13px;font-weight:600;letter-spacing:.14em}
+  .press-head .l{font-size:12px;color:var(--sub)}
+  .press-item{background:var(--press-bg);padding:12px 14px;margin-top:10px}
+  .press-item .src{font-size:11px;font-weight:600;color:var(--sub);margin-bottom:5px;
+    display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+  .press-item h4{font-size:14px;line-height:1.55;font-weight:600}
+  .press-item h4 a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--faint)}
+  .press-note{font-size:11px;color:var(--faint);margin-top:10px;line-height:1.8}
+  .press-wrap{transition:opacity .2s ease,max-height .25s ease,margin .25s ease;
+    overflow:hidden;max-height:2000px}
+  .press-wrap.hide{opacity:0;max-height:0;margin:0;pointer-events:none}
+
   /* AIの働きかけ: タップ展開(常時表示しない) */
   .aid{margin-top:9px}
   .aid summary{list-style:none;cursor:pointer;font-size:12px;color:var(--link);
@@ -291,7 +308,7 @@
       <div class="box legend">
         <h5>記 号 の 見 か た</h5>
         <div class="row"><span class="seal kuni">国</span>国の機関 <span class="seal dokuho">独</span>独立行政法人</div>
-        <div class="row"><span class="seal ken">県</span>都道府県</div>
+        <div class="row"><span class="seal ken">県</span>都道府県 <span class="seal ho">報</span>報道機関</div>
         <div class="row">
           <span class="field hoiku">保育</span><span class="field jido">児童</span>
           <span class="field shogai">障害</span><span class="field korei">高齢</span>
@@ -488,6 +505,11 @@
       const anyLow = [...lowWrap.querySelectorAll(".it")].some((el) => !el.classList.contains("hide"));
       lowWrap.classList.toggle("hide", !anyLow);
     }
+    const pressWrap = document.querySelector("#list .press-wrap");
+    if (pressWrap) {
+      const anyPress = [...pressWrap.querySelectorAll(".it")].some((el) => !el.classList.contains("hide"));
+      pressWrap.classList.toggle("hide", !anyPress);
+    }
   }
 
   async function renderDay() {
@@ -497,10 +519,11 @@
     renderEar(d);
 
     const rec = state.index.days[d];
-    let items = [];
+    let items = [], pressItems = [];
     if (rec) {
       const m = await monthData(d.slice(0, 7));
       items = m.days[d]?.items ?? [];
+      pressItems = m.days[d]?.press ?? []; // 報道(P9)。件数・グラフには含めない
     }
     const c = { 高: 0, 中: 0, 低: 0 };
     items.forEach((it) => c[it.importance]++);
@@ -510,10 +533,27 @@
           : "新着なし")
       : "記録なし";
 
+    /* 報道ブロック(P9): 見出しと出典のみ・注記を常設。分野フィルタは効かせる */
+    const pressBlock = pressItems.length
+      ? `<div class="press-wrap">
+        <div class="press-rule"></div>
+        <div class="press-head"><span class="name">報道</span><span class="l">── 各社の記事・解釈を含みます</span></div>
+        ${pressItems.map((it) => `
+        <div class="it press-item" data-imp="報" data-fields="${(it.fields ?? []).join(",")}">
+          <div class="src"><span class="seal ho">報</span>${esc(it.source)} ・ ${esc(it.date)}${fieldsHtml(it)}</div>
+          <h4><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></h4>
+        </div>`).join("")}
+        <div class="press-note">報道の項目は見出しと出典の表示のみです。要約・重要度判定は行っていません。</div>
+      </div>`
+      : "";
+
     if (!rec) {
       $("list").innerHTML = `<div class="empty">この日の記録はありません（記録は2026年8月に始まりました）。</div>`;
-    } else if (items.length === 0) {
+    } else if (items.length === 0 && pressItems.length === 0) {
       $("list").innerHTML = `<div class="empty">この日の監視対象に新しい掲載はありませんでした。巡回は正常に動作しています。</div>`;
+    } else if (items.length === 0) {
+      $("list").innerHTML = `<div class="empty">この日の行政の監視対象に新しい掲載はありませんでした。</div>` + pressBlock;
+      applyFilters();
     } else {
       const order = { 高: 0, 中: 1, 低: 2 };
       const sorted = [...items].sort(
@@ -528,6 +568,7 @@
         hi.length ? `<div class="sec" data-sec="高"><span class="mark">◆</span> 高 <span class="l">── 対応・確認を</span></div>${hi.map(hiBlock).join("")}` : "",
         mid.length ? `<div class="sec" data-sec="中"><span class="mark m">◇</span> 中 <span class="l">── 把握を</span></div>${mid.map(midBlock).join("")}` : "",
         low.length ? `<div class="low-wrap"><div class="low-h">◊ 低 ── 参考（${low.length}件）</div>${low.map(lowLine).join("")}</div>` : "",
+        pressBlock,
       ].join("");
       applyFilters();
     }

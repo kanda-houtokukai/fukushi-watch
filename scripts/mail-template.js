@@ -50,11 +50,13 @@ function countBy(items) {
   return c;
 }
 
-/** 件名: 朝の受信箱で3秒で判断できるよう、件数と最高重要度を先頭に置く */
-export function buildSubject(items, date = jstDate()) {
+/** 件名: 朝の受信箱で3秒で判断できるよう、件数と最高重要度を先頭に置く（報道は件数に含めない） */
+export function buildSubject(items, date = jstDate(), pressCount = 0) {
   const c = countBy(items);
   const brand = `福祉情報ウォッチ ${date.short}`;
-  if (items.length === 0) return `更新なし｜${brand}`;
+  if (items.length === 0) {
+    return pressCount > 0 ? `更新なし・報道${pressCount}件｜${brand}` : `更新なし｜${brand}`;
+  }
   if (c["高"] > 0) return `高${c["高"]}件を含む新着${items.length}件｜${brand}`;
   if (c["中"] > 0) return `新着${items.length}件（中まで）｜${brand}`;
   return `新着${items.length}件（低のみ）｜${brand}`;
@@ -96,8 +98,9 @@ function section(mark, label, note, color, inner) {
  */
 export function buildMail(report) {
   const items = report.items ?? [];
+  const press = report.press ?? []; // 報道(P9): 見出し・出典のみ。要約・判定はしない
   const date = jstDate(new Date(report.generatedAt ?? Date.now()));
-  const subject = buildSubject(items, date);
+  const subject = buildSubject(items, date, press.length);
   const c = countBy(items);
 
   // 重要度の高い順に並べる（同重要度内は日付の新しい順）
@@ -118,11 +121,27 @@ export function buildMail(report) {
       ? "巡回は正常に動作しています"
       : `高 ${c["高"]} ・ 中 ${c["中"]} ・ 低 ${c["低"]}`;
 
-  const body =
+  /* 報道セクション(P9): 波線区切り+薄い背景の箱+〔報〕。見出しと出典のみ・注記を常設 */
+  const pressSection = press.length
+    ? `
+<div style="border-top:2px dashed ${RULE};margin-top:34px;padding-top:16px;">
+  <div style="font-family:${FONT};font-size:13px;font-weight:700;letter-spacing:.14em;color:#6b675f;">報道 <span style="font-weight:400;color:${SUB};letter-spacing:0;">── 各社の記事・解釈を含みます</span></div>
+  ${press.map((it) => `
+  <div style="background:#f5f3ef;padding:11px 13px;margin-top:9px;">
+    <div style="font-family:${FONT};font-size:11px;font-weight:600;color:${SUB};">〔報〕 ${esc(it.source)} ・ ${esc(it.date)}</div>
+    <div style="font-family:${FONT};font-size:13.5px;line-height:1.6;margin-top:4px;">
+      <a href="${esc(it.url)}" style="color:${INK};text-decoration:underline;">${esc(it.title)}</a>
+    </div>
+  </div>`).join("")}
+  <div style="font-family:${FONT};font-size:11px;color:${FAINT};margin-top:10px;line-height:1.8;">報道の項目は見出しと出典の表示のみです。要約・重要度判定は行っていません。</div>
+</div>`
+    : "";
+
+  const govBody =
     items.length === 0
       ? `
 <div style="font-family:${FONT};font-size:13px;color:#4a463f;line-height:1.8;margin-top:26px;border-top:1px solid ${RULE};padding-top:20px;">
-  本日の監視対象に新しい掲載はありませんでした。
+  本日の監視対象（行政）に新しい掲載はありませんでした。
 </div>`
       : [
           high.length
@@ -135,6 +154,7 @@ export function buildMail(report) {
             ? section("◊", "低", "参考", "#6b675f", low.map(lowLine).join(""))
             : "",
         ].join("");
+  const body = govBody + pressSection;
 
   const html = `<!doctype html>
 <html lang="ja"><head><meta charset="utf-8"></head>
