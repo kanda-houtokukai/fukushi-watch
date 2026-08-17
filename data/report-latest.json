@@ -1,19 +1,6 @@
 {
-  "generatedAt": "2026-08-17T21:53:37.601Z",
-  "model": "gemini-3.7-flash",
+  "generatedAt": "2026-08-17T22:00:16.768Z",
+  "model": null,
   "items": [],
-  "press": [
-    {
-      "hash": "ba14409d68340fa2",
-      "source": "介護ニュースJoint",
-      "kind": "press",
-      "title": "あの「介護甲子園」が再開へ 仕掛け人・左敬真氏が語る、社会福祉法人が100年生き残るための経営哲学",
-      "url": "https://www.joint-kaigo.com/articles/47243/",
-      "date": "2026-08-18",
-      "category": "超高齢化",
-      "fields": [
-        "高齢"
-      ]
-    }
-  ]
+  "press": []
 }
