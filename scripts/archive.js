@@ -43,7 +43,7 @@ function loadJson(path, fallback) {
  * タイトルから回数・日付表現を除いた「系列キー」を作り、同じ系列の過去項目を最大3件参照する。
  * 行政情報の「関連」の大半は定例系列(第N回部会・毎月の統計・人事異動)で、これが最も正確に拾える。
  */
-function seriesKey(title) {
+export function seriesKey(title) {
   const t = String(title ?? "")
     .normalize("NFKC")
     .replace(/第\s*\d+\s*回/g, "")
@@ -135,9 +135,13 @@ function main() {
   );
 }
 
-try {
-  main();
-} catch (e) {
-  console.error(`エラー: ${e.message}`);
-  process.exit(1);
+/* 直接実行されたときだけ main を走らせる（他スクリプトから関数を再利用するため） */
+const isMain = process.argv[1] && import.meta.url.endsWith(process.argv[1].split("/").pop());
+if (isMain) {
+  try {
+    main();
+  } catch (e) {
+    console.error(`エラー: ${e.message}`);
+    process.exit(1);
+  }
 }

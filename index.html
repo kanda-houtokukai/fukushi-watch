@@ -315,7 +315,7 @@
     <div class="ear">
       <span id="earDate"></span>
       <span class="ear-auto">毎朝7時 自動発行</span>
-      <span>創刊から <b id="issueNo"></b></span>
+      <span><span id="issuePrefix">創刊から </span><b id="issueNo"></b></span>
     </div>
 
     <div class="masthead">
@@ -502,8 +502,10 @@
     const f = fmtDay(d);
     const reiwa = f.y - 2018;
     $("earDate").textContent = `${f.y}年（令和${reiwa}年）${f.m}月${f.dd}日　${f.w}曜日`;
-    const no = Math.max(1, Math.floor((dayUTC(d) - FOUNDED) / 86400000) + 1);
-    $("issueNo").textContent = `第 ${no} 号`;
+    /* 創刊(2026-08-16)より前の日付には号数を振らない（遡及記録=P14。号数は発行の記録のため） */
+    const no = Math.floor((dayUTC(d) - FOUNDED) / 86400000) + 1;
+    $("issueNo").textContent = no < 1 ? "創刊前の記録" : `第 ${no} 号`;
+    $("issuePrefix").textContent = no < 1 ? "" : "創刊から ";
   }
 
   /* この7日: 対応が要る日の地図。高だけ朱・中低は無彩色・高の日は朱点・タップで移動 */
