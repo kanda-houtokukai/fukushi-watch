@@ -94,6 +94,20 @@ export function preferModel(candidates, preferred) {
 // ---------------------------------------------------------------------------
 
 const FIELD_VOCAB = ["保育", "障害", "高齢", "児童", "共通"];
+const FOUR_FIELDS = ["保育", "児童", "障害", "高齢"];
+
+/**
+ * 分野タグの正規化（P15）。
+ * 4分野すべてに該当する判定は「共通」と論理的に同義なので、機械的に ["共通"] へ寄せる。
+ * プロンプトの改善でなく出力の後処理で行う理由: AIに毎回同じ選択をさせるより、
+ * 出力を機械で整える方が揺らがない（モデル差・世代交代にも強い）。
+ */
+export function normalizeFields(fields) {
+  const set = new Set(Array.isArray(fields) ? fields : []);
+  if (FOUR_FIELDS.every((f) => set.has(f))) return ["共通"];
+  if (set.has("共通") && set.size > 1) return ["共通"]; // 共通＋個別の混在も冗長なので寄せる
+  return [...set];
+}
 
 export function buildPrompt(items) {
   const list = items.map((it, i) => ({
@@ -125,6 +139,7 @@ export function buildPrompt(items) {
    - 空配列 [] = 福祉事業の運営に関係がないものだけ
      （薬事・年金・一般労働政策・省庁の人事・調達・採用など）
    - ⚠️迷ったら空配列でなく「共通」に倒す（分野で絞ったとき重要情報が消える事故を防ぐ）
+   - ⚠️4分野すべてに該当する場合は列挙せず ["共通"] とする（同義なので表記を一つに揃える）
 4. reason: 判定理由（1行）
 
 入力（${items.length}件）:
@@ -284,7 +299,7 @@ async function main() {
         category: it.category,
         summary: j.summary.trim(),
         importance: j.importance,
-        fields: j.fields, // 分野タグ（保育/障害/高齢/児童/共通・空=福祉と無関係）
+        fields: normalizeFields(j.fields), // 分野タグ（4分野すべて→共通へ正規化・P15）
         reason: (j.reason ?? "").trim(),
       });
     });
@@ -394,7 +409,7 @@ ${JSON.stringify(press.map((it, i) => ({ index: i, title: it.title, category: it
       url: it.url, // 原本(元記事)への直リンク
       date: it.date,
       category: it.category,
-      fields: fieldsByIdx?.get(i) ?? [],
+      fields: normalizeFields(fieldsByIdx?.get(i) ?? []),
     }));
     console.log(`報道: ${pressOut.length}件（タグのみ・要約なし）`);
   }

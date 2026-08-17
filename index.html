@@ -28,6 +28,7 @@
     font-size:11.5px;color:var(--sub);letter-spacing:.06em;
     padding:10px 0;border-bottom:1px solid var(--rule)}
   .ear b{color:var(--ink)}
+  .ear .ear-short{display:none} /* スマホでのみ使う短い日付表記（P15） */
 
   /* ==== 題字 ==== */
   .masthead{text-align:center;padding:34px 0 22px;border-bottom:3px double var(--ink)}
@@ -241,6 +242,8 @@
   @media(max-width:899px){
     .ear{flex-wrap:nowrap;font-size:11px}
     .ear .ear-auto{display:none} /* 「毎朝7時 自動発行」は省き日付と号数のみ */
+    .ear .ear-full{display:none} /* スマホは短い日付に切り替え（本日併記の余白を確保） */
+    .ear .ear-short{display:inline}
     .masthead{padding:20px 0 14px}
     .masthead h1{font-size:clamp(21px,6vw,24px);letter-spacing:.18em;text-indent:.18em}
     .masthead .sub{display:none} /* 副題は初見向け=メニュー内「このサイトについて」に委ねる */
@@ -313,7 +316,7 @@
 
   <div id="topHead"><!-- スマホでは二重罫より上を固定ヘッダーにする(P10) -->
     <div class="ear">
-      <span id="earDate"></span>
+      <span id="earDate"><span class="ear-full"></span><span class="ear-short"></span><span class="ear-today"></span></span>
       <span class="ear-auto">毎朝7時 自動発行</span>
       <span><span id="issuePrefix">創刊から </span><b id="issueNo"></b></span>
     </div>
@@ -497,11 +500,21 @@
   const metaLine = (it) =>
     `${sealHtml(it.source)}<span>${esc(it.date)}</span>${fieldsHtml(it)}`;
 
-  /* 欄外: 和暦付き日付と号数(創刊からの経過日数+1。新着0件の日も号は進む) */
+  /* 欄外: 和暦付き日付と号数(創刊からの経過日数+1。新着0件の日も号は進む)。
+     日付・号数は「その紙面の発行日」を示す（新聞の題字と同じ作法）。
+     過去の紙面を見ているときだけ「｜ 本日 8/18」を添える(P15)。
+     理由: 期限の残り日数が本日基準のため、過去に潜ったとき今日を見失わせない */
   function renderEar(d) {
     const f = fmtDay(d);
     const reiwa = f.y - 2018;
-    $("earDate").textContent = `${f.y}年（令和${reiwa}年）${f.m}月${f.dd}日　${f.w}曜日`;
+    const today = jstToday();
+    const ear = $("earDate");
+    // 長短2つを持ち、CSSで出し分ける（スマホは短く。リサイズにも自動追従）
+    ear.querySelector(".ear-full").textContent =
+      `${f.y}年（令和${reiwa}年）${f.m}月${f.dd}日　${f.w}曜日`;
+    ear.querySelector(".ear-short").textContent = `${f.m}月${f.dd}日（${f.w}）`;
+    ear.querySelector(".ear-today").textContent =
+      d === today ? "" : `　｜　本日 ${fmtDay(today).short}`;
     /* 創刊(2026-08-16)より前の日付には号数を振らない（遡及記録=P14。号数は発行の記録のため） */
     const no = Math.floor((dayUTC(d) - FOUNDED) / 86400000) + 1;
     $("issueNo").textContent = no < 1 ? "創刊前の記録" : `第 ${no} 号`;
