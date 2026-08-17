@@ -359,7 +359,7 @@
 
       <section class="about" id="about">
         <h2>このサイトについて</h2>
-        <p>「福祉情報ウォッチ」は、福祉に関わる行政の公開情報を毎朝ひとまわりして、前日から増えた分だけを取り出す個人開発の記録装置です。要約と重要度（高＝対応・確認を／中＝把握を／低＝参考）はAIが付けています。人事異動も報酬改定も同じ重さでは並べない——重要度の差を紙面の組みで示すのがこのサイトの方針です。</p>
+        <p>「福祉情報ウォッチ」は、福祉に関わる行政の公開情報を毎朝ひとまわりして、前日から増えた分だけを取り出す記録装置です。要約と重要度（高＝対応・確認を／中＝把握を／低＝参考）はAIが付けています。人事異動も報酬改定も同じ重さでは並べない——重要度の差を紙面の組みで示すのがこのサイトの方針です。</p>
         <table>
           <tr><td>こども家庭庁 新着情報（全カテゴリ）</td><td>毎朝7時</td></tr>
           <tr><td>厚生労働省 新着情報（全カテゴリ）</td><td>毎朝7時</td></tr>
@@ -580,10 +580,11 @@
     return `<span class="dlmeta${n <= 3 ? " soon" : ""}">期限 ${fmtDay(d.deadline).short}（${remainText(n)}）</span>`;
   }
 
-  /* ==== 共有リンク(P11): ?d=YYYY-MM-DD&i=hash8 ==== */
-  function shareBtn(day, hash) {
-    return `<button class="share" data-share-day="${day}" data-share-hash="${esc(hash)}" aria-label="この項目のリンクをコピー">
-      <svg width="13" height="13" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 12a4 4 0 0 1 0-5.6l2.4-2.4a4 4 0 0 1 5.6 5.6L14.6 11"/><path d="M12 8a4 4 0 0 1 0 5.6l-2.4 2.4a4 4 0 0 1-5.6-5.6L5.4 9"/></svg>
+  /* ==== 共有(P11/P12): ?d=YYYY-MM-DD&i=hash8。
+     スマホ=端末の共有シート(Web Share API)／PC=URLコピー ==== */
+  function shareBtn(day, hash, title) {
+    return `<button class="share" data-share-day="${day}" data-share-hash="${esc(hash)}" data-share-title="${esc(title)}" aria-label="この項目を共有">
+      <svg width="13" height="13" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12V3"/><path d="M6.8 5.8 10 2.6l3.2 3.2"/><path d="M5 9H4v8h12V9h-1"/></svg>
       <span class="tip">コピーしました</span></button>`;
   }
 
@@ -608,7 +609,7 @@
     <article class="it top-item" data-imp="高" data-fields="${(it.fields ?? []).join(",")}" data-hash="${esc(it.hash)}">
       <h3>${esc(s.head)}</h3>
       ${s.rest ? `<div class="body">${esc(s.rest)}</div>` : ""}
-      <div class="meta">${metaLine(it)}${dlMeta(it)}${shareBtn(state.day, it.hash)}</div>
+      <div class="meta">${metaLine(it)}${dlMeta(it)}${shareBtn(state.day, it.hash, it.title)}</div>
       <div class="orig">原題: <a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></div>
       ${aidBlock(it)}
       <a class="go" href="${esc(it.url)}" target="_blank" rel="noopener">原本を確認する →</a>
@@ -618,7 +619,7 @@
     return `<article class="it item" data-imp="高" data-fields="${(it.fields ?? []).join(",")}" data-hash="${esc(it.hash)}">
       <h4><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></h4>
       <div class="body">${esc(it.summary)}</div>
-      <div class="meta">${metaLine(it)}${dlMeta(it)}${shareBtn(state.day, it.hash)}</div>
+      <div class="meta">${metaLine(it)}${dlMeta(it)}${shareBtn(state.day, it.hash, it.title)}</div>
       ${aidBlock(it)}
       <a class="go" style="font-size:12.5px" href="${esc(it.url)}" target="_blank" rel="noopener">原本を確認する →</a>
     </article>`;
@@ -627,7 +628,7 @@
     return `<article class="it item" data-imp="中" data-fields="${(it.fields ?? []).join(",")}" data-hash="${esc(it.hash)}">
       <h4><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></h4>
       <div class="body">${esc(it.summary)}</div>
-      <div class="meta">${metaLine(it)}${dlMeta(it)}${shareBtn(state.day, it.hash)}</div>
+      <div class="meta">${metaLine(it)}${dlMeta(it)}${shareBtn(state.day, it.hash, it.title)}</div>
       ${aidBlock(it)}
     </article>`;
   }
@@ -635,7 +636,7 @@
     const src = [it.category, it.source].filter(Boolean).map(esc).join("・");
     return `<div class="it low-it" data-imp="低" data-fields="${(it.fields ?? []).join(",")}" data-hash="${esc(it.hash)}">・<a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a>
       <span style="color:#b5b1aa">［${src}］</span>
-      <a class="lo" href="${esc(it.url)}" target="_blank" rel="noopener">原本→</a>${shareBtn(state.day, it.hash)}</div>`;
+      <a class="lo" href="${esc(it.url)}" target="_blank" rel="noopener">原本→</a>${shareBtn(state.day, it.hash, it.title)}</div>`;
   }
 
   function applyFilters() {
@@ -697,7 +698,7 @@
         <div class="press-head"><span class="name">報道</span><span class="l">── 各社の記事・解釈を含みます</span></div>
         ${pressItems.map((it) => `
         <div class="it press-item" data-imp="報" data-fields="${(it.fields ?? []).join(",")}" data-hash="${esc(it.hash)}">
-          <div class="src"><span class="seal ho">報</span>${esc(it.source)} ・ ${esc(it.date)}${fieldsHtml(it)}${shareBtn(state.day, it.hash)}</div>
+          <div class="src"><span class="seal ho">報</span>${esc(it.source)} ・ ${esc(it.date)}${fieldsHtml(it)}${shareBtn(state.day, it.hash, it.title)}</div>
           <h4><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></h4>
         </div>`).join("")}
         <div class="press-note">報道の項目は見出しと出典の表示のみです。要約・重要度判定は行っていません。</div>
@@ -929,12 +930,23 @@
     if (mq.matches && e.target.closest(".cell")) closeMenu();
   });
 
-  /* 共有リンクのコピー(イベント委任: 紙面と期限欄の両方) */
+  /* 共有(イベント委任: 紙面と期限欄の両方)。
+     スマホ等 navigator.share がある環境=端末の共有シート(タイトルとURLのみ・要約は渡さない)
+     無い環境(主にPC)=URLコピー+「コピーしました」 */
   document.addEventListener("click", async (e) => {
     const btn = e.target.closest(".share");
     if (btn) {
       e.preventDefault();
       const url = `${location.origin}${location.pathname}?d=${btn.dataset.shareDay}&i=${btn.dataset.shareHash.slice(0, 8)}`;
+      const title = btn.dataset.shareTitle || "福祉情報ウォッチ";
+      if (navigator.share) {
+        try {
+          await navigator.share({ title, text: title, url });
+        } catch {
+          /* キャンセルはユーザーの正常な操作。何も表示しない */
+        }
+        return;
+      }
       try {
         await navigator.clipboard.writeText(url);
       } catch {
