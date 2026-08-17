@@ -196,7 +196,16 @@
   /* スマホ専用の前後移動矢印(PCでは非表示) */
   .m-arrows{display:none}
   /* スマホ専用UI(P10)はPCで常に非表示 */
-  .hbtns,#mSearchPanel,#mMenu,#mBackdrop{display:none}
+  .hbtns,.hspacer,#mSearchPanel,#mMenu,#mBackdrop{display:none}
+
+  /* 「このサイトについて」の折りたたみ(PCサイド欄・スマホメニュー共通) */
+  .mm-about{margin-bottom:34px}
+  .mm-about summary{list-style:none;cursor:pointer;font-size:11.5px;letter-spacing:.24em;
+    color:var(--sub);border-top:2px solid var(--ink);padding-top:10px;font-weight:600}
+  .mm-about summary::-webkit-details-marker{display:none}
+  .mm-about summary::after{content:"　▽";letter-spacing:0}
+  .mm-about[open] summary::after{content:"　△"}
+  .mm-about .about{margin-top:6px;border-top:0;padding-top:6px}
 
   /* ==== スマホ幅(900px未満)のみ: 紙面上部の占有を減らす。PCは一切変更しない ==== */
   @media(max-width:899px){
@@ -219,14 +228,18 @@
     #topHead{position:sticky;top:0;z-index:30;background:var(--paper);
       transition:box-shadow .2s ease}
     #topHead.shrunk{box-shadow:0 1px 0 rgba(0,0,0,.06)}
-    #topHead.shrunk .masthead{padding:7px 0 9px;border-bottom-width:3px}
-    #topHead.shrunk .masthead h1{font-size:15px;letter-spacing:.22em;text-indent:.22em}
-    #topHead.shrunk .ear{padding:6px 0}
-    .hbtns{display:flex;position:absolute;right:0;bottom:12px;gap:8px}
-    #topHead.shrunk .hbtns{bottom:7px}
+    /* 題字行: [釣り合いスペーサ][題字(可変幅)][ボタン群] のフレックス1行。
+       行の高さを固定し、スクロールで文字サイズが変わっても紙面がガタつかない */
+    .masthead{display:flex;align-items:center;gap:8px;height:52px;padding:0}
+    .masthead h1{flex:1;min-width:0;white-space:nowrap;overflow:hidden;
+      font-size:clamp(19px,5.6vw,22px);letter-spacing:.16em;text-indent:.16em;
+      transition:font-size .2s ease}
+    #topHead.shrunk .masthead h1{font-size:15px;letter-spacing:.2em;text-indent:.2em}
+    .ear{height:34px;align-items:center;padding:0}
+    .hspacer{display:block;flex:0 0 80px} /* ボタン群と同幅で題字を中央に保つ */
+    .hbtns{display:flex;flex:0 0 auto;gap:8px}
     .hbtns button{width:36px;height:36px;display:flex;align-items:center;justify-content:center;
       border:1px solid var(--rule);background:var(--paper);color:var(--ink);cursor:pointer;padding:0}
-    #topHead.shrunk .hbtns button{width:30px;height:30px}
     #mSearchPanel{display:block;overflow:hidden;max-height:0;transition:max-height .25s ease}
     #mSearchPanel.open{max-height:70px;padding:10px 0 12px}
     #mFieldSlot .chips{margin:14px 0 0}
@@ -246,12 +259,6 @@
     .mm-head span{font-size:12px;font-weight:700;letter-spacing:.24em;color:var(--sub)}
     .mm-head button{border:0;background:none;font-size:16px;color:var(--sub);cursor:pointer;padding:4px 6px}
     #mMenuBody .box{margin-bottom:30px}
-    .mm-about summary{list-style:none;cursor:pointer;font-size:11.5px;letter-spacing:.24em;
-      color:var(--sub);border-top:2px solid var(--ink);padding-top:10px;font-weight:600}
-    .mm-about summary::-webkit-details-marker{display:none}
-    .mm-about summary::after{content:"　▽";letter-spacing:0}
-    .mm-about[open] summary::after{content:"　△"}
-    .mm-about .about{margin-top:6px;border-top:0;padding-top:6px}
   }
 
   .about{margin-top:52px;border-top:2px solid var(--ink);padding-top:16px}
@@ -275,17 +282,17 @@
     </div>
 
     <div class="masthead">
+      <span class="hspacer" aria-hidden="true"></span><!-- スマホで題字を真ん中に保つ左側の釣り合い -->
       <h1>福祉情報ウォッチ</h1>
+      <div class="hbtns"><!-- スマホ専用(PC非表示)。題字と横並びのフレックス配置で重なりを構造的に防ぐ -->
+        <button id="btnSearch" aria-label="検索">
+          <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l5 5"/></svg>
+        </button>
+        <button id="btnMenu" aria-label="メニュー">
+          <svg width="17" height="17" viewBox="0 0 20 20" stroke="currentColor" stroke-width="2"><path d="M2 5h16M2 10h16M2 15h16"/></svg>
+        </button>
+      </div>
       <div class="sub">こども家庭庁・厚生労働省・WAM NET・福岡県 ── 行政の福祉情報を毎朝ひとまわり</div>
-    </div>
-
-    <div class="hbtns"><!-- スマホ専用(PC非表示) -->
-      <button id="btnSearch" aria-label="検索">
-        <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l5 5"/></svg>
-      </button>
-      <button id="btnMenu" aria-label="メニュー">
-        <svg width="17" height="17" viewBox="0 0 20 20" stroke="currentColor" stroke-width="2"><path d="M2 5h16M2 10h16M2 15h16"/></svg>
-      </button>
     </div>
     <div id="mSearchPanel"><!-- 検索アイコンで開くスライド欄 -->
       <form class="search" id="searchFormM">
@@ -765,21 +772,25 @@
      (ノードを移すだけなので描画ロジックとイベントは共有のまま。PCでは元の位置へ戻す) */
   function relocate() {
     const fold = $("mAboutFold");
+    // 「このサイトについて」は常に折りたたみ(fold)の中に置き、fold自体を
+    // スマホ=メニュー末尾 / PC=サイド欄末尾 へ移す
+    $("mAboutSlot").append($("about"));
     if (mq.matches) {
-      $("mMenuBody").insertBefore($("boxCal"), fold);
-      $("mMenuBody").insertBefore($("boxWeek"), fold);
-      $("mMenuBody").insertBefore($("boxLegend"), fold);
-      $("mAboutSlot").append($("about"));
+      $("mMenuBody").append($("boxCal"), $("boxWeek"), $("boxLegend"), fold);
       $("mFieldSlot").append($("fieldChips"));
     } else {
       const rail = document.querySelector(".rail-col");
-      rail.append($("boxCal"), $("boxWeek"), $("boxField"), $("boxLegend"));
+      // PCサイド欄の並びはスマホのメニューと揃える:
+      // 検索(静的) → 分野で絞る → この7日 → 今週の記録 → 記号の見かた → このサイトについて
+      rail.append($("boxField"), $("boxCal"), $("boxWeek"), $("boxLegend"), fold);
       $("boxField").append($("fieldChips"));
-      document.querySelector("main").append($("about"));
       closeMenu();
       $("mSearchPanel").classList.remove("open");
     }
   }
+  /* 副題の「仕組み →」から飛んだときは折りたたみを開く */
+  document.querySelectorAll('a[href="#about"]').forEach((a) =>
+    a.addEventListener("click", () => { $("mAboutFold").open = true; }));
   mq.addEventListener("change", relocate);
   addEventListener("resize", relocate); // matchMediaのchangeが飛ばない環境の保険(relocateは冪等)
 
