@@ -143,6 +143,23 @@
 
   .legend .row{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--sub);margin-bottom:9px;flex-wrap:wrap}
 
+  /* 検索 */
+  .search{display:flex;border:1px solid var(--ink)}
+  .search input{flex:1;min-width:0;border:0;background:var(--paper);padding:9px 12px;
+    font-size:16px;font-family:inherit;outline:none} /* 16px未満はiOSが拡大する */
+  .search button{border:0;background:var(--ink);color:var(--paper);font-size:12px;
+    padding:0 16px;letter-spacing:.1em;cursor:pointer;font-family:inherit}
+  .srch-head{border-top:2px solid var(--ink);padding-top:14px;display:flex;
+    justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px}
+  .srch-head h2{font-size:20px}
+  .srch-range{font-size:12px;color:var(--sub)}
+  .srch-close{font-size:12.5px;margin-top:10px;display:inline-block;cursor:pointer;
+    border:1px solid var(--rule);background:#fff;padding:7px 14px;font-family:inherit}
+  .srch-more{font-size:12.5px;margin-top:18px;display:block;width:100%;cursor:pointer;
+    border:1px solid var(--rule);background:#fff;padding:10px;font-family:inherit;color:var(--ink)}
+  .srch-day{font-size:11px;color:var(--faint)}
+  .srch-day a{color:var(--faint)}
+
   .about{margin-top:52px;border-top:2px solid var(--ink);padding-top:16px}
   .about h2{font-size:13px;font-weight:700;letter-spacing:.28em;color:var(--sub)}
   .about p{font-size:13px;color:#4c4842;margin-top:12px}
@@ -202,6 +219,14 @@
     </main>
 
     <aside class="rail-col">
+      <div class="box">
+        <h5>記 録 を 探 す</h5>
+        <form class="search" id="searchForm">
+          <input id="searchInput" placeholder="例: 補装具 様式" aria-label="記録を検索">
+          <button type="submit">検索</button>
+        </form>
+      </div>
+
       <div class="box">
         <h5>こ の 7 日</h5>
         <div class="cal" id="cal"></div>
@@ -492,6 +517,71 @@
   });
   $("fieldChips").querySelectorAll(".chip").forEach((x) =>
     x.classList.toggle("on", x.dataset.fd === state.field));
+
+  /* ==== 検索(直近3か月→ボタンで3か月ずつ遡る・部分一致・検索範囲を明記) ==== */
+  const SEARCH_BATCH = 3;
+  const norm = (s) => String(s ?? "").normalize("NFKC").toLowerCase();
+
+  function matchItem(it, terms) {
+    const hay = norm(`${it.title} ${it.summary} ${it.source} ${(it.fields ?? []).join(" ")}`);
+    return terms.every((t) => hay.includes(t));
+  }
+
+  async function runSearch(query, monthCount) {
+    const terms = norm(query).split(/\s+/).filter(Boolean);
+    if (!terms.length) return;
+    const months = [...state.index.months].sort().reverse();
+    const scope = months.slice(0, monthCount);
+    const results = [];
+    for (const mo of scope) {
+      const m = await monthData(mo);
+      for (const [day, rec] of Object.entries(m.days)) {
+        for (const it of rec.items ?? []) {
+          if (matchItem(it, terms)) results.push({ ...it, _day: day });
+        }
+      }
+    }
+    results.sort((a, b) => (a._day < b._day ? 1 : -1));
+
+    const fmtMo = (mo) => { const [y, mm] = mo.split("-"); return `${y}年${Number(mm)}月`; };
+    const rangeNote = scope.length
+      ? `${fmtMo(scope[scope.length - 1])}〜${fmtMo(scope[0])}を検索`
+      : "";
+    const remaining = months.length > scope.length;
+    const nextOldest = remaining ? fmtMo(months[Math.min(monthCount + SEARCH_BATCH, months.length) - 1]) : "";
+
+    $("list").innerHTML = `
+      <div class="srch-head">
+        <h2>「${esc(query)}」の検索結果 ${results.length}件</h2>
+        <div class="srch-range">${rangeNote}</div>
+      </div>
+      ${results.length === 0 ? `<div class="empty">この範囲では見つかりませんでした。</div>` : ""}
+      ${results.map((it) => `
+      <article class="item">
+        <h4><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></h4>
+        <div class="body">${esc(it.summary)}</div>
+        <div class="meta">${metaLine(it)}<span class="srch-day">${esc(it._day)}の紙面 <a href="#" data-goday="${esc(it._day)}">開く →</a></span></div>
+      </article>`).join("")}
+      ${remaining ? `<button class="srch-more" id="srchMore">さらに過去を検索（〜${nextOldest}）</button>` : ""}
+      <button class="srch-close" id="srchClose">検索を閉じて紙面に戻る</button>`;
+
+    $("srchClose").addEventListener("click", () => renderDay());
+    const more = $("srchMore");
+    if (more) more.addEventListener("click", () => runSearch(query, monthCount + SEARCH_BATCH));
+    document.querySelectorAll("[data-goday]").forEach((a) =>
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        state.day = a.dataset.goday;
+        renderDay();
+        window.scrollTo({ top: 0 });
+      }));
+  }
+
+  $("searchForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const q = $("searchInput").value.trim();
+    if (q) runSearch(q, SEARCH_BATCH);
+  });
 
   (async () => {
     try {
