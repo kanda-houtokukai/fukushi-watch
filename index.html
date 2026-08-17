@@ -62,12 +62,17 @@
   .chip.hoiku{border-bottom-color:var(--f-hoiku)} .chip.jido{border-bottom-color:var(--f-jido)}
   .chip.shogai{border-bottom-color:var(--f-shogai)} .chip.korei{border-bottom-color:var(--f-korei)}
 
-  .sec{display:flex;align-items:baseline;gap:8px;font-size:13px;font-weight:600;margin:30px 0 6px;
-    transition:opacity .2s ease,max-height .25s ease,margin .25s ease;overflow:hidden;max-height:60px}
-  .sec .mark{color:var(--high)} .sec .mark.m{color:#8a867f}
-  .sec .l{color:var(--sub);font-weight:400}
-  .sec.gov{border-bottom:1px solid var(--rule);padding-bottom:8px}
-  .sec.hide{opacity:0;max-height:0;margin:0}
+  /* セクション見出し(P13): 記事見出し(大きな墨の太字)と別系統の字面にして階層を立てる。
+     小さく・字送りを広げ・境界は太罫(記事間の細罫と対比)・前余白を大きく。色は増やさない */
+  .sec{display:flex;align-items:baseline;gap:8px;margin:44px 0 4px;
+    border-top:2px solid var(--ink);padding-top:10px;
+    font-size:11.5px;font-weight:600;letter-spacing:.22em;color:var(--sub);
+    transition:opacity .2s ease,max-height .25s ease,margin .25s ease,padding .25s ease;
+    overflow:hidden;max-height:70px}
+  .sec .mark{color:var(--high);font-size:12px;letter-spacing:0} .sec .mark.m{color:#8a867f}
+  .sec .l{color:var(--faint);font-weight:400;letter-spacing:.04em}
+  .sec.gov{margin-top:26px}
+  .sec.hide{opacity:0;max-height:0;margin:0;padding:0;border-width:0}
 
   /* 絞り込みの遷移(0.2秒) */
   .it{transition:opacity .2s ease,max-height .25s ease,margin .25s ease,padding .25s ease;
@@ -120,8 +125,8 @@
     background:radial-gradient(circle at 4px -2px, transparent 5px, var(--rule) 5px, var(--rule) 6.5px, transparent 7px);
     background-size:14px 10px;background-repeat:repeat-x}
   .press-head{display:flex;align-items:baseline;gap:8px}
-  .press-head .name{font-size:13px;font-weight:600;letter-spacing:.14em}
-  .press-head .l{font-size:12px;color:var(--sub)}
+  .press-head .name{font-size:11.5px;font-weight:600;letter-spacing:.22em;color:var(--sub)}
+  .press-head .l{font-size:11.5px;color:var(--faint);letter-spacing:.04em}
   .press-item{background:var(--press-bg);padding:12px 14px;margin-top:10px}
   .press-item .src{font-size:11px;font-weight:600;color:var(--sub);margin-bottom:5px;
     display:flex;align-items:center;gap:7px;flex-wrap:wrap}
@@ -247,6 +252,8 @@
     .m-arrows button:disabled{color:var(--faint)}
     .dayhead h2{font-size:24px}
     #chips{display:none} /* 重要度チップ: 紙面が高→中→低の順で組まれ低は索引に畳まれるため廃止 */
+    .sec{margin-top:34px} /* セクション前余白はスマホでは控えめに(縦の間延び防止・P13) */
+    .sec.gov{margin-top:22px}
 
     /* ==== P10: ヘッダー固定＋メニュー化 ==== */
     .rail-col{display:none} /* サイド欄の中身はメニューへ移設(JSでノード移動) */
@@ -326,7 +333,7 @@
     </div>
     <div id="mSearchPanel"><!-- 検索アイコンで開くスライド欄 -->
       <form class="search" id="searchFormM">
-        <input id="searchInputM" placeholder="記録を探す（例: 補装具 様式）" aria-label="記録を検索">
+        <input id="searchInputM" placeholder="記録を探す（例: 研修 申込）" aria-label="記録を検索">
         <button type="submit">検索</button>
       </form>
     </div>
@@ -375,7 +382,7 @@
       <div class="box" id="boxSearch">
         <h5>記 録 を 探 す</h5>
         <form class="search" id="searchForm">
-          <input id="searchInput" placeholder="例: 補装具 様式" aria-label="記録を検索">
+          <input id="searchInput" placeholder="例: 研修 申込" aria-label="記録を検索">
           <button type="submit">検索</button>
         </form>
       </div>
