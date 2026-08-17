@@ -195,6 +195,8 @@
 
   /* スマホ専用の前後移動矢印(PCでは非表示) */
   .m-arrows{display:none}
+  /* スマホ専用UI(P10)はPCで常に非表示 */
+  .hbtns,#mSearchPanel,#mMenu,#mBackdrop{display:none}
 
   /* ==== スマホ幅(900px未満)のみ: 紙面上部の占有を減らす。PCは一切変更しない ==== */
   @media(max-width:899px){
@@ -202,7 +204,7 @@
     .ear .ear-auto{display:none} /* 「毎朝7時 自動発行」は省き日付と号数のみ */
     .masthead{padding:20px 0 14px}
     .masthead h1{font-size:clamp(21px,6vw,24px);letter-spacing:.18em;text-indent:.18em}
-    .masthead .sub{display:none} /* 副題は初見向け=下部「このサイトについて」に委ねる */
+    .masthead .sub{display:none} /* 副題は初見向け=メニュー内「このサイトについて」に委ねる */
     .sheet{margin-top:18px}
     .daynav{display:none} /* 月ナビは廃止し、前後移動は日付見出しの行の矢印に */
     .m-arrows{display:flex;gap:6px}
@@ -211,6 +213,45 @@
     .m-arrows button:disabled{color:var(--faint)}
     .dayhead h2{font-size:24px}
     #chips{display:none} /* 重要度チップ: 紙面が高→中→低の順で組まれ低は索引に畳まれるため廃止 */
+
+    /* ==== P10: ヘッダー固定＋メニュー化 ==== */
+    .rail-col{display:none} /* サイド欄の中身はメニューへ移設(JSでノード移動) */
+    #topHead{position:sticky;top:0;z-index:30;background:var(--paper);
+      transition:box-shadow .2s ease}
+    #topHead.shrunk{box-shadow:0 1px 0 rgba(0,0,0,.06)}
+    #topHead.shrunk .masthead{padding:7px 0 9px;border-bottom-width:3px}
+    #topHead.shrunk .masthead h1{font-size:15px;letter-spacing:.22em;text-indent:.22em}
+    #topHead.shrunk .ear{padding:6px 0}
+    .hbtns{display:flex;position:absolute;right:0;bottom:12px;gap:8px}
+    #topHead.shrunk .hbtns{bottom:7px}
+    .hbtns button{width:36px;height:36px;display:flex;align-items:center;justify-content:center;
+      border:1px solid var(--rule);background:var(--paper);color:var(--ink);cursor:pointer;padding:0}
+    #topHead.shrunk .hbtns button{width:30px;height:30px}
+    #mSearchPanel{display:block;overflow:hidden;max-height:0;transition:max-height .25s ease}
+    #mSearchPanel.open{max-height:70px;padding:10px 0 12px}
+    #mFieldSlot .chips{margin:14px 0 0}
+
+    /* メニュー: 右から差し込む(紙面を押し出さない) */
+    #mBackdrop{display:block;position:fixed;inset:0;background:rgba(23,24,26,.28);
+      opacity:0;pointer-events:none;transition:opacity .25s ease;z-index:40}
+    #mBackdrop.open{opacity:1;pointer-events:auto}
+    #mMenu{display:block;position:fixed;top:0;right:0;bottom:0;width:min(320px,84vw);
+      background:var(--paper);border-left:1px solid var(--rule);z-index:41;
+      transform:translateX(102%);transition:transform .25s ease;
+      overflow-y:auto;padding:0 18px 40px;overscroll-behavior:contain}
+    #mMenu.open{transform:translateX(0)}
+    @media (prefers-reduced-motion: reduce){#mMenu,#mBackdrop,#mSearchPanel{transition:none}}
+    .mm-head{display:flex;justify-content:space-between;align-items:center;
+      padding:14px 0 10px;border-bottom:2px solid var(--ink);margin-bottom:20px}
+    .mm-head span{font-size:12px;font-weight:700;letter-spacing:.24em;color:var(--sub)}
+    .mm-head button{border:0;background:none;font-size:16px;color:var(--sub);cursor:pointer;padding:4px 6px}
+    #mMenuBody .box{margin-bottom:30px}
+    .mm-about summary{list-style:none;cursor:pointer;font-size:11.5px;letter-spacing:.24em;
+      color:var(--sub);border-top:2px solid var(--ink);padding-top:10px;font-weight:600}
+    .mm-about summary::-webkit-details-marker{display:none}
+    .mm-about summary::after{content:"　▽";letter-spacing:0}
+    .mm-about[open] summary::after{content:"　△"}
+    .mm-about .about{margin-top:6px;border-top:0;padding-top:6px}
   }
 
   .about{margin-top:52px;border-top:2px solid var(--ink);padding-top:16px}
@@ -226,15 +267,32 @@
 <body>
 <div class="wrap">
 
-  <div class="ear">
-    <span id="earDate"></span>
-    <span class="ear-auto">毎朝7時 自動発行</span>
-    <span>創刊から <b id="issueNo"></b></span>
-  </div>
+  <div id="topHead"><!-- スマホでは二重罫より上を固定ヘッダーにする(P10) -->
+    <div class="ear">
+      <span id="earDate"></span>
+      <span class="ear-auto">毎朝7時 自動発行</span>
+      <span>創刊から <b id="issueNo"></b></span>
+    </div>
 
-  <div class="masthead">
-    <h1>福祉情報ウォッチ</h1>
-    <div class="sub">こども家庭庁・厚生労働省・WAM NET・福岡県 ── 行政の福祉情報を毎朝ひとまわり</div>
+    <div class="masthead">
+      <h1>福祉情報ウォッチ</h1>
+      <div class="sub">こども家庭庁・厚生労働省・WAM NET・福岡県 ── 行政の福祉情報を毎朝ひとまわり</div>
+    </div>
+
+    <div class="hbtns"><!-- スマホ専用(PC非表示) -->
+      <button id="btnSearch" aria-label="検索">
+        <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l5 5"/></svg>
+      </button>
+      <button id="btnMenu" aria-label="メニュー">
+        <svg width="17" height="17" viewBox="0 0 20 20" stroke="currentColor" stroke-width="2"><path d="M2 5h16M2 10h16M2 15h16"/></svg>
+      </button>
+    </div>
+    <div id="mSearchPanel"><!-- 検索アイコンで開くスライド欄 -->
+      <form class="search" id="searchFormM">
+        <input id="searchInputM" placeholder="記録を探す（例: 補装具 様式）" aria-label="記録を検索">
+        <button type="submit">検索</button>
+      </form>
+    </div>
   </div>
 
   <div class="sheet">
@@ -258,6 +316,7 @@
         <button class="chip" data-f="中">◇ 中</button>
         <button class="chip" data-f="低">◊ 低</button>
       </div>
+      <div id="mFieldSlot"></div><!-- スマホでは分野チップをここ(日付見出し直下)に移設 -->
 
       <div id="list"></div>
 
@@ -276,7 +335,7 @@
     </main>
 
     <aside class="rail-col">
-      <div class="box">
+      <div class="box" id="boxSearch">
         <h5>記 録 を 探 す</h5>
         <form class="search" id="searchForm">
           <input id="searchInput" placeholder="例: 補装具 様式" aria-label="記録を検索">
@@ -284,17 +343,17 @@
         </form>
       </div>
 
-      <div class="box">
+      <div class="box" id="boxCal">
         <h5>こ の 7 日</h5>
         <div class="cal" id="cal"></div>
       </div>
 
-      <div class="box">
+      <div class="box" id="boxWeek">
         <h5>今 週 の 記 録</h5>
         <div class="stat" id="weekStat"></div>
       </div>
 
-      <div class="box">
+      <div class="box" id="boxField">
         <h5>分 野 で 絞 る</h5>
         <div class="chips" id="fieldChips" style="margin-top:0">
           <button class="chip on" data-fd="all">全分野</button>
@@ -305,7 +364,7 @@
         </div>
       </div>
 
-      <div class="box legend">
+      <div class="box legend" id="boxLegend">
         <h5>記 号 の 見 か た</h5>
         <div class="row"><span class="seal kuni">国</span>国の機関 <span class="seal dokuho">独</span>独立行政法人</div>
         <div class="row"><span class="seal ken">県</span>都道府県 <span class="seal ho">報</span>報道機関</div>
@@ -319,6 +378,21 @@
     </aside>
   </div>
 </div>
+
+<!-- スマホ専用メニュー(P10): 紙面の上に重ねず右から差し込む。PCでは常に非表示 -->
+<div id="mBackdrop"></div>
+<aside id="mMenu" aria-label="メニュー">
+  <div class="mm-head">
+    <span>メニュー</span>
+    <button id="btnMenuClose" aria-label="閉じる">✕</button>
+  </div>
+  <div id="mMenuBody">
+    <details class="mm-about" id="mAboutFold">
+      <summary>このサイトについて</summary>
+      <div id="mAboutSlot"></div>
+    </details>
+  </div>
+</aside>
 
 <script>
 (() => {
@@ -683,6 +757,73 @@
     const q = $("searchInput").value.trim();
     if (q) runSearch(q, SEARCH_BATCH);
   });
+
+  /* ==== P10: スマホのヘッダー固定・検索スライド・右差し込みメニュー ==== */
+  const mq = matchMedia("(max-width:899px)");
+
+  /* サイド欄の中身を、スマホではメニューへ・分野チップは日付直下へ移設する
+     (ノードを移すだけなので描画ロジックとイベントは共有のまま。PCでは元の位置へ戻す) */
+  function relocate() {
+    const fold = $("mAboutFold");
+    if (mq.matches) {
+      $("mMenuBody").insertBefore($("boxCal"), fold);
+      $("mMenuBody").insertBefore($("boxWeek"), fold);
+      $("mMenuBody").insertBefore($("boxLegend"), fold);
+      $("mAboutSlot").append($("about"));
+      $("mFieldSlot").append($("fieldChips"));
+    } else {
+      const rail = document.querySelector(".rail-col");
+      rail.append($("boxCal"), $("boxWeek"), $("boxField"), $("boxLegend"));
+      $("boxField").append($("fieldChips"));
+      document.querySelector("main").append($("about"));
+      closeMenu();
+      $("mSearchPanel").classList.remove("open");
+    }
+  }
+  mq.addEventListener("change", relocate);
+  addEventListener("resize", relocate); // matchMediaのchangeが飛ばない環境の保険(relocateは冪等)
+
+  /* 固定ヘッダー: スクロール後に題字を小さく畳む */
+  const topHead = $("topHead");
+  addEventListener("scroll", () => {
+    if (mq.matches) topHead.classList.toggle("shrunk", scrollY > 50);
+    else topHead.classList.remove("shrunk");
+  }, { passive: true });
+
+  /* 検索スライド欄 */
+  $("btnSearch").addEventListener("click", () => {
+    const p = $("mSearchPanel");
+    p.classList.toggle("open");
+    if (p.classList.contains("open")) $("searchInputM").focus();
+  });
+  $("searchFormM").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const q = $("searchInputM").value.trim();
+    if (!q) return;
+    runSearch(q, SEARCH_BATCH);
+    $("mSearchPanel").classList.remove("open");
+  });
+
+  /* メニュー(右から差し込み・紙面を押し出さない) */
+  function openMenu() {
+    $("mMenu").classList.add("open");
+    $("mBackdrop").classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+  function closeMenu() {
+    $("mMenu").classList.remove("open");
+    $("mBackdrop").classList.remove("open");
+    document.body.style.overflow = "";
+  }
+  $("btnMenu").addEventListener("click", openMenu);
+  $("btnMenuClose").addEventListener("click", closeMenu);
+  $("mBackdrop").addEventListener("click", closeMenu);
+  /* メニュー内の「この7日」で日を選んだら、メニューを閉じて紙面を見せる */
+  $("cal").addEventListener("click", (e) => {
+    if (mq.matches && e.target.closest(".cell")) closeMenu();
+  });
+
+  relocate();
 
   (async () => {
     try {
