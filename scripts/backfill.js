@@ -1,0 +1,203 @@
+#!/usr/bin/env node
+/**
+ * 福祉情報ウォッチ — 過去分の遡及記録（バックフィル・P14）
+ *
+ * 創刊（2026-08-16）より前の掲載を後から履歴に積む。手動実行のみ。
+ *
+ * 安全のための設計:
+ * - **state.json は読むだけで書かない**（毎朝のActionsと衝突しない）
+ * - **メールを送らない**（notify.js を呼ばない。過去の通知が大量に届く事故を防ぐ）
+ * - **締切抽出をしない**（過去の期限は切れており、本文取得の負荷だけかかる）
+ * - 書き込むのは data/history/YYYY-MM.json と index.json のみ。
+ *   同日分が既にあってもハッシュで併合する（archive.js と同じ規則）
+ * - 途中で止まっても data/backfill-progress.json から再開できる
+ * - 判定は summarize.js の関数をそのまま再利用する（プロンプト・検証の二重化を避ける）
+ *
+ * 使い方:
+ *   node scripts/backfill.js --from 2026-07-01 --to 2026-08-15 [--limit-days N] [--dry-run]
+ */
+
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { parseCfaCards, itemHash, fetchHtml } from "./crawl.js";
+import {
+  loadEnv, listCandidateModels, preferModel, buildPrompt, parseResponse, generate,
+} from "./summarize.js";
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
+const STATE_PATH = join(ROOT, "data", "state.json");
+const HISTORY_DIR = join(ROOT, "data", "history");
+const INDEX_PATH = join(HISTORY_DIR, "index.json");
+const PROGRESS_PATH = join(ROOT, "data", "backfill-progress.json");
+
+const CFA_NEWS = "https://www.cfa.go.jp/news";
+const BATCH = 25;            // 1リクエストあたりの判定件数（summarize.js と同じ上限）
+const REQ_INTERVAL_MS = 5000; // 分あたりのレート制限を避けるための間隔
+const FETCH_INTERVAL_MS = 1500;
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const arg = (name, def) => {
+  const i = process.argv.indexOf(`--${name}`);
+  return i >= 0 && process.argv[i + 1] ? process.argv[i + 1] : def;
+};
+const hasFlag = (name) => process.argv.includes(`--${name}`);
+
+/** 各源の日付表記を YYYY-MM-DD に正規化（福岡県の「2026年8月4日更新」に対応） */
+function normalizeDate(raw) {
+  const s = String(raw ?? "").normalize("NFKC");
+  const iso = s.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (iso) return `${iso[1]}-${iso[2]}-${iso[3]}`;
+  const ja = s.match(/(\d{4})年\s*(\d{1,2})月\s*(\d{1,2})日/);
+  if (ja) return `${ja[1]}-${String(ja[2]).padStart(2, "0")}-${String(ja[3]).padStart(2, "0")}`;
+  return null; // 解釈できない日付は積まない（日付レールを壊さないため）
+}
+
+function loadJson(path, fallback) {
+  return existsSync(path) ? JSON.parse(readFileSync(path, "utf8")) : fallback;
+}
+
+/** こども家庭庁を範囲の下限まで遡って取得（他源は state に既にある分で足りる） */
+async function fetchCfaBack(from) {
+  const items = [];
+  for (let page = 0; page < 60; page++) {
+    const url = page === 0 ? CFA_NEWS : `${CFA_NEWS}?page=${page}`;
+    const html = await fetchHtml(url);
+    const got = parseCfaCards(html, CFA_NEWS);
+    if (got.length === 0) break; // 構造変化 or 末尾
+    items.push(...got);
+    const oldest = got.map((g) => normalizeDate(g.date)).filter(Boolean).sort()[0];
+    process.stdout.write(`\r  こども家庭庁: ${page + 1}ページ / ${items.length}件（${oldest}まで）`);
+    if (oldest && oldest < from) break;
+    await sleep(FETCH_INTERVAL_MS);
+  }
+  console.log("");
+  return items;
+}
+
+async function main() {
+  const from = arg("from", "2026-07-01");
+  const to = arg("to", "2026-08-15");
+  const limitDays = Number(arg("limit-days", "0"));
+  const dryRun = hasFlag("dry-run");
+  console.log(`バックフィル範囲: ${from} 〜 ${to}${limitDays ? `（先頭${limitDays}日分のみ）` : ""}${dryRun ? "（判定なしの下見）" : ""}`);
+
+  // 1) 収集: state.json の既存項目（読むだけ）＋ こども家庭庁の遡及取得
+  const state = loadJson(STATE_PATH, { sources: {} });
+  const pool = [];
+  for (const [name, rec] of Object.entries(state.sources ?? {})) {
+    if (name === "福祉新聞" || name === "介護ニュースJoint") continue; // 報道は対象外
+    for (const it of rec.items ?? []) {
+      pool.push({ ...it, source: name });
+    }
+  }
+  console.log(`state から ${pool.length}件（書き込みはしない）`);
+
+  const cfa = await fetchCfaBack(from);
+  for (const it of cfa) {
+    pool.push({ ...it, source: "こども家庭庁", hash: itemHash(it) });
+  }
+
+  // 2) 範囲で絞り、日付ごとにまとめる
+  const byDay = new Map();
+  for (const it of pool) {
+    const d = normalizeDate(it.date);
+    if (!d || d < from || d > to) continue;
+    if (!byDay.has(d)) byDay.set(d, new Map());
+    byDay.get(d).set(it.hash, { ...it, _day: d });
+  }
+  let days = [...byDay.keys()].sort();
+
+  // 3) 既に履歴にある項目を除外（再判定しない）
+  const monthCache = new Map();
+  const monthly = (m) => {
+    if (!monthCache.has(m)) monthCache.set(m, loadJson(join(HISTORY_DIR, `${m}.json`), { days: {} }));
+    return monthCache.get(m);
+  };
+  const progress = loadJson(PROGRESS_PATH, { done: [] });
+  const plan = [];
+  for (const d of days) {
+    if (progress.done.includes(d)) continue;
+    const known = new Set((monthly(d.slice(0, 7)).days[d]?.items ?? []).map((x) => x.hash));
+    const fresh = [...byDay.get(d).values()].filter((x) => !known.has(x.hash));
+    if (fresh.length) plan.push({ day: d, items: fresh });
+  }
+  const totalItems = plan.reduce((n, p) => n + p.items.length, 0);
+  const reqs = plan.reduce((n, p) => n + Math.ceil(p.items.length / BATCH), 0);
+  console.log(`対象: ${plan.length}日分 / ${totalItems}件 / 推定${reqs}リクエスト`);
+  if (dryRun || totalItems === 0) {
+    for (const p of plan.slice(0, 10)) console.log(`  ${p.day}: ${p.items.length}件`);
+    if (plan.length > 10) console.log(`  …ほか${plan.length - 10}日`);
+    return;
+  }
+
+  // 4) 日ごとに判定して履歴へ書く
+  const apiKey = loadEnv();
+  let models = await listCandidateModels(apiKey);
+  models = preferModel(models, state.preferredModel);
+  const index = loadJson(INDEX_PATH, { months: [], days: {} });
+  let doneItems = 0, doneReqs = 0;
+
+  for (const { day, items } of limitDays ? plan.slice(0, limitDays) : plan) {
+    const judged = [];
+    for (let i = 0; i < items.length; i += BATCH) {
+      const batch = items.slice(i, i + BATCH);
+      let res = null;
+      for (const model of models) {
+        try {
+          const text = await generate(apiKey, model, buildPrompt(batch));
+          res = parseResponse(text, batch.length);
+          models = preferModel(models, model);
+          break;
+        } catch (e) {
+          console.log(`  失敗（次の候補へ）: ${model}: ${e.message.slice(0, 80)}`);
+        }
+      }
+      doneReqs++;
+      if (!res) { console.log(`  ${day}: 全モデル失敗。この日はスキップ`); judged.length = 0; break; }
+      const byIndex = new Map(res.map((r) => [r.index, r]));
+      batch.forEach((it, n) => {
+        const j = byIndex.get(n);
+        if (!j) return;
+        judged.push({
+          hash: it.hash, source: it.source, title: it.title, url: it.url,
+          date: it.date, category: it.category ?? "",
+          summary: j.summary.trim(), importance: j.importance,
+          fields: j.fields, reason: (j.reason ?? "").trim(),
+          backfilled: true, // 遡及で積んだ記録であることを残す
+        });
+      });
+      await sleep(REQ_INTERVAL_MS);
+    }
+    if (judged.length === 0) continue;
+
+    // 履歴へ併合（archive.js と同じ規則）
+    const month = day.slice(0, 7);
+    const data = monthly(month);
+    const existing = data.days[day]?.items ?? [];
+    const merged = new Map(existing.map((x) => [x.hash, x]));
+    for (const x of judged) merged.set(x.hash, x);
+    const list = [...merged.values()];
+    const counts = { 高: 0, 中: 0, 低: 0 };
+    for (const x of list) counts[x.importance] = (counts[x.importance] ?? 0) + 1;
+    data.days[day] = { counts, items: list, ...(data.days[day]?.press ? { press: data.days[day].press } : {}) };
+    if (!index.months.includes(month)) index.months = [...index.months, month].sort();
+    index.days[day] = { t: list.length, h: counts["高"], m: counts["中"], l: counts["低"] };
+
+    mkdirSync(HISTORY_DIR, { recursive: true });
+    writeFileSync(join(HISTORY_DIR, `${month}.json`), JSON.stringify(data, null, 1) + "\n");
+    writeFileSync(INDEX_PATH, JSON.stringify(index, null, 1) + "\n");
+    progress.done.push(day);
+    writeFileSync(PROGRESS_PATH, JSON.stringify(progress, null, 1) + "\n");
+
+    doneItems += judged.length;
+    console.log(`  ${day}: ${judged.length}件（高${counts["高"]}・中${counts["中"]}・低${counts["低"]}）記録`);
+  }
+
+  console.log(`完了: ${doneItems}件・${doneReqs}リクエスト`);
+}
+
+main().catch((e) => {
+  console.error(`エラー: ${e.message}`);
+  process.exit(1);
+});

@@ -31,7 +31,7 @@ const API_BASE = "https://generativelanguage.googleapis.com/v1beta";
 // 環境変数（.env があれば読む。GitHub Actions では Secrets から環境変数で渡る）
 // ---------------------------------------------------------------------------
 
-function loadEnv() {
+export function loadEnv() {
   const envPath = join(ROOT, ".env");
   if (existsSync(envPath)) {
     for (const line of readFileSync(envPath, "utf8").split("\n")) {
@@ -57,7 +57,7 @@ function loadEnv() {
  * 新しい順に返す。preview・tts・image・robotics 等は名前の形で除外される
  * （gemini-<版>-flash / gemini-<版>-flash-lite だけを通す）。
  */
-async function listCandidateModels(apiKey) {
+export async function listCandidateModels(apiKey) {
   const res = await fetch(`${API_BASE}/models?pageSize=100`, {
     headers: { "x-goog-api-key": apiKey },
   });
@@ -84,7 +84,7 @@ async function listCandidateModels(apiKey) {
 }
 
 /** 前回成功したモデルを最初に試す並びにする */
-function preferModel(candidates, preferred) {
+export function preferModel(candidates, preferred) {
   if (!preferred || !candidates.includes(preferred)) return candidates;
   return [preferred, ...candidates.filter((c) => c !== preferred)];
 }
@@ -95,7 +95,7 @@ function preferModel(candidates, preferred) {
 
 const FIELD_VOCAB = ["保育", "障害", "高齢", "児童", "共通"];
 
-function buildPrompt(items) {
+export function buildPrompt(items) {
   const list = items.map((it, i) => ({
     index: i,
     title: it.title,
@@ -137,7 +137,7 @@ ${JSON.stringify(list, null, 1)}
 }
 
 /** 応答テキストから JSON を安全に取り出す（```json フェンスが付く前提で除去） */
-function parseResponse(text, expectedCount) {
+export function parseResponse(text, expectedCount) {
   const stripped = text
     .replace(/^\s*```(?:json)?\s*/i, "")
     .replace(/\s*```\s*$/, "")
@@ -175,7 +175,7 @@ function parseResponse(text, expectedCount) {
   return arr;
 }
 
-async function generate(apiKey, model, prompt) {
+export async function generate(apiKey, model, prompt) {
   const res = await fetch(`${API_BASE}/models/${model}:generateContent`, {
     method: "POST",
     headers: {
@@ -418,7 +418,11 @@ ${JSON.stringify(press.map((it, i) => ({ index: i, title: it.title, category: it
   );
 }
 
-main().catch((e) => {
-  console.error(`エラー: ${e.message}`);
-  process.exit(1);
-});
+/* 直接実行されたときだけ main を走らせる（他スクリプトから関数を再利用するため） */
+const isMain = process.argv[1] && import.meta.url.endsWith(process.argv[1].split("/").pop());
+if (isMain) {
+  main().catch((e) => {
+    console.error(`エラー: ${e.message}`);
+    process.exit(1);
+  });
+}

@@ -63,7 +63,7 @@ function readSources() {
 // 取得（控えめなリトライ付き）
 // ---------------------------------------------------------------------------
 
-async function fetchHtml(url) {
+export async function fetchHtml(url) {
   const RETRIES = 2; // 控えめに: 計2回まで
   let lastError;
   for (let attempt = 1; attempt <= RETRIES; attempt++) {
@@ -94,7 +94,7 @@ async function fetchHtml(url) {
  * 依存ゼロ方針のため正規表現で抽出する。構造が変わって0件になったら
  * エラー終了する（サイレント0件にしない）ので、壊れたことには必ず気づける。
  */
-function parseCfaCards(html, baseUrl) {
+export function parseCfaCards(html, baseUrl) {
   const items = [];
   const cardRe = /<section class="card">([\s\S]*?)<\/section>/g;
   for (const [, card] of html.matchAll(cardRe)) {
@@ -246,7 +246,7 @@ const PARSERS = {
  * URLだけにしない: こども家庭庁は同一URLへ繰り返し掲載する項目がある
  * （例: 人事異動は毎回 /about/jinji）。URLだけだと2回目以降を検知できない。
  */
-function itemHash(item) {
+export function itemHash(item) {
   return createHash("sha256")
     .update(`${item.title}\n${item.date}\n${item.url}`)
     .digest("hex")
@@ -356,7 +356,11 @@ async function main() {
   );
 }
 
-main().catch((e) => {
-  console.error(`エラー: ${e.message}`);
-  process.exit(1);
-});
+/* 直接実行されたときだけ main を走らせる（他スクリプトから関数を再利用するため） */
+const isMain = process.argv[1] && import.meta.url.endsWith(process.argv[1].split("/").pop());
+if (isMain) {
+  main().catch((e) => {
+    console.error(`エラー: ${e.message}`);
+    process.exit(1);
+  });
+}
