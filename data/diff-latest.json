@@ -1,13 +1,53 @@
 {
-  "generatedAt": "2026-08-16T22:20:01.589Z",
+  "generatedAt": "2026-08-17T10:07:58.328Z",
   "newItems": [
     {
-      "source": "福岡県（障がい福祉）",
-      "hash": "f5ad4357dc776e94",
-      "title": "令和８年度高次脳機能障がい支援者養成研修を実施します",
-      "url": "https://www.pref.fukuoka.lg.jp/contents/koujinou2026kenshu.html",
-      "date": "2026年8月17日更新",
-      "category": ""
+      "source": "こども家庭庁",
+      "hash": "1f52e065501ffbfa",
+      "title": "第1回乳幼児の健康診査等のあり方に関する検討会開催のお知らせと事後記者ブリーフィングの実施について掲載しました",
+      "url": "https://www.cfa.go.jp/press/ebfbf37e-268f-4105-8541-e0908cd4589b",
+      "date": "2026-08-17",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "hash": "361d2fcc827e8bc4",
+      "title": "建設業・運輸業の働き方改革に向けた新PR動画を公開",
+      "url": "https://www.mhlw.go.jp/stf/newpage_74962.html",
+      "date": "2026-08-17",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "hash": "77ce6db01fc4d063",
+      "title": "第188回労働政策審議会安全衛生分科会（開催案内）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75520.html",
+      "date": "2026-08-17",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "hash": "ca7df61108336422",
+      "title": "薬事審議会 医薬品第二部会を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75462.html",
+      "date": "2026-08-17",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "hash": "5f2f66e16288bb52",
+      "title": "「第303回原子爆弾被爆者医療分科会」の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_74972.html",
+      "date": "2026-08-17",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "hash": "cc8e5151c3e3a1e0",
+      "title": "令和8(2026)年社会福祉施設等調査及び介護サービス施設・事業所調査へのご協力をお願いします",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/soshiki/toukei/fukushikaigochousa.html",
+      "date": "2026-08-17",
+      "category": "統計情報"
     }
   ],
   "crawlErrors": []
