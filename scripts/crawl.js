@@ -35,20 +35,21 @@ const MAX_ITEMS_PER_SOURCE = 300;
 // 監視対象台帳（docs/sources.md）の読み込み
 // ---------------------------------------------------------------------------
 
-/** sources.md の表から { name, url, method, status } の配列を返す */
+/** sources.md の表から { name, kind, url, method, status } の配列を返す */
 function readSources() {
   const md = readFileSync(SOURCES_MD, "utf8");
   const rows = [];
   for (const line of md.split("\n")) {
-    // | # | 名前 | URL | 巡回方法 | 状態 | の行だけを拾う
+    // | # | 名前 | 区分 | URL | 巡回方法 | 状態 | の行だけを拾う
     const cells = line.split("|").map((c) => c.trim());
     // 先頭セルが数字の行がデータ行（見出し・罫線は除外）
-    if (cells.length >= 6 && /^\d+$/.test(cells[1])) {
+    if (cells.length >= 7 && /^\d+$/.test(cells[1])) {
       rows.push({
         name: cells[2],
-        url: cells[3],
-        method: cells[4],
-        status: cells[5],
+        kind: cells[3].replace(/\*/g, "") === "報道" ? "press" : "gov",
+        url: cells[4],
+        method: cells[5],
+        status: cells[6],
       });
     }
   }
@@ -195,11 +196,45 @@ function parseFukuokaLife(html, baseUrl) {
   return items;
 }
 
+/**
+ * press-rss: 報道各社のRSS（WordPress標準のRSS2.0を想定・P9）
+ * ⚠️ 保存するのは 見出し・リンク・日付・カテゴリ のみ。
+ *    RSSに説明文・本文が含まれていても**読み捨てて保存しない**（著作権への配慮・確定方針）。
+ */
+function parsePressRss(xml) {
+  const cdata = (s) => {
+    if (!s) return "";
+    const m = s.match(/^\s*<!\[CDATA\[([\s\S]*?)\]\]>\s*$/);
+    return (m ? m[1] : s).trim();
+  };
+  const items = [];
+  for (const [, body] of xml.matchAll(/<item[ >]([\s\S]*?)<\/item>/g)) {
+    let title = cdata(body.match(/<title>([\s\S]*?)<\/title>/)?.[1]);
+    const link = cdata(body.match(/<link>([\s\S]*?)<\/link>/)?.[1]);
+    const pub = cdata(body.match(/<pubDate>([\s\S]*?)<\/pubDate>/)?.[1]);
+    const category = cdata(body.match(/<category>([\s\S]*?)<\/category>/)?.[1]);
+    if (!title || !link) continue;
+    title = decodeEntities(title.replace(/\s+/g, " "))
+      .replace(/\s*[-｜|]\s*福祉新聞(Web)?\s*$/i, ""); // 媒体名サフィックスは除去
+    // RFC822日付 → JSTの YYYY-MM-DD 文字列
+    let date = "";
+    const t = Date.parse(pub);
+    if (!Number.isNaN(t)) {
+      date = new Intl.DateTimeFormat("en-CA", {
+        timeZone: "Asia/Tokyo", year: "numeric", month: "2-digit", day: "2-digit",
+      }).format(new Date(t));
+    }
+    items.push({ title, url: decodeEntities(link), date, category });
+  }
+  return items;
+}
+
 const PARSERS = {
   "cfa-cards": parseCfaCards,
   "mhlw-news": parseMhlwNews,
   "wam-rss": parseWamRss,
   "fukuoka-life": parseFukuokaLife,
+  "press-rss": parsePressRss,
 };
 
 // ---------------------------------------------------------------------------
@@ -236,7 +271,8 @@ async function main() {
   }
 
   const state = loadState();
-  const newItems = [];
+  const newItems = [];  // 行政（区分=gov）の新規項目
+  const newPress = []; // 報道（区分=press）の新規項目。件数集計・グラフに含めない（P9）
   const crawlErrors = []; // 1源の失敗は記録して続行する（後述の全滅チェックで使う）
 
   for (const source of active) {
@@ -271,7 +307,8 @@ async function main() {
         const known = new Set(prev.items.map((it) => it.hash));
         const fresh = items.filter((it) => !known.has(it.hash));
         console.log(`  取得${items.length}件 / 新規${fresh.length}件`);
-        newItems.push(...fresh.map((it) => ({ source: source.name, ...it })));
+        const dest = source.kind === "press" ? newPress : newItems;
+        dest.push(...fresh.map((it) => ({ source: source.name, kind: source.kind, ...it })));
       }
 
       // state更新: 今回の項目＋過去の項目（重複除去）を上限まで保持
@@ -308,14 +345,14 @@ async function main() {
   writeFileSync(
     DIFF_PATH,
     JSON.stringify(
-      { generatedAt: new Date().toISOString(), newItems, crawlErrors },
+      { generatedAt: new Date().toISOString(), newItems, newPress, crawlErrors },
       null,
       2
     ) + "\n"
   );
 
   console.log(
-    `完了: 新規${newItems.length}件（巡回失敗${crawlErrors.length}源） → ${DIFF_PATH.replace(ROOT + "/", "")}`
+    `完了: 行政 新規${newItems.length}件・報道 新規${newPress.length}件（巡回失敗${crawlErrors.length}源） → ${DIFF_PATH.replace(ROOT + "/", "")}`
   );
 }
 

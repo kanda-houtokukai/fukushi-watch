@@ -106,7 +106,13 @@ function main() {
   const counts = { 高: 0, 中: 0, 低: 0 };
   for (const it of items) counts[it.importance] = (counts[it.importance] ?? 0) + 1;
 
-  monthly.days[day] = { counts, items };
+  // 報道(P9): 別枠 press に保存。counts・index.json(グラフの材料)には一切含めない
+  const existingPress = monthly.days[day]?.press ?? [];
+  const pressByHash = new Map(existingPress.map((it) => [it.hash, it]));
+  for (const it of report.press ?? []) pressByHash.set(it.hash, it);
+  const pressItems = [...pressByHash.values()];
+
+  monthly.days[day] = { counts, items, ...(pressItems.length ? { press: pressItems } : {}) };
 
   const index = loadJson(INDEX_PATH, { months: [], days: {} });
   if (!index.months.includes(month)) {
@@ -124,7 +130,8 @@ function main() {
   writeFileSync(INDEX_PATH, JSON.stringify(index, null, 1) + "\n");
 
   console.log(
-    `履歴に記録: ${day} = ${items.length}件（高${counts["高"]}・中${counts["中"]}・低${counts["低"]}） → data/history/${month}.json`
+    `履歴に記録: ${day} = 行政${items.length}件（高${counts["高"]}・中${counts["中"]}・低${counts["低"]}）` +
+      `・報道${pressItems.length}件 → data/history/${month}.json`
   );
 }
 

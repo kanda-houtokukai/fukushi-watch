@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-08-17T10:07:55.844Z",
+      "lastCrawled": "2026-08-17T10:49:49.055Z",
       "items": [
         {
           "hash": "1f52e065501ffbfa",
@@ -83,7 +83,7 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-08-17T10:07:56.176Z",
+      "lastCrawled": "2026-08-17T10:49:49.345Z",
       "items": [
         {
           "hash": "361d2fcc827e8bc4",
@@ -3343,7 +3343,7 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-08-17T10:07:57.035Z",
+      "lastCrawled": "2026-08-17T10:49:49.566Z",
       "items": [
         {
           "hash": "4935822a0d8b059c",
@@ -4748,7 +4748,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-08-17T10:07:57.797Z",
+      "lastCrawled": "2026-08-17T10:49:49.869Z",
       "items": [
         {
           "hash": "f5ad4357dc776e94",
@@ -4928,7 +4928,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-08-17T10:07:58.327Z",
+      "lastCrawled": "2026-08-17T10:49:50.198Z",
       "items": [
         {
           "hash": "991bae94228d9d6e",
@@ -5209,6 +5209,219 @@
           "url": "https://www.pref.fukuoka.lg.jp/contents/kodomonoibasyosuishin.html",
           "date": "2025年12月1日更新",
           "category": ""
+        }
+      ]
+    },
+    "福祉新聞": {
+      "lastCrawled": "2026-08-17T10:49:50.319Z",
+      "items": [
+        {
+          "hash": "3dc253eb1fffe0eb",
+          "title": "女性支援の自治体間格差是正へ 厚労省が検討会発足",
+          "url": "https://fukushishimbun.com/fukushiippan/45814",
+          "date": "2026-08-17",
+          "category": "福祉一般"
+        },
+        {
+          "hash": "15a2ad25ab72f752",
+          "title": "能登半島地震の恩返し 石川・能登町が熊本・氷川町へトイレカー",
+          "url": "https://fukushishimbun.com/bosai/45811",
+          "date": "2026-08-16",
+          "category": "防災"
+        },
+        {
+          "hash": "4fe8bc4dc46ae1f4",
+          "title": "最低賃金55円引き上げを答申 目安実現で全国平均の時給1176円に",
+          "url": "https://fukushishimbun.com/fukushiippan/45809",
+          "date": "2026-08-15",
+          "category": "福祉一般"
+        },
+        {
+          "hash": "cbfff605b8b98f25",
+          "title": "福祉法人の夏祭りに高校生がブース出展 こどもたちに遊びを提供（村山苑・東京）",
+          "url": "https://fukushishimbun.com/fukushiippan/45834",
+          "date": "2026-08-14",
+          "category": "福祉一般"
+        },
+        {
+          "hash": "61325e26fe0638b9",
+          "title": "大義についた女性たち〈コラム一草一味〉",
+          "url": "https://fukushishimbun.com/issoichimi/45803",
+          "date": "2026-08-13",
+          "category": "コラム 一草一味"
+        },
+        {
+          "hash": "5c9c63589c0eccb0",
+          "title": "介護の仕事を身近に 小学生が特養などで体験〈愛生館・愛知〉",
+          "url": "https://fukushishimbun.com/series05/45800",
+          "date": "2026-08-12",
+          "category": "高齢/介護保険"
+        },
+        {
+          "hash": "63e5749cf92eeb4a",
+          "title": "社会保障給付費が３年ぶりに増 高齢化、物価高で年金伸び〈国立社会保障・人口問題研究所〉",
+          "url": "https://fukushishimbun.com/fukushiippan/45795",
+          "date": "2026-08-11",
+          "category": "福祉一般"
+        },
+        {
+          "hash": "792209587afcdeb5",
+          "title": "東京都が乳児院の体制強化 夜間の複数人配置を支援",
+          "url": "https://fukushishimbun.com/series07/45797",
+          "date": "2026-08-10",
+          "category": "保育・子育て"
+        },
+        {
+          "hash": "f53df1bef8434916",
+          "title": "障害福祉の生産性向上へ実証研究 厚労省が報酬で評価を検討",
+          "url": "https://fukushishimbun.com/series06/45793",
+          "date": "2026-08-09",
+          "category": "精神/障害福祉"
+        },
+        {
+          "hash": "e023e669601b0401",
+          "title": "熊本地震で福祉施設1700カ所超に被害 DWATが活動開始",
+          "url": "https://fukushishimbun.com/fukushiippan/45790",
+          "date": "2026-08-08",
+          "category": "福祉一般"
+        },
+        {
+          "hash": "fc7164df5fb82a0c",
+          "title": "法人経営の悩み、中小企業診断士に相談 福井県社協が支援拠点と連携し窓口開設",
+          "url": "https://fukushishimbun.com/jinzai/45778",
+          "date": "2026-08-07",
+          "category": "法人経営/人材"
+        },
+        {
+          "hash": "04c9bc6c9a1cb046",
+          "title": "関わり合いが元気の源 「国際盲ろう日」記念イベント",
+          "url": "https://fukushishimbun.com/series06/45775",
+          "date": "2026-08-06",
+          "category": "精神/障害福祉"
+        },
+        {
+          "hash": "b964465c760fd37b",
+          "title": "家族丸ごと支える こども家庭庁、厚労省、文科省がヤングケアラー支援プラン決定",
+          "url": "https://fukushishimbun.com/series07/45772",
+          "date": "2026-08-05",
+          "category": "保育・子育て"
+        },
+        {
+          "hash": "7d8ab673b0d8eb77",
+          "title": "改正医ケア児法が成立 18歳の壁解消へ支援拡充",
+          "url": "https://fukushishimbun.com/seiji/45769",
+          "date": "2026-08-04",
+          "category": "国会・政治"
+        },
+        {
+          "hash": "6a498cdf9fce429d",
+          "title": "ケアマネの安全対策を 自民党議連が厚労大臣に要望",
+          "url": "https://fukushishimbun.com/series05/45766",
+          "date": "2026-08-03",
+          "category": "高齢/介護保険"
+        },
+        {
+          "hash": "45ae32f938e6320d",
+          "title": "「上を向いて歩こう」を合唱 津久井やまゆり園で追悼",
+          "url": "https://fukushishimbun.com/series06/45763",
+          "date": "2026-08-02",
+          "category": "精神/障害福祉"
+        },
+        {
+          "hash": "efec4f030b58d525",
+          "title": "熊本で震度７ 福祉施設も建物損傷、停電など被害多数",
+          "url": "https://fukushishimbun.com/fukushiippan/45760",
+          "date": "2026-08-01",
+          "category": "福祉一般"
+        },
+        {
+          "hash": "47b509105a89e2e6",
+          "title": "自民党が社会保障教育を推進する新議連を設立 会長に萩生田氏",
+          "url": "https://fukushishimbun.com/seiji/45745",
+          "date": "2026-07-31",
+          "category": "国会・政治"
+        },
+        {
+          "hash": "e27825fec243fde2",
+          "title": "東京都が外国介護人材マッチングイベント 支援機関が課題など聞き取り",
+          "url": "https://fukushishimbun.com/series05/45742",
+          "date": "2026-07-30",
+          "category": "高齢/介護保険"
+        }
+      ]
+    },
+    "介護ニュースJoint": {
+      "lastCrawled": "2026-08-17T10:49:50.519Z",
+      "items": [
+        {
+          "hash": "c7c18dbc4edd3ef8",
+          "title": "車いす送迎中の事故、7年で死亡30件 消費者事故調が注意喚起",
+          "url": "https://www.joint-kaigo.com/articles/48094/",
+          "date": "2026-08-17",
+          "category": "超高齢化"
+        },
+        {
+          "hash": "cf50d07e5269fe10",
+          "title": "【天野尊明】介護分野で外国人材の扉を狭めてよいのか 迫る特定技能の受け入れ上限 超・人手不足時代にサービスを守るために",
+          "url": "https://www.joint-kaigo.com/articles/48064/",
+          "date": "2026-08-14",
+          "category": "コラム"
+        },
+        {
+          "hash": "c76c39c3cf917455",
+          "title": "【村上久美子】他産業との賃金格差8万円 介護職の「他職種と遜色ない処遇改善」で問われる国の覚悟",
+          "url": "https://www.joint-kaigo.com/articles/48052/",
+          "date": "2026-08-12",
+          "category": "政府与党"
+        },
+        {
+          "hash": "4095a11700532866",
+          "title": "【居宅介護支援】限界を迎えた特定事業所加算の「重度者要件」。加算Ⅰ・Ⅱは統合か＝田中紘太",
+          "url": "https://www.joint-kaigo.com/articles/48057/",
+          "date": "2026-08-12",
+          "category": "コラム"
+        },
+        {
+          "hash": "20842ca775042de0",
+          "title": "介護現場のエピソードがアニメに！ ほっこりや喜び、推し体験の募集を開始 ヒットメーカーが制作",
+          "url": "https://www.joint-kaigo.com/articles/48039/",
+          "date": "2026-08-10",
+          "category": "処遇改善"
+        },
+        {
+          "hash": "56ac7f1663ab072a",
+          "title": "今年度の社会福祉士国試、来年2月7日に実施 9月3日から受付開始＝厚労省",
+          "url": "https://www.joint-kaigo.com/articles/48034/",
+          "date": "2026-08-08",
+          "category": "社会福祉士"
+        },
+        {
+          "hash": "6385c8c8a82fe41d",
+          "title": "ケアマネの平均年齢、55歳超える 進む高齢化 3人に1人は60歳以上＝介護労働実態調査",
+          "url": "https://www.joint-kaigo.com/articles/48026/",
+          "date": "2026-08-08",
+          "category": "超高齢化"
+        },
+        {
+          "hash": "feb126d5f8d67699",
+          "title": "デイサービスの事業所数、4年連続減 通常規模・大規模も減少続く＝厚労省統計",
+          "url": "https://www.joint-kaigo.com/articles/48013/",
+          "date": "2026-08-06",
+          "category": "超高齢化"
+        },
+        {
+          "hash": "8f626d976fcc4208",
+          "title": "登録施設介護支援の報酬、審議会で居宅の踏襲を求める声相次ぐ 同一建物減算は意見分かれる＝介護給付費分科会",
+          "url": "https://www.joint-kaigo.com/articles/48003/",
+          "date": "2026-08-06",
+          "category": "福祉用具"
+        },
+        {
+          "hash": "f473ce82053bd5b0",
+          "title": "来年度の介護報酬改定、関係団体の意見交換会を開催へ 厚労省 従来のヒアリングを拡大",
+          "url": "https://www.joint-kaigo.com/articles/47994/",
+          "date": "2026-08-05",
+          "category": "介護給付費分科会"
         }
       ]
     }

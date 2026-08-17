@@ -211,13 +211,14 @@ async function generate(apiKey, model, prompt) {
 async function main() {
   const diff = JSON.parse(readFileSync(DIFF_PATH, "utf8"));
   const items = diff.newItems ?? [];
+  const press = diff.newPress ?? []; // 報道(P9): 要約・重要度判定はせず分野タグのみ付ける
 
-  // 新規0件: APIを呼ばずに空のreportを書いて正常終了
-  if (items.length === 0) {
+  // 新規0件(行政・報道とも): APIを呼ばずに空のreportを書いて正常終了
+  if (items.length === 0 && press.length === 0) {
     writeFileSync(
       REPORT_PATH,
       JSON.stringify(
-        { generatedAt: new Date().toISOString(), model: null, items: [] },
+        { generatedAt: new Date().toISOString(), model: null, items: [], press: [] },
         null,
         2
       ) + "\n"
@@ -341,10 +342,68 @@ ${JSON.stringify(high.map((it, i) => ({ index: i, title: it.title, summary: it.s
     }
   }
 
+  // ==== 報道(P9): 分野タグのみ付与。要約・重要度判定はしない(確定方針) ====
+  // 出力は index と fields だけを返させ、見出しの複製すら出力に含めない。
+  // 失敗しても fields 空で続行する(報道は付加セクションであり本体を止めない)。
+  let pressOut = [];
+  if (press.length > 0) {
+    let fieldsByIdx = null;
+    const pressPrompt = `次のニュース見出しの一覧について、それぞれが関わる福祉の分野タグだけを判定してください。
+要約・言い換え・解釈は出力しない。
+
+分野タグ: 「保育」「児童」「障害」「高齢」= 特定分野(複数可)／「共通」= 分野を問わず
+福祉事業の運営に効くもの(処遇改善・虐待防止・感染症・災害等)／空配列 = 福祉と無関係。
+迷ったら空でなく「共通」に倒す。
+
+入力（${press.length}件）:
+${JSON.stringify(press.map((it, i) => ({ index: i, title: it.title, category: it.category })), null, 1)}
+
+出力の規則:
+- JSONの配列のみ。前置き・コードフェンス禁止。タイトル等の文字列は出力に含めない
+- 必ず${press.length}件、indexを含める
+- 形式: [{"index":0,"fields":["高齢"]}, …]`;
+    const order = usedModel ? preferModel(models, usedModel) : models;
+    for (const model of order) {
+      try {
+        console.log(`報道の分野タグ: ${model}（${press.length}件）`);
+        const text = await generate(apiKey, model, pressPrompt);
+        const stripped = text.replace(/^\s*```(?:json)?\s*/i, "").replace(/\s*```\s*$/, "").trim();
+        const arr = JSON.parse(stripped);
+        if (!Array.isArray(arr) || arr.length !== press.length) {
+          throw new Error(`件数不一致(期待${press.length})`);
+        }
+        for (const a of arr) {
+          if (!Array.isArray(a.fields)) throw new Error(`fieldsが配列でない(index=${a.index})`);
+          for (const f of a.fields) {
+            if (!FIELD_VOCAB.includes(f)) throw new Error(`不正な分野タグ: ${f}`);
+          }
+        }
+        fieldsByIdx = new Map(arr.map((a) => [a.index, a.fields]));
+        usedModel = model;
+        break;
+      } catch (e) {
+        console.log(`  失敗（次の候補へ）: ${e.message.slice(0, 100)}`);
+      }
+    }
+    if (!fieldsByIdx) console.log("報道の分野タグ: 全モデルで失敗したため空で続行");
+    pressOut = press.map((it, i) => ({
+      hash: it.hash,
+      source: it.source,
+      kind: "press",
+      title: it.title,
+      url: it.url, // 原本(元記事)への直リンク
+      date: it.date,
+      category: it.category,
+      fields: fieldsByIdx?.get(i) ?? [],
+    }));
+    console.log(`報道: ${pressOut.length}件（タグのみ・要約なし）`);
+  }
+
   const report = {
     generatedAt: new Date().toISOString(),
     model: usedModel,
     items: judgedAll,
+    press: pressOut,
   };
   writeFileSync(REPORT_PATH, JSON.stringify(report, null, 2) + "\n");
 

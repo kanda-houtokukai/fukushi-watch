@@ -15,14 +15,21 @@
 
 ## 台帳
 
-| # | 源の名前 | URL | 巡回方法 | 状態 |
-|---|---|---|---|---|
-| 1 | こども家庭庁 | https://www.cfa.go.jp/news | cfa-cards | 巡回中 |
-| 2 | 厚生労働省 | https://www.mhlw.go.jp/stf/new-info/ | mhlw-news | 巡回中 |
-| 3 | WAM NET | https://www.wam.go.jp/gyoseiShiryou/new_rss | wam-rss | 巡回中 |
-| 4 | 福岡県（障がい福祉） | https://www.pref.fukuoka.lg.jp/life/3/27/ | fukuoka-life | 巡回中 |
-| 5 | 福岡県（子ども・青少年） | https://www.pref.fukuoka.lg.jp/life/3/39/ | fukuoka-life | 巡回中 |
-| 6 | 報酬改定関連 | なし | — | 他源でカバー |
+| # | 源の名前 | 区分 | URL | 巡回方法 | 状態 |
+|---|---|---|---|---|---|
+| 1 | こども家庭庁 | 行政 | https://www.cfa.go.jp/news | cfa-cards | 巡回中 |
+| 2 | 厚生労働省 | 行政 | https://www.mhlw.go.jp/stf/new-info/ | mhlw-news | 巡回中 |
+| 3 | WAM NET | 行政 | https://www.wam.go.jp/gyoseiShiryou/new_rss | wam-rss | 巡回中 |
+| 4 | 福岡県（障がい福祉） | 行政 | https://www.pref.fukuoka.lg.jp/life/3/27/ | fukuoka-life | 巡回中 |
+| 5 | 福岡県（子ども・青少年） | 行政 | https://www.pref.fukuoka.lg.jp/life/3/39/ | fukuoka-life | 巡回中 |
+| 6 | 報酬改定関連 | 行政 | なし | — | 他源でカバー |
+| 7 | 福祉新聞 | **報道** | https://fukushishimbun.com/feed | press-rss | 巡回中 |
+| 8 | 介護ニュースJoint | **報道** | https://www.joint-kaigo.com/feed/ | press-rss | 巡回中 |
+
+- **区分=報道 の源は行政情報と別扱い**（P9・[DECISION]）: AI要約・重要度判定を行わず、
+  **見出し・リンク・日付・カテゴリ・分野タグのみ**を保存する（RSSの説明文・本文は保存しない）。
+  グラフ（この7日）と件数集計に**含めない**。表示には［報］印章と
+  「見出しと出典の表示のみ。要約・重要度判定は行っていません」の注記を常設する。
 
 > **P1で扱うのは、このうち1源だけ**（どの源を1本目にするかはP1の指示書で指定される）。
 > 残り4源は **P4** で確定する。
@@ -43,3 +50,8 @@
   報酬改定ナビ（houshu-navi）は静的な知識ベースであり新着の流れる場所ではない。
   報酬改定の新しい通知・Q&Aは 厚労省新着・WAM NET行政資料・こども家庭庁で完全にカバーされる
   （独立URLを持たせると二重検知になるだけ）。行は経緯の記録として残す。
+- **福祉新聞**: ✅ P9で確定（2026-08-18）。robots.txt全許可・RSS実在（約1本/日）。
+  ⚠️ サイトに「見出しの無断転載禁止」の文言があるため、**見出し＋出典＋直リンクの最小限利用**
+  （非営利・出典明記・要約なし）に厳守する。RSSタイトル末尾の「 - 福祉新聞Web」は除去して保存。
+- **介護ニュースJoint**: ✅ P9で確定（2026-08-18）。robots.txt許可（wp-adminのみ拒否）・
+  RSS実在（約1〜2本/日）。高齢分野中心だが処遇改善・人材確保など全分野に効く記事を含む。
