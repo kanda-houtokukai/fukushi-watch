@@ -176,6 +176,26 @@
   .srch-day{font-size:11px;color:var(--faint)}
   .srch-day a{color:var(--faint)}
 
+  /* スマホ専用の前後移動矢印(PCでは非表示) */
+  .m-arrows{display:none}
+
+  /* ==== スマホ幅(900px未満)のみ: 紙面上部の占有を減らす。PCは一切変更しない ==== */
+  @media(max-width:899px){
+    .ear{flex-wrap:nowrap;font-size:11px}
+    .ear .ear-auto{display:none} /* 「毎朝7時 自動発行」は省き日付と号数のみ */
+    .masthead{padding:20px 0 14px}
+    .masthead h1{font-size:clamp(21px,6vw,24px);letter-spacing:.18em;text-indent:.18em}
+    .masthead .sub{display:none} /* 副題は初見向け=下部「このサイトについて」に委ねる */
+    .sheet{margin-top:18px}
+    .daynav{display:none} /* 月ナビは廃止し、前後移動は日付見出しの行の矢印に */
+    .m-arrows{display:flex;gap:6px}
+    .m-arrows button{width:34px;height:34px;border:1px solid var(--rule);background:#fff;
+      color:var(--ink);font-size:14px;cursor:pointer;font-family:inherit}
+    .m-arrows button:disabled{color:var(--faint)}
+    .dayhead h2{font-size:24px}
+    #chips{display:none} /* 重要度チップ: 紙面が高→中→低の順で組まれ低は索引に畳まれるため廃止 */
+  }
+
   .about{margin-top:52px;border-top:2px solid var(--ink);padding-top:16px}
   .about h2{font-size:13px;font-weight:700;letter-spacing:.28em;color:var(--sub)}
   .about p{font-size:13px;color:#4c4842;margin-top:12px}
@@ -191,7 +211,7 @@
 
   <div class="ear">
     <span id="earDate"></span>
-    <span>毎朝7時 自動発行</span>
+    <span class="ear-auto">毎朝7時 自動発行</span>
     <span>創刊から <b id="issueNo"></b></span>
   </div>
 
@@ -204,6 +224,10 @@
     <main>
       <div class="dayhead">
         <h2 id="dayTitle">読み込み中…</h2>
+        <div class="m-arrows"><!-- スマホ専用の前後移動(PCでは非表示) -->
+          <button id="prevDayM" aria-label="前の記録">←</button>
+          <button id="nextDayM" aria-label="次の記録">→</button>
+        </div>
         <div class="daycount" id="dayCounts"></div>
       </div>
       <nav class="daynav">
@@ -510,8 +534,8 @@
 
     const days = recordedDays();
     const i = days.indexOf(d);
-    $("prevDay").disabled = i <= 0;
-    $("nextDay").disabled = i < 0 || i >= days.length - 1;
+    $("prevDay").disabled = $("prevDayM").disabled = i <= 0;
+    $("nextDay").disabled = $("nextDayM").disabled = i < 0 || i >= days.length - 1;
     renderCal();
     renderWeekStat();
     renderMonthSel();
@@ -525,6 +549,8 @@
 
   $("prevDay").addEventListener("click", () => moveDay(-1));
   $("nextDay").addEventListener("click", () => moveDay(1));
+  $("prevDayM").addEventListener("click", () => moveDay(-1));
+  $("nextDayM").addEventListener("click", () => moveDay(1));
   $("cal").addEventListener("click", (e) => {
     const b = e.target.closest(".cell");
     if (b && !b.disabled) { state.day = b.dataset.day; renderDay(); }
