@@ -289,6 +289,58 @@ async function main() {
     });
   }
 
+  // ==== AIの働きかけ(a): 「高」の項目だけに対応の翻訳を生成(P8) ====
+  // 本体の判定プロンプトには手を入れず、別の小さな第2リクエストで行う
+  // (件数不一致リスクの高い本体を太らせない)。失敗しても action 無しで続行する
+  // (働きかけは付加物であり、メール・履歴の本体を止めない)。
+  const high = judgedAll.filter((it) => it.importance === "高");
+  if (high.length > 0) {
+    try {
+      const actPrompt = `福祉事業者向けの情報サイトの編集者として、次の行政情報それぞれについて、
+「この種の通知では一般にどんな対応が必要になるか」を1〜2文の日本語で書いてください。
+
+規則:
+- 「一般に、こうした通知では〜の確認（〜の対応）が必要になります」という距離感で書く
+- 命令形・「あなた」「〜すべき」は使わない。特定の事業所への指示にしない
+- 本文は読めていない前提。タイトルと要約から言える範囲を超えない
+- JSONの配列のみを出力（コードフェンス禁止）。必ず${high.length}件、indexを含める
+- 形式: [{"index":0,"action":"…"}, …]
+
+入力（${high.length}件）:
+${JSON.stringify(high.map((it, i) => ({ index: i, title: it.title, summary: it.summary })), null, 1)}`;
+      const order = preferModel(models, usedModel);
+      let acts = null;
+      for (const model of order) {
+        try {
+          console.log(`対応の目安を生成: ${model}（高${high.length}件）`);
+          const text = await generate(apiKey, model, actPrompt);
+          const stripped = text.replace(/^\s*```(?:json)?\s*/i, "").replace(/\s*```\s*$/, "").trim();
+          const arr = JSON.parse(stripped);
+          if (!Array.isArray(arr) || arr.length !== high.length) {
+            throw new Error(`件数不一致(期待${high.length}/実際${Array.isArray(arr) ? arr.length : "非配列"})`);
+          }
+          for (const a of arr) {
+            if (typeof a.action !== "string" || !a.action.trim()) {
+              throw new Error(`actionが空(index=${a.index})`);
+            }
+          }
+          acts = arr;
+          break;
+        } catch (e) {
+          console.log(`  失敗（次の候補へ）: ${e.message.slice(0, 100)}`);
+        }
+      }
+      if (acts) {
+        acts.forEach((a) => { if (high[a.index]) high[a.index].action = a.action.trim(); });
+        console.log(`対応の目安: ${acts.length}件を付与`);
+      } else {
+        console.log("対応の目安: 全モデルで失敗したため付与せず続行");
+      }
+    } catch (e) {
+      console.log(`対応の目安: 生成をスキップ(${e.message.slice(0, 80)})`);
+    }
+  }
+
   const report = {
     generatedAt: new Date().toISOString(),
     model: usedModel,

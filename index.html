@@ -115,6 +115,22 @@
   .empty{margin-top:26px;padding:26px 0;border-bottom:1px solid var(--rule);
     font-size:14px;color:var(--sub)}
 
+  /* AIの働きかけ: タップ展開(常時表示しない) */
+  .aid{margin-top:9px}
+  .aid summary{list-style:none;cursor:pointer;font-size:12px;color:var(--link);
+    display:inline-flex;align-items:center;gap:5px}
+  .aid summary::-webkit-details-marker{display:none}
+  .aid summary::before{content:"▽";font-size:10px}
+  .aid[open] summary::before{content:"△"}
+  .aid-body{background:#f6f5f1;padding:11px 13px;margin-top:8px;font-size:12.5px;line-height:1.8}
+  .aid-act{color:#43403a}
+  .aid-note{font-size:11px;color:var(--faint);margin-top:6px}
+  .aid-rel{margin-top:9px;border-top:1px dashed var(--rule);padding-top:8px}
+  .aid-rel .h{font-size:11px;font-weight:600;color:var(--sub);margin-bottom:4px}
+  .aid-rel .r{font-size:12px;color:var(--sub);line-height:1.8}
+  .aid-rel .r a{color:var(--link);text-decoration:none}
+  .aid-rel .r .d{color:var(--faint);font-size:11px}
+
   /* --- サイド欄 --- */
   .rail-col{margin-top:38px}
   @media(min-width:900px){.rail-col{margin-top:0}}
@@ -373,6 +389,21 @@
     return { head: sum.slice(0, i + 1), rest: sum.slice(i + 1).trim() };
   }
 
+  /* AIの働きかけ: 対応の目安(高のみ生成)と関連する過去の記録。タップで展開 */
+  function aidBlock(it) {
+    const rel = it.related ?? [];
+    if (!it.action && !rel.length) return "";
+    const label = it.action ? "対応の目安と関連記録" : "関連する過去の記録";
+    return `<details class="aid"><summary>${label}</summary><div class="aid-body">
+      ${it.action ? `<div class="aid-act">${esc(it.action)}</div>
+      <div class="aid-note">一般的な目安です。最終判断は必ず原本をご確認ください。</div>` : ""}
+      ${rel.length ? `<div class="aid-rel"${it.action ? "" : ' style="border-top:0;padding-top:0;margin-top:0"'}>
+        <div class="h">関連する過去の記録</div>
+        ${rel.map((r) => `<div class="r"><span class="d">${esc(r.day)}</span> <a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a></div>`).join("")}
+      </div>` : ""}
+    </div></details>`;
+  }
+
   function topBlock(it) {
     const s = splitSummary(it.summary);
     return `<div class="sec gov" data-sec="top"><span class="mark">◆</span> 本日の最重要</div>
@@ -381,6 +412,7 @@
       ${s.rest ? `<div class="body">${esc(s.rest)}</div>` : ""}
       <div class="meta">${metaLine(it)}</div>
       <div class="orig">原題: <a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></div>
+      ${aidBlock(it)}
       <a class="go" href="${esc(it.url)}" target="_blank" rel="noopener">原本を確認する →</a>
     </article>`;
   }
@@ -389,6 +421,7 @@
       <h4><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></h4>
       <div class="body">${esc(it.summary)}</div>
       <div class="meta">${metaLine(it)}</div>
+      ${aidBlock(it)}
       <a class="go" style="font-size:12.5px" href="${esc(it.url)}" target="_blank" rel="noopener">原本を確認する →</a>
     </article>`;
   }
@@ -397,6 +430,7 @@
       <h4><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></h4>
       <div class="body">${esc(it.summary)}</div>
       <div class="meta">${metaLine(it)}</div>
+      ${aidBlock(it)}
     </article>`;
   }
   function lowLine(it) {

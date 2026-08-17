@@ -38,6 +38,43 @@ function loadJson(path, fallback) {
   return existsSync(path) ? JSON.parse(readFileSync(path, "utf8")) : fallback;
 }
 
+/**
+ * AIの働きかけ(b): 関連する過去項目への参照(P8)。AI照合でなく機械照合。
+ * タイトルから回数・日付表現を除いた「系列キー」を作り、同じ系列の過去項目を最大3件参照する。
+ * 行政情報の「関連」の大半は定例系列(第N回部会・毎月の統計・人事異動)で、これが最も正確に拾える。
+ */
+function seriesKey(title) {
+  const t = String(title ?? "")
+    .normalize("NFKC")
+    .replace(/第\s*\d+\s*回/g, "")
+    .replace(/令和\s*\d+\s*年度?/g, "")
+    .replace(/\d{4}[年度]?/g, "")
+    .replace(/\d+月\d+日付?/g, "")
+    .replace(/\d{4}-\d{2}-\d{2}/g, "")
+    .replace(/[【】\[\]（）()「」『』・、。．:：／/\s]/g, "");
+  return t.length >= 6 ? t : null; // 短すぎるキーは誤照合のもとなので使わない
+}
+
+/** 既存履歴(当月+前月)から 系列キー→過去項目 の索引を作る */
+function buildSeriesIndex(month) {
+  const index = new Map();
+  const [y, m] = month.split("-").map(Number);
+  const prev = m === 1 ? `${y - 1}-12` : `${y}-${String(m - 1).padStart(2, "0")}`;
+  for (const mo of [prev, month]) {
+    const data = loadJson(join(HISTORY_DIR, `${mo}.json`), null);
+    if (!data) continue;
+    for (const [day, rec] of Object.entries(data.days)) {
+      for (const it of rec.items ?? []) {
+        const key = seriesKey(it.title);
+        if (!key) continue;
+        if (!index.has(key)) index.set(key, []);
+        index.get(key).push({ day, hash: it.hash, title: it.title, url: it.url });
+      }
+    }
+  }
+  return index;
+}
+
 function main() {
   const report = JSON.parse(readFileSync(REPORT_PATH, "utf8"));
   const day = jstDay(new Date(report.generatedAt ?? Date.now()));
@@ -47,9 +84,23 @@ function main() {
   const monthly = loadJson(monthPath, { days: {} });
   const existing = monthly.days[day]?.items ?? [];
 
+  // 関連参照(系列キーの機械照合)を新規項目に付与してから記録する
+  const series = buildSeriesIndex(month);
+  const incoming = (report.items ?? []).map((it) => {
+    const key = seriesKey(it.title);
+    const rel = key
+      ? (series.get(key) ?? [])
+          .filter((p) => p.hash !== it.hash)
+          .sort((a, b) => (a.day < b.day ? 1 : -1))
+          .slice(0, 3)
+          .map(({ day: d, title, url }) => ({ day: d, title, url }))
+      : [];
+    return rel.length ? { ...it, related: rel } : it;
+  });
+
   // 同日の再実行に備え、ハッシュで併合する（新しい判定を優先して上書き）
   const byHash = new Map(existing.map((it) => [it.hash, it]));
-  for (const it of report.items ?? []) byHash.set(it.hash, it);
+  for (const it of incoming) byHash.set(it.hash, it);
   const items = [...byHash.values()];
 
   const counts = { 高: 0, 中: 0, 低: 0 };
