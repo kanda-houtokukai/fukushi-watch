@@ -160,6 +160,9 @@ async function main() {
   const report = existsSync(REPORT_PATH)
     ? JSON.parse(readFileSync(REPORT_PATH, "utf8"))
     : { items: [] };
+  // 項目の「検知日」= レポートの日付(JST)。紙面ジャンプ先として保存する
+  const reportDay = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Tokyo" })
+    .format(new Date(report.generatedAt ?? Date.now()));
   // 対象は高・中のみ（[DECISION] 締切を持つ層をカバーしつつ負荷を抑える）
   const targets = (report.items ?? []).filter(
     (it) => it.importance === "高" || it.importance === "中"
@@ -242,7 +245,7 @@ async function main() {
         );
         store.items.push({
           hash: it.hash,
-          day: today,
+          day: reportDay,
           source: it.source,
           title: it.title,
           url: it.url,
