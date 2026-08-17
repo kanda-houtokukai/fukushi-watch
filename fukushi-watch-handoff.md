@@ -108,7 +108,13 @@
 | `data/mail-settings.json` | メールの分野重み付け設定（現在=障害・児童・保育） | ✅ 正本 |
 | `index.html` | ダッシュボード本体（依存ゼロ・単一ファイル） | ✅ 正本 |
 | https://kanda-houtokukai.github.io/fukushi-watch/ | 公開ダッシュボード（Pages・main/root） | — |
-| `package.json` | `npm run crawl` の定義のみ（依存なし） | ✅ 正本 |
+| `scripts/deadlines.js` | 締切抽出（P11）。本文取得→幻覚ガード三重検証→期限のみ保存 | ✅ 正本 |
+| `data/deadlines.json` | 追跡中の期限（期限日・種類・根拠文字列・hash） | 実行で更新 |
+| `scripts/backfill.js` | 過去分の遡及記録（P14・**手動のみ**）。stateは読むだけ・メール送信なし | ✅ 正本 |
+| `scripts/relink.js` | 全履歴の関連記録を再計算（P14・**手動のみ**・AI不使用） | ✅ 正本 |
+| `data/backfill-progress.json` | バックフィルの処理済みの日（再開用） | 実行で更新 |
+| `fukushi-watch-archive-2026-08.md` | 経緯アーカイブ（P0〜P2の記録を原文のまま保存） | 参照用 |
+| `package.json` | npm run crawl/summarize/notify/archive の定義のみ（依存なし） | ✅ 正本 |
 | `~/Documents/fukushi-watch/` | ローカルの作業場所 | — |
 | `github.com/kanda-houtokukai/fukushi-watch` | 公開リポジトリ | — |
 | `~/.claude/skills/dev-workflow/` | 作業規範（全案件共通） | ✅ 正本 |
