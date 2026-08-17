@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-08-17T11:03:09.342Z",
+      "lastCrawled": "2026-08-17T21:53:30.343Z",
       "items": [
         {
           "hash": "1f52e065501ffbfa",
@@ -83,7 +83,7 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-08-17T11:03:09.585Z",
+      "lastCrawled": "2026-08-17T21:53:30.561Z",
       "items": [
         {
           "hash": "361d2fcc827e8bc4",
@@ -3343,7 +3343,7 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-08-17T11:03:09.928Z",
+      "lastCrawled": "2026-08-17T21:53:30.853Z",
       "items": [
         {
           "hash": "4935822a0d8b059c",
@@ -4748,7 +4748,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-08-17T11:03:10.048Z",
+      "lastCrawled": "2026-08-17T21:53:30.967Z",
       "items": [
         {
           "hash": "f5ad4357dc776e94",
@@ -4928,7 +4928,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-08-17T11:03:10.097Z",
+      "lastCrawled": "2026-08-17T21:53:31.014Z",
       "items": [
         {
           "hash": "991bae94228d9d6e",
@@ -5351,8 +5351,15 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-08-17T11:03:10.540Z",
+      "lastCrawled": "2026-08-17T21:53:31.351Z",
       "items": [
+        {
+          "hash": "ba14409d68340fa2",
+          "title": "あの「介護甲子園」が再開へ 仕掛け人・左敬真氏が語る、社会福祉法人が100年生き残るための経営哲学",
+          "url": "https://www.joint-kaigo.com/articles/47243/",
+          "date": "2026-08-18",
+          "category": "超高齢化"
+        },
         {
           "hash": "c7c18dbc4edd3ef8",
           "title": "車いす送迎中の事故、7年で死亡30件 消費者事故調が注意喚起",
@@ -5426,5 +5433,5 @@
       ]
     }
   },
-  "preferredModel": "gemini-3.5-flash"
+  "preferredModel": "gemini-3.7-flash"
 }

@@ -50,6 +50,11 @@ jobs:
       - name: 履歴に記録
         run: node scripts/archive.js
 
+      - name: 締切の抽出
+        run: node scripts/deadlines.js
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
       - name: 状態をコミット
         run: |
           git config user.name "fukushi-watch"
