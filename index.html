@@ -225,20 +225,25 @@
 
     /* ==== P10: ヘッダー固定＋メニュー化 ==== */
     .rail-col{display:none} /* サイド欄の中身はメニューへ移設(JSでノード移動) */
-    #topHead{position:sticky;top:0;z-index:30;background:var(--paper);
-      transition:box-shadow .2s ease}
+    /* ヘッダーは fixed で本文から独立させ、本文側(.wrap)にヘッダー高さぶんの余白を確保する */
+    #topHead{position:fixed;top:0;left:0;right:0;z-index:30;background:var(--paper);
+      padding:0 18px;transition:box-shadow .2s ease}
     #topHead.shrunk{box-shadow:0 1px 0 rgba(0,0,0,.06)}
+    .wrap{padding-top:96px} /* 固定ヘッダー(約90px)の高さぶんの余白 */
+    html{scroll-padding-top:96px} /* ページ内ジャンプもヘッダー下に潜らせない */
     /* 題字行: [釣り合いスペーサ][題字(可変幅)][ボタン群] のフレックス1行。
-       行の高さを固定し、スクロールで文字サイズが変わっても紙面がガタつかない */
+       行の高さを固定し、スクロールで文字サイズが変わっても高さは不変 */
     .masthead{display:flex;align-items:center;gap:8px;height:52px;padding:0}
+    /* 初期状態でも必ず収まるサイズにする(はみ出しを切らない):
+       最小幅360pxで題字の実幅が箱に収まることを実測で確認済み */
     .masthead h1{flex:1;min-width:0;white-space:nowrap;overflow:hidden;
-      font-size:clamp(19px,5.6vw,22px);letter-spacing:.16em;text-indent:.16em;
+      font-size:clamp(12px,4.1vw,17px);letter-spacing:.1em;text-indent:.1em;
       transition:font-size .2s ease}
-    #topHead.shrunk .masthead h1{font-size:15px;letter-spacing:.2em;text-indent:.2em}
+    #topHead.shrunk .masthead h1{font-size:min(14px,3.9vw);letter-spacing:.14em;text-indent:.14em}
     .ear{height:34px;align-items:center;padding:0}
-    .hspacer{display:block;flex:0 0 80px} /* ボタン群と同幅で題字を中央に保つ */
+    .hspacer{display:block;flex:0 0 72px} /* ボタン群と同幅で題字を中央に保つ */
     .hbtns{display:flex;flex:0 0 auto;gap:8px}
-    .hbtns button{width:36px;height:36px;display:flex;align-items:center;justify-content:center;
+    .hbtns button{width:32px;height:32px;display:flex;align-items:center;justify-content:center;
       border:1px solid var(--rule);background:var(--paper);color:var(--ink);cursor:pointer;padding:0}
     #mSearchPanel{display:block;overflow:hidden;max-height:0;transition:max-height .25s ease}
     #mSearchPanel.open{max-height:70px;padding:10px 0 12px}
@@ -666,8 +671,10 @@
   function moveDay(delta) {
     const days = recordedDays();
     const i = days.indexOf(state.day) + delta;
-    if (i >= 0 && i < days.length) { state.day = days[i]; renderDay(); }
+    if (i >= 0 && i < days.length) { state.day = days[i]; renderDay(); toTop(); }
   }
+  /* 日付を切り替えたら紙面の先頭へ。固定ヘッダーの下に日付見出しが隠れたままにしない */
+  function toTop() { window.scrollTo({ top: 0 }); }
 
   $("prevDay").addEventListener("click", () => moveDay(-1));
   $("nextDay").addEventListener("click", () => moveDay(1));
@@ -675,12 +682,12 @@
   $("nextDayM").addEventListener("click", () => moveDay(1));
   $("cal").addEventListener("click", (e) => {
     const b = e.target.closest(".cell");
-    if (b && !b.disabled) { state.day = b.dataset.day; renderDay(); }
+    if (b && !b.disabled) { state.day = b.dataset.day; renderDay(); toTop(); }
   });
   $("monthSel").addEventListener("change", () => {
     const m = $("monthSel").value;
     const days = recordedDays().filter((d) => d.startsWith(m));
-    if (days.length) { state.day = days[days.length - 1]; renderDay(); }
+    if (days.length) { state.day = days[days.length - 1]; renderDay(); toTop(); }
   });
   $("chips").addEventListener("click", (e) => {
     const b = e.target.closest(".chip");
