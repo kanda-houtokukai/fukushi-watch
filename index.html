@@ -177,8 +177,15 @@
   .stat{font-size:12.5px;color:var(--sub)}
   .stat .n{font-size:26px;font-weight:700;color:var(--ink);line-height:1.2}
   .stat .n span{font-size:13px;font-weight:400;color:var(--sub)}
-  .stat .row{display:flex;justify-content:space-between;border-bottom:1px solid var(--rule);padding:7px 0}
-  .stat .row b{color:var(--ink)}
+  /* 件数は押せる（P16）。説明は置かず、下線と矢印の気配だけで示す */
+  .stat .row{display:flex;justify-content:space-between;align-items:baseline;width:100%;
+    border:0;border-bottom:1px solid var(--rule);padding:7px 0;background:none;
+    font-family:inherit;font-size:12.5px;color:var(--sub);text-align:left;cursor:pointer}
+  .stat .row b{color:var(--ink);font-variant-numeric:tabular-nums}
+  .stat .row:not(:disabled):hover span{text-decoration:underline;text-underline-offset:3px}
+  .stat .row:not(:disabled):hover b::after{content:" →";font-weight:400;color:var(--sub)}
+  .stat .row:disabled{cursor:default;color:var(--faint)}
+  .stat .row:disabled b{color:var(--faint);font-weight:400}
 
   .legend .row{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--sub);margin-bottom:9px;flex-wrap:wrap}
 
@@ -539,20 +546,28 @@
     $("cal").innerHTML = cells.join("");
   }
 
-  /* 今週の記録(選択日を末尾とする7暦日) */
-  function renderWeekStat() {
+  /* 「今週」の対象日（選択日を末尾とする7暦日・新しい順）。集計と一覧で必ず同じものを使う */
+  function weekDays() {
     const end = dayUTC(state.day);
+    return Array.from({ length: 7 }, (_, i) =>
+      new Date(end - i * 86400000).toISOString().slice(0, 10));
+  }
+
+  /* 今週の記録(選択日を末尾とする7暦日)。件数は押せる＝該当重要度の一覧へ(P16) */
+  function renderWeekStat() {
     let t = 0, h = 0, mi = 0, l = 0;
-    for (let i = 0; i < 7; i++) {
-      const key = new Date(end - i * 86400000).toISOString().slice(0, 10);
+    for (const key of weekDays()) {
       const c = state.index.days[key];
       if (c) { t += c.t; h += c.h; mi += c.m; l += c.l; }
     }
+    const row = (mark, label, n, imp) =>
+      `<button class="row" data-imp="${imp}"${n === 0 ? " disabled" : ""}>
+        <span>${mark} ${label}</span><b>${n}</b></button>`;
     $("weekStat").innerHTML = `
       <div class="n">${t}<span> 件を巡回・記録</span></div>
-      <div class="row"><span>◆ 対応・確認を</span><b>${h}</b></div>
-      <div class="row"><span>◇ 把握を</span><b>${mi}</b></div>
-      <div class="row"><span>◊ 参考</span><b>${l}</b></div>`;
+      ${row("◆", "対応・確認を", h, "高")}
+      ${row("◇", "把握を", mi, "中")}
+      ${row("◊", "参考", l, "低")}`;
   }
 
   function renderMonthSel() {
@@ -795,6 +810,11 @@
     const b = e.target.closest(".cell");
     if (b && !b.disabled) { state.day = b.dataset.day; renderDay(); toTop(); }
   });
+  /* 今週の記録の件数 → その重要度だけの一覧（P16。スマホはメニューを閉じてから出す） */
+  $("weekStat").addEventListener("click", (e) => {
+    const b = e.target.closest(".row");
+    if (b && !b.disabled) runWeekList(b.dataset.imp);
+  });
   $("monthSel").addEventListener("change", () => {
     const m = $("monthSel").value;
     const days = recordedDays().filter((d) => d.startsWith(m));
@@ -850,24 +870,39 @@
     const remaining = months.length > scope.length;
     const nextOldest = remaining ? fmtMo(months[Math.min(monthCount + SEARCH_BATCH, months.length) - 1]) : "";
 
+    renderResultList({
+      title: `「${esc(query)}」の検索結果 ${results.length}件`,
+      note: rangeNote,
+      results,
+      emptyText: "この範囲では見つかりませんでした。",
+      moreHtml: remaining ? `<button class="srch-more" id="srchMore">さらに過去を検索（〜${nextOldest}）</button>` : "",
+      onMore: () => runSearch(query, monthCount + SEARCH_BATCH),
+    });
+  }
+
+  /**
+   * 日付を跨いだ一覧の描画（検索結果とP16の週次一覧で共有）。
+   * 各項目に「その日の紙面を開く →」を添え、閉じる導線を付ける。
+   */
+  function renderResultList({ title, note, results, emptyText, moreHtml = "", onMore }) {
     $("list").innerHTML = `
       <div class="srch-head">
-        <h2>「${esc(query)}」の検索結果 ${results.length}件</h2>
-        <div class="srch-range">${rangeNote}</div>
+        <h2>${title}</h2>
+        <div class="srch-range">${note}</div>
       </div>
-      ${results.length === 0 ? `<div class="empty">この範囲では見つかりませんでした。</div>` : ""}
+      ${results.length === 0 ? `<div class="empty">${esc(emptyText)}</div>` : ""}
       ${results.map((it) => `
       <article class="item">
         <h4><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></h4>
         <div class="body">${esc(it.summary)}</div>
         <div class="meta">${metaLine(it)}<span class="srch-day">${esc(it._day)}の紙面 <a href="#" data-goday="${esc(it._day)}">開く →</a></span></div>
       </article>`).join("")}
-      ${remaining ? `<button class="srch-more" id="srchMore">さらに過去を検索（〜${nextOldest}）</button>` : ""}
-      <button class="srch-close" id="srchClose">検索を閉じて紙面に戻る</button>`;
+      ${moreHtml}
+      <button class="srch-close" id="srchClose">閉じて紙面に戻る</button>`;
 
     $("srchClose").addEventListener("click", () => renderDay());
     const more = $("srchMore");
-    if (more) more.addEventListener("click", () => runSearch(query, monthCount + SEARCH_BATCH));
+    if (more && onMore) more.addEventListener("click", onMore);
     document.querySelectorAll("[data-goday]").forEach((a) =>
       a.addEventListener("click", (e) => {
         e.preventDefault();
@@ -875,6 +910,31 @@
         renderDay();
         window.scrollTo({ top: 0 });
       }));
+  }
+
+  /* 「今週の記録」の件数から、直近7日の該当重要度だけを一覧する（P16）。
+     期間は renderWeekStat と同一（選択中の日を末尾とする7暦日）で、件数が必ず一致する。
+     分野フィルタは適用しない（押した数字＝全分野の集計なので、結果もそれに合わせる）。 */
+  async function runWeekList(imp) {
+    const results = [];
+    for (const day of weekDays()) { // 新しい順
+      if (!state.index.days[day]) continue;
+      const m = await monthData(day.slice(0, 7));
+      const items = (m.days[day]?.items ?? []).filter((it) => it.importance === imp);
+      items.sort((a, b) => (a.date < b.date ? 1 : -1)); // 同日内は紙面と同じ日付降順
+      results.push(...items.map((it) => ({ ...it, _day: day })));
+    }
+    const mark = { 高: "◆", 中: "◇", 低: "◊" }[imp];
+    const label = { 高: "対応・確認を", 中: "把握を", 低: "参考" }[imp];
+    const days = weekDays();
+    renderResultList({
+      title: `今週の${mark}${label} ${results.length}件`,
+      note: `${fmtDay(days[days.length - 1]).short}〜${fmtDay(days[0]).short}の記録`,
+      results,
+      emptyText: "この7日間に該当する記録はありません。",
+    });
+    closeMenu();
+    window.scrollTo({ top: 0 });
   }
 
   $("searchForm").addEventListener("submit", (e) => {
