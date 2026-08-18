@@ -29,6 +29,9 @@
     padding:10px 0;border-bottom:1px solid var(--rule)}
   .ear b{color:var(--ink)}
   .ear .ear-short{display:none} /* スマホでのみ使う短い日付表記（P15） */
+  .ear .ear-today{border:0;background:none;padding:0;font:inherit;color:var(--link);
+    cursor:pointer;text-decoration:underline;text-underline-offset:3px} /* 本日へ戻る（P17） */
+  .ear .ear-today[hidden]{display:none}
 
   /* ==== 題字 ==== */
   .masthead{text-align:center;padding:34px 0 22px;border-bottom:3px double var(--ink)}
@@ -260,7 +263,13 @@
     .m-arrows button{width:34px;height:34px;border:1px solid var(--rule);background:#fff;
       color:var(--ink);font-size:14px;cursor:pointer;font-family:inherit}
     .m-arrows button:disabled{color:var(--faint)}
-    .dayhead h2{font-size:24px}
+    /* 内容(新着なし/多い日)で矢印の位置が動かないよう格子で固定する(P17)。
+       1行目=[日付見出し | 矢印(右端固定)]、2行目=件数 */
+    .dayhead{display:grid;grid-template-columns:1fr auto;align-items:center;
+      column-gap:8px;row-gap:2px}
+    .dayhead h2{font-size:24px;grid-column:1;grid-row:1}
+    .dayhead .m-arrows{grid-column:2;grid-row:1;justify-self:end}
+    .dayhead .daycount{grid-column:1 / -1;grid-row:2}
     #chips{display:none} /* 重要度チップ: 紙面が高→中→低の順で組まれ低は索引に畳まれるため廃止 */
     .sec{margin-top:34px} /* セクション前余白はスマホでは控えめに(縦の間延び防止・P13) */
     .sec.gov{margin-top:22px}
@@ -323,7 +332,7 @@
 
   <div id="topHead"><!-- スマホでは二重罫より上を固定ヘッダーにする(P10) -->
     <div class="ear">
-      <span id="earDate"><span class="ear-full"></span><span class="ear-short"></span><span class="ear-today"></span></span>
+      <span id="earDate"><span class="ear-full"></span><span class="ear-short"></span><button class="ear-today" id="btnToday" hidden></button></span>
       <span class="ear-auto">毎朝7時 自動発行</span>
       <span><span id="issuePrefix">創刊から </span><b id="issueNo"></b></span>
     </div>
@@ -520,8 +529,10 @@
     ear.querySelector(".ear-full").textContent =
       `${f.y}年（令和${reiwa}年）${f.m}月${f.dd}日　${f.w}曜日`;
     ear.querySelector(".ear-short").textContent = `${f.m}月${f.dd}日（${f.w}）`;
-    ear.querySelector(".ear-today").textContent =
-      d === today ? "" : `　｜　本日 ${fmtDay(today).short}`;
+    /* 本日以外を見ているときだけ「｜ 本日 M/D」を出し、そのまま本日へ戻る導線にする(P17) */
+    const btn = $("btnToday");
+    btn.hidden = d === today;
+    btn.textContent = d === today ? "" : `　｜　本日 ${fmtDay(today).short} へ戻る`;
     /* 創刊(2026-08-16)より前の日付には号数を振らない（遡及記録=P14。号数は発行の記録のため） */
     const no = Math.floor((dayUTC(d) - FOUNDED) / 86400000) + 1;
     $("issueNo").textContent = no < 1 ? "創刊前の記録" : `第 ${no} 号`;
@@ -804,6 +815,14 @@
 
   $("prevDay").addEventListener("click", () => moveDay(-1));
   $("nextDay").addEventListener("click", () => moveDay(1));
+  /* 欄外の「本日 M/D へ戻る」(P17)。検索結果や週次一覧を開いていても本日の紙面に戻す */
+  $("btnToday").addEventListener("click", () => {
+    const days = recordedDays();
+    const today = jstToday();
+    state.day = state.index.days[today] ? today : days[days.length - 1];
+    renderDay();
+    toTop();
+  });
   $("prevDayM").addEventListener("click", () => moveDay(-1));
   $("nextDayM").addEventListener("click", () => moveDay(1));
   $("cal").addEventListener("click", (e) => {
@@ -895,7 +914,7 @@
       <article class="item">
         <h4><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></h4>
         <div class="body">${esc(it.summary)}</div>
-        <div class="meta">${metaLine(it)}<span class="srch-day">${esc(it._day)}の紙面 <a href="#" data-goday="${esc(it._day)}">開く →</a></span></div>
+        <div class="meta">${metaLine(it)}${shareBtn(it._day, it.hash, it.title)}<span class="srch-day">${esc(it._day)}の紙面 <a href="#" data-goday="${esc(it._day)}">開く →</a></span></div>
       </article>`).join("")}
       ${moreHtml}
       <button class="srch-close" id="srchClose">閉じて紙面に戻る</button>`;
