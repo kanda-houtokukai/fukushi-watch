@@ -2427,6 +2427,266 @@
      ]
     }
    ]
+  },
+  "2026-08-19": {
+   "counts": {
+    "高": 1,
+    "中": 3,
+    "低": 11
+   },
+   "items": [
+    {
+     "hash": "b19238427a308d81",
+     "source": "こども家庭庁",
+     "title": "こどもの自殺対策推進室：大臣メッセージ動画を公開しました",
+     "url": "https://www.cfa.go.jp/policies/kodomonojisatsutaisaku/minister-message-r8-1",
+     "date": "2026-08-18",
+     "category": "政策",
+     "summary": "こども家庭庁による子どもの自殺予防に向けた大臣メッセージ動画の公開情報です。長期休暇明け等に向けた啓発活動の一環として発信されています。",
+     "importance": "低",
+     "fields": [
+      "児童"
+     ],
+     "reason": "啓発・広報動画の公開情報であり、事業所に直接の実務対応を求めるものではないため。"
+    },
+    {
+     "hash": "52ef1a0a23b5df6f",
+     "source": "こども家庭庁",
+     "title": "こどもの自殺対策推進室：政府広報音声広告を公開しました",
+     "url": "https://www.cfa.go.jp/policies/kodomonojisatsutaisaku/r8kouhoupj",
+     "date": "2026-08-18",
+     "category": "政策",
+     "summary": "子どもの自殺対策推進室による啓発用の政府広報音声広告の公開情報です。",
+     "importance": "低",
+     "fields": [
+      "児童"
+     ],
+     "reason": "啓発広報素材の公開案内であり、福祉事業者の実務運営への影響は薄いため。"
+    },
+    {
+     "hash": "56807be255222f51",
+     "source": "厚生労働省",
+     "title": "危険ドラッグの成分４物質を新たに指定薬物に指定",
+     "url": "https://www.mhlw.go.jp/stf/houdou/0000212707_00056.html",
+     "date": "2026-08-18",
+     "category": "報道発表",
+     "summary": "医薬品医療機器法に基づき危険ドラッグ4物質を新たに指定薬物に指定した報道発表です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "薬事法規に基づく規制物質の追加指定であり、福祉事業所の業務運営に直接関わらないため。"
+    },
+    {
+     "hash": "cf8a2a34ce323dba",
+     "source": "厚生労働省",
+     "title": "令和８年８月１７日付大臣会見概要（令和８年熊本地震熊本県被災地視察後）",
+     "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00963.html",
+     "date": "2026-08-18",
+     "category": "大臣会見等",
+     "summary": "熊本地震の被災地視察後に行われた厚生労働大臣の記者会見記録です。",
+     "importance": "低",
+     "fields": [
+      "共通"
+     ],
+     "reason": "大臣の視察後の会見概要であり、事業者に具体的な制度対応等を指示する内容ではないため。"
+    },
+    {
+     "hash": "2c7a4ba3c2b787b7",
+     "source": "厚生労働省",
+     "title": "食品中の放射性物質の検査結果について（１５０８報）",
+     "url": "https://www.mhlw.go.jp/stf/newpage_75508.html",
+     "date": "2026-08-18",
+     "category": "報道発表",
+     "summary": "流通食品等に含まれる放射性物質に関する定期的な検査結果の公表です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "定例の検査データ公表であり、福祉施設の給食管理等に新規の対応を求めるものではないため。",
+     "related": [
+      {
+       "day": "2026-08-12",
+       "title": "食品中の放射性物質の検査結果について（１５０７報）",
+       "url": "https://www.mhlw.go.jp/stf/newpage_75302.html"
+      },
+      {
+       "day": "2026-08-04",
+       "title": "食品中の放射性物質の検査結果について（１５０６報）",
+       "url": "https://www.mhlw.go.jp/stf/newpage_75055.html"
+      },
+      {
+       "day": "2026-07-28",
+       "title": "食品中の放射性物質の検査結果について（１５０５報）",
+       "url": "https://www.mhlw.go.jp/stf/newpage_74967.html"
+      }
+     ]
+    },
+    {
+     "hash": "d8ec03d5c0700ab9",
+     "source": "厚生労働省",
+     "title": "第77回労働政策審議会人材開発分科会監理団体審査部会 開催案内",
+     "url": "https://www.mhlw.go.jp/stf/newpage_75306.html",
+     "date": "2026-08-18",
+     "category": "審議会等",
+     "summary": "外国人技能実習制度における監理団体の審査を行う審議会部会の開催案内です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "審議会の開催告知にとどまり、事業所の実務に直接影響しないため。"
+    },
+    {
+     "hash": "c9ad4fe5b45975c2",
+     "source": "厚生労働省",
+     "title": "労働政策審議会 (人材開発分科会監理団体審査部会)",
+     "url": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_474670.html",
+     "date": "2026-08-18",
+     "category": "審議会等",
+     "summary": "外国人材の監理団体審査部会における議論や資料に関する審議会情報です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "監理団体の個別審査等に関する審議会情報であり、福祉現場の実務への影響は薄いため。"
+    },
+    {
+     "hash": "2215bff357901ee6",
+     "source": "厚生労働省",
+     "title": "令和８年８月千葉豪雨について 倒産等による未払賃金の立替払制度について、申請手続の簡略化を行っています",
+     "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/16849_00003.html",
+     "date": "2026-08-18",
+     "category": "その他",
+     "summary": "豪雨被災地域の事業場を対象とした、未払賃金立替払制度の申請手続き簡略化に関する案内です。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "被災時における労働者の救済制度の特例措置であり、該当地域の事業者・労務管理上把握しておくべき情報のため。"
+    },
+    {
+     "hash": "1b6769666e637fb3",
+     "source": "厚生労働省",
+     "title": "医薬品・医療機器等製品データベース",
+     "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iyakuhin/topics/index_00006.html",
+     "date": "2026-08-18",
+     "category": "トピックス",
+     "summary": "厚生労働省が提供する医薬品および医療機器等の製品データベースに関する案内です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "行政データベースの案内であり、福祉事業所の実務運営に直接影響しないため。"
+    },
+    {
+     "hash": "1e2b20a732810809",
+     "source": "厚生労働省",
+     "title": "第32回過労死等防止対策推進協議会 議事録",
+     "url": "https://www.mhlw.go.jp/stf/newpage_75595.html",
+     "date": "2026-08-18",
+     "category": "審議会等",
+     "summary": "過労死等防止対策推進協議会の議事録であり、国の過労死防止大綱や労務対策の議論が記録されています。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "今後の労働環境改善や労務管理方針の動向を把握するために有用な審議会議事録であるため。"
+    },
+    {
+     "hash": "39b3f30adf054685",
+     "source": "厚生労働省",
+     "title": "採用情報（期間業務職員（社会・援護局（援護））募集情報）",
+     "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-syakai_engokyoku-engo.html",
+     "date": "2026-08-18",
+     "category": "採用情報",
+     "summary": "厚生労働省社会・援護局における期間業務職員の採用募集情報です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "省庁の職員採用情報であり、福祉事業所の運営実務とは関係がないため。",
+     "related": [
+      {
+       "day": "2026-07-13",
+       "title": "採用情報（期間業務職員（社会・援護局（援護））募集情報）",
+       "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-syakai_engokyoku-boueijoshuhojo.html"
+      }
+     ]
+    },
+    {
+     "hash": "f9d30260e5d79435",
+     "source": "WAM NET",
+     "title": "介護保険最新情報Vol.1536（PDF：457KB）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0818110453853/ksvol.1536.pdf?from=rss",
+     "date": "2026-08-18",
+     "category": "行政資料",
+     "summary": "厚生労働省から発出された介護保険制度に関する最新の通知文書です。",
+     "importance": "高",
+     "fields": [
+      "高齢"
+     ],
+     "reason": "介護保険事業所における人員・運営基準や算定実務に直結する公的通知のため。",
+     "action": "一般に、こうした通知では制度の最新動向や運用上の変更点などの記載内容を確認し、自事業所のサービス運営や業務プロセスへの影響を把握する対応が必要になります。"
+    },
+    {
+     "hash": "4484c831ef616f41",
+     "source": "福岡県（子ども・青少年）",
+     "title": "令和８年度第４回福岡県社会福祉審議会児童福祉専門分科会の開催について",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/bunnkakai20260806.html",
+     "date": "2026年8月6日更新",
+     "category": "",
+     "summary": "福岡県社会福祉審議会における児童福祉専門分科会の開催案内です。",
+     "importance": "低",
+     "fields": [
+      "児童"
+     ],
+     "reason": "地方自治体の審議会の開催告知にとどまるため。",
+     "related": [
+      {
+       "day": "2026-07-02",
+       "title": "令和８年度第３回福岡県社会福祉審議会児童福祉専門分科会の開催について",
+       "url": "https://www.pref.fukuoka.lg.jp/contents/bunnkakai20260702.html"
+      }
+     ]
+    },
+    {
+     "hash": "0918a62484b09a67",
+     "source": "福岡県（子ども・青少年）",
+     "title": "令和８年度第４回福岡県社会福祉審議会児童福祉専門分科会こども権利擁護部会を開催しました",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/kodomokennri20260806.html",
+     "date": "2026年8月6日更新",
+     "category": "",
+     "summary": "福岡県における子どもの権利擁護部会の開催報告および議論内容です。",
+     "importance": "中",
+     "fields": [
+      "児童"
+     ],
+     "reason": "自治体の児童福祉や権利擁護施策の方向性を把握しておくべき審議会報告であるため。",
+     "related": [
+      {
+       "day": "2026-07-02",
+       "title": "令和８年度第３回福岡県社会福祉審議会児童福祉専門分科会こども権利擁護部会を開催しました",
+       "url": "https://www.pref.fukuoka.lg.jp/contents/kodomokennri20260702.html"
+      }
+     ]
+    },
+    {
+     "hash": "8efcb737b14fb1b6",
+     "source": "福岡県（子ども・青少年）",
+     "title": "（活動報告）令和７年度ふくおか地域リーダー育成キャンプについて",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/fukuoka-chiikileader-ikuseicamp2025.html",
+     "date": "2026年8月18日更新",
+     "category": "",
+     "summary": "福岡県で実施された青少年向け地域リーダー育成キャンプの実施結果報告です。",
+     "importance": "低",
+     "fields": [
+      "児童"
+     ],
+     "reason": "自治体の青少年育成イベントの活動報告であり、事業者の実務への影響はないため。"
+    }
+   ],
+   "press": [
+    {
+     "hash": "72bdb3fb080577d1",
+     "source": "介護ニュースJoint",
+     "kind": "press",
+     "title": "【熊本地震】厚労省、被災地で介護サービス事業者の指定期間を延長 ケアマネ資格証も",
+     "url": "https://www.joint-kaigo.com/articles/48113/",
+     "date": "2026-08-18",
+     "category": "福祉用具",
+     "fields": [
+      "高齢"
+     ]
+    }
+   ]
   }
  }
 }

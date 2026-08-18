@@ -1,6 +1,152 @@
 {
-  "generatedAt": "2026-08-17T22:52:41.546Z",
-  "newItems": [],
-  "newPress": [],
+  "generatedAt": "2026-08-18T22:22:40.638Z",
+  "newItems": [
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "b19238427a308d81",
+      "title": "こどもの自殺対策推進室：大臣メッセージ動画を公開しました",
+      "url": "https://www.cfa.go.jp/policies/kodomonojisatsutaisaku/minister-message-r8-1",
+      "date": "2026-08-18",
+      "category": "政策"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "52ef1a0a23b5df6f",
+      "title": "こどもの自殺対策推進室：政府広報音声広告を公開しました",
+      "url": "https://www.cfa.go.jp/policies/kodomonojisatsutaisaku/r8kouhoupj",
+      "date": "2026-08-18",
+      "category": "政策"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "56807be255222f51",
+      "title": "危険ドラッグの成分４物質を新たに指定薬物に指定",
+      "url": "https://www.mhlw.go.jp/stf/houdou/0000212707_00056.html",
+      "date": "2026-08-18",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "cf8a2a34ce323dba",
+      "title": "令和８年８月１７日付大臣会見概要（令和８年熊本地震熊本県被災地視察後）",
+      "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00963.html",
+      "date": "2026-08-18",
+      "category": "大臣会見等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "2c7a4ba3c2b787b7",
+      "title": "食品中の放射性物質の検査結果について（１５０８報）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75508.html",
+      "date": "2026-08-18",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "d8ec03d5c0700ab9",
+      "title": "第77回労働政策審議会人材開発分科会監理団体審査部会 開催案内",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75306.html",
+      "date": "2026-08-18",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "c9ad4fe5b45975c2",
+      "title": "労働政策審議会 (人材開発分科会監理団体審査部会)",
+      "url": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_474670.html",
+      "date": "2026-08-18",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "2215bff357901ee6",
+      "title": "令和８年８月千葉豪雨について 倒産等による未払賃金の立替払制度について、申請手続の簡略化を行っています",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/16849_00003.html",
+      "date": "2026-08-18",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "1b6769666e637fb3",
+      "title": "医薬品・医療機器等製品データベース",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iyakuhin/topics/index_00006.html",
+      "date": "2026-08-18",
+      "category": "トピックス"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "1e2b20a732810809",
+      "title": "第32回過労死等防止対策推進協議会 議事録",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75595.html",
+      "date": "2026-08-18",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "39b3f30adf054685",
+      "title": "採用情報（期間業務職員（社会・援護局（援護））募集情報）",
+      "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-syakai_engokyoku-engo.html",
+      "date": "2026-08-18",
+      "category": "採用情報"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "f9d30260e5d79435",
+      "title": "介護保険最新情報Vol.1536（PDF：457KB）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0818110453853/ksvol.1536.pdf?from=rss",
+      "date": "2026-08-18",
+      "category": "行政資料"
+    },
+    {
+      "source": "福岡県（子ども・青少年）",
+      "kind": "gov",
+      "hash": "4484c831ef616f41",
+      "title": "令和８年度第４回福岡県社会福祉審議会児童福祉専門分科会の開催について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/bunnkakai20260806.html",
+      "date": "2026年8月6日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（子ども・青少年）",
+      "kind": "gov",
+      "hash": "0918a62484b09a67",
+      "title": "令和８年度第４回福岡県社会福祉審議会児童福祉専門分科会こども権利擁護部会を開催しました",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/kodomokennri20260806.html",
+      "date": "2026年8月6日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（子ども・青少年）",
+      "kind": "gov",
+      "hash": "8efcb737b14fb1b6",
+      "title": "（活動報告）令和７年度ふくおか地域リーダー育成キャンプについて",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/fukuoka-chiikileader-ikuseicamp2025.html",
+      "date": "2026年8月18日更新",
+      "category": ""
+    }
+  ],
+  "newPress": [
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "72bdb3fb080577d1",
+      "title": "【熊本地震】厚労省、被災地で介護サービス事業者の指定期間を延長 ケアマネ資格証も",
+      "url": "https://www.joint-kaigo.com/articles/48113/",
+      "date": "2026-08-18",
+      "category": "福祉用具"
+    }
+  ],
   "crawlErrors": []
 }
