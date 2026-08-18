@@ -31,7 +31,8 @@
   .ear .ear-short{display:none} /* スマホでのみ使う短い日付表記（P15） */
   .ear .ear-today{border:0;background:none;padding:0;font:inherit;color:var(--link);
     cursor:pointer;text-decoration:underline;text-underline-offset:3px} /* 本日へ戻る（P17） */
-  .ear .ear-today[hidden]{display:none}
+  .ear .ear-sep{color:var(--sub)} /* 区切り記号は欄外の色のまま（P18） */
+  .ear .ear-today[hidden],.ear .ear-sep[hidden]{display:none}
 
   /* ==== 題字 ==== */
   .masthead{text-align:center;padding:34px 0 22px;border-bottom:3px double var(--ink)}
@@ -237,7 +238,7 @@
   /* スマホ専用の前後移動矢印(PCでは非表示) */
   .m-arrows{display:none}
   /* スマホ専用UI(P10)はPCで常に非表示 */
-  .hbtns,.hspacer,#mSearchPanel,#mMenu,#mBackdrop{display:none}
+  .hbtns,.hspacer,#mSearchPanel,#mMenu,#mBackdrop,#boxTextSize{display:none}
 
   /* 「このサイトについて」の折りたたみ(PCサイド欄・スマホメニュー共通) */
   .mm-about{margin-bottom:34px}
@@ -271,6 +272,38 @@
     .dayhead .m-arrows{grid-column:2;grid-row:1;justify-self:end}
     .dayhead .daycount{grid-column:1 / -1;grid-row:2}
     #chips{display:none} /* 重要度チップ: 紙面が高→中→低の順で組まれ低は索引に畳まれるため廃止 */
+
+    /* ==== P18: 文字サイズ（スマホのみ・標準/大/特大）====
+       拡大するのは本文系（記事見出し・要約・メタ・索引・報道・一覧・期限・対応の目安）だけ。
+       題字・欄外・セクション見出し・チップ・サイド欄の見出しは据え置き、
+       P13で作った「記事 vs セクション」の字面の差と紙面の階層を壊さない */
+    #boxTextSize{display:block}
+    .tsize{display:flex;gap:8px}
+    .tsize button{flex:1;height:44px;border:1px solid var(--rule);background:var(--paper);
+      color:var(--sub);cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center}
+    .tsize button.on{border-color:var(--ink);color:var(--ink);font-weight:600}
+
+    :root{--ts:1}
+    html[data-ts="large"]{--ts:1.16}
+    html[data-ts="xlarge"]{--ts:1.32}
+    .top-item h3{font-size:calc(20px * var(--ts))}
+    .top-item .body{font-size:calc(13.5px * var(--ts))}
+    .item h4{font-size:calc(15px * var(--ts))}
+    .item .body{font-size:calc(12.5px * var(--ts))}
+    .meta{font-size:calc(12px * var(--ts))}
+    .orig,.press-note,.aid-note{font-size:calc(11.5px * var(--ts))}
+    .go{font-size:calc(13px * var(--ts))}
+    .low-it,.press-item h4{font-size:calc(11.5px * var(--ts))}
+    .press-item h4{font-size:calc(14px * var(--ts))}
+    .aid summary,.aid-body{font-size:calc(12.5px * var(--ts))}
+    .empty{font-size:calc(14px * var(--ts))}
+    /* メニュー内と一覧も同じ倍率にする（読む対象なので本文と揃える） */
+    .dl .when{font-size:calc(12.5px * var(--ts))}
+    .dl .t{font-size:calc(12px * var(--ts))}
+    .srch-head h2{font-size:calc(20px * var(--ts))}
+    .srch-day{font-size:calc(11px * var(--ts))}
+    /* 長いURLや英数字が拡大ではみ出さないように折り返す */
+    .item h4,.top-item h3,.low-it,.press-item h4,.aid-body{overflow-wrap:anywhere}
     .sec{margin-top:34px} /* セクション前余白はスマホでは控えめに(縦の間延び防止・P13) */
     .sec.gov{margin-top:22px}
 
@@ -332,7 +365,7 @@
 
   <div id="topHead"><!-- スマホでは二重罫より上を固定ヘッダーにする(P10) -->
     <div class="ear">
-      <span id="earDate"><span class="ear-full"></span><span class="ear-short"></span><button class="ear-today" id="btnToday" hidden></button></span>
+      <span id="earDate"><span class="ear-full"></span><span class="ear-short"></span><span class="ear-sep" id="earSep" hidden>　｜　</span><button class="ear-today" id="btnToday" hidden></button></span>
       <span class="ear-auto">毎朝7時 自動発行</span>
       <span><span id="issuePrefix">創刊から </span><b id="issueNo"></b></span>
     </div>
@@ -432,6 +465,15 @@
         </div>
       </div>
 
+      <div class="box" id="boxTextSize">
+        <h5>文 字 の 大 き さ</h5>
+        <div class="tsize" id="tsize">
+          <button data-ts="normal" aria-label="標準"><span style="font-size:13px">あ</span></button>
+          <button data-ts="large" aria-label="大"><span style="font-size:17px">あ</span></button>
+          <button data-ts="xlarge" aria-label="特大"><span style="font-size:21px">あ</span></button>
+        </div>
+      </div>
+
       <div class="box legend" id="boxLegend">
         <h5>記 号 の 見 か た</h5>
         <div class="row"><span class="seal kuni">国</span>国の機関 <span class="seal dokuho">独</span>独立行政法人</div>
@@ -467,6 +509,7 @@
   "use strict";
   const $ = (id) => document.getElementById(id);
   const FIELD_KEY = "fukushi-watch-field";
+  const TS_KEY = "fukushi-watch-textsize"; // 文字サイズ（P18・スマホのみ有効）
   const FOUNDED = Date.UTC(2026, 7, 16); // 創刊 2026-08-16 = 第1号
   const state = {
     index: null, months: {}, day: null, filter: "all",
@@ -531,8 +574,8 @@
     ear.querySelector(".ear-short").textContent = `${f.m}月${f.dd}日（${f.w}）`;
     /* 本日以外を見ているときだけ「｜ 本日 M/D」を出し、そのまま本日へ戻る導線にする(P17) */
     const btn = $("btnToday");
-    btn.hidden = d === today;
-    btn.textContent = d === today ? "" : `　｜　本日 ${fmtDay(today).short} へ戻る`;
+    btn.hidden = $("earSep").hidden = d === today;
+    btn.textContent = d === today ? "" : `本日 ${fmtDay(today).short} へ戻る`;
     /* 創刊(2026-08-16)より前の日付には号数を振らない（遡及記録=P14。号数は発行の記録のため） */
     const no = Math.floor((dayUTC(d) - FOUNDED) / 86400000) + 1;
     $("issueNo").textContent = no < 1 ? "創刊前の記録" : `第 ${no} 号`;
@@ -815,6 +858,20 @@
 
   $("prevDay").addEventListener("click", () => moveDay(-1));
   $("nextDay").addEventListener("click", () => moveDay(1));
+  /* 文字サイズ(P18): html の data-ts で段階を持ち、CSSの倍率だけが変わる */
+  function applyTextSize(v) {
+    document.documentElement.dataset.ts = v;
+    $("tsize").querySelectorAll("button").forEach((b) =>
+      b.classList.toggle("on", b.dataset.ts === v));
+  }
+  applyTextSize(localStorage.getItem(TS_KEY) || "normal");
+  $("tsize").addEventListener("click", (e) => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    applyTextSize(b.dataset.ts);
+    try { localStorage.setItem(TS_KEY, b.dataset.ts); } catch {}
+  });
+
   /* 欄外の「本日 M/D へ戻る」(P17)。検索結果や週次一覧を開いていても本日の紙面に戻す */
   $("btnToday").addEventListener("click", () => {
     const days = recordedDays();
@@ -973,13 +1030,15 @@
     // スマホ=メニュー末尾 / PC=サイド欄末尾 へ移す
     $("mAboutSlot").append($("about"));
     if (mq.matches) {
-      $("mMenuBody").append($("boxDeadline"), $("boxCal"), $("boxWeek"), $("boxLegend"), fold);
+      $("mMenuBody").append($("boxDeadline"), $("boxCal"), $("boxWeek"), $("boxLegend"),
+        $("boxTextSize"), fold);
       $("mFieldSlot").append($("fieldChips"));
     } else {
       const rail = document.querySelector(".rail-col");
       // PCサイド欄の並び: 検索(静的) → 期限が近いもの → 分野で絞る → この7日 →
       // 今週の記録 → 記号の見かた → このサイトについて
       rail.append($("boxDeadline"), $("boxField"), $("boxCal"), $("boxWeek"), $("boxLegend"), fold);
+      document.querySelector("#mMenu").append($("boxTextSize")); // PCでは使わない（CSSで非表示）
       $("boxField").append($("fieldChips"));
       closeMenu();
       $("mSearchPanel").classList.remove("open");
