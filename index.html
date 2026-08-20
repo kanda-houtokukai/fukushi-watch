@@ -54,6 +54,8 @@
   .dayhead h2 small{font-size:14px;font-weight:400;color:var(--sub);margin-left:6px}
   .daycount{font-size:13px;color:var(--sub);white-space:nowrap}
   .daycount b{color:var(--high)}
+  .daycount .fld{color:var(--ink);font-weight:700} /* 絞り込み中の分野名（P19） */
+  .daycount .all{color:var(--faint)}               /* 全体件数は従（P19） */
   .daynav{display:flex;gap:8px;margin-top:12px}
   .daynav button,.daynav select{flex:1;text-align:center;font-size:12.5px;padding:8px 4px;
     border:1px solid var(--rule);color:var(--ink);background:#fff;cursor:pointer;
@@ -730,6 +732,39 @@
       <a class="lo" href="${esc(it.url)}" target="_blank" rel="noopener">原本→</a>${shareBtn(state.day, it.hash, it.title)}</div>`;
   }
 
+  /* 日付見出しの件数(P19)。分野で絞っているときは「障害 3件 ── 高1・中2 ／ 全15件」の形にし、
+     画面に出ている件数と表示が食い違わないようにする。全分野なら従来どおり。 */
+  function updateDayCounts() {
+    const el = $("dayCounts");
+    if (!state.dayHasRec) { el.textContent = "記録なし"; return; }
+    const items = state.dayItems ?? [];
+    if (items.length === 0) { el.textContent = "新着なし"; return; }
+    const tally = (list) => {
+      const c = { 高: 0, 中: 0, 低: 0 };
+      list.forEach((it) => c[it.importance]++);
+      return c;
+    };
+    if (state.field === "all") {
+      const c = tally(items);
+      el.innerHTML = `新着${items.length}件 ── <b>高${c["高"]}</b>・中${c["中"]}・低${c["低"]}`;
+      return;
+    }
+    // 分野の判定は applyFilters と同じ規則（選んだ分野 or 共通は残す）
+    const shown = items.filter((it) => {
+      const f = it.fields ?? [];
+      return f.includes(state.field) || f.includes("共通");
+    });
+    const c = tally(shown);
+    const breakdown = ["高", "中", "低"]
+      .filter((k) => c[k] > 0)
+      .map((k) => (k === "高" ? `<b>高${c[k]}</b>` : `${k}${c[k]}`))
+      .join("・");
+    el.innerHTML =
+      `<span class="fld">${esc(state.field)}</span> ${shown.length}件` +
+      (breakdown ? ` ── ${breakdown}` : "") +
+      ` <span class="all">／ 全${items.length}件</span>`;
+  }
+
   function applyFilters() {
     const fd = state.field, f = state.filter;
     document.querySelectorAll("#list .it").forEach((el) => {
@@ -759,6 +794,7 @@
       const anyPress = [...pressWrap.querySelectorAll(".it")].some((el) => !el.classList.contains("hide"));
       pressWrap.classList.toggle("hide", !anyPress);
     }
+    updateDayCounts(); // 分野を変えたら件数表示も追随させる（P19）
   }
 
   async function renderDay() {
@@ -774,13 +810,9 @@
       items = m.days[d]?.items ?? [];
       pressItems = m.days[d]?.press ?? []; // 報道(P9)。件数・グラフには含めない
     }
-    const c = { 高: 0, 中: 0, 低: 0 };
-    items.forEach((it) => c[it.importance]++);
-    $("dayCounts").innerHTML = rec
-      ? (items.length
-          ? `新着${items.length}件 ── <b>高${c["高"]}</b>・中${c["中"]}・低${c["低"]}`
-          : "新着なし")
-      : "記録なし";
+    state.dayItems = items;   // 件数表示を分野の切替に追随させるため保持（P19）
+    state.dayHasRec = Boolean(rec);
+    updateDayCounts();
 
     /* 報道ブロック(P9): 見出しと出典のみ・注記を常設。分野フィルタは効かせる */
     const pressBlock = pressItems.length
