@@ -31,7 +31,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
-  parseCfaCards, parseZenshakyoNews, checkReprintNotice, itemHash, fetchHtml,
+  parseCfaCards, parseZenshakyoNews, checkReprintNotice, itemHash, fetchHtml, readSources,
 } from "./crawl.js";
 import {
   loadEnv, listCandidateModels, preferModel, buildPrompt, parseResponse, generate,
@@ -137,11 +137,21 @@ async function main() {
 
   // 1) 収集: state.json の既存項目（読むだけ）＋ こども家庭庁の遡及取得
   const state = loadJson(STATE_PATH, { sources: {} });
+  // ★報道の除外は**源の名前でなく docs/sources.md の区分**で判定する。
+  //   名前を並べて書くと、報道源が増えたときにこのスクリプトだけ取り残され、
+  //   報道にAI要約と重要度判定を付けてしまう（P9の[DECISION]に反する）。
+  //   台帳に無い源は、判断できないので安全側＝対象外にする。
+  const kindByName = new Map(readSources().map((r) => [r.name, r.kind]));
   const pool = [];
   for (const [name, rec] of Object.entries(state.sources ?? {})) {
-    if (name === "福祉新聞" || name === "介護ニュースJoint") continue; // 報道は対象外
+    const kind = kindByName.get(name);
+    if (kind === undefined) {
+      console.log(`  state の「${name}」は台帳に無いため対象外にした`);
+      continue;
+    }
+    if (kind === "press") continue; // 報道は要約・判定をしない（P9）
     for (const it of rec.items ?? []) {
-      pool.push({ ...it, source: name });
+      pool.push({ ...it, source: name, ...(kind === "org" ? { kind: "org" } : {}) });
     }
   }
   console.log(`state から ${pool.length}件（書き込みはしない）`);

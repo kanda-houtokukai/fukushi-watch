@@ -3,6 +3,7 @@
  * 福祉情報ウォッチ — 締切ウォッチ（P11）
  *
  * 当日の新着（高・中のみ）について原本ページの本文を取得し、
+ * ※対象は report.items 全体（P21以降は行政に加えて団体＝全社協も含む）。
  * 「期日までに行動が必要な日付」（提出期限・申込締切・回答期限・適用開始など）を抽出して
  * data/deadlines.json に保存する。
  *
@@ -14,7 +15,7 @@
  *   ③過去日・2年超先は不採用
  * - 1項目の失敗（404・タイムアウト・抽出失敗）は記録して続行（失敗隔離の既存方針）
  * - 判定本体(summarize.js)には一切触れない。本スクリプトは自己完結
- * - アクセス間隔1.5秒・UA明示（行政サイトへのマナー）
+ * - アクセス間隔1.5秒・UA明示（監視先サイトへのマナー）
  *
  * 使い方: node scripts/deadlines.js（notify・archive の後に実行する）
  */
@@ -30,7 +31,7 @@ const DEADLINES_PATH = join(ROOT, "data", "deadlines.json");
 const API_BASE = "https://generativelanguage.googleapis.com/v1beta";
 const USER_AGENT =
   "fukushi-watch/0.1 (+https://github.com/kanda-houtokukai/fukushi-watch)";
-const FETCH_INTERVAL_MS = 1500; // 行政サイトへのアクセス間隔
+const FETCH_INTERVAL_MS = 1500; // 監視先サイトへのアクセス間隔
 const BODY_MAX_CHARS = 6000;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -194,7 +195,7 @@ async function main() {
       const body = await fetchBodyText(it.url);
       if (body.length < 100) throw new Error("本文が短すぎます(取得失敗の疑い)");
 
-      const prompt = `次の行政ページ本文から、読者（福祉事業者）が「期日までに行動する必要がある日付」だけを抽出してください。
+      const prompt = `次のページ本文から、読者（福祉事業者）が「期日までに行動する必要がある日付」だけを抽出してください。
 対象: 提出期限・申込締切・回答期限・意見募集の締切・様式や制度の適用開始日など。
 対象外: 単なる開催日・発表日・過去の日付。
 

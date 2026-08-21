@@ -36,7 +36,7 @@ const MAX_ITEMS_PER_SOURCE = 300;
 // ---------------------------------------------------------------------------
 
 /** sources.md の表から { name, kind, url, method, status } の配列を返す */
-function readSources() {
+export function readSources() {
   const md = readFileSync(SOURCES_MD, "utf8");
   const rows = [];
   for (const line of md.split("\n")) {
