@@ -44,9 +44,11 @@ function readSources() {
     const cells = line.split("|").map((c) => c.trim());
     // 先頭セルが数字の行がデータ行（見出し・罫線は除外）
     if (cells.length >= 7 && /^\d+$/.test(cells[1])) {
+      // 区分: 報道=press（別配列・要約なし）／団体=org（行政と同じ扱い。印章だけ分ける・P21）
+      const kubun = cells[3].replace(/\*/g, "");
       rows.push({
         name: cells[2],
-        kind: cells[3].replace(/\*/g, "") === "報道" ? "press" : "gov",
+        kind: kubun === "報道" ? "press" : kubun === "団体" ? "org" : "gov",
         url: cells[4],
         method: cells[5],
         status: cells[6],
@@ -229,12 +231,86 @@ function parsePressRss(xml) {
   return items;
 }
 
+/**
+ * zenshakyo-news: 全国社会福祉協議会 新着情報一覧（/news/index.html・P21）
+ *   <li><span class="date">2026年8月17日</span><span class="news_cat_04">助成</span>
+ *       <span><a href="…">タイトル</a></span></li>
+ * 日付・カテゴリ・タイトル・リンクがそのまま取れる。カテゴリ（案内/告知/助成）は
+ * こども家庭庁と同じく機械で絞らず保存し、判定に渡す。
+ * 見出しナビ等の <li> は日付・リンクを持たないため自然に落ちる。
+ *
+ * ⚠️ 届出（2026-08-21）で約束した運用のため、次の2つを対象から除く:
+ *   - shakyo.or.jp 以外のドメインへのリンク（他団体の情報であり、出典「全国社会福祉協議会」
+ *     と原本の発行主体が食い違う）
+ *   - PDFへの直リンク（HTMLでないため無断転載の記載を機械確認できない＝安全側に倒す）
+ *   残った項目は main 側で原本の禁止文言を確認してから差分に載せる。
+ */
+export function parseZenshakyoNews(html, baseUrl) {
+  const items = [];
+  for (const [, li] of html.matchAll(/<li>([\s\S]*?)<\/li>/g)) {
+    const date = li.match(/<span class="date">\s*([^<]*?)\s*<\/span>/)?.[1];
+    const category = li.match(/<span class="news_cat_\d+">\s*([^<]*?)\s*<\/span>/)?.[1];
+    const a = li.match(/<a href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/);
+    if (!date || !a) continue;
+    // アイコンの読み上げ用スパン（「ファイルダウンロード 新規ウインドウで開きます。」）を落とす
+    const title = decodeEntities(
+      a[2]
+        .replace(/<span class="guidance">[\s\S]*?<\/span>/g, "")
+        .replace(/<[^>]+>/g, "")
+        .replace(/\s+/g, " ")
+        .trim()
+    );
+    if (!title) continue;
+    const url = new URL(decodeEntities(a[1]), baseUrl).href;
+    if (new URL(url).hostname !== "www.shakyo.or.jp") continue; // 他団体の原本は載せない
+    if (/\.pdf(\?|#|$)/i.test(url)) continue; // HTMLでないものは禁止文言を確認できない
+    const ymd = date.normalize("NFKC").match(/(\d{4})年\s*(\d{1,2})月\s*(\d{1,2})日/);
+    items.push({
+      title,
+      url,
+      date: ymd
+        ? `${ymd[1]}-${String(ymd[2]).padStart(2, "0")}-${String(ymd[3]).padStart(2, "0")}`
+        : date.trim(),
+      category: category ?? "",
+    });
+  }
+  return items;
+}
+
+/**
+ * 原本に「無断転載を禁ずる旨の記載」があるかを確認する（P21）。
+ * 全社協の利用規約は、その記載がある情報の引用・転載・複製を認めていない。
+ * 届出でこの除外を約束しているため、団体源の新規項目は差分に載せる前に必ず通す。
+ *
+ * 返り値: "ok"=記載なし / "blocked"=記載あり（恒久的に除外）/ "unknown"=確認できず（保留）
+ * ⚠️ 取得に失敗したときに "blocked" を返してはいけない。state に載って二度と再評価されず、
+ *    一時的な通信障害で項目が永久に消えるため。"unknown" は state にも載せず翌朝やり直す。
+ */
+const NO_REPRINT_RE =
+  /無断(?:転載|複製|使用|転用)|転載[^。]{0,8}禁(?:止|じ)|複製[^。]{0,8}禁(?:止|じ)/;
+
+export async function checkReprintNotice(url) {
+  let html;
+  try {
+    html = await fetchHtml(url);
+  } catch {
+    return "unknown";
+  }
+  const text = html
+    .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .normalize("NFKC");
+  return NO_REPRINT_RE.test(text) ? "blocked" : "ok";
+}
+
 const PARSERS = {
   "cfa-cards": parseCfaCards,
   "mhlw-news": parseMhlwNews,
   "wam-rss": parseWamRss,
   "fukuoka-life": parseFukuokaLife,
   "press-rss": parsePressRss,
+  "zenshakyo-news": parseZenshakyoNews,
 };
 
 // ---------------------------------------------------------------------------
@@ -299,22 +375,46 @@ async function main() {
         );
       }
 
+      // 本文の確認ができなかった項目（翌朝やり直すため state にも載せない・P21）
+      const deferred = new Set();
+
       const prev = state.sources[source.name];
       if (!prev) {
         // 初回: 全項目をベースラインとして保存（差分は報告しない）
         console.log(`  初回巡回: ${items.length}件をベースラインとして保存`);
       } else {
         const known = new Set(prev.items.map((it) => it.hash));
-        const fresh = items.filter((it) => !known.has(it.hash));
+        let fresh = items.filter((it) => !known.has(it.hash));
         console.log(`  取得${items.length}件 / 新規${fresh.length}件`);
+
+        // ★ 団体源(P21): 原本に「無断転載を禁ずる旨の記載」がある項目を差分から除く。
+        //   全社協への届出（2026-08-21）で約束した運用。除外した項目は state には残すので
+        //   翌朝に再検知されない。確認できなかった項目だけは state にも載せず翌朝やり直す。
+        if (source.kind === "org" && fresh.length > 0) {
+          const kept = [];
+          for (const it of fresh) {
+            const verdict = await checkReprintNotice(it.url);
+            if (verdict === "ok") kept.push(it);
+            else if (verdict === "blocked") {
+              console.log(`  除外（無断転載を禁ずる旨の記載あり）: ${it.title}`);
+            } else {
+              deferred.add(it.hash);
+              console.log(`  保留（本文を確認できず・翌朝やり直す）: ${it.title}`);
+            }
+            await new Promise((r) => setTimeout(r, 1500)); // アクセス間隔（マナー）
+          }
+          fresh = kept;
+        }
+
         const dest = source.kind === "press" ? newPress : newItems;
         dest.push(...fresh.map((it) => ({ source: source.name, kind: source.kind, ...it })));
       }
 
       // state更新: 今回の項目＋過去の項目（重複除去）を上限まで保持
       // ★ 失敗した源はこのブロックに到達しないため、既存の記録はそのまま残る
-      const merged = [...items];
-      const seen = new Set(items.map((it) => it.hash));
+      const stored = items.filter((it) => !deferred.has(it.hash));
+      const merged = [...stored];
+      const seen = new Set(stored.map((it) => it.hash));
       for (const old of prev?.items ?? []) {
         if (!seen.has(old.hash) && merged.length < MAX_ITEMS_PER_SOURCE) {
           merged.push(old);

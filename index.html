@@ -127,12 +127,16 @@
   .item .body{font-size:12.5px;color:var(--sub)}
 
   .meta{font-size:12px;color:var(--sub);margin-top:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-  /* 出典の印章: 国=黒塗り角/独法=白抜き角/県=丸/報=破線丸(P9で使用) */
+  /* 出典の印章: 国=黒塗り角/独法=白抜き角/県=丸/団=白抜き角丸(P21)/報=破線丸(P9) */
   .seal{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
     font-size:11px;font-weight:700;line-height:1;flex:none}
   .seal.kuni{background:var(--ink);color:var(--paper)}
   .seal.dokuho{background:var(--paper);color:var(--ink);border:1.5px solid var(--ink)}
   .seal.ken{background:var(--paper);color:var(--ink);border:1.5px solid var(--ink);border-radius:50%}
+  /* 団=全国団体。角(国系)と丸(地方)の中間の形にして第三の系統であることを示す。
+     線は実線(自団体の一次情報であり、報道の破線とは確度が違う)。色は墨のみ。
+     半径6px: 4pxでは22px角の中で「独」の直角と見分けがつかないことを実測で確認した(P21)。 */
+  .seal.dan{background:var(--paper);color:var(--ink);border:1.5px solid var(--ink);border-radius:6px}
   .seal.ho{background:var(--press-bg);color:var(--sub);border:1.2px dashed var(--sub);border-radius:50%}
   .srcname{font-weight:600;color:var(--ink)}
   .fields{display:inline-flex;gap:8px}
@@ -417,7 +421,7 @@
           <svg width="17" height="17" viewBox="0 0 20 20" stroke="currentColor" stroke-width="2"><path d="M2 5h16M2 10h16M2 15h16"/></svg>
         </button>
       </div>
-      <div class="sub">こども家庭庁・厚生労働省・WAM NET・福岡県 ── 行政の福祉情報を毎朝ひとまわり</div>
+      <div class="sub">こども家庭庁・厚生労働省・WAM NET・福岡県・全社協 ── 行政と全国団体の福祉情報を毎朝ひとまわり</div>
     </div>
     <div id="mSearchPanel"><!-- 検索アイコンで開くスライド欄 -->
       <form class="search" id="searchFormM">
@@ -470,14 +474,15 @@
 
       <section class="about" id="about">
         <h2>このサイトについて</h2>
-        <p>「福祉情報ウォッチ」は、福祉に関わる行政の公開情報を毎朝ひとまわりして、前日から増えた分だけを取り出す記録装置です。要約と重要度（高＝対応・確認を／中＝把握を／低＝参考）はAIが付けています。人事異動も報酬改定も同じ重さでは並べない——重要度の差を紙面の組みで示すのがこのサイトの方針です。</p>
+        <p>「福祉情報ウォッチ」は、福祉に関わる行政と全国団体の公開情報を毎朝ひとまわりして、前日から増えた分だけを取り出す記録装置です。要約と重要度（高＝対応・確認を／中＝把握を／低＝参考）はAIが付けています。人事異動も報酬改定も同じ重さでは並べない——重要度の差を紙面の組みで示すのがこのサイトの方針です。</p>
         <table>
           <tr><td>こども家庭庁 新着情報（全カテゴリ）</td><td>毎朝7時</td></tr>
           <tr><td>厚生労働省 新着情報（全カテゴリ）</td><td>毎朝7時</td></tr>
           <tr><td>WAM NET 行政資料（新着）</td><td>毎朝7時</td></tr>
           <tr><td>福岡県 障がい福祉／子ども・青少年</td><td>毎朝7時</td></tr>
+          <tr><td>全国社会福祉協議会 新着情報</td><td>毎朝7時</td></tr>
         </table>
-        <p class="disc">要約と重要度はAIによる参考情報です。制度上の判断は必ず各項目の原本（リンク先の行政ページ）をご確認ください。掲載内容の正確性を保証するものではありません。<br>
+        <p class="disc">要約と重要度はAIによる参考情報です。制度上の判断は必ず各項目の原本（リンク先の発信元ページ）をご確認ください。掲載内容の正確性を保証するものではありません。<br>
         巡回と要約の仕組みは <a href="https://github.com/kanda-houtokukai/fukushi-watch">ソースコード</a> で公開しています。</p>
       </section>
     </main>
@@ -518,7 +523,8 @@
       <div class="box legend" id="boxLegend">
         <h5>記 号 の 見 か た</h5>
         <div class="row"><span class="seal kuni">国</span>国の機関 <span class="seal dokuho">独</span>独立行政法人</div>
-        <div class="row"><span class="seal ken">県</span>都道府県 <span class="seal ho">報</span>報道機関</div>
+        <div class="row"><span class="seal ken">県</span>都道府県 <span class="seal dan">団</span>全国団体</div>
+        <div class="row"><span class="seal ho">報</span>報道機関</div>
         <div class="row">
           <span class="field hoiku">保育</span><span class="field jido">児童</span>
           <span class="field shogai">障害</span><span class="field korei">高齢</span>
@@ -583,11 +589,16 @@
   const recordedDays = () => Object.keys(state.index.days).sort();
 
   /* 出典の印章 */
-  function sealHtml(source) {
-    const s = source ?? "";
-    if (s.includes("WAM")) return `<span class="seal dokuho">独</span><span class="srcname">${esc(s)}</span>`;
-    if (s.startsWith("福岡県") || s.includes("県")) return `<span class="seal ken">県</span><span class="srcname">${esc(s)}</span>`;
-    return `<span class="seal kuni">国</span><span class="srcname">${esc(s)}</span>`;
+  function sealHtml(it) {
+    const s = (typeof it === "string" ? it : it?.source) ?? "";
+    const cls =
+      // 団体(P21): kind で判定する。kind を持たない古い記録は源の名前で拾う
+      (typeof it === "object" && it?.kind === "org") || s.includes("社会福祉協議会") ? "dan|団"
+      : s.includes("WAM") ? "dokuho|独"
+      : s.startsWith("福岡県") || s.includes("県") ? "ken|県"
+      : "kuni|国";
+    const [c, mark] = cls.split("|");
+    return `<span class="seal ${c}">${mark}</span><span class="srcname">${esc(s)}</span>`;
   }
   /* 分野タグ(並び: 保育・児童・障害・高齢。共通は4色下線) */
   const FIELD_ORDER = ["保育", "児童", "障害", "高齢", "共通"];
@@ -598,7 +609,7 @@
     return `<span class="fields">${f.map((x) => `<span class="field ${FIELD_CLS[x] ?? ""}">${esc(x)}</span>`).join("")}</span>`;
   }
   const metaLine = (it) =>
-    `${sealHtml(it.source)}<span>${esc(it.date)}</span>${fieldsHtml(it)}`;
+    `${sealHtml(it)}<span>${esc(it.date)}</span>${fieldsHtml(it)}`;
 
   /* 欄外: 和暦付き日付と号数(創刊からの経過日数+1。新着0件の日も号は進む)。
      日付・号数は「その紙面の発行日」を示す（新聞の題字と同じ作法）。
