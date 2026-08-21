@@ -40,6 +40,28 @@
     letter-spacing:.34em;text-indent:.34em;line-height:1.2}
   .masthead .sub{font-size:12px;color:var(--sub);letter-spacing:.18em;margin-top:10px}
 
+  /* ==== 報道ティッカー(P20): 高さ最小・墨と朱の2色のまま ==== */
+  .ticker{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--rule);
+    padding:6px 0;overflow:hidden}
+  .ticker[hidden]{display:none}
+  .ticker-label{flex:0 0 auto;font-size:10.5px;font-weight:600;letter-spacing:.22em;
+    color:var(--sub);border-right:1px solid var(--rule);padding-right:10px}
+  .ticker-view{flex:1;min-width:0;overflow:hidden}
+  .ticker-track{display:inline-flex;white-space:nowrap;will-change:transform;
+    animation:tick var(--tick-dur,60s) linear infinite}
+  .ticker:hover .ticker-track,.ticker:focus-within .ticker-track{animation-play-state:paused}
+  @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .ticker-item{font-size:12px;color:var(--ink);text-decoration:none;padding-right:34px}
+  .ticker-item .src{color:var(--sub)}
+  .ticker-item:hover{text-decoration:underline}
+  /* 動きを好まない環境では止めて、指で送れる静止表示にする */
+  @media (prefers-reduced-motion: reduce){
+    .ticker-track{animation:none}
+    .ticker-view{overflow-x:auto;scrollbar-width:none}
+    .ticker-view::-webkit-scrollbar{display:none}
+    .ticker-track .dup{display:none} /* 静止時は複製を出さない */
+  }
+
   /* ==== 2カラム紙面 ==== */
   .sheet{display:grid;grid-template-columns:1fr;gap:0;margin-top:28px}
   @media(min-width:900px){
@@ -62,7 +84,11 @@
     font-family:inherit;border-radius:0;appearance:none}
   .daynav select{flex:0 0 40%;text-align:center;text-align-last:center}
   .daynav button:disabled{color:var(--faint);cursor:default}
-  .chips{display:flex;gap:8px;margin:16px 0 0;flex-wrap:wrap}
+  .chips{display:flex;gap:8px;margin:0;flex-wrap:wrap}
+  /* 重要度と分野を横1行に（PC・P20）。狭ければ自然に折り返す */
+  .chipbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:16px 0 0}
+  .chipbar #mFieldSlot{display:flex;align-items:center;gap:16px}
+  .chipbar #mFieldSlot::before{content:"";width:1px;align-self:stretch;background:var(--rule)}
   .chip{font-size:12px;font-weight:600;padding:6px 12px 5px;border:1px solid var(--rule);
     background:var(--paper);border-bottom-width:3px;color:var(--sub);cursor:pointer;font-family:inherit}
   .chip.on{border-color:var(--ink);color:var(--ink)}
@@ -90,6 +116,7 @@
 
   .top-item{padding:18px 0 22px;border-bottom:1px solid var(--rule)}
   .top-item h3{font-size:20px;line-height:1.55;margin-bottom:8px;font-weight:650}
+  .top-item h3 a{color:var(--ink);text-decoration:none} /* 他の記事見出しと同じ扱い（P20） */
   .top-item .body{font-size:13.5px}
   .orig{font-size:11.5px;color:var(--faint);margin-top:6px}
   .orig a{color:var(--faint)}
@@ -274,6 +301,13 @@
     .dayhead .m-arrows{grid-column:2;grid-row:1;justify-self:end}
     .dayhead .daycount{grid-column:1 / -1;grid-row:2}
     #chips{display:none} /* 重要度チップ: 紙面が高→中→低の順で組まれ低は索引に畳まれるため廃止 */
+    /* ティッカーはスマホでは一段薄く（上部の占有を増やさない・P20） */
+    .ticker{padding:4px 0;gap:8px}
+    .ticker-label{font-size:10px;letter-spacing:.18em;padding-right:8px}
+    .ticker-item{font-size:11.5px;padding-right:26px}
+    .chipbar{display:block;margin-top:14px}
+    .chipbar #mFieldSlot{display:block}
+    .chipbar #mFieldSlot::before{display:none} /* 縦罫はPCで重要度と分野を分けるためのもの */
 
     /* ==== P18: 文字サイズ（スマホのみ・標準/大/特大）====
        拡大するのは本文系（記事見出し・要約・メタ・索引・報道・一覧・期限・対応の目安）だけ。
@@ -393,6 +427,12 @@
     </div>
   </div>
 
+  <!-- 報道ティッカー(P20): 見出しは原文のまま・出典必須・要約や加工はしない -->
+  <div class="ticker" id="ticker" hidden>
+    <span class="ticker-label">報道</span>
+    <div class="ticker-view"><div class="ticker-track" id="tickerTrack"></div></div>
+  </div>
+
   <div class="sheet">
     <main>
       <div class="dayhead">
@@ -408,13 +448,23 @@
         <select id="monthSel" aria-label="月の選択"></select>
         <button id="nextDay">次の記録 →</button>
       </nav>
+      <div class="chipbar">
       <div class="chips" id="chips">
         <button class="chip on" data-f="all">すべて</button>
         <button class="chip" data-f="高">◆ 高</button>
         <button class="chip" data-f="中">◇ 中</button>
         <button class="chip" data-f="低">◊ 低</button>
       </div>
-      <div id="mFieldSlot"></div><!-- スマホでは分野チップをここ(日付見出し直下)に移設 -->
+      <div id="mFieldSlot"><!-- 分野チップは常に紙面側（重要度の右／スマホは日付見出し直下）-->
+        <div class="chips" id="fieldChips">
+          <button class="chip on" data-fd="all">全分野</button>
+          <button class="chip hoiku" data-fd="保育">保育</button>
+          <button class="chip jido" data-fd="児童">児童</button>
+          <button class="chip shogai" data-fd="障害">障害</button>
+          <button class="chip korei" data-fd="高齢">高齢</button>
+        </div>
+      </div>
+      </div><!-- /.chipbar -->
 
       <div id="list"></div>
 
@@ -454,17 +504,6 @@
       <div class="box" id="boxWeek">
         <h5>今 週 の 記 録</h5>
         <div class="stat" id="weekStat"></div>
-      </div>
-
-      <div class="box" id="boxField">
-        <h5>分 野 で 絞 る</h5>
-        <div class="chips" id="fieldChips" style="margin-top:0">
-          <button class="chip on" data-fd="all">全分野</button>
-          <button class="chip hoiku" data-fd="保育">保育</button>
-          <button class="chip jido" data-fd="児童">児童</button>
-          <button class="chip shogai" data-fd="障害">障害</button>
-          <button class="chip korei" data-fd="高齢">高齢</button>
-        </div>
       </div>
 
       <div class="box" id="boxTextSize">
@@ -700,7 +739,7 @@
     const s = splitSummary(it.summary);
     return `<div class="sec gov" data-sec="top"><span class="mark">◆</span> 本日の最重要</div>
     <article class="it top-item" data-imp="高" data-fields="${(it.fields ?? []).join(",")}" data-hash="${esc(it.hash)}">
-      <h3>${esc(s.head)}</h3>
+      <h3><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(s.head)}</a></h3>
       ${s.rest ? `<div class="body">${esc(s.rest)}</div>` : ""}
       <div class="meta">${metaLine(it)}${dlMeta(it)}${shareBtn(state.day, it.hash, it.title)}</div>
       <div class="orig">原題: <a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></div>
@@ -860,8 +899,39 @@
     $("nextDay").disabled = $("nextDayM").disabled = i < 0 || i >= days.length - 1;
     renderCal();
     renderWeekStat();
+    renderTicker();
     renderMonthSel();
     highlightPending();
+  }
+
+  /* 報道ティッカー(P20): その日の報道を流す。少ない日は直近7日から補い、最大8件。
+     見出しは原文のまま・媒体名を必ず添える・要約や加工はしない（P9の扱いを守る）。
+     0件の日は帯ごと出さない（空の帯で紙面上部を占有しない）。 */
+  async function renderTicker() {
+    const el = $("ticker"), track = $("tickerTrack");
+    const seen = new Set();
+    const list = [];
+    for (const day of weekDays()) { // 選択日を末尾とする7暦日・新しい順
+      if (!state.index.days[day]) continue;
+      const m = await monthData(day.slice(0, 7));
+      for (const it of m.days[day]?.press ?? []) {
+        if (seen.has(it.hash)) continue;
+        seen.add(it.hash);
+        list.push(it);
+        if (list.length >= 8) break;
+      }
+      if (list.length >= 8) break;
+    }
+    if (list.length === 0) { el.hidden = true; track.innerHTML = ""; return; }
+    const row = (dup) => list.map((it) => `<a class="ticker-item${dup ? " dup" : ""}"
+      href="${esc(it.url)}" target="_blank" rel="noopener"><span class="src">${esc(it.source)}</span>　${esc(it.title)}</a>`).join("");
+    track.innerHTML = row(false) + row(true); // 同じ並びを2つ繋いで途切れなく回す
+    el.hidden = false;
+    // 読める速さ（約45px/秒）。内容が長い日ほど時間を延ばす
+    requestAnimationFrame(() => {
+      const w = track.scrollWidth / 2;
+      track.style.setProperty("--tick-dur", `${Math.max(24, Math.round(w / 45))}s`);
+    });
   }
 
   /* 共有リンクで開いた項目へ自動スクロールし、一瞬ハイライトする(P11)。
@@ -1064,14 +1134,12 @@
     if (mq.matches) {
       $("mMenuBody").append($("boxDeadline"), $("boxCal"), $("boxWeek"), $("boxLegend"),
         $("boxTextSize"), fold);
-      $("mFieldSlot").append($("fieldChips"));
     } else {
       const rail = document.querySelector(".rail-col");
-      // PCサイド欄の並び: 検索(静的) → 期限が近いもの → 分野で絞る → この7日 →
-      // 今週の記録 → 記号の見かた → このサイトについて
-      rail.append($("boxDeadline"), $("boxField"), $("boxCal"), $("boxWeek"), $("boxLegend"), fold);
+      // PCサイド欄の並び: 検索(静的) → 期限が近いもの → この7日 → 今週の記録 →
+      // 記号の見かた → このサイトについて（分野チップは紙面側へ移動・P20）
+      rail.append($("boxDeadline"), $("boxCal"), $("boxWeek"), $("boxLegend"), fold);
       document.querySelector("#mMenu").append($("boxTextSize")); // PCでは使わない（CSSで非表示）
-      $("boxField").append($("fieldChips"));
       closeMenu();
       $("mSearchPanel").classList.remove("open");
     }
