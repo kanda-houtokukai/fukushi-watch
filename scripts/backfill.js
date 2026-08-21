@@ -13,16 +13,29 @@
  * - 途中で止まっても data/backfill-progress.json から再開できる
  * - 判定は summarize.js の関数をそのまま再利用する（プロンプト・検証の二重化を避ける）
  *
+ * 対象の源:
+ * - こども家庭庁 … `?page=N` で範囲の下限まで遡って取得する
+ * - 全国社会福祉協議会（団体・P21）… 一覧1枚に約1年分が載るのでページングなし。
+ *   ⚠️**禁止文言チェック（届出の約束）を過去分にも必ず通す**
+ * - それ以外の源 … state.json に残っている分で足りる（読むだけ・書かない）
+ *
  * 使い方:
  *   node scripts/backfill.js --from 2026-07-01 --to 2026-08-15 [--limit-days N] [--dry-run]
+ *
+ *   --ignore-progress … backfill-progress.json の「処理済みの日」を読み飛ばさない。
+ *     **後から源を足したときに使う**（既処理の日にも新しい源の項目があるため）。
+ *     重複はハッシュ照合で防いでいるので、二重に積まれることはない。
  */
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { parseCfaCards, itemHash, fetchHtml } from "./crawl.js";
+import {
+  parseCfaCards, parseZenshakyoNews, checkReprintNotice, itemHash, fetchHtml,
+} from "./crawl.js";
 import {
   loadEnv, listCandidateModels, preferModel, buildPrompt, parseResponse, generate,
+  normalizeFields,
 } from "./summarize.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -32,6 +45,7 @@ const INDEX_PATH = join(HISTORY_DIR, "index.json");
 const PROGRESS_PATH = join(ROOT, "data", "backfill-progress.json");
 
 const CFA_NEWS = "https://www.cfa.go.jp/news";
+const ZENSHAKYO_NEWS = "https://www.shakyo.or.jp/news/index.html";
 const BATCH = 25;            // 1リクエストあたりの判定件数（summarize.js と同じ上限）
 const REQ_INTERVAL_MS = 5000; // 分あたりのレート制限を避けるための間隔
 const FETCH_INTERVAL_MS = 1500;
@@ -75,11 +89,50 @@ async function fetchCfaBack(from) {
   return items;
 }
 
+/**
+ * 全国社会福祉協議会（団体・P21）を遡って取得する。
+ * 一覧ページ1枚に約1年分が載るためページングは不要（こども家庭庁とは事情が違う）。
+ *
+ * ⚠️ **範囲内の項目には必ず禁止文言チェックを通す。** 全社協への届出で
+ *    「無断転載を禁ずる旨の記載がある情報は対象から除く」と約束しており、
+ *    その約束は遡及して積む過去分にも及ぶため、毎朝の巡回と同じ関門を通す。
+ *    取得できなかったものは積まない（手動での再実行で拾い直せる）。
+ */
+async function fetchZenshakyoBack(from, to) {
+  const html = await fetchHtml(ZENSHAKYO_NEWS);
+  const all = parseZenshakyoNews(html, ZENSHAKYO_NEWS);
+  if (all.length === 0) {
+    throw new Error("全社協の一覧から1件も抽出できませんでした（構造変化の疑い）");
+  }
+  const inRange = all.filter((it) => {
+    const d = normalizeDate(it.date);
+    return d && d >= from && d <= to;
+  });
+  console.log(`  全社協: 一覧${all.length}件 / 範囲内${inRange.length}件 → 禁止文言を確認`);
+
+  const kept = [];
+  for (const it of inRange) {
+    const verdict = await checkReprintNotice(it.url);
+    if (verdict === "ok") kept.push(it);
+    else if (verdict === "blocked") {
+      console.log(`    除外（無断転載を禁ずる旨の記載あり）: ${it.title}`);
+    } else {
+      console.log(`    見送り（本文を確認できず）: ${it.title}`);
+    }
+    await sleep(FETCH_INTERVAL_MS);
+  }
+  console.log(`  全社協: ${kept.length}件を積む対象にした`);
+  return kept;
+}
+
 async function main() {
   const from = arg("from", "2026-07-01");
   const to = arg("to", "2026-08-15");
   const limitDays = Number(arg("limit-days", "0"));
   const dryRun = hasFlag("dry-run");
+  // 源を後から足したときに使う。progress.done は再開の目印であって重複防止の本体ではない
+  // （重複はハッシュ照合で防いでいる）ため、既処理の日を読み直しても二重に積まれることはない。
+  const ignoreProgress = hasFlag("ignore-progress");
   console.log(`バックフィル範囲: ${from} 〜 ${to}${limitDays ? `（先頭${limitDays}日分のみ）` : ""}${dryRun ? "（判定なしの下見）" : ""}`);
 
   // 1) 収集: state.json の既存項目（読むだけ）＋ こども家庭庁の遡及取得
@@ -96,6 +149,16 @@ async function main() {
   const cfa = await fetchCfaBack(from);
   for (const it of cfa) {
     pool.push({ ...it, source: "こども家庭庁", hash: itemHash(it) });
+  }
+
+  // 全社協(P21)。1源の失敗で全体を止めない（こども家庭庁の遡及は成立させる）
+  try {
+    const zen = await fetchZenshakyoBack(from, to);
+    for (const it of zen) {
+      pool.push({ ...it, source: "全国社会福祉協議会", kind: "org", hash: itemHash(it) });
+    }
+  } catch (e) {
+    console.log(`  全社協: 取得に失敗したため今回は積まない（続行）: ${e.message.slice(0, 90)}`);
   }
 
   // 2) 範囲で絞り、日付ごとにまとめる
@@ -115,11 +178,25 @@ async function main() {
     return monthCache.get(m);
   };
   const progress = loadJson(PROGRESS_PATH, { done: [] });
+
+  // ★既出判定は「履歴全体」で行う。掲載日のページだけを見てはいけない。
+  //   毎朝の archive.js は項目を**検知した日**に記録するため、掲載日と記録日は
+  //   しばしば1日ずれる（前日掲載を翌朝に検知するのが通常）。掲載日のページだけで
+  //   照合すると、既に記録済みの項目を掲載日側にもう一度積んでしまい、
+  //   件数とグラフが二重になる。P14では progress.done に隠れて表面化していなかった。
+  const seenHashes = new Set();
+  const idxForScan = loadJson(INDEX_PATH, { months: [] });
+  for (const m of idxForScan.months ?? []) {
+    for (const rec of Object.values(monthly(m).days ?? {})) {
+      for (const x of rec.items ?? []) seenHashes.add(x.hash);
+    }
+  }
+  console.log(`履歴に既出のハッシュ: ${seenHashes.size}件（これらは積み直さない）`);
+
   const plan = [];
   for (const d of days) {
-    if (progress.done.includes(d)) continue;
-    const known = new Set((monthly(d.slice(0, 7)).days[d]?.items ?? []).map((x) => x.hash));
-    const fresh = [...byDay.get(d).values()].filter((x) => !known.has(x.hash));
+    if (!ignoreProgress && progress.done.includes(d)) continue;
+    const fresh = [...byDay.get(d).values()].filter((x) => !seenHashes.has(x.hash));
     if (fresh.length) plan.push({ day: d, items: fresh });
   }
   const totalItems = plan.reduce((n, p) => n + p.items.length, 0);
@@ -160,10 +237,15 @@ async function main() {
         const j = byIndex.get(n);
         if (!j) return;
         judged.push({
-          hash: it.hash, source: it.source, title: it.title, url: it.url,
+          hash: it.hash, source: it.source,
+          // 団体(P21)だけ kind を残す。印章［団］の判定に使う（summarize.js と同じ規則）
+          ...(it.kind === "org" ? { kind: "org" } : {}),
+          title: it.title, url: it.url,
           date: it.date, category: it.category ?? "",
           summary: j.summary.trim(), importance: j.importance,
-          fields: j.fields, reason: (j.reason ?? "").trim(),
+          // ★P15の正規化を通す（4分野すべて／共通と個別の混在 → ["共通"]）。
+          //   本スクリプトはP15より前に書かれており生の fields を書いていた
+          fields: normalizeFields(j.fields), reason: (j.reason ?? "").trim(),
           backfilled: true, // 遡及で積んだ記録であることを残す
         });
       });
@@ -187,7 +269,7 @@ async function main() {
     mkdirSync(HISTORY_DIR, { recursive: true });
     writeFileSync(join(HISTORY_DIR, `${month}.json`), JSON.stringify(data, null, 1) + "\n");
     writeFileSync(INDEX_PATH, JSON.stringify(index, null, 1) + "\n");
-    progress.done.push(day);
+    if (!progress.done.includes(day)) progress.done.push(day);
     writeFileSync(PROGRESS_PATH, JSON.stringify(progress, null, 1) + "\n");
 
     doneItems += judged.length;
