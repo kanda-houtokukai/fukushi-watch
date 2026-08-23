@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-08-22T22:20:39.486Z",
+      "lastCrawled": "2026-08-23T22:20:50.648Z",
       "items": [
         {
           "hash": "c4724072b550fbd9",
@@ -188,7 +188,7 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-08-22T22:20:40.531Z",
+      "lastCrawled": "2026-08-23T22:20:51.863Z",
       "items": [
         {
           "hash": "5bf668d3da869956",
@@ -252,6 +252,13 @@
           "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/houkokusuunosuii.html",
           "date": "2026-08-21",
           "category": "その他"
+        },
+        {
+          "hash": "efcc831bd848f842",
+          "title": "第46回匿名医療情報等の提供に関する専門委員会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75719.html",
+          "date": "2026-08-21",
+          "category": "審議会等"
         },
         {
           "hash": "e978179a299575e6",
@@ -3381,207 +3388,11 @@
           "url": "https://www.mhlw.go.jp/stf/newpage_74083.html",
           "date": "2026-06-25",
           "category": "審議会等"
-        },
-        {
-          "hash": "e1cf325375f80fa4",
-          "title": "介護給付費等実態統計月報（令和８（2026）年３月審査分）",
-          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/kaigo/kyufu/2026/03.html",
-          "date": "2026-06-24",
-          "category": "統計情報"
-        },
-        {
-          "hash": "2a140c6bfd212357",
-          "title": "「第12回厚生科学審議会食品衛生監視部会」の開催について",
-          "url": "https://www.mhlw.go.jp/stf/newpage_73927.html",
-          "date": "2026-06-24",
-          "category": "審議会等"
-        },
-        {
-          "hash": "d8a97967a5c50727",
-          "title": "「第26回厚生科学審議会科学技術部会全ゲノム解析等の推進に関する専門委員会（ハイブリッドにて開催）」を開催します",
-          "url": "https://www.mhlw.go.jp/stf/newpage_73883.html",
-          "date": "2026-06-24",
-          "category": "その他"
-        },
-        {
-          "hash": "1607736ea216ed4d",
-          "title": "公益事業に関する争議行為の予告公表ページについて更新されました",
-          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudouseisaku/sougikoui/index.html",
-          "date": "2026-06-24",
-          "category": "政策分野"
-        },
-        {
-          "hash": "62ea2d1bc7544714",
-          "title": "毎月勤労統計調査ー2026（令和８）年４月分結果確報",
-          "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/monthly/r08/2604r/2604r.html",
-          "date": "2026-06-24",
-          "category": "統計情報"
-        },
-        {
-          "hash": "c18b5657e7c4bffe",
-          "title": "第７４回中央最低賃金審議会の開催について",
-          "url": "https://www.mhlw.go.jp/stf/newpage_74013.html",
-          "date": "2026-06-23",
-          "category": "審議会等"
-        },
-        {
-          "hash": "88e991fbc9510d33",
-          "title": "第209回労働政策審議会労働条件分科会 議事録（2026年5月13日）",
-          "url": "https://www.mhlw.go.jp/stf/newpage_73976.html",
-          "date": "2026-06-23",
-          "category": "審議会等"
-        },
-        {
-          "hash": "4e26b025eabf62ed",
-          "title": "第73回中央最低賃金審議会 資料",
-          "url": "https://www.mhlw.go.jp/stf/newpage_74002.html",
-          "date": "2026-06-23",
-          "category": "審議会等"
-        },
-        {
-          "hash": "c9dcc58a96ee9b28",
-          "title": "第３回目安制度の在り方に関する全員協議会 資料",
-          "url": "https://www.mhlw.go.jp/stf/newpage_73994.html",
-          "date": "2026-06-23",
-          "category": "審議会等"
-        },
-        {
-          "hash": "0e40db6e5e8d1b1d",
-          "title": "第７３回中央最低賃金審議会の開催について",
-          "url": "https://www.mhlw.go.jp/stf/newpage_73830.html",
-          "date": "2026-06-23",
-          "category": "審議会等"
-        },
-        {
-          "hash": "c00c675f8c0b9839",
-          "title": "「人口動態統計速報」令和８（2026）年04月分",
-          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/s2026/04.html",
-          "date": "2026-06-23",
-          "category": "統計情報"
-        },
-        {
-          "hash": "aedc4cae1327308a",
-          "title": "中央最低賃金審議会(目安制度の在り方に関する全員協議会)",
-          "url": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127940.html",
-          "date": "2026-06-23",
-          "category": "審議会等"
-        },
-        {
-          "hash": "31bdfd22f0e49ea0",
-          "title": "第135回社会保障審議会介護保険部会の開催について",
-          "url": "https://www.mhlw.go.jp/stf/newpage_73967.html",
-          "date": "2026-06-23",
-          "category": "審議会等"
-        },
-        {
-          "hash": "1df7a32a2f548b09",
-          "title": "食品中の放射性物質の検査結果について（１５００報）",
-          "url": "https://www.mhlw.go.jp/stf/newpage_73937.html",
-          "date": "2026-06-23",
-          "category": "報道発表"
-        },
-        {
-          "hash": "8de9f7cf1a62d4b4",
-          "title": "労働経済動向調査（令和８(2026)年５月）の概況",
-          "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/koyou/keizai/2605/",
-          "date": "2026-06-23",
-          "category": "統計情報"
-        },
-        {
-          "hash": "c90d5aeb9e8f4948",
-          "title": "「第93回 労働政策審議会勤労者生活分科会中小企業退職金共済部会」を開催します（開催案内）",
-          "url": "https://www.mhlw.go.jp/stf/newpage_73820.html",
-          "date": "2026-06-23",
-          "category": "審議会等"
-        },
-        {
-          "hash": "a5ca9fdcb3bb5ccd",
-          "title": "雇用環境・均等行政情報システムの運用・保守業務（ヘルプデスク含む）一式（令和９年度開始）",
-          "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-iken/newpage_10438.html",
-          "date": "2026-06-23",
-          "category": "その他"
-        },
-        {
-          "hash": "ad257432e6520500",
-          "title": "第５回 小児がん拠点病院等の指定要件に関するワーキンググループ（資料）",
-          "url": "https://www.mhlw.go.jp/stf/newpage_73981.html",
-          "date": "2026-06-23",
-          "category": "審議会等"
-        },
-        {
-          "hash": "7ed5ca4f2fc7b966",
-          "title": "令和８年６月２２日付大臣会見概要",
-          "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00941.html",
-          "date": "2026-06-22",
-          "category": "大臣会見等"
-        },
-        {
-          "hash": "1a2369d0cf8e1152",
-          "title": "第10回厚生科学審議会食品衛生監視部会 議事録",
-          "url": "https://www.mhlw.go.jp/stf/shingi/2024giji_00014.html",
-          "date": "2026-06-22",
-          "category": "審議会等"
-        },
-        {
-          "hash": "60e2304888b31b19",
-          "title": "第259回社会保障審議会介護給付費分科会（Web会議）を開催します",
-          "url": "https://www.mhlw.go.jp/stf/newpage_73998.html",
-          "date": "2026-06-22",
-          "category": "審議会等"
-        },
-        {
-          "hash": "04767a043b51158b",
-          "title": "社会福祉施設職員等退職手当共済制度の在り方に関する検討会（第２回） 議事録",
-          "url": "https://www.mhlw.go.jp/stf/newpage_73962.html",
-          "date": "2026-06-22",
-          "category": "審議会等"
-        },
-        {
-          "hash": "ec5676cf1cb03c54",
-          "title": "「社会福祉施設職員等退職手当共済制度の在り方に関する検討会」（第３回）を開催します",
-          "url": "https://www.mhlw.go.jp/stf/newpage_73907.html",
-          "date": "2026-06-22",
-          "category": "審議会等"
-        },
-        {
-          "hash": "0f3c7bbe1ea15e2f",
-          "title": "第23回年金広報検討会",
-          "url": "https://www.mhlw.go.jp/stf/newpage_73828.html",
-          "date": "2026-06-22",
-          "category": "審議会等"
-        },
-        {
-          "hash": "89c9fc3c0672e371",
-          "title": "薬事審議会 再生医療等製品・生物由来技術部会を開催します",
-          "url": "https://www.mhlw.go.jp/stf/newpage_73806.html",
-          "date": "2026-06-22",
-          "category": "審議会等"
-        },
-        {
-          "hash": "de7f614e2b97fb04",
-          "title": "2024年度 特定健康診査・特定保健指導の実施状況",
-          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/newpage_00082.html",
-          "date": "2026-06-22",
-          "category": "その他"
-        },
-        {
-          "hash": "088bae93c568ddee",
-          "title": "WEBマガジン「厚生労働」",
-          "url": "https://www.mhlw.go.jp/web_magazine/",
-          "date": "2026-06-22",
-          "category": "その他"
-        },
-        {
-          "hash": "38d3bd8368052522",
-          "title": "キャリアコンサルタントになりたい方へ（キャリアコンサルタント試験日程を更新しました）",
-          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/career_consultant01.html",
-          "date": "2026-06-22",
-          "category": "政策分野"
         }
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-08-22T22:20:41.690Z",
+      "lastCrawled": "2026-08-23T22:20:53.108Z",
       "items": [
         {
           "hash": "ef601ea34b120af3",
@@ -5042,7 +4853,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-08-22T22:20:43.333Z",
+      "lastCrawled": "2026-08-23T22:20:54.813Z",
       "items": [
         {
           "hash": "f5ad4357dc776e94",
@@ -5229,7 +5040,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-08-22T22:20:43.714Z",
+      "lastCrawled": "2026-08-23T22:20:55.163Z",
       "items": [
         {
           "hash": "257ce44835b95252",
@@ -5708,7 +5519,7 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-08-22T22:20:44.900Z",
+      "lastCrawled": "2026-08-23T22:20:56.348Z",
       "items": [
         {
           "hash": "913a4185eb7330be",
