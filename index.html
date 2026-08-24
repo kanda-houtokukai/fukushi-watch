@@ -28,11 +28,14 @@
     font-size:11.5px;color:var(--sub);letter-spacing:.06em;
     padding:10px 0;border-bottom:1px solid var(--rule)}
   .ear b{color:var(--ink)}
-  .ear .ear-short{display:none} /* スマホでのみ使う短い日付表記（P15） */
-  .ear .ear-today{border:0;background:none;padding:0;font:inherit;color:var(--link);
-    cursor:pointer;text-decoration:underline;text-underline-offset:3px} /* 本日へ戻る（P17） */
-  .ear .ear-sep{color:var(--sub)} /* 区切り記号は欄外の色のまま（P18） */
-  .ear .ear-today[hidden],.ear .ear-sep[hidden]{display:none}
+  .ear .ear-short{display:none} /* スマホでのみ使う短い日付表記（P15・P22で再検討） */
+  /* 欄外の日付そのものが「本日へ戻る」導線（P22。P17の「既に出ている表示を導線に変える」の踏襲）。
+     本日を見ているときは disabled にして、ただの日付表記に戻す（押しても意味がないため、
+     押せる気配＝リンク色と下線も出さない）。 */
+  .ear .ear-date{border:0;background:none;padding:0;margin:0;font:inherit;
+    letter-spacing:inherit;color:inherit;text-align:left}
+  .ear .ear-date:enabled{color:var(--link);cursor:pointer;
+    text-decoration:underline;text-underline-offset:3px}
 
   /* ==== 題字 ==== */
   .masthead{text-align:center;padding:34px 0 22px;border-bottom:3px double var(--ink)}
@@ -120,7 +123,6 @@
   .top-item .body{font-size:13.5px}
   .orig{font-size:11.5px;color:var(--faint);margin-top:6px}
   .orig a{color:var(--faint)}
-  .go{font-size:13px;margin-top:8px;display:inline-block;text-decoration:none}
   .item{padding:14px 0;border-bottom:1px solid var(--rule)}
   .item h4{font-size:15px;line-height:1.55;margin-bottom:4px;font-weight:600}
   .item h4 a{color:var(--ink);text-decoration:none}
@@ -153,7 +155,6 @@
   .low-h{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--faint)}
   .low-it{font-size:11.5px;color:#8a867f;line-height:1.9}
   .low-it a{color:#8a867f}
-  .low-it .lo{color:#b5b1aa;text-decoration:none}
 
   .empty{margin-top:26px;padding:26px 0;border-bottom:1px solid var(--rule);
     font-size:14px;color:var(--sub)}
@@ -298,12 +299,17 @@
       color:var(--ink);font-size:14px;cursor:pointer;font-family:inherit}
     .m-arrows button:disabled{color:var(--faint)}
     /* 内容(新着なし/多い日)で矢印の位置が動かないよう格子で固定する(P17)。
-       1行目=[日付見出し | 矢印(右端固定)]、2行目=件数 */
-    .dayhead{display:grid;grid-template-columns:1fr auto;align-items:center;
+       P22で1行に集約: [日付見出し(auto) | 件数(1fr) | 矢印(auto・右端固定)]。
+       矢印は最終列にあるため、日付や件数の長さが変わっても X 位置は動かない(P17の保証を維持)。 */
+    .dayhead{display:grid;grid-template-columns:auto 1fr auto;align-items:center;
       column-gap:8px;row-gap:2px}
     .dayhead h2{font-size:24px;grid-column:1;grid-row:1}
-    .dayhead .m-arrows{grid-column:2;grid-row:1;justify-self:end}
-    .dayhead .daycount{grid-column:1 / -1;grid-row:2}
+    .dayhead .daycount{grid-column:2;grid-row:1;min-width:0;overflow:hidden;
+      text-overflow:ellipsis;font-size:12px}
+    .dayhead .m-arrows{grid-column:3;grid-row:1;justify-self:end}
+    /* 重要度の内訳はスマホでは出さない(P22)。重要度チップが紙面にもメニューにも無く、
+       内訳を見ても押して絞れないため。分野の絞り込み表示(.fld/.all)は残す(P19) */
+    .daycount .tally{display:none}
     #chips{display:none} /* 重要度チップ: 紙面が高→中→低の順で組まれ低は索引に畳まれるため廃止 */
     /* ティッカーはスマホでは一段薄く（上部の占有を増やさない・P20） */
     .ticker{padding:4px 0;gap:8px}
@@ -332,7 +338,6 @@
     .item .body{font-size:calc(12.5px * var(--ts))}
     .meta{font-size:calc(12px * var(--ts))}
     .orig,.press-note,.aid-note{font-size:calc(11.5px * var(--ts))}
-    .go{font-size:calc(13px * var(--ts))}
     .low-it,.press-item h4{font-size:calc(11.5px * var(--ts))}
     .press-item h4{font-size:calc(14px * var(--ts))}
     .aid summary,.aid-body{font-size:calc(12.5px * var(--ts))}
@@ -405,9 +410,9 @@
 
   <div id="topHead"><!-- スマホでは二重罫より上を固定ヘッダーにする(P10) -->
     <div class="ear">
-      <span id="earDate"><span class="ear-full"></span><span class="ear-short"></span><span class="ear-sep" id="earSep" hidden>　｜　</span><button class="ear-today" id="btnToday" hidden></button></span>
+      <button class="ear-date" id="btnToday" type="button"><span class="ear-full"></span><span class="ear-short"></span></button>
       <span class="ear-auto">毎朝7時 自動発行</span>
-      <span><span id="issuePrefix">創刊から </span><b id="issueNo"></b></span>
+      <span>創刊から <b id="issueNo"></b></span>
     </div>
 
     <div class="masthead">
@@ -611,27 +616,33 @@
   const metaLine = (it) =>
     `${sealHtml(it)}<span>${esc(it.date)}</span>${fieldsHtml(it)}`;
 
-  /* 欄外: 和暦付き日付と号数(創刊からの経過日数+1。新着0件の日も号は進む)。
-     日付・号数は「その紙面の発行日」を示す（新聞の題字と同じ作法）。
-     過去の紙面を見ているときだけ「｜ 本日 8/18」を添える(P15)。
-     理由: 期限の残り日数が本日基準のため、過去に潜ったとき今日を見失わせない */
+  /* 欄外は「この新聞の今日の状態」を示す帯（P22）。日付も号数も**常に本日のもの**。
+     閲覧中の紙面の日付は日付見出しに大きく出るため、欄外に重ねて出さない
+     （閲覧中の情報は日付見出し以下にまとめる）。
+     本日以外を見ているときだけ、欄外の日付そのものが「本日へ戻る」導線になる。
+     欄外が本日基準になったため「創刊前の記録」表示は不要になり廃止した
+     （号数は本日の発行番号であって、閲覧中の紙面の属性ではない）。 */
   function renderEar(d) {
-    const f = fmtDay(d);
-    const reiwa = f.y - 2018;
     const today = jstToday();
-    const ear = $("earDate");
-    // 長短2つを持ち、CSSで出し分ける（スマホは短く。リサイズにも自動追従）
-    ear.querySelector(".ear-full").textContent =
-      `${f.y}年（令和${reiwa}年）${f.m}月${f.dd}日　${f.w}曜日`;
-    ear.querySelector(".ear-short").textContent = `${f.m}月${f.dd}日（${f.w}）`;
-    /* 本日以外を見ているときだけ「｜ 本日 M/D」を出し、そのまま本日へ戻る導線にする(P17) */
+    const t = fmtDay(today);
     const btn = $("btnToday");
-    btn.hidden = $("earSep").hidden = d === today;
-    btn.textContent = d === today ? "" : `本日 ${fmtDay(today).short} へ戻る`;
-    /* 創刊(2026-08-16)より前の日付には号数を振らない（遡及記録=P14。号数は発行の記録のため） */
-    const no = Math.floor((dayUTC(d) - FOUNDED) / 86400000) + 1;
-    $("issueNo").textContent = no < 1 ? "創刊前の記録" : `第 ${no} 号`;
-    $("issuePrefix").textContent = no < 1 ? "" : "創刊から ";
+    // 長短2つを持ち、CSSで出し分ける（スマホは短く。リサイズにも自動追従）
+    btn.querySelector(".ear-full").textContent =
+      `${t.y}年（令和${t.y - 2018}年）${t.m}月${t.dd}日　${t.w}曜日`;
+    // スマホ用の短い表記(P15)はP22で再検討し、和暦を含む中間形に上げた。
+    // 本日の併記が無くなって余白ができたため。⚠️PCと同じ長形にはしない——320px幅で
+    // 号数が3桁(第100号)になると余白が尽き、折り返して固定ヘッダーの行高(86px)が壊れる。
+    btn.querySelector(".ear-short").textContent =
+      `令和${t.y - 2018}年${t.m}月${t.dd}日（${t.w}）`;
+    const isToday = d === today;
+    btn.disabled = isToday; // 本日を見ているときは押せない＝ただの日付表記
+    btn.title = isToday ? "" : `本日 ${t.short} の紙面へ戻る`;
+    btn.setAttribute(
+      "aria-label",
+      isToday ? `本日 ${t.y}年${t.m}月${t.dd}日` : `本日 ${t.m}月${t.dd}日 の紙面へ戻る`
+    );
+    const no = Math.floor((dayUTC(today) - FOUNDED) / 86400000) + 1;
+    $("issueNo").textContent = `第 ${no} 号`;
   }
 
   /* この7日: 対応が要る日の地図。高だけ朱・中低は無彩色・高の日は朱点・タップで移動 */
@@ -755,7 +766,6 @@
       <div class="meta">${metaLine(it)}${dlMeta(it)}${shareBtn(state.day, it.hash, it.title)}</div>
       <div class="orig">原題: <a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></div>
       ${aidBlock(it)}
-      <a class="go" href="${esc(it.url)}" target="_blank" rel="noopener">原本を確認する →</a>
     </article>`;
   }
   function hiBlock(it) {
@@ -764,7 +774,6 @@
       <div class="body">${esc(it.summary)}</div>
       <div class="meta">${metaLine(it)}${dlMeta(it)}${shareBtn(state.day, it.hash, it.title)}</div>
       ${aidBlock(it)}
-      <a class="go" style="font-size:12.5px" href="${esc(it.url)}" target="_blank" rel="noopener">原本を確認する →</a>
     </article>`;
   }
   function midBlock(it) {
@@ -778,12 +787,15 @@
   function lowLine(it) {
     const src = [it.category, it.source].filter(Boolean).map(esc).join("・");
     return `<div class="it low-it" data-imp="低" data-fields="${(it.fields ?? []).join(",")}" data-hash="${esc(it.hash)}">・<a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a>
-      <span style="color:#b5b1aa">［${src}］</span>
-      <a class="lo" href="${esc(it.url)}" target="_blank" rel="noopener">原本→</a>${shareBtn(state.day, it.hash, it.title)}</div>`;
+      <span style="color:#b5b1aa">［${src}］</span>${shareBtn(state.day, it.hash, it.title)}</div>`;
   }
 
   /* 日付見出しの件数(P19)。分野で絞っているときは「障害 3件 ── 高1・中2 ／ 全15件」の形にし、
-     画面に出ている件数と表示が食い違わないようにする。全分野なら従来どおり。 */
+     画面に出ている件数と表示が食い違わないようにする。全分野なら従来どおり。
+     P22: 重要度の内訳は .tally で包み、**スマホではCSSで隠す**（重要度チップがメニューにも
+     紙面にも無いスマホでは内訳の実用性が低いため）。分野の絞り込み表示（分野名・絞り込み後の
+     件数・全体件数）は隠さない——P19で直した「絞り込み中に件数がずれて見える」を再発させない。
+     出し分けはCSSだけで行い、この関数は幅を知らない（描画ロジックを二重化しない）。 */
   function updateDayCounts() {
     const el = $("dayCounts");
     if (!state.dayHasRec) { el.textContent = "記録なし"; return; }
@@ -796,7 +808,8 @@
     };
     if (state.field === "all") {
       const c = tally(items);
-      el.innerHTML = `新着${items.length}件 ── <b>高${c["高"]}</b>・中${c["中"]}・低${c["低"]}`;
+      el.innerHTML =
+        `新着${items.length}件<span class="tally"> ── <b>高${c["高"]}</b>・中${c["中"]}・低${c["低"]}</span>`;
       return;
     }
     // 分野の判定は applyFilters と同じ規則（選んだ分野 or 共通は残す）
@@ -811,7 +824,7 @@
       .join("・");
     el.innerHTML =
       `<span class="fld">${esc(state.field)}</span> ${shown.length}件` +
-      (breakdown ? ` ── ${breakdown}` : "") +
+      (breakdown ? `<span class="tally"> ── ${breakdown}</span>` : "") +
       ` <span class="all">／ 全${items.length}件</span>`;
   }
 
