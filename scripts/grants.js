@@ -31,6 +31,8 @@ import {
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const GRANTS_PATH = join(ROOT, "data", "grants.json");
+const USER_AGENT =
+  "fukushi-watch/0.1 (+https://github.com/kanda-houtokukai/fukushi-watch)";
 const FETCH_INTERVAL_MS = 1500; // 監視先サイトへのアクセス間隔（マナー）
 const BATCH = 20;               // 1リクエストあたりの判定件数（本文を含むので25より控えめ）
 const BODY_MAX_CHARS = 2500;    // 判定に渡す本文の上限（本文は保存しない）
@@ -167,7 +169,142 @@ function decodeEntities(s) {
     .replace(/&quot;/g, '"').replace(/&#39;/g, "'");
 }
 
-const PARSERS = { "zenshakyo-sponsor": parseZenshakyoSponsor };
+/* ---------------------------------------------------------------------------
+ * jyosei-navi-api: 助成財団センター「助成・奨学金情報navi」の検索API（P24）
+ *
+ * ⚠️**公開・文書化されたAPIではない**。SPAの通信から把握した内部APIで、
+ *   予告なく変わりうる（0件ガードでその日のうちに気づける）。
+ *   このため `docs/sources.md` の状態は**照会の承諾を得るまで「保留（照会前）」**にしてある。
+ *   有効化は状態を「巡回中」に1行変えるだけ（福祉新聞・全社協と同じ手順）。
+ * ⚠️画像(PHOTO)は使わない（免責事項で画像の利用は事前承諾が必要とされているため）。
+ *
+ * 取得は毎朝1回。一覧APIは pageSize がサーバ側で10に固定されているため
+ * 110件で11リクエスト。詳細API（応募資格 SEIGEN の取得）は**新規項目のみ・1回10件まで**に
+ * 絞り、1日あたり最大21リクエストに収める。
+ * ------------------------------------------------------------------------ */
+
+const NAVI_API = "https://jyosei-navi.jfc.or.jp/api";
+const NAVI_VIEW = "https://jyosei-navi.jfc.or.jp/search/search/assist/view/";
+const NAVI_DETAIL_PER_RUN = 10; // 1回に読む詳細の上限（相手への負荷を抑える）
+
+/** 検索条件の雛形。⚠️全キーが必須（一部だけ渡すと400が返る） */
+function naviQuery(today) {
+  const [y, m] = today.split("-").map(Number);
+  const q = {
+    orgname: "", JIGYOKEITAI1: false, JIGYOKEITAI2: false, JIGYOKEITAI3: false,
+    JIGYOKEITAI4: false, JIGYOKEITAI5: false,
+    研: false, 派: false, 招: false, 会: false, 版: false, 事: false, 展: false, 組: false, 施: false,
+    奨日内: false, 奨日留: false, 奨外: false, 賞: false, 他: false,
+    物理科学: false, 地球科学: false, 生命科学: false, 工学: false, 理学: false, 医学: false,
+    形式科学: false, 農学: false, 科学技術全般: false, 人文科学全般: false, 社会科学全般: false,
+    環境: false, 教育: false, 福祉: true, 医保: false, 文芸: false, 国際: false, 公共: false,
+    人権: false, 災害: false, 就労支援: false, 地域開発: false, 起業支援: false, 他分: false,
+    給与: false, 貸与: false,
+    DANTAIDOMESTIC: false, DOMESTIC_SELECT: "/", DANTAIOVERSEA: false, OVERSEA_SELECT: "/",
+    SCHOOL_SELECT: "/",
+    // 募集期間が「1年前〜1年半先」に重なるものを引き、締切は下で今日以降に絞る
+    datemode: 1, startyear: y - 1, startmonth: m, endyear: y + 1, endmonth: m,
+  };
+  return q;
+}
+
+async function naviPost(path, body) {
+  const res = await fetch(`${NAVI_API}${path}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "User-Agent": USER_AGENT },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status} for ${path}`);
+  return res.json();
+}
+
+/** JIGYOB(事業形態)→用途タグの機械写像。⚠️構造化データはAIより確かなので優先する */
+const NAVI_USE_MAP = {
+  研究: "研究・調査", 研究その他: "研究・調査",
+  会議: "行事・啓発", "公演・展示": "行事・啓発", 出版: "行事・啓発",
+  表彰: "表彰",
+  "事業・活動": "事業・活動", 組識運営支援: "事業・活動",
+  派遣: "人材・研修", 招聘: "人材・研修",
+  // 「施設・備品」は 設備・改修／機器・用具／ICT／車両 のどれかに割れるのでAIに委ねる
+};
+export function naviUsesFromJigyob(jigyob) {
+  const out = new Set();
+  for (const m of String(jigyob ?? "").matchAll(/【([^】]+)】/g)) {
+    const u = NAVI_USE_MAP[m[1]];
+    if (u) out.add(u);
+  }
+  return [...out];
+}
+
+/** SEIGEN の「法人格:」「所属機関:」→応募主体タグの機械写像 */
+export function naviApplicantsFromSeigen(seigen) {
+  const s = String(seigen ?? "");
+  const out = new Set();
+  if (/社会福祉法人/.test(s)) out.add("社会福祉法人");
+  if (/特定非営利活動法人|認定特定非営利活動法人|公益財団法人|公益社団法人|一般財団法人|一般社団法人/.test(s)) {
+    out.add("NPO・公益法人");
+  }
+  if (/任意団体|法人格の有無は問|法人格:無/.test(s)) out.add("任意団体");
+  if (/所属機関|大学|研究機関|研究者/.test(s)) out.add("研究者・大学");
+  return [...out];
+}
+
+async function collectJyoseiNavi(src, today) {
+  const query = naviQuery(today);
+  const rows = [];
+  let total = 0;
+  for (let page = 1; page <= 40; page++) {
+    const d = await naviPost("/search/assist/", {
+      query,
+      condition: { page, pageSize: 10, searchTerm: "", sortMode: 2 },
+    });
+    total = d.total ?? 0;
+    if (!d.datas || d.datas.length === 0) break;
+    rows.push(...d.datas);
+    if (rows.length >= total) break;
+    await sleep(FETCH_INTERVAL_MS);
+  }
+  console.log(`  API: ${rows.length}件を取得（総数${total}）`);
+  return rows.map((r) => ({
+    funder: (r.MAIN_NAME ?? "").trim(),
+    title: (r.AS_NAME ?? "").replace(/\s+/g, " ").trim(),
+    url: NAVI_VIEW + r.nid,
+    postedAt: String(r.updatedAt ?? "").slice(0, 10),
+    ...parseDeadline(r.enddate, today),
+    _nid: r.nid,
+    _purpose: (r.PURPOSE ?? "").trim(),
+    _usesFromSource: naviUsesFromJigyob(r.JIGYOB),
+  }));
+}
+
+/** 応募資格(SEIGEN)は詳細APIにしか無い。新規項目のみ・1回10件までに絞って読む */
+async function naviFillDetails(items) {
+  let n = 0;
+  for (const it of items) {
+    if (!it._nid || n >= NAVI_DETAIL_PER_RUN) break;
+    try {
+      const res = await fetch(`${NAVI_API}/search/assistinfo/${it._nid}`, {
+        headers: { "User-Agent": USER_AGENT },
+      });
+      if (res.ok) {
+        const d = await res.json();
+        it._seigen = d.assist?.SEIGEN ?? "";
+        it._appFromSource = naviApplicantsFromSeigen(it._seigen);
+        const sc = d.assist?.schedules?.[0];
+        if (sc?.kns) it._amount = String(sc.kns).replace(/\s+/g, " ").trim();
+      }
+    } catch { /* 1件の失敗は無視して続ける（次回拾い直す） */ }
+    n++;
+    await sleep(FETCH_INTERVAL_MS);
+  }
+  if (n) console.log(`  詳細（応募資格）を${n}件読んだ`);
+}
+
+/** 収集の入口。HTMLの源もAPIの源も同じ形（源を受け取り項目の配列を返す）にそろえる */
+const COLLECTORS = {
+  "zenshakyo-sponsor": async (src) => parseZenshakyoSponsor(await fetchHtml(src.url), src.url),
+  "jyosei-navi-api": async (src, today) => collectJyoseiNavi(src, today),
+};
 
 /** 助成の項目ハッシュ。タイトル＋出し手＋URL（締切は延長されうるので入れない） */
 export function grantHash(it) {
@@ -295,10 +432,10 @@ async function main() {
 
   for (const src of sources) {
     try {
-      const parse = PARSERS[src.method];
-      if (!parse) throw new Error(`巡回方法「${src.method}」に対応するパーサがありません`);
+      const collect = COLLECTORS[src.method];
+      if (!collect) throw new Error(`巡回方法「${src.method}」に対応するコレクタがありません`);
       console.log(`取得: ${src.name} (${src.url})`);
-      const parsed = parse(await fetchHtml(src.url), src.url);
+      const parsed = await collect(src, today);
       // ★抽出0件は構造変化の疑いとして失敗扱い（サイレント0件の禁止）
       if (parsed.length === 0) {
         throw new Error("助成を1件も抽出できませんでした（ページ構造の変化の疑い）");
@@ -320,7 +457,7 @@ async function main() {
           });
           continue;
         }
-        fresh.push({ hash, source: src.name, sourceKind: src.orgKind ?? "org", ...it });
+        fresh.push({ hash, source: src.name, sourceKind: "org", _method: src.method, ...it });
       }
     } catch (e) {
       console.error(`  失敗（続行）: ${src.name}: ${e.message}`);
@@ -339,9 +476,24 @@ async function main() {
   console.log(`新規${fresh.length}件 / 既知${store.items.length}件 / 期限切れ整理${pruned}件`);
 
   if (fresh.length > 0 && !dryRun) {
-    // 本文を取得（⚠️届出で約束した禁止文言の確認も同じ関門を通す）
     const targets = [];
-    for (const it of fresh) {
+
+    // (a) APIの源: 応募資格(SEIGEN)を新規のみ・1回10件まで読み、本文はAPIが返した文面を使う。
+    //     ⚠️禁止文言の確認は全社協への届出で約束したものなので、この源には適用しない
+    //     （相手も目的も違う。無関係な相手に確認リクエストを撃たない）
+    const naviFresh = fresh.filter((it) => it._method === "jyosei-navi-api");
+    if (naviFresh.length) {
+      await naviFillDetails(naviFresh);
+      for (const it of naviFresh) {
+        it._body = [it._purpose, it._seigen ? `応募制限: ${it._seigen}` : ""]
+          .filter(Boolean).join(" ").slice(0, BODY_MAX_CHARS);
+        targets.push(it);
+      }
+    }
+
+    // (b) HTMLの源(全社協): 個別ページの本文を読む。
+    //     ⚠️届出で約束した禁止文言の確認を同じ関門として必ず通す
+    for (const it of fresh.filter((x) => x._method !== "jyosei-navi-api")) {
       const verdict = await checkReprintNotice(it.url);
       if (verdict === "blocked") {
         console.log(`  除外（無断転載を禁ずる旨の記載あり）: ${it.title}`);
@@ -387,14 +539,24 @@ async function main() {
         batch.forEach((it, n) => {
           const j = byIndex.get(n);
           if (!j) throw new Error(`応答に index=${n} がありません`);
-          delete it._body; // ★本文は保存しない
+          // ★源が持つ構造化データ（JIGYOB・SEIGEN）とAIの出力を合流させる。
+          //   構造化データはAIより確かなので必ず含め、AIには「そこに無いもの」を補わせる。
+          const uses = normalizeUses([...(it._usesFromSource ?? []), ...(j.uses ?? [])]);
+          const applicants = normalizeApplicants([
+            ...(it._appFromSource ?? []), ...(j.applicants ?? []),
+          ]);
+          const amount = (it._amount || j.amount || "").trim();
+          // ★本文・作業用の値は保存しない
+          const clean = Object.fromEntries(
+            Object.entries(it).filter(([k]) => !k.startsWith("_"))
+          );
           store.items.push({
-            ...it,
+            ...clean,
             summary: j.summary.trim(),
             fields: normalizeFields(j.fields),
-            uses: normalizeUses(j.uses),
-            applicants: normalizeApplicants(j.applicants),
-            amount: (j.amount ?? "").trim(),
+            uses,
+            applicants,
+            amount,
           });
         });
       }
