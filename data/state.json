@@ -1,8 +1,15 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-08-24T22:25:27.322Z",
+      "lastCrawled": "2026-08-25T03:02:44.732Z",
       "items": [
+        {
+          "hash": "9345b95692601c0c",
+          "title": "保育ICTラボ事業では、このたび保育ICT事務局において特設ウェブサイトを公開しました。",
+          "url": "https://www.cfa.go.jp/policies/hoiku/hoiku-ictlabo",
+          "date": "2026-08-25",
+          "category": "政策"
+        },
         {
           "hash": "4f7518b6c4e59bf1",
           "title": "一般競争入札：令和8年度保育士・保育の現場の魅力普及啓発事業を掲載しました",
@@ -209,13 +216,20 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-08-24T22:25:27.597Z",
+      "lastCrawled": "2026-08-25T03:02:44.949Z",
       "items": [
         {
-          "hash": "e79cfe4894d8d7cf",
+          "hash": "0bd551da242257bd",
           "title": "第397回労働政策審議会職業安定分科会労働力需給制度部会 資料",
           "url": "https://www.mhlw.go.jp/stf/newpage_75128.html",
-          "date": "2026-08-27",
+          "date": "2026-08-25",
+          "category": "審議会等"
+        },
+        {
+          "hash": "9eb6f4ab5111173e",
+          "title": "第60回社会保障審議会生活保護基準部会 資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75756.html",
+          "date": "2026-08-25",
           "category": "審議会等"
         },
         {
@@ -504,13 +518,6 @@
           "url": "https://www.mhlw.go.jp/stf/newpage_74834.html",
           "date": "2026-08-19",
           "category": "審議会等"
-        },
-        {
-          "hash": "32a65d4f45eb3819",
-          "title": "映画『ママがもうこの世界にいなくても』とタイアップします",
-          "url": "https://www.mhlw.go.jp/stf/houdou/tie-up_mamaseka-movie.html",
-          "date": "2026-08-19",
-          "category": "報道発表"
         },
         {
           "hash": "9be70fcf6577a9f9",
@@ -3458,54 +3465,33 @@
           "url": "https://www.mhlw.go.jp/stf/newpage_74072.html",
           "date": "2026-06-26",
           "category": "審議会等"
-        },
-        {
-          "hash": "80f558c8095dda44",
-          "title": "全世代型リ・スキリング国民運動に関する有識者会議を開催します",
-          "url": "https://www.mhlw.go.jp/stf/newpage_74104.html",
-          "date": "2026-06-25",
-          "category": "審議会等"
-        },
-        {
-          "hash": "67d4251c7ca62215",
-          "title": "第３回 医療関係職種の安定的な養成・確保に関する検討会：開催案内",
-          "url": "https://www.mhlw.go.jp/stf/newpage_74106.html",
-          "date": "2026-06-25",
-          "category": "審議会等"
-        },
-        {
-          "hash": "c277ad32abd038f9",
-          "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
-          "url": "https://www.mhlw.go.jp/stf/newpage_74100.html",
-          "date": "2026-06-25",
-          "category": "報道発表"
-        },
-        {
-          "hash": "756826b38f7f20f6",
-          "title": "第186回市町村セミナーの資料について",
-          "url": "https://www.mhlw.go.jp/stf/newpage_74092.html",
-          "date": "2026-06-25",
-          "category": "その他"
-        },
-        {
-          "hash": "2952f553e54dd551",
-          "title": "薬事審議会血液事業部会令和８年度第１回運営委員会（資料）",
-          "url": "https://www.mhlw.go.jp/stf/newpage_73826.html",
-          "date": "2026-06-25",
-          "category": "審議会等"
-        },
-        {
-          "hash": "068811943e7f7457",
-          "title": "開催案内ー第５回医療放射線の適正管理に関する検討会",
-          "url": "https://www.mhlw.go.jp/stf/newpage_74083.html",
-          "date": "2026-06-25",
-          "category": "審議会等"
         }
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-08-24T22:25:28.381Z",
+      "lastCrawled": "2026-08-25T03:02:45.216Z",
       "items": [
+        {
+          "hash": "5e13beea71427eeb",
+          "title": "第62回 障害福祉サービス等報酬改定検討チーム（令和8年8月27日開催予定）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22805&ct=070010040&from=rss",
+          "date": "2026-08-25",
+          "category": "行政資料"
+        },
+        {
+          "hash": "4bb956ae000420e4",
+          "title": "第60回 社会保障審議会 生活保護基準部会（令和8年8月25日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22808&ct=010010220&from=rss",
+          "date": "2026-08-25",
+          "category": "行政資料"
+        },
+        {
+          "hash": "32863173d8c1861c",
+          "title": "第46回 匿名医療情報等の提供に関する専門委員会（令和8年9月2日開催予定）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22807&ct=070010010&from=rss",
+          "date": "2026-08-25",
+          "category": "行政資料"
+        },
         {
           "hash": "3fbea1c363f8cae5",
           "title": "介護保険最新情報Vol.1537（PDF：1.1MB）",
@@ -4979,7 +4965,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-08-24T22:25:29.567Z",
+      "lastCrawled": "2026-08-25T03:02:45.343Z",
       "items": [
         {
           "hash": "f5ad4357dc776e94",
@@ -5166,7 +5152,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-08-24T22:25:29.859Z",
+      "lastCrawled": "2026-08-25T03:02:45.403Z",
       "items": [
         {
           "hash": "257ce44835b95252",
@@ -5652,7 +5638,7 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-08-24T22:25:30.767Z",
+      "lastCrawled": "2026-08-25T03:02:45.805Z",
       "items": [
         {
           "hash": "ad9fb8b761e39094",
@@ -5772,6 +5758,291 @@
           "url": "https://www.joint-kaigo.com/articles/47994/",
           "date": "2026-08-05",
           "category": "介護給付費分科会"
+        }
+      ]
+    },
+    "福岡県（介護・高齢者福祉）": {
+      "lastCrawled": "2026-08-25T03:02:45.461Z",
+      "items": [
+        {
+          "hash": "cc45938bf97029c2",
+          "title": "「処遇改善加算取得のための勉強会」について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/syogusokushin.html",
+          "date": "2026年8月12日更新",
+          "category": ""
+        },
+        {
+          "hash": "14a4f6fdbaabe2b5",
+          "title": "令和８年熊本地震に伴う災害により被災した要介護高齢者等への対応及び災害による被災者に係る被保険者証の提示等について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/r8-kumamotojishin.html",
+          "date": "2026年8月7日更新",
+          "category": ""
+        },
+        {
+          "hash": "2e154a8c0760a15a",
+          "title": "軽費老人ホームの一覧",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/keihi.html",
+          "date": "2026年8月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "b91c9b9d2e7d1f21",
+          "title": "介護保険サービスの利用者負担を軽くする制度",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kaigohoken-riyousyafutankeigen.html",
+          "date": "2026年8月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "3af8f79759fca1ce",
+          "title": "「福岡県老人福祉法施行細則の一部改正案」に対する意見公募手続きの実施結果について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/rojinfukushihoikenkoubo.html",
+          "date": "2026年7月31日更新",
+          "category": ""
+        },
+        {
+          "hash": "8b4b475daea672d0",
+          "title": "「高齢者の福祉」（令和７年度版）",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/koureisyanofukusi6.html",
+          "date": "2026年7月21日更新",
+          "category": ""
+        },
+        {
+          "hash": "0e31dfc3f927177e",
+          "title": "福岡県の高齢者人口及び高齢化率の推移（令和８年４月１日現在）",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/koreisyajinko.html",
+          "date": "2026年6月8日更新",
+          "category": ""
+        },
+        {
+          "hash": "ba9aa98b6b8b4531",
+          "title": "【受付は終了しました】令和8年度高齢者福祉施設等の整備方針及び協議手続について（追加分）",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kourei-shisetsu-r8.html",
+          "date": "2026年6月5日更新",
+          "category": ""
+        },
+        {
+          "hash": "977450114789575d",
+          "title": "福岡県介護実習・普及センター 介護講座のご案内",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kaigocenter.html",
+          "date": "2026年5月12日更新",
+          "category": ""
+        },
+        {
+          "hash": "cecf42ed27e4c755",
+          "title": "福岡県高齢者福祉功労者知事表彰について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/koureisyakourou.html",
+          "date": "2026年3月31日更新",
+          "category": ""
+        },
+        {
+          "hash": "78d75d800f822c4f",
+          "title": "福岡県の老人クラブを紹介します",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/roujin-club.html",
+          "date": "2026年7月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "aa6e59090eb9bf3b",
+          "title": "福岡県高齢者等在宅生活支援（住みよか）事業",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/koureisya-sumiyoka.html",
+          "date": "2026年7月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "39a755af977acc01",
+          "title": "介護サービス事業所・施設をお探しの方",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kaigokennsaku.html",
+          "date": "2026年4月27日更新",
+          "category": ""
+        },
+        {
+          "hash": "892ff3b73f3e4eef",
+          "title": "地域包括支援センター",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/tiiki-houkatsu.html",
+          "date": "2025年11月20日更新",
+          "category": ""
+        },
+        {
+          "hash": "79d6bfc43635901a",
+          "title": "高齢者虐待防止に関するリーフレットを作成しました",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/koureisyagyakutai-leaflet.html",
+          "date": "2022年2月21日更新",
+          "category": ""
+        },
+        {
+          "hash": "268bc86ac8507230",
+          "title": "令和８年度若年性認知症交流会を開催します！",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/r8ninchisyo-kouryuukai.html",
+          "date": "2026年8月17日更新",
+          "category": ""
+        },
+        {
+          "hash": "cb57e17c4f669396",
+          "title": "9月21日は「認知症の日」～県内で認知症に関する理解を深める各種イベントを開催します～",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/r8ninchisyonohi.html",
+          "date": "2026年7月31日更新",
+          "category": ""
+        },
+        {
+          "hash": "5e19b7e69e7a645a",
+          "title": "認知症に関する各種研修情報",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/ninchisho-kenshu.html",
+          "date": "2026年4月24日更新",
+          "category": ""
+        },
+        {
+          "hash": "70d046298a022ac2",
+          "title": "身元不明で保護された認知症高齢者等の情報について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/mimotohumei.html",
+          "date": "2026年2月19日更新",
+          "category": ""
+        },
+        {
+          "hash": "27844bb9c36f17ad",
+          "title": "福岡県における認知症カフェ等実施状況",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/ninchisyocafe.html",
+          "date": "2026年1月13日更新",
+          "category": ""
+        },
+        {
+          "hash": "819df62407e0a0af",
+          "title": "令和８年度福岡県介護ＤＸ支援事業費補助金に係るご案内",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kaigodx.html",
+          "date": "2026年8月3日更新",
+          "category": ""
+        },
+        {
+          "hash": "63ca04609fe15b62",
+          "title": "介護保険指定更新事業所（令和８年８月更新）リスト",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kousin.html",
+          "date": "2026年8月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "d92a57e4ec94ad25",
+          "title": "居宅サービス事業所に関する新規申請、変更届、廃止・休止・再開届等",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kyotakukaigoshinsei.html",
+          "date": "2026年7月30日更新",
+          "category": ""
+        },
+        {
+          "hash": "d1b8f17d7e17e30c",
+          "title": "福岡県身体拘束ゼロ宣言を実施しています",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/zerosengen.html",
+          "date": "2026年7月27日更新",
+          "category": ""
+        },
+        {
+          "hash": "7aff5de4fff3b96d",
+          "title": "令和８年度福岡県外国人介護人材確保強化事業費補助金に係るご案内",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kakuhokyoka.html",
+          "date": "2026年7月14日更新",
+          "category": ""
+        },
+        {
+          "hash": "8382166117832471",
+          "title": "介護老人保健施設運営指導等事前提出資料等様式（令和８年度）",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/fukuoka-rouken-uneishidou.html",
+          "date": "2026年8月4日更新",
+          "category": ""
+        },
+        {
+          "hash": "748d32494529a161",
+          "title": "（令和7年度）介護サービス情報公表システム",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kouhyou-sisutemu.html",
+          "date": "2026年7月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "79b19ccc0e94c519",
+          "title": "社会福祉法人及び社会福祉施設指導監査関係［高齢者福祉］（令和８年度） ※介護保険課分",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kourei-kansa08.html",
+          "date": "2026年6月26日更新",
+          "category": ""
+        },
+        {
+          "hash": "6892fda0c34da1fc",
+          "title": "高齢者福祉施設等における風水害対策の強化について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/fuusuigaitaisaku.html",
+          "date": "2026年6月25日更新",
+          "category": ""
+        },
+        {
+          "hash": "9a8542a3768b7be1",
+          "title": "介護施設・事業所等における災害時情報共有システムについて",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kaigo-saigaisystem.html",
+          "date": "2026年4月28日更新",
+          "category": ""
+        },
+        {
+          "hash": "80c9932cb94302f3",
+          "title": "有料老人ホーム変更届・廃止（休止）届様式",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/welfareforseniorcitizen-homeforaged-charged.html",
+          "date": "2026年7月30日更新",
+          "category": ""
+        },
+        {
+          "hash": "e4f3e4173792ff53",
+          "title": "有料老人ホーム設置の届出について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/welfareforseniorcitizen-shiryo.html",
+          "date": "2026年7月30日更新",
+          "category": ""
+        },
+        {
+          "hash": "7d5ecd3882d488e8",
+          "title": "住宅型有料老人ホーム等書面検査",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/syomenkensa.html",
+          "date": "2026年6月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "2338ef62d1ee7ea9",
+          "title": "有料老人ホーム立入検査の改善報告について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kaizenhoukoku.html",
+          "date": "2026年4月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "5866edef2a441d90",
+          "title": "有料老人ホーム一覧を掲載しています",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/juushochi.html",
+          "date": "2026年4月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "63c6cf50bf88c3b2",
+          "title": "介護特定技能外国人マッチング支援事業受入れ施設見学会及び事業説明会の開催について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kaigotokuteiginou-matching2.html",
+          "date": "2026年8月21日更新",
+          "category": ""
+        },
+        {
+          "hash": "d4045c108b534c85",
+          "title": "福岡県働きやすい介護職場認証制度について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kaigo-ninsyou.html",
+          "date": "2026年8月21日更新",
+          "category": ""
+        },
+        {
+          "hash": "0f1ee0340f5d6c09",
+          "title": "介護人材確保・定着促進に係る取組",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kakuhoteityakusokusin.html",
+          "date": "2026年8月21日更新",
+          "category": ""
+        },
+        {
+          "hash": "cc45938bf97029c2",
+          "title": "「処遇改善加算取得のための勉強会」について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/syogusokushin.html",
+          "date": "2026年8月12日更新",
+          "category": ""
+        },
+        {
+          "hash": "06f1afde6bfc2548",
+          "title": "喀痰吸引等研修講師養成課程について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kakutankoushi.html",
+          "date": "2026年8月10日更新",
+          "category": ""
         }
       ]
     }

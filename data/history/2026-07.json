@@ -2,9 +2,9 @@
  "days": {
   "2026-07-01": {
    "counts": {
-    "高": 5,
-    "中": 10,
-    "低": 10
+    "高": 6,
+    "中": 11,
+    "低": 11
    },
    "items": [
     {
@@ -369,6 +369,50 @@
      "importance": "低",
      "fields": [],
      "reason": "行政庁内部の採用募集であり、民間福祉事業者の運営管理と関係がないため。",
+     "backfilled": true
+    },
+    {
+     "hash": "78d75d800f822c4f",
+     "source": "福岡県（介護・高齢者福祉）",
+     "title": "福岡県の老人クラブを紹介します",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/roujin-club.html",
+     "date": "2026年7月1日更新",
+     "category": "",
+     "summary": "福岡県内における老人クラブの活動内容や組織について紹介する広報情報です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "老人クラブの紹介であり、福祉事業者の実務や運営に直接の影響がない広報情報であるため。",
+     "backfilled": true
+    },
+    {
+     "hash": "aa6e59090eb9bf3b",
+     "source": "福岡県（介護・高齢者福祉）",
+     "title": "福岡県高齢者等在宅生活支援（住みよか）事業",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/koureisya-sumiyoka.html",
+     "date": "2026年7月1日更新",
+     "category": "",
+     "summary": "高齢者や障害者が在宅で自立した生活を送るための住宅改造費用を助成する、福岡県の支援事業に関する情報です。",
+     "importance": "中",
+     "fields": [
+      "高齢",
+      "障害"
+     ],
+     "reason": "在宅生活支援や住宅改修に関わる事業であり、ケアマネジャー等の相談援助実務において把握しておくべき情報であるため。",
+     "backfilled": true
+    },
+    {
+     "hash": "748d32494529a161",
+     "source": "福岡県（介護・高齢者福祉）",
+     "title": "（令和7年度）介護サービス情報公表システム",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/kouhyou-sisutemu.html",
+     "date": "2026年7月1日更新",
+     "category": "",
+     "summary": "令和7年度の介護サービス情報公表システムにおける、事業所の情報登録や更新手続きに関する案内です。",
+     "importance": "高",
+     "fields": [
+      "高齢"
+     ],
+     "reason": "介護サービス事業者に義務付けられている情報公表手続きに関する通知であり、期限内の対応が必要となるため。",
      "backfilled": true
     }
    ]
@@ -2421,7 +2465,7 @@
   },
   "2026-07-14": {
    "counts": {
-    "高": 3,
+    "高": 4,
     "中": 5,
     "低": 13
    },
@@ -2780,6 +2824,21 @@
      "importance": "低",
      "fields": [],
      "reason": "専門医療研究に関する会議情報であり福祉事業の運営に関係がないため。",
+     "backfilled": true
+    },
+    {
+     "hash": "7aff5de4fff3b96d",
+     "source": "福岡県（介護・高齢者福祉）",
+     "title": "令和８年度福岡県外国人介護人材確保強化事業費補助金に係るご案内",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/kakuhokyoka.html",
+     "date": "2026年7月14日更新",
+     "category": "",
+     "summary": "福岡県が実施する外国人介護人材の確保・定着支援を目的とした補助金の案内。対象となる介護事業者にとって、資金援助を得るための申請手続きや要件確認が必要となる情報です。",
+     "importance": "高",
+     "fields": [
+      "高齢"
+     ],
+     "reason": "事業者への資金援助となる補助金の案内であり、要件確認や申請等の対応が必要となるため。",
      "backfilled": true
     }
    ]
@@ -3827,7 +3886,7 @@
   "2026-07-21": {
    "counts": {
     "高": 1,
-    "中": 8,
+    "中": 9,
     "低": 17
    },
    "items": [
@@ -4289,6 +4348,21 @@
       "児童"
      ],
      "reason": "児童福祉司の研修事業に関する報告書資料であり、直接的な実務対応は不要なものの児童福祉施策の動向把握に有用であるため。",
+     "backfilled": true
+    },
+    {
+     "hash": "8b4b475daea672d0",
+     "source": "福岡県（介護・高齢者福祉）",
+     "title": "「高齢者の福祉」（令和７年度版）",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/koureisyanofukusi6.html",
+     "date": "2026年7月21日更新",
+     "category": "",
+     "summary": "高齢者向けの福祉サービスや施策、相談窓口などの情報を網羅した行政冊子「高齢者の福祉」の令和7年度版が公開されたものです。",
+     "importance": "中",
+     "fields": [
+      "高齢"
+     ],
+     "reason": "地域の高齢者福祉施策や利用可能なサービスを把握・確認するための基礎資料として実務に役立つため。",
      "backfilled": true
     }
    ]
@@ -5313,7 +5387,7 @@
   },
   "2026-07-27": {
    "counts": {
-    "高": 0,
+    "高": 1,
     "中": 4,
     "低": 11
    },
@@ -5594,6 +5668,21 @@
        "url": "https://www.cfa.go.jp/about/jinji"
       }
      ]
+    },
+    {
+     "hash": "d1b8f17d7e17e30c",
+     "source": "福岡県（介護・高齢者福祉）",
+     "title": "福岡県身体拘束ゼロ宣言を実施しています",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/zerosengen.html",
+     "date": "2026年7月27日更新",
+     "category": "",
+     "summary": "福岡県が推進する身体拘束廃止に向けた取り組みに関する情報であり、福祉事業者における身体拘束の適正化や虐待防止の体制整備を促すものです。",
+     "importance": "高",
+     "fields": [
+      "共通"
+     ],
+     "reason": "身体拘束の廃止・防止は高齢・障害・児童分野の運営基準や減算に関わる重要事項であり、事業者に具体的な対応が求められるため。",
+     "backfilled": true
     }
    ]
   },
@@ -6538,7 +6627,7 @@
   },
   "2026-07-30": {
    "counts": {
-    "高": 4,
+    "高": 7,
     "中": 2,
     "低": 14
    },
@@ -6860,14 +6949,59 @@
        "url": "https://www.cfa.go.jp/recruitment/ninki"
       }
      ]
+    },
+    {
+     "hash": "d92a57e4ec94ad25",
+     "source": "福岡県（介護・高齢者福祉）",
+     "title": "居宅サービス事業所に関する新規申請、変更届、廃止・休止・再開届等",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/kyotakukaigoshinsei.html",
+     "date": "2026年7月30日更新",
+     "category": "",
+     "summary": "介護保険法に基づく居宅サービス事業所が、新規開設や登録内容の変更、事業の休止・廃止・再開を行う際に自治体へ提出する各種申請・届出の手続きや様式に関する情報です。",
+     "importance": "高",
+     "fields": [
+      "高齢"
+     ],
+     "reason": "居宅サービス事業所の開設や変更、休止等に伴う行政手続きに直接関わる重要情報であるため。",
+     "backfilled": true
+    },
+    {
+     "hash": "80c9932cb94302f3",
+     "source": "福岡県（介護・高齢者福祉）",
+     "title": "有料老人ホーム変更届・廃止（休止）届様式",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/welfareforseniorcitizen-homeforaged-charged.html",
+     "date": "2026年7月30日更新",
+     "category": "",
+     "summary": "有料老人ホームの運営事業者が、届出事項の変更や事業の廃止・休止を行う際に自治体へ提出する申請様式に関する情報です。",
+     "importance": "高",
+     "fields": [
+      "高齢"
+     ],
+     "reason": "有料老人ホームの変更や廃止等の手続きに必要な様式であり、事業者の実務に直接影響するため。",
+     "backfilled": true
+    },
+    {
+     "hash": "e4f3e4173792ff53",
+     "source": "福岡県（介護・高齢者福祉）",
+     "title": "有料老人ホーム設置の届出について",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/welfareforseniorcitizen-shiryo.html",
+     "date": "2026年7月30日更新",
+     "category": "",
+     "summary": "新たに有料老人ホームを設置・開設しようとする事業者に向けて、事前相談や設置届出の手続き、基準等について案内する情報です。",
+     "importance": "高",
+     "fields": [
+      "高齢"
+     ],
+     "reason": "有料老人ホームの新規設置に必要な届出手続きに関する情報であり、事業者の開設実務に直結するため。",
+     "backfilled": true
     }
    ]
   },
   "2026-07-31": {
    "counts": {
-    "高": 3,
+    "高": 4,
     "中": 14,
-    "低": 11
+    "低": 12
    },
    "items": [
     {
@@ -7327,6 +7461,36 @@
       "共通"
      ],
      "reason": "児童虐待防止に関する検討会の記録であり、今後の制度改正等に影響するため。",
+     "backfilled": true
+    },
+    {
+     "hash": "3af8f79759fca1ce",
+     "source": "福岡県（介護・高齢者福祉）",
+     "title": "「福岡県老人福祉法施行細則の一部改正案」に対する意見公募手続きの実施結果について",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/rojinfukushihoikenkoubo.html",
+     "date": "2026年7月31日更新",
+     "category": "",
+     "summary": "福岡県における老人福祉法施行細則の一部改正案に対する意見公募（パブリックコメント）の結果公表です。高齢者福祉施設の設備や運営基準等に関わる改正内容の確定状況を確認できます。",
+     "importance": "高",
+     "fields": [
+      "高齢"
+     ],
+     "reason": "老人福祉法に基づく県細則の改正結果であり、高齢者福祉事業者の運営基準等に影響を与える可能性があるため。",
+     "backfilled": true
+    },
+    {
+     "hash": "cb57e17c4f669396",
+     "source": "福岡県（介護・高齢者福祉）",
+     "title": "9月21日は「認知症の日」～県内で認知症に関する理解を深める各種イベントを開催します～",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/r8ninchisyonohi.html",
+     "date": "2026年7月31日更新",
+     "category": "",
+     "summary": "9月21日の「認知症の日」に伴い、県内で開催される認知症への理解促進を目的とした各種啓発イベントの案内です。",
+     "importance": "低",
+     "fields": [
+      "高齢"
+     ],
+     "reason": "認知症に関する一般向けの啓発イベントの案内であり、事業者の実務運営に直接の影響はないため。",
      "backfilled": true
     }
    ]

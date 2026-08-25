@@ -160,19 +160,34 @@ async function main() {
   }
   console.log(`state から ${pool.length}件（書き込みはしない）`);
 
-  const cfa = await fetchCfaBack(from);
-  for (const it of cfa) {
-    pool.push({ ...it, source: "こども家庭庁", hash: itemHash(it) });
+  // ★遡って取りに行く源も、**台帳の状態に従う**。
+  //   ⚠️ここを無条件にすると、「保留」にした源を遡及だけが取りに行ってしまう
+  //     （2026-08-25に実際に検知: 届出前で止めた全社協を backfill が拾おうとした）。
+  //     止めるという判断は、毎朝の巡回だけでなく遡及にも等しく効かなければならない。
+  const active = (name) => kindByName.has(name) &&
+    readSources().some((r) => r.name === name && r.status === "巡回中");
+
+  if (active("こども家庭庁")) {
+    const cfa = await fetchCfaBack(from);
+    for (const it of cfa) {
+      pool.push({ ...it, source: "こども家庭庁", hash: itemHash(it) });
+    }
+  } else {
+    console.log("  こども家庭庁: 台帳の状態が「巡回中」でないため遡及しない");
   }
 
   // 全社協(P21)。1源の失敗で全体を止めない（こども家庭庁の遡及は成立させる）
-  try {
-    const zen = await fetchZenshakyoBack(from, to);
-    for (const it of zen) {
-      pool.push({ ...it, source: "全国社会福祉協議会", kind: "org", hash: itemHash(it) });
+  if (active("全国社会福祉協議会")) {
+    try {
+      const zen = await fetchZenshakyoBack(from, to);
+      for (const it of zen) {
+        pool.push({ ...it, source: "全国社会福祉協議会", kind: "org", hash: itemHash(it) });
+      }
+    } catch (e) {
+      console.log(`  全社協: 取得に失敗したため今回は積まない（続行）: ${e.message.slice(0, 90)}`);
     }
-  } catch (e) {
-    console.log(`  全社協: 取得に失敗したため今回は積まない（続行）: ${e.message.slice(0, 90)}`);
+  } else {
+    console.log("  全社協: 台帳の状態が「巡回中」でないため遡及しない");
   }
 
   // 2) 範囲で絞り、日付ごとにまとめる
