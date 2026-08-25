@@ -52,11 +52,10 @@
   .ticker-view{flex:1;min-width:0;overflow:hidden}
   .ticker-track{display:inline-flex;white-space:nowrap;will-change:transform;
     animation:tick var(--tick-dur,60s) linear infinite}
-  .ticker:hover .ticker-track,.ticker:focus-within .ticker-track{animation-play-state:paused}
+  .ticker:focus-within .ticker-track{animation-play-state:paused} /* キーボードは幅に関係なく効かせる */
   @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   .ticker-item{font-size:12px;color:var(--ink);text-decoration:none;padding-right:34px}
   .ticker-item .src{color:var(--sub)}
-  .ticker-item:hover{text-decoration:underline}
   /* 動きを好まない環境では止めて、指で送れる静止表示にする */
   @media (prefers-reduced-motion: reduce){
     .ticker-track{animation:none}
@@ -220,8 +219,6 @@
     border:0;border-bottom:1px solid var(--rule);padding:7px 0;background:none;
     font-family:inherit;font-size:12.5px;color:var(--sub);text-align:left;cursor:pointer}
   .stat .row b{color:var(--ink);font-variant-numeric:tabular-nums}
-  .stat .row:not(:disabled):hover span{text-decoration:underline;text-underline-offset:3px}
-  .stat .row:not(:disabled):hover b::after{content:" →";font-weight:400;color:var(--sub)}
   .stat .row:disabled{cursor:default;color:var(--faint)}
   .stat .row:disabled b{color:var(--faint);font-weight:400}
 
@@ -242,7 +239,6 @@
   /* 共有リンク(P11): 小さな鎖アイコンのみ・押したら「コピーしました」を一瞬出す */
   .share{border:0;background:none;padding:2px 4px;cursor:pointer;color:var(--faint);
     display:inline-flex;align-items:center;vertical-align:middle;position:relative}
-  .share:hover{color:var(--link)}
   .share .tip{position:absolute;left:50%;transform:translateX(-50%);bottom:calc(100% + 4px);
     background:var(--ink);color:var(--paper);font-size:10.5px;padding:3px 8px;white-space:nowrap;
     opacity:0;pointer-events:none;transition:opacity .15s ease}
@@ -282,6 +278,52 @@
   .mm-about summary::after{content:"　▽";letter-spacing:0}
   .mm-about[open] summary::after{content:"　△"}
   .mm-about .about{margin-top:6px;border-top:0;padding-top:6px}
+
+  /* ==== ホバー（PCのみ・P23） ==============================================
+     規則は2つだけ:
+       ①墨・薄墨のリンクは、ホバーで**紺(--link)**になる
+       ②もともと紺のリンクは、ホバーで**下線が付く**（既にあるものは太くなる）
+     ⚠️朱(--high)はホバーに使わない。朱は重要度「高」に予約された色で、
+       カーソルを合わせただけで紙面に「高」の記号色が現れると重要度の意味が濁る。
+       紺は既に体系内のリンク色（欄外・関連記録・共有ボタン）で、新しい色ではない。
+     ⚠️(hover:hover) and (pointer:fine) で囲う。タッチ端末はホバーが「押した後に残る」
+       ため、この中の指定は一切効かせない。既存のホバー（ティッカーの停止・下線、
+       今週の記録、共有ボタン）も同じガードの中へ移した。 */
+  @media (hover:hover) and (pointer:fine){
+    /* ①墨・薄墨 → 紺 */
+    .top-item h3 a:hover,
+    .item h4 a:hover,
+    .press-item h4 a:hover,
+    .low-it > a:hover,
+    .orig a:hover,
+    .srch-day a:hover,
+    .disc a:hover,
+    .ticker-item:hover{color:var(--link)}
+    /* 罫・下線を持つものは線の色も合わせる（色の差が読みにくい環境の保険） */
+    .press-item h4 a:hover{border-bottom-color:var(--link)}
+    .ticker-item:hover{text-decoration:underline}
+
+    /* ②もともと紺 → 下線 */
+    .aid-rel .r a:hover,
+    .aid summary:hover{text-decoration:underline;text-underline-offset:3px}
+    .ear .ear-date:enabled:hover{text-decoration-thickness:2px}
+
+    /* 押すと移動するもの（見出しではないが、リンクとして機能する） */
+    .dl:hover .t{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+    .cal .cell:hover .d{color:var(--link);text-decoration:underline;text-underline-offset:2px}
+    .daynav button:not(:disabled):hover,
+    .m-arrows button:not(:disabled):hover{border-color:var(--ink)}
+    .share:hover{color:var(--link)}
+    .stat .row:not(:disabled):hover span{text-decoration:underline;text-underline-offset:3px}
+    .stat .row:not(:disabled):hover b::after{content:" →";font-weight:400;color:var(--sub)}
+    .ticker:hover .ticker-track{animation-play-state:paused}
+
+    /* ③押せるが「移動しない」もの（絞り込み・開閉）は、薄墨→墨に**濃くなる**だけにする。
+       紺は「押すと移動する」の合図として温存し、操作と移動を色で描き分ける。 */
+    .chip:not(.on):hover{color:var(--ink)}
+    .mm-about summary:hover,.srch-close:hover{color:var(--ink)}
+    .search button:hover{opacity:.85} /* 墨ベタのボタンは色を足さず濃度で応える */
+  }
 
   /* ==== スマホ幅(900px未満)のみ: 紙面上部の占有を減らす。PCは一切変更しない ==== */
   @media(max-width:899px){
