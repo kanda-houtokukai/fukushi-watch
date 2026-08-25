@@ -53,9 +53,6 @@ export const USE_VOCAB = [
 ];
 /** 用途のうち「その他・一般」の受け皿。具体が付いたら落とす（下の normalizeUses） */
 const USE_CATCHALL = "事業・活動";
-/** これ以上の値が付いたら「使途を問わない」とみなして空にする
- *  ⚠️閾値6は**未検証**。AI付与を1回走らせた実測で確定すること（台帳に記録済み） */
-const USE_ALL_THRESHOLD = 6;
 
 /** 応募主体タグ5値 */
 export const APPLICANT_VOCAB = [
@@ -68,9 +65,11 @@ export const APPLICANT_VOCAB = [
  *   用途の「事業・活動」は「その他・一般」という弱い受け皿なので、
  *   具体的な使途が付いているなら受け皿の方を落とす。
  */
+/* ⚠️「6値以上なら空配列（＝使途を問わない）」という規則を持っていたが、実データ110件で
+ *   一度も発火せず（最大2〜3値）、存在しない条件のためのコードになっていたのでP24-4で外した。
+ *   使途が多すぎて絞り込みの役に立たない助成が実際に現れたら、そのとき改めて入れる。 */
 export function normalizeUses(uses) {
   const set = new Set((Array.isArray(uses) ? uses : []).filter((u) => USE_VOCAB.includes(u)));
-  if (set.size >= USE_ALL_THRESHOLD) return []; // 使途を問わない＝絞り込みの手掛かりにならない
   if (set.size > 1 && set.has(USE_CATCHALL)) set.delete(USE_CATCHALL);
   return USE_VOCAB.filter((u) => set.has(u)); // 語彙の並び順に揃える（表示のゆらぎも消す）
 }
@@ -265,7 +264,7 @@ async function collectJyoseiNavi(src, today) {
     await sleep(FETCH_INTERVAL_MS);
   }
   console.log(`  API: ${rows.length}件を取得（総数${total}）`);
-  return rows.map((r) => ({
+  const items = rows.map((r) => ({
     funder: (r.MAIN_NAME ?? "").trim(),
     title: (r.AS_NAME ?? "").replace(/\s+/g, " ").trim(),
     url: NAVI_VIEW + r.nid,
@@ -275,6 +274,7 @@ async function collectJyoseiNavi(src, today) {
     _purpose: (r.PURPOSE ?? "").trim(),
     _usesFromSource: naviUsesFromJigyob(r.JIGYOB),
   }));
+  return { items, raw: rows.length };
 }
 
 /** 応募資格(SEIGEN)は詳細APIにしか無い。新規項目のみ・1回10件までに絞って読む */
@@ -300,10 +300,157 @@ async function naviFillDetails(items) {
   if (n) console.log(`  詳細（応募資格）を${n}件読んだ`);
 }
 
-/** 収集の入口。HTMLの源もAPIの源も同じ形（源を受け取り項目の配列を返す）にそろえる */
+/* ---------------------------------------------------------------------------
+ * RSSの源（P24-4）。3つの型を持つ:
+ *   jfc-subsidy-rss … 本文に「応募期間（締切） 2026/08/19～2026/09/30」の定型がある
+ *   kyobo-rss       … 見出しに【応募受付中・11/27締切】【…8/13必着】がある（共同募金会2つ共通）
+ *   wam-josei-rss   … 年1〜2回の大型公募だけを拾う（見出しに「募集」がある回のみ）
+ * いずれも締切は**正規表現で取る**（AIを使わない・P24の[DECISION]）。
+ * ------------------------------------------------------------------------ */
+
+/** RSS2.0 から {title, link, pubDate, body} を取り出す（依存ゼロ・自作） */
+export function parseRssItems(xml) {
+  const cdata = (x) => {
+    if (!x) return "";
+    const m = x.match(/^\s*<!\[CDATA\[([\s\S]*?)\]\]>\s*$/);
+    return (m ? m[1] : x).trim();
+  };
+  const out = [];
+  for (const [, body] of xml.matchAll(/<item[ >]([\s\S]*?)<\/item>/g)) {
+    const title = decodeEntities(
+      cdata(body.match(/<title>([\s\S]*?)<\/title>/)?.[1]).replace(/\s+/g, " ")
+    );
+    const link = decodeEntities(cdata(body.match(/<link>([\s\S]*?)<\/link>/)?.[1]));
+    const pub = cdata(body.match(/<pubDate>([\s\S]*?)<\/pubDate>/)?.[1]);
+    const enc = cdata(body.match(/<content:encoded>([\s\S]*?)<\/content:encoded>/)?.[1])
+      || cdata(body.match(/<description>([\s\S]*?)<\/description>/)?.[1]);
+    if (!title || !link) continue;
+    let date = "";
+    const t = Date.parse(pub);
+    if (!Number.isNaN(t)) {
+      date = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Tokyo" }).format(new Date(t));
+    }
+    out.push({
+      title, link, date,
+      text: decodeEntities(enc.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").normalize("NFKC").trim(),
+    });
+  }
+  return out;
+}
+
+/**
+ * 「M/D締切」「M/D必着」の年を補う。
+ * ⚠️基準は**掲載日**であって今日ではない。「今日以降でいちばん近い年」にすると、
+ *   既に締め切られた古い記事（見出しが更新されないことがある）の締切が
+ *   翌年へ繰り上がり、締切済みの助成が1年先の予定として並ぶ（実際にこれで
+ *   福岡県共同募金会の締切済み2件が2027年として出た）。
+ *   掲載日基準で解いた結果が過去日なら、それは正しく「締切済み」として落ちる。
+ */
+function deadlineFromMonthDay(m, d, postedAt, today) {
+  const base = /^\d{4}-\d{2}-\d{2}$/.test(postedAt || "") ? postedAt : today;
+  const by = Number(base.slice(0, 4));
+  for (const y of [by, by + 1]) {
+    const cand = iso(y, m, d);
+    if (cand >= base) return cand; // 掲載日以降でいちばん近い年
+  }
+  return iso(by, m, d);
+}
+
+async function fetchRss(url) {
+  const res = await fetch(url, { headers: { "User-Agent": USER_AGENT } });
+  if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+  return res.text();
+}
+
+/** JFC 助成金募集ニュース。本文の「応募期間（締切）」から締切を取る */
+async function collectJfcRss(src, today) {
+  const rows = parseRssItems(await fetchRss(src.url));
+  const items = [];
+  for (const r of rows) {
+    // 「応募期間(締切) 2026/08/19~2026/09/30」
+    // ⚠️本文は NFKC 正規化済みなので**括弧は半角・波線はU+7E(~)**になっている。
+    //   全角のまま書くと一致しない（実際に一度これで締切が全部 unknown になった）
+    const seg = r.text.match(/応募期間\s*[(（]\s*締切\s*[)）]\s*(.{0,60})/)?.[1] ?? "";
+    // 期間表記なら終わりの日付を締切とする（波線は環境により U+7E / U+FF5E / U+301C）
+    const end = seg.split(/[~～〜]/).pop() ?? seg;
+    const dl = parseDeadline(end || seg, today);
+    items.push({
+      funder: "", // JFCの見出しは助成名のみ。出し手は本文にあるのでAIに拾わせる
+      // ⚠️先頭の【助成先募集】等は状態の印であって助成名ではない。
+      //   外しておかないと、他の源から入った同じ助成と同定できない
+      title: r.title.replace(/^【[^】]*】\s*/, ""),
+      url: r.link,
+      postedAt: r.date,
+      ...dl,
+      _body: r.text.slice(0, BODY_MAX_CHARS),
+    });
+  }
+  return { items, raw: rows.length };
+}
+
+/** 共同募金会（中央・福岡県）。見出しの【応募受付中・M/D締切】から状態と締切を取る */
+async function collectKyoboRss(src, today) {
+  const rows = parseRssItems(await fetchRss(src.url));
+  const items = [];
+  for (const r of rows) {
+    // ⚠️【助成先決定】【応募受付終了】は結果や終了の告知＝助成面に出さない。
+    //   義援金の「募集」も寄付のお願いであって応募できる助成ではないので除く
+    if (/受付終了|締め切りました|決定しました|助成先団体決定|助成先決定/.test(r.title)) continue;
+    if (/義援金/.test(r.title)) continue;
+    if (!/応募受付中|募集|公募/.test(r.title)) continue;
+    const md = r.title.match(/(\d{1,2})\s*[\/月]\s*(\d{1,2})\s*日?\s*(?:締切|必着|まで)/);
+    const dl = md
+      ? { deadline: deadlineFromMonthDay(Number(md[1]), Number(md[2]), r.date, today),
+          deadlineType: "date", deadlineRaw: md[0] }
+      : parseDeadline(r.text.match(/応募締切[^。]{0,40}/)?.[0] ?? "", today);
+    items.push({
+      funder: src.name.replace(/^\S+\s/, ""),
+      title: r.title.replace(/^【[^】]*】\s*/, ""),
+      url: r.link,
+      postedAt: r.date,
+      ...dl,
+      _body: r.text.slice(0, BODY_MAX_CHARS),
+    });
+  }
+  return { items, raw: rows.length };
+}
+
+/** WAM助成。年1〜2回の大型公募のみ。⚠️募集が無い時期は0件だが**正常**（rawで判定する） */
+async function collectWamRss(src, today) {
+  const rows = parseRssItems(await fetchRss(src.url));
+  const items = [];
+  for (const r of rows) {
+    if (!/募集/.test(r.title)) continue;      // 訪問レポート・内定団体の公表などは除く
+    if (/内定|決定|報告|終了/.test(r.title)) continue;
+    items.push({
+      funder: "独立行政法人福祉医療機構",
+      title: r.title,
+      url: r.link,
+      postedAt: r.date,
+      ...parseDeadline(r.text.match(/(?:応募|申請|提出)(?:期限|締切|期間)[^。]{0,40}/)?.[0] ?? "", today),
+      _body: r.text.slice(0, BODY_MAX_CHARS),
+    });
+  }
+  return { items, raw: rows.length };
+}
+
+/**
+ * 収集の入口。HTMLの源もAPIの源もRSSの源も同じ形にそろえる。
+ * 返り値 `{ items, raw }` の **raw は絞り込む前に読めた件数**。
+ * ⚠️0件ガードは raw に対してかける。「読めたが募集中が0件」（WAM助成のように
+ *   年1回しか募集しない源では正常）を構造変化と誤判定しないため。
+ */
+const RSS_METHODS = new Set(["jfc-subsidy-rss", "kyobo-rss", "wam-josei-rss"]);
+
 const COLLECTORS = {
-  "zenshakyo-sponsor": async (src) => parseZenshakyoSponsor(await fetchHtml(src.url), src.url),
+  "zenshakyo-sponsor": async (src) => {
+    const items = parseZenshakyoSponsor(await fetchHtml(src.url), src.url);
+    return { items, raw: items.length };
+  },
   "jyosei-navi-api": async (src, today) => collectJyoseiNavi(src, today),
+  "jfc-subsidy-rss": async (src, today) => collectJfcRss(src, today),
+  "kyobo-rss": async (src, today) => collectKyoboRss(src, today),
+  "wam-josei-rss": async (src, today) => collectWamRss(src, today),
 };
 
 /** 助成の項目ハッシュ。タイトル＋出し手＋URL（締切は延長されうるので入れない） */
@@ -404,6 +551,41 @@ function parseGrantResponse(text, expected) {
  * メイン
  * ======================================================================== */
 
+/** 見出し・出し手を比較用に均す（記号と空白を落とす） */
+const flatten = (s) =>
+  String(s ?? "").normalize("NFKC").replace(/[\s【】\[\]（）()「」『』・、。,.／/―ー\-~〜]/g, "");
+
+/** 同一の助成を1件に畳む。情報の多い方（応募主体・金額が埋まっている方）を残す */
+export function dedupeGrants(items) {
+  const out = [];
+  const score = (it) =>
+    (it.applicants?.length ? 2 : 0) + (it.amount ? 1 : 0) + (it.funder ? 1 : 0);
+  for (const it of items) {
+    const a = flatten(it.title);
+    const af = flatten(it.funder);
+    const hit = out.find((o) => {
+      if (o.deadline !== it.deadline || o.deadlineType !== it.deadlineType) return false;
+      const b = flatten(o.title);
+      const bf = flatten(o.funder);
+      // (1) 助成名が包含関係にある
+      if (a && b && (a.includes(b) || b.includes(a))) return true;
+      // (2) 一方に出し手の欄が無く、その見出しの中に他方の出し手名が入っている
+      //     （JFCは見出しに財団名を含み、出し手の欄を持たないため）
+      //     ⚠️**片方が空のときだけ**にする。両方に出し手があるときに名前で照合すると、
+      //       同じ財団の別の助成（締切が同じことがある）まで畳んでしまう
+      if (!af && bf && a.includes(bf)) return true;
+      if (!bf && af && b.includes(af)) return true;
+      return false;
+    });
+    if (!hit) { out.push(it); continue; }
+    if (score(it) > score(hit)) out[out.indexOf(hit)] = it;
+  }
+  if (out.length !== items.length) {
+    console.log(`  同一の助成を統合: ${items.length}件 → ${out.length}件`);
+  }
+  return out;
+}
+
 function loadStore() {
   if (!existsSync(GRANTS_PATH)) return { updatedAt: null, items: [] };
   return JSON.parse(readFileSync(GRANTS_PATH, "utf8"));
@@ -435,10 +617,11 @@ async function main() {
       const collect = COLLECTORS[src.method];
       if (!collect) throw new Error(`巡回方法「${src.method}」に対応するコレクタがありません`);
       console.log(`取得: ${src.name} (${src.url})`);
-      const parsed = await collect(src, today);
-      // ★抽出0件は構造変化の疑いとして失敗扱い（サイレント0件の禁止）
-      if (parsed.length === 0) {
-        throw new Error("助成を1件も抽出できませんでした（ページ構造の変化の疑い）");
+      const { items: parsed, raw } = await collect(src, today);
+      // ★読み取り0件は構造変化の疑いとして失敗扱い（サイレント0件の禁止）。
+      //   絞り込み後の0件は正常（募集中が無い時期がある源のため）
+      if (raw === 0) {
+        throw new Error("1件も読み取れませんでした（ページ構造の変化の疑い）");
       }
       const open = parsed.filter(
         (it) => it.deadlineType !== "date" || !it.deadline || it.deadline >= today
@@ -457,7 +640,11 @@ async function main() {
           });
           continue;
         }
-        fresh.push({ hash, source: src.name, sourceKind: "org", _method: src.method, ...it });
+        // 印章の種別。⚠️WAMは独立行政法人なので「団」ではなく「独」。
+        //   sourceKind を空にすると index.html の sealHtml が源の名前から判定する
+        //   （"WAM" を含む → 独）。他の助成の源はいずれも全国団体なので "org"（団）
+        const sourceKind = src.method === "wam-josei-rss" ? "" : "org";
+        fresh.push({ hash, source: src.name, sourceKind, _method: src.method, ...it });
       }
     } catch (e) {
       console.error(`  失敗（続行）: ${src.name}: ${e.message}`);
@@ -491,9 +678,14 @@ async function main() {
       }
     }
 
-    // (b) HTMLの源(全社協): 個別ページの本文を読む。
+    // (b) RSSの源: 本文(content:encoded)を既に持っているので追加の取得をしない
+    for (const it of fresh.filter((x) => RSS_METHODS.has(x._method))) targets.push(it);
+
+    // (c) HTMLの源(全社協): 個別ページの本文を読む。
     //     ⚠️届出で約束した禁止文言の確認を同じ関門として必ず通す
-    for (const it of fresh.filter((x) => x._method !== "jyosei-navi-api")) {
+    for (const it of fresh.filter(
+      (x) => x._method !== "jyosei-navi-api" && !RSS_METHODS.has(x._method)
+    )) {
       const verdict = await checkReprintNotice(it.url);
       if (verdict === "blocked") {
         console.log(`  除外（無断転載を禁ずる旨の記載あり）: ${it.title}`);
@@ -514,6 +706,7 @@ async function main() {
       await sleep(FETCH_INTERVAL_MS);
     }
 
+    const dropped = [];
     if (targets.length > 0) {
       const apiKey = loadEnv();
       const models = await listCandidateModels(apiKey);
@@ -546,6 +739,10 @@ async function main() {
             ...(it._appFromSource ?? []), ...(j.applicants ?? []),
           ]);
           const amount = (it._amount || j.amount || "").trim();
+          const fields = normalizeFields(j.fields);
+          // ★分野タグが空＝福祉と無関係（P6の規則）。助成面に出さない。
+          //   JFCは全分野を扱うため、ここで福祉外（研究・学術・奨学など）が落ちる
+          if (fields.length === 0) { dropped.push(it.title); return; }
           // ★本文・作業用の値は保存しない
           const clean = Object.fromEntries(
             Object.entries(it).filter(([k]) => !k.startsWith("_"))
@@ -553,15 +750,24 @@ async function main() {
           store.items.push({
             ...clean,
             summary: j.summary.trim(),
-            fields: normalizeFields(j.fields),
+            fields,
             uses,
             applicants,
             amount,
           });
         });
       }
+      if (dropped.length) {
+        console.log(`  福祉と無関係のため除外: ${dropped.length}件（分野タグが空）`);
+      }
     }
   }
+
+  // ★同じ助成が複数の源から入ることがある（JFCと全社協など）。
+  //   締切が一致し、かつ 助成名が包含関係にある／一方の出し手名が他方の見出しに出てくる
+  //   ものを同一とみなし、**情報の多い方**を残す。
+  //   ⚠️締切一致を必ず条件にする（名前の一致だけで畳むと別年度の同名助成が消える）
+  store.items = dedupeGrants(store.items);
 
   // 並び: 締切ありを締切の近い順 → 随時・通年 → 不明（P24の[DECISION]）
   const rank = { date: 0, rolling: 1, unknown: 2 };

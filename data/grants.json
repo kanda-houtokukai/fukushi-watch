@@ -1,6 +1,27 @@
 {
- "updatedAt": "2026-08-25T01:07:30.411Z",
+ "updatedAt": "2026-08-25T01:46:19.383Z",
  "items": [
+  {
+   "hash": "9cbae0ed2b86b861",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "助成事業2026年度秋期人間拡張（身体機能の獲得・向上）",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e5%8a%a9%e6%88%90%e4%ba%8b%e6%a5%ad2026%e5%b9%b4%e5%ba%a6%e7%a7%8b%e6%9c%9f%e4%ba%ba%e9%96%93%e6%8b%a1%e5%bc%b5%ef%bc%88%e8%ba%ab%e4%bd%93%e6%a9%9f%e8%83%bd%e3%81%ae%e7%8d%b2%e5%be%97%e3%83%bb-2/",
+   "postedAt": "2026-08-03",
+   "deadline": "2026-08-31",
+   "deadlineType": "date",
+   "deadlineRaw": "2026/08/31 募集要項 https://www.pwc.com/jp/ja/about-u",
+   "summary": "先天性の重度知的・身体障害のある方が意思表出を行うため、テクノロジーを活用した身体機能・認知機能の発達や獲得を目指す活動を助成します。",
+   "fields": [
+    "障害"
+   ],
+   "uses": [
+    "ICT"
+   ],
+   "applicants": [],
+   "amount": "1件10,000千円"
+  },
   {
    "hash": "70f474eb1219a7d9",
    "source": "全社協 福祉の助成情報",
@@ -80,6 +101,53 @@
    "amount": "1団体あたり30万円上限"
   },
   {
+   "hash": "4fb0306746e2f929",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "第2回ビヨンド賞～精神障害ともにある～",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e7%ac%ac2%e5%9b%9e%e3%83%93%e3%83%a8%e3%83%b3%e3%83%89%e8%b3%9e%ef%bd%9e%e7%b2%be%e7%a5%9e%e9%9a%9c%e5%ae%b3%e3%81%a8%e3%82%82%e3%81%ab%e3%81%82%e3%82%8b%ef%bd%9e/",
+   "postedAt": "2026-08-03",
+   "deadline": "2026-09-18",
+   "deadlineType": "date",
+   "deadlineRaw": "2026/09/18 募集要項 https://np-foundation.or.jp/infor",
+   "summary": "精神障害や精神疾患のある人が自分らしく生きられる社会を目指す地域活動や啓発活動を表彰し、副賞を授与する顕彰事業です。日本国内で精神障害に関する支援活動に取り組む団体が対象です。",
+   "fields": [
+    "障害"
+   ],
+   "uses": [
+    "表彰"
+   ],
+   "applicants": [],
+   "amount": "1件1,000千円"
+  },
+  {
+   "hash": "1dabc591c1297dcc",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "日本ソーシャル・スタートアップAWARD",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e6%97%a5%e6%9c%ac%e3%82%bd%e3%83%bc%e3%82%b7%e3%83%a3%e3%83%ab%e3%83%bb%e3%82%b9%e3%82%bf%e3%83%bc%e3%83%88%e3%82%a2%e3%83%83%e3%83%97award-2/",
+   "postedAt": "2026-08-19",
+   "deadline": "2026-09-30",
+   "deadlineType": "date",
+   "deadlineRaw": "2026/09/30 必要書類は募集要項の掲載ページを確認してください。 募集要項 https:/",
+   "summary": "社会課題解決に取り組む非営利スタートアップ等の優れた事業プランを表彰し、副賞として賞金を授与するプログラムです。法人格を問わず、社会課題解決を目指す事業プランを持つ団体や個人が応募できます。",
+   "fields": [
+    "共通"
+   ],
+   "uses": [
+    "表彰"
+   ],
+   "applicants": [
+    "社会福祉法人",
+    "NPO・公益法人",
+    "任意団体",
+    "個人"
+   ],
+   "amount": "1件400万円"
+  },
+  {
    "hash": "78471666e9e39690",
    "source": "全社協 福祉の助成情報",
    "sourceKind": "org",
@@ -152,6 +220,71 @@
     "個人"
    ],
    "amount": "1団体/1個人あたり100万円上限"
+  },
+  {
+   "hash": "1ba157559d51a8a1",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "小児医療施設支援",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e5%b0%8f%e5%85%90%e5%8c%bb%e7%99%82%e6%96%bd%e8%a8%ad%e6%94%af%e6%8f%b4/",
+   "postedAt": "2026-08-03",
+   "deadline": "2026-10-15",
+   "deadlineType": "date",
+   "deadlineRaw": "2026/10/15 募集要項 https://kawanozaidan.or.jp/facili",
+   "summary": "入院・入所中の小児患者のQOL向上に必要な活動費用や設備整備費用を助成します。指定4県内にある入院病棟を有する医療施設または医療型入所施設が推薦・受託応募できます。",
+   "fields": [
+    "児童"
+   ],
+   "uses": [
+    "設備・改修"
+   ],
+   "applicants": [],
+   "amount": "1件15万円"
+  },
+  {
+   "hash": "f86b3b711081c8dd",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "アジア生協協力基金 一般公募助成",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e3%82%a2%e3%82%b8%e3%82%a2%e7%94%9f%e5%8d%94%e5%8d%94%e5%8a%9b%e5%9f%ba%e9%87%91-%e4%b8%80%e8%88%ac%e5%85%ac%e5%8b%9f%e5%8a%a9%e6%88%90/",
+   "postedAt": "2026-08-14",
+   "deadline": "2026-10-31",
+   "deadlineType": "date",
+   "deadlineRaw": "2026 年 10 月 31 日 募集要項 https://ccij.jp/jyosei",
+   "summary": "アジア地域において住民の協同の力で暮らしの向上や課題解決を目指すプロジェクトの活動費を助成します。日本国内に拠点を有するNPO等の非営利組織が応募できます。",
+   "fields": [
+    "共通"
+   ],
+   "uses": [
+    "事業・活動"
+   ],
+   "applicants": [
+    "NPO・公益法人"
+   ],
+   "amount": "1件当たり上限120万円"
+  },
+  {
+   "hash": "29e02ea2e0f0ab03",
+   "source": "中央共同募金会",
+   "sourceKind": "org",
+   "funder": "中央共同募金会",
+   "title": "児童養護施設や自立援助ホーム等を退所して大学や専門学校等に進学した学生を応援します！ ～盛和塾 社会人定着応援プログラム 2026年度 「就職活動応援助成」「手に職つけよう応援助成」～",
+   "url": "https://www.akaihane.or.jp/subsidies/sub-corp-prog/47845/",
+   "postedAt": "2026-04-08",
+   "deadline": "2026-11-27",
+   "deadlineType": "date",
+   "deadlineRaw": "11/27締切",
+   "summary": "児童養護施設等を退所して進学した学生の就職活動費用や資格取得にかかる費用を給付支援します。学生が在籍・出身する児童養護施設や自立援助ホーム等の各機関を通じて応募します。",
+   "fields": [
+    "児童"
+   ],
+   "uses": [
+    "人材・研修"
+   ],
+   "applicants": [],
+   "amount": ""
   },
   {
    "hash": "944181c14f2f8a17",
