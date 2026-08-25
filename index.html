@@ -37,6 +37,72 @@
   .ear .ear-date:enabled{color:var(--link);cursor:pointer;
     text-decoration:underline;text-underline-offset:3px}
 
+  /* ==== 面の切り替え(P24) ====
+     紙面＝日々の記録（過去に積み上がる）／助成＝いま応募できる助成（締切に向かって減る）。
+     時間の向きが逆なので同じ日付レールに乗せられない、というのが面を分けた理由。
+     出し分けは body[data-view] で**CSSだけ**で行う（描画ロジックを二重化しない・P10/P22の型） */
+  .views{display:flex;gap:0;border-bottom:1px solid var(--rule);margin-top:-1px}
+  .views .view{appearance:none;border:0;background:none;font:inherit;cursor:pointer;
+    padding:11px 20px 9px;font-size:13px;font-weight:700;letter-spacing:.22em;
+    color:var(--sub);border-bottom:3px solid transparent;margin-bottom:-1px}
+  .views .view.on{color:var(--ink);border-bottom-color:var(--ink)}
+  .views .view .n{font-size:11px;font-weight:400;letter-spacing:0;color:var(--faint);margin-left:6px}
+  body[data-view="grants"] .ticker,
+  body[data-view="grants"] .dayhead,
+  body[data-view="grants"] .daynav,
+  body[data-view="grants"] .chipbar,
+  body[data-view="grants"] #list,
+  body[data-view="grants"] #boxSearch,
+  body[data-view="grants"] #boxDeadline,
+  body[data-view="grants"] #boxCal,
+  body[data-view="grants"] #boxWeek{display:none}
+  body[data-view="paper"] #grantPane,
+  body[data-view="paper"] #boxGrantSum{display:none}
+
+  /* ==== 助成面(P24) ==== */
+  .ghead{border-top:2px solid var(--ink);padding-top:14px;display:flex;
+    justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px}
+  .ghead h2{font-size:22px;letter-spacing:.06em}
+  .gcount{font-size:13px;color:var(--sub)}
+  .gcount b{color:var(--high)}
+  .gfilters{margin-top:14px}
+  .gfilters .chips{margin-bottom:8px}
+  .chip.use{letter-spacing:0}
+  .gtoggle{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink);
+    cursor:pointer;margin-top:2px}
+  .gtoggle input{accent-color:var(--ink);width:15px;height:15px}
+  .gnote{font-size:11.5px;color:var(--sub);line-height:1.75;margin-top:14px;
+    border:1px solid var(--rule);background:var(--press-bg);padding:9px 12px}
+  .gnote b{color:var(--ink)}
+  .gsec{display:flex;align-items:baseline;gap:10px;margin:26px 0 2px;
+    border-bottom:2px solid var(--ink);padding-bottom:6px}
+  .gsec .name{font-size:12.5px;font-weight:700;letter-spacing:.2em;color:var(--ink)}
+  .gsec .l{font-size:11.5px;color:var(--sub);letter-spacing:0}
+  .g{border-bottom:1px solid var(--rule);padding:15px 0}
+  .g .when{font-size:13px;font-weight:700;color:var(--ink)}
+  /* ⚠️朱は「対応が要る」の意味で既に使っている色。助成では**残り14日以内**に使う。
+     紙面の期限欄(3日)より広いのは、申請書の準備に日数が要るため（新しい色は持ち込まない） */
+  .g .when.soon{color:var(--high)}
+  .g .when .rest{font-weight:400;color:var(--sub);margin-left:2px}
+  .g .when.soon .rest{color:var(--high)}
+  .g h4{font-size:15px;line-height:1.55;margin:5px 0 4px;font-weight:600}
+  .g h4 a{color:var(--ink);text-decoration:none}
+  .g .funder{font-size:12px;color:var(--sub);font-weight:600}
+  .g .body{font-size:12.5px;color:var(--sub);line-height:1.75}
+  .g .meta{font-size:12px;color:var(--sub);margin-top:8px;display:flex;
+    align-items:center;gap:10px;flex-wrap:wrap}
+  .g .amount{font-weight:600;color:var(--ink)}
+  .gtags{display:inline-flex;gap:6px;flex-wrap:wrap}
+  .gtag{font-size:11px;font-weight:600;color:var(--ink);border:1px solid var(--rule);
+    padding:1px 6px}
+  .gtag.app{color:var(--sub)}
+  .gtag.none{border-style:dashed;color:var(--faint);font-weight:400}
+  .gempty{font-size:13px;color:var(--sub);padding:26px 0}
+  .glink{appearance:none;border:0;background:none;font:inherit;cursor:pointer;padding:10px 0 0;
+    width:100%;text-align:left;font-size:12.5px;color:var(--ink);border-top:1px solid var(--rule);
+    margin-top:12px}
+  .glink b{color:var(--high)}
+
   /* ==== 題字 ==== */
   .masthead{text-align:center;padding:34px 0 22px;border-bottom:3px double var(--ink)}
   .masthead h1{font-size:clamp(30px,5vw,46px);font-weight:700;
@@ -292,6 +358,7 @@
   @media (hover:hover) and (pointer:fine){
     /* ①墨・薄墨 → 紺 */
     .top-item h3 a:hover,
+    .g h4 a:hover,
     .item h4 a:hover,
     .press-item h4 a:hover,
     .low-it > a:hover,
@@ -321,6 +388,8 @@
     /* ③押せるが「移動しない」もの（絞り込み・開閉）は、薄墨→墨に**濃くなる**だけにする。
        紺は「押すと移動する」の合図として温存し、操作と移動を色で描き分ける。 */
     .chip:not(.on):hover{color:var(--ink)}
+    .views .view:not(.on):hover{color:var(--ink)}
+    .glink:hover{color:var(--link);text-decoration:underline;text-underline-offset:3px}
     .mm-about summary:hover,.srch-close:hover{color:var(--ink)}
     .search button:hover{opacity:.85} /* 墨ベタのボタンは色を足さず濃度で応える */
   }
@@ -447,7 +516,7 @@
   .disc a{color:var(--faint)}
 </style>
 </head>
-<body>
+<body data-view="paper"><!-- 面の初期値。JSより前に効かせて助成面のちらつきを防ぐ(P24) -->
 <div class="wrap">
 
   <div id="topHead"><!-- スマホでは二重罫より上を固定ヘッダーにする(P10) -->
@@ -477,6 +546,13 @@
       </form>
     </div>
   </div>
+
+  <!-- 面の切り替え(P24)。⚠️固定ヘッダー(#topHead)の外に置く——中に入れると
+       スマホの固定ヘッダーの行高(欄外34px+題字52px=86px)が崩れる(P10の保証) -->
+  <nav class="views" id="views">
+    <button class="view on" data-view="paper" type="button">紙　面</button>
+    <button class="view" data-view="grants" type="button">助　成<span class="n" id="viewGrantN"></span></button>
+  </nav>
 
   <!-- 報道ティッカー(P20): 見出しは原文のまま・出典必須・要約や加工はしない -->
   <div class="ticker" id="ticker" hidden>
@@ -519,6 +595,23 @@
 
       <div id="list"></div>
 
+      <!-- 助成面(P24)。紙面とは別系統の data/grants.json を材料にする -->
+      <section id="grantPane">
+        <div class="ghead">
+          <h2>いま応募できる助成</h2>
+          <div class="gcount" id="gCount"></div>
+        </div>
+        <div class="gfilters">
+          <div class="chips" id="gFields"></div>
+          <div class="chips" id="gUses"></div>
+          <label class="gtoggle"><input type="checkbox" id="gAppli">社会福祉法人が応募できるものだけ</label>
+        </div>
+        <p class="gnote">要約と分野・用途・応募主体のタグは<b>AIによる参考情報</b>です。
+        <b>応募資格・締切・金額は必ず募集要項（元ページ）でご確認ください。</b>
+        掲載後に条件が変わることがあります。応募主体の記載がないものは、当方で読み取れなかったことを示します。</p>
+        <div id="grantList"></div>
+      </section>
+
       <section class="about" id="about">
         <h2>このサイトについて</h2>
         <p>「福祉情報ウォッチ」は、福祉に関わる行政と全国団体の公開情報を毎朝ひとまわりして、前日から増えた分だけを取り出す記録装置です。要約と重要度（高＝対応・確認を／中＝把握を／低＝参考）はAIが付けています。人事異動も報酬改定も同じ重さでは並べない——重要度の差を紙面の組みで示すのがこのサイトの方針です。</p>
@@ -546,6 +639,13 @@
       <div class="box" id="boxDeadline">
         <h5>期 限 が 近 い も の</h5>
         <div id="dlList"></div>
+        <!-- 紙面から助成面への導線(P24)。1本だけ置く -->
+        <button class="glink" id="goGrants" type="button" hidden></button>
+      </div>
+
+      <div class="box" id="boxGrantSum">
+        <h5>助 成 の 内 訳</h5>
+        <div class="stat" id="gStat"></div>
       </div>
 
       <div class="box" id="boxCal">
@@ -609,6 +709,10 @@
     index: null, months: {}, day: null, filter: "all",
     field: localStorage.getItem(FIELD_KEY) || "all",
     deadlines: [], dlByHash: new Map(), // 期限ウォッチ(P11)
+    view: "paper",                      // 面(P24): paper | grants
+    grants: [], grantsLoaded: false,    // 助成(P24)。紙面の history とは別系統
+    uses: new Set(), appliOnly: false,  // 助成の絞り込み（用途=複数OR／応募主体トグル）
+    pendingGrant: null,                 // 共有リンクで開いたときのスクロール先hash
     pendingItem: null, // 共有リンクで開いたときのスクロール先hash
   };
   const jstToday = () =>
@@ -1128,6 +1232,143 @@
    * 日付を跨いだ一覧の描画（検索結果とP16の週次一覧で共有）。
    * 各項目に「その日の紙面を開く →」を添え、閉じる導線を付ける。
    */
+  /* =========================================================================
+   * 助成面(P24)
+   * 紙面と別系統。data/grants.json は「いま応募できる助成」だけを持つ。
+   * 並びは 締切あり(近い順) → 随時・通年 → 締切不明（[DECISION]）。
+   * ⚠️随時・通年は隠さない。束を分けて件数を必ず見せる。
+   * ======================================================================= */
+  const USE_VOCAB = ["設備・改修", "機器・用具", "ICT", "車両",
+    "人材・研修", "事業・活動", "研究・調査", "行事・啓発", "表彰"];
+  const USES_KEY = "fukushi-watch-uses";
+  const APPLI_KEY = "fukushi-watch-appli";
+  const GRANT_SOON_DAYS = 14; // 朱にする残り日数。紙面の期限欄(3日)より広い（申請の準備に日数が要る）
+
+  async function loadGrants() {
+    if (state.grantsLoaded) return;
+    state.grantsLoaded = true;
+    try {
+      const g = await fetchJson("data/grants.json");
+      const today = jstToday();
+      // 締切超過は出さない（収集側でも消しているが、閲覧側でも日付で守る）
+      state.grants = (g.items ?? []).filter(
+        (it) => it.deadlineType !== "date" || !it.deadline || it.deadline >= today
+      );
+    } catch { state.grants = []; } // 無くてもページは動く
+  }
+
+  /* 絞り込み: 分野=単一(共通は常に残す・紙面と同じ規則) 用途=複数OR 応募主体=トグル。
+     軸をまたぐ関係はAND。 */
+  function grantMatches(it) {
+    const f = it.fields ?? [];
+    if (state.field !== "all" && !(f.includes(state.field) || f.includes("共通"))) return false;
+    if (state.uses.size > 0 && !(it.uses ?? []).some((u) => state.uses.has(u))) return false;
+    if (state.appliOnly && !(it.applicants ?? []).includes("社会福祉法人")) return false;
+    return true;
+  }
+
+  function grantShareBtn(hash, title) {
+    return `<button class="share" data-share-view="grants" data-share-hash="${esc(hash)}" data-share-title="${esc(title)}" aria-label="この助成を共有">
+      <svg width="13" height="13" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12V3"/><path d="M6.8 5.8 10 2.6l3.2 3.2"/><path d="M5 9H4v8h12V9h-1"/></svg>
+      <span class="tip">コピーしました</span></button>`;
+  }
+
+  function grantBlock(it) {
+    let when;
+    if (it.deadlineType === "date" && it.deadline) {
+      const n = dayDiff(it.deadline);
+      const f = fmtDay(it.deadline);
+      when = `<div class="when${n <= GRANT_SOON_DAYS ? " soon" : ""}">締切 ${f.y}年${f.main}<span class="rest">（${remainText(n)}）</span></div>`;
+    } else if (it.deadlineType === "rolling") {
+      when = `<div class="when"><span class="rest">随時・通年（締切なし）</span></div>`;
+    } else {
+      when = `<div class="when"><span class="rest">締切の記載: ${esc(it.deadlineRaw || "なし")}</span></div>`;
+    }
+    const tag = (arr, cls, empty) =>
+      (arr ?? []).length
+        ? `<span class="gtags">${arr.map((x) => `<span class="gtag ${cls}">${esc(x)}</span>`).join("")}</span>`
+        : (empty ? `<span class="gtag none">${empty}</span>` : "");
+    return `<article class="g" data-hash="${esc(it.hash)}">
+      ${when}
+      <h4><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></h4>
+      ${it.funder ? `<div class="funder">${esc(it.funder)}</div>` : ""}
+      <div class="body">${esc(it.summary ?? "")}</div>
+      <div class="meta">
+        ${sealHtml({ source: it.source, kind: it.sourceKind })}
+        ${it.amount ? `<span class="amount">${esc(it.amount)}</span>` : ""}
+        ${fieldsHtml(it)}
+        ${tag(it.uses, "use", "")}
+        ${tag(it.applicants, "app", "応募主体の記載なし")}
+        ${grantShareBtn(it.hash, it.title)}
+      </div>
+    </article>`;
+  }
+
+  function renderGrants() {
+    // チップの状態を描き直す（分野は紙面と同じ state.field を共有する）
+    $("gFields").innerHTML =
+      [["all", "全分野"], ...FIELD_ORDER.slice(0, 4).map((f) => [f, f])]
+        .map(([v, label]) =>
+          `<button class="chip${v === "all" ? "" : " " + FIELD_CLS[v]}${state.field === v ? " on" : ""}" data-gfd="${v}">${label}</button>`)
+        .join("");
+    $("gUses").innerHTML = USE_VOCAB
+      .map((u) => `<button class="chip use${state.uses.has(u) ? " on" : ""}" data-guse="${esc(u)}">${esc(u)}</button>`)
+      .join("");
+    $("gAppli").checked = state.appliOnly;
+
+    const shown = state.grants.filter(grantMatches);
+    const by = (t) => shown.filter((x) => x.deadlineType === t);
+    const dated = by("date"), rolling = by("rolling"), unknown = by("unknown");
+    const filtered = state.field !== "all" || state.uses.size > 0 || state.appliOnly;
+    $("gCount").innerHTML =
+      `<b>${shown.length}件</b>` +
+      `<span style="color:var(--sub)"> ── 締切あり${dated.length}・随時通年${rolling.length}・締切不明${unknown.length}</span>` +
+      (filtered ? `<span style="color:var(--faint)"> ／ 全${state.grants.length}件</span>` : "");
+
+    const sec = (name, note, list) =>
+      list.length
+        ? `<div class="gsec"><span class="name">${name}</span><span class="l">${note}（${list.length}件）</span></div>` +
+          list.map(grantBlock).join("")
+        : "";
+    $("grantList").innerHTML =
+      shown.length === 0
+        ? `<div class="gempty">条件に合う助成はありません。絞り込みを外すと${state.grants.length}件あります。</div>`
+        : sec("締 切 あ り", "締切の近い順", dated) +
+          sec("随 時 ・ 通 年", "締切なし。いつでも応募できる", rolling) +
+          sec("締 切 不 明", "募集要項で確認してください", unknown);
+
+    // サイド欄の内訳（絞り込み前の全体。面の規模が分かるように）
+    const all = state.grants;
+    $("gStat").innerHTML = [
+      ["締切あり", all.filter((x) => x.deadlineType === "date").length],
+      ["随時・通年", all.filter((x) => x.deadlineType === "rolling").length],
+      ["締切不明", all.filter((x) => x.deadlineType === "unknown").length],
+    ].map(([k, n]) => `<div class="row" style="cursor:default"><span>${k}</span><b>${n}</b></div>`).join("");
+
+    if (state.pendingGrant) {
+      const el = document.querySelector(`.g[data-hash^="${state.pendingGrant}"]`);
+      state.pendingGrant = null;
+      if (el) setTimeout(() => el.scrollIntoView({ block: "center" }), 60);
+    }
+  }
+
+  async function setView(v) {
+    state.view = v;
+    document.body.dataset.view = v;
+    document.querySelectorAll("#views .view").forEach((b) =>
+      b.classList.toggle("on", b.dataset.view === v));
+    if (v === "grants") { await loadGrants(); renderGrants(); }
+  }
+
+  /** 紙面側の導線と、タブの件数表示 */
+  function refreshGrantCounts() {
+    const n = state.grants.length;
+    $("viewGrantN").textContent = n ? n : "";
+    const btn = $("goGrants");
+    btn.hidden = n === 0;
+    btn.innerHTML = `応募できる助成 <b>${n}</b>件 →`;
+  }
+
   function renderResultList({ title, note, results, emptyText, moreHtml = "", onMore }) {
     $("list").innerHTML = `
       <div class="srch-head">
@@ -1198,13 +1439,14 @@
     // スマホ=メニュー末尾 / PC=サイド欄末尾 へ移す
     $("mAboutSlot").append($("about"));
     if (mq.matches) {
-      $("mMenuBody").append($("boxDeadline"), $("boxCal"), $("boxWeek"), $("boxLegend"),
-        $("boxTextSize"), fold);
+      // 助成の内訳(P24)は期限欄の隣に置く（どちらも「いま追いかけているもの」の量を示す）
+      $("mMenuBody").append($("boxDeadline"), $("boxGrantSum"), $("boxCal"), $("boxWeek"),
+        $("boxLegend"), $("boxTextSize"), fold);
     } else {
       const rail = document.querySelector(".rail-col");
       // PCサイド欄の並び: 検索(静的) → 期限が近いもの → この7日 → 今週の記録 →
       // 記号の見かた → このサイトについて（分野チップは紙面側へ移動・P20）
-      rail.append($("boxDeadline"), $("boxCal"), $("boxWeek"), $("boxLegend"), fold);
+      rail.append($("boxDeadline"), $("boxGrantSum"), $("boxCal"), $("boxWeek"), $("boxLegend"), fold);
       document.querySelector("#mMenu").append($("boxTextSize")); // PCでは使わない（CSSで非表示）
       closeMenu();
       $("mSearchPanel").classList.remove("open");
@@ -1263,7 +1505,10 @@
     const btn = e.target.closest(".share");
     if (btn) {
       e.preventDefault();
-      const url = `${location.origin}${location.pathname}?d=${btn.dataset.shareDay}&i=${btn.dataset.shareHash.slice(0, 8)}`;
+      const h8 = btn.dataset.shareHash.slice(0, 8);
+      const url = btn.dataset.shareView === "grants"
+        ? `${location.origin}${location.pathname}?v=grants&g=${h8}`   // 助成(P24)
+        : `${location.origin}${location.pathname}?d=${btn.dataset.shareDay}&i=${h8}`;
       const title = btn.dataset.shareTitle || "福祉情報ウォッチ";
       if (navigator.share) {
         try {
@@ -1294,6 +1539,37 @@
     }
   });
 
+  /* ==== 助成面の操作(P24) ==== */
+  $("views").addEventListener("click", (e) => {
+    const b = e.target.closest(".view");
+    if (b) { setView(b.dataset.view); toTop(); }
+  });
+  $("goGrants").addEventListener("click", () => { setView("grants"); toTop(); });
+  // 分野は紙面と同じ state.field を共有する（「うちは障害分野」という識別は面をまたいで変わらない）
+  $("gFields").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-gfd]");
+    if (!b) return;
+    state.field = b.dataset.gfd;
+    try { localStorage.setItem(FIELD_KEY, state.field); } catch {}
+    document.querySelectorAll("[data-fd]").forEach((x) =>
+      x.classList.toggle("on", x.dataset.fd === state.field));
+    applyFilters();  // 紙面側も追随させる（戻ったときに食い違わない）
+    renderGrants();
+  });
+  $("gUses").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-guse]");
+    if (!b) return;
+    const u = b.dataset.guse;
+    state.uses.has(u) ? state.uses.delete(u) : state.uses.add(u); // 複数選択(OR)
+    try { localStorage.setItem(USES_KEY, JSON.stringify([...state.uses])); } catch {}
+    renderGrants();
+  });
+  $("gAppli").addEventListener("change", (e) => {
+    state.appliOnly = e.target.checked;
+    try { localStorage.setItem(APPLI_KEY, state.appliOnly ? "1" : "0"); } catch {}
+    renderGrants();
+  });
+
   relocate();
 
   (async () => {
@@ -1313,7 +1589,7 @@
 
       const days = recordedDays();
       state.day = days[days.length - 1];
-      // 共有リンク(?d=YYYY-MM-DD&i=hash8)で開かれた場合は該当日+該当項目へ
+      // 共有リンク(?d=YYYY-MM-DD&i=hash8 / ?v=grants&g=hash8)で開かれた場合
       const params = new URLSearchParams(location.search);
       const d = params.get("d"), i = params.get("i");
       if (d && state.index.days[d]) {
@@ -1321,6 +1597,16 @@
         if (i) state.pendingItem = i;
       }
       await renderDay();
+
+      /* 助成(P24)。紙面の描画を待たせないよう後から読む。無くてもページは動く */
+      try { state.uses = new Set(JSON.parse(localStorage.getItem(USES_KEY) || "[]")); } catch {}
+      state.appliOnly = localStorage.getItem(APPLI_KEY) === "1";
+      await loadGrants();
+      refreshGrantCounts();
+      if (params.get("v") === "grants") {
+        state.pendingGrant = params.get("g");
+        await setView("grants");
+      }
     } catch (e) {
       $("dayTitle").textContent = "記録を読み込めませんでした";
       $("list").innerHTML = `<div class="empty">履歴データの取得に失敗しました。時間をおいて再読み込みしてください。</div>`;
