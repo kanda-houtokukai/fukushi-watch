@@ -260,6 +260,13 @@
   .aid-rel .r{font-size:12px;color:var(--sub);line-height:1.8}
   .aid-rel .r a{color:var(--link);text-decoration:none}
   .aid-rel .r .d{color:var(--faint);font-size:11px}
+  /* 応募の条件(P28)。展開の器は .aid を再利用し、中身だけ条件用の行にする。
+     表示するのは募集ページからの逐語引用（AIは選ぶだけ・言い換えない） */
+  .cond-r{color:#43403a;padding:2.5px 0}
+  .cond-r .ax{display:inline-block;font-size:11px;color:var(--sub);border:1px solid var(--rule);
+    background:#fff;padding:0 5px;margin-right:7px;white-space:nowrap}
+  .cond-none{color:var(--sub)}
+  .aid-note a{color:var(--link);text-decoration:none}
 
   /* --- サイド欄 --- */
   .rail-col{margin-top:38px}
@@ -309,10 +316,14 @@
   /* 共有リンク(P11): 小さな鎖アイコンのみ・押したら「コピーしました」を一瞬出す */
   .share{border:0;background:none;padding:2px 4px;cursor:pointer;color:var(--faint);
     display:inline-flex;align-items:center;vertical-align:middle;position:relative}
+  /* ⚠️隠すのは display:none で行う。opacity:0 は「見えないが存在する」ため、
+     共有ボタンが右端に来た項目でツールチップの幅ぶん横スクロールが生まれる
+     （P28の検証で発見。データ依存で顕在化する潜在バグだった） */
   .share .tip{position:absolute;left:50%;transform:translateX(-50%);bottom:calc(100% + 4px);
     background:var(--ink);color:var(--paper);font-size:10.5px;padding:3px 8px;white-space:nowrap;
-    opacity:0;pointer-events:none;transition:opacity .15s ease}
-  .share.copied .tip{opacity:1}
+    display:none;pointer-events:none}
+  .share.copied .tip{display:block;animation:tipin .15s ease}
+  @keyframes tipin{from{opacity:0}to{opacity:1}}
   /* 共有リンクで開いたときの一瞬のハイライト */
   @keyframes flash{0%{background:#f3ead0}100%{background:transparent}}
   .flash{animation:flash 1.6s ease-out 1}
@@ -376,6 +387,7 @@
 
     /* ②もともと紺 → 下線 */
     .aid-rel .r a:hover,
+    .aid-note a:hover,
     .aid summary:hover{text-decoration:underline;text-underline-offset:3px}
     .ear .ear-date:enabled:hover{text-decoration-thickness:2px}
 
@@ -1280,6 +1292,23 @@
       <span class="tip">コピーしました</span></button>`;
   }
 
+  /* 応募の条件(P28)。タップで展開（P8の対応の目安と同じ型・常時表示しない）。
+     表示は募集ページからの逐語引用そのもの（AIは「どこが条件か」を選ぶだけ）。
+     ⚠️「対象です/対象外です」のような判定は出さない。条件を並べるところまで。
+     conditions が空配列＝記載を確認できなかった、と正直に出す。
+     conditions 未抽出（フィールド無し）の項目には展開自体を出さない。 */
+  function condBlock(it) {
+    if (it.conditions === undefined) return "";
+    const url = it.conditionsUrl || it.url;
+    const rows = (it.conditions ?? [])
+      .map((c) => `<div class="cond-r"><span class="ax">${esc(c.axis)}</span>${esc(c.quote)}</div>`)
+      .join("");
+    return `<details class="aid"><summary>応募の条件</summary><div class="aid-body">
+      ${rows || `<div class="cond-none">条件の記載を確認できませんでした。</div>`}
+      <div class="aid-note">募集ページからの抜粋です。詳細は必ず<a href="${esc(url)}" target="_blank" rel="noopener">募集要項</a>でご確認ください。</div>
+    </div></details>`;
+  }
+
   function grantBlock(it) {
     let when;
     if (it.deadlineType === "date" && it.deadline) {
@@ -1308,6 +1337,7 @@
         ${tag(it.applicants, "app", "応募主体の記載なし")}
         ${grantShareBtn(it.hash, it.title)}
       </div>
+      ${condBlock(it)}
     </article>`;
   }
 

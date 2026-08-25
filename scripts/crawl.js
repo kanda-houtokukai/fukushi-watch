@@ -80,7 +80,7 @@ export async function fetchHtml(url) {
         redirect: "follow",
       });
       if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
-      return await res.text();
+      return decodeBody(await res.arrayBuffer(), res.headers.get("content-type"));
     } catch (e) {
       lastError = e;
       if (attempt < RETRIES) {
@@ -89,6 +89,26 @@ export async function fetchHtml(url) {
     }
   }
   throw lastError;
+}
+
+/**
+ * 文字コードを見て復号する（P28）。`res.text()` は charset を無視して常にUTF-8で復号するため、
+ * Shift_JIS のページが文字化けする。既存の巡回先は全てUTF-8だが（P28で全取得先を点検済み）、
+ * 助成の条件抽出で読む**財団側の外部ページ**には Shift_JIS が実在する（SOMPO福祉財団・P28実測）。
+ * 優先順: Content-Type ヘッダ → metaタグ（charset宣言はASCII互換なので復号前でも読める）→ UTF-8。
+ */
+function decodeBody(buf, contentType) {
+  const bytes = new Uint8Array(buf);
+  let charset = /charset=["']?([\w-]+)/i.exec(contentType ?? "")?.[1];
+  if (!charset) {
+    const head = new TextDecoder("latin1").decode(bytes.slice(0, 3000));
+    charset = /charset=["']?([\w-]+)/i.exec(head)?.[1];
+  }
+  try {
+    return new TextDecoder(charset || "utf-8").decode(bytes);
+  } catch {
+    return new TextDecoder("utf-8").decode(bytes); // 未知の名前はUTF-8で読む
+  }
 }
 
 // ---------------------------------------------------------------------------

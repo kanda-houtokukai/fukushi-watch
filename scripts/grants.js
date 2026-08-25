@@ -80,6 +80,19 @@ export function normalizeApplicants(list) {
   return APPLICANT_VOCAB.filter((a) => set.has(a));
 }
 
+/**
+ * 応募条件の軸（P28）。実データ10件に実在した条件だけから起こした語彙。
+ * ⚠️「法人の規模・職員数」「事業所の種別・定員規模」は実データに存在しなかったため入れていない
+ *   （机上で軸を作らない）。実例が現れたら、そのとき追加を判断する。
+ * ⚠️「所在地」（団体の所在地の制限）と「事業の実施地」は**別の軸**。混同すると誤る
+ *   （アジア生協協力基金: 団体は国内・事業地はアジア）。
+ * 値は閉じた語彙にできない（都道府県列挙・年数など多様）ため、**軸だけ固定し、値は原文の引用**。
+ */
+export const COND_AXES = [
+  "所在地", "事業の実施地", "設立・活動年数", "受給歴",
+  "併願・重複", "補助率・自己負担", "主体の付帯条件", "提出書類", "その他の対象限定",
+];
+
 /* ===========================================================================
  * 締切のパース（AIを使わない。P11の日付パーサの考え方を流用）
  * ======================================================================== */
@@ -363,6 +376,30 @@ async function fetchRss(url) {
   return res.text();
 }
 
+/**
+ * JFC記事から財団側の募集ページへのリンクを選ぶ（P28・条件抽出の材料）。
+ * 実測: 記事は財団トップと募集ページの両方にリンクすることが多い。財団トップ（パスが"/"）と
+ * 連絡先・添付ファイルを除き、助成・募集を思わせる語をURLに含む候補を優先、
+ * 同格なら**最後**の候補を採る（「詳細はこちら」は本文の後方にあることが多い）。
+ */
+export function pickFunderLink(html) {
+  const cands = [];
+  for (const m of String(html ?? "").matchAll(/href="(https?:\/\/[^"]+)"/g)) {
+    const u = decodeEntities(m[1]);
+    let host, path;
+    try { ({ host, pathname: path } = new URL(u)); } catch { continue; }
+    if (/jfc\.or\.jp|gmpg\.org|twitter\.com|x\.com|facebook\.com|line\.me|instagram\.com|youtube\.com|google\./.test(host)) continue;
+    if (path === "/" || path === "") continue; // 財団トップに条件は無い
+    if (/contact|privacy|policy|sitemap/i.test(path)) continue;
+    if (/\.(pdf|docx?|xlsx?|zip)$/i.test(path)) continue; // 添付は解析しない（P28の決定）
+    cands.push(u);
+  }
+  const hinted = cands.filter((u) =>
+    /josei|jyosei|grant|subsid|koubo|boshu|bosyu|oubo|information|entry/i.test(u)
+  );
+  return (hinted.length ? hinted : cands).pop() ?? null;
+}
+
 /** JFC 助成金募集ニュース。本文の「応募期間（締切）」から締切を取る */
 async function collectJfcRss(src, today) {
   const rows = parseRssItems(await fetchRss(src.url));
@@ -384,6 +421,7 @@ async function collectJfcRss(src, today) {
       postedAt: r.date,
       ...dl,
       _body: r.text.slice(0, BODY_MAX_CHARS),
+      _condUrl: pickFunderLink(r.html), // 条件の実体は財団側のページにある（P28実測）
     });
   }
   return { items, raw: rows.length };
@@ -446,6 +484,23 @@ async function collectWamRss(src, today) {
  * - 判定の材料は、記事内の最初のリンク先（助成事業ページ。対象と助成内容の記載がある）を
  *   読んで補う。リンクが無い・読めないときは RSS の本文だけで判定する
  */
+/**
+ * 馬主財団の記事本文から、実体のあるリンク先（助成事業ページ）を選ぶ。
+ * ⚠️**RSSの content:encoded（記事本文だけ）に対して使うこと。** 記事ページのHTML全体に
+ *   かけると、head内のWordPressの雑リンク（wlwmanifest等）やナビを拾う（P28で実際に踏んだ）。
+ */
+function pickUmanushiLink(bodyHtml, selfLink) {
+  return [...String(bodyHtml ?? "").matchAll(/href="([^"]+)"/g)]
+    .map((m) => decodeEntities(m[1]))
+    .find(
+      (u) =>
+        u.startsWith("https://www.jra-umanushi-hukushi.or.jp") &&
+        u !== selfLink &&
+        !/^https:\/\/www\.jra-umanushi-hukushi\.or\.jp\/?$/.test(u) &&
+        !/\/wp-content\/uploads\/|\.(pdf|docx?|xlsx?|zip)$/i.test(u)
+    ) ?? null;
+}
+
 async function collectUmanushiRss(src, today) {
   const rows = parseRssItems(await fetchRss(src.url));
   const items = [];
@@ -458,15 +513,7 @@ async function collectUmanushiRss(src, today) {
     //   （国内研修助成の受付記事は本文に「申請受付の締切りは令和8年1月30日です」の形がある）
     const dl = parseDeadline(r.text.match(/締切[^。]{0,40}/)?.[0] ?? "", today);
     let body = r.text;
-    const href = [...String(r.html ?? "").matchAll(/href="([^"]+)"/g)]
-      .map((m) => decodeEntities(m[1]))
-      .find(
-        (u) =>
-          u.startsWith("https://www.jra-umanushi-hukushi.or.jp") &&
-          u !== r.link &&
-          !/^https:\/\/www\.jra-umanushi-hukushi\.or\.jp\/?$/.test(u) &&
-          !/\/wp-content\/uploads\/|\.(pdf|docx?|xlsx?|zip)$/i.test(u)
-      );
+    const href = pickUmanushiLink(r.html, r.link);
     if (href) {
       try {
         body = `${r.text} ${await fetchBodyText(href)}`;
@@ -480,6 +527,7 @@ async function collectUmanushiRss(src, today) {
       postedAt: r.date,
       ...dl,
       _body: body.slice(0, BODY_MAX_CHARS),
+      _condUrl: href ?? null, // 条件の実体はリンク先の助成事業ページにある
     });
   }
   return { items, raw: rows.length };
@@ -517,7 +565,7 @@ export function grantHash(it) {
  * 個別ページの本文（用途・応募主体の材料。⚠️本文は保存しない）
  * ======================================================================== */
 
-async function fetchBodyText(url) {
+async function fetchBodyText(url, maxChars = BODY_MAX_CHARS) {
   const html = await fetchHtml(url);
   const b = html.replace(/<(script|style)[\s\S]*?<\/\1>/gi, " ");
   const i = b.indexOf("本文ここから");
@@ -530,7 +578,175 @@ async function fetchBodyText(url) {
     .replace(/\s+/g, " ")
     .normalize("NFKC")
     .trim()
-    .slice(0, BODY_MAX_CHARS);
+    .slice(0, maxChars);
+}
+
+/* ===========================================================================
+ * 応募条件の抽出（P28）
+ *
+ * 方針は「**AIは選ぶだけ、表示は原文**」:
+ *  - AIの仕事は「本文のどの一節が、どの軸の条件か」を選ぶことだけ。出力は {axis, quote}
+ *  - quote は本文からの**逐語引用**で、**本文に実在することを機械照合**する（P11の考え方）。
+ *    実在しない引用は捨てる。表示するのは quote そのものなので、言い換えの誤りが
+ *    構造的に起こらず、「応募できる/できない」の判定も構造的に不可能
+ *  - 読み取れなかったら空配列＝「記載を確認できませんでした」と正直に出す。推測で埋めない
+ *
+ * 対象は conditions を持たない項目だけ（＝新規のみ。導入時の1回だけ既存分が遡及される）。
+ * 取得に失敗した項目は conditions が付かないまま残り、翌朝やり直される。
+ * ⚠️PDFは解析しない（依存ゼロ構成の維持・幻覚リスク回避）。詳細は要項への導線で補う。
+ * ======================================================================== */
+
+const COND_TEXT_MAX = 9000; // 条件は要項ページ全体に散らばる（実測で最大5千字級）ため広めに読む
+const COND_BATCH = 5;       // 本文が長いので判定より小さい束にする
+const COND_PER_RUN = 15;    // 1回の実行で条件抽出する上限（相手への負荷とAPI消費を抑える）
+
+/** 引用の照合用に均す（空白をすべて落とす。AIが空白の入り方を変えても照合できるように） */
+const condFlat = (s) => String(s ?? "").normalize("NFKC").replace(/\s+/g, "");
+
+/**
+ * 条件ページのURLを決める。⚠️源の性質はコードに埋め込まず台帳（method）で引く（P26の教訓）。
+ * JFC・馬主財団は記事が紹介だけで、条件の実体はリンク先にある。他は記事・個別ページ自体に載る。
+ */
+async function resolveConditionsUrl(it, srcByName) {
+  const src = srcByName.get(it.source);
+  if (src?.method === "jfc-subsidy-rss") {
+    return pickFunderLink(await fetchHtml(it.url)) ?? it.url;
+  }
+  if (src?.method === "umanushi-rss") {
+    // ⚠️記事ページのHTML全体からリンクを拾わない（headの雑リンクを掴む）。
+    //   コレクタと同じく、RSSの記事本文（content:encoded）から選ぶ
+    const r = parseRssItems(await fetchRss(src.url)).find((x) => x.link === it.url);
+    return (r ? pickUmanushiLink(r.html, r.link) : null) ?? it.url;
+  }
+  return it.url;
+}
+
+function buildCondPrompt(batch) {
+  const list = batch.map((t, i) => ({
+    index: i, funder: t.it.funder, title: t.it.title, body: t.text,
+  }));
+  return `あなたは社会福祉法人の助成金担当者です。次の助成の募集ページ本文から、応募の条件が書かれている一節をそのまま抜き出してください。
+
+axis は次の9値のみ:
+- 「所在地」= 応募できる団体の**所在地**の制限（都道府県・地区など）
+- 「事業の実施地」= 助成対象となる事業を**行う場所**の制限（⚠️団体の所在地とは別の軸。混同しない）
+- 「設立・活動年数」= 設立からの年数・活動実績年数の条件
+- 「受給歴」= 過去にこの助成（同じ出し手の助成）を受けた団体への制限
+- 「併願・重複」= 他の助成・補助金との重複や併願についての定め
+- 「補助率・自己負担」= 補助率や自己負担についての定め（例: 総事業費の4分の3以内）
+- 「主体の付帯条件」= 応募主体に付く手続き上の条件（推薦が必要・施設や機関を通じて応募・電子申請を使えること等）
+- 「提出書類」= 応募時に必要な書類の定め
+- 「その他の対象限定」= 上記以外で対象を限定している条件（対象となる施設・活動の種別等）
+
+規則:
+- quote は**本文からの逐語引用**。一字も変えない・要約しない・複数箇所をつなぎ合わせない。150字以内で切り出す
+- 本文に書かれている条件だけを拾う。**推測で作らない**。該当の記載が無い軸は出さない
+- 同じ軸に複数の条件があれば別々の要素にしてよい（1件あたり最大10要素）
+- 締切・金額・助成の趣旨説明は条件ではないので拾わない
+
+入力（${batch.length}件）:
+${JSON.stringify(list, null, 1)}
+
+出力の規則:
+- JSONの配列のみを出力する。前置き・後書き・コードフェンスは一切禁止
+- 必ず入力と同じ${batch.length}件を、index を含めて返す。条件が無ければ conditions は空配列
+- 形式: [{"index":0,"conditions":[{"axis":"所在地","quote":"…"}]}, …]`;
+}
+
+function parseCondResponse(text, expected) {
+  const stripped = text.replace(/^\s*```(?:json)?\s*/i, "").replace(/\s*```\s*$/, "").trim();
+  const arr = JSON.parse(stripped);
+  if (!Array.isArray(arr)) throw new Error("応答が配列ではありません");
+  if (arr.length !== expected) {
+    throw new Error(`入力${expected}件に対し応答が${arr.length}件です（件数不一致）`);
+  }
+  for (const it of arr) {
+    if (!Array.isArray(it.conditions)) throw new Error(`conditions が配列ではありません (index=${it.index})`);
+  }
+  return arr;
+}
+
+/** 1束をAIにかけ、逐語引用を機械照合して {axis, quote} の配列を割り当てる */
+async function judgeCondBatch(batch, apiKey, models, used) {
+  let judged = null;
+  for (const model of (used ? preferModel(models, used) : models)) {
+    try {
+      console.log(`条件抽出: ${model}（${batch.length}件）`);
+      judged = parseCondResponse(await generate(apiKey, model, buildCondPrompt(batch)), batch.length);
+      used = model;
+      break;
+    } catch (e) {
+      console.log(`  失敗（次の候補へ）: ${e.message.slice(0, 110)}`);
+    }
+  }
+  if (!judged) return { ok: false, used };
+  const byIndex = new Map(judged.map((j) => [j.index, j]));
+  batch.forEach((t, n) => {
+    const verified = [];
+    for (const c of (byIndex.get(n)?.conditions ?? []).slice(0, 10)) {
+      if (!COND_AXES.includes(c?.axis)) continue;
+      const quote = String(c.quote ?? "").normalize("NFKC").replace(/\s+/g, " ").trim();
+      if (!quote || quote.length > 200) continue;
+      // ★引用が本文に実在しないものは捨てる（言い換え・幻覚をここで落とす）
+      if (!condFlat(t.text).includes(condFlat(quote))) continue;
+      verified.push({ axis: c.axis, quote });
+    }
+    verified.sort((a, b) => COND_AXES.indexOf(a.axis) - COND_AXES.indexOf(b.axis));
+    t.claimed = (byIndex.get(n)?.conditions ?? []).length;
+    t.verified = verified;
+  });
+  return { ok: true, used };
+}
+
+async function extractConditions(store) {
+  const pending = store.items.filter((it) => it.conditions === undefined).slice(0, COND_PER_RUN);
+  if (pending.length === 0) return;
+  console.log(`条件抽出の対象: ${pending.length}件`);
+  const srcByName = new Map(readSources().map((s) => [s.name, s]));
+
+  const targets = [];
+  for (const it of pending) {
+    try {
+      const url = it.conditionsUrl ?? (await resolveConditionsUrl(it, srcByName));
+      const text = await fetchBodyText(url, COND_TEXT_MAX);
+      if (text.length < 100) throw new Error("本文がほぼ空です");
+      targets.push({ it, url, text });
+    } catch (e) {
+      // 取得できなかった項目は conditions を付けずに残す＝翌朝やり直す（保留側に倒す）
+      console.log(`  条件: 取得できず（翌朝やり直す）: ${it.title.slice(0, 30)}: ${e.message}`);
+    }
+    await sleep(FETCH_INTERVAL_MS);
+  }
+  if (targets.length === 0) return;
+
+  const apiKey = loadEnv();
+  const models = await listCandidateModels(apiKey);
+  let used = null;
+  for (let i = 0; i < targets.length; i += COND_BATCH) {
+    const batch = targets.slice(i, i + COND_BATCH);
+    const res = await judgeCondBatch(batch, apiKey, models, used);
+    if (!res.ok) {
+      // 全モデルで失敗: この回は未抽出のまま残す（翌朝やり直す）。実行全体は落とさない
+      console.log("  条件抽出: 全モデルで失敗（この回は見送り）");
+      return;
+    }
+    used = res.used;
+  }
+
+  // ★AIが条件を挙げたのに1つも照合を通らなかった項目だけ、1回やり直す（言い訳引用の救済）
+  const retry = targets.filter((t) => t.claimed > 0 && t.verified.length === 0);
+  if (retry.length) {
+    console.log(`  引用の照合を通らなかった${retry.length}件を1回だけやり直す`);
+    await judgeCondBatch(retry, apiKey, models, used);
+  }
+
+  let found = 0, empty = 0;
+  for (const t of targets) {
+    t.it.conditions = t.verified ?? [];      // 空配列＝「記載を確認できませんでした」の正直表示
+    t.it.conditionsUrl = t.url;
+    t.it.conditions.length ? found++ : empty++;
+  }
+  console.log(`条件抽出: ${found}件で条件を取得・${empty}件は確認できず`);
 }
 
 /* ===========================================================================
@@ -801,6 +1017,8 @@ async function main() {
           );
           store.items.push({
             ...clean,
+            // 条件ページのURL（P28）。コレクタが解決済みなら持ち越す（無ければ抽出時に解決）
+            ...(it._condUrl ? { conditionsUrl: it._condUrl } : {}),
             summary: j.summary.trim(),
             fields,
             uses,
@@ -820,6 +1038,17 @@ async function main() {
   //   ものを同一とみなし、**情報の多い方**を残す。
   //   ⚠️締切一致を必ず条件にする（名前の一致だけで畳むと別年度の同名助成が消える）
   store.items = dedupeGrants(store.items);
+
+  // ★応募条件の抽出（P28）。conditions を持たない項目だけ＝日常は新規のみ・導入時に1回だけ遡及。
+  //   統合で消える項目に抽出しないよう、重複統合の後に置く
+  if (!dryRun) {
+    try {
+      await extractConditions(store);
+    } catch (e) {
+      // 条件抽出の失敗で実行全体を落とさない（項目は未抽出のまま残り、翌朝やり直される）
+      console.error(`  条件抽出でエラー（続行）: ${e.message}`);
+    }
+  }
 
   // 並び: 締切ありを締切の近い順 → 随時・通年 → 不明（P24の[DECISION]）
   const rank = { date: 0, rolling: 1, unknown: 2 };
