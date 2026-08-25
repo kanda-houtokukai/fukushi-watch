@@ -1446,7 +1446,11 @@
     const shown = state.grants.filter(grantMatches);
     const by = (t) => shown.filter((x) => x.deadlineType === t);
     const dated = by("date"), rolling = by("rolling"), unknown = by("unknown");
-    const filtered = state.field !== "all" || Boolean(state.use) || state.appliOnly;
+    // P31②: 「／ 全N件」の後置は分野・用途で絞ったときだけ出す。
+    // 社福トグルは既定オン（P31）のため、これも数えると既定状態が常に「絞り込み表示」になって
+    // うるさい。トグルの絞りは**チェックボックスがオンであること自体が状態の表示**
+    // （外せば全件に戻ることで、隠れている項目の存在も確認できる）。ユーザー判断（2026-08-25）
+    const filtered = state.field !== "all" || Boolean(state.use);
     $("gCount").innerHTML =
       `<b>${shown.length}件</b>` +
       `<span style="color:var(--sub)"> ── 締切あり${dated.length}・随時通年${rolling.length}・締切不明${unknown.length}</span>` +
