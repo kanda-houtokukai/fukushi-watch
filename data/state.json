@@ -1,8 +1,15 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-08-25T03:02:44.732Z",
+      "lastCrawled": "2026-08-25T22:26:12.377Z",
       "items": [
+        {
+          "hash": "989968fa5717c8d6",
+          "title": "黄川田大臣記者会見（令和8年8月25日）を掲載しました",
+          "url": "https://www.cfa.go.jp/speech/5fb74b86",
+          "date": "2026-08-25",
+          "category": "会見"
+        },
         {
           "hash": "9345b95692601c0c",
           "title": "保育ICTラボ事業では、このたび保育ICT事務局において特設ウェブサイトを公開しました。",
@@ -216,12 +223,54 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-08-25T03:02:44.949Z",
+      "lastCrawled": "2026-08-25T22:26:12.645Z",
       "items": [
+        {
+          "hash": "44158b2d2561150d",
+          "title": "「フリーランス・事業者間取引適正化等法に基づく就業環境整備のポイント」を更新しました。",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/bunya/freelance_00006.html",
+          "date": "2026-08-25",
+          "category": "その他"
+        },
+        {
+          "hash": "eb00d1d6c345b3d7",
+          "title": "第91回労働政策審議会雇用環境・均等分科会（ペーパーレス会議）を開催します（開催案内）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75767.html",
+          "date": "2026-08-25",
+          "category": "審議会等"
+        },
+        {
+          "hash": "cec10115e24bb4a8",
+          "title": "第213回社会保障審議会医療保険部会（ペーパーレス）の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75728.html",
+          "date": "2026-08-25",
+          "category": "審議会等"
+        },
+        {
+          "hash": "f53fd1698cd4b96f",
+          "title": "食品中の放射性物質の検査結果について（１５０９報）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75662.html",
+          "date": "2026-08-25",
+          "category": "報道発表"
+        },
+        {
+          "hash": "7c256b2a30f4589d",
+          "title": "第104回「電離放射線障害の業務上外に関する検討会」を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75525.html",
+          "date": "2026-08-25",
+          "category": "審議会等"
+        },
         {
           "hash": "0bd551da242257bd",
           "title": "第397回労働政策審議会職業安定分科会労働力需給制度部会 資料",
           "url": "https://www.mhlw.go.jp/stf/newpage_75128.html",
+          "date": "2026-08-25",
+          "category": "審議会等"
+        },
+        {
+          "hash": "201785ac24517250",
+          "title": "労働政策審議会 (雇用環境・均等分科会）",
+          "url": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126989.html",
           "date": "2026-08-25",
           "category": "審議会等"
         },
@@ -329,6 +378,13 @@
           "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/monthly/r08/2606r/2606r.html",
           "date": "2026-08-24",
           "category": "統計情報"
+        },
+        {
+          "hash": "c0b3a87b19feb798",
+          "title": "第130回社会保障審議会医療部会の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75742.html",
+          "date": "2026-08-21",
+          "category": "審議会等"
         },
         {
           "hash": "5bf668d3da869956",
@@ -469,6 +525,13 @@
           "url": "https://www.mhlw.go.jp/web_magazine/",
           "date": "2026-08-20",
           "category": "その他"
+        },
+        {
+          "hash": "abdb3d61b783e978",
+          "title": "第40回厚生科学審議会予防接種・ワクチン分科会研究開発及び生産・流通部会 資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75667.html",
+          "date": "2026-08-19",
+          "category": "審議会等"
         },
         {
           "hash": "cb116f1ff51d331f",
@@ -2956,13 +3019,6 @@
           "category": "報道発表"
         },
         {
-          "hash": "5269870577970a09",
-          "title": "令和８年患者調査へのご協力をお願いします",
-          "url": "https://www.mhlw.go.jp/stf/10-20-oshirase-2026.html",
-          "date": "2026-07-03",
-          "category": "統計情報"
-        },
-        {
           "hash": "604c0b33738a699e",
           "title": "令和７年度 消費生活協同組合（連合会）実態調査 結果公表",
           "url": "https://www.mhlw.go.jp/toukei/list/98-1.html",
@@ -3469,7 +3525,7 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-08-25T03:02:45.216Z",
+      "lastCrawled": "2026-08-25T22:26:13.633Z",
       "items": [
         {
           "hash": "5e13beea71427eeb",
@@ -3545,13 +3601,6 @@
           "hash": "3f4920c8ae26752e",
           "title": "麻しん最新情報（令和8年8月18日更新）",
           "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22797&ct=030100110&from=rss",
-          "date": "2026-08-19",
-          "category": "行政資料"
-        },
-        {
-          "hash": "965bf77d933c0540",
-          "title": "第60回 社会保障審議会 生活保護基準部会（令和8年8月25日開催予定）",
-          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22796&ct=070010070&from=rss",
           "date": "2026-08-19",
           "category": "行政資料"
         },
@@ -4879,6 +4928,13 @@
           "category": "行政資料"
         },
         {
+          "hash": "965bf77d933c0540",
+          "title": "第60回 社会保障審議会 生活保護基準部会（令和8年8月25日開催予定）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22796&ct=070010070&from=rss",
+          "date": "2026-08-19",
+          "category": "行政資料"
+        },
+        {
           "hash": "51f1a7258538afaa",
           "title": "全国介護保険・高齢者保健福祉担当課長会議（令和8年3月11日開催）",
           "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22431&ct=020010070&from=rss",
@@ -4965,7 +5021,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-08-25T03:02:45.343Z",
+      "lastCrawled": "2026-08-25T22:26:14.915Z",
       "items": [
         {
           "hash": "f5ad4357dc776e94",
@@ -5152,7 +5208,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-08-25T03:02:45.403Z",
+      "lastCrawled": "2026-08-25T22:26:15.198Z",
       "items": [
         {
           "hash": "257ce44835b95252",
@@ -5260,6 +5316,13 @@
           "category": ""
         },
         {
+          "hash": "f30b64787076c918",
+          "title": "【18歳以下のみなさんへ】「孤独・孤立相談ダイヤル ＃９９９９」～ひとりで悩みを抱えている方へ～",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kodoku.html",
+          "date": "2026年8月26日更新",
+          "category": ""
+        },
+        {
           "hash": "4484c831ef616f41",
           "title": "令和８年度第４回福岡県社会福祉審議会児童福祉専門分科会の開催について",
           "url": "https://www.pref.fukuoka.lg.jp/contents/bunnkakai20260806.html",
@@ -5285,13 +5348,6 @@
           "title": "令和８年度第３回福岡県社会福祉審議会児童福祉専門分科会の開催について",
           "url": "https://www.pref.fukuoka.lg.jp/contents/bunnkakai20260702.html",
           "date": "2026年7月2日更新",
-          "category": ""
-        },
-        {
-          "hash": "4a88c4f9a4df580f",
-          "title": "令和８年度第２回福岡県社会福祉審議会児童福祉専門分科会の開催について",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/bunnkakai20260507.html",
-          "date": "2026年5月7日更新",
           "category": ""
         },
         {
@@ -5432,6 +5488,13 @@
           "title": "こどもの居場所づくりをサポートします！",
           "url": "https://www.pref.fukuoka.lg.jp/contents/kodomonoibasyosuishin.html",
           "date": "2025年12月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "4a88c4f9a4df580f",
+          "title": "令和８年度第２回福岡県社会福祉審議会児童福祉専門分科会の開催について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/bunnkakai20260507.html",
+          "date": "2026年5月7日更新",
           "category": ""
         },
         {
@@ -5638,14 +5701,28 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-08-25T03:02:45.805Z",
+      "lastCrawled": "2026-08-25T22:26:16.236Z",
       "items": [
+        {
+          "hash": "d0ebb8d508726dc8",
+          "title": "これからの小多機のケアマネジメント 日本介護支援専門員協会、10月にオンライン研修開催",
+          "url": "https://www.joint-kaigo.com/articles/48242/",
+          "date": "2026-08-25",
+          "category": "超高齢化"
+        },
+        {
+          "hash": "10963435451bc037",
+          "title": "外国人の在留手数料、10月から大幅引き上げ 介護現場の受け入れコスト増に懸念も",
+          "url": "https://www.joint-kaigo.com/articles/48230/",
+          "date": "2026-08-25",
+          "category": "政府与党"
+        },
         {
           "hash": "ad9fb8b761e39094",
           "title": "外国人材の受け入れ、介護事業所に慎重傾向 「受け入れようと思わない」が増加＝介護労働実態調査",
           "url": "https://www.joint-kaigo.com/articles/48212/",
           "date": "2026-08-24",
-          "category": "自治体"
+          "category": "介護福祉士"
         },
         {
           "hash": "0b26cf2393d77f82",
@@ -5666,7 +5743,7 @@
           "title": "【和田誠】面会制限を問い直す 一律・長期の運用に感じる違和感 「会うこと」をケアとして取り戻すために",
           "url": "https://www.joint-kaigo.com/articles/48143/",
           "date": "2026-08-19",
-          "category": "介護福祉士"
+          "category": "コラム"
         },
         {
           "hash": "54553034a31a6267",
@@ -5680,7 +5757,7 @@
           "title": "【熊本地震】厚労省、被災地で介護サービス事業者の指定期間を延長 ケアマネ資格証も",
           "url": "https://www.joint-kaigo.com/articles/48113/",
           "date": "2026-08-18",
-          "category": "医療・看護"
+          "category": "福祉用具"
         },
         {
           "hash": "ba14409d68340fa2",
@@ -5762,7 +5839,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-08-25T03:02:45.461Z",
+      "lastCrawled": "2026-08-25T22:26:15.352Z",
       "items": [
         {
           "hash": "cc45938bf97029c2",
