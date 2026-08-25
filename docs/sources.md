@@ -26,7 +26,7 @@
 | 7 | 福祉新聞 | **報道** | https://fukushishimbun.com/feed | press-rss | 保留（照会中） |
 | 8 | 介護ニュースJoint | **報道** | https://www.joint-kaigo.com/feed/ | press-rss | 巡回中 |
 | 9 | 全国社会福祉協議会 | **団体** | https://www.shakyo.or.jp/news/index.html | zenshakyo-news | 保留（届出前） |
-| 10 | 全社協 福祉の助成情報 | **助成** | https://www.shakyo.or.jp/guide/sponsor/ | zenshakyo-sponsor | 巡回中 |
+| 10 | 全社協 福祉の助成情報 | **助成** | https://www.shakyo.or.jp/guide/sponsor/ | zenshakyo-sponsor | 保留（届出前） |
 | 11 | 助成・奨学金情報navi（助成財団センター） | **助成** | https://jyosei-navi.jfc.or.jp/api | jyosei-navi-api | 保留（照会前） |
 | 12 | 助成財団センター 助成金募集ニュース | **助成** | https://www.jfc.or.jp/news_subsidy/feed/ | jfc-subsidy-rss | 巡回中 |
 | 13 | 中央共同募金会 | **助成** | https://www.akaihane.or.jp/subsidies/feed/ | kyobo-rss | 巡回中 |
@@ -37,6 +37,10 @@
   **見出し・リンク・日付・カテゴリ・分野タグのみ**を保存する（RSSの説明文・本文は保存しない）。
   グラフ（この7日）と件数集計に**含めない**。表示には［報］印章と
   「見出しと出典の表示のみ。要約・重要度判定は行っていません」の注記を常設する。
+- ⚠️ **#9（全国社会福祉協議会）と #10（全社協 福祉の助成情報）の状態は、必ず一致させる。**
+  届出は**全社協サイトへのリンク設置**についてのもので、新着情報も助成情報も**同じ届出の対象**。
+  片方だけ「巡回中」にすると、**届出を送る前に運用を始めたことになる**（2026-08-25に実際にこれが起き、
+  助成情報だけが先に公開された）。**投函したら2行とも「巡回中」へ、取りやめるなら2行とも「保留」へ。**
 - **区分=助成 の源は完全に別系統**（P24・[DECISION]）: 紙面（history）に積まず
   `data/grants.json` に「いま応募できる助成」だけを持つ。`crawl.js` は巡回せず
   **`scripts/grants.js`** が担当する。⚠️巡回方法の列には grants.js のパーサ名を書く。
