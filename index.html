@@ -41,17 +41,17 @@
      紙面＝日々の記録（過去に積み上がる）／助成＝いま応募できる助成（締切に向かって減る）。
      時間の向きが逆なので同じ日付レールに乗せられない、というのが面を分けた理由。
      出し分けは body[data-view] で**CSSだけ**で行う（描画ロジックを二重化しない・P10/P22の型） */
-  /* P29・案A: 選択中＝太字＋太い墨下線／非選択＝細字の薄墨（差を字の重さと線で作る。
-     墨ベタや新しい色は使わない）。面が増えても折り返さず横スクロールで続きを示す */
-  .views{display:flex;gap:0;border-bottom:1px solid var(--rule);margin-top:-1px;
-    overflow-x:auto;scrollbar-width:none}
+  /* P31・案C3: それぞれ独立したボタン（囲み罫の系統・数字は出さない）。
+     選択中＝墨の枠＋薄い地色（#f6f5f1=「操作できる箱」の色）＋太字／非選択＝薄い罫の枠＋薄墨。
+     ※案C1へは .view.on の background を外すだけ、案C2へは .view の border-color を
+       transparent にするだけで移れる。面が増えても折り返さず横スクロールで続きを示す */
+  .views{display:flex;gap:8px;border-bottom:1px solid var(--rule);margin-top:-1px;
+    padding:2px 0 10px;overflow-x:auto;scrollbar-width:none;align-items:flex-end}
   .views::-webkit-scrollbar{display:none}
-  .views .view{appearance:none;border:0;background:none;font:inherit;cursor:pointer;
-    padding:11px 20px 9px;font-size:13px;font-weight:400;letter-spacing:.22em;
-    color:var(--sub);border-bottom:4px solid transparent;margin-bottom:-1px;
-    white-space:nowrap;flex:none}
-  .views .view.on{color:var(--ink);font-weight:700;border-bottom-color:var(--ink)}
-  .views .view .n{font-size:11px;font-weight:400;letter-spacing:0;color:var(--faint);margin-left:6px}
+  .views .view{appearance:none;background:none;font:inherit;cursor:pointer;
+    padding:7px 16px 6px;font-size:13px;font-weight:400;letter-spacing:.22em;
+    color:var(--sub);border:1.5px solid var(--rule);white-space:nowrap;flex:none}
+  .views .view.on{border-color:var(--ink);background:#f6f5f1;color:var(--ink);font-weight:700}
   body[data-view="grants"] .ticker,
   body[data-view="grants"] .dayhead,
   body[data-view="grants"] .daynav,
@@ -80,24 +80,20 @@
     #gUses{gap:6px}
     #gUses .chip{padding:5px 9px 4px}
   }
-  /* P29: スマホの絞り込みはアコーディオン（既定は閉）。PCは常時展開。
-     出し分けは body[data-gfilter] と幅のメディアクエリ＝CSSだけで行い、
-     resizeイベントに依存しない（P22の教訓）。
-     ⚠️紙面側の分野チップには適用しない（P10の判断＝押した結果が目の前で変わる） */
-  .gfilter-head{display:none}
+  /* P31: スマホの絞り込み＝ネイティブselect2つを左右に一列＋最小限のトグル
+     （P29のアコーディオンは廃止・ユーザー判断）。PCは1行チップ（.gchips）を維持。
+     出し分けは幅のメディアクエリ＝CSSだけで行い、resizeイベントに依存しない（P22の教訓）。
+     ⚠️紙面側の分野チップには適用しない（P10の判断＝押した結果が目の前で変わる）
+     ⚠️selectの文字は16px未満にしない（iOSがフォーカス時に画面を拡大する・落とし穴チェックリスト） */
+  .gselrow{display:none}
   @media(max-width:899px){
-    /* P30: 地色で周囲から分離する（#f6f5f1 は低の索引・条件展開と同じ「操作できる箱」の色。
-       新しい色ではない）。押せる合図は地色＋▽で示す */
-    .gfilter-head{display:flex;align-items:baseline;gap:8px;width:100%;text-align:left;
-      appearance:none;border:0;background:#f6f5f1;font:inherit;font-size:12.5px;
-      color:var(--ink);padding:9px 12px;cursor:pointer}
-    .gfilter-head::before{content:"▽";font-size:10px;color:var(--sub)}
-    body[data-gfilter="open"] .gfilter-head::before{content:"△"}
-    .gfilter-head .now{font-size:11.5px;color:var(--sub)}
-    .gfilter-head .now b{color:var(--ink);font-weight:600}
-    .gfilter-body{display:none}
-    body[data-gfilter="open"] .gfilter-body{display:block;padding-top:12px;
-      border-bottom:1px solid var(--rule);padding-bottom:4px}
+    .gchips{display:none}
+    .gselrow{display:flex;gap:8px}
+    .gsel{flex:1;display:flex;align-items:center;gap:7px;border:1px solid var(--rule);
+      background:var(--paper);padding:0 4px 0 10px;font-size:11.5px;color:var(--sub);min-width:0}
+    .gsel select{flex:1;min-width:0;border:0;background:none;font-family:inherit;
+      font-size:16px;color:var(--ink);padding:8px 2px}
+    .gtoggle{margin-top:8px}
   }
   /* 選択中の用途チップにだけ「×」を出し、もう一度押せば解除できることを示す(P25)。
      用途には「すべて」のチップを置かないため、解除の手がかりがここにしか無い。
@@ -623,7 +619,7 @@
        スマホの固定ヘッダーの行高(欄外34px+題字52px=86px)が崩れる(P10の保証) -->
   <nav class="views" id="views">
     <button class="view on" data-view="paper" type="button">紙　面</button>
-    <button class="view" data-view="grants" type="button">助　成<span class="n" id="viewGrantN"></span></button>
+    <button class="view" data-view="grants" type="button">助　成</button>
   </nav>
 
   <!-- 報道ティッカー(P20): 見出しは原文のまま・出典必須・要約や加工はしない -->
@@ -674,14 +670,20 @@
           <div class="gcount" id="gCount"></div>
         </div>
         <div class="gfilters">
-          <!-- P29: スマホでは折りたたみの見出しになる（PCでは非表示・絞り込みは常時展開）。
-               閉じていても、絞り込み中は見出しに条件を出す -->
-          <button class="gfilter-head" id="gFilterHead" type="button" aria-expanded="false">絞り込み<span class="now" id="gFilterNow"></span></button>
-          <div class="gfilter-body">
+          <!-- P31: スマホは分野・用途をネイティブのselectで左右に一列
+               （端末の選択UIで選ぶ・閉じていても値が見える・極力場所を取らない）。
+               PCは1行チップを維持（全選択肢が一覧でき1クリックで切り替えられるため）。
+               どちらも同じ state を読み書きする（出し分けはCSSの幅だけ） -->
+          <div class="gselrow">
+            <label class="gsel"><span>分野</span><select id="gFieldSel"></select></label>
+            <label class="gsel"><span>用途</span><select id="gUseSel"></select></label>
+          </div>
+          <div class="gchips">
             <div class="chips" id="gFields"></div>
             <div class="chips" id="gUses"></div>
-            <label class="gtoggle"><input type="checkbox" id="gAppli">社会福祉法人が応募できるものだけ</label>
           </div>
+          <!-- ラベルは最小限にする（P31・ユーザー指示。文脈から予想できる語は書かない） -->
+          <label class="gtoggle"><input type="checkbox" id="gAppli">社会福祉法人</label>
         </div>
         <div id="grantList"></div>
       </section>
@@ -1437,13 +1439,9 @@
       }>${esc(u)}</button>`)
       .join("");
     $("gAppli").checked = state.appliOnly;
-
-    // P29: スマホのアコーディオンは閉じていても「何で絞っているか」を見出しに出す
-    const now = [];
-    if (state.field !== "all") now.push(state.field);
-    if (state.use) now.push(state.use);
-    if (state.appliOnly) now.push("社福のみ");
-    $("gFilterNow").innerHTML = now.length ? `絞り込み中: <b>${now.map(esc).join("・")}</b>` : "";
+    // P31: スマホのselectにも同じ状態を映す（selectは閉じていても値が見える）
+    $("gFieldSel").value = state.field;
+    $("gUseSel").value = state.use ?? "";
 
     const shown = state.grants.filter(grantMatches);
     const by = (t) => shown.filter((x) => x.deadlineType === t);
@@ -1492,7 +1490,7 @@
   /** 紙面側の導線と、タブの件数表示 */
   function refreshGrantCounts() {
     const n = state.grants.length;
-    $("viewGrantN").textContent = n ? n : "";
+    // タブの数字はP31で廃止（件数は面の中の gCount と紙面の導線が担う）
     const btn = $("goGrants");
     btn.hidden = n === 0;
     btn.innerHTML = `応募できる助成 <b>${n}</b>件 →`;
@@ -1700,13 +1698,25 @@
     try { localStorage.setItem(APPLI_KEY, state.appliOnly ? "1" : "0"); } catch {}
     renderGrants();
   });
-  // P29: スマホの絞り込みアコーディオン。開閉状態は body[data-gfilter] に置き、
-  // 見た目はCSSに委ねる（PCではこのボタン自体が出ないので押されない）
-  $("gFilterHead").addEventListener("click", () => {
-    const open = document.body.dataset.gfilter === "open";
-    if (open) delete document.body.dataset.gfilter;
-    else document.body.dataset.gfilter = "open";
-    $("gFilterHead").setAttribute("aria-expanded", String(!open));
+  // P31: スマホのselect（分野・用途）。チップと同じ state を書き、紙面側の分野にも追随させる
+  $("gFieldSel").innerHTML =
+    [["all", "すべて"], ...FIELD_ORDER.slice(0, 4).map((f) => [f, f])]
+      .map(([v, l]) => `<option value="${v}">${l}</option>`).join("");
+  $("gUseSel").innerHTML =
+    [["", "すべて"], ...USE_VOCAB.map((u) => [u, u])]
+      .map(([v, l]) => `<option value="${esc(v)}">${esc(l)}</option>`).join("");
+  $("gFieldSel").addEventListener("change", (e) => {
+    state.field = e.target.value;
+    try { localStorage.setItem(FIELD_KEY, state.field); } catch {}
+    document.querySelectorAll("[data-fd]").forEach((x) =>
+      x.classList.toggle("on", x.dataset.fd === state.field));
+    applyFilters();  // 紙面側も追随させる（gFieldsのチップと同じ振る舞い）
+    renderGrants();
+  });
+  $("gUseSel").addEventListener("change", (e) => {
+    state.use = e.target.value || null;
+    try { localStorage.setItem(USES_KEY, JSON.stringify(state.use)); } catch {}
+    renderGrants();
   });
 
   relocate();
