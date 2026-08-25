@@ -68,6 +68,10 @@
   .gfilters{margin-top:14px}
   .gfilters .chips{margin-bottom:8px}
   .chip.use{letter-spacing:0}
+  /* 選択中の用途チップにだけ「×」を出し、もう一度押せば解除できることを示す(P25)。
+     用途には「すべて」のチップを置かないため、解除の手がかりがここにしか無い。
+     ⚠️説明テキストは常時出さない——選んでいないときは何も足さない */
+  .chip.use.on::after{content:"　×";color:var(--sub);font-weight:400}
   .gtoggle{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink);
     cursor:pointer;margin-top:2px}
   .gtoggle input{accent-color:var(--ink);width:15px;height:15px}
@@ -711,7 +715,7 @@
     deadlines: [], dlByHash: new Map(), // 期限ウォッチ(P11)
     view: "paper",                      // 面(P24): paper | grants
     grants: [], grantsLoaded: false,    // 助成(P24)。紙面の history とは別系統
-    uses: new Set(), appliOnly: false,  // 助成の絞り込み（用途=複数OR／応募主体トグル）
+    use: null, appliOnly: false,        // 助成の絞り込み（用途=単一選択／応募主体トグル）
     pendingGrant: null,                 // 共有リンクで開いたときのスクロール先hash
     pendingItem: null, // 共有リンクで開いたときのスクロール先hash
   };
@@ -1257,12 +1261,15 @@
     } catch { state.grants = []; } // 無くてもページは動く
   }
 
-  /* 絞り込み: 分野=単一(共通は常に残す・紙面と同じ規則) 用途=複数OR 応募主体=トグル。
-     軸をまたぐ関係はAND。 */
+  /* 絞り込み: 分野=単一(共通は常に残す・紙面と同じ規則) 用途=単一 応募主体=トグル。
+     軸をまたぐ関係はAND。
+     ⚠️用途に「すべて」に相当するチップは置かない（P25・ユーザー判断）。
+       解除は**同じチップをもう一度押す**。選択中のチップにだけ「×」を出して
+       解除できることを示す（説明テキストは常時出さない）。 */
   function grantMatches(it) {
     const f = it.fields ?? [];
     if (state.field !== "all" && !(f.includes(state.field) || f.includes("共通"))) return false;
-    if (state.uses.size > 0 && !(it.uses ?? []).some((u) => state.uses.has(u))) return false;
+    if (state.use && !(it.uses ?? []).includes(state.use)) return false;
     if (state.appliOnly && !(it.applicants ?? []).includes("社会福祉法人")) return false;
     return true;
   }
@@ -1312,14 +1319,16 @@
           `<button class="chip${v === "all" ? "" : " " + FIELD_CLS[v]}${state.field === v ? " on" : ""}" data-gfd="${v}">${label}</button>`)
         .join("");
     $("gUses").innerHTML = USE_VOCAB
-      .map((u) => `<button class="chip use${state.uses.has(u) ? " on" : ""}" data-guse="${esc(u)}">${esc(u)}</button>`)
+      .map((u) => `<button class="chip use${state.use === u ? " on" : ""}" data-guse="${esc(u)}"${
+        state.use === u ? ' aria-pressed="true" title="もう一度押すと解除します"' : ' aria-pressed="false"'
+      }>${esc(u)}</button>`)
       .join("");
     $("gAppli").checked = state.appliOnly;
 
     const shown = state.grants.filter(grantMatches);
     const by = (t) => shown.filter((x) => x.deadlineType === t);
     const dated = by("date"), rolling = by("rolling"), unknown = by("unknown");
-    const filtered = state.field !== "all" || state.uses.size > 0 || state.appliOnly;
+    const filtered = state.field !== "all" || Boolean(state.use) || state.appliOnly;
     $("gCount").innerHTML =
       `<b>${shown.length}件</b>` +
       `<span style="color:var(--sub)"> ── 締切あり${dated.length}・随時通年${rolling.length}・締切不明${unknown.length}</span>` +
@@ -1560,8 +1569,9 @@
     const b = e.target.closest("[data-guse]");
     if (!b) return;
     const u = b.dataset.guse;
-    state.uses.has(u) ? state.uses.delete(u) : state.uses.add(u); // 複数選択(OR)
-    try { localStorage.setItem(USES_KEY, JSON.stringify([...state.uses])); } catch {}
+    // 単一選択(P25)。同じチップを押したら解除する（「すべて」のチップを置かないため）
+    state.use = state.use === u ? null : u;
+    try { localStorage.setItem(USES_KEY, JSON.stringify(state.use)); } catch {}
     renderGrants();
   });
   $("gAppli").addEventListener("change", (e) => {
@@ -1599,7 +1609,12 @@
       await renderDay();
 
       /* 助成(P24)。紙面の描画を待たせないよう後から読む。無くてもページは動く */
-      try { state.uses = new Set(JSON.parse(localStorage.getItem(USES_KEY) || "[]")); } catch {}
+      // P24-2は複数選択で配列を保存していた。P25で単一選択にしたので、
+      // 既に配列が入っている環境では先頭の1つを引き継ぐ（設定が消えて驚かせない）
+      try {
+        const v = JSON.parse(localStorage.getItem(USES_KEY) || "null");
+        state.use = Array.isArray(v) ? (v[0] ?? null) : (typeof v === "string" ? v : null);
+      } catch {}
       state.appliOnly = localStorage.getItem(APPLI_KEY) === "1";
       await loadGrants();
       refreshGrantCounts();
