@@ -41,11 +41,16 @@
      紙面＝日々の記録（過去に積み上がる）／助成＝いま応募できる助成（締切に向かって減る）。
      時間の向きが逆なので同じ日付レールに乗せられない、というのが面を分けた理由。
      出し分けは body[data-view] で**CSSだけ**で行う（描画ロジックを二重化しない・P10/P22の型） */
-  .views{display:flex;gap:0;border-bottom:1px solid var(--rule);margin-top:-1px}
+  /* P29・案A: 選択中＝太字＋太い墨下線／非選択＝細字の薄墨（差を字の重さと線で作る。
+     墨ベタや新しい色は使わない）。面が増えても折り返さず横スクロールで続きを示す */
+  .views{display:flex;gap:0;border-bottom:1px solid var(--rule);margin-top:-1px;
+    overflow-x:auto;scrollbar-width:none}
+  .views::-webkit-scrollbar{display:none}
   .views .view{appearance:none;border:0;background:none;font:inherit;cursor:pointer;
-    padding:11px 20px 9px;font-size:13px;font-weight:700;letter-spacing:.22em;
-    color:var(--sub);border-bottom:3px solid transparent;margin-bottom:-1px}
-  .views .view.on{color:var(--ink);border-bottom-color:var(--ink)}
+    padding:11px 20px 9px;font-size:13px;font-weight:400;letter-spacing:.22em;
+    color:var(--sub);border-bottom:4px solid transparent;margin-bottom:-1px;
+    white-space:nowrap;flex:none}
+  .views .view.on{color:var(--ink);font-weight:700;border-bottom-color:var(--ink)}
   .views .view .n{font-size:11px;font-weight:400;letter-spacing:0;color:var(--faint);margin-left:6px}
   body[data-view="grants"] .ticker,
   body[data-view="grants"] .dayhead,
@@ -68,6 +73,29 @@
   .gfilters{margin-top:14px}
   .gfilters .chips{margin-bottom:8px}
   .chip.use{letter-spacing:0}
+  /* P29: 用途チップはPCで余白と間隔だけ詰めて9つを1行に収める（文字は12pxのまま）。
+     PC主列は約700px・詰めた合計は実測636px。狭い幅では自然に折り返す */
+  @media(min-width:900px){
+    #gUses{gap:6px}
+    #gUses .chip{padding:5px 9px 4px}
+  }
+  /* P29: スマホの絞り込みはアコーディオン（既定は閉）。PCは常時展開。
+     出し分けは body[data-gfilter] と幅のメディアクエリ＝CSSだけで行い、
+     resizeイベントに依存しない（P22の教訓）。
+     ⚠️紙面側の分野チップには適用しない（P10の判断＝押した結果が目の前で変わる） */
+  .gfilter-head{display:none}
+  @media(max-width:899px){
+    .gfilter-head{display:flex;align-items:baseline;gap:8px;width:100%;text-align:left;
+      appearance:none;border:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+      background:none;font:inherit;font-size:12.5px;color:var(--ink);padding:9px 0;cursor:pointer}
+    .gfilter-head::before{content:"▽";font-size:10px;color:var(--sub)}
+    body[data-gfilter="open"] .gfilter-head::before{content:"△"}
+    .gfilter-head .now{font-size:11.5px;color:var(--sub)}
+    .gfilter-head .now b{color:var(--ink);font-weight:600}
+    .gfilter-body{display:none}
+    body[data-gfilter="open"] .gfilter-body{display:block;padding-top:12px;
+      border-bottom:1px solid var(--rule);padding-bottom:4px}
+  }
   /* 選択中の用途チップにだけ「×」を出し、もう一度押せば解除できることを示す(P25)。
      用途には「すべて」のチップを置かないため、解除の手がかりがここにしか無い。
      ⚠️説明テキストは常時出さない——選んでいないときは何も足さない */
@@ -83,24 +111,33 @@
   .gsec .name{font-size:12.5px;font-weight:700;letter-spacing:.2em;color:var(--ink)}
   .gsec .l{font-size:11.5px;color:var(--sub);letter-spacing:0}
   .g{border-bottom:1px solid var(--rule);padding:15px 0}
-  .g .when{font-size:13px;font-weight:700;color:var(--ink)}
+  /* P29: タイトルを主役にし、締切はタイトルの右へ（PCのみ。スマホは従来どおり締切が上）。
+     1つの DOM を CSS だけで並べ替える（描画ロジックを二重化しない・P10/P22の型） */
+  .g .trow{display:flex;align-items:baseline;justify-content:space-between;gap:14px;
+    margin-bottom:3px}
+  @media(max-width:899px){.g .trow{flex-direction:column-reverse;align-items:stretch;gap:3px}}
   /* ⚠️朱は「対応が要る」の意味で既に使っている色。助成では**残り14日以内**に使う。
      紙面の期限欄(3日)より広いのは、申請書の準備に日数が要るため（新しい色は持ち込まない） */
-  .g .when.soon{color:var(--high)}
-  .g .when .rest{font-weight:400;color:var(--sub);margin-left:2px}
-  .g .when.soon .rest{color:var(--high)}
-  .g h4{font-size:15px;line-height:1.55;margin:5px 0 4px;font-weight:600}
+  .g .when{font-size:12.5px;font-weight:400;color:var(--sub);
+    font-variant-numeric:tabular-nums}
+  .g .when b{font-size:13.5px;font-weight:700;color:var(--ink)}
+  .g .when.soon,.g .when.soon b{color:var(--high);font-weight:700}
+  .g .when.dated{white-space:nowrap}
+  @media(min-width:900px){.g .trow .when{flex:none;max-width:45%;text-align:right}
+    .g .when.dated{max-width:none}}
+  .g h4{font-size:15px;line-height:1.55;margin:0;font-weight:600}
+  @media(min-width:900px){.g h4{font-size:16.5px;font-weight:700;line-height:1.5}}
   .g h4 a{color:var(--ink);text-decoration:none}
   .g .funder{font-size:12px;color:var(--sub);font-weight:600}
   .g .body{font-size:12.5px;color:var(--sub);line-height:1.75}
   .g .meta{font-size:12px;color:var(--sub);margin-top:8px;display:flex;
     align-items:center;gap:10px;flex-wrap:wrap}
   .g .amount{font-weight:600;color:var(--ink)}
-  .gtags{display:inline-flex;gap:6px;flex-wrap:wrap}
-  .gtag{font-size:11px;font-weight:600;color:var(--ink);border:1px solid var(--rule);
-    padding:1px 6px}
-  .gtag.app{color:var(--sub)}
-  .gtag.none{border-style:dashed;color:var(--faint);font-weight:400}
+  /* P29・タグ案1: 枠を外し中黒区切りの薄墨テキストに（情報は削らない・重さだけ落とす）。
+     分野だけは既存の .field（色下線）を維持して識別体系を守る */
+  .g .tagline{color:var(--faint);letter-spacing:.02em}
+  .g .tagline .sep{margin:0 7px;color:var(--rule)}
+  .g .tagline .noapp{color:var(--faint)}
   .gempty{font-size:13px;color:var(--sub);padding:26px 0}
   .glink{appearance:none;border:0;background:none;font:inherit;cursor:pointer;padding:10px 0 0;
     width:100%;text-align:left;font-size:12.5px;color:var(--ink);border-top:1px solid var(--rule);
@@ -618,9 +655,14 @@
           <div class="gcount" id="gCount"></div>
         </div>
         <div class="gfilters">
-          <div class="chips" id="gFields"></div>
-          <div class="chips" id="gUses"></div>
-          <label class="gtoggle"><input type="checkbox" id="gAppli">社会福祉法人が応募できるものだけ</label>
+          <!-- P29: スマホでは折りたたみの見出しになる（PCでは非表示・絞り込みは常時展開）。
+               閉じていても、絞り込み中は見出しに条件を出す -->
+          <button class="gfilter-head" id="gFilterHead" type="button" aria-expanded="false">絞り込み<span class="now" id="gFilterNow"></span></button>
+          <div class="gfilter-body">
+            <div class="chips" id="gFields"></div>
+            <div class="chips" id="gUses"></div>
+            <label class="gtoggle"><input type="checkbox" id="gAppli">社会福祉法人が応募できるものだけ</label>
+          </div>
         </div>
         <p class="gnote">要約と分野・用途・応募主体のタグは<b>AIによる参考情報</b>です。
         <b>応募資格・締切・金額は必ず募集要項（元ページ）でご確認ください。</b>
@@ -1314,27 +1356,33 @@
     if (it.deadlineType === "date" && it.deadline) {
       const n = dayDiff(it.deadline);
       const f = fmtDay(it.deadline);
-      when = `<div class="when${n <= GRANT_SOON_DAYS ? " soon" : ""}">締切 ${f.y}年${f.main}<span class="rest">（${remainText(n)}）</span></div>`;
+      // 年は今年と違うときだけ出す（残り日数で年の取り違えは起きないため・P29）
+      const y = String(it.deadline).slice(0, 4) !== String(new Date().getFullYear()) ? `${f.y}年` : "";
+      when = `<div class="when dated${n <= GRANT_SOON_DAYS ? " soon" : ""}">締切 <b>${y}${f.main}</b>（${remainText(n)}）</div>`;
     } else if (it.deadlineType === "rolling") {
-      when = `<div class="when"><span class="rest">随時・通年（締切なし）</span></div>`;
+      when = `<div class="when">随時・通年（締切なし）</div>`;
     } else {
-      when = `<div class="when"><span class="rest">締切の記載: ${esc(it.deadlineRaw || "なし")}</span></div>`;
+      when = `<div class="when">締切の記載: ${esc(it.deadlineRaw || "なし")}</div>`;
     }
-    const tag = (arr, cls, empty) =>
-      (arr ?? []).length
-        ? `<span class="gtags">${arr.map((x) => `<span class="gtag ${cls}">${esc(x)}</span>`).join("")}</span>`
-        : (empty ? `<span class="gtag none">${empty}</span>` : "");
+    // P29・タグ案1: 用途・応募主体は中黒区切りの薄墨テキスト（情報は削らない）。
+    // 分野だけ fieldsHtml（既存の色下線）を維持する
+    const uses = (it.uses ?? []).map(esc).join("・");
+    const apps = (it.applicants ?? []).length
+      ? it.applicants.map(esc).join("・")
+      : `<span class="noapp">応募主体の記載なし</span>`;
+    const tagline = `<span class="tagline">${uses ? `${uses}<span class="sep">｜</span>` : ""}${apps}</span>`;
     return `<article class="g" data-hash="${esc(it.hash)}">
-      ${when}
-      <h4><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></h4>
+      <div class="trow">
+        <h4><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></h4>
+        ${when}
+      </div>
       ${it.funder ? `<div class="funder">${esc(it.funder)}</div>` : ""}
       <div class="body">${esc(it.summary ?? "")}</div>
       <div class="meta">
         ${sealHtml({ source: it.source, kind: it.sourceKind })}
         ${it.amount ? `<span class="amount">${esc(it.amount)}</span>` : ""}
         ${fieldsHtml(it)}
-        ${tag(it.uses, "use", "")}
-        ${tag(it.applicants, "app", "応募主体の記載なし")}
+        ${tagline}
         ${grantShareBtn(it.hash, it.title)}
       </div>
       ${condBlock(it)}
@@ -1354,6 +1402,13 @@
       }>${esc(u)}</button>`)
       .join("");
     $("gAppli").checked = state.appliOnly;
+
+    // P29: スマホのアコーディオンは閉じていても「何で絞っているか」を見出しに出す
+    const now = [];
+    if (state.field !== "all") now.push(state.field);
+    if (state.use) now.push(state.use);
+    if (state.appliOnly) now.push("社福のみ");
+    $("gFilterNow").innerHTML = now.length ? `絞り込み中: <b>${now.map(esc).join("・")}</b>` : "";
 
     const shown = state.grants.filter(grantMatches);
     const by = (t) => shown.filter((x) => x.deadlineType === t);
@@ -1608,6 +1663,14 @@
     state.appliOnly = e.target.checked;
     try { localStorage.setItem(APPLI_KEY, state.appliOnly ? "1" : "0"); } catch {}
     renderGrants();
+  });
+  // P29: スマホの絞り込みアコーディオン。開閉状態は body[data-gfilter] に置き、
+  // 見た目はCSSに委ねる（PCではこのボタン自体が出ないので押されない）
+  $("gFilterHead").addEventListener("click", () => {
+    const open = document.body.dataset.gfilter === "open";
+    if (open) delete document.body.dataset.gfilter;
+    else document.body.dataset.gfilter = "open";
+    $("gFilterHead").setAttribute("aria-expanded", String(!open));
   });
 
   relocate();
