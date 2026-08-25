@@ -85,9 +85,11 @@
      ⚠️紙面側の分野チップには適用しない（P10の判断＝押した結果が目の前で変わる） */
   .gfilter-head{display:none}
   @media(max-width:899px){
+    /* P30: 地色で周囲から分離する（#f6f5f1 は低の索引・条件展開と同じ「操作できる箱」の色。
+       新しい色ではない）。押せる合図は地色＋▽で示す */
     .gfilter-head{display:flex;align-items:baseline;gap:8px;width:100%;text-align:left;
-      appearance:none;border:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
-      background:none;font:inherit;font-size:12.5px;color:var(--ink);padding:9px 0;cursor:pointer}
+      appearance:none;border:0;background:#f6f5f1;font:inherit;font-size:12.5px;
+      color:var(--ink);padding:9px 12px;cursor:pointer}
     .gfilter-head::before{content:"▽";font-size:10px;color:var(--sub)}
     body[data-gfilter="open"] .gfilter-head::before{content:"△"}
     .gfilter-head .now{font-size:11.5px;color:var(--sub)}
@@ -103,7 +105,13 @@
   .gtoggle{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink);
     cursor:pointer;margin-top:2px}
   .gtoggle input{accent-color:var(--ink);width:15px;height:15px}
-  .gnote{font-size:11.5px;color:var(--sub);line-height:1.75;margin-top:14px;
+  .gnote-fold{margin-top:12px}
+  .gnote-fold summary{list-style:none;cursor:pointer;font-size:11.5px;color:var(--sub);
+    display:inline-flex;align-items:center;gap:5px}
+  .gnote-fold summary::-webkit-details-marker{display:none}
+  .gnote-fold summary::before{content:"▽";font-size:10px}
+  .gnote-fold[open] summary::before{content:"△"}
+  .gnote{font-size:11.5px;color:var(--sub);line-height:1.75;margin-top:8px;
     border:1px solid var(--rule);background:var(--press-bg);padding:9px 12px}
   .gnote b{color:var(--ink)}
   .gsec{display:flex;align-items:baseline;gap:10px;margin:26px 0 2px;
@@ -115,13 +123,22 @@
      1つの DOM を CSS だけで並べ替える（描画ロジックを二重化しない・P10/P22の型） */
   .g .trow{display:flex;align-items:baseline;justify-content:space-between;gap:14px;
     margin-bottom:3px}
-  @media(max-width:899px){.g .trow{flex-direction:column-reverse;align-items:stretch;gap:3px}}
+  /* P30: スマホもタイトルを先頭に（「タイトルが主役」の原則を両幅で揃える）。
+     締切はタイトル直下で、束が締切順・日付は墨太字・14日以内は朱＋明滅のため視認性は保たれる */
+  @media(max-width:899px){.g .trow{flex-direction:column;align-items:stretch;gap:3px}}
   /* ⚠️朱は「対応が要る」の意味で既に使っている色。助成では**残り14日以内**に使う。
      紙面の期限欄(3日)より広いのは、申請書の準備に日数が要るため（新しい色は持ち込まない） */
   .g .when{font-size:12.5px;font-weight:400;color:var(--sub);
     font-variant-numeric:tabular-nums}
   .g .when b{font-size:13.5px;font-weight:700;color:var(--ink)}
   .g .when.soon,.g .when.soon b{color:var(--high);font-weight:700}
+  /* P30: 残り14日以内はゆっくり明滅させる（片道約2秒・朱の色は変えず濃度だけ）。
+     P20で紙面の点滅を不採用にしたのとは事情が違う——重要度と違い締切は本当に期限があり、
+     14日以内は常時数件しかないため、意味と表現が一致する。
+     ⚠️急激な点滅にしない（光過敏への配慮）。reduced-motion では静止（ティッカーと同じ扱い） */
+  @keyframes dlpulse{0%,100%{opacity:1}50%{opacity:.5}}
+  .g .when.soon{animation:dlpulse 4s ease-in-out infinite}
+  @media (prefers-reduced-motion: reduce){.g .when.soon{animation:none}}
   .g .when.dated{white-space:nowrap}
   @media(min-width:900px){.g .trow .when{flex:none;max-width:45%;text-align:right}
     .g .when.dated{max-width:none}}
@@ -443,7 +460,7 @@
     .chip:not(.on):hover{color:var(--ink)}
     .views .view:not(.on):hover{color:var(--ink)}
     .glink:hover{color:var(--link);text-decoration:underline;text-underline-offset:3px}
-    .mm-about summary:hover,.srch-close:hover{color:var(--ink)}
+    .mm-about summary:hover,.gnote-fold summary:hover,.srch-close:hover{color:var(--ink)}
     .search button:hover{opacity:.85} /* 墨ベタのボタンは色を足さず濃度で応える */
   }
 
@@ -664,9 +681,15 @@
             <label class="gtoggle"><input type="checkbox" id="gAppli">社会福祉法人が応募できるものだけ</label>
           </div>
         </div>
-        <p class="gnote">要約と分野・用途・応募主体のタグは<b>AIによる参考情報</b>です。
-        <b>応募資格・締切・金額は必ず募集要項（元ページ）でご確認ください。</b>
-        掲載後に条件が変わることがあります。応募主体の記載がないものは、当方で読み取れなかったことを示します。</p>
+        <!-- P30: 注意書きは畳む（絞り込みと項目の間で視線を遮っていたため）。
+             初見の導線は summary の1行で残し、各項目の「応募の条件」展開内の注記が本文側を担う。
+             紙面がAI注記を「このサイトについて」に畳んでいるのと同じ扱い -->
+        <details class="gnote-fold">
+          <summary>要約とタグについて（AIによる参考情報）</summary>
+          <p class="gnote">要約と分野・用途・応募主体のタグは<b>AIによる参考情報</b>です。
+          <b>応募資格・締切・金額は必ず募集要項（元ページ）でご確認ください。</b>
+          掲載後に条件が変わることがあります。応募主体の記載がないものは、当方で読み取れなかったことを示します。</p>
+        </details>
         <div id="grantList"></div>
       </section>
 
