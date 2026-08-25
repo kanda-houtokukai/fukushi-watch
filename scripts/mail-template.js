@@ -168,7 +168,7 @@ export function buildMail(report) {
   <div style="font-family:${FONT};font-size:13px;color:${SUB};padding-top:6px;">${countLine}</div>
   ${body}
   <div style="border-top:1px solid ${RULE};margin-top:34px;padding-top:16px;font-family:${FONT};font-size:11px;color:${FAINT};line-height:1.9;">
-    要約と重要度はAIによる参考情報です。最終判断は必ず原本をご確認ください。<br>
+    要約と重要度はAIによる参考情報です。最終判断は必ず原本をご確認ください。掲載内容の正確性を保証するものではありません。<br>
     毎朝7時に自動巡回 ── <a href="${REPO_URL}" style="color:${FAINT};">監視対象と仕組み</a>
   </div>
 </td></tr>
