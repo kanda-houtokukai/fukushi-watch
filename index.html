@@ -62,6 +62,7 @@
   body[data-view="grants"] #boxCal,
   body[data-view="grants"] #boxWeek{display:none}
   body[data-view="paper"] #grantPane,
+  body[data-view="paper"] #boxGrantNote,
   body[data-view="paper"] #boxGrantSum{display:none}
 
   /* ==== 助成面(P24) ==== */
@@ -132,12 +133,13 @@
     font-variant-numeric:tabular-nums}
   .g .when b{font-size:13.5px;font-weight:700;color:var(--ink)}
   .g .when.soon,.g .when.soon b{color:var(--high);font-weight:700}
-  /* P30: 残り14日以内はゆっくり明滅させる（片道約2秒・朱の色は変えず濃度だけ）。
+  /* P30→P31: 残り14日以内はゆっくり明滅させる（片道約1秒・朱の色は変えず濃度だけ。
+     P31で2倍の速さ・より深い濃淡に調整）。
      P20で紙面の点滅を不採用にしたのとは事情が違う——重要度と違い締切は本当に期限があり、
      14日以内は常時数件しかないため、意味と表現が一致する。
      ⚠️急激な点滅にしない（光過敏への配慮）。reduced-motion では静止（ティッカーと同じ扱い） */
-  @keyframes dlpulse{0%,100%{opacity:1}50%{opacity:.5}}
-  .g .when.soon{animation:dlpulse 4s ease-in-out infinite}
+  @keyframes dlpulse{0%,100%{opacity:1}50%{opacity:.25}}
+  .g .when.soon{animation:dlpulse 2s ease-in-out infinite}
   @media (prefers-reduced-motion: reduce){.g .when.soon{animation:none}}
   .g .when.dated{white-space:nowrap}
   @media(min-width:900px){.g .trow .when{flex:none;max-width:45%;text-align:right}
@@ -681,15 +683,6 @@
             <label class="gtoggle"><input type="checkbox" id="gAppli">社会福祉法人が応募できるものだけ</label>
           </div>
         </div>
-        <!-- P30: 注意書きは畳む（絞り込みと項目の間で視線を遮っていたため）。
-             初見の導線は summary の1行で残し、各項目の「応募の条件」展開内の注記が本文側を担う。
-             紙面がAI注記を「このサイトについて」に畳んでいるのと同じ扱い -->
-        <details class="gnote-fold">
-          <summary>要約とタグについて（AIによる参考情報）</summary>
-          <p class="gnote">要約と分野・用途・応募主体のタグは<b>AIによる参考情報</b>です。
-          <b>応募資格・締切・金額は必ず募集要項（元ページ）でご確認ください。</b>
-          掲載後に条件が変わることがあります。応募主体の記載がないものは、当方で読み取れなかったことを示します。</p>
-        </details>
         <div id="grantList"></div>
       </section>
 
@@ -760,6 +753,20 @@
         </div>
         <div class="row" style="font-size:11px;color:var(--faint)">◆高=対応・確認を ◇中=把握を ◊低=参考</div>
       </div>
+
+      <!-- P31: 助成面の注意書き。P30の「絞り込みと項目の間に畳む」案は不採用（ユーザー判断）。
+           凡例と注意書きは同じ性質（読み方の説明）なので「記号の見かた」の並びに畳んで置く。
+           助成面のときだけ表示（body[data-view]のCSSで出し分け）。
+           各項目の「応募の条件」展開内の注記は別途維持している（そちらが実際に読まれる場所） -->
+      <div class="box" id="boxGrantNote">
+        <h5>注 意 書 き</h5>
+        <details class="gnote-fold">
+          <summary>要約とタグについて</summary>
+          <p class="gnote">要約と分野・用途・応募主体のタグは<b>AIによる参考情報</b>です。
+          <b>応募資格・締切・金額は必ず募集要項（元ページ）でご確認ください。</b>
+          掲載後に条件が変わることがあります。応募主体の記載がないものは、当方で読み取れなかったことを示します。</p>
+        </details>
+      </div>
     </aside>
   </div>
 </div>
@@ -792,7 +799,7 @@
     deadlines: [], dlByHash: new Map(), // 期限ウォッチ(P11)
     view: "paper",                      // 面(P24): paper | grants
     grants: [], grantsLoaded: false,    // 助成(P24)。紙面の history とは別系統
-    use: null, appliOnly: false,        // 助成の絞り込み（用途=単一選択／応募主体トグル）
+    use: null, appliOnly: true,         // 助成の絞り込み（用途=単一選択／応募主体トグル=既定オン・P31）
     pendingGrant: null,                 // 共有リンクで開いたときのスクロール先hash
     pendingItem: null, // 共有リンクで開いたときのスクロール先hash
   };
@@ -1347,7 +1354,12 @@
     const f = it.fields ?? [];
     if (state.field !== "all" && !(f.includes(state.field) || f.includes("共通"))) return false;
     if (state.use && !(it.uses ?? []).includes(state.use)) return false;
-    if (state.appliOnly && !(it.applicants ?? []).includes("社会福祉法人")) return false;
+    // P31: トグルで落とすのは「応募主体が読み取れていて、社会福祉法人を含まない」ものだけ。
+    // ⚠️**記載なし（空配列）は表示する**——空は「読み取れなかった」であって
+    //   「応募できない」ではない（P24の意味づけ）。従来は空も落としていたが、
+    //   既定オン化（P31）に合わせて「対象かもしれないものを既定で隠さない」側に倒した
+    const a = it.applicants ?? [];
+    if (state.appliOnly && a.length > 0 && !a.includes("社会福祉法人")) return false;
     return true;
   }
 
@@ -1558,12 +1570,13 @@
     if (mq.matches) {
       // 助成の内訳(P24)は期限欄の隣に置く（どちらも「いま追いかけているもの」の量を示す）
       $("mMenuBody").append($("boxDeadline"), $("boxGrantSum"), $("boxCal"), $("boxWeek"),
-        $("boxLegend"), $("boxTextSize"), fold);
+        $("boxLegend"), $("boxGrantNote"), $("boxTextSize"), fold);
     } else {
       const rail = document.querySelector(".rail-col");
       // PCサイド欄の並び: 検索(静的) → 期限が近いもの → この7日 → 今週の記録 →
       // 記号の見かた → このサイトについて（分野チップは紙面側へ移動・P20）
-      rail.append($("boxDeadline"), $("boxGrantSum"), $("boxCal"), $("boxWeek"), $("boxLegend"), fold);
+      rail.append($("boxDeadline"), $("boxGrantSum"), $("boxCal"), $("boxWeek"),
+        $("boxLegend"), $("boxGrantNote"), fold);
       document.querySelector("#mMenu").append($("boxTextSize")); // PCでは使わない（CSSで非表示）
       closeMenu();
       $("mSearchPanel").classList.remove("open");
@@ -1731,7 +1744,10 @@
         const v = JSON.parse(localStorage.getItem(USES_KEY) || "null");
         state.use = Array.isArray(v) ? (v[0] ?? null) : (typeof v === "string" ? v : null);
       } catch {}
-      state.appliOnly = localStorage.getItem(APPLI_KEY) === "1";
+      // P31: 既定オン（使用者は基本的に社会福祉法人のため）。
+      // ⚠️保存値がある人はそれを尊重する——APPLI_KEY はトグルを実際に触ったときにしか
+      //   書かれないので、保存値＝本人の明示的な選択。無い人（初見・触ったことがない人）だけ既定オン
+      state.appliOnly = (localStorage.getItem(APPLI_KEY) ?? "1") === "1";
       await loadGrants();
       refreshGrantCounts();
       if (params.get("v") === "grants") {
