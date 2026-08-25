@@ -45,10 +45,15 @@ export function readSources() {
     // 先頭セルが数字の行がデータ行（見出し・罫線は除外）
     if (cells.length >= 7 && /^\d+$/.test(cells[1])) {
       // 区分: 報道=press（別配列・要約なし）／団体=org（行政と同じ扱い。印章だけ分ける・P21）
+      //       助成=grant（**別系統**。crawl.js は巡回せず scripts/grants.js が扱う・P24）
       const kubun = cells[3].replace(/\*/g, "");
       rows.push({
         name: cells[2],
-        kind: kubun === "報道" ? "press" : kubun === "団体" ? "org" : "gov",
+        kind:
+          kubun === "報道" ? "press"
+          : kubun === "団体" ? "org"
+          : kubun === "助成" ? "grant"
+          : "gov",
         url: cells[4],
         method: cells[5],
         status: cells[6],
@@ -340,7 +345,8 @@ function loadState() {
 
 async function main() {
   const sources = readSources();
-  const active = sources.filter((s) => s.status === "巡回中");
+  // ★助成(grant)は別系統。紙面のパイプラインでは巡回しない（scripts/grants.js の担当）
+  const active = sources.filter((s) => s.status === "巡回中" && s.kind !== "grant");
   if (active.length === 0) {
     console.log("状態が「巡回中」の源がありません。docs/sources.md を確認してください。");
     return;

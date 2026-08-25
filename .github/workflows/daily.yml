@@ -1,6 +1,6 @@
 # 福祉情報ウォッチ — 毎朝の自動巡回（P3）
 #
-# 巡回 → 差分検知 → 要約・重要度判定 → メール送信 → 状態のコミット
+# 巡回 → 差分検知 → 要約・重要度判定 → メール送信 → 履歴 → 締切 → 助成金 → 状態のコミット
 #
 # ⚠️ 状態のコミットはメール送信の「後」に置く。
 #    送信に失敗した日は状態が更新されないため、翌日の実行で同じ新着を
@@ -52,6 +52,13 @@ jobs:
 
       - name: 締切の抽出
         run: node scripts/deadlines.js
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      # 助成金は紙面とは別系統（data/grants.json のみを書く・P24）。
+      # メール・履歴・締切には一切触れないので、ここで失敗しても本体は完了している。
+      - name: 助成金の収集
+        run: node scripts/grants.js
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
