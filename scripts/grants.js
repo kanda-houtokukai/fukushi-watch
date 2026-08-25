@@ -333,6 +333,7 @@ export function parseRssItems(xml) {
     out.push({
       title, link, date,
       text: decodeEntities(enc.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").normalize("NFKC").trim(),
+      html: enc, // 生のHTML（本文が実質空でリンク先に実体がある源が href を取るため・P27）
     });
   }
   return out;
@@ -435,12 +436,62 @@ async function collectWamRss(src, today) {
 }
 
 /**
+ * 馬主財団（中央競馬馬主社会福祉財団）。P27で追加。
+ * ⚠️記事本文が実質空（「こちらをご覧になって下さい」のみ）で、締切が機械的に取れない源。
+ *   締切がサイトに無いのは**構造的**——申請の受付期間は窓口（各馬主協会・都道府県共同募金会）
+ *   ごとに異なると財団サイトが明記している。したがって原則「締切不明」の束に落ちる。
+ *   **それでよい**（P27の[DECISION]。締切不明でも存在を知ることに価値がある）。
+ * - 流れる記事の大半は研修の実施報告・交付決定・監査書式（実測で月1.2件）。
+ *   **募集・申請の案内だけ**をタイトルで絞る（年2件程度）
+ * - 判定の材料は、記事内の最初のリンク先（助成事業ページ。対象と助成内容の記載がある）を
+ *   読んで補う。リンクが無い・読めないときは RSS の本文だけで判定する
+ */
+async function collectUmanushiRss(src, today) {
+  const rows = parseRssItems(await fetchRss(src.url));
+  const items = [];
+  for (const r of rows) {
+    if (!/募集|申請|受付|公募/.test(r.title)) continue;
+    // ⚠️「海外研修生の募集要領を決定しました」（個人向けの研修生募集＝法人が応募する
+    //   助成ではない）も「決定」でここで落ちる。意図どおり
+    if (/終了|決定|報告|監査|交付/.test(r.title)) continue;
+    // 締切は「締切」のラベルがある文だけから取る。無ければ unknown のまま
+    //   （国内研修助成の受付記事は本文に「申請受付の締切りは令和8年1月30日です」の形がある）
+    const dl = parseDeadline(r.text.match(/締切[^。]{0,40}/)?.[0] ?? "", today);
+    let body = r.text;
+    const href = [...String(r.html ?? "").matchAll(/href="([^"]+)"/g)]
+      .map((m) => decodeEntities(m[1]))
+      .find(
+        (u) =>
+          u.startsWith("https://www.jra-umanushi-hukushi.or.jp") &&
+          u !== r.link &&
+          !/^https:\/\/www\.jra-umanushi-hukushi\.or\.jp\/?$/.test(u) &&
+          !/\/wp-content\/uploads\/|\.(pdf|docx?|xlsx?|zip)$/i.test(u)
+      );
+    if (href) {
+      try {
+        body = `${r.text} ${await fetchBodyText(href)}`;
+      } catch { /* リンク先が読めなくてもRSS本文で判定を続ける */ }
+      await sleep(FETCH_INTERVAL_MS);
+    }
+    items.push({
+      funder: "中央競馬馬主社会福祉財団",
+      title: r.title,
+      url: r.link,
+      postedAt: r.date,
+      ...dl,
+      _body: body.slice(0, BODY_MAX_CHARS),
+    });
+  }
+  return { items, raw: rows.length };
+}
+
+/**
  * 収集の入口。HTMLの源もAPIの源もRSSの源も同じ形にそろえる。
  * 返り値 `{ items, raw }` の **raw は絞り込む前に読めた件数**。
  * ⚠️0件ガードは raw に対してかける。「読めたが募集中が0件」（WAM助成のように
  *   年1回しか募集しない源では正常）を構造変化と誤判定しないため。
  */
-const RSS_METHODS = new Set(["jfc-subsidy-rss", "kyobo-rss", "wam-josei-rss"]);
+const RSS_METHODS = new Set(["jfc-subsidy-rss", "kyobo-rss", "wam-josei-rss", "umanushi-rss"]);
 
 const COLLECTORS = {
   "zenshakyo-sponsor": async (src) => {
@@ -451,6 +502,7 @@ const COLLECTORS = {
   "jfc-subsidy-rss": async (src, today) => collectJfcRss(src, today),
   "kyobo-rss": async (src, today) => collectKyoboRss(src, today),
   "wam-josei-rss": async (src, today) => collectWamRss(src, today),
+  "umanushi-rss": async (src, today) => collectUmanushiRss(src, today),
 };
 
 /** 助成の項目ハッシュ。タイトル＋出し手＋URL（締切は延長されうるので入れない） */

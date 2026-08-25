@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-25T01:46:19.383Z",
+ "updatedAt": "2026-08-25T05:14:14.768Z",
  "items": [
   {
    "hash": "9cbae0ed2b86b861",
@@ -70,6 +70,76 @@
    "amount": "1件400万円"
   },
   {
+   "hash": "cee722ce13b036cf",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "組織および事業活動の強化資金助成",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e7%a4%be%e4%bc%9a%e7%a6%8f%e7%a5%89%e5%8a%a9%e6%88%90-3/",
+   "postedAt": "2026-08-12",
+   "deadline": "2026-10-09",
+   "deadlineType": "date",
+   "deadlineRaw": "2026/10/09 NPO基盤強化資金助成(組織および事業活動の強化資金助成) 募集要項 htt",
+   "summary": "東日本地区で障害児・者や高齢者等を対象に社会福祉活動を行う特定非営利活動法人・社会福祉法人に対し、組織基盤や事業活動の強化に必要な資金を助成します。",
+   "fields": [
+    "障害",
+    "高齢"
+   ],
+   "uses": [
+    "事業・活動"
+   ],
+   "applicants": [
+    "社会福祉法人",
+    "NPO・公益法人"
+   ],
+   "amount": "1件700千円"
+  },
+  {
+   "hash": "ac3925234af06f87",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "認定ＮＰＯ法人取得資金助成",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e7%a4%be%e4%bc%9a%e7%a6%8f%e7%a5%89%e5%8a%a9%e6%88%90-2/",
+   "postedAt": "2026-08-12",
+   "deadline": "2026-10-09",
+   "deadlineType": "date",
+   "deadlineRaw": "2026/10/09 NPO基盤強化資金助成(認定NPO法人取得資金助成) 募集要項 https:",
+   "summary": "社会福祉分野で活動し認定NPO法人の取得を目指す特定非営利活動法人に対し、認定取得に必要な資金を助成します。",
+   "fields": [
+    "共通"
+   ],
+   "uses": [
+    "事業・活動"
+   ],
+   "applicants": [
+    "NPO・公益法人"
+   ],
+   "amount": "総額3,000千円"
+  },
+  {
+   "hash": "35967fe191f0acb7",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "2026年度 公益財団法人 齋藤茂昭記念財団 助成事業",
+   "url": "https://www.jfc.or.jp/news_subsidy/2026%e5%b9%b4%e5%ba%a6-%e5%85%ac%e7%9b%8a%e8%b2%a1%e5%9b%a3%e6%b3%95%e4%ba%ba-%e9%bd%8b%e8%97%a4%e8%8c%82%e6%98%ad%e8%a8%98%e5%bf%b5%e8%b2%a1%e5%9b%a3-%e5%8a%a9%e6%88%90%e4%ba%8b%e6%a5%ad-5/",
+   "postedAt": "2026-08-07",
+   "deadline": "2026-10-15",
+   "deadlineType": "date",
+   "deadlineRaw": "2026/10/15 募集要項 https://www.saito-foundation.jp/b",
+   "summary": "障害者やLGBTQ等の社会的マイノリティに対する就労・自立支援、理解を深める啓発活動や人材育成に取り組む団体等の事業を助成します。",
+   "fields": [
+    "障害"
+   ],
+   "uses": [
+    "人材・研修",
+    "行事・啓発"
+   ],
+   "applicants": [],
+   "amount": "1件1,000千円"
+  },
+  {
    "hash": "1ba157559d51a8a1",
    "source": "助成財団センター 助成金募集ニュース",
    "sourceKind": "org",
@@ -132,6 +202,32 @@
     "人材・研修"
    ],
    "applicants": [],
+   "amount": ""
+  },
+  {
+   "hash": "e3392e5ccf02e958",
+   "source": "中央競馬馬主社会福祉財団",
+   "sourceKind": "org",
+   "funder": "中央競馬馬主社会福祉財団",
+   "title": "令和８年度施設整備等助成事業の申請等について",
+   "url": "https://www.jra-umanushi-hukushi.or.jp/jyosei/25475.html",
+   "postedAt": "2026-01-27",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "",
+   "summary": "社会福祉施設等を運営する社会福祉法人やNPO法人等を対象に、福祉車両や備品の購入、施設の増改築・修繕工事等の費用を助成します。",
+   "fields": [
+    "共通"
+   ],
+   "uses": [
+    "設備・改修",
+    "機器・用具",
+    "車両"
+   ],
+   "applicants": [
+    "社会福祉法人",
+    "NPO・公益法人"
+   ],
    "amount": ""
   }
  ]
