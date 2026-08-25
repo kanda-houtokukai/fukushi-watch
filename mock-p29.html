@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>P29 比較モック（タブ・助成面の密度）</title>
+<style>
+  /* 本体と同じトークン */
+  :root{
+    --ink:#17181a; --sub:#75716b; --faint:#a8a49d; --rule:#e6e3de;
+    --paper:#fcfcfb; --high:#a04a32; --link:#1f4e79; --press-bg:#f5f3ef;
+    --f-hoiku:#b0873a; --f-jido:#a05a78; --f-shogai:#3a6ea5; --f-korei:#5a7d4f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;background:var(--paper);
+    color:var(--ink);line-height:1.7;padding:20px 16px 90px;max-width:1080px;margin:0 auto}
+  h1{font-size:18px;letter-spacing:.1em;border-bottom:3px double var(--ink);padding-bottom:10px}
+  .note{font-size:12px;color:var(--sub);margin:8px 0 26px}
+  section{margin-top:44px}
+  h2{font-size:15px;letter-spacing:.15em;border-top:2px solid var(--ink);padding-top:10px}
+  h3{font-size:13px;color:var(--sub);margin:20px 0 6px;font-weight:600}
+  .desc{font-size:12px;color:var(--sub);margin-bottom:8px}
+  .frame{border:1px dashed var(--faint);margin:8px 0 4px;background:var(--paper);overflow:hidden}
+  .frame.narrow{max-width:320px}
+  .judge{font-size:11px;color:var(--sub);margin-bottom:14px}
+  .judge b.ok{color:var(--ink)} .judge b.ng{color:var(--high)}
+  .pick{border:0;background:var(--ink);color:var(--paper);font:inherit;font-size:11px;
+    padding:2px 10px;cursor:pointer;margin-left:8px}
+
+  /* ==== 1. タブ案 ==== */
+  .tabs{display:flex;border-bottom:1px solid var(--rule);overflow-x:auto;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs button{appearance:none;border:0;background:none;font:inherit;cursor:pointer;
+    font-size:13px;letter-spacing:.22em;color:var(--sub);white-space:nowrap}
+  .tabs .n{font-size:11px;font-weight:400;letter-spacing:0;color:var(--faint);margin-left:6px}
+
+  /* 現状（参考） */
+  .t0 button{padding:11px 20px 9px;font-weight:700;border-bottom:3px solid transparent;margin-bottom:-1px}
+  .t0 button.on{color:var(--ink);border-bottom-color:var(--ink)}
+
+  /* 案A: 現状の強化（非選択の重さを落とし、選択中の下線を太く） */
+  .tA button{padding:11px 20px 9px;font-weight:400;border-bottom:4px solid transparent;margin-bottom:-1px}
+  .tA button.on{color:var(--ink);font-weight:700;border-bottom-color:var(--ink)}
+
+  /* 案B: 白抜き（新聞の面名標。選択中＝墨ベタに紙色の文字） */
+  .tB{gap:6px;padding-bottom:0;align-items:flex-end}
+  .tB button{padding:8px 18px 7px;font-weight:600;margin-bottom:-1px;border-bottom:1px solid transparent}
+  .tB button.on{background:var(--ink);color:var(--paper)}
+  .tB button.on .n{color:var(--paper);opacity:.75}
+
+  /* 案C: 囲み罫（選択中＝枠つきで紙面と連結。下辺が開く） */
+  .tC{align-items:flex-end}
+  .tC button{padding:9px 18px 8px;font-weight:600;border:1px solid transparent;margin-bottom:-1px}
+  .tC button.on{color:var(--ink);font-weight:700;border-color:var(--ink);
+    border-bottom-color:var(--paper);background:var(--paper)}
+
+  /* ==== 2. 助成の項目 ==== */
+  .g{border-bottom:1px solid var(--rule);padding:15px 0}
+  .seal{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;
+    border:1.5px solid var(--ink);border-radius:5px;font-size:10.5px;font-weight:700;
+    background:#fff;flex:none}
+  .share{border:0;background:none;color:var(--faint);cursor:pointer;font-size:13px;padding:0 4px}
+  .aid{margin-top:9px;font-size:12px;color:var(--link)}
+  /* 現行の形 */
+  .cur .when{font-size:13px;font-weight:700}
+  .cur .when.soon{color:var(--high)} .cur .when .rest{font-weight:400;color:var(--sub)}
+  .cur .when.soon .rest{color:var(--high)}
+  .cur h4{font-size:15px;line-height:1.55;margin:5px 0 4px;font-weight:600}
+  .cur .funder{font-size:12px;color:var(--sub);font-weight:600}
+  .cur .body{font-size:12.5px;color:var(--sub);line-height:1.75}
+  .cur .meta{font-size:12px;color:var(--sub);margin-top:8px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .cur .amount{font-weight:600;color:var(--ink)}
+  .cur .gtag{font-size:11px;font-weight:600;color:var(--ink);border:1px solid var(--rule);padding:1px 6px;margin-right:5px}
+  .cur .gtag.app{color:var(--sub)} .cur .gtag.none{border-style:dashed;color:var(--faint);font-weight:400}
+  .cur .field{border-bottom:2px solid var(--f-shogai);font-weight:600;margin-right:5px}
+
+  /* 新配置（共通の骨格）: タイトル主役＋締切は右 */
+  .new .trow{display:flex;align-items:baseline;gap:14px;justify-content:space-between}
+  .new h4{font-size:16.5px;line-height:1.5;font-weight:700;margin:0}
+  .new h4 a{color:var(--ink);text-decoration:none}
+  .new .when{font-size:12.5px;white-space:nowrap;color:var(--sub);flex:none;
+    font-variant-numeric:tabular-nums}
+  .new .when b{font-size:13.5px;color:var(--ink)}
+  .new .when.soon,.new .when.soon b{color:var(--high);font-weight:700}
+  .new .funder{font-size:12px;color:var(--sub);font-weight:600;margin-top:2px}
+  .new .body{font-size:12.5px;color:var(--sub);line-height:1.75;margin-top:3px}
+  .new .meta{margin-top:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:11.5px;color:var(--sub)}
+  .new .amount{font-weight:600;color:var(--ink);font-size:12px}
+  /* タグ案1: 枠なし・中黒区切りの薄墨（分野だけ従来の色下線を残す） */
+  .q1 .tagline{color:var(--faint);letter-spacing:.02em}
+  .q1 .tagline .fld{color:var(--sub);font-weight:600;border-bottom:2px solid var(--f-shogai);padding-bottom:0}
+  .q1 .tagline .fld.kyotsu{border-bottom-color:var(--ink)}
+  .q1 .tagline .fld.jido{border-bottom-color:var(--f-jido)}
+  .q1 .tagline .sep{margin:0 7px;color:var(--rule)}
+  /* タグ案2: 枠を保って淡くする */
+  .q2 .gtag{font-size:10.5px;font-weight:400;color:var(--sub);border:1px solid var(--rule);
+    padding:0 5px;margin-right:4px}
+  .q2 .field{font-weight:600;color:var(--sub);border-bottom:2px solid var(--f-shogai);margin-right:6px;font-size:11px}
+  .q2 .field.kyotsu{border-bottom-color:var(--ink)} .q2 .field.jido{border-bottom-color:var(--f-jido)}
+  .q2 .none{border-style:dashed;color:var(--faint)}
+
+  /* ==== 3. 用途チップ ==== */
+  .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{font-size:12px;font-weight:600;padding:6px 12px 5px;border:1px solid var(--rule);
+    background:var(--paper);border-bottom-width:3px;color:var(--sub);font-family:inherit}
+  .chips.small{gap:6px}
+  .chips.small .chip{padding:5px 9px 4px}
+  .wbox{border:1px dashed var(--faint);padding:10px;resize:horizontal;overflow:auto;min-width:280px;max-width:100%}
+  input[type=range]{width:260px;vertical-align:middle}
+
+  /* ==== 4. アコーディオン ==== */
+  .acc-sum{display:flex;align-items:baseline;gap:8px;cursor:pointer;list-style:none;
+    font-size:12.5px;color:var(--ink);padding:9px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .acc-sum::-webkit-details-marker{display:none}
+  .acc-sum::before{content:"▽";font-size:10px;color:var(--sub)}
+  details[open] .acc-sum::before{content:"△"}
+  .acc-sum .now{font-size:11.5px;color:var(--sub)}
+  .acc-sum .now b{color:var(--ink);font-weight:600}
+  .acc-body{padding:12px 0 4px;border-bottom:1px solid var(--rule)}
+  .acc-body .chips{margin-bottom:8px}
+  .chip.on{border-color:var(--ink);color:var(--ink)}
+  .gtoggle{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;cursor:pointer;margin-top:2px}
+  .gcount{font-size:13px;color:var(--sub);margin:10px 0 4px}
+  .gcount b{color:var(--high)}
+</style>
+</head>
+<body>
+<h1>P29 比較モック</h1>
+<p class="note">区切り①の比較用（本体は未変更）。決定後にこのファイルは削除します。<br>
+①タブ3案は<b>押して切り替え</b>られます。スマホでも開いてください。判定行の数値はこの端末での実測です。</p>
+
+<!-- ==================== 1. タブ ==================== -->
+<section>
+<h2>1. 面の切り替えタブ（3案・押して試す）</h2>
+
+<h3>参考: 現状</h3>
+<div class="frame"><nav class="tabs t0"><button class="on">紙　面</button><button>助　成<span class="n">10</span></button></nav></div>
+
+<h3>案A: 現状の強化（非選択を軽く・選択中の下線を太く）— 最小差分</h3>
+<div class="frame"><nav class="tabs tA" data-tab><button class="on">紙　面</button><button>助　成<span class="n">10</span></button></nav></div>
+<div class="frame"><nav class="tabs tA" data-tab><button class="on">紙　面</button><button>助　成<span class="n">10</span></button><button>制度解説</button><button>研修情報</button></nav></div>
+<div class="frame narrow"><nav class="tabs tA" data-tab><button class="on">紙　面</button><button>助　成<span class="n">10</span></button><button>制度解説</button><button>研修情報</button></nav></div>
+<div class="judge" data-judge></div>
+
+<h3>案B: 白抜き（新聞の面名標。選択中＝墨ベタに紙色の文字）</h3>
+<div class="frame"><nav class="tabs tB" data-tab><button class="on">紙　面</button><button>助　成<span class="n">10</span></button></nav></div>
+<div class="frame"><nav class="tabs tB" data-tab><button class="on">紙　面</button><button>助　成<span class="n">10</span></button><button>制度解説</button><button>研修情報</button></nav></div>
+<div class="frame narrow"><nav class="tabs tB" data-tab><button class="on">紙　面</button><button>助　成<span class="n">10</span></button><button>制度解説</button><button>研修情報</button></nav></div>
+<div class="judge" data-judge></div>
+
+<h3>案C: 囲み罫（選択中＝墨の枠。下辺が開いて紙面と連結して見える）</h3>
+<div class="frame"><nav class="tabs tC" data-tab><button class="on">紙　面</button><button>助　成<span class="n">10</span></button></nav></div>
+<div class="frame"><nav class="tabs tC" data-tab><button class="on">紙　面</button><button>助　成<span class="n">10</span></button><button>制度解説</button><button>研修情報</button></nav></div>
+<div class="frame narrow"><nav class="tabs tC" data-tab><button class="on">紙　面</button><button>助　成<span class="n">10</span></button><button>制度解説</button><button>研修情報</button></nav></div>
+<div class="judge" data-judge></div>
+<p class="desc">4つに増えた場合、どの案も<b>折り返さず横スクロール</b>（バーの端で自然に切れて続きを示す・チップバーと同じ扱い）。タブは固定ヘッダーの外にあるため、行高86pxの保証には触れません。</p>
+</section>
+
+<!-- ==================== 2. PC項目の密度 ==================== -->
+<section>
+<h2>2. PC: 助成の項目の情報密度（現行 → 新配置2案）</h2>
+<p class="desc">新配置の骨格は共通: <b>タイトルを最大（16.5px太字）にし、締切をタイトルの右へ</b>。締切は通常＝墨の数字＋薄墨の残り日数、<b>残り14日以内だけ朱</b>（既存の体系のまま）。締切不明・随時は薄墨の細字。違いは<b>タグの重さの落とし方</b>だけです。</p>
+
+<h3>参考: 現行</h3>
+<div class="frame" style="padding:0 14px"><div id="mock-cur"></div></div>
+
+<h3>案1: タグの枠を外し、中黒区切りの薄墨テキストにする（いちばん静か・推奨）</h3>
+<div class="frame" style="padding:0 14px"><div id="mock-q1"></div></div>
+
+<h3>案2: タグの枠を保ち、細字・小さめにして淡くする</h3>
+<div class="frame" style="padding:0 14px"><div id="mock-q2"></div></div>
+</section>
+
+<!-- ==================== 3. 用途チップ1行 ==================== -->
+<section>
+<h2>3. PC: 用途タグを1行に収める</h2>
+<p class="desc">枠の幅をつまみで変えて、どこまで1行が保つかを見られます（本体のPC主列は<b>約700px</b>）。</p>
+<label class="desc">枠の幅: <input type="range" id="wslider" min="480" max="900" value="700"> <span id="wval">700px</span></label>
+
+<h3>現行（12px・余白12px・間隔8px）→ 700pxでは折り返す</h3>
+<div class="wbox" data-w><div class="chips" id="c-cur"></div><div class="judge" data-fit></div></div>
+
+<h3>調整案（12pxのまま・余白9px・間隔6px）→ 700pxで1行に収まる</h3>
+<div class="wbox" data-w><div class="chips small" id="c-new"></div><div class="judge" data-fit></div></div>
+<p class="desc">文字サイズは12pxのまま（読みやすさは落とさない）。余白と間隔だけ詰める。狭い幅では自然に折り返します。</p>
+</section>
+
+<!-- ==================== 4. スマホ: 絞り込みのアコーディオン ==================== -->
+<section>
+<h2>4. スマホ: 絞り込みをアコーディオンに（触って試す）</h2>
+<p class="desc">既定は閉。<b>絞り込み中は、閉じていても見出しに条件が出ます</b>（チップを押してから閉じてみてください）。件数表示（P19）は外に出したまま維持。実装はCSSの出し分け（PCは常時展開・スマホのみ折りたたみ）。</p>
+<div class="frame narrow" style="padding:0 14px 8px">
+  <details id="acc">
+    <summary class="acc-sum">絞り込み<span class="now" id="accNow"></span></summary>
+    <div class="acc-body">
+      <div class="chips" id="accFields"></div>
+      <div class="chips" id="accUses"></div>
+      <label class="gtoggle"><input type="checkbox" id="accApp">社会福祉法人が応募できるものだけ</label>
+    </div>
+  </details>
+  <div class="gcount" id="accCount"></div>
+</div>
+</section>
+
+<script>
+/* ---- 1. タブ: 押して切り替え＋判定 ---- */
+document.querySelectorAll("[data-tab]").forEach((nav) => {
+  nav.addEventListener("click", (e) => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    nav.querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b));
+  });
+});
+function judgeTabs() {
+  document.querySelectorAll("[data-judge]").forEach((j) => {
+    let el = j.previousElementSibling;                    // 直前の narrow frame
+    const nav = el.querySelector(".tabs");
+    const h = Math.round(nav.getBoundingClientRect().height);
+    const sc = nav.scrollWidth > nav.clientWidth + 1;
+    j.innerHTML = `バーの高さ: <b class="ok">${h}px</b> ／ 320px幅で4面: ` +
+      (sc ? `<b class="ok">横スクロールで続きを示す（折り返しなし）</b>` : `<b class="ok">収まっている</b>`);
+  });
+}
+
+/* ---- 2. 項目モック（実データ4件: 朱/通常/長題/締切不明） ---- */
+const ITEMS = [
+  { t:"助成事業2026年度秋期人間拡張（身体機能の獲得・向上）", d:"8月31日", rest:"残り6日", soon:true,
+    fu:"", src:"助成財団センター 助成金募集ニュース", amt:"1件10,000千円",
+    flds:[["障害",""]], uses:["ICT"], apps:null,
+    sum:"先天性の重度知的・身体障害のある方が意思表出を行うため、テクノロジーを活用した身体機能・認知機能の発達や獲得を目指す活動を助成します。" },
+  { t:"2026年度 公益財団法人 齋藤茂昭記念財団 助成事業", d:"10月15日", rest:"残り51日", soon:false,
+    fu:"", src:"助成財団センター 助成金募集ニュース", amt:"1件1,000千円",
+    flds:[["障害",""]], uses:["人材・研修","行事・啓発"], apps:null,
+    sum:"障害者やLGBTQ等の社会的マイノリティに対する就労・自立支援、理解を深める啓発活動や人材育成に取り組む団体等の事業を助成します。" },
+  { t:"児童養護施設や自立援助ホーム等を退所して大学や専門学校等に進学した学生を応援します！ ～盛和塾 社会人定着応援プログラム 2026年度～",
+    d:"11月27日", rest:"残り94日", soon:false,
+    fu:"中央共同募金会", src:"中央共同募金会", amt:"",
+    flds:[["児童","jido"]], uses:["人材・研修"], apps:null,
+    sum:"児童養護施設等を退所して進学した学生の就職活動費用や資格取得にかかる費用を給付支援します。" },
+  { t:"令和８年度施設整備等助成事業の申請等について", d:null, rest:"締切の記載: なし", soon:false,
+    fu:"中央競馬馬主社会福祉財団", src:"中央競馬馬主社会福祉財団", amt:"",
+    flds:[["共通","kyotsu"]], uses:["設備・改修","機器・用具","車両"], apps:["社会福祉法人","NPO・公益法人"],
+    sum:"社会福祉施設等を運営する社会福祉法人やNPO法人等を対象に、福祉車両や備品の購入、施設の増改築・修繕工事等の費用を助成します。" },
+];
+const esc = (s) => s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+function curBlock(it){
+  const when = it.d
+    ? `<div class="when${it.soon?" soon":""}">締切 2026年${it.d}<span class="rest">（${it.rest}）</span></div>`
+    : `<div class="when"><span class="rest" style="font-weight:400;color:var(--sub)">${it.rest}</span></div>`;
+  return `<article class="g cur">${when}
+    <h4><a>${esc(it.t)}</a></h4>${it.fu?`<div class="funder">${it.fu}</div>`:""}
+    <div class="body">${esc(it.sum)}</div>
+    <div class="meta"><span class="seal">団</span>${it.src}
+      ${it.amt?`<span class="amount">${it.amt}</span>`:""}
+      <span>${it.flds.map(f=>`<span class="field ${f[1]}">${f[0]}</span>`).join("")}</span>
+      <span>${it.uses.map(u=>`<span class="gtag">${u}</span>`).join("")}</span>
+      <span>${it.apps?it.apps.map(a=>`<span class="gtag app">${a}</span>`).join(""):`<span class="gtag none">応募主体の記載なし</span>`}</span>
+      <span class="share">⇪</span></div>
+    <div class="aid">▽ 応募の条件</div></article>`;
+}
+function newBlock(it, quiet){
+  const when = it.d
+    ? `<div class="when${it.soon?" soon":""}">締切 <b>${it.d}</b>（${it.rest}）</div>`
+    : `<div class="when">${it.rest}</div>`;
+  const flds1 = it.flds.map(f=>`<span class="fld ${f[1]}">${f[0]}</span>`).join("・");
+  const tags = quiet === 1
+    ? `<span class="tagline">${flds1}<span class="sep">｜</span>${it.uses.join("・")}<span class="sep">｜</span>${it.apps?it.apps.join("・"):"応募主体の記載なし"}</span>`
+    : `<span>${it.flds.map(f=>`<span class="field ${f[1]}">${f[0]}</span>`).join("")}</span>
+       <span>${it.uses.map(u=>`<span class="gtag">${u}</span>`).join("")}</span>
+       <span>${it.apps?it.apps.map(a=>`<span class="gtag">${a}</span>`).join(""):`<span class="gtag none">応募主体の記載なし</span>`}</span>`;
+  return `<article class="g new q${quiet}">
+    <div class="trow"><h4><a>${esc(it.t)}</a></h4>${when}</div>
+    ${it.fu?`<div class="funder">${it.fu}</div>`:""}
+    <div class="body">${esc(it.sum)}</div>
+    <div class="meta"><span class="seal">団</span>${it.src}
+      ${it.amt?`<span class="amount">${it.amt}</span>`:""}${tags}<span class="share">⇪</span></div>
+    <div class="aid">▽ 応募の条件</div></article>`;
+}
+document.getElementById("mock-cur").innerHTML = ITEMS.map(curBlock).join("");
+document.getElementById("mock-q1").innerHTML = ITEMS.map((it)=>newBlock(it,1)).join("");
+document.getElementById("mock-q2").innerHTML = ITEMS.map((it)=>newBlock(it,2)).join("");
+
+/* ---- 3. 用途チップ ---- */
+const USES = ["設備・改修","機器・用具","ICT","車両","人材・研修","事業・活動","研究・調査","行事・啓発","表彰"];
+for (const id of ["c-cur","c-new"]) {
+  document.getElementById(id).innerHTML = USES.map((u)=>`<button class="chip">${u}</button>`).join("");
+}
+const slider = document.getElementById("wslider");
+function fit(){
+  document.getElementById("wval").textContent = slider.value + "px";
+  document.querySelectorAll("[data-w]").forEach((box)=>{
+    box.style.width = slider.value + "px";
+    const chips = [...box.querySelectorAll(".chip")];
+    const rows = new Set(chips.map((c)=>Math.round(c.getBoundingClientRect().top)));
+    const j = box.querySelector("[data-fit]");
+    j.innerHTML = rows.size === 1
+      ? `この幅で <b class="ok">1行に収まっています</b>`
+      : `この幅では <b class="ng">${rows.size}行に折り返しています</b>`;
+    j.style.marginTop = "8px";
+  });
+  judgeTabs();
+}
+slider.addEventListener("input", fit);
+
+/* ---- 4. アコーディオン ---- */
+const FIELDS = ["全分野","保育","児童","障害","高齢"];
+const accF = document.getElementById("accFields");
+const accU = document.getElementById("accUses");
+accF.innerHTML = FIELDS.map((f,i)=>`<button class="chip${i===0?" on":""}">${f}</button>`).join("");
+accU.innerHTML = USES.map((u)=>`<button class="chip">${u}</button>`).join("");
+const stateAcc = { field:"全分野", use:null, app:false };
+function accSync(){
+  const parts = [];
+  if (stateAcc.field !== "全分野") parts.push(stateAcc.field);
+  if (stateAcc.use) parts.push(stateAcc.use);
+  if (stateAcc.app) parts.push("社福のみ");
+  document.getElementById("accNow").innerHTML =
+    parts.length ? `絞り込み中: <b>${parts.join("・")}</b>` : "";
+  const n = parts.length ? 3 : 10; /* モックなので件数はダミー */
+  document.getElementById("accCount").innerHTML =
+    `<b>${n}件</b> ── 締切あり${n-1}・随時通年0・締切不明1` +
+    (parts.length ? ` ／ 全10件` : "");
+}
+accF.addEventListener("click",(e)=>{ const b=e.target.closest(".chip"); if(!b) return;
+  [...accF.children].forEach((x)=>x.classList.toggle("on",x===b));
+  stateAcc.field=b.textContent; accSync(); });
+accU.addEventListener("click",(e)=>{ const b=e.target.closest(".chip"); if(!b) return;
+  const on=b.classList.contains("on");
+  [...accU.children].forEach((x)=>x.classList.remove("on"));
+  if(!on){ b.classList.add("on"); stateAcc.use=b.textContent; } else stateAcc.use=null;
+  accSync(); });
+document.getElementById("accApp").addEventListener("change",(e)=>{ stateAcc.app=e.target.checked; accSync(); });
+accSync();
+window.addEventListener("load", fit);
+</script>
+</body>
+</html>
