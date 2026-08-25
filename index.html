@@ -85,6 +85,13 @@
      出し分けは幅のメディアクエリ＝CSSだけで行い、resizeイベントに依存しない（P22の教訓）。
      ⚠️紙面側の分野チップには適用しない（P10の判断＝押した結果が目の前で変わる）
      ⚠️selectの文字は16px未満にしない（iOSがフォーカス時に画面を拡大する・落とし穴チェックリスト） */
+  /* P32: ブラウザ標準の青いフォーカスリングを墨系に置き換える（消さない——
+     キーボード操作の可視化は必要なため outline:none だけにしない）。
+     selectは包み枠(.gsel)の罫が墨になる形で示し、他の操作要素は墨の細い輪郭にそろえる */
+  :focus-visible{outline:1.5px solid var(--ink);outline-offset:2px}
+  .gsel select:focus,.gsel select:focus-visible{outline:none}
+  .gsel:focus-within{border-color:var(--ink)}
+
   .gselrow{display:none}
   @media(max-width:899px){
     .gchips{display:none}
@@ -237,6 +244,10 @@
   .it.hide{opacity:0;max-height:0 !important;margin:0 !important;
     padding-top:0 !important;padding-bottom:0 !important;border-width:0 !important;pointer-events:none}
   @media (prefers-reduced-motion: reduce){.it,.sec{transition:none}}
+
+  /* P32: 直後にセクション見出し（太線）が来る項目は薄線を消す（二重線の解消・JSが付け外す）。
+     色だけ透明にして高さは変えない（絞り込みの開閉アニメと余白を安定させる） */
+  .it.nolast,.g.nolast{border-bottom-color:transparent}
 
   .top-item{padding:18px 0 22px;border-bottom:1px solid var(--rule)}
   .top-item h3{font-size:20px;line-height:1.55;margin-bottom:8px;font-weight:650}
@@ -1094,6 +1105,25 @@
       pressWrap.classList.toggle("hide", !anyPress);
     }
     updateDayCounts(); // 分野を変えたら件数表示も追随させる（P19）
+    trimSectionRules($("list"), "sec"); // 線の整理も可視状態に追随させる（P32）
+  }
+
+  /* P32: 次に見えているのがセクション見出しである項目は、薄い下線を消す
+     （見出し側の太線が境界を担うため、余白を挟んで線が二重に見える）。
+     ⚠️リスト末尾の項目は薄線を残す（閉じ線）。⚠️絞り込みで途中の項目が隠れても
+     正しく効くよう、可視の「次の要素」で判定する（CSSの :has では隠れた兄弟を跨げない） */
+  function trimSectionRules(container, secClass) {
+    const kids = [...container.children];
+    kids.forEach((el, i) => {
+      if (!el.classList.contains("it") && !el.classList.contains("g")) return;
+      let next = null;
+      for (let j = i + 1; j < kids.length; j++) {
+        if (kids[j].classList.contains("hide")) continue;
+        next = kids[j];
+        break;
+      }
+      el.classList.toggle("nolast", Boolean(next && next.classList.contains(secClass)));
+    });
   }
 
   async function renderDay() {
@@ -1475,6 +1505,8 @@
       ["随時・通年", all.filter((x) => x.deadlineType === "rolling").length],
       ["締切不明", all.filter((x) => x.deadlineType === "unknown").length],
     ].map(([k, n]) => `<div class="row" style="cursor:default"><span>${k}</span><b>${n}</b></div>`).join("");
+
+    trimSectionRules($("grantList"), "gsec"); // 束の最後の項目の薄線を消す（P32）
 
     if (state.pendingGrant) {
       const el = document.querySelector(`.g[data-hash^="${state.pendingGrant}"]`);
