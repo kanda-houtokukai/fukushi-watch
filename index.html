@@ -18,6 +18,7 @@
     --ink:#17181a; --sub:#75716b; --faint:#a8a49d; --rule:#e6e3de;
     --paper:#fcfcfb; --high:#a04a32; --mid-bar:#cfccc6; --low-bar:#e6e3de;
     --link:#1f4e79; --press-bg:#f5f3ef;
+    --ink-press:#4e4e4c; /* 墨の濃度約80%（P40-5・タブの押し込まれた面。色相は増やしていない） */
     /* 分野色(並びは全箇所 保育・児童・障害・高齢): 保育=山吹/児童=梅/障害=藍/高齢=松葉 */
     --f-hoiku:#b0873a; --f-jido:#a05a78; --f-shogai:#3a6ea5; --f-korei:#5a7d4f;
   }
@@ -48,18 +49,23 @@
      紙面＝日々の記録（過去に積み上がる）／助成＝いま応募できる助成（締切に向かって減る）。
      時間の向きが逆なので同じ日付レールに乗せられない、というのが面を分けた理由。
      出し分けは body[data-view] で**CSSだけ**で行う（描画ロジックを二重化しない・P10/P22の型） */
-  /* P31・案C3: それぞれ独立したボタン（囲み罫の系統・数字は出さない）。
-     選択中＝墨の枠＋薄い地色（#f6f5f1=「操作できる箱」の色）＋太字／非選択＝薄い罫の枠＋薄墨。
-     ※案C1へは .view.on の background を外すだけ、案C2へは .view の border-color を
-       transparent にするだけで移れる。面が増えても折り返さず横スクロールで続きを示す */
+  /* P40-5・案D（押しボタン型・濃度4。ユーザー決定）:
+     非選択＝右下に墨のオフセット影で「浮いている」（押せる）／
+     選択＝影が消えて2pxめり込み＋面が暗くなる（--ink-press=墨の濃度約80%）＋白抜き太字。
+     物理の直感（押し込まれた面は影になって暗い）で現在地を示す。
+     濃度はモック mock-p40d.html の5段階からユーザーが4を選択（3までは墨文字の上限・
+     5=墨ベタは題字と真っ黒が並ぶ）。色は墨の濃度のみ＝2色の体系は不変。
+     ⚠️影のぶん右と下に2pxの余白が要る（paddingで確保）。面が増えたら横スクロール（従来どおり） */
   /* P37: タブ下の細罫は削除（下の面見出しの太罫と二重になっていた。P32と同種の解消） */
-  .views{display:flex;gap:8px;margin-top:-1px;
-    padding:2px 0 10px;overflow-x:auto;scrollbar-width:none;align-items:flex-end}
+  .views{display:flex;gap:12px;margin-top:-1px;
+    padding:2px 2px 10px 0;overflow-x:auto;scrollbar-width:none;align-items:flex-end}
   .views::-webkit-scrollbar{display:none}
-  .views .view{appearance:none;background:none;font:inherit;cursor:pointer;
-    padding:7px 16px 6px;font-size:13px;font-weight:400;letter-spacing:.22em;
-    color:var(--sub);border:1.5px solid var(--rule);white-space:nowrap;flex:none}
-  .views .view.on{border-color:var(--ink);background:#f6f5f1;color:var(--ink);font-weight:700}
+  .views .view{appearance:none;font:inherit;cursor:pointer;
+    padding:7px 18px 6px;font-size:13px;font-weight:400;letter-spacing:.22em;
+    color:var(--ink);background:var(--paper);border:1px solid var(--ink);
+    box-shadow:2px 2px 0 var(--ink);transform:translate(0,0);white-space:nowrap;flex:none}
+  .views .view.on{box-shadow:none;transform:translate(2px,2px);
+    background:var(--ink-press);color:#fff;font-weight:700}
   /* P34: 3面になったので「その面のときだけ出す」:not の形にそろえる */
   body:not([data-view="paper"]) .ticker,
   body:not([data-view="paper"]) .dayhead,
@@ -550,7 +556,7 @@
     /* ③押せるが「移動しない」もの（絞り込み・開閉）は、薄墨→墨に**濃くなる**だけにする。
        紺は「押すと移動する」の合図として温存し、操作と移動を色で描き分ける。 */
     .chip:not(.on):hover{color:var(--ink)}
-    .views .view:not(.on):hover{color:var(--ink)}
+    .views .view:not(.on):hover{background:#f6f5f1} /* P40-5: 浮いたまま少し陰る（押せるの下見せ） */
     .glink:hover{color:var(--link);text-decoration:underline;text-underline-offset:3px}
     .mm-about summary:hover,.gnote-fold summary:hover,.srch-close:hover{color:var(--ink)}
     .search button:hover{opacity:.85} /* 墨ベタのボタンは色を足さず濃度で応える */
