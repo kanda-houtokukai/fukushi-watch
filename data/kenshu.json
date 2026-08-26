@@ -1,0 +1,440 @@
+{
+ "updatedAt": "2026-08-26T01:05:37.731Z",
+ "items": [
+  {
+   "hash": "214726beef7879ce",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "労務管理研修",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/07/b7ccf1d575ee342038aba8ac215f8574.pdf",
+   "deadline": "2026-08-28",
+   "deadlineType": "date",
+   "deadlineRaw": "8月28日",
+   "openFrom": "2026-07-14",
+   "fields": [
+    "共通"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "c8115f73722c5835",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "BCP(業務継続計画)研修",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/08/R8-BCP.pdf",
+   "deadline": "2026-09-04",
+   "deadlineType": "date",
+   "deadlineRaw": "9月4日",
+   "openFrom": "2026-08-02",
+   "fields": [
+    "共通"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "6b27ebe70841b027",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "コーチング研修",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/08/5f37687554014ed286055943156e5e07.pdf",
+   "deadline": "2026-09-18",
+   "deadlineType": "date",
+   "deadlineRaw": "9月18日",
+   "openFrom": "2026-08-10",
+   "fields": [
+    "共通"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "abf92a3c3c034ebf",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "リスクマネジメント研修",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/08/a836a112a72befc59251375a8528f110.pdf",
+   "deadline": "2026-10-02",
+   "deadlineType": "date",
+   "deadlineRaw": "10月2日",
+   "openFrom": "2026-08-20",
+   "fields": [
+    "共通"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "58b621e3ccc4363c",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "会計担当者研修(実践者コース)",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2025/08/e9884305e5ec37f96e4c3bf628e95c9b-1.pdf",
+   "deadline": "2026-10-08",
+   "deadlineType": "date",
+   "deadlineRaw": "10月8日",
+   "openFrom": "2026-07-15",
+   "fields": [
+    "共通"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "9cf8124aaa8ddc56",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "利用者・家族とのコミュニケーション力向上研修",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/08/a4e0393ed40d0b8cc9a09df74d54d88d.pdf",
+   "deadline": "2026-10-20",
+   "deadlineType": "date",
+   "deadlineRaw": "10月20日",
+   "openFrom": "2026-08-18",
+   "fields": [
+    "共通"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "86f22479c6a6346c",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "アンガーマネジメント研修",
+   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "10月~11月開催予定",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "d2a4ba43f40ba2dc",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "ティーチング研修",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2025/06/a4e0393ed40d0b8cc9a09df74d54d88d-3.pdf",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "c2c63fb3b11fc961",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "ファシリテーション技術向上研修",
+   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "9月~12月開催予定",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "9448919e927e7be1",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "報・連・相強化研修",
+   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "10月開催予定",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "4a112b3db59bdc0d",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "小規模多機能型サービス等計画作成担当者研修 1回目",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/05/0f91156fccbcf3a353a91572777591b1.pdf",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "openFrom": "2026-05-13",
+   "fields": [
+    "高齢"
+   ],
+   "kind": "法定・資格系"
+  },
+  {
+   "hash": "35eefdea883065b0",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "小規模多機能型サービス等計画作成担当者研修 2回目",
+   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "2月予定",
+   "openFrom": null,
+   "fields": [
+    "高齢"
+   ],
+   "kind": "法定・資格系"
+  },
+  {
+   "hash": "58221b9eab1c5232",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "広報力強化研修",
+   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "1月~2月開催予定",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "e690351682aa05f5",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "感染症予防研修(前期)",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/04/e9884305e5ec37f96e4c3bf628e95c9b-1.pdf",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "0f13b78227c69d85",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "感染症予防研修(後期)",
+   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "11月開催予定",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "4c42d069d1496f43",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "接遇マナー向上研修",
+   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "1月開催予定",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "5ef8c176ebf534a1",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "業務改善研修",
+   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "1月~2月開催予定",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "4618b5859291fee6",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "業務目標の設定・管理・達成研修",
+   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "2月開催予定",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "4c1333fa69a80de0",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "看護実務者研修",
+   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "10月開始予定",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "f276b6a4495148c7",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "社会福祉法人監事及び会計責任者研修",
+   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "1月開催予定",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "ac30afdad328d79e",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "福祉職員キャリアパス対応生涯研修課程中堅職員コース",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2025/06/e9884305e5ec37f96e4c3bf628e95c9b-2.pdf",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "af21599dcbd061a4",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "福祉職員キャリアパス対応生涯研修課程初任者コース",
+   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "11月~1月開催予定",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "67a563c31f2d64e3",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "記録技術研修(障がい児者分野)",
+   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "11月~12月開催予定",
+   "openFrom": null,
+   "fields": [
+    "障害"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "081318117c9b398b",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "記録技術研修(高齢者分野)",
+   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "11月~12月開催予定",
+   "openFrom": null,
+   "fields": [
+    "高齢"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "864e58dc292760fa",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "認知症対応型サービス事業管理者研修 1回目",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/05/70b79d68f45fd43cc124edf74879b573.pdf",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "openFrom": "2026-05-13",
+   "fields": [
+    "高齢"
+   ],
+   "kind": "法定・資格系"
+  },
+  {
+   "hash": "ea6058a73350b023",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "認知症対応型サービス事業管理者研修 2回目",
+   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "2月予定",
+   "openFrom": null,
+   "fields": [
+    "高齢"
+   ],
+   "kind": "法定・資格系"
+  },
+  {
+   "hash": "1a1e2ca3f26d723e",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "認知症対応型サービス事業開設者研修 1回目",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/05/b429846019b9e233c8c7dc9ede385e00.pdf",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "openFrom": "2026-05-13",
+   "fields": [
+    "高齢"
+   ],
+   "kind": "法定・資格系"
+  },
+  {
+   "hash": "ab6fab753543df58",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "認知症対応型サービス事業開設者研修 2回目",
+   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "2月予定",
+   "openFrom": null,
+   "fields": [
+    "高齢"
+   ],
+   "kind": "法定・資格系"
+  },
+  {
+   "hash": "d32a542405349d4d",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "title": "説明力向上研修",
+   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "1月~2月開催予定",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "任意・スキル系"
+  }
+ ]
+}

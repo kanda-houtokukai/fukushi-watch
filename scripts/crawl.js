@@ -53,6 +53,7 @@ export function readSources() {
           kubun === "報道" ? "press"
           : kubun === "団体" ? "org"
           : kubun === "助成" ? "grant"
+          : kubun === "研修" ? "training" // 研修=別系統（P34・scripts/kenshu.js が担当）
           : "gov",
         url: cells[4],
         method: cells[5],
@@ -366,7 +367,9 @@ function loadState() {
 async function main() {
   const sources = readSources();
   // ★助成(grant)は別系統。紙面のパイプラインでは巡回しない（scripts/grants.js の担当）
-  const active = sources.filter((s) => s.status === "巡回中" && s.kind !== "grant");
+  const active = sources.filter(
+    (s) => s.status === "巡回中" && s.kind !== "grant" && s.kind !== "training"
+  );
   if (active.length === 0) {
     console.log("状態が「巡回中」の源がありません。docs/sources.md を確認してください。");
     return;

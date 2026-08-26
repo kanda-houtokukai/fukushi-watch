@@ -57,18 +57,21 @@
     padding:7px 16px 6px;font-size:13px;font-weight:400;letter-spacing:.22em;
     color:var(--sub);border:1.5px solid var(--rule);white-space:nowrap;flex:none}
   .views .view.on{border-color:var(--ink);background:#f6f5f1;color:var(--ink);font-weight:700}
-  body[data-view="grants"] .ticker,
-  body[data-view="grants"] .dayhead,
-  body[data-view="grants"] .daynav,
-  body[data-view="grants"] .chipbar,
-  body[data-view="grants"] #list,
-  body[data-view="grants"] #boxSearch,
-  body[data-view="grants"] #boxDeadline,
-  body[data-view="grants"] #boxCal,
-  body[data-view="grants"] #boxWeek{display:none}
-  body[data-view="paper"] #grantPane,
-  body[data-view="paper"] #boxGrantNote,
-  body[data-view="paper"] #boxGrantSum{display:none}
+  /* P34: 3面になったので「その面のときだけ出す」:not の形にそろえる */
+  body:not([data-view="paper"]) .ticker,
+  body:not([data-view="paper"]) .dayhead,
+  body:not([data-view="paper"]) .daynav,
+  body:not([data-view="paper"]) .chipbar,
+  body:not([data-view="paper"]) #list,
+  body:not([data-view="paper"]) #boxSearch,
+  body:not([data-view="paper"]) #boxDeadline,
+  body:not([data-view="paper"]) #boxCal,
+  body:not([data-view="paper"]) #boxWeek{display:none}
+  body:not([data-view="grants"]) #grantPane,
+  body:not([data-view="grants"]) #boxGrantNote,
+  body:not([data-view="grants"]) #boxGrantSum{display:none}
+  body:not([data-view="kenshu"]) #kenshuPane,
+  body:not([data-view="kenshu"]) #boxKenshuNote{display:none}
 
   /* ==== 助成面(P24) ==== */
   .ghead{border-top:2px solid var(--ink);padding-top:14px;display:flex;
@@ -637,6 +640,7 @@
   <nav class="views" id="views">
     <button class="view on" data-view="paper" type="button">紙　面</button>
     <button class="view" data-view="grants" type="button">助　成</button>
+    <button class="view" data-view="kenshu" type="button">研　修</button>
   </nav>
 
   <!-- 報道ティッカー(P20): 見出しは原文のまま・出典必須・要約や加工はしない -->
@@ -703,6 +707,26 @@
           <label class="gtoggle"><input type="checkbox" id="gAppli">社会福祉法人</label>
         </div>
         <div id="grantList"></div>
+      </section>
+
+      <!-- 研修面(P34)。助成と同じ別系統の data/kenshu.json を材料にする。
+           見た目・型は助成面のCSS(.g/.gsel/.chips等)を流用し、二重化しない -->
+      <section id="kenshuPane">
+        <div class="ghead">
+          <h2>いま申し込める研修</h2>
+          <div class="gcount" id="kCount"></div>
+        </div>
+        <div class="gfilters">
+          <div class="gselrow">
+            <label class="gsel"><span>分野</span><select id="kFieldSel"></select></label>
+            <label class="gsel"><span>種別</span><select id="kKindSel"></select></label>
+          </div>
+          <div class="gchips">
+            <div class="chips" id="kFields"></div>
+            <div class="chips" id="kKinds"></div>
+          </div>
+        </div>
+        <div id="kenshuList"></div>
       </section>
 
       <section class="about" id="about">
@@ -789,6 +813,17 @@
           掲載後に条件が変わることがあります。応募主体の記載がないものは、当方で読み取れなかったことを示します。</p>
         </details>
       </div>
+
+      <!-- P34: 研修面の注意書き（研修面のときだけ表示） -->
+      <div class="box" id="boxKenshuNote">
+        <h5>注 意 書 き</h5>
+        <details class="gnote-fold">
+          <summary>タグと締切について</summary>
+          <p class="gnote">分野・種別のタグは研修名からの機械的な分類です。
+          <b>日程・受講資格・申込方法は必ず開催要綱でご確認ください。</b>
+          「開催予定」のものは要綱の公開後に締切が入ります。</p>
+        </details>
+      </div>
     </aside>
   </div>
 </div>
@@ -823,6 +858,8 @@
     grants: [], grantsLoaded: false,    // 助成(P24)。紙面の history とは別系統
     use: null, appliOnly: true,         // 助成の絞り込み（用途=単一選択／応募主体トグル=既定オン・P31）
     pendingGrant: null,                 // 共有リンクで開いたときのスクロール先hash
+    kenshu: [], kenshuLoaded: false,    // 研修(P34)。助成と同じ別系統
+    kkind: null, pendingKenshu: null,   // 研修の種別絞り込み（単一）と共有スクロール先
     pendingItem: null, // 共有リンクで開いたときのスクロール先hash
   };
   const jstToday = () =>
@@ -1530,6 +1567,98 @@
     document.querySelectorAll("#views .view").forEach((b) =>
       b.classList.toggle("on", b.dataset.view === v));
     if (v === "grants") { await loadGrants(); renderGrants(); }
+    if (v === "kenshu") { await loadKenshu(); renderKenshu(); }
+  }
+
+  /* ==== 研修面(P34)。助成面と同じ型: 別系統のJSONを読み、締切前だけを描く。
+     項目の見た目は .g / .trow / .when / .tagline をそのまま流用する ==== */
+  const KIND_VOCAB = ["法定・資格系", "任意・スキル系"];
+
+  async function loadKenshu() {
+    if (state.kenshuLoaded) return;
+    state.kenshuLoaded = true;
+    try {
+      const g = await fetchJson("data/kenshu.json");
+      const today = jstToday();
+      state.kenshu = (g.items ?? []).filter(
+        (it) => it.deadlineType !== "date" || !it.deadline || it.deadline >= today
+      );
+    } catch { state.kenshu = []; } // 無くてもページは動く
+  }
+
+  function kenshuMatches(it) {
+    const f = it.fields ?? [];
+    if (state.field !== "all" && !(f.includes(state.field) || f.includes("共通"))) return false;
+    if (state.kkind && it.kind !== state.kkind) return false;
+    return true;
+  }
+
+  function kenshuBlock(it) {
+    let when;
+    if (it.deadlineType === "date" && it.deadline) {
+      const n = dayDiff(it.deadline);
+      const f = fmtDay(it.deadline);
+      const y = String(it.deadline).slice(0, 4) !== String(new Date().getFullYear()) ? `${f.y}年` : "";
+      when = `<div class="when dated${n <= GRANT_SOON_DAYS ? " soon" : ""}">締切 <b>${y}${f.main}</b>（${remainText(n)}）</div>`;
+    } else {
+      // 「11月～1月開催予定」等の時期の文をそのまま出す（要綱公開前）
+      when = `<div class="when">${esc(it.deadlineRaw || "締切の記載なし")}</div>`;
+    }
+    return `<article class="g" data-hash="${esc(it.hash)}">
+      <div class="trow">
+        <h4><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></h4>
+        ${when}
+      </div>
+      <div class="meta">
+        ${sealHtml({ source: it.source, kind: it.sourceKind })}
+        ${fieldsHtml(it)}
+        <span class="tagline">${esc(it.kind ?? "")}</span>
+        <button class="share" data-share-view="kenshu" data-share-hash="${esc(it.hash)}" data-share-title="${esc(it.title)}" aria-label="この研修を共有">
+          <svg width="13" height="13" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12V3"/><path d="M6.8 5.8 10 2.6l3.2 3.2"/><path d="M5 9H4v8h12V9h-1"/></svg>
+          <span class="tip">コピーしました</span></button>
+      </div>
+    </article>`;
+  }
+
+  function renderKenshu() {
+    $("kFields").innerHTML =
+      [["all", "全分野"], ...FIELD_ORDER.slice(0, 4).map((f) => [f, f])]
+        .map(([v, label]) =>
+          `<button class="chip${v === "all" ? "" : " " + FIELD_CLS[v]}${state.field === v ? " on" : ""}" data-kfd="${v}">${label}</button>`)
+        .join("");
+    // 種別は2値の単一選択。もう一度押すと解除（P25の型・選択中に×を出す .use を流用）
+    $("kKinds").innerHTML = KIND_VOCAB
+      .map((k) => `<button class="chip use${state.kkind === k ? " on" : ""}" data-kkind="${esc(k)}">${esc(k)}</button>`)
+      .join("");
+    $("kFieldSel").value = state.field;
+    $("kKindSel").value = state.kkind ?? "";
+
+    const shown = state.kenshu.filter(kenshuMatches);
+    const dated = shown.filter((x) => x.deadlineType === "date");
+    const unknown = shown.filter((x) => x.deadlineType !== "date");
+    const filtered = state.field !== "all" || Boolean(state.kkind);
+    $("kCount").innerHTML =
+      `<b>${shown.length}件</b>` +
+      `<span style="color:var(--sub)"> ── 締切あり${dated.length}・開催予定${unknown.length}</span>` +
+      (filtered ? `<span style="color:var(--faint)"> ／ 全${state.kenshu.length}件</span>` : "");
+
+    const sec = (name, note, list) =>
+      list.length
+        ? `<div class="gsec"><span class="name">${name}</span><span class="l">${note}（${list.length}件）</span></div>` +
+          list.map(kenshuBlock).join("")
+        : "";
+    $("kenshuList").innerHTML =
+      shown.length === 0
+        ? `<div class="gempty">条件に合う研修はありません。絞り込みを外すと${state.kenshu.length}件あります。</div>`
+        : sec("締 切 あ り", "締切の近い順", dated) +
+          sec("開 催 予 定", "要綱の公開前。時期は目安", unknown);
+    trimSectionRules($("kenshuList"), "gsec");
+
+    if (state.pendingKenshu) {
+      const el = document.querySelector(`#kenshuList .g[data-hash^="${state.pendingKenshu}"]`);
+      state.pendingKenshu = null;
+      if (el) setTimeout(() => el.scrollIntoView({ block: "center" }), 60);
+    }
   }
 
   /** 紙面側の導線と、タブの件数表示 */
@@ -1613,13 +1742,13 @@
     if (mq.matches) {
       // 助成の内訳(P24)は期限欄の隣に置く（どちらも「いま追いかけているもの」の量を示す）
       $("mMenuBody").append($("boxDeadline"), $("boxGrantSum"), $("boxCal"), $("boxWeek"),
-        $("boxLegend"), $("boxGrantNote"), $("boxTextSize"), fold);
+        $("boxLegend"), $("boxGrantNote"), $("boxKenshuNote"), $("boxTextSize"), fold);
     } else {
       const rail = document.querySelector(".rail-col");
       // PCサイド欄の並び: 検索(静的) → 期限が近いもの → この7日 → 今週の記録 →
       // 記号の見かた → このサイトについて（分野チップは紙面側へ移動・P20）
       rail.append($("boxDeadline"), $("boxGrantSum"), $("boxCal"), $("boxWeek"),
-        $("boxLegend"), $("boxGrantNote"), fold);
+        $("boxLegend"), $("boxGrantNote"), $("boxKenshuNote"), fold);
       document.querySelector("#mMenu").append($("boxTextSize")); // PCでは使わない（CSSで非表示）
       closeMenu();
       $("mSearchPanel").classList.remove("open");
@@ -1681,6 +1810,8 @@
       const h8 = btn.dataset.shareHash.slice(0, 8);
       const url = btn.dataset.shareView === "grants"
         ? `${location.origin}${location.pathname}?v=grants&g=${h8}`   // 助成(P24)
+        : btn.dataset.shareView === "kenshu"
+        ? `${location.origin}${location.pathname}?v=kenshu&k=${h8}`   // 研修(P34)
         : `${location.origin}${location.pathname}?d=${btn.dataset.shareDay}&i=${h8}`;
       const title = btn.dataset.shareTitle || "福祉情報ウォッチ";
       if (navigator.share) {
@@ -1764,6 +1895,42 @@
     renderGrants();
   });
 
+  // P34: 研修面の絞り込み。分野は全面共通の state.field を書く（紙面・助成にも追随）
+  $("kFields").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-kfd]");
+    if (!b) return;
+    state.field = b.dataset.kfd;
+    try { localStorage.setItem(FIELD_KEY, state.field); } catch {}
+    document.querySelectorAll("[data-fd]").forEach((x) =>
+      x.classList.toggle("on", x.dataset.fd === state.field));
+    applyFilters();
+    renderKenshu();
+  });
+  $("kKinds").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-kkind]");
+    if (!b) return;
+    state.kkind = state.kkind === b.dataset.kkind ? null : b.dataset.kkind;
+    renderKenshu();
+  });
+  $("kFieldSel").innerHTML =
+    [["all", "すべて"], ...FIELD_ORDER.slice(0, 4).map((f) => [f, f])]
+      .map(([v, l]) => `<option value="${v}">${l}</option>`).join("");
+  $("kKindSel").innerHTML =
+    [["", "すべて"], ...KIND_VOCAB.map((k) => [k, k])]
+      .map(([v, l]) => `<option value="${esc(v)}">${esc(l)}</option>`).join("");
+  $("kFieldSel").addEventListener("change", (e) => {
+    state.field = e.target.value;
+    try { localStorage.setItem(FIELD_KEY, state.field); } catch {}
+    document.querySelectorAll("[data-fd]").forEach((x) =>
+      x.classList.toggle("on", x.dataset.fd === state.field));
+    applyFilters();
+    renderKenshu();
+  });
+  $("kKindSel").addEventListener("change", (e) => {
+    state.kkind = e.target.value || null;
+    renderKenshu();
+  });
+
   relocate();
 
   (async () => {
@@ -1808,6 +1975,9 @@
       if (params.get("v") === "grants") {
         state.pendingGrant = params.get("g");
         await setView("grants");
+      } else if (params.get("v") === "kenshu") {
+        state.pendingKenshu = params.get("k");
+        await setView("kenshu");
       }
     } catch (e) {
       $("dayTitle").textContent = "記録を読み込めませんでした";
