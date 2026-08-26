@@ -191,10 +191,12 @@
   .masthead .sub{font-size:12px;color:var(--sub);letter-spacing:.18em;margin-top:6px}
 
   /* ==== 報道ティッカー(P20): 高さ最小・墨と朱の2色のまま ==== */
-  /* P37: 下の細罫は削除（タブ下と同じく、直下の日付見出しの太罫と二重になっていた。
-     点検で見つけた同種の2箇所目。帯の区切りは「報道」ラベルの縦罫と余白が担う） */
-  .ticker{display:flex;align-items:center;gap:10px;
-    padding:6px 0;overflow:hidden}
+  /* P37: 下の細罫は削除（直下の日付見出しの太罫と二重）。
+     P38: 区切りは線でなく薄い地色の帯で示す（ユーザー提案）。色は既存の報道の地色
+     （--press-bg=報道欄・メールの報道枠と同じ）＝新しい色は持ち込まない。
+     [hidden]でdisplay:noneのため、報道0件の日に帯だけが残ることはない */
+  .ticker{display:flex;align-items:center;gap:10px;background:var(--press-bg);
+    padding:6px 12px;overflow:hidden}
   .ticker[hidden]{display:none}
   .ticker-label{flex:0 0 auto;font-size:10.5px;font-weight:600;letter-spacing:.22em;
     color:var(--sub);border-right:1px solid var(--rule);padding-right:10px}
@@ -220,18 +222,23 @@
     .rail-col{border-left:1px solid var(--rule);padding-left:28px}
   }
 
-  /* ==== P37: PCのみ、一覧が長いとき絞り込みを画面上端に貼り付ける（sticky方式） ====
-     内側スクロール容器（overflow-y）にはしない——①題字・タブが永久に場所を取り続け
-     「題字はスクロールで流す」（P37-3）と矛盾する ②入れ子のスクロールバーが2本出る
-     ③ホイールの捕捉位置で挙動が割れる。sticky なら通常スクロールのまま、
-     絞り込みが上端に達した時点から固定され、一覧だけが下を流れる。
-     ⚠️3面とも対象（紙面=.chipbar／助成・研修=.gfilters）。背景は紙色で下の項目を覆う。
-     ⚠️スマホは対象外（固定ヘッダー86pxの体系を触らない） */
+  /* ==== P38: PCのみ、一覧（.listscroll）を内側スクロールにする ====
+     「絞り込みは動かず、記事の一覧だけが流れる」形（P37のstickyはページ全体が流れるため置換）。
+     P37で挙げた副作用への対処:
+     ①題字・タブ・絞り込みは容器の外＝画面に留まる。一覧の高さはJS（sizeLists）が
+       「画面高 − 一覧の文書内位置」で与えるので、題字たちの分は自動的に差し引かれる。
+       題字を見たい・「このサイトについて」を読むときだけ全体スクロール（一覧の末尾で連鎖）
+     ②一覧側のスクロールバーは細く淡く（罫線色・地は透明）
+     ③ホイールは標準挙動のまま＝一覧上なら一覧・外ならページが動き、
+       一覧の末尾に達したらページへ連鎖する（overscroll-behavior は既定のまま）
+     ⚠️スマホは対象外（heightはJSが幅で判定して外す）。サイド欄の独立スクロールは維持 */
   @media(min-width:900px){
-    .chipbar,#grantPane .gfilters,#kenshuPane .gfilters{
-      position:sticky;top:0;z-index:4;background:var(--paper);padding-bottom:12px}
-    /* サイド欄は独立して貼り付く（一覧をどれだけ送っても検索・凡例が見える）。
-       画面より背が高い日は欄内だけでスクロールできる（スクロールバーは細く） */
+    .listscroll{overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--rule) transparent;
+      padding-right:10px}
+    .listscroll::-webkit-scrollbar{width:8px}
+    .listscroll::-webkit-scrollbar-thumb{background:var(--rule)}
+    .listscroll::-webkit-scrollbar-track{background:transparent}
+    /* サイド欄は独立して貼り付く（P37から継続）。画面より背が高い日は欄内スクロール */
     .rail-col{position:sticky;top:0;align-self:start;
       max-height:100vh;overflow-y:auto;scrollbar-width:thin}
   }
@@ -537,8 +544,8 @@
        内訳を見ても押して絞れないため。分野の絞り込み表示(.fld/.all)は残す(P19) */
     .daycount .tally{display:none}
     #chips{display:none} /* 重要度チップ: 紙面が高→中→低の順で組まれ低は索引に畳まれるため廃止 */
-    /* ティッカーはスマホでは一段薄く（上部の占有を増やさない・P20） */
-    .ticker{padding:4px 0;gap:8px}
+    /* ティッカーはスマホでは一段薄く（上部の占有を増やさない・P20）。帯の左右の内余白は保つ(P38) */
+    .ticker{padding:4px 10px;gap:8px}
     .ticker-label{font-size:10px;letter-spacing:.18em;padding-right:8px}
     .ticker-item{font-size:11.5px;padding-right:26px}
     .chipbar{display:block;margin-top:14px}
@@ -710,7 +717,7 @@
       </div>
       </div><!-- /.chipbar -->
 
-      <div id="list"></div>
+      <div id="list" class="listscroll"></div><!-- P38: PCは内側スクロール（検索結果もここに描かれ同じ容器に乗る） -->
 
       <!-- 助成面(P24)。紙面とは別系統の data/grants.json を材料にする -->
       <section id="grantPane">
@@ -734,7 +741,7 @@
           <!-- ラベルは最小限にする（P31・ユーザー指示。文脈から予想できる語は書かない） -->
           <label class="gtoggle"><input type="checkbox" id="gAppli">社会福祉法人</label>
         </div>
-        <div id="grantList"></div>
+        <div id="grantList" class="listscroll"></div>
       </section>
 
       <!-- 研修面(P34)。助成と同じ別系統の data/kenshu.json を材料にする。
@@ -754,7 +761,7 @@
             <div class="chips" id="kKinds"></div>
           </div>
         </div>
-        <div id="kenshuList"></div>
+        <div id="kenshuList" class="listscroll"></div>
       </section>
 
       <section class="about" id="about">
@@ -1286,11 +1293,12 @@
       }
       if (list.length >= 8) break;
     }
-    if (list.length === 0) { el.hidden = true; track.innerHTML = ""; return; }
+    if (list.length === 0) { el.hidden = true; track.innerHTML = ""; sizeLists(); return; }
     const row = (dup) => list.map((it) => `<a class="ticker-item${dup ? " dup" : ""}"
       href="${esc(it.url)}" target="_blank" rel="noopener"><span class="src">${esc(it.source)}</span>　${esc(it.title)}</a>`).join("");
     track.innerHTML = row(false) + row(true); // 同じ並びを2つ繋いで途切れなく回す
     el.hidden = false;
+    sizeLists(); // ティッカーの出現で一覧の位置が下がるため測り直す(P38)
     // 読める速さ（約45px/秒）。内容が長い日ほど時間を延ばす
     requestAnimationFrame(() => {
       const w = track.scrollWidth / 2;
@@ -1599,6 +1607,25 @@
     }
   }
 
+  /* P38: PCは一覧（.listscroll）だけを内側スクロールにする。
+     高さ＝画面高 − 一覧の文書内位置（題字・タブ・ティッカー有無・絞り込みの折り返しに
+     レイアウト実測で自動追随＝定数を持たない）。ウィンドウの高さが変わっても破綻しない。
+     ⚠️スマホ（<900px）は height を外して通常フローに戻す（現状維持）。
+     呼びどころ: 起動/日送り（renderDay→renderTicker経由）・面の切替（setView）・resize */
+  function sizeLists() {
+    const pc = window.matchMedia("(min-width:900px)").matches;
+    document.querySelectorAll(".listscroll").forEach((el) => {
+      if (!pc) { el.style.height = ""; return; }
+      if (!el.offsetParent) return; // 非表示の面は setView で表示されたときに測る
+      const top = el.getBoundingClientRect().top + window.scrollY; // 文書内位置（ページのスクロールに依存しない）
+      el.style.height = `${Math.max(240, window.innerHeight - top)}px`;
+    });
+  }
+  window.addEventListener("resize", sizeLists);
+  // resizeイベントに加えて文書ルートの寸法変化も監視する（回転・分割ビュー等の取りこぼし防止。
+  // 同値の再設定はレイアウトを変えないため無限ループにはならない）
+  new ResizeObserver(sizeLists).observe(document.documentElement);
+
   async function setView(v) {
     state.view = v;
     document.body.dataset.view = v;
@@ -1606,6 +1633,7 @@
       b.classList.toggle("on", b.dataset.view === v));
     if (v === "grants") { await loadGrants(); renderGrants(); }
     if (v === "kenshu") { await loadKenshu(); renderKenshu(); }
+    sizeLists();
   }
 
   /* ==== 研修面(P34)。助成面と同じ型: 別系統のJSONを読み、締切前だけを描く。
