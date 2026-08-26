@@ -632,6 +632,16 @@
   高いが、**丸1日経っても REFUSED のままなら、Xserverサーバーパネルのドメイン設定/DNS設定を
   確認する必要がある**。確認コマンド: `dig @ns1.xserver.jp fukushi-watch.fknd.jp CNAME`
   （REFUSEDでなくCNAMEが返れば有効化済み）。
+- ★★ **障害と緊急復旧（2026-08-26朝）**: GitHubのCustom domain設定が **CNAMEファイルを
+  コミットした時点で、github.io の全URLが `http://fukushi-watch.fknd.jp/` へ301される**
+  状態になっていた。ドメインが名前解決できないため**公開サイト全体が到達不能**
+  （配布済みの共有リンク・朝のメールからの導線も含む）。**CNAMEファイルを一時撤去して復旧**
+  （コミット e29e2e0・github.io の200と全アイコン配信を確認済み）。
+  ⚠️教訓: **GitHubのCustom domain設定は、DNSが生きる前でも即座に301を張る**。
+  設定入力はDNSゾーンが有効になってから行うこと（「伝播待ちの間も旧URLで見られる」は誤り）。
+- ⏸ **DNS有効化後の再有効化**: 内容が `fukushi-watch.fknd.jp` の1行のCNAMEファイルを
+  リポジトリ直下に再作成してプッシュする（またはGitHub設定画面で入れ直す）。
+  その後、GitHubのTLS証明書発行（数分〜数十分）を待って **Enforce HTTPS** を有効にする。
 - ⏸ **ドメイン有効化後にやること（保留中の作業2の中身）**:
   ①旧URL（kanda-houtokukai.github.io/fukushi-watch）→新URLへの置き換えを横断点検
   （共有リンク生成は `location.origin` 動的なので自動追随・メールのフッタ・README等を確認）
