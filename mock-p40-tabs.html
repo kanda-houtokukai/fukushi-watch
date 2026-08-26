@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>P40-5 タブ案の比較（モック）</title>
+<style>
+  :root{
+    --ink:#17181a; --sub:#75716b; --faint:#a8a49d; --rule:#e6e3de;
+    --paper:#fcfcfb; --high:#a04a32; --press-bg:#f5f3ef; --box:#f6f5f1;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#efede8;color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","BIZ UDPGothic",Meiryo,sans-serif;
+    font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;padding:26px 14px 80px}
+  .note{max-width:760px;margin:0 auto 22px;font-size:13px;color:var(--sub);line-height:1.9}
+  .note b{color:var(--ink)}
+  .case{max-width:760px;margin:0 auto 34px;background:var(--paper);
+    border:1px solid var(--rule);padding:0 26px 22px}
+  .case-h{font-size:12px;font-weight:700;letter-spacing:.18em;color:#fff;background:var(--ink);
+    margin:0 -26px 0;padding:7px 14px}
+  .case-note{font-size:12px;color:var(--sub);line-height:1.85;margin-top:14px;
+    border-top:1px dashed var(--rule);padding-top:10px}
+  .case-note b{color:var(--ink)}
+
+  /* ==== 共通の紙面コンテキスト（題字・太罫・日付見出しの冒頭） ==== */
+  .masthead{text-align:center;padding:14px 0 11px;border-bottom:3px double var(--ink)}
+  .masthead h1{font-size:30px;font-weight:700;letter-spacing:.34em;text-indent:.34em;line-height:1.2}
+  .masthead .sub{font-size:10.5px;color:var(--sub);letter-spacing:.16em;margin-top:5px}
+  .ticker{display:flex;align-items:center;gap:10px;background:var(--press-bg);
+    padding:5px 12px;overflow:hidden;margin-top:0}
+  .ticker .tl{flex:0 0 auto;font-size:10px;font-weight:600;letter-spacing:.22em;
+    color:var(--sub);border-right:1px solid var(--rule);padding-right:10px}
+  .ticker .tt{font-size:11.5px;color:var(--ink);white-space:nowrap;overflow:hidden}
+  .dayhead{border-top:2px solid var(--ink);padding-top:12px;margin-top:22px;
+    display:flex;justify-content:space-between;align-items:baseline}
+  .dayhead h2{font-size:26px;letter-spacing:.02em}
+  .dayhead .c{font-size:12.5px;color:var(--sub)}
+  .stub{color:var(--faint);font-size:12.5px;padding:10px 0 0}
+
+  /* ==== 現行（比較用） ==== */
+  .t0{display:flex;gap:8px;padding:8px 0 10px}
+  .t0 button{appearance:none;background:none;font:inherit;cursor:pointer;
+    padding:7px 16px 6px;font-size:13px;letter-spacing:.22em;color:var(--sub);
+    border:1.5px solid var(--rule);white-space:nowrap}
+  .t0 button.on{border-color:var(--ink);background:var(--box);color:var(--ink);font-weight:700}
+
+  /* ==== 案A セグメンテッドコントロール型 ==== */
+  .tA{display:inline-flex;border:1.5px solid var(--ink);margin:8px 0 10px}
+  .tA button{appearance:none;background:var(--paper);font:inherit;cursor:pointer;
+    padding:7px 20px 6px;font-size:13px;letter-spacing:.22em;color:var(--sub);border:0;
+    border-left:1px solid var(--rule);white-space:nowrap}
+  .tA button:first-child{border-left:0}
+  .tA button.on{background:var(--ink);color:#fff;font-weight:700}
+  .tA button:not(.on):hover{color:var(--ink)}
+
+  /* ==== 案B 面名標カード型（フォルダタブ） ==== */
+  .tBwrap{padding:8px 0 0}
+  .tB{display:flex;gap:6px;align-items:flex-end;margin-bottom:-2px;position:relative;z-index:1}
+  .tB button{appearance:none;font:inherit;cursor:pointer;white-space:nowrap;
+    padding:6px 18px 5px;font-size:12.5px;letter-spacing:.22em;color:var(--sub);
+    background:var(--box);border:1px solid var(--rule);border-bottom:0}
+  .tB button.on{background:var(--paper);border:2px solid var(--ink);border-bottom:2px solid var(--paper);
+    color:var(--ink);font-weight:700;padding:8px 18px 6px;font-size:13px}
+  .tB button:not(.on):hover{color:var(--ink)}
+  .tB-rule{border-top:2px solid var(--ink)}
+  .tBwrap .stub{padding-top:12px}
+  /* 案Bでは日付見出しの太罫はタブの罫が兼ねる（二重にしない） */
+  .tBwrap .dayhead{border-top:0;margin-top:0;padding-top:14px}
+
+  /* ==== 案C 角ピル型（角丸は控えめ3px） ==== */
+  .tC{display:flex;gap:10px;padding:8px 0 10px}
+  .tC button{appearance:none;font:inherit;cursor:pointer;white-space:nowrap;
+    padding:7px 20px 6px;font-size:13px;letter-spacing:.22em;color:var(--sub);
+    background:var(--paper);border:1px solid var(--sub);border-radius:999px}
+  .tC button.on{background:var(--ink);border-color:var(--ink);color:#fff;font-weight:700}
+  .tC button:not(.on):hover{color:var(--ink);border-color:var(--ink)}
+
+  /* ==== 案D 押しボタン型（オフセット影＝物理ボタンの意匠） ==== */
+  .tD{display:flex;gap:12px;padding:8px 0 12px}
+  .tD button{appearance:none;font:inherit;cursor:pointer;white-space:nowrap;
+    padding:7px 18px 6px;font-size:13px;letter-spacing:.22em;color:var(--ink);
+    background:var(--paper);border:1px solid var(--ink);
+    box-shadow:2px 2px 0 var(--ink);transform:translate(0,0)}
+  .tD button.on{background:var(--box);font-weight:700;
+    box-shadow:none;transform:translate(2px,2px)}
+  .tD button:not(.on):hover{background:var(--box)}
+</style>
+</head>
+<body>
+
+<div class="note">
+  <b>P40-5 タブ案の比較。</b>各案のタブは押して切り替えられます（選択の見え方を確かめる用）。
+  文言・字送り・墨と朱の2色・角の扱いは本体と同じ条件で組んでいます。
+  これまでに検討済みの「下線式（P29前）・囲み罫（現行C3）・地色」とは別の方向の4案です。
+</div>
+
+<div class="case">
+  <div class="case-h">現行（C3・囲み罫＋地色）── 比較の基準</div>
+  <div class="masthead"><h1>福祉情報ウォッチ</h1><div class="sub">こども家庭庁・厚生労働省・WAM NET・福岡県 ── 行政と全国団体の福祉情報を毎朝ひとまわり</div></div>
+  <nav class="t0 tabs"><button class="on">紙　面</button><button>助　成</button><button>研　修</button></nav>
+  <div class="ticker"><span class="tl">報道</span><span class="tt">介護ニュースJoint　外国人の在留手数料、10月から大幅引き上げ…</span></div>
+  <div class="dayhead"><h2>8月26日 <small style="font-size:13px;color:var(--sub)">（水）</small></h2><span class="c">新着10件</span></div>
+  <div class="stub">（記事一覧…）</div>
+  <div class="case-note">現行: 選択＝墨枠＋薄地＋太字／非選択＝薄罫。「押せる」の合図が枠の濃淡だけ。</div>
+</div>
+
+<div class="case">
+  <div class="case-h">案A　セグメンテッドコントロール型</div>
+  <div class="masthead"><h1>福祉情報ウォッチ</h1><div class="sub">こども家庭庁・厚生労働省・WAM NET・福岡県 ── 行政と全国団体の福祉情報を毎朝ひとまわり</div></div>
+  <nav class="tA tabs"><button class="on">紙　面</button><button>助　成</button><button>研　修</button></nav>
+  <div class="ticker"><span class="tl">報道</span><span class="tt">介護ニュースJoint　外国人の在留手数料、10月から大幅引き上げ…</span></div>
+  <div class="dayhead"><h2>8月26日 <small style="font-size:13px;color:var(--sub)">（水）</small></h2><span class="c">新着10件</span></div>
+  <div class="stub">（記事一覧…）</div>
+  <div class="case-note"><b>3枚が1つの切替器につながる型</b>（iOS/計器類の定番）。外枠は墨1.5px・区切りは薄罫・
+  選択＝墨ベタ白抜き。「3つで1組・今どこか」が構造で伝わる。P29で見送った“単独の墨ベタ”と違い、
+  切替器の中の現在位置なので重心の偏りが出にくい。面が増えたら右に1枚足すだけ。</div>
+</div>
+
+<div class="case">
+  <div class="case-h">案B　面名標カード型（フォルダタブ）</div>
+  <div class="masthead"><h1>福祉情報ウォッチ</h1><div class="sub">こども家庭庁・厚生労働省・WAM NET・福岡県 ── 行政と全国団体の福祉情報を毎朝ひとまわり</div></div>
+  <div class="tBwrap">
+    <nav class="tB tabs"><button class="on">紙　面</button><button>助　成</button><button>研　修</button></nav>
+    <div class="tB-rule"></div>
+    <div class="ticker" style="margin-top:0"><span class="tl">報道</span><span class="tt">介護ニュースJoint　外国人の在留手数料、10月から大幅引き上げ…</span></div>
+    <div class="dayhead"><h2>8月26日 <small style="font-size:13px;color:var(--sub)">（水）</small></h2><span class="c">新着10件</span></div>
+    <div class="stub">（記事一覧…）</div>
+  </div>
+  <div class="case-note"><b>選択中のタブが紙面と物理的につながる型</b>（書類のインデックス・ブラウザのタブ）。
+  選択＝墨2px枠が下の太罫と一体化し「今この面が開いている」を構造で示す。非選択＝薄地で一段奥。
+  紙もの（インデックス付きファイル）の比喩なので新聞の意匠と相性がよい。
+  ⚠️タブの罫が面見出しの太罫を兼ねるため、日付見出しの上の太罫は外す（二重罫にしない）。</div>
+</div>
+
+<div class="case">
+  <div class="case-h">案C　ピル型（角丸は控えめ）</div>
+  <div class="masthead"><h1>福祉情報ウォッチ</h1><div class="sub">こども家庭庁・厚生労働省・WAM NET・福岡県 ── 行政と全国団体の福祉情報を毎朝ひとまわり</div></div>
+  <nav class="tC tabs"><button class="on">紙　面</button><button>助　成</button><button>研　修</button></nav>
+  <div class="ticker"><span class="tl">報道</span><span class="tt">介護ニュースJoint　外国人の在留手数料、10月から大幅引き上げ…</span></div>
+  <div class="dayhead"><h2>8月26日 <small style="font-size:13px;color:var(--sub)">（水）</small></h2><span class="c">新着10件</span></div>
+  <div class="stub">（記事一覧…）</div>
+  <div class="case-note"><b>いまのWebで最も「ボタン」と読まれる型</b>（丸み＝押せるの学習が強い）。
+  選択＝墨ベタ白抜き。⚠️本体は全要素が直角（border-radius:0）のため、
+  丸をここにだけ持ち込むと新聞の意匠から浮く懸念がある。候補として提示するが推奨はしない。</div>
+</div>
+
+<div class="case">
+  <div class="case-h">案D　押しボタン型（オフセット影）</div>
+  <div class="masthead"><h1>福祉情報ウォッチ</h1><div class="sub">こども家庭庁・厚生労働省・WAM NET・福岡県 ── 行政と全国団体の福祉情報を毎朝ひとまわり</div></div>
+  <nav class="tD tabs"><button>紙　面</button><button class="on">助　成</button><button>研　修</button></nav>
+  <div class="ticker" hidden></div>
+  <div class="dayhead"><h2>いま応募できる助成</h2><span class="c">8件</span></div>
+  <div class="stub">（助成一覧…）</div>
+  <div class="case-note"><b>物理ボタンの型</b>: 非選択＝右下に墨のオフセット影（浮いている＝押せる）／
+  選択＝影が消えて2pxめり込む（押し込まれている）。ボタンであることは4案で最も明瞭。
+  影も墨のみ＝2色は守る。⚠️遊びのある意匠なので、報の緊張感とのバランスは好みが分かれる。</div>
+</div>
+
+<div class="note">
+  すべての案で: 墨と朱の2色のみ（朱は使っていない＝選択は墨で示す。朱は「対応が要る」の
+  意味に温存）・幅320pxでも3枚が1行に収まることを確認済み・面が増えたら横スクロール（現行の型）を踏襲可能。
+</div>
+
+<script>
+  document.querySelectorAll(".tabs").forEach((nav) => {
+    nav.addEventListener("click", (e) => {
+      const b = e.target.closest("button");
+      if (!b) return;
+      nav.querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b));
+    });
+  });
+</script>
+</body>
+</html>

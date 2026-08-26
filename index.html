@@ -7,10 +7,12 @@
 <meta name="description" content="福祉に関わる行政の公開情報を毎朝自動巡回し、AIが要約と重要度を付けて記録しています。">
 <!-- P33: アイコン。⚠️パスは相対にする（github.io のサブパス配信でもカスタムドメインの
      ルート配信でも同じHTMLが効くように。絶対パス /favicon… はサブパスで404になる） -->
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="manifest" href="manifest.webmanifest">
+<!-- ?v=2 はキャッシュ対策(P40)。ファビコンはブラウザが専用キャッシュで長く保持するため、
+     同名で差し替えるときはURL（クエリ）を変えて確実に取り直させる。次回差し替え時は v=3 に -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=2">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+<link rel="manifest" href="manifest.webmanifest?v=2">
 <style>
   :root{
     --ink:#17181a; --sub:#75716b; --faint:#a8a49d; --rule:#e6e3de;
@@ -238,9 +240,14 @@
     .listscroll::-webkit-scrollbar{width:8px}
     .listscroll::-webkit-scrollbar-thumb{background:var(--rule)}
     .listscroll::-webkit-scrollbar-track{background:transparent}
-    /* サイド欄は独立して貼り付く（P37から継続）。画面より背が高い日は欄内スクロール */
+    /* サイド欄は独立して貼り付く（P37から継続）。画面より背が高い日は欄内スクロール。
+       P40: スクロールバーの濃さは一覧側（.listscroll）と同じ薄さに揃える */
     .rail-col{position:sticky;top:0;align-self:start;
-      max-height:100vh;overflow-y:auto;scrollbar-width:thin}
+      max-height:100vh;overflow-y:auto;scrollbar-width:thin;
+      scrollbar-color:var(--rule) transparent}
+    .rail-col::-webkit-scrollbar{width:8px}
+    .rail-col::-webkit-scrollbar-thumb{background:var(--rule)}
+    .rail-col::-webkit-scrollbar-track{background:transparent}
   }
 
   /* --- 本文 --- */
