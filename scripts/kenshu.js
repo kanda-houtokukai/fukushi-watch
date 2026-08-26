@@ -164,12 +164,178 @@ export function parseKenshuSchedule(html, today, baseUrl) {
   return { items, raw };
 }
 
+/* ===========================================================================
+ * 新着記事（kenshu-info）: 「◯◯研修の開催について」型の記事。
+ * 予定表に無い研修の告知と、記事本文にしか無い締切（例: 認知症介護実践リーダー研修の
+ * 「申込締切 令和８年７月１５日」）を補完する。⚠️締切の有無は記事による——
+ * 無ければ開催日を「開催 M月D日」のラベルで示し、開催日を過ぎたら消す（P34の設計）。
+ * ======================================================================== */
+
+const FETCH_INTERVAL_MS = 1500;
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/** 受講者向け・事務連絡の記事は載せない（募集の記事だけを拾う） */
+const INFO_EXCLUDE = /^保護中|様式|資料|事前課題|定員に達し|受講料について|研修体系|事業計画/;
+
+/** 記事タイトル→研修名（「の開催について」等の定型と【…】印を落とす） */
+const infoTitle = (t) =>
+  t.replace(/^【[^】]*】\s*/, "").replace(/（動画配信）|【動画配信研修】|（ＷＥＢ研修）/g, "")
+    .replace(/の開催(?:案内)?について.*$|について.*$/, "").trim();
+
+/** 本文から申込締切（和暦・年なしM/D対応）を取る。無ければ null */
+function infoDeadline(text, today) {
+  const seg = text.match(/(?:申込(?:み)?締切|申込期限|受付期限)[^。]{0,40}/)?.[0] ?? "";
+  let m = seg.match(/令和\s*(\d+)\s*年\s*(\d+)\s*月\s*(\d+)\s*日/);
+  if (m) return iso(Number(m[1]) + 2018, Number(m[2]), Number(m[3]));
+  m = seg.match(/(\d{1,2})月(\d{1,2})日/);
+  if (m) return fiscalIso(Number(m[1]), Number(m[2]), today);
+  return null;
+}
+
+/** 本文の「期日/日程」の段落から開催日を集める（最終日=掲載を保つ期限に使う） */
+function infoHeldDates(text, today) {
+  const seg = text.match(/(?:期\s*日|日\s*程|開催日)[^▶]{0,160}/)?.[0] ?? "";
+  const out = [];
+  for (const m of seg.matchAll(/令和\s*(\d+)\s*年\s*(\d+)\s*月\s*(\d+)\s*日/g)) {
+    out.push(iso(Number(m[1]) + 2018, Number(m[2]), Number(m[3])));
+  }
+  for (const m of seg.matchAll(/(?<!年)(?<!\d)(\d{1,2})月(\d{1,2})日/g)) {
+    out.push(fiscalIso(Number(m[1]), Number(m[2]), today));
+  }
+  return out.sort();
+}
+
+async function collectKenshuInfo(src, today) {
+  const list = await fetchHtml(src.url);
+  // 一覧1ページ目の記事リンク（月4〜5件なので毎朝の新着検知はここで足りる）
+  const links = [];
+  for (const m of list.matchAll(
+    /<a href="(https:\/\/fuku-shakyo-kenshu\.jp\/info\/[^"]{30,}?)"[^>]*>([\s\S]{0,160}?)<\/a>/g
+  )) {
+    const title = strip(m[2]);
+    if (!title || title === "この記事を読む") continue;
+    if (links.some((l) => l.url === m[1])) continue;
+    links.push({ url: m[1], title });
+  }
+  const items = [];
+  for (const l of links) {
+    if (INFO_EXCLUDE.test(l.title)) continue;
+    if (!/研修|講習|養成/.test(l.title)) continue;
+    await sleep(FETCH_INTERVAL_MS);
+    const text = strip(await fetchHtml(l.url));
+    const dl = infoDeadline(text, today);
+    const held = infoHeldDates(text, today);
+    let item;
+    if (dl) {
+      item = { deadline: dl, deadlineType: "date", deadlineRaw: `申込締切 ${dl}` };
+    } else if (held.length) {
+      // 締切は要綱PDF内。開催日をラベル付きで示し、最終開催日を過ぎたら消す
+      const first = held[0];
+      item = {
+        deadline: null, deadlineType: "unknown",
+        deadlineRaw: `開催 ${Number(first.slice(5, 7))}月${Number(first.slice(8, 10))}日`,
+        expireOn: held[held.length - 1],
+      };
+    } else {
+      item = { deadline: null, deadlineType: "unknown", deadlineRaw: "締切の記載なし" };
+    }
+    const title = infoTitle(l.title);
+    items.push({
+      title,
+      url: l.url,
+      ...item,
+      openFrom: null,
+      fields: fieldsOf(title),
+      kind: kindOf(title, ""),
+    });
+  }
+  return { items, raw: links.length };
+}
+
+/* ===========================================================================
+ * 紙面からの合流（kenshu-goryu・P34承認済みの二段判定）:
+ * 既存6源の新着のうち、①タイトルが研修語彙に該当し ②ノイズ語彙に該当せず
+ * ③**P11の締切ウォッチで申込締切が実際に取れた項目だけ**を研修面にも載せる。
+ * ③により「締切のない検討会の開催案内」型が構造的に落ちる（誤混入で面の信頼を
+ * 落とさないことを最優先・ユーザー承認の設計）。
+ * ⚠️取りこぼしは設計上ありうる（締切が本文になく要綱PDFにしかない研修は落ちる）。
+ * ======================================================================== */
+
+const GORYU_INCLUDE = /研修|講習|養成講座|セミナー/;
+const GORYU_EXCLUDE =
+  /検討会|審議会|分科会|部会|委員会|入札|落札|公示|公告|議事|報告書|プロポーザル|意見募集|パブリックコメント/;
+
+function collectKenshuGoryu() {
+  const path = join(ROOT, "data", "deadlines.json");
+  if (!existsSync(path)) return { items: [], raw: 0, allowEmpty: true };
+  const d = JSON.parse(readFileSync(path, "utf8"));
+  const list = d.items ?? [];
+  const items = [];
+  for (const it of list) {
+    if (!GORYU_INCLUDE.test(it.title)) continue;
+    if (GORYU_EXCLUDE.test(it.title)) continue;
+    if (/傍聴/.test(it.label ?? "")) continue; // 会議の傍聴申込は受講の締切ではない
+    items.push({
+      title: it.title,
+      url: it.url,
+      deadline: it.deadline,
+      deadlineType: "date",
+      deadlineRaw: `${it.label ?? "締切"} ${it.deadline}`,
+      openFrom: null,
+      fields: fieldsOf(it.title),
+      kind: kindOf(it.title, ""),
+      _source: it.source, // 出どころの行政名（印章は国/県が名前判定で付く）
+    });
+  }
+  // ⚠️締切ウォッチが空の朝は0件が正常（構造変化ではない）
+  return { items, raw: list.length, allowEmpty: true };
+}
+
 const COLLECTORS = {
   "kenshu-schedule": async (src, today) => {
     const html = await fetchHtml(src.url);
     return parseKenshuSchedule(html, today, src.url);
   },
+  "kenshu-info": async (src, today) => collectKenshuInfo(src, today),
+  "kenshu-goryu": async () => collectKenshuGoryu(),
 };
+
+/** 比較用に均す（記号・空白を落とす）。
+ *  ⚠️回次（1回目/第2回）は落とさない——落とすと**別の回次の研修まで畳む**
+ *  （実測: 認知症対応型の開設者1回目と2回目が統合され3件消えた。P24-4の教訓の再演） */
+const flat = (s) =>
+  String(s ?? "").normalize("NFKC").replace(/[\s【】\[\]（）()「」・、。,.／/―ー\-~〜]/g, "");
+
+/**
+ * 同じ研修が複数の源から入るので統合する（P34。助成の型の変形）。
+ * ⚠️助成は「締切一致を必須」にしたが、研修は新着・合流側が締切を持たないことがあるため
+ *   「名称が包含関係 かつ（締切が一致する or どちらかが締切を持たない）」で畳む。
+ *   締切が両方あって異なるなら**別の回次**なので畳まない。
+ * 残す方の優先順: 締切を持つ > 予定表 > 新着 > 合流（情報の確度の順）。
+ */
+export function dedupeKenshu(items) {
+  const rank = (it) =>
+    (it.deadlineType === "date" ? 4 : 0) +
+    (it.via === "schedule" ? 2 : it.via === "info" ? 1 : 0);
+  const out = [];
+  for (const it of items) {
+    const a = flat(it.title);
+    const hit = out.find((o) => {
+      const b = flat(o.title);
+      if (!a || !b || !(a.includes(b) || b.includes(a))) return false;
+      if (it.deadlineType === "date" && o.deadlineType === "date") {
+        return it.deadline === o.deadline;
+      }
+      return true; // 片方が締切を持たない＝同じ研修の告知の別段階とみなす
+    });
+    if (!hit) { out.push(it); continue; }
+    if (rank(it) > rank(hit)) out[out.indexOf(hit)] = it;
+  }
+  if (out.length !== items.length) {
+    console.log(`  同一の研修を統合: ${items.length}件 → ${out.length}件`);
+  }
+  return out;
+}
 
 /** 項目ハッシュ。タイトル＋URL（締切は延長されうるので入れない・grants と同じ） */
 export function kenshuHash(it) {
@@ -196,7 +362,9 @@ async function main() {
   const store = loadStore();
   const before = store.items.length;
   store.items = store.items.filter(
-    (it) => it.deadlineType !== "date" || !it.deadline || it.deadline >= today
+    (it) =>
+      (it.deadlineType !== "date" || !it.deadline || it.deadline >= today) &&
+      (!it.expireOn || it.expireOn >= today) // 締切が取れない項目は最終開催日で消す（P34）
   );
   const pruned = before - store.items.length;
 
@@ -210,22 +378,34 @@ async function main() {
       const collect = COLLECTORS[src.method];
       if (!collect) throw new Error(`巡回方法「${src.method}」に対応するコレクタがありません`);
       console.log(`取得: ${src.name} (${src.url})`);
-      const { items: parsed, raw } = await collect(src, today);
-      // ★0件は構造変化・年度替わりのURL失効の疑いとして失敗扱い（サイレント0件の禁止）
-      if (raw === 0) {
+      const { items: parsed, raw, allowEmpty } = await collect(src, today);
+      // ★0件は構造変化・年度替わりのURL失効の疑いとして失敗扱い（サイレント0件の禁止）。
+      //   ⚠️合流（締切ウォッチが空の朝）など、0件が正常な源は allowEmpty で除く
+      if (raw === 0 && !allowEmpty) {
         throw new Error("1件も読み取れませんでした（構造変化か、年度替わりのURL未更新の疑い）");
       }
       console.log(`  掲載${raw}行 / 申込可能${parsed.length}件`);
+      const via = src.method.replace(/^kenshu-/, "");
       for (const it of parsed) {
         const hash = kenshuHash(it);
         seenThisRun.add(hash);
         const prev = known.get(hash);
         if (prev) {
-          // 既知: 締切・タグを更新する（日程の追加・要綱の公開で変わる）
-          Object.assign(prev, it);
+          // 既知: 締切・タグを更新する（日程の追加・要綱の公開で変わる）。
+          // via も付け直す（付く前の旧データに残らないように＝統合の優先順が狂う）
+          const { _source, ...rest } = it;
+          Object.assign(prev, rest, { via });
           continue;
         }
-        fresh.push({ hash, source: src.name, sourceKind: "org", ...it });
+        // 合流の項目は出どころの行政名を源として出す（印章は名前判定で国/県が付く）
+        const { _source, ...rest } = it;
+        fresh.push({
+          hash,
+          source: _source ?? src.name,
+          sourceKind: _source ? "" : "org",
+          via,
+          ...rest,
+        });
       }
     } catch (e) {
       console.error(`  失敗（続行）: ${src.name}: ${e.message}`);
@@ -242,6 +422,9 @@ async function main() {
 
   store.items.push(...fresh);
   console.log(`新規${fresh.length}件 / 合計${store.items.length}件 / 期限切れ整理${pruned}件`);
+
+  // 同じ研修が複数の源から入るので統合する（予定表×新着×合流・P34）
+  store.items = dedupeKenshu(store.items);
 
   // 並び: 締切ありを近い順 → 不明（開催予定）。grants と同じ規則
   const rank = { date: 0, rolling: 1, unknown: 2 };

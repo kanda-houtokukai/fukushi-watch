@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-26T01:05:37.731Z",
+ "updatedAt": "2026-08-26T01:33:57.701Z",
  "items": [
   {
    "hash": "214726beef7879ce",
@@ -14,7 +14,8 @@
    "fields": [
     "共通"
    ],
-   "kind": "任意・スキル系"
+   "kind": "任意・スキル系",
+   "via": "schedule"
   },
   {
    "hash": "c8115f73722c5835",
@@ -29,12 +30,14 @@
    "fields": [
     "共通"
    ],
-   "kind": "任意・スキル系"
+   "kind": "任意・スキル系",
+   "via": "schedule"
   },
   {
    "hash": "6b27ebe70841b027",
    "source": "福祉・介護研修センター 年間予定表",
    "sourceKind": "org",
+   "via": "schedule",
    "title": "コーチング研修",
    "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/08/5f37687554014ed286055943156e5e07.pdf",
    "deadline": "2026-09-18",
@@ -43,6 +46,22 @@
    "openFrom": "2026-08-10",
    "fields": [
     "共通"
+   ],
+   "kind": "任意・スキル系"
+  },
+  {
+   "hash": "1f76901120c1cd16",
+   "source": "福岡県（障がい福祉）",
+   "sourceKind": "",
+   "via": "goryu",
+   "title": "令和８年度高次脳機能障がい支援者養成研修を実施します",
+   "url": "https://www.pref.fukuoka.lg.jp/contents/koujinou2026kenshu.html",
+   "deadline": "2026-09-18",
+   "deadlineType": "date",
+   "deadlineRaw": "申込期限 2026-09-18",
+   "openFrom": null,
+   "fields": [
+    "障害"
    ],
    "kind": "任意・スキル系"
   },
@@ -59,7 +78,8 @@
    "fields": [
     "共通"
    ],
-   "kind": "任意・スキル系"
+   "kind": "任意・スキル系",
+   "via": "schedule"
   },
   {
    "hash": "58b621e3ccc4363c",
@@ -74,7 +94,8 @@
    "fields": [
     "共通"
    ],
-   "kind": "任意・スキル系"
+   "kind": "任意・スキル系",
+   "via": "schedule"
   },
   {
    "hash": "9cf8124aaa8ddc56",
@@ -89,7 +110,8 @@
    "fields": [
     "共通"
    ],
-   "kind": "任意・スキル系"
+   "kind": "任意・スキル系",
+   "via": "schedule"
   },
   {
    "hash": "86f22479c6a6346c",
@@ -104,7 +126,8 @@
    "fields": [
     "共通"
    ],
-   "kind": "任意・スキル系"
+   "kind": "任意・スキル系",
+   "via": "schedule"
   },
   {
    "hash": "d2a4ba43f40ba2dc",
@@ -119,7 +142,8 @@
    "fields": [
     "共通"
    ],
-   "kind": "任意・スキル系"
+   "kind": "任意・スキル系",
+   "via": "schedule"
   },
   {
    "hash": "c2c63fb3b11fc961",
@@ -134,7 +158,8 @@
    "fields": [
     "共通"
    ],
-   "kind": "任意・スキル系"
+   "kind": "任意・スキル系",
+   "via": "schedule"
   },
   {
    "hash": "9448919e927e7be1",
@@ -149,7 +174,8 @@
    "fields": [
     "共通"
    ],
-   "kind": "任意・スキル系"
+   "kind": "任意・スキル系",
+   "via": "schedule"
   },
   {
    "hash": "4a112b3db59bdc0d",
@@ -164,7 +190,8 @@
    "fields": [
     "高齢"
    ],
-   "kind": "法定・資格系"
+   "kind": "法定・資格系",
+   "via": "schedule"
   },
   {
    "hash": "35eefdea883065b0",
@@ -179,7 +206,8 @@
    "fields": [
     "高齢"
    ],
-   "kind": "法定・資格系"
+   "kind": "法定・資格系",
+   "via": "schedule"
   },
   {
    "hash": "58221b9eab1c5232",
@@ -194,7 +222,8 @@
    "fields": [
     "共通"
    ],
-   "kind": "任意・スキル系"
+   "kind": "任意・スキル系",
+   "via": "schedule"
   },
   {
    "hash": "e690351682aa05f5",
@@ -209,7 +238,8 @@
    "fields": [
     "共通"
    ],
-   "kind": "任意・スキル系"
+   "kind": "任意・スキル系",
+   "via": "schedule"
   },
   {
    "hash": "0f13b78227c69d85",
@@ -224,7 +254,8 @@
    "fields": [
     "共通"
    ],
-   "kind": "任意・スキル系"
+   "kind": "任意・スキル系",
+   "via": "schedule"
   },
   {
    "hash": "4c42d069d1496f43",
@@ -239,7 +270,8 @@
    "fields": [
     "共通"
    ],
-   "kind": "任意・スキル系"
+   "kind": "任意・スキル系",
+   "via": "schedule"
   },
   {
    "hash": "5ef8c176ebf534a1",
@@ -254,7 +286,8 @@
    "fields": [
     "共通"
    ],
-   "kind": "任意・スキル系"
+   "kind": "任意・スキル系",
+   "via": "schedule"
   },
   {
    "hash": "4618b5859291fee6",
@@ -269,7 +302,8 @@
    "fields": [
     "共通"
    ],
-   "kind": "任意・スキル系"
+   "kind": "任意・スキル系",
+   "via": "schedule"
   },
   {
    "hash": "4c1333fa69a80de0",
@@ -284,7 +318,8 @@
    "fields": [
     "共通"
    ],
-   "kind": "任意・スキル系"
+   "kind": "任意・スキル系",
+   "via": "schedule"
   },
   {
    "hash": "f276b6a4495148c7",
@@ -299,7 +334,8 @@
    "fields": [
     "共通"
    ],
-   "kind": "任意・スキル系"
+   "kind": "任意・スキル系",
+   "via": "schedule"
   },
   {
    "hash": "ac30afdad328d79e",
@@ -314,7 +350,8 @@
    "fields": [
     "共通"
    ],
-   "kind": "任意・スキル系"
+   "kind": "任意・スキル系",
+   "via": "schedule"
   },
   {
    "hash": "af21599dcbd061a4",
@@ -329,7 +366,8 @@
    "fields": [
     "共通"
    ],
-   "kind": "任意・スキル系"
+   "kind": "任意・スキル系",
+   "via": "schedule"
   },
   {
    "hash": "67a563c31f2d64e3",
@@ -344,7 +382,8 @@
    "fields": [
     "障害"
    ],
-   "kind": "任意・スキル系"
+   "kind": "任意・スキル系",
+   "via": "schedule"
   },
   {
    "hash": "081318117c9b398b",
@@ -359,7 +398,8 @@
    "fields": [
     "高齢"
    ],
-   "kind": "任意・スキル系"
+   "kind": "任意・スキル系",
+   "via": "schedule"
   },
   {
    "hash": "864e58dc292760fa",
@@ -374,7 +414,8 @@
    "fields": [
     "高齢"
    ],
-   "kind": "法定・資格系"
+   "kind": "法定・資格系",
+   "via": "schedule"
   },
   {
    "hash": "ea6058a73350b023",
@@ -389,7 +430,8 @@
    "fields": [
     "高齢"
    ],
-   "kind": "法定・資格系"
+   "kind": "法定・資格系",
+   "via": "schedule"
   },
   {
    "hash": "1a1e2ca3f26d723e",
@@ -404,7 +446,8 @@
    "fields": [
     "高齢"
    ],
-   "kind": "法定・資格系"
+   "kind": "法定・資格系",
+   "via": "schedule"
   },
   {
    "hash": "ab6fab753543df58",
@@ -419,7 +462,8 @@
    "fields": [
     "高齢"
    ],
-   "kind": "法定・資格系"
+   "kind": "法定・資格系",
+   "via": "schedule"
   },
   {
    "hash": "d32a542405349d4d",
@@ -434,7 +478,8 @@
    "fields": [
     "共通"
    ],
-   "kind": "任意・スキル系"
+   "kind": "任意・スキル系",
+   "via": "schedule"
   }
  ]
 }

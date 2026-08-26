@@ -35,6 +35,8 @@
 | 15 | WAM助成（福祉医療機構） | **助成** | https://www.wam.go.jp/hp/cat/wamjosei/feed/ | wam-josei-rss | 巡回中 |
 | 17 | 中央競馬馬主社会福祉財団 | **助成** | https://www.jra-umanushi-hukushi.or.jp/feed | umanushi-rss | 巡回中 |
 | 18 | 福祉・介護研修センター 年間予定表 | **研修** | https://fuku-shakyo-kenshu.jp/schedule-r8/ | kenshu-schedule | 巡回中 |
+| 19 | 福祉・介護研修センター 新着 | **研修** | https://fuku-shakyo-kenshu.jp/info/ | kenshu-info | 巡回中 |
+| 20 | 紙面からの研修合流（既存6源） | **研修** | なし（data/deadlines.json を読む） | kenshu-goryu | 巡回中 |
 
 - **区分=報道 の源は行政情報と別扱い**（P9・[DECISION]）: AI要約・重要度判定を行わず、
   **見出し・リンク・日付・カテゴリ・分野タグのみ**を保存する（RSSの説明文・本文は保存しない）。
