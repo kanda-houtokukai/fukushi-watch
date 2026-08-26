@@ -11,8 +11,12 @@ name: daily
 on:
   schedule:
     # ⚠️ cron は UTC 指定。JST 07:00 = UTC 22:00（前日）
-    #    Actions の cron は指定時刻ちょうどには動かない（数分〜十数分の遅延が仕様）
-    - cron: "0 22 * * *"
+    #    Actions の cron は指定時刻ちょうどには動かない（数分〜十数分の遅延が仕様）。
+    #    ⚠️ さらに、混雑時は「その回が丸ごと破棄される」ことがある（2026-08-27に発生・#17の翌日）。
+    #    正時（0分）は最も混む枠なので、あえて 17 分に置いて競合を避けている。
+    #    実測: 正時指定だった頃は毎日 07:20〜07:26 起動＝常時20分以上の遅延だった。
+    #    破棄された日は Actions タブから daily を手動実行（workflow_dispatch）すれば回収できる。
+    - cron: "17 22 * * *"
   workflow_dispatch: {} # 手動実行（検証用）
 
 permissions:
@@ -26,9 +30,9 @@ jobs:
   watch:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: "22"
 
