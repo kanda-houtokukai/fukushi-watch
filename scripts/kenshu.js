@@ -706,7 +706,10 @@ function loadStore() {
 
 async function main() {
   const today = jstToday();
-  const sources = readSources().filter((s) => s.kind === "training" && s.status === "巡回中");
+  const allSources = readSources();
+  const sources = allSources.filter((s) => s.kind === "training" && s.status === "巡回中");
+  // 既定分野（P36）: 合流（_source=行政名）も含めて名前で台帳の行を引く
+  const srcByName = new Map(allSources.map((s) => [s.name, s]));
   if (sources.length === 0) {
     console.log("状態が「巡回中」の研修の源がありません（docs/sources.md の区分=研修）");
     return;
@@ -738,6 +741,20 @@ async function main() {
         throw new Error("1件も読み取れませんでした（構造変化か、年度替わりのURL未更新の疑い）");
       }
       console.log(`  掲載${raw}行 / 申込可能${parsed.length}件`);
+      // 既定分野（P36・正本は docs/sources.md）: タイトル語彙で分野が付かず「共通」に
+      // 落ちた項目を、源（合流は出どころの行政）の既定分野へ倒す。
+      // ⚠️種別=法令対応（虐待防止・BCP・感染症等）は全分野向けなので共通のまま
+      //   （summarize.js の ZENBUNYA_KW と同じ例外を、研修は既存の種別判定の再利用で実現）
+      for (const it of parsed) {
+        const owner = it._source ? srcByName.get(it._source) : src;
+        if (
+          owner?.defaultFields?.length &&
+          it.kind !== "法令対応" &&
+          it.fields.length === 1 && it.fields[0] === "共通"
+        ) {
+          it.fields = [...owner.defaultFields];
+        }
+      }
       const via = src.method.replace(/^kenshu-/, "");
       for (const it of parsed) {
         const hash = kenshuHash(it);

@@ -20,6 +20,7 @@
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { readSources } from "./crawl.js"; // 既定分野（P36）の正本は docs/sources.md
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DIFF_PATH = join(ROOT, "data", "diff-latest.json");
@@ -107,6 +108,32 @@ export function normalizeFields(fields) {
   if (FOUR_FIELDS.every((f) => set.has(f))) return ["共通"];
   if (set.has("共通") && set.size > 1) return ["共通"]; // 共通＋個別の混在も冗長なので寄せる
   return [...set];
+}
+
+/**
+ * 全分野に効く内容の語彙（P36）。既定分野を持つ源でも、この語彙に当たる項目は
+ * 「共通」のまま倒さない（虐待防止・BCPは全分野の義務。外国人材の在留・技能実習・
+ * 特定技能の制度は分野を問わない——障害・保育も受け入れているため機械的に高齢へ倒さない）。
+ * ⚠️研修面（kenshu.js）はこの正規表現でなく種別=法令対応で同じ例外を実現している
+ *   （研修は種別判定が既にあり、語彙表を二重に持たないため）。
+ */
+export const ZENBUNYA_KW =
+  /虐待|ＢＣＰ|BCP|業務継続|感染症|身体拘束|権利擁護|外国人|技能実習|特定技能|育成就労/;
+
+/**
+ * 源の既定分野の適用（P36）。主催者・掲載元そのものが分野を持つ源
+ * （介護福祉士会=高齢・介護ニュースJoint=高齢 等。正本は docs/sources.md の「既定分野」列）では、
+ * 判定が「共通」に落ちた項目を源の既定分野へ倒す。
+ * 優先順: ①AI・語彙の個別分野判定（そのまま） ②全分野向けの内容（共通のまま）
+ *        ③源の既定分野 ④共通（既定の無い源はここ）。
+ * ⚠️新しい経路（単発スクリプト含む）で分野を書くときは必ずこの関数を通すこと
+ *   （台帳の★★「本流の判断がすべての経路に等しく効く」）。
+ */
+export function applyDefaultField(fields, src, title) {
+  if (!src?.defaultFields?.length) return fields;
+  if (!(fields.length === 1 && fields[0] === "共通")) return fields;
+  if (ZENBUNYA_KW.test(String(title ?? ""))) return fields;
+  return [...src.defaultFields];
 }
 
 export function buildPrompt(items) {
@@ -229,6 +256,8 @@ async function main() {
   const diff = JSON.parse(readFileSync(DIFF_PATH, "utf8"));
   const items = diff.newItems ?? [];
   const press = diff.newPress ?? []; // 報道(P9): 要約・重要度判定はせず分野タグのみ付ける
+  // 既定分野（P36）: 源の名前 → 台帳の行。項目の source から既定分野を引くのに使う
+  const srcByName = new Map(readSources().map((s) => [s.name, s]));
 
   // 新規0件(行政・報道とも): APIを呼ばずに空のreportを書いて正常終了
   if (items.length === 0 && press.length === 0) {
@@ -304,7 +333,8 @@ async function main() {
         category: it.category,
         summary: j.summary.trim(),
         importance: j.importance,
-        fields: normalizeFields(j.fields), // 分野タグ（4分野すべて→共通へ正規化・P15）
+        // 分野タグ: 4分野すべて→共通へ正規化（P15）→ 共通なら源の既定分野へ（P36）
+        fields: applyDefaultField(normalizeFields(j.fields), srcByName.get(it.source), it.title),
         reason: (j.reason ?? "").trim(),
       });
     });
@@ -414,7 +444,11 @@ ${JSON.stringify(press.map((it, i) => ({ index: i, title: it.title, category: it
       url: it.url, // 原本(元記事)への直リンク
       date: it.date,
       category: it.category,
-      fields: normalizeFields(fieldsByIdx?.get(i) ?? []),
+      // 報道も既定分野を適用する（P36。Joint=高齢。ただし外国人材・感染症等の
+      // 全分野向けの見出しは ZENBUNYA_KW で共通のまま残る）
+      fields: applyDefaultField(
+        normalizeFields(fieldsByIdx?.get(i) ?? []), srcByName.get(it.source), it.title
+      ),
     }));
     console.log(`報道: ${pressOut.length}件（タグのみ・要約なし）`);
   }

@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-26T02:55:48.304Z",
+ "updatedAt": "2026-08-26T09:07:40.879Z",
  "items": [
   {
    "hash": "214726beef7879ce",
@@ -144,7 +144,7 @@
    "expireOn": "2026-10-22",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "テーマ別"
   },
@@ -164,7 +164,7 @@
    "expireOn": "2026-09-12",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "テーマ別"
   },
@@ -185,7 +185,7 @@
    "expireOn": "2026-09-19",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "資格要件"
   },
@@ -206,7 +206,7 @@
    "expireOn": "2026-11-06",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "テーマ別"
   },
@@ -228,7 +228,7 @@
    "expireOn": "2026-11-14",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "階層別"
   },
@@ -248,7 +248,7 @@
    "expireOn": "2026-09-20",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "テーマ別"
   },
@@ -289,7 +289,7 @@
    "expireOn": "2026-10-09",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "資格要件"
   },
@@ -311,7 +311,7 @@
    "expireOn": "2026-11-21",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "資格要件"
   },
@@ -331,7 +331,7 @@
    "expireOn": "2026-10-13",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "テーマ別"
   },
@@ -351,7 +351,7 @@
    "expireOn": "2026-10-17",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "テーマ別"
   },
@@ -371,7 +371,7 @@
    "expireOn": "2026-10-17",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "テーマ別"
   },
@@ -391,7 +391,7 @@
    "expireOn": "2026-10-17",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "テーマ別"
   },
@@ -411,7 +411,7 @@
    "expireOn": "2026-10-24",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "テーマ別"
   },
@@ -431,7 +431,7 @@
    "expireOn": "2026-10-25",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "テーマ別"
   },
@@ -451,7 +451,7 @@
    "expireOn": "2026-10-28",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "テーマ別"
   },
@@ -471,7 +471,7 @@
    "expireOn": "2026-11-01",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "テーマ別"
   },
@@ -491,7 +491,7 @@
    "expireOn": "2026-11-07",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "テーマ別"
   },
@@ -533,7 +533,7 @@
    "expireOn": "2027-01-30",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "テーマ別"
   },
@@ -553,7 +553,7 @@
    "expireOn": "2026-11-25",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "テーマ別"
   },
@@ -575,7 +575,7 @@
    "expireOn": "2027-01-09",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "資格要件"
   },
@@ -595,7 +595,7 @@
    "expireOn": "2027-01-21",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "テーマ別"
   },
@@ -615,7 +615,7 @@
    "expireOn": "2027-01-23",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "資格要件"
   },
@@ -636,7 +636,7 @@
    "expireOn": "2027-02-03",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "資格要件"
   },
@@ -656,7 +656,7 @@
    "expireOn": "2027-01-30",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
    "kind": "テーマ別"
   },

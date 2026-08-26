@@ -47,6 +47,14 @@ export function readSources() {
       // 区分: 報道=press（別配列・要約なし）／団体=org（行政と同じ扱い。印章だけ分ける・P21）
       //       助成=grant（**別系統**。crawl.js は巡回せず scripts/grants.js が扱う・P24）
       const kubun = cells[3].replace(/\*/g, "");
+      // 既定分野（P36・任意列）: 源そのものが分野を持つ場合（介護福祉士会=高齢 等）。
+      // 「・」区切りで複数可・空欄=既定なし。語彙外はエラーで止める（サイレント破損の禁止）
+      const defaultFields = (cells[7] ?? "").split("・").map((s) => s.trim()).filter(Boolean);
+      for (const f of defaultFields) {
+        if (!["保育", "障害", "高齢", "児童"].includes(f)) {
+          throw new Error(`sources.md の既定分野に語彙外の値があります: 「${f}」（${cells[2]}）`);
+        }
+      }
       rows.push({
         name: cells[2],
         kind:
@@ -58,6 +66,7 @@ export function readSources() {
         url: cells[4],
         method: cells[5],
         status: cells[6],
+        defaultFields,
       });
     }
   }

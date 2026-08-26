@@ -39,7 +39,7 @@ import {
 } from "./crawl.js";
 import {
   loadEnv, listCandidateModels, preferModel, buildPrompt, parseResponse, generate,
-  normalizeFields,
+  normalizeFields, applyDefaultField,
 } from "./summarize.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -146,6 +146,8 @@ async function main() {
   //   報道にAI要約と重要度判定を付けてしまう（P9の[DECISION]に反する）。
   //   台帳に無い源は、判断できないので安全側＝対象外にする。
   const kindByName = new Map(readSources().map((r) => [r.name, r.kind]));
+  // 既定分野（P36）: 源の名前 → 台帳の行（summarize.js と同じ引き方）
+  const srcByName = new Map(readSources().map((r) => [r.name, r]));
   const pool = [];
   for (const [name, rec] of Object.entries(state.sources ?? {})) {
     const kind = kindByName.get(name);
@@ -274,7 +276,11 @@ async function main() {
           summary: j.summary.trim(), importance: j.importance,
           // ★P15の正規化を通す（4分野すべて／共通と個別の混在 → ["共通"]）。
           //   本スクリプトはP15より前に書かれており生の fields を書いていた
-          fields: normalizeFields(j.fields), reason: (j.reason ?? "").trim(),
+          // ★P36の既定分野も通す（本流 summarize.js と同じ判断を遡及経路にも等しく効かせる）
+          fields: applyDefaultField(
+            normalizeFields(j.fields), srcByName.get(it.source), it.title
+          ),
+          reason: (j.reason ?? "").trim(),
           backfilled: true, // 遡及で積んだ記録であることを残す
         });
       });
