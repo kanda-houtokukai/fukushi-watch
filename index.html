@@ -159,6 +159,11 @@
   @media(min-width:900px){.g h4{font-size:16.5px;font-weight:700;line-height:1.5}}
   .g h4 a{color:var(--ink);text-decoration:none}
   .g .funder{font-size:12px;color:var(--sub);font-weight:600}
+  /* P34-3: 開催日（研修）。締切と混同されないよう**行を分け・ラベルを付け・墨で出す**
+     （締切は上の行で朱にもなる。こちらは色を持たない） */
+  .g .held{font-size:12px;color:var(--ink);margin-top:2px}
+  .g .held .lbl{color:var(--sub);margin-right:5px}
+  .g .held .note{color:var(--sub);margin-left:7px;font-size:11.5px}
   .g .body{font-size:12.5px;color:var(--sub);line-height:1.75}
   .g .meta{font-size:12px;color:var(--sub);margin-top:8px;display:flex;
     align-items:center;gap:10px;flex-wrap:wrap}
@@ -1624,11 +1629,19 @@
       // 「11月～1月開催予定」等の時期の文をそのまま出す（要綱公開前）
       when = `<div class="when">${esc(it.deadlineRaw || "締切の記載なし")}</div>`;
     }
+    // 開催日（P34-3）。締切とは別の行に「開催」のラベルで出す（どちらか一目で分かる形）
+    const held = (it.heldDates ?? []).filter((d) => d >= jstToday());
+    const heldHtml = held.length
+      ? `<div class="held"><span class="lbl">開催</span>${held
+          .map((d) => { const f = fmtDay(d); return esc(f.main); })
+          .join("・")}${it.heldNote ? `<span class="note">${esc(it.heldNote)}</span>` : ""}</div>`
+      : "";
     return `<article class="g" data-hash="${esc(it.hash)}">
       <div class="trow">
         <h4><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></h4>
         ${when}
       </div>
+      ${heldHtml}
       <div class="meta">
         ${sealHtml({ source: it.source, kind: it.sourceKind })}
         ${fieldsHtml(it)}

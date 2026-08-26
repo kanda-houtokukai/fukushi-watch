@@ -219,17 +219,55 @@ function infoDeadline(text, today) {
   return null;
 }
 
-/** 本文の「期日/日程」の段落から開催日を集める（最終日=掲載を保つ期限に使う） */
+/**
+ * 本文の「期日/日程」の段落から開催日を集める（最終日=掲載を保つ期限にも使う）。
+ * ⚠️セグメントは**次の項目ラベルの手前で切る**——伸ばすと「申込期限」の日付や
+ *   受講料の説明まで開催日・但し書きに混ざる（実測でコーチング研修が該当）。
+ * ⚠️元HTMLのタグ由来で「令和8年1 0月23日」のように**数字の間に空白が入る**ため、
+ *   数字間の空白だけを先に詰める。月日は範囲で検証し、壊れた値は捨てる（P34-3）。
+ */
+const heldSegment = (text) => {
+  const m = text.match(/(?:期\s*日|日\s*程|受講日程|開催日)[\s\S]{0,220}/);
+  if (!m) return "";
+  const seg = m[0].replace(/(\d)\s+(?=\d)/g, "$1");
+  const cut = seg.search(/申込期限|申込締切|受講申込|研修方法|受講料|会員|お申し?込み/);
+  return cut > 10 ? seg.slice(0, cut) : seg;
+};
+const validMd = (mm, dd) => mm >= 1 && mm <= 12 && dd >= 1 && dd <= 31;
+
 function infoHeldDates(text, today) {
-  const seg = text.match(/(?:期\s*日|日\s*程|開催日)[^▶]{0,160}/)?.[0] ?? "";
+  // ⚠️日付を拾うのは**但し書き（※）の手前まで**——「※2日間受講できる…」の「2日」を
+  //   直前の月と合成して実在しない開催日にしてしまう（実測: 2日間→10月2日）
+  const seg = heldSegment(text).split("※")[0];
   const out = [];
-  for (const m of seg.matchAll(/令和\s*(\d+)\s*年\s*(\d+)\s*月\s*(\d+)\s*日/g)) {
-    out.push(iso(Number(m[1]) + 2018, Number(m[2]), Number(m[3])));
+  let lastMonth = null;
+  // 「令和8年10月22日」「10月23日」「・26日」（直前の月を引き継ぐ）の3型。
+  // ⚠️`日(?!目)` で「1日目：」「2日目：」を除く——これを日付として拾うと
+  //   直前の月と合成されて実在しない開催日になる（実測: 2日目→10月2日）
+  for (const m of seg.matchAll(/(?:令和\s*(\d+)\s*年)?\s*(?:(\d{1,2})月)?(\d{1,2})日(?!目)/g)) {
+    const mm = m[2] ? Number(m[2]) : lastMonth;
+    const dd = Number(m[3]);
+    if (!mm || !validMd(mm, dd)) continue;
+    lastMonth = mm;
+    out.push(m[1] ? iso(Number(m[1]) + 2018, mm, dd) : fiscalIso(mm, dd, today));
   }
-  for (const m of seg.matchAll(/(?<!年)(?<!\d)(\d{1,2})月(\d{1,2})日/g)) {
-    out.push(fiscalIso(Number(m[1]), Number(m[2]), today));
+  return [...new Set(out)].sort();
+}
+
+/**
+ * 期日の但し書き（P34-3）。「※2日間受講できる方に限ります」のような**受講判断に効く**
+ * 一文だけを拾う。⚠️「※詳細は開催要綱をご確認ください」の類は情報がないので落とす。
+ */
+export function heldNote(text) {
+  const seg = heldSegment(text);
+  for (const m of seg.matchAll(/※\s*([^※。]{4,32})[。]?/g)) {
+    const s = m[1].trim();
+    if (/詳細|要綱|ご確認|お問い?合わせ|通知|ダウンロード/.test(s)) continue;
+    // 受講判断に効く但し書きだけを拾う（受講料や会員資格の説明は期日の但し書きではない）
+    if (!/受講|参加|日間|限り|オンライン|会場|欠席/.test(s)) continue;
+    return s;
   }
-  return out.sort();
+  return null;
 }
 
 async function collectKenshuInfo(src, today) {
@@ -252,25 +290,22 @@ async function collectKenshuInfo(src, today) {
     const text = strip(await fetchHtml(l.url));
     const dl = infoDeadline(text, today);
     const held = infoHeldDates(text, today);
-    let item;
-    if (dl) {
-      item = { deadline: dl, deadlineType: "date", deadlineRaw: `申込締切 ${dl}` };
-    } else if (held.length) {
-      // 締切は要綱PDF内。開催日をラベル付きで示し、最終開催日を過ぎたら消す
-      const first = held[0];
-      item = {
-        deadline: null, deadlineType: "unknown",
-        deadlineRaw: `開催 ${Number(first.slice(5, 7))}月${Number(first.slice(8, 10))}日`,
-        expireOn: held[held.length - 1],
-      };
-    } else {
-      item = { deadline: null, deadlineType: "unknown", deadlineRaw: "締切の記載なし" };
-    }
+    // ★開催日は締切の有無に関わらず持つ（P34-3。2日間拘束されるか等は受講判断に直結する）。
+    //   締切が取れない項目では最終開催日が掲載を保つ期限にもなる
+    const held2 = { heldDates: held, heldNote: heldNote(text) };
+    const item = dl
+      ? { deadline: dl, deadlineType: "date", deadlineRaw: `申込締切 ${dl}` }
+      : {
+          deadline: null, deadlineType: "unknown", deadlineRaw: "締切の記載なし",
+          ...(held.length ? { expireOn: held[held.length - 1] } : {}),
+        };
     const title = infoTitle(l.title);
     items.push({
       title,
       url: l.url,
       ...item,
+      ...(held.length ? { heldDates: held2.heldDates } : {}),
+      ...(held2.heldNote ? { heldNote: held2.heldNote } : {}),
       openFrom: null,
       fields: fieldsOf(title),
       kind: kindOf(title, ""),
@@ -366,6 +401,9 @@ export function dedupeKenshu(items) {
     }
     // 受付開始日は持っている方を残す（予定表にしか無い）
     if (!win.openFrom && lose.openFrom) win.openFrom = lose.openFrom;
+    // 開催日・但し書きは新着記事にしか無いので、予定表側が勝っても引き継ぐ（P34-3）
+    if (!win.heldDates?.length && lose.heldDates?.length) win.heldDates = lose.heldDates;
+    if (!win.heldNote && lose.heldNote) win.heldNote = lose.heldNote;
     out[out.indexOf(hit)] = win;
   }
   if (out.length !== items.length) {
