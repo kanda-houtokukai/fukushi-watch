@@ -53,7 +53,7 @@ export const KIND_VOCAB = ["資格要件", "法令対応", "階層別", "テー�
 /** 受講が要件になる研修の名称（汎用語の「養成研修」は入れない——県の人材育成事業まで
  *  資格要件に見えてしまう。実例: 高次脳機能障がい支援者養成研修＝テーマ別が正しい） */
 const REQUIRE_KW =
-  /認知症介護実践|認知症介護基礎|認知症対応型|小規模多機能|計画作成担当者|介護支援専門員|喀痰吸引|サービス管理責任者|児童発達支援管理責任者|相談支援従事者|主任介護支援専門員|権利擁護推進員養成|推進員養成研修|実務研修|実習指導者|認定介護福祉士/;
+  /認知症介護実践|認知症介護基礎|認知症対応型|小規模多機能|計画作成担当者|介護支援専門員|喀痰吸引|サービス管理責任者|児童発達支援管理責任者|相談支援従事者|主任介護支援専門員|権利擁護推進員養成|推進員養成研修|実務研修|実習指導者|認定介護福祉士|資格認定|通信課程|資格認定講習/;
 /** 法令・運営基準が求める研修（現データはBCP・感染症。虐待防止等は出れば正しく入る） */
 const DUTY_KW = /ＢＣＰ|BCP|業務継続|感染症|虐待防止|身体拘束|権利擁護/;
 /** 職位・経験年数で受ける研修 */
@@ -399,11 +399,99 @@ export function parseFkaigo(html, today, baseUrl) {
   return { items, raw };
 }
 
+/* ===========================================================================
+ * 中央福祉学院（kenshu-gakuin・P35・⚠️届出の投函まで「保留（届出前）」）:
+ * 「募集中の講座」カテゴリ（/info-cate/course/）の【募集開始】【申込開始】型の記事。
+ * タイトル・本文に締切（「第一次締切 9/24」「申込は7/24まで」）と研修日程が平文。
+ * ======================================================================== */
+
+const GAKUIN_EXCLUDE = /不具合|復旧|受講者ページ|募集(?:を)?終了|一覧表を更新/;
+
+/** タイトル→講座名（【…】印・「の申込を開始しました！(…)」等の定型を落とす） */
+const gakuinTitle = (t) =>
+  t.replace(/^【[^】]*】\s*/, "")
+    .replace(/[（(][^）)]*締切[^）)]*[）)]/g, "")
+    .replace(/の?(?:お?申込(?:み)?|募集)(?:受付)?を開始しました.*$/, "")
+    .replace(/の申込期間延長について.*$/, "")
+    .replace(/[「」]/g, "").trim();
+
+/**
+ * 記事ページの本文だけに絞る。⚠️ページ全体を使うと、サイドバーの
+ * 「カテゴリー別新着情報」に載る**他の記事のタイトルから別記事の締切を拾う**
+ * （実測: 4件全部が別記事の「第一次締切 9/24」になった）。
+ */
+function gakuinBody(text) {
+  const cut = text.search(/カテゴリー別新着情報|前の記事|次の記事/);
+  return cut > 0 ? text.slice(0, cut) : text;
+}
+
+/** 締切: 「第一次締切 9/24」「申込は7/24まで」「申込期限」等の表記ゆれを拾う */
+function gakuinDeadline(text, today) {
+  const seg =
+    text.match(/(?:第?一?次?締切|申込期限|受付期限)[^。]{0,30}/)?.[0] ??
+    text.match(/申込は[^。]{0,20}まで/)?.[0] ?? "";
+  let m = seg.match(/令和\s*(\d+)\s*年\s*(\d+)\s*月\s*(\d+)\s*日/);
+  if (m) return iso(Number(m[1]) + 2018, Number(m[2]), Number(m[3]));
+  m = seg.match(/(\d{1,2})\s*[\/月]\s*(\d{1,2})\s*日?/);
+  if (m && validMd(Number(m[1]), Number(m[2]))) return fiscalIso(Number(m[1]), Number(m[2]), today);
+  return null;
+}
+
+/** 研修日程: 【研修日程1】…のように複数ブロックがあるので広めに読み、金額等の手前で切る */
+function gakuinHeld(text, today) {
+  const m = text.match(/(?:研修日程|日\s*程|開催日)[\s\S]{0,340}/);
+  if (!m) return [];
+  const seg = m[0].replace(/(\d)\s+(?=\d)/g, "$1");
+  const cut = seg.search(/申込|受講料|定員|会場|宿泊/);
+  return datesInText((cut > 10 ? seg.slice(0, cut) : seg).split("※")[0], today);
+}
+
+async function collectGakuin(src, today) {
+  const list = await fetchHtml(src.url);
+  const links = [];
+  for (const m of list.matchAll(
+    /<a href="(https:\/\/www\.gakuin\.gr\.jp\/info\/[^"]+)"[^>]*>([\s\S]{4,160}?)<\/a>/g
+  )) {
+    const title = strip(m[2]);
+    if (!title || title.length < 8) continue;
+    if (links.some((l) => l.url === m[1])) continue;
+    links.push({ url: m[1], title });
+  }
+  const items = [];
+  for (const l of links.slice(0, 10)) {
+    if (GAKUIN_EXCLUDE.test(l.title)) continue;
+    if (!/研修|講座|課程|講習|募集|申込/.test(l.title)) continue;
+    await sleep(FETCH_INTERVAL_MS);
+    const body = gakuinBody(strip(await fetchHtml(l.url)));
+    const dl = gakuinDeadline(l.title + " " + body, today);
+    const held = gakuinHeld(body, today);
+    if (dl && dl < today) continue; // 締切済み
+    const item = dl
+      ? { deadline: dl, deadlineType: "date", deadlineRaw: `申込締切 ${dl}` }
+      : {
+          deadline: null, deadlineType: "unknown", deadlineRaw: "締切の記載なし",
+          ...(held.length ? { expireOn: held[held.length - 1] } : {}),
+        };
+    const title = gakuinTitle(l.title);
+    items.push({
+      title,
+      url: l.url,
+      ...item,
+      ...(held.length ? { heldDates: held } : {}),
+      openFrom: null,
+      fields: fieldsOf(title),
+      kind: kindOf(title, ""),
+    });
+  }
+  return { items, raw: links.length };
+}
+
 const COLLECTORS = {
   "kenshu-schedule": async (src, today) => {
     const html = await fetchHtml(src.url);
     return parseKenshuSchedule(html, today, src.url);
   },
+  "kenshu-gakuin": async (src, today) => collectGakuin(src, today),
   "kenshu-info": async (src, today) => collectKenshuInfo(src, today),
   "kenshu-goryu": async () => collectKenshuGoryu(),
   "kenshu-fkaigo": async (src, today) => {
