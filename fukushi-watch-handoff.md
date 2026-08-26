@@ -25,7 +25,9 @@
   **福祉新聞も照会待ちで保留**（同じ手順で復帰）。
   団体は**行政と同じ扱い**（要約・重要度・分野タグ・締切抽出・件数・グラフに合流）で、
   区別は印章［団］だけ。全国保育士会は調査のうえ**不採用**、全国保育協議会は**保留**。
-- 公開ダッシュボード **https://kanda-houtokukai.github.io/fukushi-watch/**（新聞紙面構成）:
+- 公開ダッシュボード **https://fukushi-watch.fknd.jp/**（新聞紙面構成。
+  ⚠️2026-08-27朝時点: ユーザーがCNAMEを再撤去しており（コミット70acd78）、当面は
+  https://kanda-houtokukai.github.io/fukushi-watch/ で配信中。再有効化とHTTPS発行待ち）:
   題字＋欄外（和暦・創刊から第N号／創刊前は「創刊前の記録」）・PC2カラム／スマホ1カラム＋
   固定ヘッダーとドロワー・トップ記事＋高中低の濃淡・低は索引・報道欄・検索・分野切替・
   「この7日」（対応が要る日の地図）・「期限が近いもの」・全項目に共有（Web Share／URLコピー）・
@@ -98,7 +100,12 @@
   `node scripts/backfill.js --from 2026-07-01 --to 2026-08-20 --ignore-progress`
   （6日分・9件・6リクエスト。⚠️`--ignore-progress` を外すと5日分が抜ける）。
   実行後は `node scripts/relink.js` で関連記録を付け直す（P14と同じ手順）。
-- **福祉新聞への問い合わせ送付（ユーザー作業）→ 回答を待つ。**
+- **福祉新聞への照会送付（ユーザー作業）→ 回答を待つ。** 文面は
+  `~/Documents/fukushi-watch-taigai/fukushishimbun-shokai-2026-08-27.html`（2026-08-27作成。
+  **送付経路の調査結果: 一般問い合わせのフォーム・公開メールは無く、会社概要に
+  「その他のお問い合わせは、お電話にて」（TEL 03-3581-0431／FAX 03-3581-0433）。
+  文書照会は郵送を推奨**——宛先住所は文面に記載済み。無断転載禁止の明記を踏まえた
+  「可否を伺う照会」の形・承諾まで掲載しない）。
   掲載可なら `docs/sources.md` の福祉新聞行を「巡回中」へ戻すだけ（コード変更不要・
   stateのベースラインも温存済み）。不可なら「掲載不可」に更新して終了。
 - 上記以外は指示書待ち（停止中）。
@@ -324,7 +331,7 @@
 | `data/history/` | `YYYY-MM.json`（日毎の全項目）＋`index.json`（日毎件数） | 実行で更新 |
 | `data/mail-settings.json` | メールの分野重み付け設定（現在=障害・児童・保育） | ✅ 正本 |
 | `index.html` | ダッシュボード本体（依存ゼロ・単一ファイル） | ✅ 正本 |
-| https://kanda-houtokukai.github.io/fukushi-watch/ | 公開ダッシュボード（Pages・main/root） | — |
+| https://fukushi-watch.fknd.jp/ （CNAME再設定まで https://kanda-houtokukai.github.io/fukushi-watch/） | 公開ダッシュボード（Pages・main/root） | — |
 | `scripts/deadlines.js` | 締切抽出（P11）。本文取得→幻覚ガード三重検証→期限のみ保存 | ✅ 正本 |
 | `scripts/grants.js` | 助成金の収集（P24・**紙面と別系統**）。区分=助成の源だけを扱う。締切は正規表現で抽出（AI不使用） | ✅ 正本 |
 | `~/Documents/fukushi-watch-taigai/` | **対外文書（リポジトリ外）**。全社協あて届出／助成財団センターあて照会 | ✅ 正本 |
@@ -381,12 +388,15 @@
 - ⏸ **DNS有効化後の再有効化**: 内容が `fukushi-watch.fknd.jp` の1行のCNAMEファイルを
   リポジトリ直下に再作成してプッシュする（またはGitHub設定画面で入れ直す）。
   その後、GitHubのTLS証明書発行（数分〜数十分）を待って **Enforce HTTPS** を有効にする。
-- ⏸ **ドメイン有効化後にやること（保留中の作業2の中身）**:
-  ①旧URL（kanda-houtokukai.github.io/fukushi-watch）→新URLへの置き換えを横断点検
-  （共有リンク生成は `location.origin` 動的なので自動追随・メールのフッタ・README等を確認）
-  ②GitHub Pagesが作る **CNAMEファイル**の扱いを確認（Actionsの自動コミットと衝突しないか）
-  ③**対外文書3通**（`~/Documents/fukushi-watch-taigai/`）の旧URLを書き換えて報告
-  （新URLが生きてから書き換える——死んでいるURLを対外文書に書かない）。
+- **ドメイン有効化後にやること（保留中の作業2の中身）**——①③は2026-08-27に前倒しで完了:
+  ✅①旧URL→新URLの横断点検（2026-08-27実施・ユーザー指示）: サイト内にハードコード無し
+  （共有リンクは `location.origin` で自動追随を確認・manifestは相対・メールは意図的な
+  リポジトリリンクのみ=P32の決定）。旧URLが残るのは台帳の経緯記録（原文保存）だけ。
+  ✅③対外文書の旧URL書き換え（2026-08-27実施・ユーザー指示）: 全社協・JFC・学院・WAMの
+  4通を https://fukushi-watch.fknd.jp/ へ統一し、**旧URL残存0を機械確認**。
+  ⚠️ユーザーが2026-08-27朝にCNAMEを再撤去（70acd78）したため、**送付は再有効化＋
+  HTTPS発行（Enforce HTTPS）を待ってから**——死んでいるURLの文書を発送しない。
+  ⏸②GitHub Pagesが作る **CNAMEファイル**の扱いを確認（Actionsの自動コミットと衝突しないか）。
 
 ## 2026-08-26（P34・研修面）
 
