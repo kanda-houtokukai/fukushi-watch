@@ -26,8 +26,9 @@
   団体は**行政と同じ扱い**（要約・重要度・分野タグ・締切抽出・件数・グラフに合流）で、
   区別は印章［団］だけ。全国保育士会は調査のうえ**不採用**、全国保育協議会は**保留**。
 - 公開ダッシュボード **https://fukushi-watch.fknd.jp/**（新聞紙面構成。
-  ⚠️2026-08-27朝時点: ユーザーがCNAMEを再撤去しており（コミット70acd78）、当面は
-  https://kanda-houtokukai.github.io/fukushi-watch/ で配信中。再有効化とHTTPS発行待ち）:
+  ⚠️2026-08-27朝時点: CNAMEは復活済み（fbc5a49）で**新ドメインで配信中。ただし http のみ**
+  ——GitHubの検証が InvalidDNSError のままで証明書が未発行のため。github.io のURLは新ドメインへ転送される。
+  **HTTPSが立つまでCNAMEに触らない**——Remove→再入力のたびに検証と証明書発行が振り出しに戻る）:
   題字＋欄外（和暦・創刊から第N号／創刊前は「創刊前の記録」）・PC2カラム／スマホ1カラム＋
   固定ヘッダーとドロワー・トップ記事＋高中低の濃淡・低は索引・報道欄・検索・分野切替・
   「この7日」（対応が要る日の地図）・「期限が近いもの」・全項目に共有（Web Share／URLコピー）・
@@ -69,6 +70,10 @@
 
 ## 次の一手
 
+- ⚠️ **対外4件（JFC・中央福祉学院・WAM NET・全社協）＋福祉新聞の送付は、Enforce HTTPS を
+  有効にしてから。** 文面のURLは全て https://fukushi-watch.fknd.jp/ に統一済みで、
+  証明書発行前に送ると受け手のブラウザに**セキュリティ警告**が出る（相手は行政・全国団体・専門紙）。
+  待ちは時間単位のため、待って出す。
 - **WAM NETへの照会メール送付（ユーザー作業・P41）。** 文面は
   `~/Documents/fukushi-watch-taigai/wamnet-link-shokai-2026-08-26.html`（氏名・連絡先を差し替えて
   webmaster2@wamnet.wam.go.jp へ送信）。**承諾が得られたら区切り②（件名索引 kenmei.js）を実装**。
@@ -331,7 +336,7 @@
 | `data/history/` | `YYYY-MM.json`（日毎の全項目）＋`index.json`（日毎件数） | 実行で更新 |
 | `data/mail-settings.json` | メールの分野重み付け設定（現在=障害・児童・保育） | ✅ 正本 |
 | `index.html` | ダッシュボード本体（依存ゼロ・単一ファイル） | ✅ 正本 |
-| https://fukushi-watch.fknd.jp/ （CNAME再設定まで https://kanda-houtokukai.github.io/fukushi-watch/） | 公開ダッシュボード（Pages・main/root） | — |
+| https://fukushi-watch.fknd.jp/ （HTTPS発行待ち・現在は http のみ。github.io は新ドメインへ転送） | 公開ダッシュボード（Pages・main/root） | — |
 | `scripts/deadlines.js` | 締切抽出（P11）。本文取得→幻覚ガード三重検証→期限のみ保存 | ✅ 正本 |
 | `scripts/grants.js` | 助成金の収集（P24・**紙面と別系統**）。区分=助成の源だけを扱う。締切は正規表現で抽出（AI不使用） | ✅ 正本 |
 | `~/Documents/fukushi-watch-taigai/` | **対外文書（リポジトリ外）**。全社協あて届出／助成財団センターあて照会 | ✅ 正本 |
@@ -385,9 +390,15 @@
   （コミット e29e2e0・github.io の200と全アイコン配信を確認済み）。
   ⚠️教訓: **GitHubのCustom domain設定は、DNSが生きる前でも即座に301を張る**。
   設定入力はDNSゾーンが有効になってから行うこと（「伝播待ちの間も旧URLで見られる」は誤り）。
-- ⏸ **DNS有効化後の再有効化**: 内容が `fukushi-watch.fknd.jp` の1行のCNAMEファイルを
-  リポジトリ直下に再作成してプッシュする（またはGitHub設定画面で入れ直す）。
-  その後、GitHubのTLS証明書発行（数分〜数十分）を待って **Enforce HTTPS** を有効にする。
+- ✅ **DNS有効化と再有効化は完了（2026-08-27）**。CNAMEファイル（fbc5a49）で新ドメイン配信が復活。
+  残るは **GitHubの検証（InvalidDNSError）を通して Enforce HTTPS を有効にすること**のみ。
+  ★★ **待ちの規律（Chat判断・2026-08-27）: 検証が通るまでCNAMEに触らない。**
+  Remove→再入力を繰り返すと、GitHubの検証と証明書要求が毎回リセットされ、
+  「いつまでも通らない」状態が自作される。確認はシークレットウィンドウで
+  https://fukushi-watch.fknd.jp/ を開くだけ（鍵マークが出れば完了→Enforce HTTPSを有効化）。
+  **2026-08-28 06:35 JST（作り直しから24時間）を過ぎても通らない場合に限り**、
+  Remove→再入力を1回だけ行い、あわせて Xserver の **DNSSEC** と **CAAレコード** を確認する
+  （世界中で解けるのにGitHubだけ落ちる症状は、この2つでも起きうる）。
 - **ドメイン有効化後にやること（保留中の作業2の中身）**——①③は2026-08-27に前倒しで完了:
   ✅①旧URL→新URLの横断点検（2026-08-27実施・ユーザー指示）: サイト内にハードコード無し
   （共有リンクは `location.origin` で自動追随を確認・manifestは相対・メールは意図的な
@@ -396,7 +407,11 @@
   4通を https://fukushi-watch.fknd.jp/ へ統一し、**旧URL残存0を機械確認**。
   ⚠️ユーザーが2026-08-27朝にCNAMEを再撤去（70acd78）したため、**送付は再有効化＋
   HTTPS発行（Enforce HTTPS）を待ってから**——死んでいるURLの文書を発送しない。
-  ⏸②GitHub Pagesが作る **CNAMEファイル**の扱いを確認（Actionsの自動コミットと衝突しないか）。
+  ✅②**Actionsの自動コミットはCNAMEに触れないことを確認（2026-08-27・daily.yml の現物で検証）**:
+  状態コミットは `git add data/` で **data/ に限定**され、CNAME（リポジトリ直下）は staging に入らない。
+  push は force なし・checkout も通常。設定画面からのドメイン入力とActionsが同時に走っても、
+  GitHubのCNAMEコミットでActionsのpushが弾かれるだけで、その日の状態が未コミットになる
+  ＝**翌朝に同じ新着を再検知して送り直す**（daily.ymlの順序の設計がそのまま効く）。壊れない。
 
 ## 2026-08-26（P34・研修面）
 
@@ -778,7 +793,7 @@
 
 | フェーズ | 内容 | 完了条件 | 状態 |
 |---|---|---|---|
-| **P33** | アイコン設置（favicon/apple-touch-icon/最小manifest）＋カスタムドメイン fukushi-watch.fknd.jp への移行 | アイコンは公開URLで配信確認。**ドメインはXserverゾーン有効化待ちで保留**（待ち明けの作業は記録の⏸を見よ） | ⏸ 1完了・2保留（2026-08-26） |
+| **P33** | アイコン設置（favicon/apple-touch-icon/最小manifest）＋カスタムドメイン fukushi-watch.fknd.jp への移行 | アイコンは公開URLで配信確認。**ドメインはXserverゾーン有効化待ちで保留**（待ち明けの作業は記録の⏸を見よ） | ⏸ 1完了・2はHTTPS発行待ち（2026-08-27・配信は新ドメインで復活済み） |
 
 ### P6 の設計方針の候補（P6の区切り①で検討する。今は実装しない）
 - **分野は「絞り込み」ではなく「重要度の重み付け」に使う。**
