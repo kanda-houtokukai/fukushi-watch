@@ -63,7 +63,6 @@
   /* P34: 3面になったので「その面のときだけ出す」:not の形にそろえる */
   body:not([data-view="paper"]) .ticker,
   body:not([data-view="paper"]) .dayhead,
-  body:not([data-view="paper"]) .daynav,
   body:not([data-view="paper"]) .chipbar,
   body:not([data-view="paper"]) #list,
   body:not([data-view="paper"]) #boxSearch,
@@ -252,19 +251,48 @@
 
   /* --- 本文 --- */
   .dayhead{border-top:2px solid var(--ink);padding-top:14px;display:flex;
-    justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px}
+    justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;
+    position:relative} /* P40-3: 月移動ポップオーバーの基準 */
+  /* P40-3: PCは1行構成 [日付▽｜←→（中央）｜件数]。1fr auto 1fr で矢印を主列の真ん中に置く */
+  @media(min-width:900px){
+    .dayhead{display:grid;grid-template-columns:1fr auto 1fr;align-items:baseline}
+    .dayhead h2{grid-column:1;justify-self:start}
+    .dayhead .m-arrows{display:flex;gap:8px;grid-column:2}
+    .dayhead .m-arrows button{width:34px;height:30px;border:1px solid var(--rule);
+      background:#fff;color:var(--ink);cursor:pointer;font-family:inherit;font-size:14px}
+    .dayhead .m-arrows button:disabled{color:var(--faint);cursor:default}
+    .dayhead .daycount{grid-column:3;justify-self:end}
+  }
   .dayhead h2{font-size:30px;letter-spacing:.02em}
   .dayhead h2 small{font-size:14px;font-weight:400;color:var(--sub);margin-left:6px}
   .daycount{font-size:13px;color:var(--sub);white-space:nowrap}
   .daycount b{color:var(--high)}
   .daycount .fld{color:var(--ink);font-weight:700} /* 絞り込み中の分野名（P19） */
   .daycount .all{color:var(--faint)}               /* 全体件数は従（P19） */
-  .daynav{display:flex;gap:8px;margin-top:12px}
-  .daynav button,.daynav select{flex:1;text-align:center;font-size:12.5px;padding:8px 4px;
-    border:1px solid var(--rule);color:var(--ink);background:#fff;cursor:pointer;
-    font-family:inherit;border-radius:0;appearance:none}
-  .daynav select{flex:0 0 40%;text-align:center;text-align-last:center}
-  .daynav button:disabled{color:var(--faint);cursor:default}
+  /* P40-3: 旧 .daynav（前の記録/月セレクト/次の記録の行）は廃止。
+     日付見出しの行に統合し、月移動は日付見出しのポップオーバーに畳む */
+  #dayTitleBtn{appearance:none;border:0;background:none;font:inherit;color:inherit;
+    letter-spacing:inherit;padding:0;cursor:pointer;display:inline-flex;
+    align-items:baseline;gap:8px}
+  .pop-mark{font-size:11px;color:var(--sub)}
+  #dayTitleBtn[aria-expanded="true"] .pop-mark{color:var(--ink)}
+  #dayPop{position:absolute;top:100%;left:0;margin-top:6px;z-index:6;background:var(--paper);
+    border:1.5px solid var(--ink);min-width:250px;max-height:330px;overflow-y:auto;
+    scrollbar-width:thin;scrollbar-color:var(--rule) transparent;padding:0 0 6px}
+  #dayPop[hidden]{display:none}
+  .dp-head{display:flex;justify-content:space-between;align-items:center;gap:8px;
+    padding:7px 8px;border-bottom:1px solid var(--rule);font-size:13px;font-weight:700;
+    position:sticky;top:0;background:var(--paper)}
+  .dp-head button{appearance:none;border:1px solid var(--rule);background:#fff;color:var(--ink);
+    font:inherit;font-weight:400;width:30px;height:26px;cursor:pointer;line-height:1}
+  .dp-head button:disabled{color:var(--faint);cursor:default}
+  .dp-day{display:flex;justify-content:space-between;align-items:baseline;gap:14px;width:100%;
+    padding:6px 12px;border:0;background:none;font:inherit;font-size:13px;cursor:pointer;
+    color:var(--ink);text-align:left}
+  .dp-day small{color:var(--sub);font-size:11px;margin-left:3px}
+  .dp-day .n{color:var(--sub);font-size:12px;white-space:nowrap}
+  .dp-day.on{font-weight:700;background:#f6f5f1}
+  .dp-empty{font-size:12px;color:var(--sub);padding:12px}
   .chips{display:flex;gap:8px;margin:0;flex-wrap:wrap}
   /* 重要度と分野を横1行に（PC・P20）。狭ければ自然に折り返す */
   .chipbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:16px 0 0}
@@ -283,7 +311,10 @@
     font-size:11.5px;font-weight:600;letter-spacing:.22em;color:var(--sub);
     transition:opacity .2s ease,max-height .25s ease,margin .25s ease,padding .25s ease;
     overflow:hidden;max-height:70px}
-  .sec .mark{color:var(--high);font-size:12px;letter-spacing:0} .sec .mark.m{color:#8a867f}
+  /* P40-4: ◆◇◊は廃止。mark には「高/中/低」の文字が入り、字面は .sec を継承する。
+     高の朱は文字に移す（記号が唯一の朱の合図だったため・色の合図は維持） */
+  .sec .mark{color:var(--high)} .sec .mark.m{color:#8a867f}
+  .impch{font-weight:600} .impch.hi{color:var(--high)}
   .sec .l{color:var(--faint);font-weight:400;letter-spacing:.04em}
   .sec.gov{margin-top:26px}
   .sec.hide{opacity:0;max-height:0;margin:0;padding:0;border-width:0}
@@ -507,8 +538,10 @@
     /* 押すと移動するもの（見出しではないが、リンクとして機能する） */
     .dl:hover .t{color:var(--link);text-decoration:underline;text-underline-offset:3px}
     .cal .cell:hover .d{color:var(--link);text-decoration:underline;text-underline-offset:2px}
-    .daynav button:not(:disabled):hover,
     .m-arrows button:not(:disabled):hover{border-color:var(--ink)}
+    .dp-day:hover{background:#f6f5f1}
+    .dp-head button:not(:disabled):hover{border-color:var(--ink)}
+    #dayTitleBtn:hover .pop-mark{color:var(--ink)}
     .share:hover{color:var(--link)}
     .stat .row:not(:disabled):hover span{text-decoration:underline;text-underline-offset:3px}
     .stat .row:not(:disabled):hover b::after{content:" →";font-weight:400;color:var(--sub)}
@@ -533,7 +566,9 @@
     .masthead h1{font-size:clamp(21px,6vw,24px);letter-spacing:.18em;text-indent:.18em}
     .masthead .sub{display:none} /* 副題は初見向け=メニュー内「このサイトについて」に委ねる */
     .sheet{margin-top:18px}
-    .daynav{display:none} /* 月ナビは廃止し、前後移動は日付見出しの行の矢印に */
+    /* P40-3: 月移動ポップオーバーはPCのみ（スマホの固定ヘッダー体系と上部占有を変えない） */
+    .pop-mark{display:none}
+    #dayTitleBtn{pointer-events:none}
     .m-arrows{display:flex;gap:6px}
     .m-arrows button{width:34px;height:34px;border:1px solid var(--rule);background:#fff;
       color:var(--ink);font-size:14px;cursor:pointer;font-family:inherit}
@@ -547,9 +582,7 @@
     .dayhead .daycount{grid-column:2;grid-row:1;min-width:0;overflow:hidden;
       text-overflow:ellipsis;font-size:12px}
     .dayhead .m-arrows{grid-column:3;grid-row:1;justify-self:end}
-    /* 重要度の内訳はスマホでは出さない(P22)。重要度チップが紙面にもメニューにも無く、
-       内訳を見ても押して絞れないため。分野の絞り込み表示(.fld/.all)は残す(P19) */
-    .daycount .tally{display:none}
+    /* P40-3で内訳(.tally)自体を廃止したため、P22の「スマホだけ隠す」規則は不要になった */
     #chips{display:none} /* 重要度チップ: 紙面が高→中→低の順で組まれ低は索引に畳まれるため廃止 */
     /* ティッカーはスマホでは一段薄く（上部の占有を増やさない・P20）。帯の左右の内余白は保つ(P38) */
     .ticker{padding:4px 10px;gap:8px}
@@ -693,25 +726,26 @@
 
   <div class="sheet">
     <main>
+      <!-- P40-3: 日付ナビを1行に。前後移動の矢印は両幅で共通（PCは中央・スマホは右端）。
+           月移動は日付見出し自体に畳む（押すと記録のある日の一覧＋月の前後・PCのみ）。
+           旧「← 前の記録｜月セレクト｜次の記録 →」の行は廃止 -->
       <div class="dayhead">
-        <h2 id="dayTitle">読み込み中…</h2>
-        <div class="m-arrows"><!-- スマホ専用の前後移動(PCでは非表示) -->
+        <h2><button id="dayTitleBtn" type="button" aria-haspopup="true" aria-expanded="false"
+          ><span id="dayTitle">読み込み中…</span><span class="pop-mark" aria-hidden="true">▽</span></button></h2>
+        <div class="m-arrows">
           <button id="prevDayM" aria-label="前の記録">←</button>
           <button id="nextDayM" aria-label="次の記録">→</button>
         </div>
         <div class="daycount" id="dayCounts"></div>
+        <div id="dayPop" hidden></div>
       </div>
-      <nav class="daynav">
-        <button id="prevDay">← 前の記録</button>
-        <select id="monthSel" aria-label="月の選択"></select>
-        <button id="nextDay">次の記録 →</button>
-      </nav>
       <div class="chipbar">
       <div class="chips" id="chips">
         <button class="chip on" data-f="all">すべて</button>
-        <button class="chip" data-f="高">◆ 高</button>
-        <button class="chip" data-f="中">◇ 中</button>
-        <button class="chip" data-f="低">◊ 低</button>
+        <!-- P40-4: ◆◇◊は廃止（大きさが揃わず、文字自体が意味を持つため情報を足していない） -->
+        <button class="chip" data-f="高">高</button>
+        <button class="chip" data-f="中">中</button>
+        <button class="chip" data-f="低">低</button>
       </div>
       <div id="mFieldSlot"><!-- 分野チップは常に紙面側（重要度の右／スマホは日付見出し直下）-->
         <div class="chips" id="fieldChips">
@@ -839,7 +873,7 @@
           <span class="field shogai">障害</span><span class="field korei">高齢</span>
           <span class="field kyotsu">共通</span>
         </div>
-        <div class="row" style="font-size:11px;color:var(--faint)">◆高=対応・確認を ◇中=把握を ◊低=参考</div>
+        <div class="row" style="font-size:11px;color:var(--faint)"><b style="color:var(--high);font-weight:600">高</b>=対応・確認を 中=把握を 低=参考</div>
       </div>
 
       <!-- P31: 助成面の注意書き。P30の「絞り込みと項目の間に畳む」案は不採用（ユーザー判断）。
@@ -1012,24 +1046,64 @@
       const c = state.index.days[key];
       if (c) { t += c.t; h += c.h; mi += c.m; l += c.l; }
     }
-    const row = (mark, label, n, imp) =>
+    // P40-4: 記号は廃止し「高/中/低」の文字を印にする（高だけ朱＝色の合図を維持）
+    const row = (label, n, imp) =>
       `<button class="row" data-imp="${imp}"${n === 0 ? " disabled" : ""}>
-        <span>${mark} ${label}</span><b>${n}</b></button>`;
+        <span><span class="impch${imp === "高" ? " hi" : ""}">${imp}</span> ${label}</span><b>${n}</b></button>`;
     $("weekStat").innerHTML = `
       <div class="n">${t}<span> 件を巡回・記録</span></div>
-      ${row("◆", "対応・確認を", h, "高")}
-      ${row("◇", "把握を", mi, "中")}
-      ${row("◊", "参考", l, "低")}`;
+      ${row("対応・確認を", h, "高")}
+      ${row("把握を", mi, "中")}
+      ${row("参考", l, "低")}`;
   }
 
-  function renderMonthSel() {
-    const months = [...state.index.months].sort().reverse();
-    $("monthSel").innerHTML = months.map((m) => {
-      const [y, mm] = m.split("-");
-      return `<option value="${m}">${y}年${Number(mm)}月</option>`;
+  /* P40-3: 月移動は日付見出しに畳む（旧・月セレクトの後継）。
+     押すと「その月の記録のある日の一覧」＋月の前後移動（‹ ›）。
+     外側クリック・ESC・日の選択で閉じる。PCのみ（スマホはCSSで無効化） */
+  let popMonth = null;
+  function renderDayPop() {
+    const months = [...state.index.months].sort();
+    const i = months.indexOf(popMonth);
+    const days = Object.keys(state.index.days).filter((d) => d.startsWith(popMonth)).sort();
+    const rows = days.map((d) => {
+      const c = state.index.days[d];
+      const f = fmtDay(d);
+      return `<button class="dp-day${d === state.day ? " on" : ""}" data-day="${d}">
+        <span>${f.main}<small>${f.sub}</small></span><span class="n">${c.t}件</span></button>`;
     }).join("");
-    $("monthSel").value = state.day.slice(0, 7);
+    const [y, mm] = popMonth.split("-");
+    $("dayPop").innerHTML = `
+      <div class="dp-head">
+        <button id="dpPrev" aria-label="前の月"${i <= 0 ? " disabled" : ""}>‹</button>
+        <span>${y}年${Number(mm)}月</span>
+        <button id="dpNext" aria-label="次の月"${i < 0 || i >= months.length - 1 ? " disabled" : ""}>›</button>
+      </div>
+      ${rows || `<div class="dp-empty">この月の記録はありません。</div>`}`;
   }
+  function toggleDayPop(open) {
+    const show = open ?? $("dayPop").hidden;
+    if (show) { popMonth = state.day.slice(0, 7); renderDayPop(); }
+    $("dayPop").hidden = !show;
+    $("dayTitleBtn").setAttribute("aria-expanded", String(show));
+  }
+  $("dayTitleBtn").addEventListener("click", () => toggleDayPop());
+  $("dayPop").addEventListener("click", (e) => {
+    const nav = e.target.closest("#dpPrev, #dpNext");
+    if (nav) {
+      const months = [...state.index.months].sort();
+      popMonth = months[months.indexOf(popMonth) + (nav.id === "dpNext" ? 1 : -1)] ?? popMonth;
+      renderDayPop();
+      return;
+    }
+    const day = e.target.closest(".dp-day")?.dataset.day;
+    if (day) { state.day = day; renderDay(); toggleDayPop(false); }
+  });
+  document.addEventListener("click", (e) => {
+    if (!$("dayPop").hidden && !e.target.closest(".dayhead")) toggleDayPop(false);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !$("dayPop").hidden) toggleDayPop(false);
+  });
 
   function pickTop(sorted) { return sorted.find((it) => it.importance === "高") ?? null; }
   /* トップ記事: 要約の一文目を見出し・残りを本文に */
@@ -1094,7 +1168,7 @@
 
   function topBlock(it) {
     const s = splitSummary(it.summary);
-    return `<div class="sec gov" data-sec="top"><span class="mark">◆</span> 本日の最重要</div>
+    return `<div class="sec gov" data-sec="top"><span class="mark">本日の最重要</span></div>
     <article class="it top-item" data-imp="高" data-fields="${(it.fields ?? []).join(",")}" data-hash="${esc(it.hash)}">
       <h3><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(s.head)}</a></h3>
       ${s.rest ? `<div class="body">${esc(s.rest)}</div>` : ""}
@@ -1125,26 +1199,15 @@
       <span style="color:#b5b1aa">［${src}］</span>${shareBtn(state.day, it.hash, it.title)}</div>`;
   }
 
-  /* 日付見出しの件数(P19)。分野で絞っているときは「障害 3件 ── 高1・中2 ／ 全15件」の形にし、
-     画面に出ている件数と表示が食い違わないようにする。全分野なら従来どおり。
-     P22: 重要度の内訳は .tally で包み、**スマホではCSSで隠す**（重要度チップがメニューにも
-     紙面にも無いスマホでは内訳の実用性が低いため）。分野の絞り込み表示（分野名・絞り込み後の
-     件数・全体件数）は隠さない——P19で直した「絞り込み中に件数がずれて見える」を再発させない。
-     出し分けはCSSだけで行い、この関数は幅を知らない（描画ロジックを二重化しない）。 */
+  /* P40-3: 件数はPC・スマホとも「新着N件」のみ（高・中・低の内訳は廃止・P22の分岐を統合）。
+     分野で絞り込み中はP19の表示（「障害 3件 ／ 全10件」）を両幅で維持する */
   function updateDayCounts() {
     const el = $("dayCounts");
     if (!state.dayHasRec) { el.textContent = "記録なし"; return; }
     const items = state.dayItems ?? [];
     if (items.length === 0) { el.textContent = "新着なし"; return; }
-    const tally = (list) => {
-      const c = { 高: 0, 中: 0, 低: 0 };
-      list.forEach((it) => c[it.importance]++);
-      return c;
-    };
     if (state.field === "all") {
-      const c = tally(items);
-      el.innerHTML =
-        `新着${items.length}件<span class="tally"> ── <b>高${c["高"]}</b>・中${c["中"]}・低${c["低"]}</span>`;
+      el.textContent = `新着${items.length}件`;
       return;
     }
     // 分野の判定は applyFilters と同じ規則（選んだ分野 or 共通は残す）
@@ -1152,14 +1215,8 @@
       const f = it.fields ?? [];
       return f.includes(state.field) || f.includes("共通");
     });
-    const c = tally(shown);
-    const breakdown = ["高", "中", "低"]
-      .filter((k) => c[k] > 0)
-      .map((k) => (k === "高" ? `<b>高${c[k]}</b>` : `${k}${c[k]}`))
-      .join("・");
     el.innerHTML =
       `<span class="fld">${esc(state.field)}</span> ${shown.length}件` +
-      (breakdown ? `<span class="tally"> ── ${breakdown}</span>` : "") +
       ` <span class="all">／ 全${items.length}件</span>`;
   }
 
@@ -1263,9 +1320,9 @@
       const low = sorted.filter((i) => i.importance === "低");
       $("list").innerHTML = [
         top ? topBlock(top) : "",
-        hi.length ? `<div class="sec" data-sec="高"><span class="mark">◆</span> 高 <span class="l">── 対応・確認を</span></div>${hi.map(hiBlock).join("")}` : "",
-        mid.length ? `<div class="sec" data-sec="中"><span class="mark m">◇</span> 中 <span class="l">── 把握を</span></div>${mid.map(midBlock).join("")}` : "",
-        low.length ? `<div class="low-wrap"><div class="low-h">◊ 低 ── 参考（${low.length}件）</div>${low.map(lowLine).join("")}</div>` : "",
+        hi.length ? `<div class="sec" data-sec="高"><span class="mark">高</span> <span class="l">── 対応・確認を</span></div>${hi.map(hiBlock).join("")}` : "",
+        mid.length ? `<div class="sec" data-sec="中"><span class="mark m">中</span> <span class="l">── 把握を</span></div>${mid.map(midBlock).join("")}` : "",
+        low.length ? `<div class="low-wrap"><div class="low-h">低 ── 参考（${low.length}件）</div>${low.map(lowLine).join("")}</div>` : "",
         pressBlock,
       ].join("");
       applyFilters();
@@ -1273,12 +1330,12 @@
 
     const days = recordedDays();
     const i = days.indexOf(d);
-    $("prevDay").disabled = $("prevDayM").disabled = i <= 0;
-    $("nextDay").disabled = $("nextDayM").disabled = i < 0 || i >= days.length - 1;
+    $("prevDayM").disabled = i <= 0;
+    $("nextDayM").disabled = i < 0 || i >= days.length - 1;
     renderCal();
     renderWeekStat();
     renderTicker();
-    renderMonthSel();
+    if (!$("dayPop").hidden) { popMonth = state.day.slice(0, 7); renderDayPop(); } // 開いたまま日送りしたら追随
     highlightPending();
   }
 
@@ -1337,8 +1394,6 @@
   /* 日付を切り替えたら紙面の先頭へ。固定ヘッダーの下に日付見出しが隠れたままにしない */
   function toTop() { window.scrollTo({ top: 0 }); }
 
-  $("prevDay").addEventListener("click", () => moveDay(-1));
-  $("nextDay").addEventListener("click", () => moveDay(1));
   /* 文字サイズ(P18): html の data-ts で段階を持ち、CSSの倍率だけが変わる */
   function applyTextSize(v) {
     document.documentElement.dataset.ts = v;
@@ -1371,11 +1426,6 @@
   $("weekStat").addEventListener("click", (e) => {
     const b = e.target.closest(".row");
     if (b && !b.disabled) runWeekList(b.dataset.imp);
-  });
-  $("monthSel").addEventListener("change", () => {
-    const m = $("monthSel").value;
-    const days = recordedDays().filter((d) => d.startsWith(m));
-    if (days.length) { state.day = days[days.length - 1]; renderDay(); toTop(); }
   });
   $("chips").addEventListener("click", (e) => {
     const b = e.target.closest(".chip");
@@ -1822,11 +1872,10 @@
       items.sort((a, b) => (a.date < b.date ? 1 : -1)); // 同日内は紙面と同じ日付降順
       results.push(...items.map((it) => ({ ...it, _day: day })));
     }
-    const mark = { 高: "◆", 中: "◇", 低: "◊" }[imp];
     const label = { 高: "対応・確認を", 中: "把握を", 低: "参考" }[imp];
     const days = weekDays();
     renderResultList({
-      title: `今週の${mark}${label} ${results.length}件`,
+      title: `今週の${imp} ── ${label} ${results.length}件`,
       note: `${fmtDay(days[days.length - 1]).short}〜${fmtDay(days[0]).short}の記録`,
       results,
       emptyText: "この7日間に該当する記録はありません。",

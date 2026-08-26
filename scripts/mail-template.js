@@ -83,10 +83,12 @@ function lowLine(it) {
 </div>`;
 }
 
-function section(mark, label, note, color, inner) {
+/* P40-4: ◆◇◊は廃止（ダッシュボードと体系を揃える）。見出しは「高/中/低」の文字だけで、
+   高は色（朱）が引き続き合図になる */
+function section(label, note, color, inner) {
   return `
 <div style="border-top:1px solid ${RULE};margin-top:30px;padding-top:20px;">
-  <div style="font-family:${FONT};font-size:13px;font-weight:700;color:${color};letter-spacing:.08em;">${mark} ${label} <span style="font-weight:400;color:${SUB};letter-spacing:0;">── ${note}</span></div>
+  <div style="font-family:${FONT};font-size:13px;font-weight:700;color:${color};letter-spacing:.08em;">${label} <span style="font-weight:400;color:${SUB};letter-spacing:0;">── ${note}</span></div>
   ${inner}
 </div>`;
 }
@@ -145,13 +147,13 @@ export function buildMail(report) {
 </div>`
       : [
           high.length
-            ? section("◆", "高", "対応・確認を", HIGH, high.map(itemBlock).join(""))
+            ? section("高", "対応・確認を", HIGH, high.map(itemBlock).join(""))
             : "",
           mid.length
-            ? section("◇", "中", "把握を", "#6b675f", mid.map(itemBlock).join(""))
+            ? section("中", "把握を", "#6b675f", mid.map(itemBlock).join(""))
             : "",
           low.length
-            ? section("◊", "低", "参考", "#6b675f", low.map(lowLine).join(""))
+            ? section("低", "参考", "#6b675f", low.map(lowLine).join(""))
             : "",
         ].join("");
   const body = govBody + pressSection;

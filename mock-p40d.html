@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>P40-5 案D 選択状態の強度比較（モック）</title>
+<style>
+  :root{
+    --ink:#17181a; --sub:#75716b; --faint:#a8a49d; --rule:#e6e3de;
+    --paper:#fcfcfb; --high:#a04a32; --press-bg:#f5f3ef; --box:#f6f5f1;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#efede8;color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","BIZ UDPGothic",Meiryo,sans-serif;
+    font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;padding:26px 14px 80px}
+  .note{max-width:760px;margin:0 auto 22px;font-size:13px;color:var(--sub);line-height:1.9}
+  .note b{color:var(--ink)}
+  .case{max-width:760px;margin:0 auto 30px;background:var(--paper);
+    border:1px solid var(--rule);padding:0 26px 20px}
+  .case-h{font-size:12px;font-weight:700;letter-spacing:.18em;color:#fff;background:var(--ink);
+    margin:0 -26px 0;padding:7px 14px}
+  .case-note{font-size:12px;color:var(--sub);line-height:1.85;margin-top:12px;
+    border-top:1px dashed var(--rule);padding-top:10px}
+  .case-note b{color:var(--ink)}
+
+  .masthead{text-align:center;padding:14px 0 11px;border-bottom:3px double var(--ink)}
+  .masthead h1{font-size:30px;font-weight:700;letter-spacing:.34em;text-indent:.34em;line-height:1.2}
+  .ticker{display:flex;align-items:center;gap:10px;background:var(--press-bg);
+    padding:5px 12px;overflow:hidden}
+  .ticker .tl{flex:0 0 auto;font-size:10px;font-weight:600;letter-spacing:.22em;
+    color:var(--sub);border-right:1px solid var(--rule);padding-right:10px}
+  .ticker .tt{font-size:11.5px;color:var(--ink);white-space:nowrap;overflow:hidden}
+  .dayhead{border-top:2px solid var(--ink);padding-top:12px;margin-top:22px;
+    display:flex;justify-content:space-between;align-items:baseline}
+  .dayhead h2{font-size:26px;letter-spacing:.02em}
+  .dayhead .c{font-size:12.5px;color:var(--sub)}
+  .stub{color:var(--faint);font-size:12.5px;padding:8px 0 0}
+
+  /* 案D共通: 非選択＝浮いている（右下に墨のオフセット影）／選択＝影が消えて2pxめり込む */
+  .tD{display:flex;gap:12px;padding:8px 0 12px}
+  .tD button{appearance:none;font:inherit;cursor:pointer;white-space:nowrap;
+    padding:7px 18px 6px;font-size:13px;letter-spacing:.22em;color:var(--ink);
+    background:var(--paper);border:1px solid var(--ink);
+    box-shadow:2px 2px 0 var(--ink);transform:translate(0,0)}
+  .tD button.on{box-shadow:none;transform:translate(2px,2px)}
+  .tD button:not(.on):hover{background:var(--box)}
+
+  /* D1: めり込みのみ（現行提案＝比較の基準） */
+  /* D2: ＋地色 */
+  .d2 button.on{background:var(--box)}
+  /* D3: ＋地色＋太字 */
+  .d3 button.on{background:var(--box);font-weight:700}
+  /* D4: ＋地色＋太字＋枠を2pxに（輪郭も濃く） */
+  .d4 button.on{background:var(--box);font-weight:700;border-width:2px;
+    padding:6px 17px 5px} /* 枠が太る分を内側で吸収し、行の高さを変えない */
+  /* D5: ＋墨ベタ白抜き太字（押されたキーが点く・最強） */
+  .d5 button.on{background:var(--ink);color:#fff;font-weight:700}
+</style>
+</head>
+<body>
+
+<div class="note">
+  <b>案D（押しボタン型）の選択状態の強度比較。</b>タブは押して切り替えられます。
+  共通の骨格: 非選択＝右下に墨の影で浮いている（押せる）／選択＝影が消えて2pxめり込む
+  （押し込まれている）。この物理の比喩は全案で維持し、<b>めり込みに足す手がかりだけ</b>を
+  D1→D5の順に強くしています。墨と朱の2色・直角は全案共通です。
+</div>
+
+<div class="case">
+  <div class="case-h">D1　めり込みのみ（前回の提示案＝比較の基準）</div>
+  <div class="masthead"><h1>福祉情報ウォッチ</h1></div>
+  <nav class="tD tabs"><button class="on">紙　面</button><button>助　成</button><button>研　修</button></nav>
+  <div class="ticker"><span class="tl">報道</span><span class="tt">介護ニュースJoint　外国人の在留手数料、10月から大幅引き上げ…</span></div>
+  <div class="dayhead"><h2>8月26日 <small style="font-size:13px;color:var(--sub)">（水）</small></h2><span class="c">新着10件</span></div>
+  <div class="stub">（記事一覧…）</div>
+  <div class="case-note">影の有無と2pxのずれだけ。<b>ご指摘のとおり一目の判別は弱い</b>。</div>
+</div>
+
+<div class="case">
+  <div class="case-h">D2　＋地色</div>
+  <div class="masthead"><h1>福祉情報ウォッチ</h1></div>
+  <nav class="tD d2 tabs"><button class="on">紙　面</button><button>助　成</button><button>研　修</button></nav>
+  <div class="ticker"><span class="tl">報道</span><span class="tt">介護ニュースJoint　外国人の在留手数料、10月から大幅引き上げ…</span></div>
+  <div class="dayhead"><h2>8月26日 <small style="font-size:13px;color:var(--sub)">（水）</small></h2><span class="c">新着10件</span></div>
+  <div class="stub">（記事一覧…）</div>
+  <div class="case-note">押し込まれた面に地色（#f6f5f1＝「操作できる箱」の色）。
+  ⚠️hoverも同じ地色のため、<b>マウスを載せた非選択と選択の区別が一瞬迷う</b>可能性がある。</div>
+</div>
+
+<div class="case">
+  <div class="case-h">D3　＋地色＋太字（推奨）</div>
+  <div class="masthead"><h1>福祉情報ウォッチ</h1></div>
+  <nav class="tD d3 tabs"><button class="on">紙　面</button><button>助　成</button><button>研　修</button></nav>
+  <div class="ticker"><span class="tl">報道</span><span class="tt">介護ニュースJoint　外国人の在留手数料、10月から大幅引き上げ…</span></div>
+  <div class="dayhead"><h2>8月26日 <small style="font-size:13px;color:var(--sub)">（水）</small></h2><span class="c">新着10件</span></div>
+  <div class="stub">（記事一覧…）</div>
+  <div class="case-note"><b>推奨。</b>地色＋太字で、影を見なくても文字の重さだけで現在地が分かる
+  （現行C3と同じ「選択=太字」の語彙を引き継ぐ＝学習の連続性）。hoverの地色とも太字で区別できる。</div>
+</div>
+
+<div class="case">
+  <div class="case-h">D4　＋地色＋太字＋枠2px</div>
+  <div class="masthead"><h1>福祉情報ウォッチ</h1></div>
+  <nav class="tD d4 tabs"><button class="on">紙　面</button><button>助　成</button><button>研　修</button></nav>
+  <div class="ticker"><span class="tl">報道</span><span class="tt">介護ニュースJoint　外国人の在留手数料、10月から大幅引き上げ…</span></div>
+  <div class="dayhead"><h2>8月26日 <small style="font-size:13px;color:var(--sub)">（水）</small></h2><span class="c">新着10件</span></div>
+  <div class="stub">（記事一覧…）</div>
+  <div class="case-note">D3に加えて輪郭も濃く。より強いが、
+  ⚠️「めり込んだのに輪郭が強くなる」のは物理の比喩としてはやや矛盾する。</div>
+</div>
+
+<div class="case">
+  <div class="case-h">D5　＋墨ベタ白抜き太字（最強）</div>
+  <div class="masthead"><h1>福祉情報ウォッチ</h1></div>
+  <nav class="tD d5 tabs"><button class="on">紙　面</button><button>助　成</button><button>研　修</button></nav>
+  <div class="ticker"><span class="tl">報道</span><span class="tt">介護ニュースJoint　外国人の在留手数料、10月から大幅引き上げ…</span></div>
+  <div class="dayhead"><h2>8月26日 <small style="font-size:13px;color:var(--sub)">（水）</small></h2><span class="c">新着10件</span></div>
+  <div class="stub">（記事一覧…）</div>
+  <div class="case-note">押されたキーが点く比喩。判別は最も強い。
+  ⚠️P29で「白地に墨と朱の構成にベタが1箇所入ると重心が偏る」として見送った系統の見え方に近づく。</div>
+</div>
+
+<div class="note">
+  すべての案で: 墨と朱の2色のみ（朱は「対応が要る」に温存）・地色は既存の #f6f5f1・
+  影も墨のみ・幅320pxでも3枚が1行に収まる。
+</div>
+
+<script>
+  document.querySelectorAll(".tabs").forEach((nav) => {
+    nav.addEventListener("click", (e) => {
+      const b = e.target.closest("button");
+      if (!b) return;
+      nav.querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b));
+    });
+  });
+</script>
+</body>
+</html>
