@@ -39,6 +39,10 @@
 | 20 | 紙面からの研修合流（既存6源） | **研修** | なし（data/deadlines.json を読む） | kenshu-goryu | 巡回中 |
 | 21 | 福岡県介護福祉士会 | **研修** | https://www.f-kaigo.jp/training/index.php | kenshu-fkaigo | 巡回中 |
 | 22 | 中央福祉学院（全社協の研修機関） | **研修** | https://www.gakuin.gr.jp/info-cate/course/ | kenshu-gakuin | 保留（届出前） |
+| 23 | 社会福祉士会 サビ管・児発管研修ページ | **研修** | https://www.facsw.or.jp/service_training/select | kenshu-watch | 巡回中 |
+| 24 | 社会福祉士会 相談支援従事者研修ページ | **研修** | https://www.facsw.or.jp/support_training/entry | kenshu-watch | 巡回中 |
+| 25 | 研修センター 介護支援専門員研修ページ | **研修** | https://fuku-shakyo-kenshu.jp/kaigoshien/ | kenshu-watch | 巡回中 |
+| 26 | 福岡県介護支援専門員協会 トップ | **研修** | https://fukuoka-cm.jp/ | kenshu-watch | 巡回中 |
 
 - **区分=報道 の源は行政情報と別扱い**（P9・[DECISION]）: AI要約・重要度判定を行わず、
   **見出し・リンク・日付・カテゴリ・分野タグのみ**を保存する（RSSの説明文・本文は保存しない）。

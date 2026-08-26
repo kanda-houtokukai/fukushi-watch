@@ -486,12 +486,152 @@ async function collectGakuin(src, today) {
   return { items, raw: links.length };
 }
 
+/* ===========================================================================
+ * 特定ページの中身を監視する型（kenshu-watch・P35実装順序4。P23から懸案の型の初実装）
+ *
+ * 設計原則（ユーザー承認済み・台帳に記録）:
+ *  ① ページ全体のハッシュを使わない。「ページの変化」ではなく
+ *     「監視の意図に合う要素の集合の変化」を見る
+ *  ② 誤検知防止は3層: 領域の限定（start/end）・採用/除外語彙（accept/exclude）・
+ *     要素キーの設計
+ *  ③ ⚠️最重要は要素キー: **正規化テキストを主・URLは種類（pdf/html）だけ**にする。
+ *     これで「URLが年度替わりで差し替わる様式PDF」は発火せず、
+ *     「受付中の文言が新出する」は発火する
+ *  ④ 受付期外で実データの発火を確認できないため、合成テストで両方向を担保する
+ *     （注入した変化で発火する／無関係な変更で発火しない）
+ *
+ * 初回はベースラインの保存のみ（項目0・P21の型）。以後、ベースラインにも active にも
+ * 無い要素が現れたら「募集が始まった」として研修面に載せ、要素がページから消えたら消す。
+ * 状態は data/pagewatch.json（正規化キーのみ。ページ全文は保存しない）。
+ * ======================================================================== */
+
+const PAGEWATCH_PATH = join(ROOT, "data", "pagewatch.json");
+
+/** ページ別の監視ルール。⚠️将来の適用先（全国保育士会の処遇改善ページ・
+ *  福岡県社協の民間助成ハブ等）はここに1エントリ足し、台帳に1行足すだけでよい */
+const WATCH_RULES = {
+  "https://www.facsw.or.jp/service_training/select": {
+    label: "サビ管・児発管研修",
+    start: /class="fs-post_main"/, end: /<footer/,
+    accept: /受付中|受付を開始|申込フォーム|募集要項|開催要綱|申込手順/,
+    exclude: /入会|会員募集/,
+  },
+  "https://www.facsw.or.jp/support_training/entry": {
+    label: "相談支援従事者研修",
+    start: /class="fs-post_main"/, end: /<footer/,
+    accept: /受付中|受付を開始|申込フォーム|募集要項|開催要綱|申込手順/,
+    exclude: /入会|会員募集/,
+  },
+  "https://fuku-shakyo-kenshu.jp/kaigoshien/": {
+    label: "介護支援専門員研修",
+    start: /id="main"/, end: /class="pagetop"|<footer/,
+    accept: /募集|受付中|受付開始|受付につい|開催要綱|申込期間|申込方法/,
+    // 受講中向けの様式・フォーム類は語彙で殺す（本文領域内に同居しているため）
+    exclude: /記録シート|辞退|同意書|インボイス|領収書|修了書|給付金|表紙|受付シート|基本情報|メールアドレス|問い?合わせ/,
+  },
+  "https://fukuoka-cm.jp/": {
+    label: "福岡県介護支援専門員協会",
+    start: /id="contents"/, end: /<footer/,
+    urlExclude: /news2\.php/, // 求人欄（頻繁に入れ替わる最大の誤検知源）
+    accept: /主任|専門(?:研修|II|Ⅱ)|更新(?:研修|前期|後期)|実務研修|法定研修/,
+    exclude: /求人|正社員|募集要項なし/,
+  },
+};
+
+/** 要素キー: 正規化テキスト主・URLは種類だけ（設計原則③） */
+const watchKey = (title, url) =>
+  createHash("sha256")
+    .update(`${flat(title)}|${/\.pdf(?:$|[?#])/i.test(url) ? "pdf" : "html"}`)
+    .digest("hex")
+    .slice(0, 12);
+
+/** ページから「監視の意図に合う要素」を抽出する（コア・源を問わず共通） */
+export function watchElements(html, rule, baseUrl) {
+  let seg = html;
+  const i = seg.search(rule.start);
+  if (i < 0) throw new Error("本文領域が見つかりません（構造変化の疑い）");
+  seg = seg.slice(i);
+  const j = seg.search(rule.end);
+  if (j > 0) seg = seg.slice(0, j);
+  const out = new Map();
+  for (const m of seg.matchAll(/<a[^>]+href="([^"]+)"[^>]*>([\s\S]{0,160}?)<\/a>/g)) {
+    const text = strip(m[2]);
+    let url;
+    try { url = new URL(m[1].trim(), baseUrl).href; } catch { continue; }
+    if (/^javascript:/i.test(url)) continue;
+    if (rule.urlExclude?.test(url)) continue;
+    const ctx = strip(seg.slice(Math.max(0, m.index - 220), m.index));
+    const hay = `${ctx} ${text}`;
+    if (rule.exclude?.test(hay)) continue;
+    if (!rule.accept.test(hay)) continue;
+    // タイトル解決: リンク文言が無意味（こちら/ダウンロード等）なら周辺から研修名を拾う
+    let title = text;
+    if (!title || title.length < 6 || /こちら|ダウンロード|ＰＤＦ|PDF|クリック|詳しく/.test(title)) {
+      const nm = ctx.match(/([^\s。、]{4,40}(?:研修|講習|コース|課程|勉強会)[^。、\s]{0,10})[^。、]*$/);
+      title = nm ? nm[1].trim() : title;
+    }
+    if (!title || title.length < 4) title = `${rule.label}の受付情報`;
+    const key = watchKey(title, url);
+    if (!out.has(key)) out.set(key, { key, title, url, ctx });
+  }
+  return [...out.values()];
+}
+
+function loadPagewatch() {
+  if (!existsSync(PAGEWATCH_PATH)) return {};
+  return JSON.parse(readFileSync(PAGEWATCH_PATH, "utf8"));
+}
+
+async function collectWatch(src, today) {
+  const rule = WATCH_RULES[src.url];
+  if (!rule) throw new Error(`監視ルールがありません: ${src.url}`);
+  const html = await fetchHtml(src.url);
+  const elems = watchElements(html, rule, src.url);
+  const state = loadPagewatch();
+  const page = state[src.url] ?? { baseline: null, active: {} };
+  const currentKeys = new Set(elems.map((e) => e.key));
+  if (!page.baseline) {
+    page.baseline = [...currentKeys];
+    console.log(`  初回ベースライン: ${currentKeys.size}要素（項目は出さない）`);
+  } else {
+    const base = new Set(page.baseline);
+    for (const e of elems) {
+      if (base.has(e.key) || page.active[e.key]) continue;
+      // 周辺に締切のラベルつき日付があれば拾う（無ければ「募集情報あり」のまま）
+      const seg = `${e.ctx} ${e.title}`.match(/(?:締切|期限)[^。]{0,30}/)?.[0] ?? "";
+      const dates = datesInText(seg, today).filter((d) => d >= today);
+      page.active[e.key] = {
+        title: e.title, url: e.url, detectedAt: today, deadline: dates[0] ?? null,
+      };
+      console.log(`  検知: ${e.title}`);
+    }
+    for (const k of Object.keys(page.active)) {
+      if (!currentKeys.has(k)) delete page.active[k]; // ページから消えた＝掲載終了
+    }
+  }
+  state[src.url] = page;
+  if (!dryRun) writeFileSync(PAGEWATCH_PATH, JSON.stringify(state, null, 1) + "\n");
+  const items = Object.values(page.active).map((a) => ({
+    title: a.title,
+    url: a.url,
+    deadline: a.deadline,
+    deadlineType: a.deadline ? "date" : "unknown",
+    deadlineRaw: a.deadline ? `締切 ${a.deadline}` : "募集情報あり",
+    openFrom: null,
+    fields: fieldsOf(a.title),
+    kind: kindOf(a.title, ""),
+  }));
+  // ⚠️採用0要素は正常（受付期外）。本文領域が見つからない場合は上で失敗している
+  return { items, raw: elems.length, allowEmpty: true };
+}
+
 const COLLECTORS = {
   "kenshu-schedule": async (src, today) => {
     const html = await fetchHtml(src.url);
     return parseKenshuSchedule(html, today, src.url);
   },
   "kenshu-gakuin": async (src, today) => collectGakuin(src, today),
+  "kenshu-watch": async (src, today) => collectWatch(src, today),
   "kenshu-info": async (src, today) => collectKenshuInfo(src, today),
   "kenshu-goryu": async () => collectKenshuGoryu(),
   "kenshu-fkaigo": async (src, today) => {

@@ -1,0 +1,26 @@
+{
+ "https://www.facsw.or.jp/service_training/select": {
+  "baseline": [
+   "c75ba315ad3e"
+  ],
+  "active": {}
+ },
+ "https://www.facsw.or.jp/support_training/entry": {
+  "baseline": [],
+  "active": {}
+ },
+ "https://fuku-shakyo-kenshu.jp/kaigoshien/": {
+  "baseline": [],
+  "active": {}
+ },
+ "https://fukuoka-cm.jp/": {
+  "baseline": [
+   "eacf30434308",
+   "23d0781fc335",
+   "6d567b884abe",
+   "c86fbffb9d87",
+   "c9a1313d0295"
+  ],
+  "active": {}
+ }
+}
