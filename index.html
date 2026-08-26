@@ -1625,6 +1625,10 @@
       const f = fmtDay(it.deadline);
       const y = String(it.deadline).slice(0, 4) !== String(new Date().getFullYear()) ? `${f.y}年` : "";
       when = `<div class="when dated${n <= GRANT_SOON_DAYS ? " soon" : ""}">締切 <b>${y}${f.main}</b>（${remainText(n)}）</div>`;
+    } else if ((it.heldDates ?? []).some((d) => d >= jstToday())) {
+      // 開催日が確定している締切なし（P35・f-kaigo等）: 日付は下の「開催」行が担うので
+      // ここには何も出さない（「締切の記載なし」を重ねるとうるさい）
+      when = "";
     } else {
       // 「11月～1月開催予定」等の時期の文をそのまま出す（要綱公開前）
       when = `<div class="when">${esc(it.deadlineRaw || "締切の記載なし")}</div>`;
@@ -1677,7 +1681,7 @@
       `<b>${shown.length}件</b>` +
       `<span style="color:var(--sub)"> ── 受付中${dated.length}` +
       (soon.length ? `・受付前${soon.length}` : "") +
-      `・開催予定${unknown.length}</span>` +
+      `・締切不明${unknown.length}</span>` +
       (filtered ? `<span style="color:var(--faint)"> ／ 全${state.kenshu.length}件</span>` : "");
 
     const sec = (name, note, list) =>
@@ -1690,7 +1694,7 @@
         ? `<div class="gempty">条件に合う研修はありません。絞り込みを外すと${state.kenshu.length}件あります。</div>`
         : sec("受 付 中", "締切の近い順", dated) +
           sec("受 付 前", "開始日の近い順", soon) +
-          sec("開 催 予 定", "要綱の公開前。時期は目安", unknown);
+          sec("締 切 不 明", "開催日・時期の順。詳細は元ページで", unknown);
     trimSectionRules($("kenshuList"), "gsec");
 
     if (state.pendingKenshu) {

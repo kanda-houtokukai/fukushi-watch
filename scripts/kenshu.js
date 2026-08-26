@@ -53,7 +53,7 @@ export const KIND_VOCAB = ["資格要件", "法令対応", "階層別", "テー�
 /** 受講が要件になる研修の名称（汎用語の「養成研修」は入れない——県の人材育成事業まで
  *  資格要件に見えてしまう。実例: 高次脳機能障がい支援者養成研修＝テーマ別が正しい） */
 const REQUIRE_KW =
-  /認知症介護実践|認知症介護基礎|認知症対応型|小規模多機能|計画作成担当者|介護支援専門員|喀痰吸引|サービス管理責任者|児童発達支援管理責任者|相談支援従事者|主任介護支援専門員|権利擁護推進員養成|推進員養成研修|実務研修/;
+  /認知症介護実践|認知症介護基礎|認知症対応型|小規模多機能|計画作成担当者|介護支援専門員|喀痰吸引|サービス管理責任者|児童発達支援管理責任者|相談支援従事者|主任介護支援専門員|権利擁護推進員養成|推進員養成研修|実務研修|実習指導者|認定介護福祉士/;
 /** 法令・運営基準が求める研修（現データはBCP・感染症。虐待防止等は出れば正しく入る） */
 const DUTY_KW = /ＢＣＰ|BCP|業務継続|感染症|虐待防止|身体拘束|権利擁護/;
 /** 職位・経験年数で受ける研修 */
@@ -235,15 +235,15 @@ const heldSegment = (text) => {
 };
 const validMd = (mm, dd) => mm >= 1 && mm <= 12 && dd >= 1 && dd <= 31;
 
-function infoHeldDates(text, today) {
-  // ⚠️日付を拾うのは**但し書き（※）の手前まで**——「※2日間受講できる…」の「2日」を
-  //   直前の月と合成して実在しない開催日にしてしまう（実測: 2日間→10月2日）
-  const seg = heldSegment(text).split("※")[0];
+/**
+ * 日本語の日付列をISOの配列にする（共通ヘルパ・P35で新着とf-kaigoが共用）。
+ * 「令和8年10月22日」「10月23日」「・26日」（直前の月を引き継ぐ）の3型。
+ * ⚠️`日(?!目)` で「1日目：」「2日目：」を除く——これを日付として拾うと
+ *   直前の月と合成されて実在しない開催日になる（実測: 2日目→10月2日）
+ */
+export function datesInText(seg, today) {
   const out = [];
   let lastMonth = null;
-  // 「令和8年10月22日」「10月23日」「・26日」（直前の月を引き継ぐ）の3型。
-  // ⚠️`日(?!目)` で「1日目：」「2日目：」を除く——これを日付として拾うと
-  //   直前の月と合成されて実在しない開催日になる（実測: 2日目→10月2日）
   for (const m of seg.matchAll(/(?:令和\s*(\d+)\s*年)?\s*(?:(\d{1,2})月)?(\d{1,2})日(?!目)/g)) {
     const mm = m[2] ? Number(m[2]) : lastMonth;
     const dd = Number(m[3]);
@@ -252,6 +252,12 @@ function infoHeldDates(text, today) {
     out.push(m[1] ? iso(Number(m[1]) + 2018, mm, dd) : fiscalIso(mm, dd, today));
   }
   return [...new Set(out)].sort();
+}
+
+function infoHeldDates(text, today) {
+  // ⚠️日付を拾うのは**但し書き（※）の手前まで**——「※2日間受講できる…」の「2日」を
+  //   直前の月と合成して実在しない開催日にしてしまう（実測: 2日間→10月2日）
+  return datesInText(heldSegment(text).split("※")[0], today);
 }
 
 /**
@@ -353,6 +359,46 @@ function collectKenshuGoryu() {
   return { items, raw: list.length, allowEmpty: true };
 }
 
+/* ===========================================================================
+ * 福岡県介護福祉士会（kenshu-fkaigo・P35）: /training/index.php の一覧ハブ型。
+ * div.kenshu 単位で 研修名（detail_NNN.php への個別リンク）・開催日・会場・費用が平文。
+ * ⚠️締切の記載は無い（個別ページにも無い）＝開催日ベースで、最終開催日を過ぎたら消す。
+ * ⚠️親睦系（納涼会・交流会等）と「【受付終了しました】」は載せない。
+ * ======================================================================== */
+
+const FKAIGO_EXCLUDE = /納涼会|懇親|交流会|忘年会|新年会|総会|フェスタ|調査員募集|委員募集/;
+
+export function parseFkaigo(html, today, baseUrl) {
+  const items = [];
+  let raw = 0;
+  for (const block of html.split(/<div class="kenshu">/).slice(1)) {
+    const t = block.match(/<h3><a href="([^"]+)"[^>]*>([\s\S]*?)<\/a><\/h3>/);
+    if (!t) continue;
+    raw++;
+    const title = strip(t[2]);
+    if (!title) continue;
+    if (/受付終了|受付を終了/.test(title)) continue;
+    if (FKAIGO_EXCLUDE.test(title)) continue;
+    const dateCell = strip(block.match(/class="date"[^>]*>([\s\S]*?)<\/td>/)?.[1] ?? "");
+    const held = datesInText(dateCell, today);
+    if (!held.length) continue;            // 開催日が読めない行は載せない（期限管理できない）
+    if (held[held.length - 1] < today) continue; // 全日程終了
+    items.push({
+      title,
+      url: new URL(t[1], baseUrl).href,    // detail_NNN.php（個別ページ・P34-2の原則）
+      deadline: null,
+      deadlineType: "unknown",
+      deadlineRaw: "締切の記載なし",
+      heldDates: held,
+      expireOn: held[held.length - 1],
+      openFrom: null,
+      fields: fieldsOf(title),
+      kind: kindOf(title, ""),
+    });
+  }
+  return { items, raw };
+}
+
 const COLLECTORS = {
   "kenshu-schedule": async (src, today) => {
     const html = await fetchHtml(src.url);
@@ -360,6 +406,10 @@ const COLLECTORS = {
   },
   "kenshu-info": async (src, today) => collectKenshuInfo(src, today),
   "kenshu-goryu": async () => collectKenshuGoryu(),
+  "kenshu-fkaigo": async (src, today) => {
+    const html = await fetchHtml(src.url);
+    return parseFkaigo(html, today, src.url);
+  },
 };
 
 /** 比較用に均す（記号・空白を落とす）。
@@ -505,10 +555,15 @@ async function main() {
   // ⚠️受付前を締切順の上位に混ぜない——申し込めないものが先頭に並ぶ（P34-2）
   const rankOf = (it) =>
     it.deadlineType === "date" ? (it.openFrom && it.openFrom > today ? 1 : 0) : 2;
+  // 締切が無いものは開催日で並べる（P35。時期の目安しか無いものは末尾）。
+  // ⚠️開催日は**今日以降の最初の日**を使う——過去の回を含む項目（勉強会の第1回が
+  //   終了済み等）が先頭に来てしまう（実測で発見）
+  const sortKey = (it) =>
+    it.deadline ?? (it.heldDates ?? []).filter((d) => d >= today)[0] ?? "9999-99-99";
   store.items.sort(
     (a, b) =>
       rankOf(a) - rankOf(b) ||
-      String(a.deadline ?? "").localeCompare(String(b.deadline ?? "")) ||
+      sortKey(a).localeCompare(sortKey(b)) ||
       String(a.title).localeCompare(String(b.title))
   );
   store.updatedAt = new Date().toISOString();

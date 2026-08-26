@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-26T02:08:59.631Z",
+ "updatedAt": "2026-08-26T02:32:13.559Z",
  "items": [
   {
    "hash": "214726beef7879ce",
@@ -125,6 +125,540 @@
     "2026-11-24",
     "2026-11-26"
    ]
+  },
+  {
+   "hash": "2e502c8c385183ac",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "令和8年度訪問介護サービス提供責任者就任前・経験3年未満研修",
+   "url": "https://www.f-kaigo.jp/training/detail_492.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-09-10",
+    "2026-10-04",
+    "2026-10-22"
+   ],
+   "expireOn": "2026-10-22",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別"
+  },
+  {
+   "hash": "e6a8c35db0534472",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "嚥下のしくみを理解して自信をもって介助をおこなおう!",
+   "url": "https://www.f-kaigo.jp/training/detail_478.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-09-12"
+   ],
+   "expireOn": "2026-09-12",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別"
+  },
+  {
+   "hash": "051dd2359cf09e71",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "地域生活の継続と家族支援(認定介護福祉士養成研修)",
+   "url": "https://www.f-kaigo.jp/training/detail_491.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-09-12",
+    "2026-09-19"
+   ],
+   "expireOn": "2026-09-19",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "資格要件"
+  },
+  {
+   "hash": "1bb00b502eaad38e",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "排泄ケアのファーストステップ【2日間研修】",
+   "url": "https://www.f-kaigo.jp/training/detail_497.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-09-18",
+    "2026-11-06"
+   ],
+   "expireOn": "2026-11-06",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別"
+  },
+  {
+   "hash": "1a5f0358151ccf59",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "令和8年度介護福祉士を対象としたチームリーダー養成研修",
+   "url": "https://www.f-kaigo.jp/training/detail_493.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-09-19",
+    "2026-11-03",
+    "2026-11-14"
+   ],
+   "expireOn": "2026-11-14",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "階層別"
+  },
+  {
+   "hash": "a768a91c7c2d70d3",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "成果を高める!発展の介護DX講座",
+   "url": "https://www.f-kaigo.jp/training/detail_498.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-09-20"
+   ],
+   "expireOn": "2026-09-20",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別"
+  },
+  {
+   "hash": "30904cd2dee8cab9",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "身体拘束・虐待について基本を振り返ろう!",
+   "url": "https://www.f-kaigo.jp/training/detail_480.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-09-26"
+   ],
+   "expireOn": "2026-09-26",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "法令対応"
+  },
+  {
+   "hash": "3a63f4e253694719",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "介護福祉士実習指導者講習会(1回目)",
+   "url": "https://www.f-kaigo.jp/training/detail_488.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-09-28",
+    "2026-10-09"
+   ],
+   "expireOn": "2026-10-09",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "資格要件"
+  },
+  {
+   "hash": "08ea41bbbf0f656c",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "認定介護福祉士としての介護実践の視点(認定介護福祉士養成研修)",
+   "url": "https://www.f-kaigo.jp/training/detail_509.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-10-10",
+    "2026-11-07",
+    "2026-11-21"
+   ],
+   "expireOn": "2026-11-21",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "資格要件"
+  },
+  {
+   "hash": "b623f3444f49a6f1",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "因名誉会長の施設見学に行きませんか",
+   "url": "https://www.f-kaigo.jp/training/detail_499.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-10-13"
+   ],
+   "expireOn": "2026-10-13",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別"
+  },
+  {
+   "hash": "4a9b499f836613ee",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "施設における看取りについて",
+   "url": "https://www.f-kaigo.jp/training/detail_500.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-10-17"
+   ],
+   "expireOn": "2026-10-17",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別"
+  },
+  {
+   "hash": "a4256e276737211d",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "老計10号に基づくアセスメントのとり方~",
+   "url": "https://www.f-kaigo.jp/training/detail_481.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-10-17"
+   ],
+   "expireOn": "2026-10-17",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別"
+  },
+  {
+   "hash": "9f04495d6ba53b32",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "運動実践のポイントについて理解を深めよう",
+   "url": "https://www.f-kaigo.jp/training/detail_482.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-10-17"
+   ],
+   "expireOn": "2026-10-17",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別"
+  },
+  {
+   "hash": "8e6e25d85c0c7aa6",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "食事中の窒息急変対応を実践研修で学びませんか?",
+   "url": "https://www.f-kaigo.jp/training/detail_483.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-10-24"
+   ],
+   "expireOn": "2026-10-24",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別"
+  },
+  {
+   "hash": "e94bbef51ddacfd8",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "素敵な接遇できていますか?",
+   "url": "https://www.f-kaigo.jp/training/detail_484.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-10-25"
+   ],
+   "expireOn": "2026-10-25",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別"
+  },
+  {
+   "hash": "ab217ca9d4bcb9d2",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "「どう生きたいか」を支える専門性",
+   "url": "https://www.f-kaigo.jp/training/detail_501.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-10-28"
+   ],
+   "expireOn": "2026-10-28",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別"
+  },
+  {
+   "hash": "36795a90718f7137",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "介護の『いいね!』と『困った』を共有しよう",
+   "url": "https://www.f-kaigo.jp/training/detail_502.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-11-01"
+   ],
+   "expireOn": "2026-11-01",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別"
+  },
+  {
+   "hash": "ea3584c8565cff8f",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "介護福祉士の為の福祉用具選定、点検の方法",
+   "url": "https://www.f-kaigo.jp/training/detail_503.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-11-07"
+   ],
+   "expireOn": "2026-11-07",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別"
+  },
+  {
+   "hash": "2a6be3ac33733f48",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "障がい者福祉関連の感染症対策について",
+   "url": "https://www.f-kaigo.jp/training/detail_504.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-11-09"
+   ],
+   "expireOn": "2026-11-09",
+   "openFrom": null,
+   "fields": [
+    "障害"
+   ],
+   "kind": "法令対応"
+  },
+  {
+   "hash": "a8257c06b7fabf79",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "【申込期間延長!】事例(研究)・論文等書き方勉強会",
+   "url": "https://www.f-kaigo.jp/training/detail_487.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-08-22",
+    "2026-11-14",
+    "2027-01-30"
+   ],
+   "expireOn": "2027-01-30",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別"
+  },
+  {
+   "hash": "f2dfe01aec9073f1",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "令和8年度介護職種の技能実習指導員講習(1回目)",
+   "url": "https://www.f-kaigo.jp/training/detail_506.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-11-25"
+   ],
+   "expireOn": "2026-11-25",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別"
+  },
+  {
+   "hash": "6ebeb05fc3be6f41",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "個別支援計画と記録の演習(認定介護福祉士養成研修)",
+   "url": "https://www.f-kaigo.jp/training/detail_510.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-12-13",
+    "2026-12-19",
+    "2027-01-09"
+   ],
+   "expireOn": "2027-01-09",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "資格要件"
+  },
+  {
+   "hash": "311c17d5aae04ff8",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "令和8年度 介護職種の技能実習指導員講習(2回目)",
+   "url": "https://www.f-kaigo.jp/training/detail_507.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2027-01-21"
+   ],
+   "expireOn": "2027-01-21",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別"
+  },
+  {
+   "hash": "c732410152b23338",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "自職場事例を用いた演習(認定介護福祉士養成研修)",
+   "url": "https://www.f-kaigo.jp/training/detail_511.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2027-01-23"
+   ],
+   "expireOn": "2027-01-23",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "資格要件"
+  },
+  {
+   "hash": "08c77a08100dc191",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "介護福祉士実習指導者講習会(2回目)",
+   "url": "https://www.f-kaigo.jp/training/detail_489.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2027-01-25",
+    "2027-02-03"
+   ],
+   "expireOn": "2027-02-03",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "資格要件"
+  },
+  {
+   "hash": "4963d985ec807097",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "介護施設の看取り介護とACP実践の道のり",
+   "url": "https://www.f-kaigo.jp/training/detail_505.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2027-01-30"
+   ],
+   "expireOn": "2027-01-30",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別"
   },
   {
    "hash": "301bdea05d98db88",
