@@ -960,6 +960,7 @@
     kenshu: [], kenshuLoaded: false,    // 研修(P34)。助成と同じ別系統
     kkind: null, pendingKenshu: null,   // 研修の種別絞り込み（単一）と共有スクロール先
     pendingItem: null, // 共有リンクで開いたときのスクロール先hash
+    labels: null,      // 源の表示名の対応表（P44・data/source-labels.json）
   };
   const jstToday = () =>
     new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Tokyo" }).format(new Date());
@@ -986,16 +987,23 @@
   const recordedDays = () => Object.keys(state.index.days).sort();
 
   /* 出典の印章 */
+  /* P44: 源の表示名。正本は docs/sources.md の「表示名」列で、crawl.js が毎朝
+     data/source-labels.json に書き出す。⚠️**表示だけの仕組み**——判定（印章）・集計・
+     検索・リンク・ハッシュは源の名前（識別キー）のまま。対応表が無い/未取得なら源の名前を出す */
+  const srcLabel = (s) => state.labels?.[s] ?? s;
+
   function sealHtml(it) {
     const s = (typeof it === "string" ? it : it?.source) ?? "";
     const cls =
       // 団体(P21): kind で判定する。kind を持たない古い記録は源の名前で拾う
+      // ⚠️判定は必ず源の名前(s)で行う。表示名で判定すると団体名に丸めた結果 印章が変わる/消える
+      //   （実例: 「WAM助成（福祉医療機構）」→表示名「福祉医療機構」では［独］が［国］に化ける）
       (typeof it === "object" && it?.kind === "org") || s.includes("社会福祉協議会") ? "dan|団"
       : s.includes("WAM") ? "dokuho|独"
       : s.startsWith("福岡県") || s.includes("県") ? "ken|県"
       : "kuni|国";
     const [c, mark] = cls.split("|");
-    return `<span class="seal ${c}">${mark}</span><span class="srcname">${esc(s)}</span>`;
+    return `<span class="seal ${c}">${mark}</span><span class="srcname">${esc(srcLabel(s))}</span>`;
   }
   /* 分野タグ(並び: 保育・児童・障害・高齢。共通は4色下線) */
   const FIELD_ORDER = ["保育", "児童", "障害", "高齢", "共通"];
@@ -1217,7 +1225,7 @@
     </article>`;
   }
   function lowLine(it) {
-    const src = [it.category, it.source].filter(Boolean).map(esc).join("・");
+    const src = [it.category, srcLabel(it.source)].filter(Boolean).map(esc).join("・"); // P44: 表示名
     return `<div class="it low-it" data-imp="低" data-fields="${(it.fields ?? []).join(",")}" data-hash="${esc(it.hash)}">・<a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a>
       <span style="color:#b5b1aa">［${src}］</span>${shareBtn(state.day, it.hash, it.title)}</div>`;
   }
@@ -1318,7 +1326,7 @@
         <div class="press-head"><span class="name">報道</span><span class="l">── 各社の記事・解釈を含みます</span></div>
         ${pressItems.map((it) => `
         <div class="it press-item" data-imp="報" data-fields="${(it.fields ?? []).join(",")}" data-hash="${esc(it.hash)}">
-          <div class="src"><span class="seal ho">報</span>${esc(it.source)} ・ ${esc(it.date)}${fieldsHtml(it)}${shareBtn(state.day, it.hash, it.title)}</div>
+          <div class="src"><span class="seal ho">報</span>${esc(srcLabel(it.source))} ・ ${esc(it.date)}${fieldsHtml(it)}${shareBtn(state.day, it.hash, it.title)}</div>
           <h4><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></h4>
         </div>`).join("")}
         <div class="press-note">報道の項目は見出しと出典の表示のみです。要約・重要度判定は行っていません。</div>
@@ -1382,7 +1390,7 @@
     }
     if (list.length === 0) { el.hidden = true; track.innerHTML = ""; sizeLists(); return; }
     const row = (dup) => list.map((it) => `<a class="ticker-item${dup ? " dup" : ""}"
-      href="${esc(it.url)}" target="_blank" rel="noopener"><span class="src">${esc(it.source)}</span>　${esc(it.title)}</a>`).join("");
+      href="${esc(it.url)}" target="_blank" rel="noopener"><span class="src">${esc(srcLabel(it.source))}</span>　${esc(it.title)}</a>`).join("");
     track.innerHTML = row(false) + row(true); // 同じ並びを2つ繋いで途切れなく回す
     el.hidden = false;
     sizeLists(); // ティッカーの出現で一覧の位置が下がるため測り直す(P38)
@@ -2139,6 +2147,9 @@
 
   (async () => {
     try {
+      // P44: 源の表示名。⚠️紙面の描画より前に読む（後だと初回描画が源の名前のまま出る）。
+      //   無くてもページは動く（srcLabel が源の名前にフォールバックする）
+      try { state.labels = await fetchJson("data/source-labels.json"); } catch {}
       state.index = await fetchJson("data/history/index.json");
       // 期限ウォッチ(P11): 無くてもページは動く
       try {

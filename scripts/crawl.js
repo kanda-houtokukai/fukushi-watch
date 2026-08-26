@@ -23,6 +23,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SOURCES_MD = join(ROOT, "docs", "sources.md");
 const STATE_PATH = join(ROOT, "data", "state.json");
 const DIFF_PATH = join(ROOT, "data", "diff-latest.json");
+const LABELS_PATH = join(ROOT, "data", "source-labels.json"); // 表示名の対応表（P44）
 
 const USER_AGENT =
   "fukushi-watch/0.1 (+https://github.com/kanda-houtokukai/fukushi-watch)";
@@ -35,7 +36,7 @@ const MAX_ITEMS_PER_SOURCE = 300;
 // 監視対象台帳（docs/sources.md）の読み込み
 // ---------------------------------------------------------------------------
 
-/** sources.md の表から { name, kind, url, method, status } の配列を返す */
+/** sources.md の表から { name, kind, url, method, status, defaultFields, label } の配列を返す */
 export function readSources() {
   const md = readFileSync(SOURCES_MD, "utf8");
   const rows = [];
@@ -67,6 +68,9 @@ export function readSources() {
         method: cells[5],
         status: cells[6],
         defaultFields,
+        // 表示名（P44・任意列）: 画面の団体欄に出す名前。空欄なら源の名前をそのまま使う。
+        // ⚠️源の名前は識別キー（既定分野の名前引き・funder生成の材料）なので変えない
+        label: (cells[8] ?? "").trim() || cells[2],
       });
     }
   }
@@ -74,6 +78,18 @@ export function readSources() {
     throw new Error(`監視対象台帳から行を読み取れません: ${SOURCES_MD}`);
   }
   return rows;
+}
+
+/**
+ * 表示名の対応表を書き出す（P44）。`data/source-labels.json` に「源の名前 → 表示名」。
+ * ⚠️表示だけの仕組み。判定・集計・リンク・ハッシュは源の名前（識別キー）のまま。
+ */
+export function writeLabels(sources) {
+  const labels = Object.fromEntries(sources.map((s) => [s.name, s.label]));
+  mkdirSync(dirname(LABELS_PATH), { recursive: true });
+  writeFileSync(LABELS_PATH, JSON.stringify(labels, null, 1) + "\n");
+  const short = sources.filter((s) => s.label !== s.name).length;
+  console.log(`表示名の対応表: 全${sources.length}行（うち短縮${short}行）→ data/source-labels.json`);
 }
 
 // ---------------------------------------------------------------------------
@@ -375,6 +391,13 @@ function loadState() {
 
 async function main() {
   const sources = readSources();
+
+  // ★表示名の対応表（P44）: 画面の団体欄が引く「源の名前 → 表示名」。
+  //   ⚠️**状態に関わらず台帳の全行を出す**——保留中の源の過去記事も正しく表示するため。
+  //   ⚠️空欄の行は源の名前を値に入れる（readSources が既に埋めている＝読み手に分岐を作らない）。
+  //   巡回より前に書き出す: 巡回が失敗した朝でも表示だけは直る。
+  writeLabels(sources);
+
   // ★助成(grant)は別系統。紙面のパイプラインでは巡回しない（scripts/grants.js の担当）
   const active = sources.filter(
     (s) => s.status === "巡回中" && s.kind !== "grant" && s.kind !== "training"
