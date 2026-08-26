@@ -134,6 +134,11 @@
   .gnote{font-size:11.5px;color:var(--sub);line-height:1.75;margin-top:8px;
     border:1px solid var(--rule);background:var(--press-bg);padding:9px 12px}
   .gnote b{color:var(--ink)}
+  /* P41-D: 制度の原本（正本は docs/genpon-links.md・既定は畳み） */
+  .genpon-list{margin-top:8px}
+  .genpon-list a{display:block;font-size:12.5px;color:var(--link);text-decoration:none;
+    padding:3px 0;line-height:1.65}
+  .genpon-list .gp-f{color:var(--faint);font-size:10.5px;margin-right:6px;letter-spacing:.04em}
   .gsec{display:flex;align-items:baseline;gap:10px;margin:26px 0 2px;
     border-bottom:2px solid var(--ink);padding-bottom:6px}
   .gsec .name{font-size:12.5px;font-weight:700;letter-spacing:.2em;color:var(--ink)}
@@ -547,6 +552,7 @@
     .m-arrows button:not(:disabled):hover{border-color:var(--ink)}
     .dp-day:hover{background:#f6f5f1}
     .dp-head button:not(:disabled):hover{border-color:var(--ink)}
+    .genpon-list a:hover{text-decoration:underline;text-underline-offset:3px}
     #dayTitleBtn:hover .pop-mark{color:var(--ink)}
     .share:hover{color:var(--link)}
     .stat .row:not(:disabled):hover span{text-decoration:underline;text-underline-offset:3px}
@@ -880,6 +886,17 @@
           <span class="field kyotsu">共通</span>
         </div>
         <div class="row" style="font-size:11px;color:var(--faint)"><b style="color:var(--high);font-weight:600">高</b>=対応・確認を 中=把握を 低=参考</div>
+      </div>
+
+      <!-- P41-D: 制度の原本リンク箱。正本は docs/genpon-links.md（コードにURLを埋め込まない・
+           ★★の教訓）。既定は畳み（説明テキストを常時出さない・P31の原則）。3面共通で表示。
+           取得失敗時は箱ごと非表示（リンク集は付加物であり本体を止めない） -->
+      <div class="box" id="boxGenpon" hidden>
+        <h5>制 度 の 原 本</h5>
+        <details class="gnote-fold">
+          <summary>通知・Q&amp;Aの集約ページ</summary>
+          <div class="genpon-list" id="genponList"></div>
+        </details>
       </div>
 
       <!-- P31: 助成面の注意書き。P30の「絞り込みと項目の間に畳む」案は不採用（ユーザー判断）。
@@ -1909,18 +1926,38 @@
     if (mq.matches) {
       // 助成の内訳(P24)は期限欄の隣に置く（どちらも「いま追いかけているもの」の量を示す）
       $("mMenuBody").append($("boxDeadline"), $("boxGrantSum"), $("boxCal"), $("boxWeek"),
-        $("boxLegend"), $("boxGrantNote"), $("boxKenshuNote"), $("boxTextSize"), fold);
+        $("boxLegend"), $("boxGenpon"), $("boxGrantNote"), $("boxKenshuNote"), $("boxTextSize"), fold);
     } else {
       const rail = document.querySelector(".rail-col");
       // PCサイド欄の並び: 検索(静的) → 期限が近いもの → この7日 → 今週の記録 →
       // 記号の見かた → このサイトについて（分野チップは紙面側へ移動・P20）
       rail.append($("boxDeadline"), $("boxGrantSum"), $("boxCal"), $("boxWeek"),
-        $("boxLegend"), $("boxGrantNote"), $("boxKenshuNote"), fold);
+        $("boxLegend"), $("boxGenpon"), $("boxGrantNote"), $("boxKenshuNote"), fold);
       document.querySelector("#mMenu").append($("boxTextSize")); // PCでは使わない（CSSで非表示）
       closeMenu();
       $("mSearchPanel").classList.remove("open");
     }
   }
+  /* P41-D: 制度の原本リンク箱。docs/genpon-links.md（正本）の表を取得して描画する。
+     取得・解析に失敗したら箱は出さない（リンク集は付加物であり本体を止めない） */
+  async function loadGenpon() {
+    try {
+      const res = await fetch("docs/genpon-links.md");
+      if (!res.ok) return;
+      const rows = [];
+      for (const line of (await res.text()).split("\n")) {
+        const c = line.split("|").map((s) => s.trim());
+        if (c.length >= 5 && /^https?:/.test(c[3])) rows.push({ field: c[1], name: c[2], url: c[3] });
+      }
+      if (!rows.length) return;
+      $("genponList").innerHTML = rows.map((r) =>
+        `<a href="${esc(r.url)}" target="_blank" rel="noopener"><span class="gp-f">${esc(r.field)}</span>${esc(r.name)}</a>`
+      ).join("");
+      $("boxGenpon").hidden = false;
+    } catch { /* 失敗時は非表示のまま */ }
+  }
+  loadGenpon();
+
   /* 副題の「仕組み →」から飛んだときは折りたたみを開く */
   document.querySelectorAll('a[href="#about"]').forEach((a) =>
     a.addEventListener("click", () => { $("mAboutFold").open = true; }));
