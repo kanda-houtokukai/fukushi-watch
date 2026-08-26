@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-25T22:27:08.587Z",
+ "updatedAt": "2026-08-26T02:00:15.881Z",
  "items": [
   {
    "hash": "9cbae0ed2b86b861",
@@ -51,7 +51,8 @@
      "quote": "助成期間終了後も、事業を継続する意思があること"
     }
    ],
-   "conditionsUrl": "https://www.pwc.com/jp/ja/about-us/member/pwc-foundation/grant/2026/04.html"
+   "conditionsUrl": "https://www.pwc.com/jp/ja/about-us/member/pwc-foundation/grant/2026/04.html",
+   "openFrom": "2026-08-03"
   },
   {
    "hash": "4fb0306746e2f929",
@@ -91,7 +92,8 @@
      "quote": "電子申請システム「Graain」から、応募書類・団体情報をご提出いただきます。"
     }
    ],
-   "conditionsUrl": "https://np-foundation.or.jp/information/000404.html"
+   "conditionsUrl": "https://np-foundation.or.jp/information/000404.html",
+   "openFrom": "2026-08-03"
   },
   {
    "hash": "1dabc591c1297dcc",
@@ -132,7 +134,158 @@
      "quote": "電子申請システム「Graain」から、応募書類・団体情報をご提出いただきます。"
     }
    ],
-   "conditionsUrl": "https://np-foundation.or.jp/information/000411.html"
+   "conditionsUrl": "https://np-foundation.or.jp/information/000411.html",
+   "openFrom": "2026-08-19"
+  },
+  {
+   "hash": "35967fe191f0acb7",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "2026年度 公益財団法人 齋藤茂昭記念財団 助成事業",
+   "url": "https://www.jfc.or.jp/news_subsidy/2026%e5%b9%b4%e5%ba%a6-%e5%85%ac%e7%9b%8a%e8%b2%a1%e5%9b%a3%e6%b3%95%e4%ba%ba-%e9%bd%8b%e8%97%a4%e8%8c%82%e6%98%ad%e8%a8%98%e5%bf%b5%e8%b2%a1%e5%9b%a3-%e5%8a%a9%e6%88%90%e4%ba%8b%e6%a5%ad-5/",
+   "postedAt": "2026-08-07",
+   "deadline": "2026-10-15",
+   "deadlineType": "date",
+   "deadlineRaw": "2026/10/15 募集要項 https://www.saito-foundation.jp/b",
+   "summary": "障害者やLGBTQ等の社会的マイノリティに対する就労・自立支援、理解を深める啓発活動や人材育成に取り組む団体等の事業を助成します。",
+   "fields": [
+    "障害"
+   ],
+   "uses": [
+    "人材・研修",
+    "行事・啓発"
+   ],
+   "applicants": [],
+   "amount": "1件1,000千円",
+   "conditions": [
+    {
+     "axis": "事業の実施地",
+     "quote": "日本国内において実施する活動とします。"
+    },
+    {
+     "axis": "受給歴",
+     "quote": "前年度において、当財団の助成金交付対象となった個人及び団体でないこととします。"
+    },
+    {
+     "axis": "併願・重複",
+     "quote": "同一活動の同一費目(使途)に対して、他の補助金・助成金との重複助成はできません。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "一般財団 / 社団法人、公益財団 / 社団法人、社会福祉法人、特定非営利活動法人(NPO法人) など、非営利活動 ・公益事業を行う個人及び団体を対象とします。"
+    }
+   ],
+   "conditionsUrl": "https://www.saito-foundation.jp/business/",
+   "openFrom": "2026-08-01"
+  },
+  {
+   "hash": "1ba157559d51a8a1",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "小児医療施設支援",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e5%b0%8f%e5%85%90%e5%8c%bb%e7%99%82%e6%96%bd%e8%a8%ad%e6%94%af%e6%8f%b4/",
+   "postedAt": "2026-08-03",
+   "deadline": "2026-10-15",
+   "deadlineType": "date",
+   "deadlineRaw": "2026/10/15 募集要項 https://kawanozaidan.or.jp/facili",
+   "summary": "入院・入所中の小児患者のQOL向上に必要な活動費用や設備整備費用を助成します。指定4県内にある入院病棟を有する医療施設または医療型入所施設が推薦・受託応募できます。",
+   "fields": [
+    "児童"
+   ],
+   "uses": [
+    "設備・改修"
+   ],
+   "applicants": [],
+   "amount": "1件15万円",
+   "conditions": [
+    {
+     "axis": "所在地",
+     "quote": "埼玉県、千葉県、群馬県、または神奈川県の県内にある入院病棟を有する医療施設または医療型入所施設"
+    },
+    {
+     "axis": "受給歴",
+     "quote": "過去1事業年度で、当財団の「小児医療施設支援」事業において助成金を受けていないこと"
+    }
+   ],
+   "conditionsUrl": "https://kawanozaidan.or.jp/facility_support/",
+   "openFrom": "2026-08-03"
+  },
+  {
+   "hash": "f86b3b711081c8dd",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "アジア生協協力基金 一般公募助成",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e3%82%a2%e3%82%b8%e3%82%a2%e7%94%9f%e5%8d%94%e5%8d%94%e5%8a%9b%e5%9f%ba%e9%87%91-%e4%b8%80%e8%88%ac%e5%85%ac%e5%8b%9f%e5%8a%a9%e6%88%90/",
+   "postedAt": "2026-08-14",
+   "deadline": "2026-10-31",
+   "deadlineType": "date",
+   "deadlineRaw": "2026 年 10 月 31 日 募集要項 https://ccij.jp/jyosei",
+   "summary": "アジア地域において住民の協同の力で暮らしの向上や課題解決を目指すプロジェクトの活動費を助成します。日本国内に拠点を有するNPO等の非営利組織が応募できます。",
+   "fields": [
+    "共通"
+   ],
+   "uses": [
+    "事業・活動"
+   ],
+   "applicants": [
+    "NPO・公益法人"
+   ],
+   "amount": "1件当たり上限120万円",
+   "conditions": [
+    {
+     "axis": "所在地",
+     "quote": "日本国内に拠点(事務局など)を有する非政府かつ非営利である組織。"
+    },
+    {
+     "axis": "事業の実施地",
+     "quote": "アジア地域で実施される事業。"
+    },
+    {
+     "axis": "設立・活動年数",
+     "quote": "国際協力分野での活動実績を、3事業年度以上有する組織(2023年度・2024年度・2025年度に活動実績を有する組織)。"
+    },
+    {
+     "axis": "受給歴",
+     "quote": "継続申請の場合を除き、過去2事業年度以内(2025年度、2026年度)に本基金からの助成を受けていない組織。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "原則として、直近3事業年度(2023年度・2024年度・2025年度)における収入(経常収益など)が平均で「1億円未満」の組織。"
+    }
+   ],
+   "conditionsUrl": "https://ccij.jp/jyosei/kikinkoubo260709_01.html",
+   "openFrom": "2026-08-01"
+  },
+  {
+   "hash": "29e02ea2e0f0ab03",
+   "source": "中央共同募金会",
+   "sourceKind": "org",
+   "funder": "中央共同募金会",
+   "title": "児童養護施設や自立援助ホーム等を退所して大学や専門学校等に進学した学生を応援します！ ～盛和塾 社会人定着応援プログラム 2026年度 「就職活動応援助成」「手に職つけよう応援助成」～",
+   "url": "https://www.akaihane.or.jp/subsidies/sub-corp-prog/47845/",
+   "postedAt": "2026-04-08",
+   "deadline": "2026-11-27",
+   "deadlineType": "date",
+   "deadlineRaw": "11/27締切",
+   "summary": "児童養護施設等を退所して進学した学生の就職活動費用や資格取得にかかる費用を給付支援します。学生が在籍・出身する児童養護施設や自立援助ホーム等の各機関を通じて応募します。",
+   "fields": [
+    "児童"
+   ],
+   "uses": [
+    "人材・研修"
+   ],
+   "applicants": [],
+   "amount": "",
+   "conditions": [
+    {
+     "axis": "主体の付帯条件",
+     "quote": "いずれの助成も、児童養護施設・児童自立生活援助事業所I型(自立援助ホーム)・退所児童支援事業所・学校・児童相談所等の各施設・機関からご応募いただくことになります。"
+    }
+   ],
+   "conditionsUrl": "https://www.akaihane.or.jp/subsidies/sub-corp-prog/47845/"
   },
   {
    "hash": "cee722ce13b036cf",
@@ -184,7 +337,8 @@
      "quote": "反社会的勢力、および反社会的勢力に関係すると認められる団体からの申請は受け付けられません。"
     }
    ],
-   "conditionsUrl": "https://www.sompo-wf.org/jyosei/kibankyouka.html"
+   "conditionsUrl": "https://www.sompo-wf.org/jyosei/kibankyouka.html",
+   "openFrom": "2026-09-01"
   },
   {
    "hash": "ac3925234af06f87",
@@ -230,154 +384,8 @@
      "quote": "反社会的勢力、および反社会的勢力に関係すると認められる団体からの申請は受け付けられません。"
     }
    ],
-   "conditionsUrl": "https://www.sompo-wf.org/jyosei/nintei-npo.html"
-  },
-  {
-   "hash": "35967fe191f0acb7",
-   "source": "助成財団センター 助成金募集ニュース",
-   "sourceKind": "org",
-   "funder": "",
-   "title": "2026年度 公益財団法人 齋藤茂昭記念財団 助成事業",
-   "url": "https://www.jfc.or.jp/news_subsidy/2026%e5%b9%b4%e5%ba%a6-%e5%85%ac%e7%9b%8a%e8%b2%a1%e5%9b%a3%e6%b3%95%e4%ba%ba-%e9%bd%8b%e8%97%a4%e8%8c%82%e6%98%ad%e8%a8%98%e5%bf%b5%e8%b2%a1%e5%9b%a3-%e5%8a%a9%e6%88%90%e4%ba%8b%e6%a5%ad-5/",
-   "postedAt": "2026-08-07",
-   "deadline": "2026-10-15",
-   "deadlineType": "date",
-   "deadlineRaw": "2026/10/15 募集要項 https://www.saito-foundation.jp/b",
-   "summary": "障害者やLGBTQ等の社会的マイノリティに対する就労・自立支援、理解を深める啓発活動や人材育成に取り組む団体等の事業を助成します。",
-   "fields": [
-    "障害"
-   ],
-   "uses": [
-    "人材・研修",
-    "行事・啓発"
-   ],
-   "applicants": [],
-   "amount": "1件1,000千円",
-   "conditions": [
-    {
-     "axis": "事業の実施地",
-     "quote": "日本国内において実施する活動とします。"
-    },
-    {
-     "axis": "受給歴",
-     "quote": "前年度において、当財団の助成金交付対象となった個人及び団体でないこととします。"
-    },
-    {
-     "axis": "併願・重複",
-     "quote": "同一活動の同一費目(使途)に対して、他の補助金・助成金との重複助成はできません。"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "一般財団 / 社団法人、公益財団 / 社団法人、社会福祉法人、特定非営利活動法人(NPO法人) など、非営利活動 ・公益事業を行う個人及び団体を対象とします。"
-    }
-   ],
-   "conditionsUrl": "https://www.saito-foundation.jp/business/"
-  },
-  {
-   "hash": "1ba157559d51a8a1",
-   "source": "助成財団センター 助成金募集ニュース",
-   "sourceKind": "org",
-   "funder": "",
-   "title": "小児医療施設支援",
-   "url": "https://www.jfc.or.jp/news_subsidy/%e5%b0%8f%e5%85%90%e5%8c%bb%e7%99%82%e6%96%bd%e8%a8%ad%e6%94%af%e6%8f%b4/",
-   "postedAt": "2026-08-03",
-   "deadline": "2026-10-15",
-   "deadlineType": "date",
-   "deadlineRaw": "2026/10/15 募集要項 https://kawanozaidan.or.jp/facili",
-   "summary": "入院・入所中の小児患者のQOL向上に必要な活動費用や設備整備費用を助成します。指定4県内にある入院病棟を有する医療施設または医療型入所施設が推薦・受託応募できます。",
-   "fields": [
-    "児童"
-   ],
-   "uses": [
-    "設備・改修"
-   ],
-   "applicants": [],
-   "amount": "1件15万円",
-   "conditions": [
-    {
-     "axis": "所在地",
-     "quote": "埼玉県、千葉県、群馬県、または神奈川県の県内にある入院病棟を有する医療施設または医療型入所施設"
-    },
-    {
-     "axis": "受給歴",
-     "quote": "過去1事業年度で、当財団の「小児医療施設支援」事業において助成金を受けていないこと"
-    }
-   ],
-   "conditionsUrl": "https://kawanozaidan.or.jp/facility_support/"
-  },
-  {
-   "hash": "f86b3b711081c8dd",
-   "source": "助成財団センター 助成金募集ニュース",
-   "sourceKind": "org",
-   "funder": "",
-   "title": "アジア生協協力基金 一般公募助成",
-   "url": "https://www.jfc.or.jp/news_subsidy/%e3%82%a2%e3%82%b8%e3%82%a2%e7%94%9f%e5%8d%94%e5%8d%94%e5%8a%9b%e5%9f%ba%e9%87%91-%e4%b8%80%e8%88%ac%e5%85%ac%e5%8b%9f%e5%8a%a9%e6%88%90/",
-   "postedAt": "2026-08-14",
-   "deadline": "2026-10-31",
-   "deadlineType": "date",
-   "deadlineRaw": "2026 年 10 月 31 日 募集要項 https://ccij.jp/jyosei",
-   "summary": "アジア地域において住民の協同の力で暮らしの向上や課題解決を目指すプロジェクトの活動費を助成します。日本国内に拠点を有するNPO等の非営利組織が応募できます。",
-   "fields": [
-    "共通"
-   ],
-   "uses": [
-    "事業・活動"
-   ],
-   "applicants": [
-    "NPO・公益法人"
-   ],
-   "amount": "1件当たり上限120万円",
-   "conditions": [
-    {
-     "axis": "所在地",
-     "quote": "日本国内に拠点(事務局など)を有する非政府かつ非営利である組織。"
-    },
-    {
-     "axis": "事業の実施地",
-     "quote": "アジア地域で実施される事業。"
-    },
-    {
-     "axis": "設立・活動年数",
-     "quote": "国際協力分野での活動実績を、3事業年度以上有する組織(2023年度・2024年度・2025年度に活動実績を有する組織)。"
-    },
-    {
-     "axis": "受給歴",
-     "quote": "継続申請の場合を除き、過去2事業年度以内(2025年度、2026年度)に本基金からの助成を受けていない組織。"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "原則として、直近3事業年度(2023年度・2024年度・2025年度)における収入(経常収益など)が平均で「1億円未満」の組織。"
-    }
-   ],
-   "conditionsUrl": "https://ccij.jp/jyosei/kikinkoubo260709_01.html"
-  },
-  {
-   "hash": "29e02ea2e0f0ab03",
-   "source": "中央共同募金会",
-   "sourceKind": "org",
-   "funder": "中央共同募金会",
-   "title": "児童養護施設や自立援助ホーム等を退所して大学や専門学校等に進学した学生を応援します！ ～盛和塾 社会人定着応援プログラム 2026年度 「就職活動応援助成」「手に職つけよう応援助成」～",
-   "url": "https://www.akaihane.or.jp/subsidies/sub-corp-prog/47845/",
-   "postedAt": "2026-04-08",
-   "deadline": "2026-11-27",
-   "deadlineType": "date",
-   "deadlineRaw": "11/27締切",
-   "summary": "児童養護施設等を退所して進学した学生の就職活動費用や資格取得にかかる費用を給付支援します。学生が在籍・出身する児童養護施設や自立援助ホーム等の各機関を通じて応募します。",
-   "fields": [
-    "児童"
-   ],
-   "uses": [
-    "人材・研修"
-   ],
-   "applicants": [],
-   "amount": "",
-   "conditions": [
-    {
-     "axis": "主体の付帯条件",
-     "quote": "いずれの助成も、児童養護施設・児童自立生活援助事業所I型(自立援助ホーム)・退所児童支援事業所・学校・児童相談所等の各施設・機関からご応募いただくことになります。"
-    }
-   ],
-   "conditionsUrl": "https://www.akaihane.or.jp/subsidies/sub-corp-prog/47845/"
+   "conditionsUrl": "https://www.sompo-wf.org/jyosei/nintei-npo.html",
+   "openFrom": "2026-09-01"
   },
   {
    "hash": "e3392e5ccf02e958",

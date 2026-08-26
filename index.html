@@ -1466,7 +1466,12 @@
 
   function grantBlock(it) {
     let when;
-    if (it.deadlineType === "date" && it.deadline) {
+    if (it.deadlineType === "date" && it.deadline && notOpenYet(it)) {
+      // 受付前（P34-2）: 締切でなく「いつから応募できるか」を出す（朱・明滅にしない）
+      const o = fmtDay(it.openFrom);
+      const f = fmtDay(it.deadline);
+      when = `<div class="when">受付 <b>${o.main}</b>から（締切 ${f.main}）</div>`;
+    } else if (it.deadlineType === "date" && it.deadline) {
       const n = dayDiff(it.deadline);
       const f = fmtDay(it.deadline);
       // 年は今年と違うときだけ出す（残り日数で年の取り違えは起きないため・P29）
@@ -1521,7 +1526,9 @@
 
     const shown = state.grants.filter(grantMatches);
     const by = (t) => shown.filter((x) => x.deadlineType === t);
-    const dated = by("date"), rolling = by("rolling"), unknown = by("unknown");
+    const dated = by("date").filter((x) => !notOpenYet(x));
+    const preOpen = by("date").filter(notOpenYet);   // 受付前（P34-2）
+    const rolling = by("rolling"), unknown = by("unknown");
     // P31②: 「／ 全N件」の後置は分野・用途で絞ったときだけ出す。
     // 社福トグルは既定オン（P31）のため、これも数えると既定状態が常に「絞り込み表示」になって
     // うるさい。トグルの絞りは**チェックボックスがオンであること自体が状態の表示**
@@ -1529,7 +1536,9 @@
     const filtered = state.field !== "all" || Boolean(state.use);
     $("gCount").innerHTML =
       `<b>${shown.length}件</b>` +
-      `<span style="color:var(--sub)"> ── 締切あり${dated.length}・随時通年${rolling.length}・締切不明${unknown.length}</span>` +
+      `<span style="color:var(--sub)"> ── 締切あり${dated.length}` +
+      (preOpen.length ? `・受付前${preOpen.length}` : "") +
+      `・随時通年${rolling.length}・締切不明${unknown.length}</span>` +
       (filtered ? `<span style="color:var(--faint)"> ／ 全${state.grants.length}件</span>` : "");
 
     const sec = (name, note, list) =>
@@ -1541,6 +1550,7 @@
       shown.length === 0
         ? `<div class="gempty">条件に合う助成はありません。絞り込みを外すと${state.grants.length}件あります。</div>`
         : sec("締 切 あ り", "締切の近い順", dated) +
+          sec("受 付 前", "開始日の近い順", preOpen) +
           sec("随 時 ・ 通 年", "締切なし。いつでも応募できる", rolling) +
           sec("締 切 不 明", "募集要項で確認してください", unknown);
 
@@ -1572,7 +1582,10 @@
 
   /* ==== 研修面(P34)。助成面と同じ型: 別系統のJSONを読み、締切前だけを描く。
      項目の見た目は .g / .trow / .when / .tagline をそのまま流用する ==== */
-  const KIND_VOCAB = ["法定・資格系", "任意・スキル系"];
+  // P34-2: 種別4値。⚠️旧2値のJSONが残っている環境のために読み替える（1行の保険）
+  const KIND_VOCAB = ["資格要件", "法令対応", "階層別", "テーマ別"];
+  const KIND_FIX = { "法定・資格系": "資格要件", "任意・スキル系": "テーマ別" };
+  const kindOf = (it) => KIND_FIX[it.kind] ?? it.kind ?? "";
 
   async function loadKenshu() {
     if (state.kenshuLoaded) return;
@@ -1589,13 +1602,20 @@
   function kenshuMatches(it) {
     const f = it.fields ?? [];
     if (state.field !== "all" && !(f.includes(state.field) || f.includes("共通"))) return false;
-    if (state.kkind && it.kind !== state.kkind) return false;
+    if (state.kkind && kindOf(it) !== state.kkind) return false;
     return true;
   }
+  /** 受付開始前か（P34-2）。締切だけ出ていると今すぐ申し込めると誤解するため区別する */
+  const notOpenYet = (it) => Boolean(it.openFrom && it.openFrom > jstToday());
 
   function kenshuBlock(it) {
     let when;
-    if (it.deadlineType === "date" && it.deadline) {
+    if (it.deadlineType === "date" && it.deadline && notOpenYet(it)) {
+      // 受付前: 締切でなく「いつから申し込めるか」を出す（朱にも明滅にもしない）
+      const o = fmtDay(it.openFrom);
+      const f = fmtDay(it.deadline);
+      when = `<div class="when">受付 <b>${o.main}</b>から（締切 ${f.main}）</div>`;
+    } else if (it.deadlineType === "date" && it.deadline) {
       const n = dayDiff(it.deadline);
       const f = fmtDay(it.deadline);
       const y = String(it.deadline).slice(0, 4) !== String(new Date().getFullYear()) ? `${f.y}年` : "";
@@ -1612,7 +1632,7 @@
       <div class="meta">
         ${sealHtml({ source: it.source, kind: it.sourceKind })}
         ${fieldsHtml(it)}
-        <span class="tagline">${esc(it.kind ?? "")}</span>
+        <span class="tagline">${esc(kindOf(it))}</span>
         <button class="share" data-share-view="kenshu" data-share-hash="${esc(it.hash)}" data-share-title="${esc(it.title)}" aria-label="この研修を共有">
           <svg width="13" height="13" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12V3"/><path d="M6.8 5.8 10 2.6l3.2 3.2"/><path d="M5 9H4v8h12V9h-1"/></svg>
           <span class="tip">コピーしました</span></button>
@@ -1628,18 +1648,23 @@
         .join("");
     // 種別は2値の単一選択。もう一度押すと解除（P25の型・選択中に×を出す .use を流用）
     $("kKinds").innerHTML = KIND_VOCAB
-      .map((k) => `<button class="chip use${state.kkind === k ? " on" : ""}" data-kkind="${esc(k)}">${esc(k)}</button>`)
+      .map((k) => `<button class="chip use${state.kkind === k ? " on" : ""}" data-kkind="${esc(k)}"${
+        state.kkind === k ? ' aria-pressed="true" title="もう一度押すと解除します"' : ' aria-pressed="false"'
+      }>${esc(k)}</button>`)
       .join("");
     $("kFieldSel").value = state.field;
     $("kKindSel").value = state.kkind ?? "";
 
     const shown = state.kenshu.filter(kenshuMatches);
-    const dated = shown.filter((x) => x.deadlineType === "date");
+    const dated = shown.filter((x) => x.deadlineType === "date" && !notOpenYet(x));
+    const soon = shown.filter((x) => x.deadlineType === "date" && notOpenYet(x));
     const unknown = shown.filter((x) => x.deadlineType !== "date");
     const filtered = state.field !== "all" || Boolean(state.kkind);
     $("kCount").innerHTML =
       `<b>${shown.length}件</b>` +
-      `<span style="color:var(--sub)"> ── 締切あり${dated.length}・開催予定${unknown.length}</span>` +
+      `<span style="color:var(--sub)"> ── 受付中${dated.length}` +
+      (soon.length ? `・受付前${soon.length}` : "") +
+      `・開催予定${unknown.length}</span>` +
       (filtered ? `<span style="color:var(--faint)"> ／ 全${state.kenshu.length}件</span>` : "");
 
     const sec = (name, note, list) =>
@@ -1650,7 +1675,8 @@
     $("kenshuList").innerHTML =
       shown.length === 0
         ? `<div class="gempty">条件に合う研修はありません。絞り込みを外すと${state.kenshu.length}件あります。</div>`
-        : sec("締 切 あ り", "締切の近い順", dated) +
+        : sec("受 付 中", "締切の近い順", dated) +
+          sec("受 付 前", "開始日の近い順", soon) +
           sec("開 催 予 定", "要綱の公開前。時期は目安", unknown);
     trimSectionRules($("kenshuList"), "gsec");
 

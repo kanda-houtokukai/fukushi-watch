@@ -37,20 +37,39 @@ const iso = (y, m, d) =>
  * タグの語彙と機械写像（P34。実データ＝令和8年度の予定表53行から起こした）
  * ======================================================================== */
 
-/** 種別2値。⚠️「受けなければならないもの」を見分ける核（P34の[DECISION]） */
-export const KIND_VOCAB = ["法定・資格系", "任意・スキル系"];
-
 /**
- * 種別の判定: ①予定表の「資格取得研修」セクション配下（認知症介護・介護支援専門員・
- * 高齢者権利擁護を含む）は法定・資格系 ②セクションが取れない場合の保険として
- * 語彙でも判定する（指定研修・修了が要件になる研修の名称）。
+ * 種別4値（P34-2。実データ30件と予定表のセクション構成から起こした）。
+ * ⚠️目的は「受けなければならないものを見分ける」こと。
+ *   資格要件 = 受講が開設・配置・資格の**要件**（受けないとその事業・職に就けない）
+ *   法令対応 = 法令・運営基準が施設に実施や対応を求める研修（義務研修の内容）
+ *   階層別   = 職位・経験年数で受ける（新任・中堅・管理職員・キャリアパス課程）
+ *   テーマ別 = それ以外の技能・実務研修（受け皿。テーマでの細分化はしない＝
+ *              チップが増えて絞り込みが機能しなくなる／分野タグと軸が重なる）
+ * ⚠️「更新」は立てていない——実データに更新研修が0件のため（ケアマネ更新は別ページ管理）。
+ *   ケアマネ更新が入る段階で「資格要件に含める／更新を立てる」を改めて判断する。
  */
-const LEGAL_KW =
-  /認知症介護実践|認知症対応型|小規模多機能|介護支援専門員|喀痰吸引|計画作成担当者|権利擁護等推進研修|推進員養成研修/;
+export const KIND_VOCAB = ["資格要件", "法令対応", "階層別", "テーマ別"];
+
+/** 受講が要件になる研修の名称（汎用語の「養成研修」は入れない——県の人材育成事業まで
+ *  資格要件に見えてしまう。実例: 高次脳機能障がい支援者養成研修＝テーマ別が正しい） */
+const REQUIRE_KW =
+  /認知症介護実践|認知症介護基礎|認知症対応型|小規模多機能|計画作成担当者|介護支援専門員|喀痰吸引|サービス管理責任者|児童発達支援管理責任者|相談支援従事者|主任介護支援専門員|権利擁護推進員養成|推進員養成研修|実務研修/;
+/** 法令・運営基準が求める研修（現データはBCP・感染症。虐待防止等は出れば正しく入る） */
+const DUTY_KW = /ＢＣＰ|BCP|業務継続|感染症|虐待防止|身体拘束|権利擁護/;
+/** 職位・経験年数で受ける研修 */
+const RANK_KW = /新任職員|中堅職員|チームリーダー|管理職員|初任者コース|施設長・管理者|キャリアパス/;
+
 export function kindOf(title, section) {
-  if (/資格取得/.test(section ?? "")) return "法定・資格系";
-  if (LEGAL_KW.test(title)) return "法定・資格系";
-  return "任意・スキル系";
+  // 「資格取得研修」セクションはサイトの分類がそのまま種別として使える（配下は全て要件系）。
+  // ⚠️**「階層別研修」セクションは種別に使えない**——あれは新任→中堅→管理職の順に
+  //   その階層向けのテーマ研修（コーチング・リスクマネジメント等）まで含めて並べた
+  //   **並べ方**であって、個々の研修の性質ではない（実測で23行中の大半がテーマ研修だった）。
+  //   階層別かどうかは**タイトルの職位語**だけで判定する。
+  if (/資格取得/.test(section ?? "")) return "資格要件";
+  if (REQUIRE_KW.test(title)) return "資格要件";
+  if (DUTY_KW.test(title)) return "法令対応";
+  if (RANK_KW.test(title)) return "階層別";
+  return "テーマ別";
 }
 
 /**
@@ -99,14 +118,20 @@ export function parseKenshuSchedule(html, today, baseUrl) {
   const items = [];
   let raw = 0;
   // セクション見出し（h3/h5）で分割しながら読む。見出しはタグを剥いで持ち回す
-  const parts = html.split(/<h[35][^>]*>/);
+  // 見出しタグごと分割し、id（link1〜5）も拾う——個別ページが無い研修は
+  // 一覧ページ＋セクションのアンカーへ飛ばすため（P34-2）
+  const parts = html.split(/(?=<h[35][^>]*>)/);
   let section = "";
+  let anchor = "";
   for (const part of parts) {
-    const headEnd = part.indexOf("</h");
+    const head = part.match(/^<h([35])([^>]*)>([\s\S]*?)<\/h\1>/);
     let body = part;
-    if (headEnd >= 0) {
-      section = strip(part.slice(0, headEnd));
-      body = part.slice(headEnd);
+    if (head) {
+      section = strip(head[3]);
+      // h5（認知症介護研修など）は自前のidを持たないので、直近のh3のアンカーを保つ
+      const id = head[2].match(/id="([^"]+)"/)?.[1];
+      if (id) anchor = id;
+      body = part.slice(head[0].length);
     }
     for (const [, rowHtml] of body.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/g)) {
       const cells = {};
@@ -151,7 +176,9 @@ export function parseKenshuSchedule(html, today, baseUrl) {
       const om = openText.match(/(\d{1,2})月(\d{1,2})日/);
       items.push({
         title,
-        url: yoko ?? baseUrl, // 原本=開催要綱。未公開の間は予定表そのもの
+        // 原本=開催要綱。未公開の間は予定表の**該当セクションのアンカー**へ
+        //（一覧の先頭に飛ばすと目的の研修に辿り着けない・P34-2）
+        url: yoko ?? (anchor ? `${baseUrl}#${anchor}` : baseUrl),
         deadline,
         deadlineType,
         deadlineRaw,
@@ -329,7 +356,17 @@ export function dedupeKenshu(items) {
       return true; // 片方が締切を持たない＝同じ研修の告知の別段階とみなす
     });
     if (!hit) { out.push(it); continue; }
-    if (rank(it) > rank(hit)) out[out.indexOf(hit)] = it;
+    const win = rank(it) > rank(hit) ? it : hit;
+    const lose = win === it ? hit : it;
+    // ★入口は「読める個別ページ」を優先する（P34-2）。予定表側が勝っても、
+    //   新着に同じ研修のHTML記事があればそのURLを引き継ぐ——要綱PDFや一覧の
+    //   アンカーより、日程・締切・申込導線が1枚に揃った記事の方が親切
+    if (!/\/info\//.test(win.url) && /\/info\//.test(lose.url ?? "")) {
+      win.url = lose.url;
+    }
+    // 受付開始日は持っている方を残す（予定表にしか無い）
+    if (!win.openFrom && lose.openFrom) win.openFrom = lose.openFrom;
+    out[out.indexOf(hit)] = win;
   }
   if (out.length !== items.length) {
     console.log(`  同一の研修を統合: ${items.length}件 → ${out.length}件`);
@@ -426,11 +463,13 @@ async function main() {
   // 同じ研修が複数の源から入るので統合する（予定表×新着×合流・P34）
   store.items = dedupeKenshu(store.items);
 
-  // 並び: 締切ありを近い順 → 不明（開催予定）。grants と同じ規則
-  const rank = { date: 0, rolling: 1, unknown: 2 };
+  // 並び: 受付中（締切あり）→ 受付前 → 開催予定。
+  // ⚠️受付前を締切順の上位に混ぜない——申し込めないものが先頭に並ぶ（P34-2）
+  const rankOf = (it) =>
+    it.deadlineType === "date" ? (it.openFrom && it.openFrom > today ? 1 : 0) : 2;
   store.items.sort(
     (a, b) =>
-      (rank[a.deadlineType] ?? 3) - (rank[b.deadlineType] ?? 3) ||
+      rankOf(a) - rankOf(b) ||
       String(a.deadline ?? "").localeCompare(String(b.deadline ?? "")) ||
       String(a.title).localeCompare(String(b.title))
   );

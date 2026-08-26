@@ -410,8 +410,13 @@ async function collectJfcRss(src, today) {
     //   全角のまま書くと一致しない（実際に一度これで締切が全部 unknown になった）
     const seg = r.text.match(/応募期間\s*[(（]\s*締切\s*[)）]\s*(.{0,60})/)?.[1] ?? "";
     // 期間表記なら終わりの日付を締切とする（波線は環境により U+7E / U+FF5E / U+301C）
-    const end = seg.split(/[~～〜]/).pop() ?? seg;
+    const parts = seg.split(/[~～〜]/);
+    const end = parts.pop() ?? seg;
     const dl = parseDeadline(end || seg, today);
+    // ★受付開始日（P34-2）。⚠️JFCは**募集開始前の告知が実在する**（実測: SOMPOの2件が
+    //   9/1受付開始なのに8/12に掲載）。締切だけ出すと今すぐ応募できると誤解する
+    const openFrom =
+      parts.length ? parseDeadline(parts[0], "0000-00-00").deadline : null;
     items.push({
       funder: "", // JFCの見出しは助成名のみ。出し手は本文にあるのでAIに拾わせる
       // ⚠️先頭の【助成先募集】等は状態の印であって助成名ではない。
@@ -420,6 +425,7 @@ async function collectJfcRss(src, today) {
       url: r.link,
       postedAt: r.date,
       ...dl,
+      ...(openFrom ? { openFrom } : {}),
       _body: r.text.slice(0, BODY_MAX_CHARS),
       _condUrl: pickFunderLink(r.html), // 条件の実体は財団側のページにある（P28実測）
     });
@@ -905,6 +911,8 @@ async function main() {
           Object.assign(prev, {
             deadline: it.deadline, deadlineType: it.deadlineType,
             deadlineRaw: it.deadlineRaw, postedAt: it.postedAt,
+            // 受付開始日も更新する（P34-2で追加した項目が既知分にも入るように）
+            ...(it.openFrom ? { openFrom: it.openFrom } : {}),
           });
           continue;
         }
@@ -1050,11 +1058,14 @@ async function main() {
     }
   }
 
-  // 並び: 締切ありを締切の近い順 → 随時・通年 → 不明（P24の[DECISION]）
-  const rank = { date: 0, rolling: 1, unknown: 2 };
+  // 並び: 受付中（締切あり）→ 受付前 → 随時・通年 → 不明（P24の[DECISION]＋P34-2）
+  // ⚠️受付前を締切順の上位に混ぜない（まだ応募できないものが先頭に並ぶ）
+  const rank = { date: 0, rolling: 2, unknown: 3 };
+  const rankOf = (it) =>
+    it.deadlineType === "date" && it.openFrom && it.openFrom > today ? 1 : (rank[it.deadlineType] ?? 4);
   store.items.sort(
     (a, b) =>
-      (rank[a.deadlineType] ?? 3) - (rank[b.deadlineType] ?? 3) ||
+      rankOf(a) - rankOf(b) ||
       String(a.deadline ?? "").localeCompare(String(b.deadline ?? "")) ||
       String(a.title).localeCompare(String(b.title))
   );
