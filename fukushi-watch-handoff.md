@@ -355,6 +355,10 @@
 | `data/backfill-progress.json` | バックフィルの処理済みの日（再開用） | 実行で更新 |
 | `~/Documents/fukushi-watch-taigai/` | **対外文書（リポジトリ外）**。全社協あて届出の印刷用HTML | ✅ 正本 |
 | `fukushi-watch-archive-2026-08.md` | 経緯アーカイブ（P0〜P28（P24の枝番・P25の後を含む）の記録とロードマップP0〜P32・P34の行を原文のまま保存） | 参照用 |
+| `scripts/pdftext.js` | PDF併読の部品（P43区切り①・HEAD照合／列抽出／ブロック分割・締切／突合）。**まだどこからも呼ばれない**（接続は区切り②） | ✅ 正本 |
+| `scripts/pdftext-check.js` | pdftext の機械確認（**手動のみ**・実PDF1本で17項目・daily非接続） | ✅ 正本 |
+| `scripts/vendor/pdfjs/` | pdfjs-dist 6.2.108 の直置き（min 2ファイル＋LICENSE＋README。更新手順はREADME） | ✅ 正本 |
+| `data/pdf-state.json` | PDFの照合状態（URL→ETag等。**本文は持たない**）。区切り②の初回実行で生まれる | 実行で更新 |
 | `package.json` | npm run crawl/summarize/notify/archive の定義のみ（依存なし） | ✅ 正本 |
 | `~/Documents/fukushi-watch/` | ローカルの作業場所 | — |
 | `github.com/kanda-houtokukai/fukushi-watch` | 公開リポジトリ | — |
@@ -642,7 +646,7 @@
   uses は checkout@v5/setup-node@v5・node-version "22" 不変・8ステップの順序不変・
   状態コミットがメール送信より後）。
 
-## 2026-08-27（P43・研修のPDFからの締切取得。**調査のみ・実装は承認待ち**）
+## 2026-08-27（P43・研修のPDFからの締切取得。**区切り①=部品と検証まで完了・接続（区切り②）はこれから**）
 
 - **対象**: 福岡県介護福祉士会（sources.md #21）の研修ページ。HTML側に開催日・会場・費用は
   あるが**締切が無く**、リンク先PDF（支部地区部会研修のお知らせ）にのみ締切が載る。
@@ -667,6 +671,31 @@
   6. ⚠️ 他源のPDFが同じ構造とは限らない（段組・テキスト層の有無・締切の表記）。
      1源で作り、**源ごとにパーサを差せる形**にする。
 - **未着手の理由**: 対外5件の送付とHTTPS発行を優先。表示名の実装との並行を避けた。
+- **区切り①（2026-08-27・部品と検証。kenshu.js には未接続）**:
+  - **[DECISION] 実装はNode・pdfjs-dist 6.2.108 を `scripts/vendor/pdfjs/` に直置き**
+    （min 2ファイル・計1.8MB・npm install 不要＝**daily.yml は無変更**）。ランナーに
+    pypdfium2 は無く（裏取り済み）Python継続だと毎朝の pip install という失敗経路が増える
+    ため不採用。⚠️Node には DOMMatrix 等が無い——最小スタブと workerSrc の明示が必要
+    （作法は vendor/pdfjs/README.md と pdftext.js に記載）。
+  - **部品は `scripts/pdftext.js`**: 取得層（HEADで ETag/Last-Modified/Content-Length 照合・
+    同一なら再取得もパースもしない・状態は data/pdf-state.json ⚠️本文は保存しない）／
+    列抽出（再帰XYカット）／ブロック分割・締切抽出／突合（norm・titleNeedle・blockForTitle）。
+    機械確認は `node scripts/pdftext-check.js`（**17/17 合格**: 16ブロック・締切16/16・
+    令和9年→2027-01-14・平文不検出・突合9/9・HEAD 2回目skip・白紙PDFはnoTextLayer）。
+  - ★ 段組判定は「被覆ゼロの帯」だと倒れる——**中央寄せの見出しとノンブルが列間の帯を
+    数件横切る**（実測）。範囲内3%までの横断を許容し、帯の両側に2割以上が残る割りだけ採用。
+  - ★ **題名は末尾の研修一覧（5ページ目の表）にも出る**。一覧は全研修の開催日も含むため
+    開催日でも絞れない——**区切り語から300字以内の出現だけ**を候補にして解決。
+  - ★ HTML題名の**【…】装飾（【2日間研修】等）はPDF側に無い**——titleNeedle で除去
+    （除去後4字未満なら除去しない側に倒す）。
+  - ★ NFKC無しの外れは**実測3件**（ＤＸ・ＡＣＰ・『いいね！』の全角！）。手順0の「2件」は
+    部分文字列で試したための見逃しだった。
+  - sources.md に3列追加（cells[9]〜[11]・**空欄=PDF併読しない**・列の意味は運用ルールに記載）。
+    **値はまだ空**。crawl.js readSources の回帰確認済み（26行・既定分野・表示名とも不変）。
+  - **区切り②でやること**: kenshu.js:737付近の合流点に接続し、台帳の f-kaigo 行に
+    目印「研修会の概要・参加申込書」・区切り語「開催要綱」・パターン「《 締 切 》」を入れる。
+    f-kaigo は26URLで実体12ファイル（HEAD照合が効く）。facsw（#23/#24）は1PDF=1研修型
+    ＝区切り語空欄で吸収できる見込み（募集要項PDF内の締切表記は未確認・要実測）。
 
 ## 2026-08-27（P44・源の「表示名」——団体欄を団体名だけにする）
 
