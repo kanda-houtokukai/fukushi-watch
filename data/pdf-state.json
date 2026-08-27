@@ -45,7 +45,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/l69eef75027987.pdf": {
   "etag": "\"77a6c-6506a9532dec2\"",
@@ -70,7 +70,7 @@
      },
      {
       "name": "講師",
-      "value": "百枝孝泰氏"
+      "value": null
      },
      {
       "name": "参加費",
@@ -87,7 +87,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/a6a6983376a6af.pdf": {
   "etag": "\"b247f-657b87e74a0e1\"",
@@ -135,7 +135,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/d69eef1a92f583.pdf": {
   "etag": "\"a5cc5-6506a3ef3e68a\"",
@@ -183,7 +183,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/e69eef5bc1ad41.pdf": {
   "etag": "\"499f9-6506a7d1d8432\"",
@@ -196,11 +196,15 @@
   },
   "results": {
    "3a63f4e253694719": {
-    "deadline": null,
+    "deadline": {
+     "iso": "2026-08-10",
+     "raw": "令和8年8月10日",
+     "model": "gemini-3.5-flash-lite"
+    },
     "outline": [
      {
       "name": "日時",
-      "value": "【1回目】1日目:令和8年9月28日(月)2日目:令和8年9月29日(火)3日目:令和8年10月8日(木)4日目:令和8年10月9日(金)"
+      "value": "1日目:令和8年9月28日(月)2日目:令和8年9月29日(火)3日目:令和8年10月8日(木)4日目:令和8年10月9日(金)"
      },
      {
       "name": "会場",
@@ -212,7 +216,7 @@
      },
      {
       "name": "参加費",
-      "value": "(公社)福岡県介護福祉士会会員・・・20,000円(テキスト代含む)非会員・・・31,000円(テキスト代含む)"
+      "value": null
      },
      {
       "name": "定員",
@@ -225,7 +229,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/z6a69837bd2ff0.pdf": {
   "etag": "\"b247f-657b88288c32d\"",
@@ -273,7 +277,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/x69eef26ad663f.pdf": {
   "etag": "\"a5cc5-6506a4a7f40b8\"",
@@ -321,7 +325,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/l69eef2af3aae5.pdf": {
   "etag": "\"a5cc5-6506a4e9269f8\"",
@@ -369,7 +373,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/x6a698405de514.pdf": {
   "etag": "\"b247f-657b88ac32fff\"",
@@ -417,7 +421,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/h6a3208308067c.pdf": {
   "etag": "\"a8115-65469ed7663ae\"",
@@ -434,7 +438,7 @@
     "outline": null
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/l69eef300c0c44.pdf": {
   "etag": "\"a5cc5-6506a536ebfcf\"",
@@ -482,7 +486,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/q69eef3474b1c3.pdf": {
   "etag": "\"a5cc5-6506a57a2cf38\"",
@@ -530,7 +534,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/m6a698445d70a1.pdf": {
   "etag": "\"b247f-657b88e934b92\"",
@@ -578,7 +582,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/q6a6984b6534ff.pdf": {
   "etag": "\"b247f-657b895474c9e\"",
@@ -626,7 +630,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/o6a6982bda4b95.pdf": {
   "etag": "\"b247f-657b87732b4b0\"",
@@ -674,7 +678,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/s6a6985111f855.pdf": {
   "etag": "\"b247f-657b89ab09bb6\"",
@@ -722,7 +726,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/c6a69855ded6ca.pdf": {
   "etag": "\"b247f-657b89f4528e5\"",
@@ -770,7 +774,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/k6a3208a2de87b.pdf": {
   "etag": "\"c8d5d-65469f447c571\"",
@@ -787,7 +791,7 @@
     "outline": null
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/y6a7c19aaa4eb1.pdf": {
   "etag": "\"78169-658d41ea48901\"",
@@ -829,7 +833,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/l6a69868fcf722.pdf": {
   "etag": "\"30cf1-657b8b1807594\"",
@@ -842,7 +846,11 @@
   },
   "results": {
    "f2dfe01aec9073f1": {
-    "deadline": null,
+    "deadline": {
+     "iso": "2026-07-31",
+     "raw": "令和8年7月31日",
+     "model": "gemini-3.5-flash-lite"
+    },
     "outline": [
      {
       "name": "日時",
@@ -850,7 +858,7 @@
      },
      {
       "name": "会場",
-      "value": "博多バスターミナルビル９Ｆ第１・２ホール\n〒812-0012福岡市博多区博多駅中央街２－１"
+      "value": "博多バスターミナルビル９Ｆ第１・２ホール"
      },
      {
       "name": "講師",
@@ -871,7 +879,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/i6a7c1a5d036f1.pdf": {
   "etag": "\"80adf-658d42945c778\"",
@@ -913,7 +921,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/z6a69871e0a1e5.pdf": {
   "etag": "\"306d0-657b8b9fa2071\"",
@@ -955,7 +963,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/e6a7c1b01753d9.pdf": {
   "etag": "\"803f1-658d4331355cb\"",
@@ -997,7 +1005,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/z6a69888d4cdc8.pdf": {
   "etag": "\"7d985-657b8cfde4bfc\"",
@@ -1039,7 +1047,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/y6a6985ab9e66f.pdf": {
   "etag": "\"b247f-657b8a3e6680e\"",
@@ -1087,7 +1095,7 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "https://www.f-kaigo.jp/upimg/p69eef6037b29e.pdf": {
   "etag": "\"499f9-6506a815ef1f8\"",
@@ -1100,7 +1108,11 @@
   },
   "results": {
    "08c77a08100dc191": {
-    "deadline": null,
+    "deadline": {
+     "iso": "2026-11-30",
+     "raw": "令和8年11月30日",
+     "model": "gemini-3.5-flash-lite"
+    },
     "outline": [
      {
       "name": "日時",
@@ -1129,10 +1141,118 @@
     ]
    }
   },
-  "resultsVersion": 5
+  "resultsVersion": 6
  },
  "_aiBudget": {
   "date": "2026-08-28",
-  "calls": 12
+  "calls": 39
+ },
+ "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2025/06/e9884305e5ec37f96e4c3bf628e95c9b-2.pdf": {
+  "etag": null,
+  "lastModified": "Wed, 01 Jul 2026 10:02:21 GMT",
+  "contentLength": null,
+  "size": 475605,
+  "seenAt": "2026-08-28",
+  "results": {
+   "ac30afdad328d79e": {
+    "deadline": {
+     "iso": "2026-07-31",
+     "raw": "令和8年7月31日",
+     "model": "gemini-3.7-flash"
+    },
+    "outline": null
+   }
+  },
+  "resultsVersion": 6
+ },
+ "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2025/06/a4e0393ed40d0b8cc9a09df74d54d88d-3.pdf": {
+  "etag": null,
+  "lastModified": "Fri, 26 Jun 2026 06:39:59 GMT",
+  "contentLength": null,
+  "size": 343140,
+  "seenAt": "2026-08-28",
+  "results": {
+   "d2a4ba43f40ba2dc": {
+    "deadline": {
+     "iso": "2026-08-07",
+     "raw": "令和8年8月7日",
+     "model": "gemini-3.7-flash"
+    },
+    "outline": null
+   }
+  },
+  "resultsVersion": 6
+ },
+ "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/04/e9884305e5ec37f96e4c3bf628e95c9b-1.pdf": {
+  "etag": null,
+  "lastModified": "Tue, 07 Apr 2026 04:37:48 GMT",
+  "contentLength": null,
+  "size": 106747,
+  "seenAt": "2026-08-28",
+  "results": {
+   "e690351682aa05f5": {
+    "deadline": {
+     "iso": "2026-05-15",
+     "raw": "令和8年5月15日",
+     "model": "gemini-3.6-flash"
+    },
+    "outline": null
+   }
+  },
+  "resultsVersion": 6
+ },
+ "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/05/b429846019b9e233c8c7dc9ede385e00.pdf": {
+  "etag": null,
+  "lastModified": "Wed, 13 May 2026 02:25:18 GMT",
+  "contentLength": null,
+  "size": 440924,
+  "seenAt": "2026-08-28",
+  "results": {
+   "1a1e2ca3f26d723e": {
+    "deadline": {
+     "iso": "2026-06-12",
+     "raw": "令和8年6月12日",
+     "model": "gemini-3.6-flash"
+    },
+    "outline": null
+   }
+  },
+  "resultsVersion": 6
+ },
+ "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/05/70b79d68f45fd43cc124edf74879b573.pdf": {
+  "etag": null,
+  "lastModified": "Wed, 13 May 2026 02:52:04 GMT",
+  "contentLength": null,
+  "size": 465867,
+  "seenAt": "2026-08-28",
+  "results": {
+   "864e58dc292760fa": {
+    "deadline": {
+     "iso": "2026-06-12",
+     "raw": "令和8年6月12日",
+     "model": "gemini-3.6-flash"
+    },
+    "outline": null
+   }
+  },
+  "resultsVersion": 6
+ },
+ "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/05/0f91156fccbcf3a353a91572777591b1.pdf": {
+  "etag": null,
+  "lastModified": "Wed, 13 May 2026 02:59:22 GMT",
+  "contentLength": null,
+  "size": 423532,
+  "seenAt": "2026-08-28",
+  "results": {
+   "4a112b3db59bdc0d": {
+    "deadline": {
+     "iso": "2026-06-12",
+     "raw": "令和8年6月12日",
+     "model": "gemini-3.5-flash"
+    },
+    "outline": null
+   }
+  },
+  "resultsVersion": 6
  }
 }

@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-27T23:03:26.819Z",
+ "updatedAt": "2026-08-27T23:40:53.290Z",
  "items": [
   {
    "hash": "214726beef7879ce",
@@ -9,7 +9,7 @@
    "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/07/b7ccf1d575ee342038aba8ac215f8574.pdf",
    "deadline": "2026-08-28",
    "deadlineType": "date",
-   "deadlineRaw": "8月28日",
+   "deadlineRaw": "一覧の申込終了日より 8月28日",
    "openFrom": "2026-07-14",
    "fields": [
     "共通"
@@ -170,7 +170,7 @@
    "url": "https://fuku-shakyo-kenshu.jp/info/%ef%bd%82%ef%bd%83%ef%bd%90%ef%bc%88%e6%a5%ad%e5%8b%99%e7%b6%99%e7%b6%9a%e8%a8%88%e7%94%bb%ef%bc%89%e7%a0%94%e4%bf%ae/",
    "deadline": "2026-09-04",
    "deadlineType": "date",
-   "deadlineRaw": "9月4日",
+   "deadlineRaw": "一覧の申込終了日より 9月4日",
    "openFrom": "2026-08-02",
    "fields": [
     "共通"
@@ -187,7 +187,7 @@
    "url": "https://fuku-shakyo-kenshu.jp/info/%e3%82%b3%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0%e7%a0%94%e4%bf%ae%e3%81%ae%e9%96%8b%e5%82%ac%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/",
    "deadline": "2026-09-18",
    "deadlineType": "date",
-   "deadlineRaw": "9月18日",
+   "deadlineRaw": "一覧の申込終了日より 9月18日",
    "openFrom": "2026-08-10",
    "fields": [
     "共通"
@@ -207,7 +207,7 @@
    "url": "https://www.pref.fukuoka.lg.jp/contents/koujinou2026kenshu.html",
    "deadline": "2026-09-18",
    "deadlineType": "date",
-   "deadlineRaw": "申込期限 2026-09-18",
+   "deadlineRaw": "一覧の申込終了日より 申込期限 2026-09-18",
    "openFrom": null,
    "fields": [
     "障害"
@@ -414,7 +414,7 @@
    "url": "https://fuku-shakyo-kenshu.jp/info/%e3%83%aa%e3%82%b9%e3%82%af%e3%83%9e%e3%83%8d%e3%82%b8%e3%83%a1%e3%83%b3%e3%83%88%e7%a0%94%e4%bf%ae/",
    "deadline": "2026-10-02",
    "deadlineType": "date",
-   "deadlineRaw": "10月2日",
+   "deadlineRaw": "一覧の申込終了日より 10月2日",
    "openFrom": "2026-08-20",
    "fields": [
     "共通"
@@ -435,7 +435,7 @@
    "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2025/08/e9884305e5ec37f96e4c3bf628e95c9b-1.pdf",
    "deadline": "2026-10-08",
    "deadlineType": "date",
-   "deadlineRaw": "10月8日",
+   "deadlineRaw": "一覧の申込終了日より 10月8日",
    "openFrom": "2026-07-15",
    "fields": [
     "共通"
@@ -643,7 +643,7 @@
    "url": "https://fuku-shakyo-kenshu.jp/info/%e5%88%a9%e7%94%a8%e8%80%85%e3%83%bb%e5%ae%b6%e6%97%8f%e3%81%a8%e3%81%ae%e3%82%b3%e3%83%9f%e3%83%a5%e3%83%8b%e3%82%b1%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e5%8a%9b%e5%90%91%e4%b8%8a%e7%a0%94%e4%bf%ae/",
    "deadline": "2026-10-20",
    "deadlineType": "date",
-   "deadlineRaw": "10月20日",
+   "deadlineRaw": "一覧の申込終了日より 10月20日",
    "openFrom": "2026-08-18",
    "fields": [
     "共通"
@@ -750,6 +750,55 @@
     }
    ],
    "outlineUrl": "https://www.f-kaigo.jp/upimg/c6a69855ded6ca.pdf"
+  },
+  {
+   "hash": "08c77a08100dc191",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "介護福祉士実習指導者講習会(2回目)",
+   "url": "https://www.f-kaigo.jp/training/detail_489.php",
+   "deadline": "2026-11-30",
+   "deadlineType": "date",
+   "deadlineRaw": "開催要綱PDFより 令和8年11月30日",
+   "heldDates": [
+    "2027-01-25",
+    "2027-02-03"
+   ],
+   "expireOn": "2027-02-03",
+   "openFrom": null,
+   "fields": [
+    "高齢"
+   ],
+   "kind": "資格要件",
+   "outline": [
+    {
+     "name": "日時",
+     "value": "記載なし"
+    },
+    {
+     "name": "会場",
+     "value": "クローバープラザ(春日市原町3-1-7)"
+    },
+    {
+     "name": "講師",
+     "value": "記載なし"
+    },
+    {
+     "name": "参加費",
+     "value": "(公社)福岡県介護福祉士会会員・・・20,000円(テキスト代含む)非会員・・・31,000円(テキスト代含む)"
+    },
+    {
+     "name": "定員",
+     "value": "各回60名程度"
+    },
+    {
+     "name": "ポイント",
+     "value": "記載なし"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/p69eef6037b29e.pdf",
+   "keepUntilHeld": true
   },
   {
    "hash": "4963d985ec807097",
@@ -900,7 +949,7 @@
     },
     {
      "name": "講師",
-     "value": "百枝孝泰氏"
+     "value": "記載なし"
     },
     {
      "name": "参加費",
@@ -948,7 +997,7 @@
    "url": "https://www.f-kaigo.jp/training/detail_488.php",
    "deadline": null,
    "deadlineType": "unknown",
-   "deadlineRaw": "締切の記載なし",
+   "deadlineRaw": "開催要綱PDFより 令和8年8月10日（締切後も受け付けることがあります）",
    "heldDates": [
     "2026-09-28",
     "2026-10-09"
@@ -962,7 +1011,7 @@
    "outline": [
     {
      "name": "日時",
-     "value": "【1回目】1日目:令和8年9月28日(月)2日目:令和8年9月29日(火)3日目:令和8年10月8日(木)4日目:令和8年10月9日(金)"
+     "value": "1日目:令和8年9月28日(月)2日目:令和8年9月29日(火)3日目:令和8年10月8日(木)4日目:令和8年10月9日(金)"
     },
     {
      "name": "会場",
@@ -974,7 +1023,7 @@
     },
     {
      "name": "参加費",
-     "value": "(公社)福岡県介護福祉士会会員・・・20,000円(テキスト代含む)非会員・・・31,000円(テキスト代含む)"
+     "value": "記載なし"
     },
     {
      "name": "定員",
@@ -985,7 +1034,8 @@
      "value": "記載なし"
     }
    ],
-   "outlineUrl": "https://www.f-kaigo.jp/upimg/e69eef5bc1ad41.pdf"
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/e69eef5bc1ad41.pdf",
+   "keepUntilHeld": true
   },
   {
    "hash": "08ea41bbbf0f656c",
@@ -1094,7 +1144,7 @@
    "url": "https://www.f-kaigo.jp/training/detail_506.php",
    "deadline": null,
    "deadlineType": "unknown",
-   "deadlineRaw": "締切の記載なし",
+   "deadlineRaw": "開催要綱PDFより 令和8年7月31日（締切後も受け付けることがあります）",
    "heldDates": [
     "2026-11-25"
    ],
@@ -1111,7 +1161,7 @@
     },
     {
      "name": "会場",
-     "value": "博多バスターミナルビル９Ｆ第１・２ホール\n〒812-0012福岡市博多区博多駅中央街２－１"
+     "value": "博多バスターミナルビル９Ｆ第１・２ホール"
     },
     {
      "name": "講師",
@@ -1130,7 +1180,8 @@
      "value": "７pt"
     }
    ],
-   "outlineUrl": "https://www.f-kaigo.jp/upimg/l6a69868fcf722.pdf"
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/l6a69868fcf722.pdf",
+   "keepUntilHeld": true
   },
   {
    "hash": "6ebeb05fc3be6f41",
@@ -1276,54 +1327,6 @@
    "outlineUrl": "https://www.f-kaigo.jp/upimg/e6a7c1b01753d9.pdf"
   },
   {
-   "hash": "08c77a08100dc191",
-   "source": "福岡県介護福祉士会",
-   "sourceKind": "org",
-   "via": "fkaigo",
-   "title": "介護福祉士実習指導者講習会(2回目)",
-   "url": "https://www.f-kaigo.jp/training/detail_489.php",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "締切の記載なし",
-   "heldDates": [
-    "2027-01-25",
-    "2027-02-03"
-   ],
-   "expireOn": "2027-02-03",
-   "openFrom": null,
-   "fields": [
-    "高齢"
-   ],
-   "kind": "資格要件",
-   "outline": [
-    {
-     "name": "日時",
-     "value": "記載なし"
-    },
-    {
-     "name": "会場",
-     "value": "クローバープラザ(春日市原町3-1-7)"
-    },
-    {
-     "name": "講師",
-     "value": "記載なし"
-    },
-    {
-     "name": "参加費",
-     "value": "(公社)福岡県介護福祉士会会員・・・20,000円(テキスト代含む)非会員・・・31,000円(テキスト代含む)"
-    },
-    {
-     "name": "定員",
-     "value": "各回60名程度"
-    },
-    {
-     "name": "ポイント",
-     "value": "記載なし"
-    }
-   ],
-   "outlineUrl": "https://www.f-kaigo.jp/upimg/p69eef6037b29e.pdf"
-  },
-  {
    "hash": "301bdea05d98db88",
    "source": "福祉・介護研修センター 年間予定表",
    "sourceKind": "org",
@@ -1347,13 +1350,14 @@
    "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2025/06/a4e0393ed40d0b8cc9a09df74d54d88d-3.pdf",
    "deadline": null,
    "deadlineType": "unknown",
-   "deadlineRaw": "締切の記載なし",
+   "deadlineRaw": "開催要綱PDFより 令和8年8月7日（締切後も受け付けることがあります）",
    "openFrom": null,
    "fields": [
     "共通"
    ],
    "kind": "テーマ別",
-   "via": "schedule"
+   "via": "schedule",
+   "keepUntilHeld": true
   },
   {
    "hash": "b51739d6a22d7bac",
@@ -1395,13 +1399,14 @@
    "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/05/0f91156fccbcf3a353a91572777591b1.pdf",
    "deadline": null,
    "deadlineType": "unknown",
-   "deadlineRaw": "締切の記載なし",
+   "deadlineRaw": "開催要綱PDFより 令和8年6月12日（締切後も受け付けることがあります）",
    "openFrom": "2026-05-13",
    "fields": [
     "高齢"
    ],
    "kind": "資格要件",
-   "via": "schedule"
+   "via": "schedule",
+   "keepUntilHeld": true
   },
   {
    "hash": "4ca66de797327208",
@@ -1443,13 +1448,14 @@
    "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/04/e9884305e5ec37f96e4c3bf628e95c9b-1.pdf",
    "deadline": null,
    "deadlineType": "unknown",
-   "deadlineRaw": "締切の記載なし",
+   "deadlineRaw": "開催要綱PDFより 令和8年5月15日（締切後も受け付けることがあります）",
    "openFrom": null,
    "fields": [
     "共通"
    ],
    "kind": "法令対応",
-   "via": "schedule"
+   "via": "schedule",
+   "keepUntilHeld": true
   },
   {
    "hash": "26300e60a2740f6e",
@@ -1555,13 +1561,14 @@
    "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2025/06/e9884305e5ec37f96e4c3bf628e95c9b-2.pdf",
    "deadline": null,
    "deadlineType": "unknown",
-   "deadlineRaw": "締切の記載なし",
+   "deadlineRaw": "開催要綱PDFより 令和8年7月31日（締切後も受け付けることがあります）",
    "openFrom": null,
    "fields": [
     "共通"
    ],
    "kind": "階層別",
-   "via": "schedule"
+   "via": "schedule",
+   "keepUntilHeld": true
   },
   {
    "hash": "c4cea64f0bc13a51",
@@ -1619,13 +1626,14 @@
    "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/05/70b79d68f45fd43cc124edf74879b573.pdf",
    "deadline": null,
    "deadlineType": "unknown",
-   "deadlineRaw": "締切の記載なし",
+   "deadlineRaw": "開催要綱PDFより 令和8年6月12日（締切後も受け付けることがあります）",
    "openFrom": "2026-05-13",
    "fields": [
     "高齢"
    ],
    "kind": "資格要件",
-   "via": "schedule"
+   "via": "schedule",
+   "keepUntilHeld": true
   },
   {
    "hash": "7a81b45bfa9da99c",
@@ -1651,13 +1659,14 @@
    "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/05/b429846019b9e233c8c7dc9ede385e00.pdf",
    "deadline": null,
    "deadlineType": "unknown",
-   "deadlineRaw": "締切の記載なし",
+   "deadlineRaw": "開催要綱PDFより 令和8年6月12日（締切後も受け付けることがあります）",
    "openFrom": "2026-05-13",
    "fields": [
     "高齢"
    ],
    "kind": "資格要件",
-   "via": "schedule"
+   "via": "schedule",
+   "keepUntilHeld": true
   },
   {
    "hash": "3f802bfa217291ad",

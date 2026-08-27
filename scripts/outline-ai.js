@@ -17,7 +17,7 @@
  * ⚠️PDF本文は保存しない。抽出した項目だけを持つ。
  */
 
-import { norm } from "./pdftext.js";
+import { norm, dateFromValue } from "./pdftext.js";
 import { listCandidateModels, generate } from "./summarize.js";
 
 /** 値の字数上限（関門③）。超えたら暴走とみなして捨てる */
@@ -159,6 +159,70 @@ export function buildPrompt(names, text, heldDates = []) {
 --- ここから文書 ---
 ${text}
 --- ここまで ---`;
+}
+
+/**
+ * 締切をAIに取らせる（P50）。⚠️項目名は**全源共通の1つ**（申込締切）だけをコードに持つ。
+ *   源ごとの表記ゆれ（「12締切日」「13申込締切」「提出締切日」）は、関門⑤が
+ *   **AIの申告した見出し**で照合するので吸収できる（台帳に列を足す必要はない）。
+ * ⚠️関門⑥（開催日との整合）は**使わない**——締切は開催日と別の日なので、
+ *   適用すると必ず落ちる。代わりに研修名をプロンプトへ渡し、どの回の締切かを示す。
+ * 返り値 { iso, raw, model } ／ 取れなければ null。
+ */
+export async function deadlineByAi(text, title, ctx, today) {
+  const NAME = "申込締切";
+  if (!ctx?.apiKey) return null;
+  if (ctx.budget.calls >= DAILY_LIMIT) {
+    if (!ctx.exhausted) {
+      ctx.exhausted = true;
+      console.log(`  ⚠️AIの呼び出しが1日の上限（${DAILY_LIMIT}回）に達したため、以降は打ち切ります（翌朝に持ち越し）`);
+    }
+    return null;
+  }
+  try {
+    ctx.models ??= await listCandidateModels(ctx.apiKey);
+  } catch (e) {
+    console.error(`  AIのモデル一覧を取得できません（締切は付けずに続行）: ${e.message}`);
+    ctx.apiKey = null;
+    return null;
+  }
+  const prompt = `次は福祉の研修の「開催要綱」から抽出した文字列です。
+この研修「${title}」の**申込の締切日**を、原文の文字をそのまま写して取り出してください。
+
+規則:
+- 値は原文に現れる文字列を**一字も変えずに**写すこと（例「令和8年7月31日(金)」）。
+- 開催日・研修日ではなく、**申し込みの締切**です。取り違えないこと。
+- 同じ文書に複数の回が載っている場合、**「${title}」の回**の締切だけを写すこと。
+- 締切の記載が無ければ null。**推測で埋めてはいけません。**
+- あわせて、その値がどの見出しの下にあったかを heading に原文のまま写すこと。
+- 出力は次の形のJSONだけ:
+  {"${NAME}": {"value": "値またはnull", "heading": "見出しまたはnull"}}
+
+--- ここから文書 ---
+${text.slice(0, 12000)}
+--- ここまで ---`;
+  for (const model of ctx.models) {
+    if (ctx.badModels.has(model)) continue;
+    if (ctx.budget.calls >= DAILY_LIMIT) return null;
+    const wait = CALL_INTERVAL_MS - (Date.now() - ctx.lastCallAt);
+    if (wait > 0) await sleep(wait);
+    ctx.lastCallAt = Date.now();
+    ctx.budget.calls++;
+    ctx.calls++;
+    try {
+      const res = await generate(ctx.apiKey, model, prompt);
+      const json = JSON.parse(res.replace(/^```json\s*|\s*```$/g, ""));
+      // ⚠️関門は要点と同じものを通す（heldDates は渡さない＝関門⑥は効かせない）
+      const { kept } = verifyOutline(json, [NAME], text);
+      if (!kept.length) return null;
+      const d = dateFromValue(kept[0].value, today);
+      return d ? { ...d, model } : null;
+    } catch {
+      ctx.fails++;
+      ctx.badModels.add(model);
+    }
+  }
+  return null;
 }
 
 /**

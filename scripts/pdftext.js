@@ -356,6 +356,23 @@ export function extractDeadlineDetail(blockText, marker, today = jstToday()) {
   return null;
 }
 
+/**
+ * **短い値**（AIが返した締切の文字列など）から日付を1つ取り、{ iso, raw } で返す。
+ * ⚠️本文には使わない——長い文字列に使うと、開催日や別の回の日付を拾う。
+ *   本文から拾うのは `extractDeadlineDetail`（目印の直後だけを見る）の仕事。
+ */
+export function dateFromValue(value, today = jstToday()) {
+  const t = norm(value);
+  if (!t || t.length > 60) return null; // 長い＝値ではない（本文を渡された）
+  let d = t.match(/令和(\d{1,2})年(\d{1,2})月(\d{1,2})日/);
+  if (d && validMd(+d[2], +d[3])) return { iso: iso(+d[1] + 2018, +d[2], +d[3]), raw: d[0] };
+  d = t.match(/(20\d{2})年(\d{1,2})月(\d{1,2})日/);
+  if (d && validMd(+d[2], +d[3])) return { iso: iso(+d[1], +d[2], +d[3]), raw: d[0] };
+  d = t.match(/(?<![\d年])(\d{1,2})月(\d{1,2})日/);
+  if (d && validMd(+d[1], +d[2])) return { iso: fiscalIso(+d[1], +d[2], today), raw: d[0] };
+  return null;
+}
+
 /* ===========================================================================
  * 部品4: 突合（HTML題名 → ブロック）
  * ======================================================================== */
