@@ -23,6 +23,8 @@ import { createHash } from "node:crypto";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { fetchHtml, readSources } from "./crawl.js";
+import { loadEnv } from "./summarize.js";
+import { createAiContext, outlineByAi, DAILY_LIMIT } from "./outline-ai.js";
 import {
   loadPdfState, savePdfState, fetchPdfIfChanged, extractPdfText, fullTextOf,
   pickPdfLink, blockForTitle, extractDeadlineDetail, blockLinesForTitle, outlineFromLines,
@@ -721,9 +723,21 @@ export function dedupeKenshu(items) {
  * ⚠️P46で `deadlines` から `results` に変えた（締切と要点を同時に決めるため）。
  *   旧キーは読まない＝入れ替えの朝だけ全PDFを1度取り直す（以後はHEADのみ）。
  */
-const pdfResults = (state, pdfUrl) => state[pdfUrl]?.results ?? {};
+/**
+ * ⚠️**抽出の版**。取り方を変えたら必ず上げる。記憶は「取れなかった」ことも覚えるため、
+ *   版を上げないと**新しい取り方が二度と試されない**（P48で実際に踏んだ:
+ *   AI方式を入れたのに、前日「要点なし」と記憶した11件が再評価されず0件のままだった）。
+ *   版1=P46（規則のみ）／版2=P48（規則→AI）／版3=P48（見出しの申告を照合に使う）。
+ */
+const RESULT_VERSION = 5;
+const pdfResults = (state, pdfUrl) =>
+  state[pdfUrl]?.resultsVersion === RESULT_VERSION ? (state[pdfUrl].results ?? {}) : {};
 const rememberResult = (state, pdfUrl, hash, value) => {
-  state[pdfUrl] = { ...(state[pdfUrl] ?? {}), results: { ...pdfResults(state, pdfUrl), [hash]: value } };
+  state[pdfUrl] = {
+    ...(state[pdfUrl] ?? {}),
+    resultsVersion: RESULT_VERSION,
+    results: { ...pdfResults(state, pdfUrl), [hash]: value },
+  };
 };
 
 /**
@@ -731,9 +745,10 @@ const rememberResult = (state, pdfUrl, hash, value) => {
  * 対象は `deadlineType !== "date"` の項目だけ（HTML側で締切が取れたものには触らない）。
  * 返り値は実測の内訳（検証・ログ用）。
  */
-async function attachPdfDeadlines(items, src, today, pdfState) {
+async function attachPdfDeadlines(items, src, today, pdfState, aiCtx) {
   const stat = { targets: 0, filled: 0, past: 0, noLink: 0, noBlock: 0, noDeadline: 0,
-    pdfParsed: 0, pdfSkipped: 0, noTextLayer: 0, errors: 0, remembered: 0, outlined: 0 };
+    pdfParsed: 0, pdfSkipped: 0, noTextLayer: 0, errors: 0, remembered: 0, outlined: 0,
+    byRule: 0, byAi: 0, gateHallucination: 0, gateTabular: 0, gateTooLong: 0, gateNear: 0, gateDate: 0, aiNull: 0, deferred: 0 };
   if (!src.pdfAnchor) return stat; // 空欄＝PDF併読しない（既定動作）
   // 中身のハッシュ → 全文（この実行の中だけ・ファイルには残さない）。
   // ⚠️URLではなく**中身**で覚える——f-kaigo は同じPDFを研修ごとに別URLで貼るため
@@ -760,8 +775,9 @@ async function attachPdfDeadlines(items, src, today, pdfState) {
 
       let found; // 締切 { iso, raw } | null（null＝このPDFからは取れないと確定した）
       let outline; // 要点 [{name, value|null}] | null
+      let outlinePending = false; // 上限で要点を決められなかった（翌朝やり直す）
       const remembered = pdfResults(pdfState, pdfUrl);
-      if (!got.changed && hash in remembered) {
+      if (!got.changed && hash in remembered && !remembered[hash].outlinePending) {
         // 前回と同じPDF・同じ項目＝本体を取りに行かず、覚えている値を使う
         stat.pdfSkipped++;
         found = remembered[hash].deadline;
@@ -793,9 +809,13 @@ async function attachPdfDeadlines(items, src, today, pdfState) {
         found = block ? extractDeadlineDetail(block, src.pdfDeadlineMarker, today) : null;
         if (!block) stat.noBlock++;
         // 開催の要点（P46）: 同じブロックの**生テキストの行**から原文のまま切り出す
-        outline = block ? outlineOf(text, src, it) : null;
+        const res = await outlineFor(text, block, src, it, aiCtx, stat);
+        outline = res.rows;
+        outlinePending = res.pending;
         // 記憶する（⚠️保存するのは抽出した値だけ。PDFの本文は保存しない）
-        rememberResult(pdfState, pdfUrl, hash, { deadline: found ?? null, outline });
+        // ⚠️未確定（上限で打ち切り）なら印を残す。翌朝この項目だけやり直す
+        rememberResult(pdfState, pdfUrl, hash, {
+          deadline: found ?? null, outline, ...(outlinePending ? { outlinePending: true } : {}) });
         if (!found && block) stat.noDeadline++;
       }
 
@@ -837,6 +857,40 @@ function outlineOf(rawText, src, it) {
   const lines = blockLinesForTitle(rawText, src.pdfDelimiter, it.title, it.heldDates ?? []);
   if (!lines?.length) return null;
   return outlineFromLines(lines, src.outlineBrackets, src.outlineNames);
+}
+
+/**
+ * 要点を取る（P48）: **規則を先に試し、1項目も取れなければAIに回す**。
+ * ⚠️方式は台帳に書かない——台帳に方式を書き続ける運用は「源ごとに型を足す」ことと同じで、
+ *   自律型の方針に反する。規則方式は《 》を探すので番号付きPDFでは必ず0件になり
+ *   （実測: 番号付き9本すべてで0件・本文に「《」が1回も出てこない）、これを分岐に使える。
+ * ⚠️AIに渡すのは、ブロックが引けたならそのブロック、引けないならPDF全文
+ *   （番号付きの案内は1PDF＝1研修なので全文で正しい）。
+ */
+async function outlineFor(rawText, block, src, it, ctx, stat) {
+  const byRule = outlineOf(rawText, src, it);
+  if (byRule?.some((o) => o.value)) { stat.byRule++; return { rows: byRule, pending: false }; }
+  if (!src.outlineNames?.length) return { rows: byRule, pending: false };
+  // ⚠️上限で呼べなかったときは**未確定として記憶する**——「要点なし」と覚えてしまうと
+  //   翌朝も再評価されず、打ち切りが永久に持ち越されない（P48で実際に踏んだ穴）
+  if (ctx.apiKey && ctx.budget.calls >= DAILY_LIMIT) {
+    stat.deferred++;
+    return { rows: byRule, pending: true };
+  }
+  const got = await outlineByAi(block ?? rawText, src.outlineNames, ctx, it.heldDates ?? []);
+  if (!got) return { rows: byRule, pending: false };
+  stat.byAi++;
+  for (const d of got.dropped) {
+    if (d.why.startsWith("原文に無い")) stat.gateHallucination++;
+    else if (d.why.startsWith("表組み")) stat.gateTabular++;
+    else if (d.why.startsWith("字数超過")) stat.gateTooLong++;
+    else if (d.why === "近傍に項目名が無い") stat.gateNear++;
+    else if (d.why.startsWith("開催日と合わない")) stat.gateDate++;
+    else if (d.why === "AIがnull") stat.aiNull++;
+  }
+  // 関門を通ったものだけを、台帳の順に並べて返す（取れなかったものは呼び側が「記載なし」に）
+  const kept = new Map(got.kept.map((k) => [k.name, k.value]));
+  return { rows: src.outlineNames.map((name) => ({ name, value: kept.get(name) ?? null })), pending: false };
 }
 
 /** 項目ハッシュ。タイトル＋URL（締切は延長されうるので入れない・grants と同じ） */
@@ -889,6 +943,14 @@ async function main() {
   const errors = [];
   const pdfState = loadPdfState(); // PDF併読の照合状態（P43。⚠️本文は持たない）
   let pdfStateDirty = false;
+  // 要点のAI抽出（P48）。⚠️鍵が無い環境でも巡回は止めない——規則方式だけで続ける
+  let apiKey = null;
+  try {
+    apiKey = loadEnv();
+  } catch {
+    console.log("GEMINI_API_KEY がないため、要点のAI抽出は行いません（規則方式のみ）");
+  }
+  const aiCtx = createAiContext(apiKey, pdfState);
 
   for (const src of sources) {
     try {
@@ -920,8 +982,16 @@ async function main() {
       // ⚠️6つのパーサ本体には触らない——ここは全パーサが通る合流点で、
       //   「どの源がPDFを読むか」は台帳（src.pdfAnchor）だけが決める。
       if (src.pdfAnchor) {
-        const s = await attachPdfDeadlines(parsed, src, today, pdfState);
+        const s = await attachPdfDeadlines(parsed, src, today, pdfState, aiCtx);
         pdfStateDirty = true;
+        console.log(
+          `  要点: 規則${s.byRule}件・AI${s.byAi}件` +
+          (s.deferred ? `・持ち越し${s.deferred}件` : "") +
+          (s.byAi
+            ? `（AI呼び出し${aiCtx.calls}回・失敗${aiCtx.fails}回／関門で落とした: 幻覚${s.gateHallucination}` +
+              `・近傍${s.gateNear}・別の回${s.gateDate}・表組み${s.gateTabular}・字数${s.gateTooLong}・AIがnull${s.aiNull}）`
+            : "")
+        );
         console.log(
           `  PDF併読: 対象${s.targets}件 → 締切${s.filled}件（超過${s.past}件）` +
           `／付かず${s.targets - s.filled - s.past}件` +

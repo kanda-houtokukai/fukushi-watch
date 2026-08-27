@@ -20,7 +20,8 @@ import { survivesPrune } from "./kenshu.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DEFAULT_URL = "https://www.f-kaigo.jp/upimg/o6a6982bda4b95.pdf"; // 26URL中9研修が指す実体
-const url = process.argv[2] ?? DEFAULT_URL;
+// ⚠️フラグ（--ai）はURLとして受け取らない
+const url = process.argv.slice(2).find((a) => !a.startsWith("-")) ?? DEFAULT_URL;
 
 // f-kaigo の台帳値（区切り②で docs/sources.md に入れる値と同じもの）
 const DELIMITER = "開催要綱";
@@ -178,6 +179,52 @@ t("要件3c: PDF由来でも最終開催日を過ぎたら消える",
 t("要件3d: 締切前はどちらも残る",
   survivesPrune(pdfItem(), "2026-09-01") === true &&
   survivesPrune(pdfItem({ keepUntilHeld: undefined }), "2026-09-01") === true);
+
+/* ===========================================================================
+ * ゴールデン基準（P48）: **AI方式と規則方式が一致するか**
+ *
+ * ⚠️《 》型の15件は「規則で正解が分かっているデータ」であり、**将来モデルが変わったときに
+ *   AIのずれを検知する唯一の物差し**。規則方式を消してはいけない理由がこれ。
+ * ⚠️APIを使うので既定では走らせない。`node scripts/pdftext-check.js --ai` のときだけ。
+ *   daily.yml には接続しない（毎朝の失敗経路を増やさない）。
+ * ======================================================================== */
+if (process.argv.includes("--ai")) {
+  const { loadEnv } = await import("./summarize.js");
+  const { createAiContext, outlineByAi } = await import("./outline-ai.js");
+  const { blockLinesForTitle, outlineFromLines } = await import("./pdftext.js");
+  const NAMES = ["日時", "会場", "講師", "参加費", "定員", "ポイント"];
+  const ctx = createAiContext(loadEnv(), {});
+  const texts = new Map();
+  const cands = kenshu.items.filter((i) => i.via === "fkaigo" && i.outlineUrl);
+  let target = 0;
+  let agree = 0;
+  console.log(`\n--- ゴールデン基準（AI方式 vs 規則方式）---`);
+  for (const item of cands) {
+    if (!texts.has(item.outlineUrl)) {
+      const res = await fetch(item.outlineUrl, { headers: { "User-Agent": "fukushi-watch/0.1" } });
+      texts.set(item.outlineUrl, fullTextOf(await extractPdfText(new Uint8Array(await res.arrayBuffer()))));
+      await new Promise((r) => setTimeout(r, 1500)); // 源に控えめに当たる
+    }
+    const pdfText = texts.get(item.outlineUrl);
+    // ⚠️対象は「規則方式で正解が分かるもの」だけ——番号付き型は規則が0件なので基準に使えない
+    const lines = blockLinesForTitle(pdfText, "開催要綱", item.title, item.heldDates ?? []);
+    const rule = lines?.length ? outlineFromLines(lines, "《 》", NAMES).filter((o) => o.value) : [];
+    if (!rule.length) continue;
+    target++;
+    const got = await outlineByAi(lines.join("\n"), NAMES, ctx, item.heldDates ?? []);
+    const ai = new Map((got?.kept ?? []).map((k) => [k.name, norm(k.value)]));
+    const ruleMap = new Map(rule.map((o) => [o.name, norm(o.value)]));
+    const diff = NAMES.filter((n) => (ai.get(n) ?? "") !== (ruleMap.get(n) ?? ""));
+    if (!diff.length) { agree++; continue; }
+    console.log(`  差異: ${item.title.slice(0, 24)}`);
+    for (const n of diff) {
+      console.log(`    【${n}】AI「${(ai.get(n) ?? "—").slice(0, 46)}」`);
+      console.log(`          規則「${(ruleMap.get(n) ?? "—").slice(0, 46)}」`);
+    }
+  }
+  t(`ゴールデン: AI方式と規則方式が ${target}/${target} 一致`,
+    agree === target && target > 0, `${agree}/${target}（AI呼び出し${ctx.calls}回）`);
+}
 
 console.log(`\n結果: OK ${ok} ／ NG ${ng}`);
 process.exit(ng ? 1 : 0);

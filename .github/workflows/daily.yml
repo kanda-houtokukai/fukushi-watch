@@ -66,9 +66,14 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
-      # 研修も紙面とは別系統（data/kenshu.json のみを書く・P34）。AI不使用。
+      # 研修も紙面とは別系統（data/kenshu.json のみを書く・P34）。
+      # 締切・タグは機械抽出。⚠️「開催の要点」だけは規則で取れないPDF（番号付きの
+      # 開催要綱）に限りAIを使う（P48）。AIの値は原文と機械照合してから採る。
+      # 鍵が無くても巡回は止まらない（規則方式だけで続行する）。
       - name: 研修の収集
         run: node scripts/kenshu.js
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
       - name: 状態をコミット
         run: |
