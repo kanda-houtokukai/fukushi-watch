@@ -346,7 +346,11 @@
   .top-item h3 a{color:var(--ink);text-decoration:none} /* 他の記事見出しと同じ扱い（P20） */
   .top-item .body{font-size:13.5px}
   .orig{font-size:11.5px;color:var(--faint);margin-top:6px}
-  .orig a{color:var(--faint)}
+  /* ⚠️P45: リンクだけ薄墨へ。[DECISION]「①移動するリンク（墨・薄墨）→紺になる」で
+     **平常時のリンクは墨・薄墨**と定義済み。極薄墨はその集合の外＝体系の適用漏れだった
+     （実測 2.42:1 → 4.72:1）。⚠️--faint の値と他の使用箇所は一切変えない。
+     ラベル側(.orig)は極薄墨のまま＝「リンクが主・ラベルが従」の濃淡は維持する。 */
+  .orig a{color:var(--sub)}
   .item{padding:14px 0;border-bottom:1px solid var(--rule)}
   .item h4{font-size:15px;line-height:1.55;margin-bottom:4px;font-weight:600}
   .item h4 a{color:var(--ink);text-decoration:none}
@@ -394,7 +398,7 @@
   .press-item .src{font-size:11px;font-weight:600;color:var(--sub);margin-bottom:5px;
     display:flex;align-items:center;gap:7px;flex-wrap:wrap}
   .press-item h4{font-size:14px;line-height:1.55;font-weight:600}
-  .press-item h4 a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--faint)}
+  .press-item h4 a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--sub)} /* P45: 同上（リンクの下線） */
   .press-note{font-size:11px;color:var(--faint);margin-top:10px;line-height:1.8}
   .press-wrap{transition:opacity .2s ease,max-height .25s ease,margin .25s ease;
     overflow:hidden;max-height:2000px}
@@ -886,6 +890,9 @@
           <span class="field kyotsu">共通</span>
         </div>
         <div class="row" style="font-size:11px;color:var(--faint)"><b style="color:var(--high);font-weight:600">高</b>=対応・確認を 中=把握を 低=参考</div>
+        <!-- P45: 語は統一せず、意味の違いを1行で示す（[DECISION]「締切=先方が締め切る日／
+             期限=こちらが動く目安」）。3面共通のこの箱に置く＝どの面から入っても読める。 -->
+        <div class="row" style="font-size:11px;color:var(--sub)"><b style="font-weight:600">締切</b>=先方が締め切る日　<b style="font-weight:600">期限</b>=こちらが動く目安</div>
       </div>
 
       <!-- P41-D: 制度の原本リンク箱。正本は docs/genpon-links.md（コードにURLを埋め込まない・
@@ -1588,6 +1595,34 @@
     </div></details>`;
   }
 
+  /* P45: 金額の単位を万円に揃える（表示だけ）。
+     ⚠️源の原文は「1件10,000千円」「1件1,000千円」「1件400万円」が同列に並び、読み手（万円で
+        考える）に桁を誤読させる。分野タグと同じく、源の表記ゆれはこちら側で吸収する。
+     ⚠️**grants.js は触らない**。①grants.js は amount を「原文のまま短く」取る設計で、
+        原文は原本との突合の拠り所になる ②取り込み側を直しても、既に保存済みの項目は
+        次の巡回まで千円のまま残る ③表示側なら過去分も含めて即座に揃う。
+     ⚠️grantHash は funder+title+url のみで amount を含まないため、再検知（＝メール再送）は
+        どちらで直しても起きない——が、②の理由で表示側を採る。
+     千円→万円は1/10。端数は小数1桁まで残す（例 150千円→15万円・15千円→1.5万円）。 */
+  function manYen(raw) {
+    return String(raw).replace(/([0-9][0-9,]*(?:\.[0-9]+)?)\s*千円/g, (m, num) => {
+      const v = Number(num.replace(/,/g, ""));
+      if (!Number.isFinite(v)) return m;                       // 読めない数字は原文のまま
+      const man = v / 10;
+      const body = Number.isInteger(man) ? man.toLocaleString("ja-JP")
+        : man.toLocaleString("ja-JP", { maximumFractionDigits: 1 });
+      return `${body}万円`;
+    });
+  }
+
+  /* 原文と表示が変わったときだけ title に原文を残す（原本との突合の拠り所を消さない） */
+  function amountHtml(raw) {
+    if (!raw) return "";
+    const shown = manYen(raw);
+    const t = shown === raw ? "" : ` title="原文: ${esc(raw)}"`;
+    return `<span class="amount"${t}>${esc(shown)}</span>`;
+  }
+
   function grantBlock(it) {
     let when;
     if (it.deadlineType === "date" && it.deadline && notOpenYet(it)) {
@@ -1622,7 +1657,7 @@
       <div class="body">${esc(it.summary ?? "")}</div>
       <div class="meta">
         ${sealHtml({ source: it.source, kind: it.sourceKind })}
-        ${it.amount ? `<span class="amount">${esc(it.amount)}</span>` : ""}
+        ${amountHtml(it.amount)}
         ${fieldsHtml(it)}
         ${tagline}
         ${grantShareBtn(it.hash, it.title)}
@@ -1678,12 +1713,19 @@
           sec("随 時 ・ 通 年", "締切なし。いつでも応募できる", rolling) +
           sec("締 切 不 明", "募集要項で確認してください", unknown);
 
-    // サイド欄の内訳（絞り込み前の全体。面の規模が分かるように）
-    const all = state.grants;
+    // サイド欄の内訳。⚠️P45: 見出し(gCount)と**同じ変数**から数える（母数も区分も一致させる）。
+    //    旧実装は state.grants（全件）を数えていたため、絞り込み中に**同じラベルで違う数**が
+    //    見出しと並び、矛盾に見えた。さらに受付前を「締切あり」に含めており、
+    //    [DECISION]「受付開始日を扱い、『受付前』を別の束にする」（P34-2）に反していた。
+    //    ⚠️**この欄に「全N件」を出さない**。「／ 全N件」の後置は**分野・用途で絞ったときだけ**
+    //      という [DECISION]（P31②）があり、同じ条件で見出しが既に出しているため二重になる。
+    //    ⚠️dated/preOpen/rolling/unknown は見出しが使うものをそのまま使う（別計算にしない
+    //      ——別々に数えた瞬間にまた食い違う余地が生まれる）。
     $("gStat").innerHTML = [
-      ["締切あり", all.filter((x) => x.deadlineType === "date").length],
-      ["随時・通年", all.filter((x) => x.deadlineType === "rolling").length],
-      ["締切不明", all.filter((x) => x.deadlineType === "unknown").length],
+      ["締切あり", dated.length],
+      ...(preOpen.length ? [["受付前", preOpen.length]] : []),
+      ["随時・通年", rolling.length],
+      ["締切不明", unknown.length],
     ].map(([k, n]) => `<div class="row" style="cursor:default"><span>${k}</span><b>${n}</b></div>`).join("");
 
     trimSectionRules($("grantList"), "gsec"); // 束の最後の項目の薄線を消す（P32）
