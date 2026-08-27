@@ -14,7 +14,7 @@
  * （.env またはシェル環境。値は絶対にコミットしない）
  */
 
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { connect } from "node:tls";
 import { randomBytes } from "node:crypto";
 import { dirname, join } from "node:path";
@@ -24,6 +24,49 @@ import { buildMail } from "./mail-template.js";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const REPORT_PATH = join(ROOT, "data", "report-latest.json");
 const MAIL_SETTINGS_PATH = join(ROOT, "data", "mail-settings.json");
+const STATE_PATH = join(ROOT, "data", "state.json");
+
+const dryRun = process.argv.includes("--dry-run"); // 送信せず判断だけ見る（検証用）
+
+/* ===========================================================================
+ * 送信の記録（P49・スケジュール不発への対策）
+ *
+ * 保険として2本目の cron（JST 08:47）を足したが、そのままでは毎朝2通届く
+ * （新着0件の日も「更新なし」を送る＝生存確認の設計のため）。そこで
+ * **同じ日に送信済みなら2本目は黙る**。
+ * ⚠️記録は必ず**送信の後**に行う——送信に失敗した日は記録されず、2本目が送る。
+ * ⚠️`lastRunAt` は送信の有無に関わらず、notify が正常に終わるたびに更新する
+ *   （＝「daily が動いた」印。不発の検知はこの間隔で測る）。
+ * ======================================================================== */
+
+const jstToday = () =>
+  new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Tokyo" }).format(new Date());
+
+/** 状態は data/state.json を共有する（crawl.js・summarize.js と同じ作法） */
+function loadState() {
+  if (!existsSync(STATE_PATH)) return {};
+  try {
+    return JSON.parse(readFileSync(STATE_PATH, "utf8"));
+  } catch {
+    return {}; // 壊れていてもメールは止めない
+  }
+}
+
+function saveState(state) {
+  writeFileSync(STATE_PATH, JSON.stringify(state, null, 2) + "\n");
+}
+
+/**
+ * 前回の実行からの経過時間（時間・整数）。しきい値未満なら null。
+ * ⚠️36時間にしているのは、1日1回の巡回で「1回飛んだ」ことを検知するため
+ *   （24時間だと通常の揺らぎで誤検知し、48時間だと2回飛ぶまで気づけない）。
+ */
+export function staleHoursSince(lastRunAt, now = new Date(), thresholdHours = 36) {
+  if (!lastRunAt) return null; // 初回は警告しない
+  const hours = (now.getTime() - new Date(lastRunAt).getTime()) / 3_600_000;
+  if (!Number.isFinite(hours) || hours < thresholdHours) return null;
+  return Math.round(hours);
+}
 
 const SMTP_HOST = "smtp.gmail.com";
 const SMTP_PORT = 465;
@@ -206,19 +249,45 @@ function applyFieldWeighting(report) {
 
 async function main() {
   const { user, pass, to } = loadEnv();
+  const state = loadState();
+  const today = jstToday();
+  const now = new Date();
+
+  // 対策2（P49）: 同じ日に2度目が走ったら送らない。⚠️保険の2本目（JST 08:47）は
+  // 「1本目が飛んだ日の回収」が目的なので、1本目が送れた日は巡回だけして黙る
+  if (state.lastSentDate === today) {
+    console.log(`本日（${today}）は送信済みのため送信を省略します（保険の実行）`);
+    if (!dryRun) saveState({ ...state, lastRunAt: now.toISOString() });
+    return;
+  }
+
   const report = applyFieldWeighting(
     JSON.parse(readFileSync(REPORT_PATH, "utf8"))
   );
-  const { subject, html } = buildMail(report);
+  // 対策3（P49）: 前回の自動実行から空きすぎていたら、本文の冒頭で知らせる
+  const staleHours = staleHoursSince(state.lastRunAt, now);
+  if (staleHours) console.log(`⚠️前回の自動実行から${staleHours}時間空いています（不発の可能性）`);
+  const { subject, html } = buildMail(report, { staleHours });
   const message = buildMessage({ from: user, to, subject, html });
 
   console.log(`送信: 「${subject}」 → ${to.length}宛`);
+  if (dryRun) {
+    console.log("（下見のため送信しません）");
+    return;
+  }
   await smtpSend({ user, pass, to, message });
   console.log("送信完了");
+  // ⚠️記録は**送信の後**。送信に失敗した日は記録されないので、保険の2本目が送る
+  saveState({ ...state, lastSentDate: today, lastRunAt: now.toISOString() });
 }
 
-main().catch((e) => {
-  // 送信失敗は握りつぶさない（Actions もこの終了コードで失敗になる）
-  console.error(`エラー: ${e.message}`);
-  process.exit(1);
-});
+// ⚠️直接実行のときだけ送る。ここを守らないと、検証スクリプトが
+//   staleHoursSince を import しただけで**本物のメールが飛ぶ**（kenshu.js と同じ作法）
+const isMain = process.argv[1] && import.meta.url.endsWith(process.argv[1].split("/").pop());
+if (isMain) {
+  main().catch((e) => {
+    // 送信失敗は握りつぶさない（Actions もこの終了コードで失敗になる）
+    console.error(`エラー: ${e.message}`);
+    process.exit(1);
+  });
+}

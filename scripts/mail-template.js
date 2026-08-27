@@ -98,7 +98,12 @@ function section(label, note, color, inner) {
  * @param {object} report data/report-latest.json の中身
  * @returns {{subject: string, html: string}}
  */
-export function buildMail(report) {
+/**
+ * 不発の警告（P49）。`opts.staleHours` があるとき、本文の冒頭に1行だけ出す。
+ * ⚠️これが人間に届く唯一の経路——スケジュールが飛んでも、次に届いたメールで気づける。
+ * ⚠️本文の他の部分は変えない（ここに1行足すだけ）。
+ */
+export function buildMail(report, opts = {}) {
   const items = report.items ?? [];
   const press = report.press ?? []; // 報道(P9): 見出し・出典のみ。要約・判定はしない
   const date = jstDate(new Date(report.generatedAt ?? Date.now()));
@@ -158,6 +163,11 @@ export function buildMail(report) {
         ].join("");
   const body = govBody + pressSection;
 
+  // 不発の警告（P49）。前回の自動実行から時間が空きすぎたときだけ出る
+  const staleLine = opts.staleHours
+    ? `<div style="font-family:${FONT};font-size:12px;color:${HIGH};background:#fbf4f1;border:1px solid #e6d6cf;padding:9px 12px;margin-top:14px;line-height:1.7;">⚠️前回の自動実行から ${opts.staleHours} 時間空いています（スケジュールが不発だった可能性）</div>`
+    : "";
+
   const html = `<!doctype html>
 <html lang="ja"><head><meta charset="utf-8"></head>
 <body style="margin:0;padding:0;background:#f6f5f2;">
@@ -168,6 +178,7 @@ export function buildMail(report) {
   <div style="font-family:${FONT};font-size:12px;letter-spacing:.22em;color:${SUB};">福祉情報ウォッチ</div>
   <div style="font-family:${FONT};font-size:20px;font-weight:600;color:${INK};padding-top:12px;line-height:1.4;">${headline}</div>
   <div style="font-family:${FONT};font-size:13px;color:${SUB};padding-top:6px;">${countLine}</div>
+  ${staleLine}
   ${body}
   <div style="border-top:1px solid ${RULE};margin-top:34px;padding-top:16px;font-family:${FONT};font-size:11px;color:${FAINT};line-height:1.9;">
     要約と重要度はAIによる参考情報です。最終判断は必ず原本をご確認ください。掲載内容の正確性を保証するものではありません。<br>
