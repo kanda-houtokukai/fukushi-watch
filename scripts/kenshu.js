@@ -23,6 +23,10 @@ import { createHash } from "node:crypto";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { fetchHtml, readSources } from "./crawl.js";
+import {
+  loadPdfState, savePdfState, fetchPdfIfChanged, extractPdfText, fullTextOf,
+  pickPdfLink, blockForTitle, extractDeadlineDetail,
+} from "./pdftext.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const KENSHU_PATH = join(ROOT, "data", "kenshu.json");
@@ -690,6 +694,122 @@ export function dedupeKenshu(items) {
   return out;
 }
 
+/* ===========================================================================
+ * PDF併読（P43）: 締切が本文でなくリンク先PDFにしか無い源のための後処理。
+ *
+ * 台帳（docs/sources.md）が3列を持つ源だけに効く。⚠️源の名前も条件もここに書かない——
+ * 「PDFリンクの目印・ブロックの区切り語・締切の表記パターン」は全て台帳から来る（★の原則）。
+ * 部品は scripts/pdftext.js（機械確認は node scripts/pdftext-check.js）。
+ *
+ * ⚠️**個別ページのHTMLは毎回読む**。PDFは差し替わる（実測: f-kaigo に
+ *   「【申込期間延長!】」の研修が実在する＝延長のたびに別のPDFが貼られる）。
+ *   リンクの対応を覚え込むと、延長後も古い締切を出し続ける——誤った締切は
+ *   無い締切より悪い（P43の[DECISION]）。**PDFの本体**は HEAD 照合で
+ *   変わっていなければ取得もパースもしない（26URLで実体12ファイル・実測）。
+ *
+ * ⚠️締切を過ぎた項目の扱い（P43の要件3）: **消さない**——当のPDFに
+ *   「締切後も定員に余裕がある場合は申込みを受け付けることがあります」と明記がある。
+ *   ただし `deadlineType="date"` のまま残すと index.html が「残り-5日」を朱で明滅させる
+ *   （index.html:1819。表示側は1行も変えない前提）。そこで**過ぎた締切は
+ *   deadlineType を "unknown" のままにし**、出どころだけ deadlineRaw に残す。
+ *   これで画面はP43以前と同じ「開催日だけの表示」に戻り、項目は expireOn まで生きる。
+ * ======================================================================== */
+
+/** PDFの抽出結果の記憶（data/pdf-state.json）。⚠️本文は持たない・構造化された値だけ */
+const pdfDeadlineCache = (state, pdfUrl) => (state[pdfUrl]?.deadlines ?? {});
+
+/**
+ * 台帳がPDF併読を指定した源の項目に、PDFから読んだ締切を付ける。
+ * 対象は `deadlineType !== "date"` の項目だけ（HTML側で締切が取れたものには触らない）。
+ * 返り値は実測の内訳（検証・ログ用）。
+ */
+async function attachPdfDeadlines(items, src, today, pdfState) {
+  const stat = { targets: 0, filled: 0, past: 0, noLink: 0, noBlock: 0, noDeadline: 0,
+    pdfParsed: 0, pdfSkipped: 0, noTextLayer: 0, errors: 0, remembered: 0 };
+  if (!src.pdfAnchor) return stat; // 空欄＝PDF併読しない（既定動作）
+  // 中身のハッシュ → 全文（この実行の中だけ・ファイルには残さない）。
+  // ⚠️URLではなく**中身**で覚える——f-kaigo は同じPDFを研修ごとに別URLで貼るため
+  //   （26URLで実体12ファイル・実測）、URLで覚えると同じPDFを何度も解析する
+  const textCache = new Map();
+  const refreshed = new Set(); // この実行で中身が変わっていたPDF（古い記憶を捨てる）
+  for (const it of items) {
+    if (it.deadlineType === "date") continue;
+    stat.targets++;
+    try {
+      const page = await fetchHtml(it.url);
+      await sleep(FETCH_INTERVAL_MS);
+      const pdfUrl = pickPdfLink(page, src.pdfAnchor, it.url);
+      if (!pdfUrl) { stat.noLink++; continue; }
+
+      const hash = kenshuHash(it);
+      const got = await fetchPdfIfChanged(pdfUrl, pdfState);
+      if (got.error) { stat.errors++; continue; }
+      if (got.changed && !refreshed.has(pdfUrl)) {
+        // 中身が変わった＝この PDF についての記憶は全て捨てる（古い締切を残さない）
+        refreshed.add(pdfUrl);
+        pdfState[pdfUrl] = { ...(pdfState[pdfUrl] ?? {}), deadlines: {} };
+      }
+
+      let found; // { iso, raw } | null（null＝このPDFからは締切が取れないと確定した）
+      const remembered = pdfDeadlineCache(pdfState, pdfUrl);
+      if (!got.changed && hash in remembered) {
+        // 前回と同じPDF・同じ項目＝本体を取りに行かず、覚えている値を使う
+        stat.pdfSkipped++;
+        found = remembered[hash];
+        if (!found) stat.remembered++; // 前回「この項目の締切は取れない」と分かっている
+      } else {
+        if (!got.changed) {
+          // 中身は同じだが、この項目についての記憶が無い（新しい研修・状態の初期化後）
+          const re = await fetchPdfIfChanged(pdfUrl, {});
+          if (re.error) { stat.errors++; continue; }
+          got.data = re.data;
+        }
+        const bodyKey = createHash("sha256").update(got.data).digest("hex").slice(0, 16);
+        if (!textCache.has(bodyKey)) {
+          const ex = await extractPdfText(got.data);
+          textCache.set(bodyKey, ex.noTextLayer ? null : fullTextOf(ex));
+          if (ex.noTextLayer) stat.noTextLayer++;
+          else stat.pdfParsed++;
+        }
+        await sleep(FETCH_INTERVAL_MS);
+        const text = textCache.get(bodyKey);
+        if (text == null) {
+          // テキスト層なし（画像PDF）＝締切は付けない。⚠️「取れない」ことも記憶する——
+          //   記憶しないと毎朝この重いPDFを取りに行く（実測で2本が該当）
+          pdfState[pdfUrl] = { ...(pdfState[pdfUrl] ?? {}),
+            deadlines: { ...pdfDeadlineCache(pdfState, pdfUrl), [hash]: null } };
+          continue;
+        }
+        const block = blockForTitle(text, src.pdfDelimiter, it.title, it.heldDates ?? []);
+        found = block ? extractDeadlineDetail(block, src.pdfDeadlineMarker, today) : null;
+        if (!block) stat.noBlock++;
+        // 記憶する（⚠️保存するのは締切の値だけ。PDFの本文は保存しない）
+        pdfState[pdfUrl] = { ...(pdfState[pdfUrl] ?? {}),
+          deadlines: { ...pdfDeadlineCache(pdfState, pdfUrl), [hash]: found ?? null } };
+        if (!found && block) stat.noDeadline++;
+      }
+
+      if (!found) continue;
+      // 出どころを残す（原文との突合の拠り所・P43の要件4）
+      it.deadlineRaw = `開催要綱PDFより ${found.raw}`;
+      it.keepUntilHeld = true; // ⚠️締切超過でも最終開催日まで消さない（下の整理条件で効く）
+      if (found.iso >= today) {
+        it.deadline = found.iso;
+        it.deadlineType = "date";
+        stat.filled++;
+      } else {
+        // 過ぎた締切: 画面はP43以前と同じ（開催日だけ）に戻す。値は deadlineRaw に残る
+        it.deadlineRaw = `開催要綱PDFより ${found.raw}（締切後も受け付けることがあります）`;
+        stat.past++;
+      }
+    } catch (e) {
+      stat.errors++;
+      console.error(`    PDF併読に失敗（続行）: ${it.title.slice(0, 24)}: ${e.message}`);
+    }
+  }
+  return stat;
+}
+
 /** 項目ハッシュ。タイトル＋URL（締切は延長されうるので入れない・grants と同じ） */
 export function kenshuHash(it) {
   return createHash("sha256").update(`${it.title}\n${it.url}`).digest("hex").slice(0, 16);
@@ -704,6 +824,20 @@ function loadStore() {
   return JSON.parse(readFileSync(KENSHU_PATH, "utf8"));
 }
 
+/**
+ * 期限切れ整理の条件（P34＋P43）。⚠️表示に直結する規則なので関数にして機械確認する。
+ * ・締切を過ぎたら消す（既定）
+ * ・ただし `keepUntilHeld`（台帳でPDF併読を指定した源）は**締切超過でも消さない**——
+ *   PDFに「締切後も定員に余裕がある場合は申込みを受け付けることがあります」と明記が
+ *   あるため。消えるのは、この扱いを指定していない源だけ。
+ * ・どの源も、最終開催日（expireOn）を過ぎたら消す。
+ */
+export const survivesPrune = (it, today) =>
+  Boolean(
+    (it.deadlineType !== "date" || !it.deadline || it.deadline >= today || it.keepUntilHeld) &&
+      (!it.expireOn || it.expireOn >= today)
+  );
+
 async function main() {
   const today = jstToday();
   const allSources = readSources();
@@ -717,17 +851,15 @@ async function main() {
 
   const store = loadStore();
   const before = store.items.length;
-  store.items = store.items.filter(
-    (it) =>
-      (it.deadlineType !== "date" || !it.deadline || it.deadline >= today) &&
-      (!it.expireOn || it.expireOn >= today) // 締切が取れない項目は最終開催日で消す（P34）
-  );
+  store.items = store.items.filter((it) => survivesPrune(it, today));
   const pruned = before - store.items.length;
 
   const known = new Map(store.items.map((it) => [it.hash, it]));
   const seenThisRun = new Set();
   const fresh = [];
   const errors = [];
+  const pdfState = loadPdfState(); // PDF併読の照合状態（P43。⚠️本文は持たない）
+  let pdfStateDirty = false;
 
   for (const src of sources) {
     try {
@@ -754,6 +886,20 @@ async function main() {
         ) {
           it.fields = [...owner.defaultFields];
         }
+      }
+      // PDF併読（P43）: 台帳が3列を持つ源だけ、締切が取れていない項目をPDFで補う。
+      // ⚠️6つのパーサ本体には触らない——ここは全パーサが通る合流点で、
+      //   「どの源がPDFを読むか」は台帳（src.pdfAnchor）だけが決める。
+      if (src.pdfAnchor) {
+        const s = await attachPdfDeadlines(parsed, src, today, pdfState);
+        pdfStateDirty = true;
+        console.log(
+          `  PDF併読: 対象${s.targets}件 → 締切${s.filled}件（超過${s.past}件）` +
+          `／付かず${s.targets - s.filled - s.past}件` +
+          `（リンク無${s.noLink}・ブロック不一致${s.noBlock}・締切無${s.noDeadline}` +
+          `・テキスト層無${s.noTextLayer}・失敗${s.errors}・記憶${s.remembered}）` +
+          `／PDF解析${s.pdfParsed}本・HEADのみ${s.pdfSkipped}件`
+        );
       }
       const via = src.method.replace(/^kenshu-/, "");
       for (const it of parsed) {
@@ -824,6 +970,8 @@ async function main() {
   }
   mkdirSync(dirname(KENSHU_PATH), { recursive: true });
   writeFileSync(KENSHU_PATH, JSON.stringify(store, null, 1) + "\n");
+  // PDFの照合状態（P43）。⚠️持つのは検証子と抽出した締切だけ——本文は保存しない
+  if (pdfStateDirty) savePdfState(pdfState);
   const byType = store.items.reduce(
     (a, it) => ((a[it.deadlineType] = (a[it.deadlineType] ?? 0) + 1), a), {});
   console.log(

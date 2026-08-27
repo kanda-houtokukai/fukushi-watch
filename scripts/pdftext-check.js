@@ -16,6 +16,7 @@ import {
   fetchPdfIfChanged, extractPdfText, fullTextOf,
   splitBlocks, extractDeadline, blockForTitle, norm, titleNeedle,
 } from "./pdftext.js";
+import { survivesPrune } from "./kenshu.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DEFAULT_URL = "https://www.f-kaigo.jp/upimg/o6a6982bda4b95.pdf"; // 26URL中9研修が指す実体
@@ -161,6 +162,22 @@ t("検証7: 白紙PDFで noTextLayer:true（例外なし）", blank.noTextLayer 
 
 // --- 空欄＝全体1ブロック（facsw型の既定動作）
 t("区切り語が空欄なら全体を1ブロック", splitBlocks("ある研修の案内 《 締 切 》令和8年10月1日", "").length === 1);
+
+/* --- 区切り②: 締切超過の扱い（P43の要件3）。⚠️表示に直結するので機械で押さえる。
+   PDF由来の締切は超過しても消さず、最終開催日（expireOn）まで残す。
+   消えるのは、この扱いを指定していない源だけ。 */
+const pdfItem = (over) => ({
+  deadlineType: "date", deadline: "2026-09-03", expireOn: "2026-11-06", keepUntilHeld: true, ...over,
+});
+t("要件3a: PDF由来は締切超過でも残る（開催日はまだ先）",
+  survivesPrune(pdfItem(), "2026-09-30") === true);
+t("要件3b: 指定していない源は締切超過で消える",
+  survivesPrune(pdfItem({ keepUntilHeld: undefined }), "2026-09-30") === false);
+t("要件3c: PDF由来でも最終開催日を過ぎたら消える",
+  survivesPrune(pdfItem(), "2026-11-07") === false);
+t("要件3d: 締切前はどちらも残る",
+  survivesPrune(pdfItem(), "2026-09-01") === true &&
+  survivesPrune(pdfItem({ keepUntilHeld: undefined }), "2026-09-01") === true);
 
 console.log(`\n結果: OK ${ok} ／ NG ${ng}`);
 process.exit(ng ? 1 : 0);

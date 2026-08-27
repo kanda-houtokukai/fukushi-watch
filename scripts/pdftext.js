@@ -283,6 +283,33 @@ export const markerRegex = (marker, flags = "g") =>
   new RegExp(norm(marker).split("").map(escRe).join(""), flags);
 
 /* ===========================================================================
+ * 部品1の入口: 個別ページから「読むべきPDF」を1本選ぶ
+ * ======================================================================== */
+
+/**
+ * HTMLから、アンカー文字列が目印を含むPDFリンクを探して絶対URLで返す。
+ * ⚠️1ページに複数のPDFが並ぶ（f-kaigoは全ページ共通のバナー3本・facswは様式類10本）ため
+ *   目印での選別が要る。**1本に絞れなければ null**（取り違えるより取らない）。
+ */
+export function pickPdfLink(html, anchorMarker, baseUrl) {
+  const marker = norm(anchorMarker ?? "");
+  if (!marker) return null;
+  const hits = new Set();
+  for (const m of String(html ?? "").matchAll(
+    /<a\s[^>]*href="([^"]+\.pdf[^"]*)"[^>]*>([\s\S]*?)<\/a>/gi
+  )) {
+    const anchor = norm(m[2].replace(/<[^>]+>/g, " "));
+    if (!anchor.includes(marker)) continue;
+    try {
+      hits.add(new URL(m[1], baseUrl).href);
+    } catch {
+      /* 壊れたhrefは無視する */
+    }
+  }
+  return hits.size === 1 ? [...hits][0] : null;
+}
+
+/* ===========================================================================
  * 部品3: ブロック分割と締切抽出
  * ======================================================================== */
 
@@ -306,17 +333,26 @@ export function splitBlocks(text, delimiter) {
  * ⚠️目印に《 》ごと指定すれば「定員になり次第締め切ります」等の平文は拾わない。
  */
 export function extractDeadline(blockText, marker, today = jstToday()) {
+  return extractDeadlineDetail(blockText, marker, today)?.iso ?? null;
+}
+
+/**
+ * 締切を { iso, raw } で返す（無ければ null）。`raw` はPDF側の日付の表記そのもの
+ * （例「令和8年9月3日」・全半角はNFKCで均した後の姿）。deadlineRaw に載せて
+ * **原文との突合の拠り所**にするために返す（P43の要件4）。
+ */
+export function extractDeadlineDetail(blockText, marker, today = jstToday()) {
   if (!norm(marker ?? "")) return null;
   const t = norm(blockText);
   const m = markerRegex(marker, "").exec(t);
   if (!m) return null;
   const seg = t.slice(m.index + m[0].length, m.index + m[0].length + 30);
   let d = seg.match(/令和(\d{1,2})年(\d{1,2})月(\d{1,2})日/);
-  if (d && validMd(+d[2], +d[3])) return iso(+d[1] + 2018, +d[2], +d[3]);
+  if (d && validMd(+d[2], +d[3])) return { iso: iso(+d[1] + 2018, +d[2], +d[3]), raw: d[0] };
   d = seg.match(/(20\d{2})年(\d{1,2})月(\d{1,2})日/);
-  if (d && validMd(+d[2], +d[3])) return iso(+d[1], +d[2], +d[3]);
+  if (d && validMd(+d[2], +d[3])) return { iso: iso(+d[1], +d[2], +d[3]), raw: d[0] };
   d = seg.match(/(?<![\d年])(\d{1,2})月(\d{1,2})日/);
-  if (d && validMd(+d[1], +d[2])) return fiscalIso(+d[1], +d[2], today);
+  if (d && validMd(+d[1], +d[2])) return { iso: fiscalIso(+d[1], +d[2], today), raw: d[0] };
   return null;
 }
 
@@ -359,15 +395,36 @@ export function blockForTitle(text, delimiter, title, heldDates = []) {
   const t = norm(text);
   const needle = titleNeedle(title);
   if (!needle) return null;
-  const positions = [];
-  for (let i = t.indexOf(needle); i !== -1; i = t.indexOf(needle, i + 1)) positions.push(i);
-  if (!positions.length) return null;
   const starts = norm(delimiter ?? "")
     ? [...t.matchAll(markerRegex(delimiter))].map((m) => m.index)
     : [];
   if (!starts.length) return t; // 区切りなし＝全体1ブロック（題名は含まれている）
-  const blockIdx = new Set();
-  for (const p of positions) {
+  const blockOf = (k) => t.slice(starts[k], starts[k + 1] ?? t.length);
+
+  let candidates = [...blocksNear(t, starts, needle)];
+  // 題名の表記ゆれへの後退路。⚠️開催日の一致を**必須**にする（題名だけでは当てない）。
+  // 実測: HTML「介助をおこなおう!」／PDF「介助を行おう!」、HTML「とり方~」／
+  // PDF「とり方を学びましょう」——同じ研修なのに末尾も送り仮名も違う。前方一致だけで
+  // 決めると別の研修に当たりうるので、**題名の前方一致＋開催日**の2条件で引く（P43の[DECISION]）。
+  let dateRequired = false;
+  if (!candidates.length) {
+    const prefix = needle.slice(0, 10);
+    if (prefix.length < 8 || !heldDates.length) return null;
+    candidates = [...blocksNear(t, starts, prefix)];
+    dateRequired = true;
+  }
+  if (dateRequired || candidates.length > 1) {
+    const narrowed = candidates.filter((k) => heldDates.some((d) => blockHasDate(blockOf(k), d)));
+    if (dateRequired || narrowed.length) candidates = narrowed;
+  }
+  if (candidates.length !== 1) return null; // 誤った締切は無い締切より悪い
+  return blockOf(candidates[0]);
+}
+
+/** 針が現れる位置ごとに、最も近い区切り語のブロック番号を集める（遠い出現は捨てる） */
+function blocksNear(t, starts, needle) {
+  const hits = new Set();
+  for (let p = t.indexOf(needle); p !== -1; p = t.indexOf(needle, p + 1)) {
     let best = 0;
     let bestDist = Infinity;
     for (let k = 0; k < starts.length; k++) {
@@ -377,15 +434,7 @@ export function blockForTitle(text, delimiter, title, heldDates = []) {
         best = k;
       }
     }
-    if (bestDist <= TITLE_NEAR) blockIdx.add(best); // 一覧・目次上の遠い出現は捨てる
+    if (bestDist <= TITLE_NEAR) hits.add(best); // 一覧・目次上の遠い出現は捨てる
   }
-  if (!blockIdx.size) return null; // 一覧にしか出ない題名＝このPDFに本体が無い
-  const blockOf = (k) => t.slice(starts[k], starts[k + 1] ?? t.length);
-  let candidates = [...blockIdx];
-  if (candidates.length > 1 && heldDates.length) {
-    const narrowed = candidates.filter((k) => heldDates.some((d) => blockHasDate(blockOf(k), d)));
-    if (narrowed.length) candidates = narrowed;
-  }
-  if (candidates.length !== 1) return null; // 誤った締切は無い締切より悪い
-  return blockOf(candidates[0]);
+  return hits;
 }

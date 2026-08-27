@@ -71,6 +71,11 @@ export function readSources() {
         // 表示名（P44・任意列）: 画面の団体欄に出す名前。空欄なら源の名前をそのまま使う。
         // ⚠️源の名前は識別キー（既定分野の名前引き・funder生成の材料）なので変えない
         label: (cells[8] ?? "").trim() || cells[2],
+        // PDF併読の3列（P43・任意列）: 締切が本文でなくリンク先PDFにしか無い源のため。
+        // ⚠️pdfAnchor が空欄＝PDF併読しない（既定動作）。使うのは scripts/kenshu.js。
+        pdfAnchor: (cells[9] ?? "").trim(),
+        pdfDelimiter: (cells[10] ?? "").trim(),
+        pdfDeadlineMarker: (cells[11] ?? "").trim(),
       });
     }
   }
