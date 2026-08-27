@@ -76,6 +76,11 @@ export function readSources() {
         pdfAnchor: (cells[9] ?? "").trim(),
         pdfDelimiter: (cells[10] ?? "").trim(),
         pdfDeadlineMarker: (cells[11] ?? "").trim(),
+        // 開催の要点の2列（P46・任意列）: 囲み記号と、出す項目名の並び。
+        // ⚠️空欄＝要点を出さない（既定動作）。項目名の並びは「記載なし」を出すために要る
+        //   （項目自体が無い研修で空欄にすると「費用なし」と誤読される）。
+        outlineBrackets: (cells[12] ?? "").trim(),
+        outlineNames: (cells[13] ?? "").split("・").map((s) => s.trim()).filter(Boolean),
       });
     }
   }

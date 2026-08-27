@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-27T13:13:15.583Z",
+ "updatedAt": "2026-08-27T13:59:54.801Z",
  "items": [
   {
    "hash": "e6a8c35db0534472",
@@ -20,7 +20,34 @@
     "高齢"
    ],
    "kind": "テーマ別",
-   "keepUntilHeld": true
+   "keepUntilHeld": true,
+   "outline": [
+    {
+     "name": "日時",
+     "value": "令和８年９月１２日（土）１０時３０分～１２時００分（受付１０：００～）"
+    },
+    {
+     "name": "会場",
+     "value": "日本赤十字社福岡県支部やすらぎの郷（糟屋郡志免町吉原６００番地）"
+    },
+    {
+     "name": "講師",
+     "value": "平井美希氏（医療法人うえの病院言語聴覚士）"
+    },
+    {
+     "name": "参加費",
+     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
+    },
+    {
+     "name": "定員",
+     "value": "２０名"
+    },
+    {
+     "name": "ポイント",
+     "value": "２ポイント"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/d69eef0ef8c8c1.pdf"
   },
   {
    "hash": "214726beef7879ce",
@@ -57,7 +84,34 @@
     "高齢"
    ],
    "kind": "テーマ別",
-   "keepUntilHeld": true
+   "keepUntilHeld": true,
+   "outline": [
+    {
+     "name": "日時",
+     "value": "令和８年９月２０日（日）９：３０～１１：３０（受付９：００～）"
+    },
+    {
+     "name": "会場",
+     "value": "サザンクス筑後研修室➀（福岡県筑後市大字若菜１１０４）"
+    },
+    {
+     "name": "講師",
+     "value": "大森和義氏（麻生教育サービス株式会社介護ＤＸ支援センターセンター長）"
+    },
+    {
+     "name": "参加費",
+     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
+    },
+    {
+     "name": "定員",
+     "value": "２０名"
+    },
+    {
+     "name": "ポイント",
+     "value": "２ポイント"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/a6a6983376a6af.pdf"
   },
   {
    "hash": "1bb00b502eaad38e",
@@ -79,7 +133,34 @@
     "高齢"
    ],
    "kind": "テーマ別",
-   "keepUntilHeld": true
+   "keepUntilHeld": true,
+   "outline": [
+    {
+     "name": "日時",
+     "value": "１日目令和８年９月１８日（金）１０:００～１２:００（受付９:３０～）\n２日目令和８年１１月６日（金）１０:００～１２:００（受付９:３０～）"
+    },
+    {
+     "name": "会場",
+     "value": "１日目福岡県介護福祉士会研修室（福岡市博多区博多駅東１－１－１６第２高田ビル２階）\n２日目ふくふくプラザ介護実習室（福岡市中央区荒戸３－３－３９）"
+    },
+    {
+     "name": "講師",
+     "value": "安武哲宏氏(作業療法士オムツフィッター１級)"
+    },
+    {
+     "name": "参加費",
+     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
+    },
+    {
+     "name": "定員",
+     "value": "２４名"
+    },
+    {
+     "name": "ポイント",
+     "value": "各２ポイント"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/o6a6982bda4b95.pdf"
   },
   {
    "hash": "30904cd2dee8cab9",
@@ -100,7 +181,34 @@
     "共通"
    ],
    "kind": "法令対応",
-   "keepUntilHeld": true
+   "keepUntilHeld": true,
+   "outline": [
+    {
+     "name": "日時",
+     "value": "令和８年９月２６日（土）１０：３０～１２：３０（受付１０：００～）"
+    },
+    {
+     "name": "会場",
+     "value": "リブリオ行橋Ａスタジオ(福岡県行橋市大橋３丁目１８－１)"
+    },
+    {
+     "name": "講師",
+     "value": "小島香代子氏（福岡県介護福祉士会副会長）"
+    },
+    {
+     "name": "参加費",
+     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
+    },
+    {
+     "name": "定員",
+     "value": "会場３０名・オンライン（Ｚｏｏｍ）３０名"
+    },
+    {
+     "name": "ポイント",
+     "value": "２ポイント"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/d69eef1a92f583.pdf"
   },
   {
    "hash": "c8115f73722c5835",
@@ -173,7 +281,34 @@
     "高齢"
    ],
    "kind": "テーマ別",
-   "keepUntilHeld": true
+   "keepUntilHeld": true,
+   "outline": [
+    {
+     "name": "日時",
+     "value": "令和８年１０月１３日（火）１３：００～１５：００（見学時間）\n※集合：１２時３０分福岡市営地下鉄七隈線橋本駅切符売り場付近\n※自家用車で行く方は現地集合（駐車場確保済み）１３：００までにお越しください。"
+    },
+    {
+     "name": "会場",
+     "value": "地域密着型特別養護老人ホームかあむ茜月（福岡市西区飯盛２３－１）"
+    },
+    {
+     "name": "講師",
+     "value": "因利恵氏（社会福祉法人嘉永会理事長）"
+    },
+    {
+     "name": "参加費",
+     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
+    },
+    {
+     "name": "定員",
+     "value": "１５名※先着順"
+    },
+    {
+     "name": "ポイント",
+     "value": "２ポイント"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/z6a69837bd2ff0.pdf"
   },
   {
    "hash": "4a9b499f836613ee",
@@ -194,7 +329,34 @@
     "高齢"
    ],
    "kind": "テーマ別",
-   "keepUntilHeld": true
+   "keepUntilHeld": true,
+   "outline": [
+    {
+     "name": "日時",
+     "value": "令和８年１０月１７日（土）１８：３０～２０：００（受付１８：００～）"
+    },
+    {
+     "name": "会場",
+     "value": "特別養護老人ホームすみれそう（北九州市門司区風師４丁目１２－３１）"
+    },
+    {
+     "name": "講師",
+     "value": "住野まり子氏（特別養護老人ホームすみれそう主任介護支援専門員）"
+    },
+    {
+     "name": "参加費",
+     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
+    },
+    {
+     "name": "定員",
+     "value": "３０名"
+    },
+    {
+     "name": "ポイント",
+     "value": "１.５ポイント"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/x6a698405de514.pdf"
   },
   {
    "hash": "a4256e276737211d",
@@ -215,7 +377,34 @@
     "高齢"
    ],
    "kind": "テーマ別",
-   "keepUntilHeld": true
+   "keepUntilHeld": true,
+   "outline": [
+    {
+     "name": "日時",
+     "value": "令和８年１０月１７日（土）１０：００～１２：００（受付９：３０～）"
+    },
+    {
+     "name": "会場",
+     "value": "福岡県介護福祉士会研修室（福岡市博多区博多駅東１―１－１６第２高田ビル２階）"
+    },
+    {
+     "name": "講師",
+     "value": "梅田紀子氏（福岡ホームヘルパー協会会長）"
+    },
+    {
+     "name": "参加費",
+     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
+    },
+    {
+     "name": "定員",
+     "value": "２０名"
+    },
+    {
+     "name": "ポイント",
+     "value": "２ポイント"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/x69eef26ad663f.pdf"
   },
   {
    "hash": "9f04495d6ba53b32",
@@ -236,7 +425,34 @@
     "高齢"
    ],
    "kind": "テーマ別",
-   "keepUntilHeld": true
+   "keepUntilHeld": true,
+   "outline": [
+    {
+     "name": "日時",
+     "value": "令和８年１０月１７日(土)１４：００～１６：００(受付１３：３０～)"
+    },
+    {
+     "name": "会場",
+     "value": "えーるピア久留米(久留米市諏訪野町１８３０－６)※予定\n有料駐車場有西鉄久留米駅から徒歩で１０分"
+    },
+    {
+     "name": "講師",
+     "value": "田口尚人氏（医学博士、社会福祉士）"
+    },
+    {
+     "name": "参加費",
+     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
+    },
+    {
+     "name": "定員",
+     "value": "２０名"
+    },
+    {
+     "name": "ポイント",
+     "value": "２ポイント"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/l69eef2af3aae5.pdf"
   },
   {
    "hash": "abf92a3c3c034ebf",
@@ -294,7 +510,34 @@
     "高齢"
    ],
    "kind": "テーマ別",
-   "keepUntilHeld": true
+   "keepUntilHeld": true,
+   "outline": [
+    {
+     "name": "日時",
+     "value": "令和８年１０月２４日（土） １０：００～１１：３０（受付９：３０～）"
+    },
+    {
+     "name": "会場",
+     "value": "サンレイクかすや 研修室（糟屋郡粕屋町駕与丁１丁目６－１）"
+    },
+    {
+     "name": "講師",
+     "value": "川中直美氏（福岡赤十字病院救急看護認定看護師）"
+    },
+    {
+     "name": "参加費",
+     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
+    },
+    {
+     "name": "定員",
+     "value": "２０名"
+    },
+    {
+     "name": "ポイント",
+     "value": "１．５ポイント"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/l69eef300c0c44.pdf"
   },
   {
    "hash": "ab217ca9d4bcb9d2",
@@ -315,7 +558,34 @@
     "高齢"
    ],
    "kind": "テーマ別",
-   "keepUntilHeld": true
+   "keepUntilHeld": true,
+   "outline": [
+    {
+     "name": "日時",
+     "value": "令和８年１０月２８日（水）１０：００～１２：００（受付９：３０～）"
+    },
+    {
+     "name": "会場",
+     "value": "福岡県介護福祉士会研修室（福岡市博多区博多駅東１―１－１６第２高田ビル２階）"
+    },
+    {
+     "name": "講師",
+     "value": "千布さとみ氏（福岡赤十字病院認知症看護認定看護師）"
+    },
+    {
+     "name": "参加費",
+     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
+    },
+    {
+     "name": "定員",
+     "value": "２０名"
+    },
+    {
+     "name": "ポイント",
+     "value": "２ポイント"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/m6a698445d70a1.pdf"
   },
   {
    "hash": "36795a90718f7137",
@@ -336,7 +606,34 @@
     "高齢"
    ],
    "kind": "テーマ別",
-   "keepUntilHeld": true
+   "keepUntilHeld": true,
+   "outline": [
+    {
+     "name": "日時",
+     "value": "令和８年１１月１日（日）１０：００～１２：００（受付９：３０～）"
+    },
+    {
+     "name": "会場",
+     "value": "社会福祉法人朝倉社会事業協会朝倉苑研修センター（朝倉郡筑前町原地蔵２２２６－３）"
+    },
+    {
+     "name": "講師",
+     "value": "野口清孝氏（佐賀県介護福祉士会事務局長）"
+    },
+    {
+     "name": "参加費",
+     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
+    },
+    {
+     "name": "定員",
+     "value": "２０名"
+    },
+    {
+     "name": "ポイント",
+     "value": "２ポイント"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/q6a6984b6534ff.pdf"
   },
   {
    "hash": "e94bbef51ddacfd8",
@@ -357,7 +654,34 @@
     "高齢"
    ],
    "kind": "テーマ別",
-   "keepUntilHeld": true
+   "keepUntilHeld": true,
+   "outline": [
+    {
+     "name": "日時",
+     "value": "令和８年１０月２５日(日)１０：００～１２：００（受付９：３０～）"
+    },
+    {
+     "name": "会場",
+     "value": "飯塚市穂波福祉総合センター(飯塚市枝国４０２－１００)"
+    },
+    {
+     "name": "講師",
+     "value": "武生えい佳氏（西日本医療福祉総合センター福祉教育研修課）"
+    },
+    {
+     "name": "参加費",
+     "value": "記載なし"
+    },
+    {
+     "name": "定員",
+     "value": "３０名"
+    },
+    {
+     "name": "ポイント",
+     "value": "２ポイント"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/q69eef3474b1c3.pdf"
   },
   {
    "hash": "9cf8124aaa8ddc56",
@@ -398,7 +722,34 @@
     "高齢"
    ],
    "kind": "テーマ別",
-   "keepUntilHeld": true
+   "keepUntilHeld": true,
+   "outline": [
+    {
+     "name": "日時",
+     "value": "令和８年１１月７日（土）１４：００～１６：００（受付１３：３０～）"
+    },
+    {
+     "name": "会場",
+     "value": "クローバープラザ（春日市原町３丁目１－７）"
+    },
+    {
+     "name": "講師",
+     "value": "黒田隆之氏（らそうむ元気１００歳クリニック訪問リハビリテ－ション管理者）"
+    },
+    {
+     "name": "参加費",
+     "value": "会員、賛助会員、学生…無料非会員…２０００円"
+    },
+    {
+     "name": "定員",
+     "value": "２０名"
+    },
+    {
+     "name": "ポイント",
+     "value": "２ポイント"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/s6a6985111f855.pdf"
   },
   {
    "hash": "2a6be3ac33733f48",
@@ -419,7 +770,34 @@
     "障害"
    ],
    "kind": "法令対応",
-   "keepUntilHeld": true
+   "keepUntilHeld": true,
+   "outline": [
+    {
+     "name": "日時",
+     "value": "令和８年１１月９日 (月) １３：３０～１５：３０(受付１３：００～)"
+    },
+    {
+     "name": "会場",
+     "value": "福岡県介護福祉士会 研修室（福岡市博多区博多駅東 1-1-16第 2 高田ビル 2F）"
+    },
+    {
+     "name": "講師",
+     "value": "山中麻衣氏（感染管理認定看護師）"
+    },
+    {
+     "name": "参加費",
+     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
+    },
+    {
+     "name": "定員",
+     "value": "２５名"
+    },
+    {
+     "name": "ポイント",
+     "value": "２ポイント"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/c6a69855ded6ca.pdf"
   },
   {
    "hash": "4963d985ec807097",
@@ -440,7 +818,34 @@
     "高齢"
    ],
    "kind": "テーマ別",
-   "keepUntilHeld": true
+   "keepUntilHeld": true,
+   "outline": [
+    {
+     "name": "日時",
+     "value": "令和９年１月３０日（土）１０：００～１２：００（受付９：３０～）"
+    },
+    {
+     "name": "会場",
+     "value": "糸島市健康福祉センターあごら（糸島市潤１丁目２２番１号）"
+    },
+    {
+     "name": "講師",
+     "value": "勝野 舞氏（地域密着型特別養護老人ホームかあむ茜月看護主任）"
+    },
+    {
+     "name": "参加費",
+     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
+    },
+    {
+     "name": "定員",
+     "value": "２０名"
+    },
+    {
+     "name": "ポイント",
+     "value": "２ポイント"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/y6a6985ab9e66f.pdf"
   },
   {
    "hash": "2e502c8c385183ac",

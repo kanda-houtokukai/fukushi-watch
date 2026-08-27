@@ -25,7 +25,7 @@ import { fileURLToPath } from "node:url";
 import { fetchHtml, readSources } from "./crawl.js";
 import {
   loadPdfState, savePdfState, fetchPdfIfChanged, extractPdfText, fullTextOf,
-  pickPdfLink, blockForTitle, extractDeadlineDetail,
+  pickPdfLink, blockForTitle, extractDeadlineDetail, blockLinesForTitle, outlineFromLines,
 } from "./pdftext.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -715,8 +715,16 @@ export function dedupeKenshu(items) {
  *   これで画面はP43以前と同じ「開催日だけの表示」に戻り、項目は expireOn まで生きる。
  * ======================================================================== */
 
-/** PDFの抽出結果の記憶（data/pdf-state.json）。⚠️本文は持たない・構造化された値だけ */
-const pdfDeadlineCache = (state, pdfUrl) => (state[pdfUrl]?.deadlines ?? {});
+/**
+ * PDFの抽出結果の記憶（data/pdf-state.json）。⚠️本文は持たない・構造化された値だけ。
+ * 形は `results[項目のハッシュ] = { deadline: {iso,raw}|null, outline: [{name,value}]|null }`。
+ * ⚠️P46で `deadlines` から `results` に変えた（締切と要点を同時に決めるため）。
+ *   旧キーは読まない＝入れ替えの朝だけ全PDFを1度取り直す（以後はHEADのみ）。
+ */
+const pdfResults = (state, pdfUrl) => state[pdfUrl]?.results ?? {};
+const rememberResult = (state, pdfUrl, hash, value) => {
+  state[pdfUrl] = { ...(state[pdfUrl] ?? {}), results: { ...pdfResults(state, pdfUrl), [hash]: value } };
+};
 
 /**
  * 台帳がPDF併読を指定した源の項目に、PDFから読んだ締切を付ける。
@@ -725,7 +733,7 @@ const pdfDeadlineCache = (state, pdfUrl) => (state[pdfUrl]?.deadlines ?? {});
  */
 async function attachPdfDeadlines(items, src, today, pdfState) {
   const stat = { targets: 0, filled: 0, past: 0, noLink: 0, noBlock: 0, noDeadline: 0,
-    pdfParsed: 0, pdfSkipped: 0, noTextLayer: 0, errors: 0, remembered: 0 };
+    pdfParsed: 0, pdfSkipped: 0, noTextLayer: 0, errors: 0, remembered: 0, outlined: 0 };
   if (!src.pdfAnchor) return stat; // 空欄＝PDF併読しない（既定動作）
   // 中身のハッシュ → 全文（この実行の中だけ・ファイルには残さない）。
   // ⚠️URLではなく**中身**で覚える——f-kaigo は同じPDFを研修ごとに別URLで貼るため
@@ -745,17 +753,19 @@ async function attachPdfDeadlines(items, src, today, pdfState) {
       const got = await fetchPdfIfChanged(pdfUrl, pdfState);
       if (got.error) { stat.errors++; continue; }
       if (got.changed && !refreshed.has(pdfUrl)) {
-        // 中身が変わった＝この PDF についての記憶は全て捨てる（古い締切を残さない）
+        // 中身が変わった＝この PDF についての記憶は全て捨てる（古い締切・要点を残さない）
         refreshed.add(pdfUrl);
-        pdfState[pdfUrl] = { ...(pdfState[pdfUrl] ?? {}), deadlines: {} };
+        pdfState[pdfUrl] = { ...(pdfState[pdfUrl] ?? {}), results: {} };
       }
 
-      let found; // { iso, raw } | null（null＝このPDFからは締切が取れないと確定した）
-      const remembered = pdfDeadlineCache(pdfState, pdfUrl);
+      let found; // 締切 { iso, raw } | null（null＝このPDFからは取れないと確定した）
+      let outline; // 要点 [{name, value|null}] | null
+      const remembered = pdfResults(pdfState, pdfUrl);
       if (!got.changed && hash in remembered) {
         // 前回と同じPDF・同じ項目＝本体を取りに行かず、覚えている値を使う
         stat.pdfSkipped++;
-        found = remembered[hash];
+        found = remembered[hash].deadline;
+        outline = remembered[hash].outline;
         if (!found) stat.remembered++; // 前回「この項目の締切は取れない」と分かっている
       } else {
         if (!got.changed) {
@@ -774,19 +784,26 @@ async function attachPdfDeadlines(items, src, today, pdfState) {
         await sleep(FETCH_INTERVAL_MS);
         const text = textCache.get(bodyKey);
         if (text == null) {
-          // テキスト層なし（画像PDF）＝締切は付けない。⚠️「取れない」ことも記憶する——
+          // テキスト層なし（画像PDF）＝締切も要点も付けない。⚠️「取れない」ことも記憶する——
           //   記憶しないと毎朝この重いPDFを取りに行く（実測で2本が該当）
-          pdfState[pdfUrl] = { ...(pdfState[pdfUrl] ?? {}),
-            deadlines: { ...pdfDeadlineCache(pdfState, pdfUrl), [hash]: null } };
+          rememberResult(pdfState, pdfUrl, hash, { deadline: null, outline: null });
           continue;
         }
         const block = blockForTitle(text, src.pdfDelimiter, it.title, it.heldDates ?? []);
         found = block ? extractDeadlineDetail(block, src.pdfDeadlineMarker, today) : null;
         if (!block) stat.noBlock++;
-        // 記憶する（⚠️保存するのは締切の値だけ。PDFの本文は保存しない）
-        pdfState[pdfUrl] = { ...(pdfState[pdfUrl] ?? {}),
-          deadlines: { ...pdfDeadlineCache(pdfState, pdfUrl), [hash]: found ?? null } };
+        // 開催の要点（P46）: 同じブロックの**生テキストの行**から原文のまま切り出す
+        outline = block ? outlineOf(text, src, it) : null;
+        // 記憶する（⚠️保存するのは抽出した値だけ。PDFの本文は保存しない）
+        rememberResult(pdfState, pdfUrl, hash, { deadline: found ?? null, outline });
         if (!found && block) stat.noDeadline++;
+      }
+
+      // 要点は締切の有無と関係なく付ける（1項目も取れなければ付けない＝画面に展開を出さない）
+      if (outline?.some((o) => o.value)) {
+        it.outline = outline.map((o) => ({ name: o.name, value: o.value ?? "記載なし" }));
+        it.outlineUrl = pdfUrl;
+        stat.outlined++;
       }
 
       if (!found) continue;
@@ -808,6 +825,18 @@ async function attachPdfDeadlines(items, src, today, pdfState) {
     }
   }
   return stat;
+}
+
+/**
+ * 開催の要点（P46）。台帳の「項目の囲み方」「要点として出す項目名」に従って、
+ * **生テキストの行**から原文のまま切り出す。列が空欄なら null（＝要点を出さない）。
+ * ⚠️正規化後の文字列を使わない——「２，０００円」が「2,000円」に化ける（実測）。
+ */
+function outlineOf(rawText, src, it) {
+  if (!src.outlineBrackets || !src.outlineNames?.length) return null;
+  const lines = blockLinesForTitle(rawText, src.pdfDelimiter, it.title, it.heldDates ?? []);
+  if (!lines?.length) return null;
+  return outlineFromLines(lines, src.outlineBrackets, src.outlineNames);
 }
 
 /** 項目ハッシュ。タイトル＋URL（締切は延長されうるので入れない・grants と同じ） */
@@ -898,7 +927,7 @@ async function main() {
           `／付かず${s.targets - s.filled - s.past}件` +
           `（リンク無${s.noLink}・ブロック不一致${s.noBlock}・締切無${s.noDeadline}` +
           `・テキスト層無${s.noTextLayer}・失敗${s.errors}・記憶${s.remembered}）` +
-          `／PDF解析${s.pdfParsed}本・HEADのみ${s.pdfSkipped}件`
+          `／要点${s.outlined}件／PDF解析${s.pdfParsed}本・HEADのみ${s.pdfSkipped}件`
         );
       }
       const via = src.method.replace(/^kenshu-/, "");

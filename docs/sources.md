@@ -34,37 +34,48 @@
      照合は全半角・空白のゆらぎを吸収して行う。⚠️《 》のような囲みごと指定する——
      裸の「締切」にすると「定員になり次第締め切ります」等の平文を誤検出する。
   値を入れるのは区切り②（kenshu.js への接続時）。区切り①では列だけを用意した。
+- **開催の要点の2列（任意・P46）**: 研修の画面に「▽ 開催の要点」（畳んだ展開）を出すための列。
+  位置は `cells[12]`／`[13]`。**空欄＝要点を出さない**（既定動作）。
+  1. **項目の囲み方**: 項目名を囲む記号2文字（例「《 》」）。この囲みの中にある項目だけを
+     **原文のまま**切り出す。⚠️説明の段落は囲みの外にあるので構造上入らない
+     （本文は複製しない・報道源と同じ原則）。
+  2. **要点として出す項目名**: 「・」区切り・**この順で表示**する。
+     ⚠️取れなかった項目は画面に「記載なし」と出す。空欄にすると「費用なし」「定員なし」と
+     誤読される（実測: #484 は参加費の記載自体が無い）。
+  ⚠️**最後に来る項目は指定しても取れない**（値の終わりを決められず、次の研修の見出しや
+  ページの注意事項まで飲み込むため。実測で締切1,762字・備考は7件すべてが巻き込み）。
+  f-kaigo では締切・備考が末尾なので、締切は既存の締切欄に譲り、備考は出していない。
 
 ## 台帳
 
-| # | 源の名前 | 区分 | URL | 巡回方法 | 状態 | 既定分野 | 表示名 | PDFリンクの目印 | ブロックの区切り語 | 締切の表記パターン |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | こども家庭庁 | 行政 | https://www.cfa.go.jp/news | cfa-cards | 巡回中 | | | | | |
-| 2 | 厚生労働省 | 行政 | https://www.mhlw.go.jp/stf/new-info/ | mhlw-news | 巡回中 | | | | | |
-| 3 | WAM NET | 行政 | https://www.wam.go.jp/gyoseiShiryou/new_rss | wam-rss | 巡回中 | | | | | |
-| 4 | 福岡県（障がい福祉） | 行政 | https://www.pref.fukuoka.lg.jp/life/3/27/ | fukuoka-life | 巡回中 | 障害 | 福岡県 | | | |
-| 5 | 福岡県（子ども・青少年） | 行政 | https://www.pref.fukuoka.lg.jp/life/3/39/ | fukuoka-life | 巡回中 | 児童 | 福岡県 | | | |
-| 16 | 福岡県（介護・高齢者福祉） | 行政 | https://www.pref.fukuoka.lg.jp/life/3/25/ | fukuoka-life | 巡回中 | 高齢 | 福岡県 | | | |
-| 6 | 報酬改定関連 | 行政 | なし | — | 他源でカバー | | | | | |
-| 7 | 福祉新聞 | **報道** | https://fukushishimbun.com/feed | press-rss | 保留（照会中） | | | | | |
-| 8 | 介護ニュースJoint | **報道** | https://www.joint-kaigo.com/feed/ | press-rss | 巡回中 | 高齢 | | | | |
-| 9 | 全国社会福祉協議会 | **団体** | https://www.shakyo.or.jp/news/index.html | zenshakyo-news | 保留（届出前） | | | | | |
-| 10 | 全社協 福祉の助成情報 | **助成** | https://www.shakyo.or.jp/guide/sponsor/ | zenshakyo-sponsor | 保留（届出前） | | 全社協 | | | |
-| 11 | 助成・奨学金情報navi（助成財団センター） | **助成** | https://jyosei-navi.jfc.or.jp/api | jyosei-navi-api | 保留（照会前） | | 助成財団センター | | | |
-| 12 | 助成財団センター 助成金募集ニュース | **助成** | https://www.jfc.or.jp/news_subsidy/feed/ | jfc-subsidy-rss | 巡回中 | | 助成財団センター | | | |
-| 13 | 中央共同募金会 | **助成** | https://www.akaihane.or.jp/subsidies/feed/ | kyobo-rss | 巡回中 | | | | | |
-| 14 | 福岡県共同募金会 | **助成** | https://fukuoka-kyoubo.jp/feed/ | kyobo-rss | 巡回中 | | | | | |
-| 15 | WAM助成（福祉医療機構） | **助成** | https://www.wam.go.jp/hp/cat/wamjosei/feed/ | wam-josei-rss | 巡回中 | | 福祉医療機構 | | | |
-| 17 | 中央競馬馬主社会福祉財団 | **助成** | https://www.jra-umanushi-hukushi.or.jp/feed | umanushi-rss | 巡回中 | | | | | |
-| 18 | 福祉・介護研修センター 年間予定表 | **研修** | https://fuku-shakyo-kenshu.jp/schedule-r8/ | kenshu-schedule | 巡回中 | | 福祉・介護研修センター | | | |
-| 19 | 福祉・介護研修センター 新着 | **研修** | https://fuku-shakyo-kenshu.jp/info/ | kenshu-info | 巡回中 | | 福祉・介護研修センター | | | |
-| 20 | 紙面からの研修合流（既存6源） | **研修** | なし（data/deadlines.json を読む） | kenshu-goryu | 巡回中 | | | | | |
-| 21 | 福岡県介護福祉士会 | **研修** | https://www.f-kaigo.jp/training/index.php | kenshu-fkaigo | 巡回中 | 高齢 | | 研修会の概要・参加申込書 | 開催要綱 | 《 締 切 》 |
-| 22 | 中央福祉学院（全社協の研修機関） | **研修** | https://www.gakuin.gr.jp/info-cate/course/ | kenshu-gakuin | 保留（届出前） | | 中央福祉学院 | | | |
-| 23 | 社会福祉士会 サビ管・児発管研修ページ | **研修** | https://www.facsw.or.jp/service_training/select | kenshu-watch | 巡回中 | 障害 | 社会福祉士会 | | | |
-| 24 | 社会福祉士会 相談支援従事者研修ページ | **研修** | https://www.facsw.or.jp/support_training/entry | kenshu-watch | 巡回中 | 障害 | 社会福祉士会 | | | |
-| 25 | 研修センター 介護支援専門員研修ページ | **研修** | https://fuku-shakyo-kenshu.jp/kaigoshien/ | kenshu-watch | 巡回中 | 高齢 | 福祉・介護研修センター | | | |
-| 26 | 福岡県介護支援専門員協会 トップ | **研修** | https://fukuoka-cm.jp/ | kenshu-watch | 巡回中 | 高齢 | 福岡県介護支援専門員協会 | | | |
+| # | 源の名前 | 区分 | URL | 巡回方法 | 状態 | 既定分野 | 表示名 | PDFリンクの目印 | ブロックの区切り語 | 締切の表記パターン | 項目の囲み方 | 要点として出す項目名 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | こども家庭庁 | 行政 | https://www.cfa.go.jp/news | cfa-cards | 巡回中 | | | | | | | |
+| 2 | 厚生労働省 | 行政 | https://www.mhlw.go.jp/stf/new-info/ | mhlw-news | 巡回中 | | | | | | | |
+| 3 | WAM NET | 行政 | https://www.wam.go.jp/gyoseiShiryou/new_rss | wam-rss | 巡回中 | | | | | | | |
+| 4 | 福岡県（障がい福祉） | 行政 | https://www.pref.fukuoka.lg.jp/life/3/27/ | fukuoka-life | 巡回中 | 障害 | 福岡県 | | | | | |
+| 5 | 福岡県（子ども・青少年） | 行政 | https://www.pref.fukuoka.lg.jp/life/3/39/ | fukuoka-life | 巡回中 | 児童 | 福岡県 | | | | | |
+| 16 | 福岡県（介護・高齢者福祉） | 行政 | https://www.pref.fukuoka.lg.jp/life/3/25/ | fukuoka-life | 巡回中 | 高齢 | 福岡県 | | | | | |
+| 6 | 報酬改定関連 | 行政 | なし | — | 他源でカバー | | | | | | | |
+| 7 | 福祉新聞 | **報道** | https://fukushishimbun.com/feed | press-rss | 保留（照会中） | | | | | | | |
+| 8 | 介護ニュースJoint | **報道** | https://www.joint-kaigo.com/feed/ | press-rss | 巡回中 | 高齢 | | | | | | |
+| 9 | 全国社会福祉協議会 | **団体** | https://www.shakyo.or.jp/news/index.html | zenshakyo-news | 保留（届出前） | | | | | | | |
+| 10 | 全社協 福祉の助成情報 | **助成** | https://www.shakyo.or.jp/guide/sponsor/ | zenshakyo-sponsor | 保留（届出前） | | 全社協 | | | | | |
+| 11 | 助成・奨学金情報navi（助成財団センター） | **助成** | https://jyosei-navi.jfc.or.jp/api | jyosei-navi-api | 保留（照会前） | | 助成財団センター | | | | | |
+| 12 | 助成財団センター 助成金募集ニュース | **助成** | https://www.jfc.or.jp/news_subsidy/feed/ | jfc-subsidy-rss | 巡回中 | | 助成財団センター | | | | | |
+| 13 | 中央共同募金会 | **助成** | https://www.akaihane.or.jp/subsidies/feed/ | kyobo-rss | 巡回中 | | | | | | | |
+| 14 | 福岡県共同募金会 | **助成** | https://fukuoka-kyoubo.jp/feed/ | kyobo-rss | 巡回中 | | | | | | | |
+| 15 | WAM助成（福祉医療機構） | **助成** | https://www.wam.go.jp/hp/cat/wamjosei/feed/ | wam-josei-rss | 巡回中 | | 福祉医療機構 | | | | | |
+| 17 | 中央競馬馬主社会福祉財団 | **助成** | https://www.jra-umanushi-hukushi.or.jp/feed | umanushi-rss | 巡回中 | | | | | | | |
+| 18 | 福祉・介護研修センター 年間予定表 | **研修** | https://fuku-shakyo-kenshu.jp/schedule-r8/ | kenshu-schedule | 巡回中 | | 福祉・介護研修センター | | | | | |
+| 19 | 福祉・介護研修センター 新着 | **研修** | https://fuku-shakyo-kenshu.jp/info/ | kenshu-info | 巡回中 | | 福祉・介護研修センター | | | | | |
+| 20 | 紙面からの研修合流（既存6源） | **研修** | なし（data/deadlines.json を読む） | kenshu-goryu | 巡回中 | | | | | | | |
+| 21 | 福岡県介護福祉士会 | **研修** | https://www.f-kaigo.jp/training/index.php | kenshu-fkaigo | 巡回中 | 高齢 | | 研修会の概要・参加申込書 | 開催要綱 | 《 締 切 》 | 《 》 | 日時・会場・講師・参加費・定員・ポイント |
+| 22 | 中央福祉学院（全社協の研修機関） | **研修** | https://www.gakuin.gr.jp/info-cate/course/ | kenshu-gakuin | 保留（届出前） | | 中央福祉学院 | | | | | |
+| 23 | 社会福祉士会 サビ管・児発管研修ページ | **研修** | https://www.facsw.or.jp/service_training/select | kenshu-watch | 巡回中 | 障害 | 社会福祉士会 | | | | | |
+| 24 | 社会福祉士会 相談支援従事者研修ページ | **研修** | https://www.facsw.or.jp/support_training/entry | kenshu-watch | 巡回中 | 障害 | 社会福祉士会 | | | | | |
+| 25 | 研修センター 介護支援専門員研修ページ | **研修** | https://fuku-shakyo-kenshu.jp/kaigoshien/ | kenshu-watch | 巡回中 | 高齢 | 福祉・介護研修センター | | | | | |
+| 26 | 福岡県介護支援専門員協会 トップ | **研修** | https://fukuoka-cm.jp/ | kenshu-watch | 巡回中 | 高齢 | 福岡県介護支援専門員協会 | | | | | |
 
 - **区分=報道 の源は行政情報と別扱い**（P9・[DECISION]）: AI要約・重要度判定を行わず、
   **見出し・リンク・日付・カテゴリ・分野タグのみ**を保存する（RSSの説明文・本文は保存しない）。

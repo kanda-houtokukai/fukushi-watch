@@ -1583,16 +1583,46 @@
      ⚠️「対象です/対象外です」のような判定は出さない。条件を並べるところまで。
      conditions が空配列＝記載を確認できなかった、と正直に出す。
      conditions 未抽出（フィールド無し）の項目には展開自体を出さない。 */
+  /* 逐語引用の展開の器（P28の助成・P46の研修が共用）。
+     ⚠️行の形（.cond-r ＋ 軸ラベル .ax）と畳んだ既定は両面で同じ。違うのは
+       ①summary の文言 ②注記の文言とリンク先 ③空のときの出し方だけ。 */
+  function quoteBlock({ label, rows, url, linkText, lead, empty }) {
+    const body = rows
+      .map((r) => `<div class="cond-r"><span class="ax">${esc(r.axis)}</span>${esc(r.quote)}</div>`)
+      .join("");
+    return `<details class="aid"><summary>${label}</summary><div class="aid-body">
+      ${body || `<div class="cond-none">${empty}</div>`}
+      <div class="aid-note">${lead}<a href="${esc(url)}" target="_blank" rel="noopener">${linkText}</a>でご確認ください。</div>
+    </div></details>`;
+  }
+
   function condBlock(it) {
     if (it.conditions === undefined) return "";
-    const url = it.conditionsUrl || it.url;
-    const rows = (it.conditions ?? [])
-      .map((c) => `<div class="cond-r"><span class="ax">${esc(c.axis)}</span>${esc(c.quote)}</div>`)
-      .join("");
-    return `<details class="aid"><summary>応募の条件</summary><div class="aid-body">
-      ${rows || `<div class="cond-none">条件の記載を確認できませんでした。</div>`}
-      <div class="aid-note">募集ページからの抜粋です。詳細は必ず<a href="${esc(url)}" target="_blank" rel="noopener">募集要項</a>でご確認ください。</div>
-    </div></details>`;
+    return quoteBlock({
+      label: "応募の条件",
+      rows: (it.conditions ?? []).map((c) => ({ axis: c.axis, quote: c.quote })),
+      url: it.conditionsUrl || it.url,
+      linkText: "募集要項",
+      lead: "募集ページからの抜粋です。詳細は必ず",
+      empty: "条件の記載を確認できませんでした。",
+    });
+  }
+
+  /* 開催の要点(P46)。開催要綱PDFの《 》項目を**原文のまま**並べる（AIは使っていない）。
+     ⚠️取れなかった項目は取り込み側が「記載なし」を入れている——空欄にすると
+       「費用なし」「定員なし」と誤読される（P31の[DECISION]と同じ扱い）。
+     ⚠️1項目も取れなかった研修には outline 自体が無く、展開を出さない
+       （番号付き見出しの案内・画像PDF。P28が conditions 未抽出に展開を出さないのと同じ）。 */
+  function outlineBlock(it) {
+    if (!it.outline?.length) return "";
+    return quoteBlock({
+      label: "開催の要点",
+      rows: it.outline.map((o) => ({ axis: o.name, quote: o.value })),
+      url: it.outlineUrl || it.url,
+      linkText: "開催要綱",
+      lead: "開催要綱PDFからの抜粋です。詳細は必ず",
+      empty: "",
+    });
   }
 
   /* P45: 金額の単位を万円に揃える（表示だけ）。
@@ -1846,6 +1876,7 @@
           <svg width="13" height="13" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12V3"/><path d="M6.8 5.8 10 2.6l3.2 3.2"/><path d="M5 9H4v8h12V9h-1"/></svg>
           <span class="tip">コピーしました</span></button>
       </div>
+      ${outlineBlock(it)}
     </article>`;
   }
 

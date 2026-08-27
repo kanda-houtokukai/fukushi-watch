@@ -392,13 +392,22 @@ const TITLE_NEAR = 300;
  * 複数候補（目次での重複・同名研修）は開催日で絞り、それでも1件に絞れなければ null。
  */
 export function blockForTitle(text, delimiter, title, heldDates = []) {
+  const r = blockRangeForTitle(text, delimiter, title, heldDates);
+  return r ? norm(text).slice(r.start, r.end) : null;
+}
+
+/**
+ * blockForTitle と同じ引き方で、ブロックの範囲（正規化空間の位置）を返す。
+ * 生テキストから行を切り出す（＝原文のまま出す）ために位置が要る・P46。
+ */
+export function blockRangeForTitle(text, delimiter, title, heldDates = []) {
   const t = norm(text);
   const needle = titleNeedle(title);
   if (!needle) return null;
   const starts = norm(delimiter ?? "")
     ? [...t.matchAll(markerRegex(delimiter))].map((m) => m.index)
     : [];
-  if (!starts.length) return t; // 区切りなし＝全体1ブロック（題名は含まれている）
+  if (!starts.length) return { start: 0, end: t.length }; // 区切りなし＝全体1ブロック
   const blockOf = (k) => t.slice(starts[k], starts[k + 1] ?? t.length);
 
   let candidates = [...blocksNear(t, starts, needle)];
@@ -418,7 +427,57 @@ export function blockForTitle(text, delimiter, title, heldDates = []) {
     if (dateRequired || narrowed.length) candidates = narrowed;
   }
   if (candidates.length !== 1) return null; // 誤った締切は無い締切より悪い
-  return blockOf(candidates[0]);
+  const k = candidates[0];
+  return { start: starts[k], end: starts[k + 1] ?? t.length };
+}
+
+/* ===========================================================================
+ * 部品5: 開催の要点（P46）——《 》で囲まれた項目を**原文のまま**切り出す
+ *
+ * ⚠️**生テキストの行**を使う。正規化後の文字列を使うと「２，０００円」が「2,000円」に、
+ *   「２０名」が「20名」に変わる（NFKCの副作用・実測）。要点は逐語で出す方針（P28と同じ）
+ *   なので、位置決めだけ正規化空間で行い、切り出しは生テキストから行う。
+ * ⚠️値は「次の《 》まで」。**後ろに別の《 》が控える項目だけ**を返す——最後の項目は
+ *   境界が無く、次の研修の見出しやページの注意事項まで飲み込む（実測: 締切1,762字・
+ *   備考は7件すべてで次の研修の見出しを巻き込んだ）。
+ * ⚠️説明の段落は《 》の外にあるため構造上入らない（本文は複製しない・報道源と同じ原則）。
+ * ======================================================================== */
+
+/** ブロックの範囲に重なる**生テキストの行**を返す（原文のまま切り出すため・P46） */
+export function blockLinesForTitle(rawText, delimiter, title, heldDates = []) {
+  const range = blockRangeForTitle(rawText, delimiter, title, heldDates);
+  if (!range) return null;
+  const out = [];
+  let pos = 0; // 正規化空間での位置（行ごとの norm 長を積む＝全体を norm した文字列と一致する）
+  for (const line of String(rawText).split("\n")) {
+    const len = norm(line).length;
+    const start = pos;
+    pos += len;
+    if (len && pos > range.start && start < range.end) out.push(line);
+  }
+  return out;
+}
+
+/**
+ * 生テキストの行から、囲み記号の項目を { name, value } で拾う（原文のまま）。
+ * `brackets` は開きと閉じの2文字（例「《 》」）。`names` は台帳が指定する項目名の並び。
+ * 返すのは names の順。取れなかった項目は value を null にして返す（呼び側が
+ * 「記載なし」を入れる）。⚠️後ろに別の項目が控えていない項目は**取れない扱い**にする。
+ */
+export function outlineFromLines(lines, brackets, names) {
+  const chars = [...String(brackets ?? "")].filter((c) => !/\s/.test(c));
+  if (chars.length !== 2 || !names?.length || !lines?.length) return [];
+  const [open, close] = chars;
+  const head = new RegExp(`^\\s*${escRe(open)}\\s*([^${escRe(close)}]{1,12}?)\\s*${escRe(close)}\\s*(.*)$`);
+  const found = [];
+  for (const line of lines) {
+    const m = String(line).match(head);
+    if (m) found.push({ name: norm(m[1]), lines: m[2].trim() ? [m[2].trim()] : [] });
+    else if (found.length) found[found.length - 1].lines.push(String(line).trim());
+  }
+  // ⚠️最後の項目は境界が無いので捨てる（値が次の研修や注意事項まで伸びる）
+  const bounded = new Map(found.slice(0, -1).map((f) => [f.name, f.lines.filter(Boolean).join("\n")]));
+  return names.map((name) => ({ name, value: bounded.get(name) || null }));
 }
 
 /** 針が現れる位置ごとに、最も近い区切り語のブロック番号を集める（遠い出現は捨てる） */
