@@ -139,6 +139,9 @@
   .genpon-list a{display:block;font-size:12.5px;color:var(--link);text-decoration:none;
     padding:3px 0;line-height:1.65}
   .genpon-list .gp-f{color:var(--faint);font-size:10.5px;margin-right:6px;letter-spacing:.04em}
+  /* P52: 情報源（正本は docs/sources.md・既定は開いたまま＝一望させるのが目的） */
+  .src-list a{display:block;font-size:12.5px;color:var(--link);text-decoration:none;
+    padding:3px 0;line-height:1.65}
   .gsec{display:flex;align-items:baseline;gap:10px;margin:26px 0 2px;
     border-bottom:2px solid var(--ink);padding-bottom:6px}
   .gsec .name{font-size:12.5px;font-weight:700;letter-spacing:.2em;color:var(--ink)}
@@ -904,6 +907,16 @@
           <summary>通知・Q&amp;Aの集約ページ</summary>
           <div class="genpon-list" id="genponList"></div>
         </details>
+      </div>
+
+      <!-- P52: 情報源。**この面が毎朝どこを巡回しているか**を一望させる箱。
+           正本は docs/sources.md（コードに源の名前もURLも書かない・「制度の原本」と同じ作法）。
+           ⚠️状態が「巡回中」の行だけ＝届出前・照会前の源は載せない。
+           ⚠️既定は開いたまま（一望させるのが目的なので畳まない）。
+           取得失敗時は箱ごと非表示（付加物であり本体を止めない） -->
+      <div class="box" id="boxSources" hidden>
+        <h5>情 報 源</h5>
+        <div class="src-list" id="sourceList"></div>
       </div>
 
       <!-- P31: 助成面の注意書き。P30の「絞り込みと項目の間に畳む」案は不採用（ユーザー判断）。
@@ -1804,6 +1817,7 @@
       b.classList.toggle("on", b.dataset.view === v));
     if (v === "grants") { await loadGrants(); renderGrants(); }
     if (v === "kenshu") { await loadKenshu(); renderKenshu(); }
+    renderSources(); // P52: 情報源はこの面が巡回している源だけを出す
     sizeLists();
   }
 
@@ -2017,13 +2031,13 @@
     if (mq.matches) {
       // 助成の内訳(P24)は期限欄の隣に置く（どちらも「いま追いかけているもの」の量を示す）
       $("mMenuBody").append($("boxDeadline"), $("boxGrantSum"), $("boxCal"), $("boxWeek"),
-        $("boxLegend"), $("boxGenpon"), $("boxGrantNote"), $("boxKenshuNote"), $("boxTextSize"), fold);
+        $("boxLegend"), $("boxGenpon"), $("boxSources"), $("boxGrantNote"), $("boxKenshuNote"), $("boxTextSize"), fold);
     } else {
       const rail = document.querySelector(".rail-col");
       // PCサイド欄の並び: 検索(静的) → 期限が近いもの → この7日 → 今週の記録 →
       // 記号の見かた → このサイトについて（分野チップは紙面側へ移動・P20）
       rail.append($("boxDeadline"), $("boxGrantSum"), $("boxCal"), $("boxWeek"),
-        $("boxLegend"), $("boxGenpon"), $("boxGrantNote"), $("boxKenshuNote"), fold);
+        $("boxLegend"), $("boxGenpon"), $("boxSources"), $("boxGrantNote"), $("boxKenshuNote"), fold);
       document.querySelector("#mMenu").append($("boxTextSize")); // PCでは使わない（CSSで非表示）
       closeMenu();
       $("mSearchPanel").classList.remove("open");
@@ -2048,6 +2062,44 @@
     } catch { /* 失敗時は非表示のまま */ }
   }
   loadGenpon();
+
+  /* P52: 情報源。**正本は docs/sources.md**（コードに源の名前もURLも書かない）。
+     ⚠️出すのは状態が「巡回中」の行だけ——届出前・照会前の源を載せると、
+       承諾を得る前に運用を始めたことになる（P24の全社協の一件と同じ性質）。
+     ⚠️**表示名でまとめる**（P44）。福岡県は3行・研修センターは3行あるが、読み手には1つ。
+     ⚠️列の位置は crawl.js の readSources と同じ（名前=2・区分=3・URL=4・状態=6・表示名=8）。
+       新しい列は必ず表の**最後**に足す約束なので、この位置は動かない。 */
+  async function loadSources() {
+    try {
+      const res = await fetch("docs/sources.md");
+      if (!res.ok) return;
+      const seen = new Map(); // 表示名 → { view, label, url }（最初の行のURLを使う）
+      for (const line of (await res.text()).split("\n")) {
+        const c = line.split("|").map((s) => s.trim());
+        if (c.length < 10 || !/^\d+$/.test(c[1])) continue; // データ行だけ
+        if (c[6] !== "巡回中") continue;                      // 保留中は出さない
+        if (!/^https?:/.test(c[4])) continue;                 // URLを持たない行（合流など）
+        const kubun = c[3].replace(/\*/g, "");
+        const view = kubun === "助成" ? "grants" : kubun === "研修" ? "kenshu" : "paper";
+        const label = c[8] || c[2];
+        const key = `${view}\n${label}`;
+        if (!seen.has(key)) seen.set(key, { view, label, url: c[4] });
+      }
+      state.sources = [...seen.values()];
+      renderSources();
+    } catch { /* 失敗時は非表示のまま（付加物であり本体を止めない） */ }
+  }
+
+  function renderSources() {
+    const rows = (state.sources ?? []).filter((s) => s.view === state.view);
+    if (!rows.length) { $("boxSources").hidden = true; return; }
+    $("sourceList").innerHTML = rows
+      .map((r) => `<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.label)}</a>`)
+      .join("");
+    $("boxSources").hidden = false;
+  }
+
+  loadSources();
 
   /* 副題の「仕組み →」から飛んだときは折りたたみを開く */
   document.querySelectorAll('a[href="#about"]').forEach((a) =>
