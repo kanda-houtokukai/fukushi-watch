@@ -26,7 +26,7 @@ const DIFF_PATH = join(ROOT, "data", "diff-latest.json");
 const LABELS_PATH = join(ROOT, "data", "source-labels.json"); // 表示名の対応表（P44）
 
 const USER_AGENT =
-  "fukushi-watch/0.1 (+https://github.com/kanda-houtokukai/fukushi-watch)";
+  "fukushi-watch/0.1 (+https://fukushi-watch.fknd.jp/)";
 
 // 1源あたり state に保持する項目数の上限（一覧の先頭ページは10件＝約10日分。
 // ページから消えた項目を約1か月分覚えておき、再掲載を新規と誤認しないための余裕）

@@ -32,7 +32,7 @@ import {
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const GRANTS_PATH = join(ROOT, "data", "grants.json");
 const USER_AGENT =
-  "fukushi-watch/0.1 (+https://github.com/kanda-houtokukai/fukushi-watch)";
+  "fukushi-watch/0.1 (+https://fukushi-watch.fknd.jp/)";
 const FETCH_INTERVAL_MS = 1500; // 監視先サイトへのアクセス間隔（マナー）
 const BATCH = 20;               // 1リクエストあたりの判定件数（本文を含むので25より控えめ）
 const BODY_MAX_CHARS = 2500;    // 判定に渡す本文の上限（本文は保存しない）

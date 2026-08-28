@@ -30,7 +30,7 @@ const STATE_PATH = join(ROOT, "data", "state.json");
 const DEADLINES_PATH = join(ROOT, "data", "deadlines.json");
 const API_BASE = "https://generativelanguage.googleapis.com/v1beta";
 const USER_AGENT =
-  "fukushi-watch/0.1 (+https://github.com/kanda-houtokukai/fukushi-watch)";
+  "fukushi-watch/0.1 (+https://fukushi-watch.fknd.jp/)";
 const FETCH_INTERVAL_MS = 1500; // 監視先サイトへのアクセス間隔
 const BODY_MAX_CHARS = 6000;
 

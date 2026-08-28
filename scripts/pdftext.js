@@ -38,7 +38,7 @@ const PDF_STATE_PATH = join(ROOT, "data", "pdf-state.json");
 
 // crawl.js と同じ名乗り（源には常に同じUAで挨拶する）
 const USER_AGENT =
-  "fukushi-watch/0.1 (+https://github.com/kanda-houtokukai/fukushi-watch)";
+  "fukushi-watch/0.1 (+https://fukushi-watch.fknd.jp/)";
 
 // kenshu.js と同じ定義の複製（循環importを避けるため。変えるときは両方を揃える）
 const jstToday = () =>

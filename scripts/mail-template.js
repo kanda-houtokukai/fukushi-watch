@@ -10,7 +10,10 @@
  * 方向性は「自動送信の通知に見えない引き算」: 装飾は最小限、余白と字送りで読ませる。
  */
 
-const REPO_URL = "https://github.com/kanda-houtokukai/fukushi-watch";
+// ⚠️公開サイトへ向ける（P53）。P32では「個人宛のメールだから」とリポジトリを残していたが、
+//   GitHubのアカウント名に勤務先法人の名称が含まれるため外した。行き先としては、
+//   監視先の一覧（P52の「情報源」）と「このサイトについて」がある公開サイトの方が適切。
+const SITE_URL = "https://fukushi-watch.fknd.jp/";
 
 const FONT =
   "'Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic',Meiryo,sans-serif";
@@ -182,7 +185,7 @@ export function buildMail(report, opts = {}) {
   ${body}
   <div style="border-top:1px solid ${RULE};margin-top:34px;padding-top:16px;font-family:${FONT};font-size:11px;color:${FAINT};line-height:1.9;">
     要約と重要度はAIによる参考情報です。最終判断は必ず原本をご確認ください。掲載内容の正確性を保証するものではありません。<br>
-    毎朝7時に自動巡回 ── <a href="${REPO_URL}" style="color:${FAINT};">監視対象と仕組み</a>
+    毎朝7時に自動巡回 ── <a href="${SITE_URL}" style="color:${FAINT};">監視対象と仕組み</a>
   </div>
 </td></tr>
 </table>
