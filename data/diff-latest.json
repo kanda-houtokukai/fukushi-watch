@@ -1,152 +1,277 @@
 {
-  "generatedAt": "2026-08-27T22:59:47.969Z",
+  "generatedAt": "2026-08-28T06:06:35.673Z",
   "newItems": [
     {
       "source": "こども家庭庁",
       "kind": "gov",
-      "hash": "84e85b0de3494649",
-      "title": "人工妊娠中絶一時金認定審査部会（第18回）を掲載しました",
-      "url": "https://www.cfa.go.jp/councils/jinkoninshinchuzetsu-ichijikin/ff799db2",
-      "date": "2026-08-27",
-      "category": "会議等"
-    },
-    {
-      "source": "こども家庭庁",
-      "kind": "gov",
-      "hash": "a5ce7b15752ebd5b",
-      "title": "科学技術部会（第16回）の会議資料を掲載しました",
-      "url": "https://www.cfa.go.jp/councils/shingikai/kagaku_gijutsu/2ed1ccd3",
-      "date": "2026-08-27",
-      "category": "会議等"
-    },
-    {
-      "source": "こども家庭庁",
-      "kind": "gov",
-      "hash": "47d93188dfab0e6a",
-      "title": "第7回こどもの貧困対策・ひとり親家庭支援部会議事録を掲載しました",
-      "url": "https://www.cfa.go.jp/councils/shingikai/hinkon_hitorioya/5a246038",
-      "date": "2026-08-27",
-      "category": "会議等"
-    },
-    {
-      "source": "こども家庭庁",
-      "kind": "gov",
-      "hash": "cd4444698ab51e43",
-      "title": "青少年インターネット環境整備法の在り方等に関する検討ワーキンググループ（第8回）の開催案内を掲載しました",
-      "url": "https://www.cfa.go.jp/councils/internet-kaigi/21c8e582",
-      "date": "2026-08-27",
-      "category": "会議等"
-    },
-    {
-      "source": "こども家庭庁",
-      "kind": "gov",
-      "hash": "2bea27a07f58f693",
+      "hash": "814b10688c536f62",
       "title": "採用情報【武蔵野学院】：国立児童自立支援施設職員（児童自立支援専門員）の募集情報を掲載しました",
       "url": "https://www.cfa.go.jp/musashino/others",
-      "date": "2026-08-27",
-      "category": "政策"
+      "date": "2026-08-28",
+      "category": "採用"
     },
     {
       "source": "こども家庭庁",
       "kind": "gov",
-      "hash": "e0a32a9c0b398949",
+      "hash": "e7d33e4d0a293a45",
       "title": "採用情報【きぬ川学院】：国立児童自立支援施設職員（児童自立支援専門員）の募集情報を掲載しました",
       "url": "https://www.cfa.go.jp/kinugawa",
-      "date": "2026-08-27",
+      "date": "2026-08-28",
+      "category": "採用"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "0907a85e0f6b8b20",
+      "title": "保育所等関連状況とりまとめ（令和8年4月1日）を掲載しました",
+      "url": "https://www.cfa.go.jp/policies/hoiku/torimatome/r8",
+      "date": "2026-08-28",
       "category": "政策"
     },
     {
       "source": "こども家庭庁",
       "kind": "gov",
-      "hash": "afb53146a076f557",
-      "title": "『はじめの100か月の育ちビジョン』 PR動画コンテストを開催します",
-      "url": "https://www.cfa.go.jp/press/19d6e1ba-6903-4a60-8bc3-cfaf9cc6681a",
-      "date": "2026-08-27",
+      "hash": "e97584ec0f31c897",
+      "title": "みて かんじて つながる劇体験～優良児童劇等公演事業～北海道石狩市にて開催",
+      "url": "https://www.cfa.go.jp/press/0346378d-95d3-49a6-ae47-352d33e176e3",
+      "date": "2026-08-28",
+      "category": "報道発表"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "5b0924c0da89cfa5",
+      "title": "「令和6年度 認可外保育施設の現況取りまとめ（全体版）」を掲載しました",
+      "url": "https://www.cfa.go.jp/policies/hoiku/ninkagai/tsuuchi/genkyou",
+      "date": "2026-08-28",
+      "category": "政策"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "d858d5a60f00dc89",
+      "title": "令和７年度における「輸入食品監視指導計画に基づく監視指導結果」及び「輸入食品監視統計」の公表",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75846.html",
+      "date": "2026-08-28",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "cc6d66f19dbc4e82",
+      "title": "令和８年度第５回化学物質管理に係る専門家検討会を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75727.html",
+      "date": "2026-08-28",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "8f30c33560327478",
+      "title": "令和８年度「地域雇用活性化推進事業」の採択地域を決定しました。",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75721.html",
+      "date": "2026-08-28",
       "category": "報道発表"
     },
     {
       "source": "厚生労働省",
       "kind": "gov",
-      "hash": "22850fc9bb05c0c7",
-      "title": "令和６年度 介護保険事業状況報告（年報）",
-      "url": "https://www.mhlw.go.jp/topics/kaigo/osirase/jigyo/24/index.html",
-      "date": "2026-08-27",
-      "category": "統計情報"
-    },
-    {
-      "source": "厚生労働省",
-      "kind": "gov",
-      "hash": "1be4c04611c18319",
-      "title": "薬剤師免許の申請手続き等について",
-      "url": "https://www.mhlw.go.jp/bunya/iyakuhin/yakuzaishi/menkyo.html",
-      "date": "2026-08-27",
-      "category": "政策分野"
-    },
-    {
-      "source": "厚生労働省",
-      "kind": "gov",
-      "hash": "e79cfe4894d8d7cf",
-      "title": "第397回労働政策審議会職業安定分科会労働力需給制度部会 資料",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75128.html",
-      "date": "2026-08-27",
+      "hash": "4542d53a960eb6bd",
+      "title": "第68回厚生科学審議会疾病対策部会指定難病検討委員会の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75701.html",
+      "date": "2026-08-28",
       "category": "審議会等"
     },
     {
       "source": "厚生労働省",
       "kind": "gov",
-      "hash": "1c68eadfe5942cdb",
-      "title": "第130回社会保障審議会医療部会 資料",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75820.html",
-      "date": "2026-08-26",
+      "hash": "0d74effa8f446906",
+      "title": "第37回特定石綿被害建設業務労働者等認定審査会専門委員会 開催案内",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75607.html",
+      "date": "2026-08-28",
       "category": "審議会等"
     },
     {
       "source": "厚生労働省",
       "kind": "gov",
-      "hash": "77d30574de8694a4",
-      "title": "第263回社会保障審議会介護給付費分科会（Web会議）を開催します",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75434.html",
-      "date": "2026-08-10",
+      "hash": "c5ec4970b827f6b4",
+      "title": "第32回キャリアコンサルタント登録制度等に関する検討会を９月４日に開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75342.html",
+      "date": "2026-08-28",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "0d9b7d005d077647",
+      "title": "年金数理部会の役割について（2024年度公的年金財政状況資料を追加しました）",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000128082_00003.html",
+      "date": "2026-08-28",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "e11332aba0c0d6a9",
+      "title": "新型コロナウイルス感染症に関する報道発表資料を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00485.html",
+      "date": "2026-08-28",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "d668c03c34705b5e",
+      "title": "インフルエンザに関する報道発表資料を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou_00023.html",
+      "date": "2026-08-28",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "86ae176be253febc",
+      "title": "インフルエンザ・新型コロナウイルス感染症の定点当たり報告数の推移を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/houkokusuunosuii_00007.html",
+      "date": "2026-08-28",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "4120aabb328f7ce1",
+      "title": "インフルエンザの発生状況を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
+      "date": "2026-08-28",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "c419d806c18964ec",
+      "title": "採用情報（任期付職員（職員の育児休業期間の代替職員）政策統括官（総合政策、労使関係担当））募集情報）",
+      "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-ninki-seisakutoukatukan_ikuzi.html",
+      "date": "2026-08-28",
+      "category": "採用情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "7a7c77d5109390af",
+      "title": "採用情報（任期付職員（国際課国際保健・協力室主査）募集情報）",
+      "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/ninkituki/ninki-kokusaikakokusaihokenkyouryokusitsusyusa.html",
+      "date": "2026-08-28",
+      "category": "採用情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "799a01d01a9e823b",
+      "title": "第41回管理栄養士国家試験の実施について",
+      "url": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/kanrieiyoushi/about.html",
+      "date": "2026-08-28",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "59037e8bd54ac238",
+      "title": "第211回労働政策審議会職業安定分科会雇用保険部会（開催案内）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75501.html",
+      "date": "2026-08-28",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "cf98fdab5ce965a1",
+      "title": "薬剤師国家試験の施行について",
+      "url": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/index.html",
+      "date": "2026-08-28",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "2b323c2b1c5879db",
+      "title": "管理栄養士・栄養士関係",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000089299.html",
+      "date": "2026-08-28",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "26893f73102b6323",
+      "title": "一般職業紹介状況(令和8年7月分)について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75707.html",
+      "date": "2026-08-28",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "8ac4f32146dfb375",
+      "title": "第１回精神医療に関する地域医療構想検討ワーキンググループの開催について：開催案内",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75715.html",
+      "date": "2026-08-20",
       "category": "審議会等"
     },
     {
       "source": "WAM NET",
       "kind": "gov",
-      "hash": "26d43b58eed4076c",
-      "title": "第67回 厚生科学審議会 予防接種・ワクチン分科会 （令和8年9月2日開催予定）",
-      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22815&ct=070010010&from=rss",
-      "date": "2026-08-27",
+      "hash": "a56982d1b316d212",
+      "title": "介護保険最新情報Vol.1538（PDF：379KB）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0828092338754/ksvol.1538.pdf?from=rss",
+      "date": "2026-08-28",
       "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "51971b28b30cca5b",
+      "title": "成年後見制度利用促進専門家会議 第2回地域における権利擁護の支援体制に係るワーキング・グループ（令和8年8月28日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22821&ct=100100170&from=rss",
+      "date": "2026-08-28",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "95a66e13a46ec281",
+      "title": "第213回 社会保障審議会 医療保険部会（令和8年8月27日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22818&ct=010010050&from=rss",
+      "date": "2026-08-28",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "2c344a62923b8b14",
+      "title": "第130回 社会保障審議会 医療部会（令和8年8月27日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22817&ct=010010040&from=rss",
+      "date": "2026-08-28",
+      "category": "行政資料"
+    },
+    {
+      "source": "福岡県（障がい福祉）",
+      "kind": "gov",
+      "hash": "b0567d725b9899bc",
+      "title": "旧優生保護法及び補償制度に関する研修会",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/kyuyusei-seminar2605.html",
+      "date": "2026年8月28日更新",
+      "category": ""
     },
     {
       "source": "福岡県（子ども・青少年）",
       "kind": "gov",
-      "hash": "a65207d0ac8ddd89",
-      "title": "【福岡県 風しん情報】先天性風しん症候群の発生を予防するために",
-      "url": "https://www.pref.fukuoka.lg.jp/contents/kansen2013040801.html",
-      "date": "2026年8月26日更新",
+      "hash": "dc4ff8e7186839c5",
+      "title": "経済的にお困りの世帯のこどもの大学等受験料を助成します。",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/daigakutou-jyukenryo.html",
+      "date": "2026年8月28日更新",
       "category": ""
     }
   ],
-  "newPress": [
-    {
-      "source": "介護ニュースJoint",
-      "kind": "press",
-      "hash": "854612641a1b9fc7",
-      "title": "来年度の障害福祉報酬改定、厚労省が論点提示 サービスの質で「メリハリきいた体系に」",
-      "url": "https://www.joint-kaigo.com/articles/48292/",
-      "date": "2026-08-27",
-      "category": "処遇改善"
-    },
-    {
-      "source": "介護ニュースJoint",
-      "kind": "press",
-      "hash": "9d1248e722d3ab63",
-      "title": "介護保険の年間費用、初の12兆円超え 要介護認定者は過去最多721万人＝厚労省",
-      "url": "https://www.joint-kaigo.com/articles/48286/",
-      "date": "2026-08-27",
-      "category": "福祉用具"
-    }
-  ],
+  "newPress": [],
   "crawlErrors": []
 }
