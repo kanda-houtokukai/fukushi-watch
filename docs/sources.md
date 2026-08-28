@@ -59,8 +59,8 @@
 | 6 | 報酬改定関連 | 行政 | なし | — | 他源でカバー | | | | | | | |
 | 7 | 福祉新聞 | **報道** | https://fukushishimbun.com/feed | press-rss | 保留（照会中） | | | | | | | |
 | 8 | 介護ニュースJoint | **報道** | https://www.joint-kaigo.com/feed/ | press-rss | 巡回中 | 高齢 | | | | | | |
-| 9 | 全国社会福祉協議会 | **団体** | https://www.shakyo.or.jp/news/index.html | zenshakyo-news | 保留（届出前） | | | | | | | |
-| 10 | 全社協 福祉の助成情報 | **助成** | https://www.shakyo.or.jp/guide/sponsor/ | zenshakyo-sponsor | 保留（届出前） | | 全社協 | | | | | |
+| 9 | 全国社会福祉協議会 | **団体** | https://www.shakyo.or.jp/news/index.html | zenshakyo-news | 巡回中 | | | | | | | |
+| 10 | 全社協 福祉の助成情報 | **助成** | https://www.shakyo.or.jp/guide/sponsor/ | zenshakyo-sponsor | 巡回中 | | 全社協 | | | | | |
 | 11 | 助成・奨学金情報navi（助成財団センター） | **助成** | https://jyosei-navi.jfc.or.jp/api | jyosei-navi-api | 保留（照会前） | | 助成財団センター | | | | | |
 | 12 | 助成財団センター 助成金募集ニュース | **助成** | https://www.jfc.or.jp/news_subsidy/feed/ | jfc-subsidy-rss | 巡回中 | | 助成財団センター | | | | | |
 | 13 | 中央共同募金会 | **助成** | https://www.akaihane.or.jp/subsidies/feed/ | kyobo-rss | 巡回中 | | | | | | | |

@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-28T06:14:11.066Z",
+ "updatedAt": "2026-08-28T06:50:56.202Z",
  "items": [
   {
    "hash": "9cbae0ed2b86b861",
@@ -53,6 +53,133 @@
    ],
    "conditionsUrl": "https://www.pwc.com/jp/ja/about-us/member/pwc-foundation/grant/2026/04.html",
    "openFrom": "2026-08-03"
+  },
+  {
+   "hash": "70f474eb1219a7d9",
+   "source": "全社協 福祉の助成情報",
+   "sourceKind": "org",
+   "funder": "松の花基金",
+   "title": "知的障害児者 施設事業・活動、研究・調査",
+   "url": "https://www.shakyo.or.jp/guide/sponsor/p/260408matsunohana.html",
+   "postedAt": "2026-04-08",
+   "deadline": "2026-08-31",
+   "deadlineType": "date",
+   "deadlineRaw": "2026年8月31日",
+   "summary": "知的障害児・者の福祉向上を目的とした施設事業・活動や研究・調査を実施する社会福祉法人、各種法人、研究者等へ資金を助成します。",
+   "fields": [
+    "児童",
+    "障害"
+   ],
+   "uses": [
+    "研究・調査"
+   ],
+   "applicants": [
+    "社会福祉法人",
+    "NPO・公益法人",
+    "任意団体",
+    "研究者・大学"
+   ],
+   "amount": "5万円から100万円を目処",
+   "conditions": [
+    {
+     "axis": "主体の付帯条件",
+     "quote": "ウェブシステムによる申請、または書面での申請が可能です。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "知的障害児(者)の福祉向上を目的とする施設事業・活動および研究・調査"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "原則として社会福祉法人、公益法人、非営利活動法人および知的障害児(者)の福祉に関する団体、専門的研究者(団体)"
+    }
+   ],
+   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260408matsunohana.html"
+  },
+  {
+   "hash": "9608b4d9b55b1803",
+   "source": "全社協 福祉の助成情報",
+   "sourceKind": "org",
+   "funder": "日本フィランソロピック財団",
+   "title": "社会的養護下の子ども応援基金",
+   "url": "https://www.shakyo.or.jp/guide/sponsor/p/260728jpf.html",
+   "postedAt": "2026-07-28",
+   "deadline": "2026-08-31",
+   "deadlineType": "date",
+   "deadlineRaw": "2026年8月31日",
+   "summary": "児童養護施設や里親委託などの社会的養護下にある子どもたちへ体験機会を提供する事業を行う社会福祉法人や任意団体等を支援します。",
+   "fields": [
+    "児童"
+   ],
+   "uses": [
+    "事業・活動"
+   ],
+   "applicants": [
+    "社会福祉法人",
+    "NPO・公益法人",
+    "任意団体"
+   ],
+   "amount": "1団体あたり上限400万円",
+   "conditions": [
+    {
+     "axis": "所在地",
+     "quote": "日本国内に活動の主となる事務所があり"
+    },
+    {
+     "axis": "事業の実施地",
+     "quote": "※ 国外で実施する事業も対象となります。"
+    },
+    {
+     "axis": "設立・活動年数",
+     "quote": "活動実績2年以上"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "社会福祉法人などの非営利法人、または任意団体"
+    }
+   ],
+   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260728jpf.html"
+  },
+  {
+   "hash": "2f33b69c8e68fb75",
+   "source": "全社協 福祉の助成情報",
+   "sourceKind": "org",
+   "funder": "大和証券財団",
+   "title": "ボランティア活動助成",
+   "url": "https://www.shakyo.or.jp/guide/sponsor/p/260812daiwa.html",
+   "postedAt": "2026-08-12",
+   "deadline": "2026-09-15",
+   "deadlineType": "date",
+   "deadlineRaw": "2026年9月15日",
+   "summary": "高齢者、障害児・者、子どもへの支援や自然災害の被災者支援などを行うボランティア団体に対し、活動費や普及啓発費用を助成します。",
+   "fields": [
+    "児童",
+    "障害",
+    "高齢"
+   ],
+   "uses": [
+    "行事・啓発"
+   ],
+   "applicants": [
+    "NPO・公益法人",
+    "任意団体"
+   ],
+   "amount": "1団体あたり30万円上限",
+   "conditions": [
+    {
+     "axis": "設立・活動年数",
+     "quote": "設立して間もない団体による応募は、助成対象期間の活動予定が決まっている団体に限ります。"
+    },
+    {
+     "axis": "併願・重複",
+     "quote": "「第9回子ども支援活動助成」の募集を同時に行っています(同時応募はできません)。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "5名以上で活動し、かつ営利を目的としない団体 (任意団体、NPO法人、財団法人、社団法人、大学のボランティアサークル等)"
+    }
+   ],
+   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260812daiwa.html"
   },
   {
    "hash": "4fb0306746e2f929",
@@ -203,46 +330,119 @@
    ]
   },
   {
-   "hash": "35967fe191f0acb7",
-   "source": "助成財団センター 助成金募集ニュース",
+   "hash": "78471666e9e39690",
+   "source": "全社協 福祉の助成情報",
    "sourceKind": "org",
-   "funder": "",
-   "title": "2026年度 公益財団法人 齋藤茂昭記念財団 助成事業",
-   "url": "https://www.jfc.or.jp/news_subsidy/2026%e5%b9%b4%e5%ba%a6-%e5%85%ac%e7%9b%8a%e8%b2%a1%e5%9b%a3%e6%b3%95%e4%ba%ba-%e9%bd%8b%e8%97%a4%e8%8c%82%e6%98%ad%e8%a8%98%e5%bf%b5%e8%b2%a1%e5%9b%a3-%e5%8a%a9%e6%88%90%e4%ba%8b%e6%a5%ad-5/",
-   "postedAt": "2026-08-07",
+   "funder": "SOMPO福祉財団",
+   "title": "組織および事業活動の強化資金助成（東日本地区／NPO基盤強化資金助成）",
+   "url": "https://www.shakyo.or.jp/guide/sponsor/p/260824sompoE.html",
+   "postedAt": "2026-08-24",
+   "deadline": "2026-10-09",
+   "deadlineType": "date",
+   "deadlineRaw": "2026年10月9日",
+   "summary": "障害児・者や高齢者等を対象に社会福祉活動を行う特定非営利活動法人および社会福祉法人に対し、組織や事業活動の強化に必要な資金を助成します。",
+   "fields": [
+    "障害",
+    "高齢"
+   ],
+   "uses": [
+    "事業・活動"
+   ],
+   "applicants": [
+    "社会福祉法人",
+    "NPO・公益法人"
+   ],
+   "amount": "1団体70万円上限",
+   "conditions": [
+    {
+     "axis": "所在地",
+     "quote": "東日本地区 北海道・青森県・岩手県・宮城県・秋田県・山形県・福島県・東京都・神奈川県・埼玉県・千葉県・茨城県・栃木県・群馬県・山梨県・新潟県・長野県・富山県・石川県・福井県・愛知県・岐阜県・静岡県・三重県"
+    },
+    {
+     "axis": "主体の付帯条件",
+     "quote": "電子申請が可能な団体"
+    },
+    {
+     "axis": "主体の付帯条件",
+     "quote": "推薦者からのコメント・捺印も必須"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "社会福祉に関する活動を行う特定非営利活動法人・社会福祉法人"
+    }
+   ],
+   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260824sompoE.html"
+  },
+  {
+   "hash": "1ddec5676775880e",
+   "source": "全社協 福祉の助成情報",
+   "sourceKind": "org",
+   "funder": "SOMPO福祉財団",
+   "title": "認定NPO法人取得資金助成（NPO基盤強化資金助成）",
+   "url": "https://www.shakyo.or.jp/guide/sponsor/p/260824sompo.html",
+   "postedAt": "2026-08-24",
+   "deadline": "2026-10-09",
+   "deadlineType": "date",
+   "deadlineRaw": "2026年10月9日",
+   "summary": "障害児・者や高齢者を対象に活動する社会福祉分野のNPO法人に対し、認定NPO法人の取得に必要な資金を助成します。",
+   "fields": [
+    "障害",
+    "高齢"
+   ],
+   "uses": [
+    "事業・活動"
+   ],
+   "applicants": [
+    "NPO・公益法人"
+   ],
+   "amount": "1団体30万円上限",
+   "conditions": [
+    {
+     "axis": "主体の付帯条件",
+     "quote": "電子申請が可能な団体"
+    },
+    {
+     "axis": "主体の付帯条件",
+     "quote": "推薦者からのコメント・捺印も必須"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "社会福祉分野で活動し、認定NPO法人の取得を計画している特定非営利活動法人"
+    }
+   ],
+   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260824sompo.html"
+  },
+  {
+   "hash": "8ccd26bb7b61ddc6",
+   "source": "全社協 福祉の助成情報",
+   "sourceKind": "org",
+   "funder": "齋藤茂昭記念財団",
+   "title": "2026年度 助成事業",
+   "url": "https://www.shakyo.or.jp/guide/sponsor/p/260812saito.html",
+   "postedAt": "2026-08-12",
    "deadline": "2026-10-15",
    "deadlineType": "date",
-   "deadlineRaw": "2026/10/15 募集要項 https://www.saito-foundation.jp/b",
-   "summary": "障害者やLGBTQ等の社会的マイノリティに対する就労・自立支援、理解を深める啓発活動や人材育成に取り組む団体等の事業を助成します。",
+   "deadlineRaw": "2026年10月15日",
+   "summary": "障害者や発達障害等の社会的マイノリティの自立支援、環境整備、啓発活動を行う個人および非営利団体に対し活動資金を助成します。",
    "fields": [
     "障害"
    ],
    "uses": [
-    "人材・研修",
     "行事・啓発"
    ],
-   "applicants": [],
-   "amount": "1件1,000千円",
+   "applicants": [
+    "社会福祉法人",
+    "NPO・公益法人",
+    "個人"
+   ],
+   "amount": "1団体/1個人あたり100万円上限",
    "conditions": [
     {
-     "axis": "事業の実施地",
-     "quote": "日本国内において実施する活動とします。"
-    },
-    {
-     "axis": "受給歴",
-     "quote": "前年度において、当財団の助成金交付対象となった個人及び団体でないこととします。"
-    },
-    {
-     "axis": "併願・重複",
-     "quote": "同一活動の同一費目(使途)に対して、他の補助金・助成金との重複助成はできません。"
-    },
-    {
      "axis": "その他の対象限定",
-     "quote": "一般財団 / 社団法人、公益財団 / 社団法人、社会福祉法人、特定非営利活動法人(NPO法人) など、非営利活動 ・公益事業を行う個人及び団体を対象とします。"
+     "quote": "非営利活動・公益事業を行う個人および団体 (社会福祉法人、NPO法人、財団法人、社団法人など)"
     }
    ],
-   "conditionsUrl": "https://www.saito-foundation.jp/business/",
-   "openFrom": "2026-08-01"
+   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260812saito.html"
   },
   {
    "hash": "f86b3b711081c8dd",
@@ -320,106 +520,6 @@
    "conditionsUrl": "https://www.akaihane.or.jp/subsidies/sub-corp-prog/47845/"
   },
   {
-   "hash": "cee722ce13b036cf",
-   "source": "助成財団センター 助成金募集ニュース",
-   "sourceKind": "org",
-   "funder": "",
-   "title": "組織および事業活動の強化資金助成",
-   "url": "https://www.jfc.or.jp/news_subsidy/%e7%a4%be%e4%bc%9a%e7%a6%8f%e7%a5%89%e5%8a%a9%e6%88%90-3/",
-   "postedAt": "2026-08-12",
-   "deadline": "2026-10-09",
-   "deadlineType": "date",
-   "deadlineRaw": "2026/10/09 NPO基盤強化資金助成(組織および事業活動の強化資金助成) 募集要項 htt",
-   "summary": "東日本地区で障害児・者や高齢者等を対象に社会福祉活動を行う特定非営利活動法人・社会福祉法人に対し、組織基盤や事業活動の強化に必要な資金を助成します。",
-   "fields": [
-    "障害",
-    "高齢"
-   ],
-   "uses": [
-    "事業・活動"
-   ],
-   "applicants": [
-    "社会福祉法人",
-    "NPO・公益法人"
-   ],
-   "amount": "1件700千円",
-   "conditions": [
-    {
-     "axis": "所在地",
-     "quote": "東日本地区(以下の都道府県)に所在する団体"
-    },
-    {
-     "axis": "併願・重複",
-     "quote": "(3)助成の対象について、重複して資金助成を受けた場合"
-    },
-    {
-     "axis": "主体の付帯条件",
-     "quote": "(電子申請システムを活用することが可能な団体)"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "特定非営利活動法人・社会福祉法人"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "社会福祉に関する活動を行う団体を対象とし、原則として2028年3月末までに完了する事業"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "反社会的勢力、および反社会的勢力に関係すると認められる団体からの申請は受け付けられません。"
-    }
-   ],
-   "conditionsUrl": "https://www.sompo-wf.org/jyosei/kibankyouka.html",
-   "openFrom": "2026-09-01"
-  },
-  {
-   "hash": "ac3925234af06f87",
-   "source": "助成財団センター 助成金募集ニュース",
-   "sourceKind": "org",
-   "funder": "",
-   "title": "認定ＮＰＯ法人取得資金助成",
-   "url": "https://www.jfc.or.jp/news_subsidy/%e7%a4%be%e4%bc%9a%e7%a6%8f%e7%a5%89%e5%8a%a9%e6%88%90-2/",
-   "postedAt": "2026-08-12",
-   "deadline": "2026-10-09",
-   "deadlineType": "date",
-   "deadlineRaw": "2026/10/09 NPO基盤強化資金助成(認定NPO法人取得資金助成) 募集要項 https:",
-   "summary": "社会福祉分野で活動し認定NPO法人の取得を目指す特定非営利活動法人に対し、認定取得に必要な資金を助成します。",
-   "fields": [
-    "共通"
-   ],
-   "uses": [
-    "事業・活動"
-   ],
-   "applicants": [
-    "NPO・公益法人"
-   ],
-   "amount": "総額3,000千円",
-   "conditions": [
-    {
-     "axis": "所在地",
-     "quote": "日本全国で募集します。"
-    },
-    {
-     "axis": "併願・重複",
-     "quote": "(4)助成の対象について、重複して資金助成を受けた場合"
-    },
-    {
-     "axis": "主体の付帯条件",
-     "quote": "(電子申請システムを活用することが可能な団体)"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "社会福祉分野で活動し、認定NPO法人の取得を計画している特定非営利活動法人。"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "反社会的勢力、および反社会的勢力に関係すると認められる団体からの申請は受け付けられません。"
-    }
-   ],
-   "conditionsUrl": "https://www.sompo-wf.org/jyosei/nintei-npo.html",
-   "openFrom": "2026-09-01"
-  },
-  {
    "hash": "e3392e5ccf02e958",
    "source": "中央競馬馬主社会福祉財団",
    "sourceKind": "org",
@@ -459,6 +559,45 @@
     }
    ],
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
+  },
+  {
+   "hash": "944181c14f2f8a17",
+   "source": "全社協 福祉の助成情報",
+   "sourceKind": "org",
+   "funder": "日本生命財団",
+   "title": "児童・少年の健全育成助成（物品助成）",
+   "url": "https://www.shakyo.or.jp/guide/sponsor/p/250919nissei.html",
+   "postedAt": "2025-09-19",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "2025年11月中旬※都道府県により異なる",
+   "summary": "児童・少年の健全育成活動に日常的・継続的に取り組む民間団体に対し、活動に常時・直接必要な物品の購入資金を助成します。",
+   "fields": [
+    "児童"
+   ],
+   "uses": [
+    "機器・用具"
+   ],
+   "applicants": [
+    "NPO・公益法人",
+    "任意団体"
+   ],
+   "amount": "1団体30万円から80万円",
+   "conditions": [
+    {
+     "axis": "主体の付帯条件",
+     "quote": "都道府県知事の推薦に基づき助成します。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "自然と親しむ活動 異年齢・異世代交流活動 子育て支援活動 療育支援活動 フリースクール活動"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "上記の活動に定期的かつ日常的に継続して取り組んでいる民間の団体に対して、その活動に常時・直接必要な物品を助成します。"
+    }
+   ],
+   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/250919nissei.html"
   }
  ]
 }
