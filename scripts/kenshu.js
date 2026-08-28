@@ -866,6 +866,9 @@ async function attachPdfDeadlines(items, src, today, pdfState, aiCtx) {
       } else {
         // 過ぎた締切: 画面はP43以前と同じ（開催日だけ）に戻す。値は deadlineRaw に残る
         it.deadlineRaw = `開催要綱PDFより ${found.raw}（締切後も受け付けることがあります）`;
+        // ⚠️畳む日（P51）。ここでしか ISO の締切を持っていないので、この場で入れる。
+        //   既に expireOn がある項目（開催日が分かる f-kaigo 等）は上書きしない
+        if (!it.expireOn) it.expireOn = addMonths(found.iso, 3);
         stat.past++;
       }
     } catch (e) {
@@ -920,6 +923,78 @@ async function outlineFor(rawText, block, src, it, ctx, stat) {
   // 関門を通ったものだけを、台帳の順に並べて返す（取れなかったものは呼び側が「記載なし」に）
   const kept = new Map(got.kept.map((k) => [k.name, k.value]));
   return { rows: src.outlineNames.map((name) => ({ name, value: kept.get(name) ?? null })), pending: false };
+}
+
+/* ===========================================================================
+ * 受付前と「畳む日」（P51）
+ *
+ * ⚠️台帳のP34-2に **[DECISION] 受付開始日を扱い「受付前」を別の束にする** が既にある。
+ *   新しい方針ではなく、**その決定が日付の無い行で機能していなかった**のを直すもの。
+ *   受付前は表示側に束も件数もあるが、入口が `openFrom`（日付）を要求していたため、
+ *   「11月～1月開催予定」のような**時期の文**は締切不明に落ちていた（実測17件）。
+ *
+ * ⚠️**源の名前もURLも表の形も条件にしない。文面の形だけで判定する**——他の源に同じ
+ *   書き方が出てきたら、何もせずに効く（自律型の方針・P50と同じ考え方）。
+ * ⚠️`deadlineType` に新しい値は作らない——`=== "date"` の完全一致が表示側に14箇所あり、
+ *   新値を作ると締切が黙って画面から消える（P45で同種の危険を確認済み）。
+ * ⚠️`openFrom` に推測値を入れない。並べ替え用の値は別に持ち、**表示には使わない**。
+ * ======================================================================== */
+
+/**
+ * 受付前の定型。⚠️**これより緩めない**（「予定」だけで拾うと別の文言を巻き込む）。
+ * 実測17件はすべてこの形に収まる: 「10月開催予定」「11月～1月開催予定」「2月予定」
+ * 「10月開始予定」。当てはまらないものは締切不明のまま＝安全側に倒す。
+ */
+const PRE_OPEN_RE = /(\d{1,2})月(?:[~～〜](\d{1,2})月)?(?:開催|開始)?予定/;
+
+/** 「今月より前の月なら翌年」（8月に「1月」とあれば翌年1月）。日付ではなく年月を返す */
+function resolveMonth(month, today, baseYear = null) {
+  const y = Number(today.slice(0, 4));
+  const m = Number(today.slice(5, 7));
+  const year = baseYear ?? (month >= m ? y : y + 1);
+  return { year, month };
+}
+
+/** 年月の末日＋1か月＝「翌月の末日」。Date の 0日 は前月の末日を指す */
+const endOfMonthPlusOne = ({ year, month }) => {
+  const d = new Date(Date.UTC(year, month + 1, 0)); // month は1始まり＝翌月末
+  return d.toISOString().slice(0, 10);
+};
+
+/** ISOの日付に月を足す（畳む日の計算用） */
+function addMonths(isoDate, months) {
+  const [y, m, d] = isoDate.split("-").map(Number);
+  const t = new Date(Date.UTC(y, m - 1 + months, d));
+  return t.toISOString().slice(0, 10);
+}
+
+/**
+ * 受付前の印と「畳む日」を付ける（全源共通の後処理）。
+ * ⚠️畳む基準は**1つの規則**で、既存の `expireOn` に載せる（ユーザー決定・案2）:
+ *   ・開催予定 → **終わりの月の末日＋1か月**
+ *   ・締切あり → **締切＋3か月**
+ *   ⚠️既に `expireOn` を持つ項目（f-kaigo の最終開催日）は**上書きしない**。
+ * ⚠️なぜ畳む日が要るか: この源では「一覧から消えた＝終わった」が**成立しない**。
+ *   受付終了の行も残り、締切が5〜8月の項目が8月末の予定表にまだ載っていた（P50で実測）。
+ */
+export function markPreOpenAndExpiry(it, today) {
+  // ① 受付前（締切が取れていない項目だけが対象）
+  if (it.deadlineType !== "date" && !it.preOpenNote) {
+    const m = String(it.deadlineRaw ?? "").normalize("NFKC").match(PRE_OPEN_RE);
+    if (m) {
+      it.preOpenNote = it.deadlineRaw; // ⚠️原文のまま（日付に化けさせない）
+      const start = resolveMonth(Number(m[1]), today);
+      // 終わりの月は、開始より小さければ年をまたぐ（「11月～1月」＝翌年1月）
+      const endMonth = m[2] ? Number(m[2]) : start.month;
+      const end = resolveMonth(endMonth, today, endMonth < start.month ? start.year + 1 : start.year);
+      // 並べ替え専用（年月まで）。⚠️表示には使わない・openFrom にも入れない
+      it.preOpenSort = `${start.year}-${String(start.month).padStart(2, "0")}`;
+      if (!it.expireOn) it.expireOn = endOfMonthPlusOne(end);
+    }
+  }
+  // ② 締切から3か月（開催日が分からない項目に、終わりの目安を持たせる）
+  if (!it.expireOn && it.deadline) it.expireOn = addMonths(it.deadline, 3);
+  return it;
 }
 
 /** 項目ハッシュ。タイトル＋URL（締切は延長されうるので入れない・grants と同じ） */
@@ -986,7 +1061,7 @@ async function main() {
       const collect = COLLECTORS[src.method];
       if (!collect) throw new Error(`巡回方法「${src.method}」に対応するコレクタがありません`);
       console.log(`取得: ${src.name} (${src.url})`);
-      const { items: parsed, raw, allowEmpty } = await collect(src, today);
+      let { items: parsed, raw, allowEmpty } = await collect(src, today);
       // ★0件は構造変化・年度替わりのURL失効の疑いとして失敗扱い（サイレント0件の禁止）。
       //   ⚠️合流（締切ウォッチが空の朝）など、0件が正常な源は allowEmpty で除く
       if (raw === 0 && !allowEmpty) {
@@ -1032,6 +1107,20 @@ async function main() {
           `／要点${s.outlined}件／PDF解析${s.pdfParsed}本・HEADのみ${s.pdfSkipped}件`
         );
       }
+      // 受付前の印と「畳む日」（P51）。⚠️全源に同じ規則で当てる——文面の形だけで
+      //   判定するので、他の源に同じ書き方が出てきたら何もせずに効く
+      for (const it of parsed) markPreOpenAndExpiry(it, today);
+      // ⚠️畳む日を過ぎたものは、**一覧にまだ載っていても取り込まない**。
+      //   この源では「一覧から消えた＝終わった」が成立しない（受付終了の行も残り、
+      //   締切が5〜8月の項目が8月末の予定表にまだ載っていた・P50で実測）。
+      //   ここで捨てないと、期限切れ整理で消した項目が毎回また入り直す（実測で確認）。
+      const expired = parsed.filter((it) => it.expireOn && it.expireOn < today);
+      if (expired.length) {
+        parsed = parsed.filter((it) => !expired.includes(it));
+        console.log(`  畳む日を過ぎたため取り込まない: ${expired.length}件` +
+          `（${expired.map((e) => e.title.slice(0, 16)).join("・")}）`);
+      }
+
       const via = src.method.replace(/^kenshu-/, "");
       for (const it of parsed) {
         const hash = kenshuHash(it);
@@ -1081,7 +1170,11 @@ async function main() {
   // ⚠️開催日は**今日以降の最初の日**を使う——過去の回を含む項目（勉強会の第1回が
   //   終了済み等）が先頭に来てしまう（実測で発見）
   const sortKey = (it) =>
-    it.deadline ?? (it.heldDates ?? []).filter((d) => d >= today)[0] ?? "9999-99-99";
+    it.deadline ??
+    (it.heldDates ?? []).filter((d) => d >= today)[0] ??
+    // ⚠️受付前は開始年月だけで並べる（P51）。日付ではないので "-00" を足して桁を揃える
+    (it.preOpenSort ? `${it.preOpenSort}-00` : null) ??
+    "9999-99-99";
   store.items.sort(
     (a, b) =>
       rankOf(a) - rankOf(b) ||

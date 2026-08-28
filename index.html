@@ -1847,6 +1847,11 @@
       const f = fmtDay(it.deadline);
       const y = String(it.deadline).slice(0, 4) !== String(new Date().getFullYear()) ? `${f.y}年` : "";
       when = `<div class="when dated${n <= GRANT_SOON_DAYS ? " soon" : ""}">締切 <b>${y}${f.main}</b>（${remainText(n)}）</div>`;
+    } else if (it.preOpenNote) {
+      // 受付前で日付がまだ無いもの（P51）。⚠️**原文をそのまま添える**——
+      //   「11月～1月開催予定」を日付に化けさせない（取れていない精度を見せない）。
+      //   ⚠️朱にも明滅にもしない（P34-2の[DECISION]。受付前は締切ではない）
+      when = `<div class="when">受付前（${esc(it.preOpenNote)}）</div>`;
     } else if ((it.heldDates ?? []).some((d) => d >= jstToday())) {
       // 開催日が確定している締切なし（P35・f-kaigo等）: 日付は下の「開催」行が担うので
       // ここには何も出さない（「締切の記載なし」を重ねるとうるさい）
@@ -1896,9 +1901,14 @@
     $("kKindSel").value = state.kkind ?? "";
 
     const shown = state.kenshu.filter(kenshuMatches);
+    // 受付前（P51）: 締切が分かっていて開始日がまだ先のもの **＋ 日付がまだ無いもの**。
+    // ⚠️後者は preOpenNote（原文の時期の文）で見る——deadlineType には新値を作らない
+    //   （`=== "date"` の完全一致が14箇所あり、新値は締切を黙って画面から消す）
+    const isPreOpen = (x) =>
+      (x.deadlineType === "date" && notOpenYet(x)) || Boolean(x.preOpenNote);
     const dated = shown.filter((x) => x.deadlineType === "date" && !notOpenYet(x));
-    const soon = shown.filter((x) => x.deadlineType === "date" && notOpenYet(x));
-    const unknown = shown.filter((x) => x.deadlineType !== "date");
+    const soon = shown.filter(isPreOpen);
+    const unknown = shown.filter((x) => x.deadlineType !== "date" && !isPreOpen(x));
     const filtered = state.field !== "all" || Boolean(state.kkind);
     $("kCount").innerHTML =
       `<b>${shown.length}件</b>` +
