@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-08-28T06:06:30.335Z",
+      "lastCrawled": "2026-08-28T07:04:52.908Z",
       "items": [
         {
           "hash": "814b10688c536f62",
@@ -321,12 +321,47 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-08-28T06:06:31.402Z",
+      "lastCrawled": "2026-08-28T07:04:53.880Z",
       "items": [
+        {
+          "hash": "43733b0be3bf71a7",
+          "title": "令和８年最低賃金に関する基礎調査の調査票の紛失及び個人情報の漏えいのおそれについて",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75810.html",
+          "date": "2026-08-28",
+          "category": "報道発表"
+        },
+        {
+          "hash": "98a8f222fe2febb6",
+          "title": "輸入食品に対する検査命令の実施 （トーゴ産ごまの種子）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75788.html",
+          "date": "2026-08-28",
+          "category": "その他"
+        },
+        {
+          "hash": "297cc8c252528fc8",
+          "title": "「人口動態統計速報」令和８（2026）年06月分",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/s2026/06.html",
+          "date": "2026-08-28",
+          "category": "統計情報"
+        },
+        {
+          "hash": "1a5622105a20c2c1",
+          "title": "「人を対象とする生命科学・医学系研究に関する倫理指針」の一部改正について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75864.html",
+          "date": "2026-08-28",
+          "category": "報道発表"
+        },
         {
           "hash": "d858d5a60f00dc89",
           "title": "令和７年度における「輸入食品監視指導計画に基づく監視指導結果」及び「輸入食品監視統計」の公表",
           "url": "https://www.mhlw.go.jp/stf/newpage_75846.html",
+          "date": "2026-08-28",
+          "category": "その他"
+        },
+        {
+          "hash": "b801c049c50dd09c",
+          "title": "国民年金第３号被保険者制度等に関する検討会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75817.html",
           "date": "2026-08-28",
           "category": "その他"
         },
@@ -3735,7 +3770,7 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-08-28T06:06:32.774Z",
+      "lastCrawled": "2026-08-28T07:04:55.316Z",
       "items": [
         {
           "hash": "a56982d1b316d212",
@@ -5294,7 +5329,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-08-28T06:06:33.871Z",
+      "lastCrawled": "2026-08-28T07:04:56.076Z",
       "items": [
         {
           "hash": "b0567d725b9899bc",
@@ -5502,7 +5537,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-08-28T06:06:34.246Z",
+      "lastCrawled": "2026-08-28T07:04:56.837Z",
       "items": [
         {
           "hash": "a65207d0ac8ddd89",
@@ -6016,7 +6051,7 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-08-28T06:06:35.671Z",
+      "lastCrawled": "2026-08-28T07:04:58.433Z",
       "items": [
         {
           "hash": "854612641a1b9fc7",
@@ -6189,7 +6224,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-08-28T06:06:34.456Z",
+      "lastCrawled": "2026-08-28T07:04:57.570Z",
       "items": [
         {
           "hash": "cc45938bf97029c2",
@@ -6479,9 +6514,434 @@
           "category": ""
         }
       ]
+    },
+    "全国社会福祉協議会": {
+      "lastCrawled": "2026-08-28T07:04:59.288Z",
+      "items": [
+        {
+          "hash": "0d71bee14ff7ddcb",
+          "title": "SOMPO福祉財団「認定NPO法人取得資金助成（NPO基盤強化資金助成）」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/260824sompo.html",
+          "date": "2026-08-24",
+          "category": "助成"
+        },
+        {
+          "hash": "05e1b920bef0a38e",
+          "title": "SOMPO福祉財団「組織および事業活動の強化資金助成（東日本地区／NPO基盤強化資金助成）」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/260824sompoE.html",
+          "date": "2026-08-24",
+          "category": "助成"
+        },
+        {
+          "hash": "6b7ab8dca6eba27e",
+          "title": "社会福祉振興・試験センター「高齢者福祉・障害者福祉の今を学ぶオンデマンド研修」",
+          "url": "https://www.shakyo.or.jp/news/sssc/index.html",
+          "date": "2026-08-17",
+          "category": "告知"
+        },
+        {
+          "hash": "281beb975c7eb6a7",
+          "title": "大和証券財団「ボランティア活動助成」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/260812daiwa.html",
+          "date": "2026-08-12",
+          "category": "助成"
+        },
+        {
+          "hash": "acdf8f8fcd26acf5",
+          "title": "齋藤茂昭記念財団「助成事業」（社会的マイノリティ）",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/260812saito.html",
+          "date": "2026-08-12",
+          "category": "助成"
+        },
+        {
+          "hash": "f09c8b63df148d68",
+          "title": "令和8年 熊本地震",
+          "url": "https://www.shakyo.or.jp/bunya/saigai/archive/2026kumamotoeq/index.html",
+          "date": "2026-08-05",
+          "category": "案内"
+        },
+        {
+          "hash": "b4805f4b5dc68dd8",
+          "title": "日本フィランソロピック財団「ビヨンド賞」募集開始（精神障害）",
+          "url": "https://www.shakyo.or.jp/news/2026/0805jpf.html",
+          "date": "2026-08-05",
+          "category": "告知"
+        },
+        {
+          "hash": "55f5c9493e04f060",
+          "title": "令和8年度 現況報告書",
+          "url": "https://www.shakyo.or.jp/tsuite/koukai/index.html",
+          "date": "2026-07-28",
+          "category": "案内"
+        },
+        {
+          "hash": "a9515e28e74d283a",
+          "title": "日本フィランソロピック財団「社会的養護下の子ども応援基金」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/260728jpf.html",
+          "date": "2026-07-28",
+          "category": "助成"
+        },
+        {
+          "hash": "f3761dcc5f441981",
+          "title": "読売光と愛の事業団「読売福祉文化賞」受賞候補 募集",
+          "url": "https://www.shakyo.or.jp/news/2026/0723yomiuri.html",
+          "date": "2026-07-23",
+          "category": "告知"
+        },
+        {
+          "hash": "0f86ac50c1fd0f86",
+          "title": "令和8年「老人の日・老人週間」（9月15日から21日）",
+          "url": "https://www.shakyo.or.jp/bunya/kourei/week/index.html",
+          "date": "2026-07-08",
+          "category": "案内"
+        },
+        {
+          "hash": "5eff2a095a198e58",
+          "title": "令和7年度 事業報告・決算",
+          "url": "https://www.shakyo.or.jp/tsuite/koukai/index.html",
+          "date": "2026-06-30",
+          "category": "案内"
+        },
+        {
+          "hash": "70ffdc5b9abe7920",
+          "title": "洲崎福祉財団「一般助成」（障害者関係／西日本・首都圏）",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/260626susaki.html",
+          "date": "2026-06-26",
+          "category": "助成"
+        },
+        {
+          "hash": "fbff09b0bd897d77",
+          "title": "日本フィランソロピック財団「子どもぬくもり基金」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/260626jpf.html",
+          "date": "2026-06-26",
+          "category": "助成"
+        },
+        {
+          "hash": "3be99c9bcec4bd58",
+          "title": "社会福祉振興・試験センター「社会福祉施設職員等国内研修」（障害者支援）",
+          "url": "https://www.shakyo.or.jp/news/sssc/index.html",
+          "date": "2026-06-22",
+          "category": "告知"
+        },
+        {
+          "hash": "5e3464dc94e90d3f",
+          "title": "「令和9年度社会福祉制度・予算・税制等に関する要望書」、中東情勢を踏まえた緊急要望書",
+          "url": "https://www.shakyo.or.jp/tsuite/jigyo/teigen/index.html#linkj03",
+          "date": "2026-05-29",
+          "category": "案内"
+        },
+        {
+          "hash": "eaef58f8e325d7e3",
+          "title": "福島県「県外避難者帰還・生活再建支援補助金」",
+          "url": "https://www.shakyo.or.jp/news/fukushima.html",
+          "date": "2026-05-27",
+          "category": "告知"
+        },
+        {
+          "hash": "b951226dfe09fa0c",
+          "title": "SOMPO福祉財団「住民参加型福祉活動資金助成」（東日本地区）",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/260522sompoE.html",
+          "date": "2026-05-22",
+          "category": "助成"
+        },
+        {
+          "hash": "cf35f5ff4af4aa93",
+          "title": "SOMPO福祉財団「自動車購入助成」（西日本地区／特定非営利活動法人）",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/260522sompoW.html",
+          "date": "2026-05-22",
+          "category": "助成"
+        },
+        {
+          "hash": "3222d47d732f5620",
+          "title": "社会福祉振興・試験センター「社会福祉施設職員等海外研修・調査」（オンライン）",
+          "url": "https://www.shakyo.or.jp/news/sssc/index.html",
+          "date": "2026-05-12",
+          "category": "告知"
+        },
+        {
+          "hash": "76016476405d26f3",
+          "title": "こいのぼり掲揚式（こどもまんなか 児童福祉週間）",
+          "url": "https://www.shakyo.or.jp/bunya/kodomo/week/index.html",
+          "date": "2026-04-28",
+          "category": "案内"
+        },
+        {
+          "hash": "6104665c339114ab",
+          "title": "松翁会「社会福祉助成事業」（医療的ケア児者）",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/260428shouou.html",
+          "date": "2026-04-28",
+          "category": "助成"
+        },
+        {
+          "hash": "947329af823ffc51",
+          "title": "日本フィランソロピック財団「未来の介護基金」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/260422jpf.html",
+          "date": "2026-04-22",
+          "category": "助成"
+        },
+        {
+          "hash": "b26348d108e31e6b",
+          "title": "全国老人クラブ連合会「わくわく元気！ 明日をつくる老人クラブ 仲間への呼びかけ」",
+          "url": "https://www.shakyo.or.jp/news/2026_2027/0417zenroren/index.html",
+          "date": "2026-04-17",
+          "category": "告知"
+        },
+        {
+          "hash": "7d740d7c300f80be",
+          "title": "社会福祉振興・試験センター「社会福祉施設・事業所職員向け国内研修」（高齢者介護）",
+          "url": "https://www.shakyo.or.jp/news/sssc/index.html",
+          "date": "2026-04-17",
+          "category": "告知"
+        },
+        {
+          "hash": "b881ccfe9a611ef0",
+          "title": "中央競馬馬主社会福祉財団「民間社会福祉施設職員 海外研修生」募集",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/260417jra.html",
+          "date": "2026-04-17",
+          "category": "助成"
+        },
+        {
+          "hash": "d4f238c0d16d3d0f",
+          "title": "松の花基金（知的障害児者 施設事業・活動、研究・調査）",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/260408matsunohana.html",
+          "date": "2026-04-08",
+          "category": "助成"
+        },
+        {
+          "hash": "d9fdae8eb510e129",
+          "title": "令和8年度 事業計画・予算",
+          "url": "https://www.shakyo.or.jp/tsuite/koukai/index.html",
+          "date": "2026-03-31",
+          "category": "案内"
+        },
+        {
+          "hash": "f18c4c30bcd92548",
+          "title": "こどもまんなか 児童福祉週間（5月5日から11日）",
+          "url": "https://www.shakyo.or.jp/bunya/kodomo/week/index.html",
+          "date": "2026-03-31",
+          "category": "案内"
+        },
+        {
+          "hash": "ec266e9cd1704a61",
+          "title": "大同生命厚生事業団「ボランティア活動助成」（シニア、ビジネスパーソン）",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/260331daido.html",
+          "date": "2026-03-31",
+          "category": "助成"
+        },
+        {
+          "hash": "6111b018b9d1f2c6",
+          "title": "孤独・孤立対策強化月間 全国キャンペーン（5月）",
+          "url": "https://www.shakyo.or.jp/news/kodoku.html",
+          "date": "2026-03-24",
+          "category": "案内"
+        },
+        {
+          "hash": "192887c4c8664140",
+          "title": "みずほ教育福祉財団「ボランティア活動資金助成事業」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/260324mewf1.html",
+          "date": "2026-03-24",
+          "category": "助成"
+        },
+        {
+          "hash": "5d90c73d69787b5e",
+          "title": "みずほ教育福祉財団「配食用小型電気自動車寄贈事業」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/260324mewf2.html",
+          "date": "2026-03-24",
+          "category": "助成"
+        },
+        {
+          "hash": "ce79648d3ddc477a",
+          "title": "日本生命財団「地域福祉チャレンジ活動助成」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/260309nissei1.html",
+          "date": "2026-03-09",
+          "category": "助成"
+        },
+        {
+          "hash": "f15a8cd61eb3003c",
+          "title": "日本生命財団「実践的研究助成」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/260309nissei2.html",
+          "date": "2026-03-09",
+          "category": "助成"
+        },
+        {
+          "hash": "195eb630df4f7764",
+          "title": "フランスベッド・ホームケア財団「研究･事業・ボランティア活動助成」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/260224fbm.html",
+          "date": "2026-02-24",
+          "category": "助成"
+        },
+        {
+          "hash": "0f2daa64bb258604",
+          "title": "日本フィランソロピック財団「子どもまんぷく基金」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/260224jpf.html",
+          "date": "2026-02-24",
+          "category": "助成"
+        },
+        {
+          "hash": "cc2b759aaf047b0e",
+          "title": "「苦情受付・解決状況」令和6年度 都道府県運営適正化委員会 実績報告",
+          "url": "https://www.shakyo.or.jp/tsuite/jigyo/research/riyosha/unteki/index.html",
+          "date": "2026-01-09",
+          "category": "案内"
+        },
+        {
+          "hash": "0ee16c7f40204a2f",
+          "title": "洲崎福祉財団「一般助成」（障害者関係／東日本）",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/260109susaki.html",
+          "date": "2026-01-09",
+          "category": "助成"
+        },
+        {
+          "hash": "9692ad093c550f0d",
+          "title": "提言・要望「『ともに生きる豊かな地域社会』を実現するために」",
+          "url": "https://www.shakyo.or.jp/tsuite/jigyo/teigen/index.html#linkj03",
+          "date": "2025-12-22",
+          "category": "案内"
+        },
+        {
+          "hash": "af9d847daac671b0",
+          "title": "ベストヒーロー賞を選ぶSNS投票開始！（社会福祉HERO’S2025）",
+          "url": "https://www.shakyo.or.jp/news/2025/1222heros.html",
+          "date": "2025-12-22",
+          "category": "案内"
+        },
+        {
+          "hash": "fd9ba49728036f32",
+          "title": "Instagram投稿開始",
+          "url": "https://www.shakyo.or.jp/sns/index.html",
+          "date": "2025-12-08",
+          "category": "案内"
+        },
+        {
+          "hash": "4765a03a657b1e24",
+          "title": "中央共同募金会「赤い羽根福祉基金」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/251128akaihane/index.html",
+          "date": "2025-12-01",
+          "category": "助成"
+        },
+        {
+          "hash": "ab9f8f00b82d7bc1",
+          "title": "三菱財団「社会福祉事業並びに研究助成」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/251126mitsubishi.html",
+          "date": "2025-11-26",
+          "category": "助成"
+        },
+        {
+          "hash": "c9831ec58f6995da",
+          "title": "「ＥＮＥＯＳ奨学助成」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/251111eneos/index.html",
+          "date": "2025-11-11",
+          "category": "助成"
+        },
+        {
+          "hash": "807011fb4ad33631",
+          "title": "日本フィランソロピック財団「LIFULL HOME'S基金」（シェルター・一時的な住まい）",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/251111jpf.htm",
+          "date": "2025-11-11",
+          "category": "助成"
+        },
+        {
+          "hash": "94a8a131ca2036ab",
+          "title": "全社協 年次報告書「アニュアルレポート2024」",
+          "url": "https://www.shakyo.or.jp/tsuite/jigyo/annualreport/index.html",
+          "date": "2025-10-31",
+          "category": "案内"
+        },
+        {
+          "hash": "c487334cef60aa71",
+          "title": "日本フィランソロピック財団「子どもすこやか基金」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/251022jpf.html",
+          "date": "2025-10-22",
+          "category": "助成"
+        },
+        {
+          "hash": "8824c1cc08a0dc86",
+          "title": "洲崎福祉財団「継続助成」（障害者／東日本）",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/251022susaki.html",
+          "date": "2025-10-22",
+          "category": "助成"
+        },
+        {
+          "hash": "f81b11ae0ffadf8a",
+          "title": "日本社会福祉弘済会「社会福祉助成事業」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/251008nisshasai.html",
+          "date": "2025-10-08",
+          "category": "助成"
+        },
+        {
+          "hash": "795bfb4a62edafe8",
+          "title": "「社会人一年生スタート応援助成」（資格等取得）",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/251002SLshikaku/index.html",
+          "date": "2025-10-02",
+          "category": "助成"
+        },
+        {
+          "hash": "baab9db1b6455f42",
+          "title": "「幼い子どものゆたかな育ち応援助成」（七五三祝い）",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/251002SL753/index.html",
+          "date": "2025-10-02",
+          "category": "助成"
+        },
+        {
+          "hash": "e737581fa94748ee",
+          "title": "キリン福祉財団「キリン・地域のちから応援事業」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/250924kirinC.html",
+          "date": "2025-09-24",
+          "category": "助成"
+        },
+        {
+          "hash": "1379fa9f849a032a",
+          "title": "キリン福祉財団「キリン・福祉のちから開拓事業」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/250924kirinH.html",
+          "date": "2025-09-24",
+          "category": "助成"
+        },
+        {
+          "hash": "7f256944f504ec9c",
+          "title": "日本生命財団「児童・少年の健全育成助成（物品助成）」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/250919nissei.html",
+          "date": "2025-09-19",
+          "category": "助成"
+        },
+        {
+          "hash": "525ea4be5cc4ca7a",
+          "title": "日本生命財団「生き生きシニア活動顕彰」",
+          "url": "https://www.shakyo.or.jp/news/2025/0919nissei.html",
+          "date": "2025-09-19",
+          "category": "告知"
+        },
+        {
+          "hash": "097c8ce44e05c76d",
+          "title": "雨宮児童福祉財団「修学助成金」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/250908amemiya.html",
+          "date": "2025-09-08",
+          "category": "助成"
+        },
+        {
+          "hash": "7c51a6947ec0667a",
+          "title": "キッズドア基金「進学応援奨学金」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/250908kidsdoor.html",
+          "date": "2025-09-08",
+          "category": "助成"
+        },
+        {
+          "hash": "8649ae969b951c98",
+          "title": "国際交流・支援活動会員のご案内",
+          "url": "https://www.shakyo.or.jp/bunya/kokusai/member/index.html",
+          "date": "2025-09-01",
+          "category": "案内"
+        },
+        {
+          "hash": "aa47d5be030df6f7",
+          "title": "こくみん共済coop「地域貢献助成」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/250901zenrosai.html",
+          "date": "2025-09-01",
+          "category": "助成"
+        }
+      ]
     }
   },
   "preferredModel": "gemini-3.5-flash-lite",
   "lastSentDate": "2026-08-28",
-  "lastRunAt": "2026-08-28T06:06:47.737Z"
+  "lastRunAt": "2026-08-28T07:05:02.301Z"
 }
