@@ -1,8 +1,15 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-08-28T07:04:52.908Z",
+      "lastCrawled": "2026-08-29T03:42:30.911Z",
       "items": [
+        {
+          "hash": "620a5c85f08d2501",
+          "title": "黄川田大臣記者会見（令和8年8月28日）を掲載しました",
+          "url": "https://www.cfa.go.jp/speech/58acdea4",
+          "date": "2026-08-28",
+          "category": "会見"
+        },
         {
           "hash": "814b10688c536f62",
           "title": "採用情報【武蔵野学院】：国立児童自立支援施設職員（児童自立支援専門員）の募集情報を掲載しました",
@@ -321,7 +328,7 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-08-28T07:04:53.880Z",
+      "lastCrawled": "2026-08-29T03:42:31.916Z",
       "items": [
         {
           "hash": "43733b0be3bf71a7",
@@ -331,11 +338,67 @@
           "category": "報道発表"
         },
         {
+          "hash": "2efac01514addce4",
+          "title": "調剤医療費（電算処理分）の動向 ～令和7年度版～",
+          "url": "https://www.mhlw.go.jp/topics/medias/year/25/gaiyou.html",
+          "date": "2026-08-28",
+          "category": "政策分野"
+        },
+        {
+          "hash": "dcc1d3a9d8728f60",
+          "title": "歯科医療費（電算処理分）の動向 ～令和7年度版～",
+          "url": "https://www.mhlw.go.jp/topics/medias/year/25/shika_iryou_doukou_r07.html",
+          "date": "2026-08-28",
+          "category": "政策分野"
+        },
+        {
+          "hash": "f4280f5dfbba2847",
+          "title": "医療費の動向（年次版） 令和７年度",
+          "url": "https://www.mhlw.go.jp/topics/medias/year/25/index.html",
+          "date": "2026-08-28",
+          "category": "政策分野"
+        },
+        {
+          "hash": "d4c1c01ce043953a",
+          "title": "最近の調剤医療費（電算処理分）の動向 令和7年度3月号",
+          "url": "https://www.mhlw.go.jp/topics/medias/c-med/2026/03/",
+          "date": "2026-08-28",
+          "category": "政策分野"
+        },
+        {
+          "hash": "e7e88a29be4c8363",
+          "title": "最近の歯科医療費（電算処理分）の動向 令和7年度3月号",
+          "url": "https://www.mhlw.go.jp/topics/medias/shika_iryou/2026/03/",
+          "date": "2026-08-28",
+          "category": "政策分野"
+        },
+        {
+          "hash": "a16753d121c41948",
+          "title": "最近の医科医療費（電算処理分）の動向 令和7年度3月号",
+          "url": "https://www.mhlw.go.jp/topics/medias/ika_iryou/2026/03/",
+          "date": "2026-08-28",
+          "category": "政策分野"
+        },
+        {
+          "hash": "ba00194bddf48731",
+          "title": "最近の医療費の動向-MEDIAS-令和7年度3月号",
+          "url": "https://www.mhlw.go.jp/topics/medias/month/26/03.html",
+          "date": "2026-08-28",
+          "category": "政策分野"
+        },
+        {
           "hash": "98a8f222fe2febb6",
           "title": "輸入食品に対する検査命令の実施 （トーゴ産ごまの種子）",
           "url": "https://www.mhlw.go.jp/stf/newpage_75788.html",
           "date": "2026-08-28",
           "category": "その他"
+        },
+        {
+          "hash": "b9513bba7aec562c",
+          "title": "医科医療費（電算処理分）の動向 ～令和7年度版～",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/iryouhoken/database/zenpan/ika_iryou_doukou_r07.html",
+          "date": "2026-08-28",
+          "category": "政策分野"
         },
         {
           "hash": "297cc8c252528fc8",
@@ -363,7 +426,7 @@
           "title": "国民年金第３号被保険者制度等に関する検討会",
           "url": "https://www.mhlw.go.jp/stf/newpage_75817.html",
           "date": "2026-08-28",
-          "category": "その他"
+          "category": "審議会等"
         },
         {
           "hash": "cc6d66f19dbc4e82",
@@ -3770,7 +3833,7 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-08-28T07:04:55.316Z",
+      "lastCrawled": "2026-08-29T03:42:33.322Z",
       "items": [
         {
           "hash": "a56982d1b316d212",
@@ -5329,7 +5392,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-08-28T07:04:56.076Z",
+      "lastCrawled": "2026-08-29T03:42:34.754Z",
       "items": [
         {
           "hash": "b0567d725b9899bc",
@@ -5537,7 +5600,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-08-28T07:04:56.837Z",
+      "lastCrawled": "2026-08-29T03:42:35.154Z",
       "items": [
         {
           "hash": "a65207d0ac8ddd89",
@@ -6051,8 +6114,15 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-08-28T07:04:58.433Z",
+      "lastCrawled": "2026-08-29T03:42:36.647Z",
       "items": [
+        {
+          "hash": "a06f86267314229f",
+          "title": "SOMPOケア、介護経営の伴走支援をサブスクで展開 今秋開始 NDソフトの顧客基盤と連動",
+          "url": "https://www.joint-kaigo.com/articles/48310/",
+          "date": "2026-08-28",
+          "category": "テクノロジ"
+        },
         {
           "hash": "854612641a1b9fc7",
           "title": "来年度の障害福祉報酬改定、厚労省が論点提示 サービスの質で「メリハリきいた体系に」",
@@ -6065,14 +6135,14 @@
           "title": "介護保険の年間費用、初の12兆円超え 要介護認定者は過去最多721万人＝厚労省",
           "url": "https://www.joint-kaigo.com/articles/48286/",
           "date": "2026-08-27",
-          "category": "福祉用具"
+          "category": "介護保険"
         },
         {
           "hash": "910637296f9c5902",
           "title": "ケアプー「引っ越し」説明会、厚労省が開催 アーカイブをYouTubeで公開中！ 早期登録を呼びかけ",
           "url": "https://www.joint-kaigo.com/articles/48273/",
           "date": "2026-08-26",
-          "category": "生産性向上"
+          "category": "テクノロジ"
         },
         {
           "hash": "159ce1df0cad4244",
@@ -6086,21 +6156,21 @@
           "title": "介護のシャドウワーク、多職種で常態化 「ほっとけない…」 割り切れぬ現場＝組合調査",
           "url": "https://www.joint-kaigo.com/articles/48250/",
           "date": "2026-08-26",
-          "category": "超高齢化"
+          "category": "自治体"
         },
         {
           "hash": "d0ebb8d508726dc8",
           "title": "これからの小多機のケアマネジメント 日本介護支援専門員協会、10月にオンライン研修開催",
           "url": "https://www.joint-kaigo.com/articles/48242/",
           "date": "2026-08-25",
-          "category": "介護保険"
+          "category": "超高齢化"
         },
         {
           "hash": "10963435451bc037",
           "title": "外国人の在留手数料、10月から大幅引き上げ 介護現場の受け入れコスト増に懸念も",
           "url": "https://www.joint-kaigo.com/articles/48230/",
           "date": "2026-08-25",
-          "category": "政府与党"
+          "category": "外国人材"
         },
         {
           "hash": "ad9fb8b761e39094",
@@ -6224,7 +6294,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-08-28T07:04:57.570Z",
+      "lastCrawled": "2026-08-29T03:42:35.355Z",
       "items": [
         {
           "hash": "cc45938bf97029c2",
@@ -6374,6 +6444,13 @@
           "category": ""
         },
         {
+          "hash": "bd4abb0f6704297b",
+          "title": "令和８年度福岡県外国人介護人材確保強化事業費補助金に係るご案内",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kakuhokyoka.html",
+          "date": "2026年8月4日更新",
+          "category": ""
+        },
+        {
           "hash": "819df62407e0a0af",
           "title": "令和８年度福岡県介護ＤＸ支援事業費補助金に係るご案内",
           "url": "https://www.pref.fukuoka.lg.jp/contents/kaigodx.html",
@@ -6392,13 +6469,6 @@
           "title": "居宅サービス事業所に関する新規申請、変更届、廃止・休止・再開届等",
           "url": "https://www.pref.fukuoka.lg.jp/contents/kyotakukaigoshinsei.html",
           "date": "2026年7月30日更新",
-          "category": ""
-        },
-        {
-          "hash": "d1b8f17d7e17e30c",
-          "title": "福岡県身体拘束ゼロ宣言を実施しています",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/zerosengen.html",
-          "date": "2026年7月27日更新",
           "category": ""
         },
         {
@@ -6507,6 +6577,13 @@
           "category": ""
         },
         {
+          "hash": "d1b8f17d7e17e30c",
+          "title": "福岡県身体拘束ゼロ宣言を実施しています",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/zerosengen.html",
+          "date": "2026年7月27日更新",
+          "category": ""
+        },
+        {
           "hash": "7aff5de4fff3b96d",
           "title": "令和８年度福岡県外国人介護人材確保強化事業費補助金に係るご案内",
           "url": "https://www.pref.fukuoka.lg.jp/contents/kakuhokyoka.html",
@@ -6516,7 +6593,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-08-28T07:04:59.288Z",
+      "lastCrawled": "2026-08-29T03:42:37.639Z",
       "items": [
         {
           "hash": "0d71bee14ff7ddcb",
@@ -6942,6 +7019,6 @@
     }
   },
   "preferredModel": "gemini-3.5-flash-lite",
-  "lastSentDate": "2026-08-28",
-  "lastRunAt": "2026-08-28T07:05:02.301Z"
+  "lastSentDate": "2026-08-29",
+  "lastRunAt": "2026-08-29T03:42:42.339Z"
 }

@@ -1,75 +1,144 @@
 {
-  "generatedAt": "2026-08-28T07:05:02.230Z",
+  "generatedAt": "2026-08-29T03:42:42.276Z",
   "model": "gemini-3.5-flash-lite",
   "items": [
     {
-      "hash": "43733b0be3bf71a7",
-      "source": "厚生労働省",
-      "title": "令和８年最低賃金に関する基礎調査の調査票の紛失及び個人情報の漏えいのおそれについて",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75810.html",
+      "hash": "620a5c85f08d2501",
+      "source": "こども家庭庁",
+      "title": "黄川田大臣記者会見（令和8年8月28日）を掲載しました",
+      "url": "https://www.cfa.go.jp/speech/58acdea4",
       "date": "2026-08-28",
-      "category": "報道発表",
-      "summary": "最低賃金に関する調査において調査票の紛失および個人情報漏洩のおそれが発生したという事故の公表です。福祉事業所における情報管理やセキュリティ体制の見直しに活用できます。",
-      "importance": "中",
-      "fields": [
-        "共通"
-      ],
-      "reason": "行政調査における事故報告であり、直接の制度改正ではないが個人情報管理の注意喚起として把握が必要なため。"
-    },
-    {
-      "hash": "98a8f222fe2febb6",
-      "source": "厚生労働省",
-      "title": "輸入食品に対する検査命令の実施 （トーゴ産ごまの種子）",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75788.html",
-      "date": "2026-08-28",
-      "category": "その他",
-      "summary": "特定の輸入食品に対する食品衛生法に基づく検査命令の実施に関するお知らせです。福祉施設での給食提供において食品安全の動向を把握する参考となります。",
+      "category": "会見",
+      "summary": "大臣の定例記者会見の内容を掲載するものです。福祉分野全体に関わる政府の方針や発言が含まれる可能性があります。",
       "importance": "低",
       "fields": [],
-      "reason": "食品衛生に関する個別の輸入規制であり、一般的な福祉事業所の実務に直接影響しないため。"
+      "reason": "具体的な実務上の手続きや義務化を伴う通知ではなく、個別の発言内容に留まるため。"
     },
     {
-      "hash": "297cc8c252528fc8",
+      "hash": "2efac01514addce4",
       "source": "厚生労働省",
-      "title": "「人口動態統計速報」令和８（2026）年06月分",
-      "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/s2026/06.html",
+      "title": "調剤医療費（電算処理分）の動向 ～令和7年度版～",
+      "url": "https://www.mhlw.go.jp/topics/medias/year/25/gaiyou.html",
       "date": "2026-08-28",
-      "category": "統計情報",
-      "summary": "出生数や死亡数などの全国の人口動態に関する月次統計速報です。将来の福祉需要の予測や地域における利用者数の推計の基礎データとなります。",
+      "category": "政策分野",
+      "summary": "医療保険における調剤医療費の統計データを提供するものです。福祉事業者の直接的な運営実務には影響が薄い情報です。",
       "importance": "低",
-      "fields": [
-        "共通"
-      ],
-      "reason": "マクロな統計データであり、事業者の日々の実務に直接的な対応を迫るものではないため。"
+      "fields": [],
+      "reason": "医療保険・薬剤費の統計データであり、福祉事業者の実務や制度対応に直接関係しないため。"
     },
     {
-      "hash": "1a5622105a20c2c1",
+      "hash": "dcc1d3a9d8728f60",
       "source": "厚生労働省",
-      "title": "「人を対象とする生命科学・医学系研究に関する倫理指針」の一部改正について",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75864.html",
+      "title": "歯科医療費（電算処理分）の動向 ～令和7年度版～",
+      "url": "https://www.mhlw.go.jp/topics/medias/year/25/shika_iryou_doukou_r07.html",
       "date": "2026-08-28",
-      "category": "報道発表",
-      "summary": "医療や福祉の現場で実施される人体を対象とした研究に関する倫理指針の改定情報です。医療・福祉分野で研究や臨床に関わる事業所において適合性の確認が必要となります。",
-      "importance": "中",
-      "fields": [
-        "共通"
-      ],
-      "reason": "倫理指針の改正であり、該当する研究等を行っている事業者では対応が必要となるため。"
+      "category": "政策分野",
+      "summary": "医療保険における歯科医療費の統計データを取りまとめたものです。福祉現場の運営管理に直接影響するものではありません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "歯科医療分野の統計・調査であり、福祉事業者の実務や制度対応に直接関係しないため。"
     },
     {
-      "hash": "b801c049c50dd09c",
+      "hash": "f4280f5dfbba2847",
       "source": "厚生労働省",
-      "title": "国民年金第３号被保険者制度等に関する検討会",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75817.html",
+      "title": "医療費の動向（年次版） 令和７年度",
+      "url": "https://www.mhlw.go.jp/topics/medias/year/25/index.html",
       "date": "2026-08-28",
-      "category": "その他",
-      "summary": "国民年金の第3号被保険者制度のあり方等について議論する検討会の開催情報です。将来的な社会保障制度や職員の社会保険に関わる動向を把握できます。",
-      "importance": "中",
+      "category": "政策分野",
+      "summary": "マクロな視点での医療費全体の年次動向を示す統計資料です。福祉・介護分野の報酬改定等の直接的な根拠資料となる場合もありますが、一般事業者への即時対応は求められません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医療保険制度全般の動向データであり、福祉事業所の日常的な実務や対応に直結しないため。"
+    },
+    {
+      "hash": "d4c1c01ce043953a",
+      "source": "厚生労働省",
+      "title": "最近の調剤医療費（電算処理分）の動向 令和7年度3月号",
+      "url": "https://www.mhlw.go.jp/topics/medias/c-med/2026/03/",
+      "date": "2026-08-28",
+      "category": "政策分野",
+      "summary": "月次の調剤医療費の推移に関する統計情報です。福祉事業者の実務運営には直接影響しません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医療保険に関する月次統計であり、福祉事業者の実務に影響を及ぼさないため。"
+    },
+    {
+      "hash": "e7e88a29be4c8363",
+      "source": "厚生労働省",
+      "title": "最近の歯科医療費（電算処理分）の動向 令和7年度3月号",
+      "url": "https://www.mhlw.go.jp/topics/medias/shika_iryou/2026/03/",
+      "date": "2026-08-28",
+      "category": "政策分野",
+      "summary": "月次の歯科医療費の推移に関する統計情報です。福祉事業における実務上の対応は不要です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医療保険に関する月次統計であり、福祉事業者の実務に影響を及ぼさないため。"
+    },
+    {
+      "hash": "a16753d121c41948",
+      "source": "厚生労働省",
+      "title": "最近の医科医療費（電算処理分）の動向 令和7年度3月号",
+      "url": "https://www.mhlw.go.jp/topics/medias/ika_iryou/2026/03/",
+      "date": "2026-08-28",
+      "category": "政策分野",
+      "summary": "月次の医科医療費の推移に関する統計情報です。福祉事業の運営に直接関わるものではありません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医療保険に関する月次統計であり、福祉事業者の実務に影響を及ぼさないため。"
+    },
+    {
+      "hash": "ba00194bddf48731",
+      "source": "厚生労働省",
+      "title": "最近の医療費の動向-MEDIAS-令和7年度3月号",
+      "url": "https://www.mhlw.go.jp/topics/medias/month/26/03.html",
+      "date": "2026-08-28",
+      "category": "政策分野",
+      "summary": "医療費の月次トレンドを分析したMEDIASのデータです。福祉事業者の実務や経営判断に直接影響するものではありません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医療保険の統計レポートであり、福祉事業者の実務や対応に直結しないため。"
+    },
+    {
+      "hash": "b9513bba7aec562c",
+      "source": "厚生労働省",
+      "title": "医科医療費（電算処理分）の動向 ～令和7年度版～",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/iryouhoken/database/zenpan/ika_iryou_doukou_r07.html",
+      "date": "2026-08-28",
+      "category": "政策分野",
+      "summary": "医療保険における医科医療費の年次統計データです。福祉事業者による実務的な対応や確認は不要です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医療保険の統計データであり、福祉事業者の運営実務に関係しないため。"
+    },
+    {
+      "hash": "bd4abb0f6704297b",
+      "source": "福岡県（介護・高齢者福祉）",
+      "title": "令和８年度福岡県外国人介護人材確保強化事業費補助金に係るご案内",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/kakuhokyoka.html",
+      "date": "2026年8月4日更新",
+      "category": "",
+      "summary": "福岡県内の高齢者・障害福祉施設等を対象とした、外国人介護人材の確保に関する補助金の案内および申請手続きの周知です。",
+      "importance": "高",
       "fields": [
-        "共通"
+        "高齢",
+        "障害"
       ],
-      "reason": "将来の社会保障制度の方向性に関わる検討会であり、職員の労務管理や制度変更への備えとして把握すべきであるため。"
+      "reason": "補助金・助成金の案内であり、申請手続きや期限の確認といった実務上のアクションが必要になるため。",
+      "action": "一般に、こうした通知では対象要件や補助金の活用可能性を確認し、申請を希望する場合は期限内に手続きを進めることの確認が必要になります。"
     }
   ],
-  "press": []
+  "press": [
+    {
+      "hash": "a06f86267314229f",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "SOMPOケア、介護経営の伴走支援をサブスクで展開 今秋開始 NDソフトの顧客基盤と連動",
+      "url": "https://www.joint-kaigo.com/articles/48310/",
+      "date": "2026-08-28",
+      "category": "テクノロジ",
+      "fields": [
+        "高齢"
+      ]
+    }
+  ]
 }

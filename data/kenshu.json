@@ -1,23 +1,6 @@
 {
- "updatedAt": "2026-08-28T07:09:40.958Z",
+ "updatedAt": "2026-08-29T03:46:40.514Z",
  "items": [
-  {
-   "hash": "214726beef7879ce",
-   "source": "福祉・介護研修センター 年間予定表",
-   "sourceKind": "org",
-   "title": "労務管理研修",
-   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/07/b7ccf1d575ee342038aba8ac215f8574.pdf",
-   "deadline": "2026-08-28",
-   "deadlineType": "date",
-   "deadlineRaw": "一覧の申込終了日より 8月28日",
-   "openFrom": "2026-07-14",
-   "fields": [
-    "共通"
-   ],
-   "kind": "テーマ別",
-   "via": "schedule",
-   "expireOn": "2026-11-28"
-  },
   {
    "hash": "a768a91c7c2d70d3",
    "source": "福岡県介護福祉士会",

@@ -1,52 +1,107 @@
 {
-  "generatedAt": "2026-08-28T07:04:59.291Z",
+  "generatedAt": "2026-08-29T03:42:37.641Z",
   "newItems": [
     {
-      "source": "厚生労働省",
+      "source": "こども家庭庁",
       "kind": "gov",
-      "hash": "43733b0be3bf71a7",
-      "title": "令和８年最低賃金に関する基礎調査の調査票の紛失及び個人情報の漏えいのおそれについて",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75810.html",
+      "hash": "620a5c85f08d2501",
+      "title": "黄川田大臣記者会見（令和8年8月28日）を掲載しました",
+      "url": "https://www.cfa.go.jp/speech/58acdea4",
       "date": "2026-08-28",
-      "category": "報道発表"
+      "category": "会見"
     },
     {
       "source": "厚生労働省",
       "kind": "gov",
-      "hash": "98a8f222fe2febb6",
-      "title": "輸入食品に対する検査命令の実施 （トーゴ産ごまの種子）",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75788.html",
+      "hash": "2efac01514addce4",
+      "title": "調剤医療費（電算処理分）の動向 ～令和7年度版～",
+      "url": "https://www.mhlw.go.jp/topics/medias/year/25/gaiyou.html",
       "date": "2026-08-28",
-      "category": "その他"
+      "category": "政策分野"
     },
     {
       "source": "厚生労働省",
       "kind": "gov",
-      "hash": "297cc8c252528fc8",
-      "title": "「人口動態統計速報」令和８（2026）年06月分",
-      "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/s2026/06.html",
+      "hash": "dcc1d3a9d8728f60",
+      "title": "歯科医療費（電算処理分）の動向 ～令和7年度版～",
+      "url": "https://www.mhlw.go.jp/topics/medias/year/25/shika_iryou_doukou_r07.html",
       "date": "2026-08-28",
-      "category": "統計情報"
+      "category": "政策分野"
     },
     {
       "source": "厚生労働省",
       "kind": "gov",
-      "hash": "1a5622105a20c2c1",
-      "title": "「人を対象とする生命科学・医学系研究に関する倫理指針」の一部改正について",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75864.html",
+      "hash": "f4280f5dfbba2847",
+      "title": "医療費の動向（年次版） 令和７年度",
+      "url": "https://www.mhlw.go.jp/topics/medias/year/25/index.html",
       "date": "2026-08-28",
-      "category": "報道発表"
+      "category": "政策分野"
     },
     {
       "source": "厚生労働省",
       "kind": "gov",
-      "hash": "b801c049c50dd09c",
-      "title": "国民年金第３号被保険者制度等に関する検討会",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75817.html",
+      "hash": "d4c1c01ce043953a",
+      "title": "最近の調剤医療費（電算処理分）の動向 令和7年度3月号",
+      "url": "https://www.mhlw.go.jp/topics/medias/c-med/2026/03/",
       "date": "2026-08-28",
-      "category": "その他"
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "e7e88a29be4c8363",
+      "title": "最近の歯科医療費（電算処理分）の動向 令和7年度3月号",
+      "url": "https://www.mhlw.go.jp/topics/medias/shika_iryou/2026/03/",
+      "date": "2026-08-28",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "a16753d121c41948",
+      "title": "最近の医科医療費（電算処理分）の動向 令和7年度3月号",
+      "url": "https://www.mhlw.go.jp/topics/medias/ika_iryou/2026/03/",
+      "date": "2026-08-28",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "ba00194bddf48731",
+      "title": "最近の医療費の動向-MEDIAS-令和7年度3月号",
+      "url": "https://www.mhlw.go.jp/topics/medias/month/26/03.html",
+      "date": "2026-08-28",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "b9513bba7aec562c",
+      "title": "医科医療費（電算処理分）の動向 ～令和7年度版～",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/iryouhoken/database/zenpan/ika_iryou_doukou_r07.html",
+      "date": "2026-08-28",
+      "category": "政策分野"
+    },
+    {
+      "source": "福岡県（介護・高齢者福祉）",
+      "kind": "gov",
+      "hash": "bd4abb0f6704297b",
+      "title": "令和８年度福岡県外国人介護人材確保強化事業費補助金に係るご案内",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/kakuhokyoka.html",
+      "date": "2026年8月4日更新",
+      "category": ""
     }
   ],
-  "newPress": [],
+  "newPress": [
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "a06f86267314229f",
+      "title": "SOMPOケア、介護経営の伴走支援をサブスクで展開 今秋開始 NDソフトの顧客基盤と連動",
+      "url": "https://www.joint-kaigo.com/articles/48310/",
+      "date": "2026-08-28",
+      "category": "テクノロジ"
+    }
+  ],
   "crawlErrors": []
 }
