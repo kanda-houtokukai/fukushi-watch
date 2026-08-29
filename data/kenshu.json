@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-29T03:46:40.514Z",
+ "updatedAt": "2026-08-29T04:23:47.196Z",
  "items": [
   {
    "hash": "a768a91c7c2d70d3",
@@ -839,6 +839,23 @@
    "outlineUrl": "https://www.f-kaigo.jp/upimg/y6a6985ab9e66f.pdf"
   },
   {
+   "hash": "bd9d9bbb6c10e43d",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "via": "schedule",
+   "title": "感染症予防研修(後期)",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/08/e9884305e5ec37f96e4c3bf628e95c9b.pdf",
+   "deadline": "2026-10-20",
+   "deadlineType": "date",
+   "deadlineRaw": "一覧の申込終了日より 10月20日",
+   "openFrom": "2026-09-01",
+   "fields": [
+    "共通"
+   ],
+   "kind": "法令対応",
+   "expireOn": "2027-01-20"
+  },
+  {
    "hash": "b51739d6a22d7bac",
    "source": "福祉・介護研修センター 年間予定表",
    "sourceKind": "org",
@@ -1151,25 +1168,6 @@
     }
    ],
    "outlineUrl": "https://www.f-kaigo.jp/upimg/y6a7c19aaa4eb1.pdf"
-  },
-  {
-   "hash": "26300e60a2740f6e",
-   "source": "福祉・介護研修センター 年間予定表",
-   "sourceKind": "org",
-   "via": "schedule",
-   "title": "感染症予防研修(後期)",
-   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/#link3",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "11月開催予定",
-   "openFrom": null,
-   "fields": [
-    "共通"
-   ],
-   "kind": "法令対応",
-   "preOpenNote": "11月開催予定",
-   "preOpenSort": "2026-11",
-   "expireOn": "2026-12-31"
   },
   {
    "hash": "c4cea64f0bc13a51",
