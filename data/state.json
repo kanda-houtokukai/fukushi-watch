@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-08-30T00:19:06.126Z",
+      "lastCrawled": "2026-08-30T01:40:21.371Z",
       "items": [
         {
           "hash": "620a5c85f08d2501",
@@ -328,7 +328,7 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-08-30T00:19:07.637Z",
+      "lastCrawled": "2026-08-30T01:40:22.322Z",
       "items": [
         {
           "hash": "43733b0be3bf71a7",
@@ -3833,7 +3833,7 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-08-30T00:19:08.745Z",
+      "lastCrawled": "2026-08-30T01:40:23.591Z",
       "items": [
         {
           "hash": "a56982d1b316d212",
@@ -5392,7 +5392,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-08-30T00:19:10.111Z",
+      "lastCrawled": "2026-08-30T01:40:25.131Z",
       "items": [
         {
           "hash": "b0567d725b9899bc",
@@ -5600,7 +5600,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-08-30T00:19:10.458Z",
+      "lastCrawled": "2026-08-30T01:40:25.530Z",
       "items": [
         {
           "hash": "a65207d0ac8ddd89",
@@ -6114,8 +6114,15 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-08-29T04:19:58.817Z",
+      "lastCrawled": "2026-08-30T01:40:26.975Z",
       "items": [
+        {
+          "hash": "da1d2d231c106d3c",
+          "title": "在宅介護の生産性向上、報酬上の評価を検討 来年度改定 訪問・通所・居宅など＝厚労省",
+          "url": "https://www.joint-kaigo.com/articles/48343/",
+          "date": "2026-08-29",
+          "category": "福祉用具"
+        },
         {
           "hash": "a06f86267314229f",
           "title": "SOMPOケア、介護経営の伴走支援をサブスクで展開 今秋開始 NDソフトの顧客基盤と連動",
@@ -6135,14 +6142,14 @@
           "title": "介護保険の年間費用、初の12兆円超え 要介護認定者は過去最多721万人＝厚労省",
           "url": "https://www.joint-kaigo.com/articles/48286/",
           "date": "2026-08-27",
-          "category": "介護保険"
+          "category": "福祉用具"
         },
         {
           "hash": "910637296f9c5902",
           "title": "ケアプー「引っ越し」説明会、厚労省が開催 アーカイブをYouTubeで公開中！ 早期登録を呼びかけ",
           "url": "https://www.joint-kaigo.com/articles/48273/",
           "date": "2026-08-26",
-          "category": "テクノロジ"
+          "category": "自治体"
         },
         {
           "hash": "159ce1df0cad4244",
@@ -6156,21 +6163,21 @@
           "title": "介護のシャドウワーク、多職種で常態化 「ほっとけない…」 割り切れぬ現場＝組合調査",
           "url": "https://www.joint-kaigo.com/articles/48250/",
           "date": "2026-08-26",
-          "category": "自治体"
+          "category": "超高齢化"
         },
         {
           "hash": "d0ebb8d508726dc8",
           "title": "これからの小多機のケアマネジメント 日本介護支援専門員協会、10月にオンライン研修開催",
           "url": "https://www.joint-kaigo.com/articles/48242/",
           "date": "2026-08-25",
-          "category": "超高齢化"
+          "category": "介護保険"
         },
         {
           "hash": "10963435451bc037",
           "title": "外国人の在留手数料、10月から大幅引き上げ 介護現場の受け入れコスト増に懸念も",
           "url": "https://www.joint-kaigo.com/articles/48230/",
           "date": "2026-08-25",
-          "category": "外国人材"
+          "category": "政府与党"
         },
         {
           "hash": "ad9fb8b761e39094",
@@ -6294,7 +6301,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-08-30T00:19:10.633Z",
+      "lastCrawled": "2026-08-30T01:40:25.739Z",
       "items": [
         {
           "hash": "cc45938bf97029c2",
@@ -6593,7 +6600,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-08-30T00:19:37.506Z",
+      "lastCrawled": "2026-08-30T01:40:27.785Z",
       "items": [
         {
           "hash": "0d71bee14ff7ddcb",
@@ -7020,5 +7027,5 @@
   },
   "preferredModel": "gemini-3.5-flash-lite",
   "lastSentDate": "2026-08-30",
-  "lastRunAt": "2026-08-30T00:19:37.652Z"
+  "lastRunAt": "2026-08-30T01:40:28.741Z"
 }

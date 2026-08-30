@@ -5960,7 +5960,21 @@
     "中": 0,
     "低": 0
    },
-   "items": []
+   "items": [],
+   "press": [
+    {
+     "hash": "da1d2d231c106d3c",
+     "source": "介護ニュースJoint",
+     "kind": "press",
+     "title": "在宅介護の生産性向上、報酬上の評価を検討 来年度改定 訪問・通所・居宅など＝厚労省",
+     "url": "https://www.joint-kaigo.com/articles/48343/",
+     "date": "2026-08-29",
+     "category": "福祉用具",
+     "fields": [
+      "高齢"
+     ]
+    }
+   ]
   }
  }
 }
