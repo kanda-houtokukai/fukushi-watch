@@ -1,16 +1,30 @@
 {
-  "generatedAt": "2026-08-30T01:40:27.787Z",
-  "newItems": [],
-  "newPress": [
+  "generatedAt": "2026-08-31T00:36:53.300Z",
+  "newItems": [
     {
-      "source": "介護ニュースJoint",
-      "kind": "press",
-      "hash": "da1d2d231c106d3c",
-      "title": "在宅介護の生産性向上、報酬上の評価を検討 来年度改定 訪問・通所・居宅など＝厚労省",
-      "url": "https://www.joint-kaigo.com/articles/48343/",
-      "date": "2026-08-29",
-      "category": "福祉用具"
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "0761728125054fd7",
+      "title": "一般競争入札：保活情報連携基盤に関するシステム追加改修 業務一式（令和8年度）（公告日：令和8年8月31日）を掲載しました",
+      "url": "https://www.cfa.go.jp/procurement/service",
+      "date": "2026-08-31",
+      "category": "調達情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "e1076a0c106d7cd8",
+      "title": "第６８回厚生科学審議会疾病対策部会指定難病検討委員会",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75704.html",
+      "date": "2026-08-31",
+      "category": "審議会等"
     }
   ],
-  "crawlErrors": []
+  "newPress": [],
+  "crawlErrors": [
+    {
+      "source": "介護ニュースJoint",
+      "error": "fetch failed"
+    }
+  ]
 }

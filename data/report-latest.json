@@ -1,19 +1,33 @@
 {
-  "generatedAt": "2026-08-30T01:40:28.674Z",
+  "generatedAt": "2026-08-31T00:36:54.563Z",
   "model": "gemini-3.5-flash-lite",
-  "items": [],
-  "press": [
+  "items": [
     {
-      "hash": "da1d2d231c106d3c",
-      "source": "介護ニュースJoint",
-      "kind": "press",
-      "title": "在宅介護の生産性向上、報酬上の評価を検討 来年度改定 訪問・通所・居宅など＝厚労省",
-      "url": "https://www.joint-kaigo.com/articles/48343/",
-      "date": "2026-08-29",
-      "category": "福祉用具",
+      "hash": "0761728125054fd7",
+      "source": "こども家庭庁",
+      "title": "一般競争入札：保活情報連携基盤に関するシステム追加改修 業務一式（令和8年度）（公告日：令和8年8月31日）を掲載しました",
+      "url": "https://www.cfa.go.jp/procurement/service",
+      "date": "2026-08-31",
+      "category": "調達情報",
+      "summary": "行政によるシステム改修の一般競争入札情報です。自治体等の調達案件であり、保育事業者の日常の運営や実務には直接影響しません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "自治体の調達情報・入札公告であり福祉事業の実務に関係ないため"
+    },
+    {
+      "hash": "e1076a0c106d7cd8",
+      "source": "厚生労働省",
+      "title": "第６８回厚生科学審議会疾病対策部会指定難病検討委員会",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75704.html",
+      "date": "2026-08-31",
+      "category": "審議会等",
+      "summary": "指定難病に関する厚生科学審議会の開催情報です。難病対策の制度設計や見直しに向けた動向を把握する上で参考となります。",
+      "importance": "中",
       "fields": [
-        "高齢"
-      ]
+        "障害"
+      ],
+      "reason": "審議会・検討会の情報であり、先々の制度動向として把握しておくべき事項のため"
     }
-  ]
+  ],
+  "press": []
 }
