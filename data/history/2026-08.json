@@ -5979,8 +5979,8 @@
   "2026-08-31": {
    "counts": {
     "高": 0,
-    "中": 1,
-    "低": 1
+    "中": 3,
+    "低": 6
    },
    "items": [
     {
@@ -6008,6 +6008,124 @@
       "障害"
      ],
      "reason": "審議会・検討会の情報であり、先々の制度動向として把握しておくべき事項のため"
+    },
+    {
+     "hash": "329e77d7637ae2c4",
+     "source": "こども家庭庁",
+     "title": "一般競争入札：令和8年度保育士・保育の現場の魅力普及啓発事業を掲載しました",
+     "url": "https://www.cfa.go.jp/procurement/portal",
+     "date": "2026-08-31",
+     "category": "調達情報",
+     "summary": "保育士および保育現場の魅力発信に関する事業の一般競争入札情報です。行政の調達案件であり、個別事業所の実務には直接影響しません。",
+     "importance": "低",
+     "fields": [],
+     "reason": "行政の調達情報（入札案内）であり、福祉事業所の運営や実務に直接影響しないため。",
+     "related": [
+      {
+       "day": "2026-08-25",
+       "title": "一般競争入札：令和8年度保育士・保育の現場の魅力普及啓発事業を掲載しました",
+       "url": "https://www.cfa.go.jp/procurement/portal"
+      }
+     ]
+    },
+    {
+     "hash": "15f13e6e716da2c9",
+     "source": "こども家庭庁",
+     "title": "第18回人工妊娠中絶一時金認定審査部会の審査結果について掲載しました",
+     "url": "https://www.cfa.go.jp/press/6af31e65-f6ec-41ab-aab0-02710e6cbc24",
+     "date": "2026-08-31",
+     "category": "報道発表",
+     "summary": "人工妊娠中絶に係る一時金認定に関する審査結果の公表です。医療保険や母子保健の制度に関わるものであり、通常の福祉事業所の運営実務には影響しません。",
+     "importance": "低",
+     "fields": [],
+     "reason": "医療保険・医療給付の審査結果に関する情報であり、福祉事業者の実務とは直接関係しないため。",
+     "related": [
+      {
+       "day": "2026-07-27",
+       "title": "第17回人工妊娠中絶一時金認定審査部会の審査結果について掲載しました",
+       "url": "https://www.cfa.go.jp/press/0785c976-1cea-4288-a61c-d41fa147a983"
+      }
+     ]
+    },
+    {
+     "hash": "8deb8f4572341161",
+     "source": "こども家庭庁",
+     "title": "第18回人工妊娠中絶一時金認定審査部会の議事要旨について掲載しました",
+     "url": "https://www.cfa.go.jp/councils/jinkoninshinchuzetsu-ichijikin/ff799db2",
+     "date": "2026-08-31",
+     "category": "会議等",
+     "summary": "人工妊娠中絶一時金認定審査部会の議事要旨の公開です。制度の運用動向を示すものですが、福祉事業所の日常業務への影響は薄い情報です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "審議会の議事要旨であり、一般の福祉事業者にとっては実務上の影響が薄いため。",
+     "related": [
+      {
+       "day": "2026-07-27",
+       "title": "第17回人工妊娠中絶一時金認定審査部会の議事要旨について掲載しました",
+       "url": "https://www.cfa.go.jp/councils/jinkoninshinchuzetsu-ichijikin/deff898c"
+      }
+     ]
+    },
+    {
+     "hash": "003a6a42b2153121",
+     "source": "厚生労働省",
+     "title": "【医系技官採用】令和8年度 後期試験は行います。半日見学会（医師および医学生を対象）の受付を開始しました。",
+     "url": "https://www.mhlw.go.jp/kouseiroudoushou/saiyou/ikei/index.html",
+     "date": "2026-08-31",
+     "category": "採用情報",
+     "summary": "省庁における医系技官の採用試験および見学会の案内です。行政機関の人事・採用に関する情報であり、福祉事業者の運営には関係ありません。",
+     "importance": "低",
+     "fields": [],
+     "reason": "行政機関の職員採用に関する情報であり、福祉事業運営とは無関係なため。"
+    },
+    {
+     "hash": "51e78343d902de8f",
+     "source": "厚生労働省",
+     "title": "採用情報（期間業務職員（化学物質審査専門員）募集情報）",
+     "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-iyakukyoku02-kagakubussitusinsasenmonin.html",
+     "date": "2026-08-31",
+     "category": "採用情報",
+     "summary": "行政機関における期間業務職員の求人情報です。省庁の職員採用に関する事項であり、福祉事業所の実務や運営には影響しません。",
+     "importance": "低",
+     "fields": [],
+     "reason": "行政機関の職員採用情報であり、福祉事業の運営に関係しないため。",
+     "related": [
+      {
+       "day": "2026-07-22",
+       "title": "採用情報（期間業務職員（化学物質審査専門員）募集情報）",
+       "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-iyakukyoku02-kagakubussitusinsasenmonin.html"
+      }
+     ]
+    },
+    {
+     "hash": "979154d615d50f20",
+     "source": "WAM NET",
+     "title": "第68回 厚生科学審議会疾病対策部会指定難病検討委員会（令和8年9月1日開催予定）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22822&ct=070010010&from=rss",
+     "date": "2026-08-31",
+     "category": "行政資料",
+     "summary": "指定難病の検討に関する審議会の開催予定の案内です。難病施策の動向把握には資しますが、現行の福祉事業者の実務に直ちに対応を迫るものではありません。",
+     "importance": "中",
+     "fields": [
+      "障害",
+      "高齢"
+     ],
+     "reason": "指定難病に関する審議会であり、障害福祉や高齢者医療・福祉の制度的動向として把握しておくべき情報のため。"
+    },
+    {
+     "hash": "a45320bef6763ee0",
+     "source": "WAM NET",
+     "title": "第68回 厚生科学審議会 疾病対策部会 指定難病検討委員会（令和8年9月1日開催）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22823&ct=010020245&from=rss",
+     "date": "2026-08-31",
+     "category": "行政資料",
+     "summary": "指定難病検討委員会の開催に関する行政資料の公開です。難病指定の議論の進行を確認するため、関連分野の事業者は動向を注視する必要があります。",
+     "importance": "中",
+     "fields": [
+      "障害",
+      "高齢"
+     ],
+     "reason": "指定難病に関する審議会の開催情報であり、関連する障害・高齢分野の施策動向として把握が必要なため。"
     }
    ]
   }

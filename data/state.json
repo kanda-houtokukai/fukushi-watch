@@ -1,8 +1,29 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-08-31T00:36:22.132Z",
+      "lastCrawled": "2026-08-31T01:37:09.261Z",
       "items": [
+        {
+          "hash": "329e77d7637ae2c4",
+          "title": "一般競争入札：令和8年度保育士・保育の現場の魅力普及啓発事業を掲載しました",
+          "url": "https://www.cfa.go.jp/procurement/portal",
+          "date": "2026-08-31",
+          "category": "調達情報"
+        },
+        {
+          "hash": "15f13e6e716da2c9",
+          "title": "第18回人工妊娠中絶一時金認定審査部会の審査結果について掲載しました",
+          "url": "https://www.cfa.go.jp/press/6af31e65-f6ec-41ab-aab0-02710e6cbc24",
+          "date": "2026-08-31",
+          "category": "報道発表"
+        },
+        {
+          "hash": "8deb8f4572341161",
+          "title": "第18回人工妊娠中絶一時金認定審査部会の議事要旨について掲載しました",
+          "url": "https://www.cfa.go.jp/councils/jinkoninshinchuzetsu-ichijikin/ff799db2",
+          "date": "2026-08-31",
+          "category": "会議等"
+        },
         {
           "hash": "0761728125054fd7",
           "title": "一般競争入札：保活情報連携基盤に関するシステム追加改修 業務一式（令和8年度）（公告日：令和8年8月31日）を掲載しました",
@@ -335,14 +356,28 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-08-31T00:36:23.035Z",
+      "lastCrawled": "2026-08-31T01:37:10.366Z",
       "items": [
+        {
+          "hash": "003a6a42b2153121",
+          "title": "【医系技官採用】令和8年度 後期試験は行います。半日見学会（医師および医学生を対象）の受付を開始しました。",
+          "url": "https://www.mhlw.go.jp/kouseiroudoushou/saiyou/ikei/index.html",
+          "date": "2026-08-31",
+          "category": "採用情報"
+        },
         {
           "hash": "e1076a0c106d7cd8",
           "title": "第６８回厚生科学審議会疾病対策部会指定難病検討委員会",
           "url": "https://www.mhlw.go.jp/stf/newpage_75704.html",
           "date": "2026-08-31",
           "category": "審議会等"
+        },
+        {
+          "hash": "51e78343d902de8f",
+          "title": "採用情報（期間業務職員（化学物質審査専門員）募集情報）",
+          "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-iyakukyoku02-kagakubussitusinsasenmonin.html",
+          "date": "2026-08-31",
+          "category": "採用情報"
         },
         {
           "hash": "43733b0be3bf71a7",
@@ -2473,13 +2508,6 @@
           "category": "審議会等"
         },
         {
-          "hash": "a993161e3ad72732",
-          "title": "採用情報（期間業務職員（化学物質審査専門員）募集情報）",
-          "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-iyakukyoku02-kagakubussitusinsasenmonin.html",
-          "date": "2026-07-22",
-          "category": "採用情報"
-        },
-        {
           "hash": "dfd9fd4a2b419eb8",
           "title": "第２回死因究明等推進計画検証等推進会議を開催します",
           "url": "https://www.mhlw.go.jp/stf/newpage_74808.html",
@@ -3546,8 +3574,22 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-08-31T00:36:24.324Z",
+      "lastCrawled": "2026-08-31T01:37:11.509Z",
       "items": [
+        {
+          "hash": "979154d615d50f20",
+          "title": "第68回 厚生科学審議会疾病対策部会指定難病検討委員会（令和8年9月1日開催予定）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22822&ct=070010010&from=rss",
+          "date": "2026-08-31",
+          "category": "行政資料"
+        },
+        {
+          "hash": "a45320bef6763ee0",
+          "title": "第68回 厚生科学審議会 疾病対策部会 指定難病検討委員会（令和8年9月1日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22823&ct=010020245&from=rss",
+          "date": "2026-08-31",
+          "category": "行政資料"
+        },
         {
           "hash": "a56982d1b316d212",
           "title": "介護保険最新情報Vol.1538（PDF：379KB）",
@@ -5105,7 +5147,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-08-31T00:36:25.511Z",
+      "lastCrawled": "2026-08-31T01:37:12.890Z",
       "items": [
         {
           "hash": "b0567d725b9899bc",
@@ -5313,7 +5355,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-08-31T00:36:25.906Z",
+      "lastCrawled": "2026-08-31T01:37:13.058Z",
       "items": [
         {
           "hash": "a65207d0ac8ddd89",
@@ -5827,7 +5869,7 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-08-30T01:40:26.975Z",
+      "lastCrawled": "2026-08-31T01:37:14.309Z",
       "items": [
         {
           "hash": "da1d2d231c106d3c",
@@ -6014,7 +6056,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-08-31T00:36:26.280Z",
+      "lastCrawled": "2026-08-31T01:37:13.322Z",
       "items": [
         {
           "hash": "cc45938bf97029c2",
@@ -6313,7 +6355,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-08-31T00:36:53.298Z",
+      "lastCrawled": "2026-08-31T01:37:15.069Z",
       "items": [
         {
           "hash": "0d71bee14ff7ddcb",
@@ -6740,5 +6782,5 @@
   },
   "preferredModel": "gemini-3.5-flash-lite",
   "lastSentDate": "2026-08-31",
-  "lastRunAt": "2026-08-31T00:36:54.976Z"
+  "lastRunAt": "2026-08-31T01:37:18.847Z"
 }

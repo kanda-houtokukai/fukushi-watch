@@ -1,30 +1,70 @@
 {
-  "generatedAt": "2026-08-31T00:36:53.300Z",
+  "generatedAt": "2026-08-31T01:37:15.071Z",
   "newItems": [
     {
       "source": "こども家庭庁",
       "kind": "gov",
-      "hash": "0761728125054fd7",
-      "title": "一般競争入札：保活情報連携基盤に関するシステム追加改修 業務一式（令和8年度）（公告日：令和8年8月31日）を掲載しました",
-      "url": "https://www.cfa.go.jp/procurement/service",
+      "hash": "329e77d7637ae2c4",
+      "title": "一般競争入札：令和8年度保育士・保育の現場の魅力普及啓発事業を掲載しました",
+      "url": "https://www.cfa.go.jp/procurement/portal",
       "date": "2026-08-31",
       "category": "調達情報"
     },
     {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "15f13e6e716da2c9",
+      "title": "第18回人工妊娠中絶一時金認定審査部会の審査結果について掲載しました",
+      "url": "https://www.cfa.go.jp/press/6af31e65-f6ec-41ab-aab0-02710e6cbc24",
+      "date": "2026-08-31",
+      "category": "報道発表"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "8deb8f4572341161",
+      "title": "第18回人工妊娠中絶一時金認定審査部会の議事要旨について掲載しました",
+      "url": "https://www.cfa.go.jp/councils/jinkoninshinchuzetsu-ichijikin/ff799db2",
+      "date": "2026-08-31",
+      "category": "会議等"
+    },
+    {
       "source": "厚生労働省",
       "kind": "gov",
-      "hash": "e1076a0c106d7cd8",
-      "title": "第６８回厚生科学審議会疾病対策部会指定難病検討委員会",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75704.html",
+      "hash": "003a6a42b2153121",
+      "title": "【医系技官採用】令和8年度 後期試験は行います。半日見学会（医師および医学生を対象）の受付を開始しました。",
+      "url": "https://www.mhlw.go.jp/kouseiroudoushou/saiyou/ikei/index.html",
       "date": "2026-08-31",
-      "category": "審議会等"
+      "category": "採用情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "51e78343d902de8f",
+      "title": "採用情報（期間業務職員（化学物質審査専門員）募集情報）",
+      "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-iyakukyoku02-kagakubussitusinsasenmonin.html",
+      "date": "2026-08-31",
+      "category": "採用情報"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "979154d615d50f20",
+      "title": "第68回 厚生科学審議会疾病対策部会指定難病検討委員会（令和8年9月1日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22822&ct=070010010&from=rss",
+      "date": "2026-08-31",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "a45320bef6763ee0",
+      "title": "第68回 厚生科学審議会 疾病対策部会 指定難病検討委員会（令和8年9月1日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22823&ct=010020245&from=rss",
+      "date": "2026-08-31",
+      "category": "行政資料"
     }
   ],
   "newPress": [],
-  "crawlErrors": [
-    {
-      "source": "介護ニュースJoint",
-      "error": "fetch failed"
-    }
-  ]
+  "crawlErrors": []
 }
