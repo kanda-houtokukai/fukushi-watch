@@ -1,8 +1,29 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-08-31T01:37:09.261Z",
+      "lastCrawled": "2026-09-01T01:17:45.176Z",
       "items": [
+        {
+          "hash": "5cecc3c4baac1837",
+          "title": "令和8年9月1日付人事異動情報を掲載しました",
+          "url": "https://www.cfa.go.jp/about/jinji",
+          "date": "2026-09-01",
+          "category": "組織情報"
+        },
+        {
+          "hash": "2439b28ac2cccb36",
+          "title": "一般競争入札：令和8年度全国ひとり親世帯等調査 調査関係書類の印刷・梱包・発送業務を掲載しました",
+          "url": "https://www.cfa.go.jp/procurement/portal",
+          "date": "2026-08-31",
+          "category": "調達情報"
+        },
+        {
+          "hash": "3c31adbc65bfbcb9",
+          "title": "「若年世代に関する総合的な調査（若者10万人の総合調査）」の途中経過（暫定速報）を公表しました",
+          "url": "https://www.cfa.go.jp/policies/kodomo-research/wakamono-jyumannin",
+          "date": "2026-08-31",
+          "category": "政策"
+        },
         {
           "hash": "329e77d7637ae2c4",
           "title": "一般競争入札：令和8年度保育士・保育の現場の魅力普及啓発事業を掲載しました",
@@ -356,8 +377,155 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-08-31T01:37:10.366Z",
+      "lastCrawled": "2026-09-01T01:17:45.456Z",
       "items": [
+        {
+          "hash": "7617252e7912f231",
+          "title": "令和８年度医薬品等審査迅速化事業費補助金（リアルワールドデータ活用促進事業）公募要領",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75749.html",
+          "date": "2026-09-01",
+          "category": "その他"
+        },
+        {
+          "hash": "34884eb7dc3ffef9",
+          "title": "自殺予防週間に向けて～厚生労働大臣メッセージ～",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/jisatsu/r8_shukan_message.html",
+          "date": "2026-09-01",
+          "category": "トピックス"
+        },
+        {
+          "hash": "73e6c566b92028af",
+          "title": "９月10日から９月16日は「自殺予防週間」です",
+          "url": "https://www.mhlw.go.jp/stf/r8_jisatsuyoboushukan.html",
+          "date": "2026-09-01",
+          "category": "報道発表"
+        },
+        {
+          "hash": "c51533849c68bfb1",
+          "title": "リビア国保健省との協力覚書に署名しました",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75921.html",
+          "date": "2026-08-31",
+          "category": "報道発表"
+        },
+        {
+          "hash": "8ab60f90eda3efc9",
+          "title": "令和９年度厚生労働省税制改正要望について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75877.html",
+          "date": "2026-08-31",
+          "category": "報道発表"
+        },
+        {
+          "hash": "5b582b492ee5a228",
+          "title": "令和９年度厚生労働省所管予算概算要求関係",
+          "url": "https://www.mhlw.go.jp/wp/yosan/yosan/27syokan/index.html",
+          "date": "2026-08-31",
+          "category": "政策分野"
+        },
+        {
+          "hash": "2d8b424a842684d8",
+          "title": "第3回ゲノムデータの個人識別性に関する検討会 資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75852.html",
+          "date": "2026-08-31",
+          "category": "審議会等"
+        },
+        {
+          "hash": "9577152b04f93ad7",
+          "title": "令和８年度「障害者雇用優良事業所等の厚生労働大臣表彰」受賞者決定",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75755.html",
+          "date": "2026-08-31",
+          "category": "報道発表"
+        },
+        {
+          "hash": "e5533a85d68afe20",
+          "title": "令和9年度 厚生労働省機構・定員要求について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75872.html",
+          "date": "2026-08-31",
+          "category": "その他"
+        },
+        {
+          "hash": "4cfa6f4031071cdd",
+          "title": "国内最高齢者 ご逝去について",
+          "url": "https://www.mhlw.go.jp/stf/houdou/newpage_000009.html",
+          "date": "2026-08-31",
+          "category": "報道発表"
+        },
+        {
+          "hash": "0a822ef8dc23c1ce",
+          "title": "労働基準関係法令違反に係る公表事案",
+          "url": "https://www.mhlw.go.jp/kinkyu/151106.html",
+          "date": "2026-08-31",
+          "category": "政策分野"
+        },
+        {
+          "hash": "5127d9217016fe13",
+          "title": "労働災害発生状況",
+          "url": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei11/rousai-hassei/index.html",
+          "date": "2026-08-31",
+          "category": "統計情報"
+        },
+        {
+          "hash": "3e96ee9884a83d94",
+          "title": "介護給付費等実態統計月報（令和８（2026）年５月審査分）",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/kaigo/kyufu/2026/05.html",
+          "date": "2026-08-31",
+          "category": "統計情報"
+        },
+        {
+          "hash": "ef4e55eb394421be",
+          "title": "「化学物質による健康障害防止のための濃度の基準の適用等に関する技術上の指針」について（公示）",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/anzen/newpage_00013.html",
+          "date": "2026-08-31",
+          "category": "その他"
+        },
+        {
+          "hash": "0a5cf732e9f6df5e",
+          "title": "令和７年雇用動向調査結果の概況",
+          "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/koyou/doukou/26-2/index.html",
+          "date": "2026-08-31",
+          "category": "統計情報"
+        },
+        {
+          "hash": "6532d9218759a5dc",
+          "title": "医療施設動態調査（令和8(2026)年6月末概数）",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/iryosd/m26/is2606.html",
+          "date": "2026-08-31",
+          "category": "統計情報"
+        },
+        {
+          "hash": "bc5ab55994a46c3d",
+          "title": "「令和７年外国人雇用実態調査」の結果を公表します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75722.html",
+          "date": "2026-08-31",
+          "category": "報道発表"
+        },
+        {
+          "hash": "9bd1192bd16029fd",
+          "title": "第150回脳死下での臓器提供事例に係る検証会議を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75678.html",
+          "date": "2026-08-31",
+          "category": "審議会等"
+        },
+        {
+          "hash": "69153ea70850fe7f",
+          "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75898.html",
+          "date": "2026-08-31",
+          "category": "報道発表"
+        },
+        {
+          "hash": "5e17723994af7d78",
+          "title": "資料招請（年金業務システム（経過管理・電子決裁、個人番号管理、基盤サブシステム）の更改に係る環境構築、基盤製品の賃貸借及び保守並びにデータ移行業務 一式）",
+          "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-siryo/newpage_10491.html",
+          "date": "2026-08-31",
+          "category": "その他"
+        },
+        {
+          "hash": "1bf14c0120a4d8bb",
+          "title": "令和８年８月31日付幹部名簿",
+          "url": "https://www.mhlw.go.jp/kouseiroudoushou/kanbumeibo/index.html",
+          "date": "2026-08-31",
+          "category": "その他"
+        },
         {
           "hash": "003a6a42b2153121",
           "title": "【医系技官採用】令和8年度 後期試験は行います。半日見学会（医師および医学生を対象）の受付を開始しました。",
@@ -646,6 +814,13 @@
           "category": "審議会等"
         },
         {
+          "hash": "5449b52e255143d2",
+          "title": "第78回「保健文化賞」受賞者が決まりました",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75807.html",
+          "date": "2026-08-26",
+          "category": "報道発表"
+        },
+        {
           "hash": "41d1170199ee613e",
           "title": "第４回ゲノム編集技術等を用いたヒト受精胚等の取扱い等に関する合同会議（第12回ゲノム編集技術等を用いたヒト受精胚等の臨床利用のあり方に関する専門委員会、第25回ヒト受精胚を用いる遺伝性・先天性疾患研究に関する専門委員会）の開催について",
           "url": "https://www.mhlw.go.jp/stf/newpage_75770.html",
@@ -819,6 +994,13 @@
           "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iyakuhin/iyaku/index.html",
           "date": "2026-08-24",
           "category": "政策分野"
+        },
+        {
+          "hash": "866f4bdd59200c49",
+          "title": "2025年 海外情勢報告",
+          "url": "https://www.mhlw.go.jp/stf/toukei_hakusho/kaigai25.html",
+          "date": "2026-08-24",
+          "category": "その他"
         },
         {
           "hash": "c59f9b4bedd8e185",
@@ -1052,6 +1234,13 @@
           "category": "その他"
         },
         {
+          "hash": "25ae0f5d6adbb6ba",
+          "title": "令和８年度中学生を対象とした献血への理解を促すポスターのキャッチフレーズを募集します！",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75621.html",
+          "date": "2026-08-19",
+          "category": "その他"
+        },
+        {
           "hash": "56807be255222f51",
           "title": "危険ドラッグの成分４物質を新たに指定薬物に指定",
           "url": "https://www.mhlw.go.jp/stf/houdou/0000212707_00056.html",
@@ -1183,13 +1372,6 @@
           "url": "https://www.mhlw.go.jp/stf/newpage_74927.html",
           "date": "2026-08-14",
           "category": "審議会等"
-        },
-        {
-          "hash": "44a050f1da516836",
-          "title": "令和８年８月14日付幹部名簿",
-          "url": "https://www.mhlw.go.jp/kouseiroudoushou/kanbumeibo/index.html",
-          "date": "2026-08-14",
-          "category": "その他"
         },
         {
           "hash": "5f51187fd43d75bf",
@@ -1402,13 +1584,6 @@
           "category": "報道発表"
         },
         {
-          "hash": "4982912fda3455c0",
-          "title": "ロシア連邦政府等から提供された抑留者に関する資料について（資料の一覧や死亡者名簿が閲覧できます）",
-          "url": "https://www.mhlw.go.jp/topics/bukyoku/syakai/soren/index.html",
-          "date": "2026-08-07",
-          "category": "政策分野"
-        },
-        {
           "hash": "616159579a35e41f",
           "title": "第12回厚生科学審議会食品衛生監視部会 議事録",
           "url": "https://www.mhlw.go.jp/stf/shingi/2024giji_00017.html",
@@ -1484,6 +1659,13 @@
           "url": "https://www.mhlw.go.jp/stf/newpage_70031.html",
           "date": "2026-08-06",
           "category": "報道発表"
+        },
+        {
+          "hash": "389c55b878082aeb",
+          "title": "令和９年「はたちの献血」キャンペーンのキャッチフレーズを募集します！",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75348.html",
+          "date": "2026-08-06",
+          "category": "その他"
         },
         {
           "hash": "93bd333585eafa9b",
@@ -1717,13 +1899,6 @@
           "category": "その他"
         },
         {
-          "hash": "03dd46e01806c9d4",
-          "title": "採用情報（任期付職員（感染症対策課 課長補佐又は主査（感染症対策担当））募集情報）",
-          "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/ninkituki/ninki-kansensyoutaisakutantou.html",
-          "date": "2026-08-03",
-          "category": "採用情報"
-        },
-        {
           "hash": "7f37b655abbc093e",
           "title": "独立行政法人役員（理事長・監事）の任命理由等（公募によらない場合）",
           "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/dokuhou_yakuin_riyu.html",
@@ -1771,13 +1946,6 @@
           "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000160564_00050.html",
           "date": "2026-07-31",
           "category": "その他"
-        },
-        {
-          "hash": "f853c9a700087ac5",
-          "title": "労働基準関係法令違反に係る公表事案",
-          "url": "https://www.mhlw.go.jp/kinkyu/151106.html",
-          "date": "2026-07-31",
-          "category": "政策分野"
         },
         {
           "hash": "d5fc8ce177a2d2ef",
@@ -3507,79 +3675,16 @@
           "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-siryo/newpage_10449.html",
           "date": "2026-07-03",
           "category": "その他"
-        },
-        {
-          "hash": "bfa2eb33c554f190",
-          "title": "事業場における労働者の健康保持増進の在り方に関する検討会 第３回資料",
-          "url": "https://www.mhlw.go.jp/stf/newpage_74258.html",
-          "date": "2026-07-02",
-          "category": "審議会等"
-        },
-        {
-          "hash": "eef1353494fcf974",
-          "title": "医薬品等行政評価・監視委員会 5周年シンポジウム 議事録",
-          "url": "https://www.mhlw.go.jp/stf/newpage_74255.html",
-          "date": "2026-07-02",
-          "category": "審議会等"
-        },
-        {
-          "hash": "b18190d88a3dd7cb",
-          "title": "第７回労働政策審議会（労働条件分科会「組織再編に伴う労働関係の調整に関する部会」）（資料）",
-          "url": "https://www.mhlw.go.jp/stf/newpage_74253.html",
-          "date": "2026-07-02",
-          "category": "その他"
-        },
-        {
-          "hash": "b8520cbbb3b5070f",
-          "title": "第１回介護保険制度における預貯金等の把握等に係る検討の場議事要旨",
-          "url": "https://www.mhlw.go.jp/stf/newpage_74235.html",
-          "date": "2026-07-02",
-          "category": "審議会等"
-        },
-        {
-          "hash": "26b114000cb707c7",
-          "title": "令和８年度社会福祉施設等施設整備費補助金の内示について（令和８年度当初予算等）",
-          "url": "https://www.mhlw.go.jp/stf/newpage_74201.html",
-          "date": "2026-07-02",
-          "category": "その他"
-        },
-        {
-          "hash": "98a950eec91a01fa",
-          "title": "第11回ユース年金学会を共催します",
-          "url": "https://www.mhlw.go.jp/stf/youth_nenkin_00006.html",
-          "date": "2026-07-02",
-          "category": "報道発表"
-        },
-        {
-          "hash": "01f1517d152bfe58",
-          "title": "第36回特定石綿被害建設業務労働者等認定審査会専門委員会 開催案内",
-          "url": "https://www.mhlw.go.jp/stf/newpage_74025.html",
-          "date": "2026-07-02",
-          "category": "審議会等"
-        },
-        {
-          "hash": "79097778fb080708",
-          "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
-          "url": "https://www.mhlw.go.jp/stf/newpage_74249.html",
-          "date": "2026-07-02",
-          "category": "報道発表"
-        },
-        {
-          "hash": "78b2d5dbd098bde6",
-          "title": "2026年５月20日 第３回人口動態統計のICD-11準拠の統計分類適用に係るワーキンググループ 議事録",
-          "url": "https://www.mhlw.go.jp/stf/newpage_74224.html",
-          "date": "2026-07-02",
-          "category": "審議会等"
         }
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-08-31T01:37:11.509Z",
+      "lastCrawled": "2026-09-01T01:17:46.517Z",
       "items": [
         {
-          "hash": "979154d615d50f20",
-          "title": "第68回 厚生科学審議会疾病対策部会指定難病検討委員会（令和8年9月1日開催予定）",
-          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22822&ct=070010010&from=rss",
+          "hash": "d3c8d73fe12e034d",
+          "title": "「介護保険資格確認等WEBサービスとの連携におけるAPI仕様書（第1.0版）」について",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22773&ct=020050030&from=rss",
           "date": "2026-08-31",
           "category": "行政資料"
         },
@@ -3587,6 +3692,13 @@
           "hash": "a45320bef6763ee0",
           "title": "第68回 厚生科学審議会 疾病対策部会 指定難病検討委員会（令和8年9月1日開催）",
           "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22823&ct=010020245&from=rss",
+          "date": "2026-08-31",
+          "category": "行政資料"
+        },
+        {
+          "hash": "979154d615d50f20",
+          "title": "第68回 厚生科学審議会疾病対策部会指定難病検討委員会（令和8年9月1日開催予定）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22822&ct=070010010&from=rss",
           "date": "2026-08-31",
           "category": "行政資料"
         },
@@ -3657,13 +3769,6 @@
           "hash": "3fbea1c363f8cae5",
           "title": "介護保険最新情報Vol.1537（PDF：1.1MB）",
           "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0824094311515/ksvol.1537.pdf?from=rss",
-          "date": "2026-08-24",
-          "category": "行政資料"
-        },
-        {
-          "hash": "b22f6885040d5663",
-          "title": "第15回 幼児期までのこどもの育ち部会（令和8年8月31日開催予定）",
-          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22802&ct=070010010&from=rss",
           "date": "2026-08-24",
           "category": "行政資料"
         },
@@ -4977,6 +5082,13 @@
           "category": "行政資料"
         },
         {
+          "hash": "b22f6885040d5663",
+          "title": "第15回 幼児期までのこどもの育ち部会（令和8年8月31日開催予定）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22802&ct=070010010&from=rss",
+          "date": "2026-08-24",
+          "category": "行政資料"
+        },
+        {
           "hash": "10f70d01f5730f27",
           "title": "介護保険最新情報Vol.1477（PDF：136KB）",
           "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0316095840247/ksvol.1477.pdf?from=rss",
@@ -5147,8 +5259,15 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-08-31T01:37:12.890Z",
+      "lastCrawled": "2026-09-01T01:17:47.499Z",
       "items": [
+        {
+          "hash": "51bffe9d6fed8913",
+          "title": "指定自立支援医療機関名簿（精神通院医療）",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/seishintuuin2704.html",
+          "date": "2026年9月1日更新",
+          "category": ""
+        },
         {
           "hash": "b0567d725b9899bc",
           "title": "旧優生保護法及び補償制度に関する研修会",
@@ -5175,13 +5294,6 @@
           "title": "令和８年度高次脳機能障がい支援者養成研修を実施します",
           "url": "https://www.pref.fukuoka.lg.jp/contents/koujinou2026kenshu.html",
           "date": "2026年8月17日更新",
-          "category": ""
-        },
-        {
-          "hash": "05297299880739a6",
-          "title": "補装具申請様式（PDF、wordファイル、Excelファイル）",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/hoso-gu.html",
-          "date": "2026年8月4日更新",
           "category": ""
         },
         {
@@ -5220,10 +5332,10 @@
           "category": ""
         },
         {
-          "hash": "483ed0e0b42d3ebb",
+          "hash": "51bffe9d6fed8913",
           "title": "指定自立支援医療機関名簿（精神通院医療）",
           "url": "https://www.pref.fukuoka.lg.jp/contents/seishintuuin2704.html",
-          "date": "2026年8月1日更新",
+          "date": "2026年9月1日更新",
           "category": ""
         },
         {
@@ -5245,13 +5357,6 @@
           "title": "指定自立支援医療機関（精神通院医療）指定・指定更新・変更・辞退について",
           "url": "https://www.pref.fukuoka.lg.jp/contents/jiritsukikanseishin.html",
           "date": "2021年4月1日更新",
-          "category": ""
-        },
-        {
-          "hash": "0c0e10bcc76b2bd5",
-          "title": "【就労継続支援A型及びB型事業所】令和7年度工賃（賃金）実績報告を提出してください",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/r7kouchinjisseki.html",
-          "date": "2026年7月17日更新",
           "category": ""
         },
         {
@@ -5280,6 +5385,13 @@
           "title": "【者】 障がい福祉サービス事業所指定申請書類及び関係通知等",
           "url": "https://www.pref.fukuoka.lg.jp/contents/syougai-shitei.html",
           "date": "2026年4月22日更新",
+          "category": ""
+        },
+        {
+          "hash": "702d263c5f7def0e",
+          "title": "【障がい福祉】令和８年度 福祉・介護職員等処遇改善加算について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/fukushikaigo-syogukaizen-r8keikaku.html",
+          "date": "2026年3月31日更新",
           "category": ""
         },
         {
@@ -5315,6 +5427,27 @@
           "title": "「まごころ製品」ロゴマークについて",
           "url": "https://www.pref.fukuoka.lg.jp/contents/magokorologomark.html",
           "date": "2025年4月11日更新",
+          "category": ""
+        },
+        {
+          "hash": "05297299880739a6",
+          "title": "補装具申請様式（PDF、wordファイル、Excelファイル）",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/hoso-gu.html",
+          "date": "2026年8月4日更新",
+          "category": ""
+        },
+        {
+          "hash": "483ed0e0b42d3ebb",
+          "title": "指定自立支援医療機関名簿（精神通院医療）",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/seishintuuin2704.html",
+          "date": "2026年8月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "0c0e10bcc76b2bd5",
+          "title": "【就労継続支援A型及びB型事業所】令和7年度工賃（賃金）実績報告を提出してください",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/r7kouchinjisseki.html",
+          "date": "2026年7月17日更新",
           "category": ""
         },
         {
@@ -5355,7 +5488,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-08-31T01:37:13.058Z",
+      "lastCrawled": "2026-09-01T01:17:47.755Z",
       "items": [
         {
           "hash": "a65207d0ac8ddd89",
@@ -5869,14 +6002,21 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-08-31T01:37:14.309Z",
+      "lastCrawled": "2026-09-01T01:17:48.909Z",
       "items": [
+        {
+          "hash": "37d20d8a6889dedf",
+          "title": "介護施設の夜間の人員配置、さらなる基準緩和を俎上に 厚労省 見守り機器活用で検討",
+          "url": "https://www.joint-kaigo.com/articles/48355/",
+          "date": "2026-08-31",
+          "category": "介護給付費分科会"
+        },
         {
           "hash": "da1d2d231c106d3c",
           "title": "在宅介護の生産性向上、報酬上の評価を検討 来年度改定 訪問・通所・居宅など＝厚労省",
           "url": "https://www.joint-kaigo.com/articles/48343/",
           "date": "2026-08-29",
-          "category": "福祉用具"
+          "category": "テクノロジ"
         },
         {
           "hash": "a06f86267314229f",
@@ -5904,7 +6044,7 @@
           "title": "ケアプー「引っ越し」説明会、厚労省が開催 アーカイブをYouTubeで公開中！ 早期登録を呼びかけ",
           "url": "https://www.joint-kaigo.com/articles/48273/",
           "date": "2026-08-26",
-          "category": "自治体"
+          "category": "テクノロジ"
         },
         {
           "hash": "159ce1df0cad4244",
@@ -5918,14 +6058,14 @@
           "title": "介護のシャドウワーク、多職種で常態化 「ほっとけない…」 割り切れぬ現場＝組合調査",
           "url": "https://www.joint-kaigo.com/articles/48250/",
           "date": "2026-08-26",
-          "category": "超高齢化"
+          "category": "自治体"
         },
         {
           "hash": "d0ebb8d508726dc8",
           "title": "これからの小多機のケアマネジメント 日本介護支援専門員協会、10月にオンライン研修開催",
           "url": "https://www.joint-kaigo.com/articles/48242/",
           "date": "2026-08-25",
-          "category": "介護保険"
+          "category": "超高齢化"
         },
         {
           "hash": "10963435451bc037",
@@ -6056,7 +6196,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-08-31T01:37:13.322Z",
+      "lastCrawled": "2026-09-01T01:17:47.933Z",
       "items": [
         {
           "hash": "cc45938bf97029c2",
@@ -6199,6 +6339,20 @@
           "category": ""
         },
         {
+          "hash": "42461e3837ad2cb4",
+          "title": "令和８年度福岡県介護ＤＸ支援事業費補助金に係るご案内（交付申請受付は終了しました）",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kaigodx.html",
+          "date": "2026年9月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "6bf0adf03c073556",
+          "title": "福岡県身体拘束ゼロ宣言を実施しています",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/zerosengen.html",
+          "date": "2026年8月31日更新",
+          "category": ""
+        },
+        {
           "hash": "7190a8b4fb72fb80",
           "title": "令和８年度集団指導（介護保険）について",
           "url": "https://www.pref.fukuoka.lg.jp/contents/kaigo-syhudan-r8.html",
@@ -6213,13 +6367,6 @@
           "category": ""
         },
         {
-          "hash": "819df62407e0a0af",
-          "title": "令和８年度福岡県介護ＤＸ支援事業費補助金に係るご案内",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/kaigodx.html",
-          "date": "2026年8月3日更新",
-          "category": ""
-        },
-        {
           "hash": "63ca04609fe15b62",
           "title": "介護保険指定更新事業所（令和８年８月更新）リスト",
           "url": "https://www.pref.fukuoka.lg.jp/contents/kousin.html",
@@ -6227,24 +6374,10 @@
           "category": ""
         },
         {
-          "hash": "d92a57e4ec94ad25",
-          "title": "居宅サービス事業所に関する新規申請、変更届、廃止・休止・再開届等",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/kyotakukaigoshinsei.html",
-          "date": "2026年7月30日更新",
-          "category": ""
-        },
-        {
           "hash": "8382166117832471",
           "title": "介護老人保健施設運営指導等事前提出資料等様式（令和８年度）",
           "url": "https://www.pref.fukuoka.lg.jp/contents/fukuoka-rouken-uneishidou.html",
           "date": "2026年8月4日更新",
-          "category": ""
-        },
-        {
-          "hash": "748d32494529a161",
-          "title": "（令和7年度）介護サービス情報公表システム",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/kouhyou-sisutemu.html",
-          "date": "2026年7月1日更新",
           "category": ""
         },
         {
@@ -6266,6 +6399,13 @@
           "title": "介護施設・事業所等における災害時情報共有システムについて",
           "url": "https://www.pref.fukuoka.lg.jp/contents/kaigo-saigaisystem.html",
           "date": "2026年4月28日更新",
+          "category": ""
+        },
+        {
+          "hash": "33ff31e4cd500a14",
+          "title": "（令和８年度）介護サービス情報の公表制度について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/keikakuseido.html",
+          "date": "2026年4月1日更新",
           "category": ""
         },
         {
@@ -6304,6 +6444,20 @@
           "category": ""
         },
         {
+          "hash": "0a6a077f432e445e",
+          "title": "介護福祉士実務者養成施設に係る申請・届出等について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/zitsumusyayousei.html",
+          "date": "2026年9月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "52e19c21ee21e604",
+          "title": "外国人介護人材",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/gaikokukaigo.html",
+          "date": "2026年9月1日更新",
+          "category": ""
+        },
+        {
           "hash": "d4045c108b534c85",
           "title": "福岡県働きやすい介護職場認証制度について",
           "url": "https://www.pref.fukuoka.lg.jp/contents/kaigo-ninsyou.html",
@@ -6325,10 +6479,24 @@
           "category": ""
         },
         {
-          "hash": "cc45938bf97029c2",
-          "title": "「処遇改善加算取得のための勉強会」について",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/syogusokushin.html",
-          "date": "2026年8月12日更新",
+          "hash": "819df62407e0a0af",
+          "title": "令和８年度福岡県介護ＤＸ支援事業費補助金に係るご案内",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kaigodx.html",
+          "date": "2026年8月3日更新",
+          "category": ""
+        },
+        {
+          "hash": "d92a57e4ec94ad25",
+          "title": "居宅サービス事業所に関する新規申請、変更届、廃止・休止・再開届等",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kyotakukaigoshinsei.html",
+          "date": "2026年7月30日更新",
+          "category": ""
+        },
+        {
+          "hash": "748d32494529a161",
+          "title": "（令和7年度）介護サービス情報公表システム",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kouhyou-sisutemu.html",
+          "date": "2026年7月1日更新",
           "category": ""
         },
         {
@@ -6355,8 +6523,15 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-08-31T01:37:15.069Z",
+      "lastCrawled": "2026-09-01T01:17:51.451Z",
       "items": [
+        {
+          "hash": "7f02b6f6df29dc34",
+          "title": "キッズドア「進学応援奨学金」",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/260831kidsdoor.html",
+          "date": "2026-08-31",
+          "category": "助成"
+        },
         {
           "hash": "0d71bee14ff7ddcb",
           "title": "SOMPO福祉財団「認定NPO法人取得資金助成（NPO基盤強化資金助成）」",
@@ -6780,7 +6955,7 @@
       ]
     }
   },
-  "preferredModel": "gemini-3.5-flash-lite",
-  "lastSentDate": "2026-08-31",
-  "lastRunAt": "2026-08-31T01:37:18.847Z"
+  "preferredModel": "gemini-3.6-flash",
+  "lastSentDate": "2026-09-01",
+  "lastRunAt": "2026-09-01T01:22:06.182Z"
 }

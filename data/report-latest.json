@@ -1,97 +1,529 @@
 {
-  "generatedAt": "2026-08-31T01:37:18.782Z",
-  "model": "gemini-3.5-flash-lite",
+  "generatedAt": "2026-09-01T01:22:06.117Z",
+  "model": "gemini-3.6-flash",
   "items": [
     {
-      "hash": "329e77d7637ae2c4",
+      "hash": "5cecc3c4baac1837",
       "source": "こども家庭庁",
-      "title": "一般競争入札：令和8年度保育士・保育の現場の魅力普及啓発事業を掲載しました",
+      "title": "令和8年9月1日付人事異動情報を掲載しました",
+      "url": "https://www.cfa.go.jp/about/jinji",
+      "date": "2026-09-01",
+      "category": "組織情報",
+      "summary": "厚生労働省の職員人事異動に関する掲載情報です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "省庁内部の人事情報であり、福祉事業の実務への影響はないため。"
+    },
+    {
+      "hash": "2439b28ac2cccb36",
+      "source": "こども家庭庁",
+      "title": "一般競争入札：令和8年度全国ひとり親世帯等調査 調査関係書類の印刷・梱包・発送業務を掲載しました",
       "url": "https://www.cfa.go.jp/procurement/portal",
       "date": "2026-08-31",
       "category": "調達情報",
-      "summary": "保育士および保育現場の魅力発信に関する事業の一般競争入札情報です。行政の調達案件であり、個別事業所の実務には直接影響しません。",
+      "summary": "全国ひとり親世帯等調査における書類の印刷や発送業務の入札公告です。",
       "importance": "低",
       "fields": [],
-      "reason": "行政の調達情報（入札案内）であり、福祉事業所の運営や実務に直接影響しないため。"
+      "reason": "業務委託の調達情報であり、福祉事業者の運営には直接関係しないため。"
     },
     {
-      "hash": "15f13e6e716da2c9",
+      "hash": "3c31adbc65bfbcb9",
       "source": "こども家庭庁",
-      "title": "第18回人工妊娠中絶一時金認定審査部会の審査結果について掲載しました",
-      "url": "https://www.cfa.go.jp/press/6af31e65-f6ec-41ab-aab0-02710e6cbc24",
+      "title": "「若年世代に関する総合的な調査（若者10万人の総合調査）」の途中経過（暫定速報）を公表しました",
+      "url": "https://www.cfa.go.jp/policies/kodomo-research/wakamono-jyumannin",
+      "date": "2026-08-31",
+      "category": "政策",
+      "summary": "若年世代の生活や意識等を把握するための大規模調査に関する暫定速報です。",
+      "importance": "中",
+      "fields": [
+        "児童"
+      ],
+      "reason": "児童・若者支援施策の背景となる統計であり、今後の政策動向の把握に役立つため。"
+    },
+    {
+      "hash": "7617252e7912f231",
+      "source": "厚生労働省",
+      "title": "令和８年度医薬品等審査迅速化事業費補助金（リアルワールドデータ活用促進事業）公募要領",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75749.html",
+      "date": "2026-09-01",
+      "category": "その他",
+      "summary": "医薬品審査の迅速化事業における補助金公募の要領です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医薬品の審査・研究に関する公募であり、福祉事業者の実務に関係がないため。"
+    },
+    {
+      "hash": "34884eb7dc3ffef9",
+      "source": "厚生労働省",
+      "title": "自殺予防週間に向けて～厚生労働大臣メッセージ～",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/jisatsu/r8_shukan_message.html",
+      "date": "2026-09-01",
+      "category": "トピックス",
+      "summary": "自殺予防週間の実施にあたって提示された厚生労働大臣のメッセージです。",
+      "importance": "低",
+      "fields": [
+        "共通"
+      ],
+      "reason": "啓発イベントに関する大臣広報であり、事業所の実務対応は不要なため。"
+    },
+    {
+      "hash": "73e6c566b92028af",
+      "source": "厚生労働省",
+      "title": "９月10日から９月16日は「自殺予防週間」です",
+      "url": "https://www.mhlw.go.jp/stf/r8_jisatsuyoboushukan.html",
+      "date": "2026-09-01",
+      "category": "報道発表",
+      "summary": "9月10日から16日までの自殺予防週間の啓発活動に関する報道発表です。",
+      "importance": "低",
+      "fields": [
+        "共通"
+      ],
+      "reason": "啓発活動の実施周知であり、福祉事業者の運営への直接的影響が薄いため。"
+    },
+    {
+      "hash": "c51533849c68bfb1",
+      "source": "厚生労働省",
+      "title": "リビア国保健省との協力覚書に署名しました",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75921.html",
       "date": "2026-08-31",
       "category": "報道発表",
-      "summary": "人工妊娠中絶に係る一時金認定に関する審査結果の公表です。医療保険や母子保健の制度に関わるものであり、通常の福祉事業所の運営実務には影響しません。",
+      "summary": "リビア国保健省との国際協力覚書締結に関する発表です。",
       "importance": "低",
       "fields": [],
-      "reason": "医療保険・医療給付の審査結果に関する情報であり、福祉事業者の実務とは直接関係しないため。"
+      "reason": "国際外交・医療協力に関する発表であり、福祉事業の運営に関係がないため。"
     },
     {
-      "hash": "8deb8f4572341161",
-      "source": "こども家庭庁",
-      "title": "第18回人工妊娠中絶一時金認定審査部会の議事要旨について掲載しました",
-      "url": "https://www.cfa.go.jp/councils/jinkoninshinchuzetsu-ichijikin/ff799db2",
-      "date": "2026-08-31",
-      "category": "会議等",
-      "summary": "人工妊娠中絶一時金認定審査部会の議事要旨の公開です。制度の運用動向を示すものですが、福祉事業所の日常業務への影響は薄い情報です。",
-      "importance": "低",
-      "fields": [],
-      "reason": "審議会の議事要旨であり、一般の福祉事業者にとっては実務上の影響が薄いため。"
-    },
-    {
-      "hash": "003a6a42b2153121",
+      "hash": "8ab60f90eda3efc9",
       "source": "厚生労働省",
-      "title": "【医系技官採用】令和8年度 後期試験は行います。半日見学会（医師および医学生を対象）の受付を開始しました。",
-      "url": "https://www.mhlw.go.jp/kouseiroudoushou/saiyou/ikei/index.html",
+      "title": "令和９年度厚生労働省税制改正要望について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75877.html",
       "date": "2026-08-31",
-      "category": "採用情報",
-      "summary": "省庁における医系技官の採用試験および見学会の案内です。行政機関の人事・採用に関する情報であり、福祉事業者の運営には関係ありません。",
-      "importance": "低",
-      "fields": [],
-      "reason": "行政機関の職員採用に関する情報であり、福祉事業運営とは無関係なため。"
-    },
-    {
-      "hash": "51e78343d902de8f",
-      "source": "厚生労働省",
-      "title": "採用情報（期間業務職員（化学物質審査専門員）募集情報）",
-      "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-iyakukyoku02-kagakubussitusinsasenmonin.html",
-      "date": "2026-08-31",
-      "category": "採用情報",
-      "summary": "行政機関における期間業務職員の求人情報です。省庁の職員採用に関する事項であり、福祉事業所の実務や運営には影響しません。",
-      "importance": "低",
-      "fields": [],
-      "reason": "行政機関の職員採用情報であり、福祉事業の運営に関係しないため。"
-    },
-    {
-      "hash": "979154d615d50f20",
-      "source": "WAM NET",
-      "title": "第68回 厚生科学審議会疾病対策部会指定難病検討委員会（令和8年9月1日開催予定）",
-      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22822&ct=070010010&from=rss",
-      "date": "2026-08-31",
-      "category": "行政資料",
-      "summary": "指定難病の検討に関する審議会の開催予定の案内です。難病施策の動向把握には資しますが、現行の福祉事業者の実務に直ちに対応を迫るものではありません。",
+      "category": "報道発表",
+      "summary": "厚生労働省が財務省に提出する次年度税制改正要望の概要です。",
       "importance": "中",
       "fields": [
-        "障害",
-        "高齢"
+        "共通"
       ],
-      "reason": "指定難病に関する審議会であり、障害福祉や高齢者医療・福祉の制度的動向として把握しておくべき情報のため。"
+      "reason": "将来の税制や法人運営に関する影響を把握しておくべき施策文書であるため。"
     },
     {
-      "hash": "a45320bef6763ee0",
-      "source": "WAM NET",
-      "title": "第68回 厚生科学審議会 疾病対策部会 指定難病検討委員会（令和8年9月1日開催）",
-      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22823&ct=010020245&from=rss",
+      "hash": "5b582b492ee5a228",
+      "source": "厚生労働省",
+      "title": "令和９年度厚生労働省所管予算概算要求関係",
+      "url": "https://www.mhlw.go.jp/wp/yosan/yosan/27syokan/index.html",
       "date": "2026-08-31",
-      "category": "行政資料",
-      "summary": "指定難病検討委員会の開催に関する行政資料の公開です。難病指定の議論の進行を確認するため、関連分野の事業者は動向を注視する必要があります。",
+      "category": "政策分野",
+      "summary": "厚生労働省の次年度予算概算要求の取りまとめ資料です。",
       "importance": "中",
       "fields": [
-        "障害",
+        "共通"
+      ],
+      "reason": "福祉施策全般の次年度予算方針を事前に把握しておくべき情報であるため。"
+    },
+    {
+      "hash": "2d8b424a842684d8",
+      "source": "厚生労働省",
+      "title": "第3回ゲノムデータの個人識別性に関する検討会 資料",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75852.html",
+      "date": "2026-08-31",
+      "category": "審議会等",
+      "summary": "ゲノムデータの個人識別性やデータ保護を議論する検討会の資料です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医療・ゲノム専門の技術的検討であり、福祉事業の運営に関係がないため。"
+    },
+    {
+      "hash": "9577152b04f93ad7",
+      "source": "厚生労働省",
+      "title": "令和８年度「障害者雇用優良事業所等の厚生労働大臣表彰」受賞者決定",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75755.html",
+      "date": "2026-08-31",
+      "category": "報道発表",
+      "summary": "障害者雇用において優良な取り組みを行った事業所等の表彰決定に関する発表です。",
+      "importance": "低",
+      "fields": [
+        "障害"
+      ],
+      "reason": "表彰に関する広報発表であり、直接的な実務上の対応を要しないため。"
+    },
+    {
+      "hash": "e5533a85d68afe20",
+      "source": "厚生労働省",
+      "title": "令和9年度 厚生労働省機構・定員要求について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75872.html",
+      "date": "2026-08-31",
+      "category": "その他",
+      "summary": "厚生労働省の組織改正や定員に関する来年度の要求内容です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "行政組織の内部体制に関する要求であり、福祉事業実務への影響がないため。"
+    },
+    {
+      "hash": "4cfa6f4031071cdd",
+      "source": "厚生労働省",
+      "title": "国内最高齢者 ご逝去について",
+      "url": "https://www.mhlw.go.jp/stf/houdou/newpage_000009.html",
+      "date": "2026-08-31",
+      "category": "報道発表",
+      "summary": "国内最高齢者の訃報に関する報道発表です。",
+      "importance": "低",
+      "fields": [
         "高齢"
       ],
-      "reason": "指定難病に関する審議会の開催情報であり、関連する障害・高齢分野の施策動向として把握が必要なため。"
+      "reason": "一般的なトピックス情報であり、福祉事業の実務に影響しないため。"
+    },
+    {
+      "hash": "0a822ef8dc23c1ce",
+      "source": "厚生労働省",
+      "title": "労働基準関係法令違反に係る公表事案",
+      "url": "https://www.mhlw.go.jp/kinkyu/151106.html",
+      "date": "2026-08-31",
+      "category": "政策分野",
+      "summary": "労働基準関係法令に違反し公表された企業・事業場の一覧情報です。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "福祉事業者においても労務管理や適切な雇用・職場環境整備の参考とすべき情報であるため。"
+    },
+    {
+      "hash": "5127d9217016fe13",
+      "source": "厚生労働省",
+      "title": "労働災害発生状況",
+      "url": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei11/rousai-hassei/index.html",
+      "date": "2026-08-31",
+      "category": "統計情報",
+      "summary": "全産業における労働災害の発生状況をまとめた統計データです。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "事業所における安全衛生管理や労災防止策の講じるうえで把握すべき統計であるため。"
+    },
+    {
+      "hash": "3e96ee9884a83d94",
+      "source": "厚生労働省",
+      "title": "介護給付費等実態統計月報（令和８（2026）年５月審査分）",
+      "url": "https://www.mhlw.go.jp/toukei/saikin/hw/kaigo/kyufu/2026/05.html",
+      "date": "2026-08-31",
+      "category": "統計情報",
+      "summary": "介護給付費の請求実績や受給者数等をまとめた月次統計情報です。",
+      "importance": "中",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "介護保険サービスの利用・給付動向を把握するための統計データであるため。"
+    },
+    {
+      "hash": "ef4e55eb394421be",
+      "source": "厚生労働省",
+      "title": "「化学物質による健康障害防止のための濃度の基準の適用等に関する技術上の指針」について（公示）",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/anzen/newpage_00013.html",
+      "date": "2026-08-31",
+      "category": "その他",
+      "summary": "職場での化学物質による障害防止に関する濃度基準適用等の指針に関する公示です。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "福祉現場を含む全事業所の労働安全衛生管理に関わるガイドラインであるため。"
+    },
+    {
+      "hash": "0a5cf732e9f6df5e",
+      "source": "厚生労働省",
+      "title": "令和７年雇用動向調査結果の概況",
+      "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/koyou/doukou/26-2/index.html",
+      "date": "2026-08-31",
+      "category": "統計情報",
+      "summary": "全国の入職・離職状況や労働移動の動向を調査した結果の概況です。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "福祉人材の採用・定着対策の検討にあたって労働市場の動向を把握する参考となるため。"
+    },
+    {
+      "hash": "6532d9218759a5dc",
+      "source": "厚生労働省",
+      "title": "医療施設動態調査（令和8(2026)年6月末概数）",
+      "url": "https://www.mhlw.go.jp/toukei/saikin/hw/iryosd/m26/is2606.html",
+      "date": "2026-08-31",
+      "category": "統計情報",
+      "summary": "全国の医療施設の開設・廃止状況などの動態に関する統計データです。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医療機関の動態統計であり、福祉事業の直接的な運営に関係がないため。"
+    },
+    {
+      "hash": "bc5ab55994a46c3d",
+      "source": "厚生労働省",
+      "title": "「令和７年外国人雇用実態調査」の結果を公表します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75722.html",
+      "date": "2026-08-31",
+      "category": "報道発表",
+      "summary": "外国人労働者の雇用状況や受け入れ実態に関する調査結果です。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "福祉現場における外国人材の受け入れや雇用管理の参考となる情報であるため。"
+    },
+    {
+      "hash": "9bd1192bd16029fd",
+      "source": "厚生労働省",
+      "title": "第150回脳死下での臓器提供事例に係る検証会議を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75678.html",
+      "date": "2026-08-31",
+      "category": "審議会等",
+      "summary": "脳死下での臓器提供事例に関する検証会議の開催案内です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医療技術・倫理分野の会議であり、福祉事業者の運営に関係がないため。"
+    },
+    {
+      "hash": "69153ea70850fe7f",
+      "source": "厚生労働省",
+      "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75898.html",
+      "date": "2026-08-31",
+      "category": "報道発表",
+      "summary": "厚生労働大臣による閣議後記者会見の案内情報です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "定例の記者会見案内であり、福祉事業の実務への影響はないため。"
+    },
+    {
+      "hash": "5e17723994af7d78",
+      "source": "厚生労働省",
+      "title": "資料招請（年金業務システム（経過管理・電子決裁、個人番号管理、基盤サブシステム）の更改に係る環境構築、基盤製品の賃貸借及び保守並びにデータ移行業務 一式）",
+      "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-siryo/newpage_10491.html",
+      "date": "2026-08-31",
+      "category": "その他",
+      "summary": "年金業務システムの更改に伴う環境構築や賃貸借に関する資料招請の案内です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "年金行政システム調達に関する手続きであり、福祉事業に関係がないため。"
+    },
+    {
+      "hash": "1bf14c0120a4d8bb",
+      "source": "厚生労働省",
+      "title": "令和８年８月31日付幹部名簿",
+      "url": "https://www.mhlw.go.jp/kouseiroudoushou/kanbumeibo/index.html",
+      "date": "2026-08-31",
+      "category": "その他",
+      "summary": "厚生労働省の幹部職員一覧名簿の更新情報です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "省庁の役職者名簿であり、福祉事業の実務への影響はないため。"
+    },
+    {
+      "hash": "5449b52e255143d2",
+      "source": "厚生労働省",
+      "title": "第78回「保健文化賞」受賞者が決まりました",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75807.html",
+      "date": "2026-08-26",
+      "category": "報道発表",
+      "summary": "保健衛生や社会福祉に貢献した者を表彰する「保健文化賞」の受賞者決定発表です。",
+      "importance": "低",
+      "fields": [
+        "共通"
+      ],
+      "reason": "表彰に関する報道発表であり、事業所の運営実務への影響がないため。"
+    },
+    {
+      "hash": "866f4bdd59200c49",
+      "source": "厚生労働省",
+      "title": "2025年 海外情勢報告",
+      "url": "https://www.mhlw.go.jp/stf/toukei_hakusho/kaigai25.html",
+      "date": "2026-08-24",
+      "category": "その他",
+      "summary": "厚生労働省等による海外の社会保障や労働情勢をまとめた報告書であり、国内の福祉事業運営に直接の影響を与えるものではありません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "福祉事業の実務に影響しない海外の情勢報告であるため。"
+    },
+    {
+      "hash": "25ae0f5d6adbb6ba",
+      "source": "厚生労働省",
+      "title": "令和８年度中学生を対象とした献血への理解を促すポスターのキャッチフレーズを募集します！",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75621.html",
+      "date": "2026-08-19",
+      "category": "その他",
+      "summary": "中学生を対象とした献血啓発ポスターのキャッチフレーズ募集案内であり、福祉事業所の実務には関係しません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "福祉事業運営に関わらない一般的な啓発公募情報であるため。"
+    },
+    {
+      "hash": "389c55b878082aeb",
+      "source": "厚生労働省",
+      "title": "令和９年「はたちの献血」キャンペーンのキャッチフレーズを募集します！",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75348.html",
+      "date": "2026-08-06",
+      "category": "その他",
+      "summary": "若年層向け献血キャンペーンのキャッチフレーズ募集に関する案内であり、福祉事業の実務への影響はありません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "事業所実務と直接関係のない広報・公募案内であるため。"
+    },
+    {
+      "hash": "d3c8d73fe12e034d",
+      "source": "WAM NET",
+      "title": "「介護保険資格確認等WEBサービスとの連携におけるAPI仕様書（第1.0版）」について",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22773&ct=020050030&from=rss",
+      "date": "2026-08-31",
+      "category": "行政資料",
+      "summary": "介護保険資格確認WEBサービスと介護ソフト等のシステム連携に必要なAPI仕様書であり、事業者やシステムベンダーによる改修・確認対応に関わります。",
+      "importance": "高",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "介護保険の資格確認システム連携に関する仕様書であり、事業所のシステム対応や動作確認が必要となるため。",
+      "action": "一般に、こうした通知では利用している介護ソフトの仕様更新に伴う影響や、システムベンダーへの改修状況の確認が必要になります。"
+    },
+    {
+      "hash": "51bffe9d6fed8913",
+      "source": "福岡県（障がい福祉）",
+      "title": "指定自立支援医療機関名簿（精神通院医療）",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/seishintuuin2704.html",
+      "date": "2026年9月1日更新",
+      "category": "",
+      "summary": "精神通院医療を担う指定自立支援医療機関の最新名簿の公表であり、利用者の受診先確認や関係機関との連携時に参照できます。",
+      "importance": "低",
+      "fields": [
+        "障害"
+      ],
+      "reason": "公表名簿の更新情報であり、事業所に即時の実務上の対応が求められるものではないため。"
+    },
+    {
+      "hash": "51bffe9d6fed8913",
+      "source": "福岡県（障がい福祉）",
+      "title": "指定自立支援医療機関名簿（精神通院医療）",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/seishintuuin2704.html",
+      "date": "2026年9月1日更新",
+      "category": "",
+      "summary": "精神通院医療を担当する指定自立支援医療機関の更新名簿であり、支援時の情報照会等に活用されます。",
+      "importance": "低",
+      "fields": [
+        "障害"
+      ],
+      "reason": "医療機関名簿の定例更新であり、実務的な義務や手続きが発生しないため。"
+    },
+    {
+      "hash": "702d263c5f7def0e",
+      "source": "福岡県（障がい福祉）",
+      "title": "【障がい福祉】令和８年度 福祉・介護職員等処遇改善加算について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/fukushikaigo-syogukaizen-r8keikaku.html",
+      "date": "2026年3月31日更新",
+      "category": "",
+      "summary": "障害福祉サービス等事業者における令和8年度の処遇改善加算の算定要件や届出手続きに関する案内であり、期限内の計画書提出等の対応が必要です。",
+      "importance": "高",
+      "fields": [
+        "障害"
+      ],
+      "reason": "加算取得に必要な計画書の提出や届出手続き等、事業所の直接的な対応が必要となるため。",
+      "action": "一般に、こうした通知では加算の算定要件の確認や、指定された期限に向けた計画書の作成および提出対応が必要になります。"
+    },
+    {
+      "hash": "42461e3837ad2cb4",
+      "source": "福岡県（介護・高齢者福祉）",
+      "title": "令和８年度福岡県介護ＤＸ支援事業費補助金に係るご案内（交付申請受付は終了しました）",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/kaigodx.html",
+      "date": "2026年9月1日更新",
+      "category": "",
+      "summary": "介護事業所のDX化を支援する補助金の交付申請受付が終了した旨の案内であり、新規の申請手続きは行えません。",
+      "importance": "低",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "補助金申請の受付終了を通知する情報であり、事業者の新たなアクションを伴わないため。"
+    },
+    {
+      "hash": "6bf0adf03c073556",
+      "source": "福岡県（介護・高齢者福祉）",
+      "title": "福岡県身体拘束ゼロ宣言を実施しています",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/zerosengen.html",
+      "date": "2026年8月31日更新",
+      "category": "",
+      "summary": "自治体による身体拘束ゼロに向けた取り組みの周知であり、施設・事業所での身体拘束廃止や適正化に向けた体制確認と遵守が求められます。",
+      "importance": "高",
+      "fields": [
+        "共通"
+      ],
+      "reason": "虐待防止・安全管理に直結する身体拘束廃止の取組に関する通知であり、現場での適切な対応が不可欠なため。",
+      "action": "一般に、こうした通知では自事業所における身体拘束廃止や適正化に向けた取組内容・運用の確認が必要になります。"
+    },
+    {
+      "hash": "33ff31e4cd500a14",
+      "source": "福岡県（介護・高齢者福祉）",
+      "title": "（令和８年度）介護サービス情報の公表制度について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/keikakuseido.html",
+      "date": "2026年4月1日更新",
+      "category": "",
+      "summary": "令和8年度における介護サービス情報の公表制度の運用や報告手続きに関する案内であり、対象となる介護事業所は期限内の情報報告対応が必要です。",
+      "importance": "高",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "法令に基づく介護サービス情報の公表・報告義務に伴う実務対応が必要となるため。",
+      "action": "一般に、こうした通知では公表制度の対象状況や報告スケジュールの確認と、期限内に向けた情報報告の対応が必要になります。"
+    },
+    {
+      "hash": "0a6a077f432e445e",
+      "source": "福岡県（介護・高齢者福祉）",
+      "title": "介護福祉士実務者養成施設に係る申請・届出等について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/zitsumusyayousei.html",
+      "date": "2026年9月1日更新",
+      "category": "",
+      "summary": "介護福祉士実務者研修を行う養成施設の設置や内容変更に関する指定申請・届出の手続き案内です。",
+      "importance": "中",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "養成施設の運営・開設等に関わる届出要件であり、該当事業所・機関での確認が必要となるため。"
+    },
+    {
+      "hash": "52e19c21ee21e604",
+      "source": "福岡県（介護・高齢者福祉）",
+      "title": "外国人介護人材",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/gaikokukaigo.html",
+      "date": "2026年9月1日更新",
+      "category": "",
+      "summary": "外国人介護人材の受け入れ・受入制度の変更点や支援策等についての総合的な案内であり、人員確保の検討に活用できます。",
+      "importance": "中",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "介護事業所の人材確保や採用運用に関わる制度情報であり、内容の把握が推奨されるため。"
+    },
+    {
+      "hash": "7f02b6f6df29dc34",
+      "source": "全国社会福祉協議会",
+      "kind": "org",
+      "title": "キッズドア「進学応援奨学金」",
+      "url": "https://www.shakyo.or.jp/guide/sponsor/p/260831kidsdoor.html",
+      "date": "2026-08-31",
+      "category": "助成",
+      "summary": "経済的困窮世帯等の子どもを対象とした進学支援奨学金の募集案内であり、事業所を利用する保護者・子どもへの情報提供に役立ちます。",
+      "importance": "中",
+      "fields": [
+        "児童"
+      ],
+      "reason": "民間団体による子ども支援の公募情報であり、相談支援等での案内・活用が期待されるため。"
     }
   ],
-  "press": []
+  "press": [
+    {
+      "hash": "37d20d8a6889dedf",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "介護施設の夜間の人員配置、さらなる基準緩和を俎上に 厚労省 見守り機器活用で検討",
+      "url": "https://www.joint-kaigo.com/articles/48355/",
+      "date": "2026-08-31",
+      "category": "介護給付費分科会",
+      "fields": [
+        "高齢"
+      ]
+    }
+  ]
 }

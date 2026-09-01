@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-31T01:39:58.199Z",
+ "updatedAt": "2026-09-01T01:35:56.571Z",
  "items": [
   {
    "hash": "a768a91c7c2d70d3",
@@ -151,7 +151,7 @@
    "source": "福祉・介護研修センター 年間予定表",
    "sourceKind": "org",
    "title": "BCP(業務継続計画)研修",
-   "url": "https://fuku-shakyo-kenshu.jp/info/%ef%bd%82%ef%bd%83%ef%bd%90%ef%bc%88%e6%a5%ad%e5%8b%99%e7%b6%99%e7%b6%9a%e8%a8%88%e7%94%bb%ef%bc%89%e7%a0%94%e4%bf%ae/",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/08/R8-BCP.pdf",
    "deadline": "2026-09-04",
    "deadlineType": "date",
    "deadlineRaw": "一覧の申込終了日より 9月4日",
@@ -646,6 +646,28 @@
    "expireOn": "2027-01-20"
   },
   {
+   "hash": "bd9d9bbb6c10e43d",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "via": "schedule",
+   "title": "感染症予防研修(後期)",
+   "url": "https://fuku-shakyo-kenshu.jp/info/%e6%84%9f%e6%9f%93%e7%97%87%e4%ba%88%e9%98%b2%e7%a0%94%e4%bf%ae%e3%83%bb%e5%be%8c%e6%9c%9f%ef%bc%88%ef%bd%97%ef%bd%85%ef%bd%82%e7%a0%94%e4%bf%ae%ef%bc%89%e3%81%ae%e9%96%8b%e5%82%ac%e3%81%ab%e3%81%a4/",
+   "deadline": "2026-10-20",
+   "deadlineType": "date",
+   "deadlineRaw": "一覧の申込終了日より 10月20日",
+   "openFrom": "2026-09-01",
+   "fields": [
+    "共通"
+   ],
+   "kind": "法令対応",
+   "expireOn": "2027-01-20",
+   "heldDates": [
+    "2026-11-05",
+    "2026-11-14",
+    "2026-11-18"
+   ]
+  },
+  {
    "hash": "ea3584c8565cff8f",
    "source": "福岡県介護福祉士会",
    "sourceKind": "org",
@@ -837,23 +859,6 @@
     }
    ],
    "outlineUrl": "https://www.f-kaigo.jp/upimg/y6a6985ab9e66f.pdf"
-  },
-  {
-   "hash": "bd9d9bbb6c10e43d",
-   "source": "福祉・介護研修センター 年間予定表",
-   "sourceKind": "org",
-   "via": "schedule",
-   "title": "感染症予防研修(後期)",
-   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/08/e9884305e5ec37f96e4c3bf628e95c9b.pdf",
-   "deadline": "2026-10-20",
-   "deadlineType": "date",
-   "deadlineRaw": "一覧の申込終了日より 10月20日",
-   "openFrom": "2026-09-01",
-   "fields": [
-    "共通"
-   ],
-   "kind": "法令対応",
-   "expireOn": "2027-01-20"
   },
   {
    "hash": "b51739d6a22d7bac",

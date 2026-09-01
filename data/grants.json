@@ -1,145 +1,6 @@
 {
- "updatedAt": "2026-08-31T01:37:48.463Z",
+ "updatedAt": "2026-09-01T01:33:48.268Z",
  "items": [
-  {
-   "hash": "9cbae0ed2b86b861",
-   "source": "助成財団センター 助成金募集ニュース",
-   "sourceKind": "org",
-   "funder": "",
-   "title": "助成事業2026年度秋期人間拡張（身体機能の獲得・向上）",
-   "url": "https://www.jfc.or.jp/news_subsidy/%e5%8a%a9%e6%88%90%e4%ba%8b%e6%a5%ad2026%e5%b9%b4%e5%ba%a6%e7%a7%8b%e6%9c%9f%e4%ba%ba%e9%96%93%e6%8b%a1%e5%bc%b5%ef%bc%88%e8%ba%ab%e4%bd%93%e6%a9%9f%e8%83%bd%e3%81%ae%e7%8d%b2%e5%be%97%e3%83%bb-2/",
-   "postedAt": "2026-08-03",
-   "deadline": "2026-08-31",
-   "deadlineType": "date",
-   "deadlineRaw": "2026/08/31 募集要項 https://www.pwc.com/jp/ja/about-u",
-   "summary": "先天性の重度知的・身体障害のある方が意思表出を行うため、テクノロジーを活用した身体機能・認知機能の発達や獲得を目指す活動を助成します。",
-   "fields": [
-    "障害"
-   ],
-   "uses": [
-    "ICT"
-   ],
-   "applicants": [],
-   "amount": "1件10,000千円",
-   "conditions": [
-    {
-     "axis": "所在地",
-     "quote": "日本国内に登記のある団体であること(法人の種類は問わない)"
-    },
-    {
-     "axis": "設立・活動年数",
-     "quote": "原則として、申請日以前に法人が設立されていることが条件となります。"
-    },
-    {
-     "axis": "併願・重複",
-     "quote": "併願はできます。ただし、選定された際にはご一報ください。"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "団体活動を通じて、政治的または宗教的活動を行わないこと"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "反社会的勢力でないこと、反社会的勢力とのいかなる関わりもないこと"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "助成の対象となる事業が非営利目的であること"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "助成期間終了後も、事業を継続する意思があること"
-    }
-   ],
-   "conditionsUrl": "https://www.pwc.com/jp/ja/about-us/member/pwc-foundation/grant/2026/04.html",
-   "openFrom": "2026-08-03"
-  },
-  {
-   "hash": "70f474eb1219a7d9",
-   "source": "全社協 福祉の助成情報",
-   "sourceKind": "org",
-   "funder": "松の花基金",
-   "title": "知的障害児者 施設事業・活動、研究・調査",
-   "url": "https://www.shakyo.or.jp/guide/sponsor/p/260408matsunohana.html",
-   "postedAt": "2026-04-08",
-   "deadline": "2026-08-31",
-   "deadlineType": "date",
-   "deadlineRaw": "2026年8月31日",
-   "summary": "知的障害児・者の福祉向上を目的とした施設事業・活動や研究・調査を実施する社会福祉法人、各種法人、研究者等へ資金を助成します。",
-   "fields": [
-    "児童",
-    "障害"
-   ],
-   "uses": [
-    "研究・調査"
-   ],
-   "applicants": [
-    "社会福祉法人",
-    "NPO・公益法人",
-    "任意団体",
-    "研究者・大学"
-   ],
-   "amount": "5万円から100万円を目処",
-   "conditions": [
-    {
-     "axis": "主体の付帯条件",
-     "quote": "ウェブシステムによる申請、または書面での申請が可能です。"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "知的障害児(者)の福祉向上を目的とする施設事業・活動および研究・調査"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "原則として社会福祉法人、公益法人、非営利活動法人および知的障害児(者)の福祉に関する団体、専門的研究者(団体)"
-    }
-   ],
-   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260408matsunohana.html"
-  },
-  {
-   "hash": "9608b4d9b55b1803",
-   "source": "全社協 福祉の助成情報",
-   "sourceKind": "org",
-   "funder": "日本フィランソロピック財団",
-   "title": "社会的養護下の子ども応援基金",
-   "url": "https://www.shakyo.or.jp/guide/sponsor/p/260728jpf.html",
-   "postedAt": "2026-07-28",
-   "deadline": "2026-08-31",
-   "deadlineType": "date",
-   "deadlineRaw": "2026年8月31日",
-   "summary": "児童養護施設や里親委託などの社会的養護下にある子どもたちへ体験機会を提供する事業を行う社会福祉法人や任意団体等を支援します。",
-   "fields": [
-    "児童"
-   ],
-   "uses": [
-    "事業・活動"
-   ],
-   "applicants": [
-    "社会福祉法人",
-    "NPO・公益法人",
-    "任意団体"
-   ],
-   "amount": "1団体あたり上限400万円",
-   "conditions": [
-    {
-     "axis": "所在地",
-     "quote": "日本国内に活動の主となる事務所があり"
-    },
-    {
-     "axis": "事業の実施地",
-     "quote": "※ 国外で実施する事業も対象となります。"
-    },
-    {
-     "axis": "設立・活動年数",
-     "quote": "活動実績2年以上"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "社会福祉法人などの非営利法人、または任意団体"
-    }
-   ],
-   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260728jpf.html"
-  },
   {
    "hash": "2f33b69c8e68fb75",
    "source": "全社協 福祉の助成情報",
@@ -182,45 +43,84 @@
    "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260812daiwa.html"
   },
   {
-   "hash": "4fb0306746e2f929",
+   "hash": "116ea69aef15c65c",
+   "source": "全社協 福祉の助成情報",
+   "sourceKind": "org",
+   "funder": "キッズドア",
+   "title": "進学応援奨学金2026 supported by 日本生命",
+   "url": "https://www.shakyo.or.jp/guide/sponsor/p/260831kidsdoor.html",
+   "postedAt": "2026-08-31",
+   "deadline": "2026-09-23",
+   "deadlineType": "date",
+   "deadlineRaw": "2026年9月23日",
+   "summary": "経済的に困難な世帯から大学・短大等への進学をめざす高校3年生等を対象とした給付型奨学金の支給。",
+   "fields": [
+    "共通"
+   ],
+   "uses": [],
+   "applicants": [
+    "個人"
+   ],
+   "amount": "1人につき10万円",
+   "conditions": [
+    {
+     "axis": "主体の付帯条件",
+     "quote": "応募方法は、電子申請によります。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "経済的に困難なご家庭から大学・短大等への進学をめざす高校3年生、浪人生(1浪まで)等に、給付型奨学金を募集しています。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "児童扶養手当受給世帯、住民税非課税世帯、生活保護世帯、社会的養護下、のご家庭が対象です。"
+    }
+   ],
+   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260831kidsdoor.html"
+  },
+  {
+   "hash": "c631175ef05fc285",
    "source": "助成財団センター 助成金募集ニュース",
    "sourceKind": "org",
    "funder": "",
-   "title": "第2回ビヨンド賞～精神障害ともにある～",
-   "url": "https://www.jfc.or.jp/news_subsidy/%e7%ac%ac2%e5%9b%9e%e3%83%93%e3%83%a8%e3%83%b3%e3%83%89%e8%b3%9e%ef%bd%9e%e7%b2%be%e7%a5%9e%e9%9a%9c%e5%ae%b3%e3%81%a8%e3%82%82%e3%81%ab%e3%81%82%e3%82%8b%ef%bd%9e/",
-   "postedAt": "2026-08-03",
-   "deadline": "2026-09-18",
+   "title": "２０２６年度研究助成の募集",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e7%a0%94%e7%a9%b6%e5%8a%a9%e6%88%90-23/",
+   "postedAt": "2026-08-31",
+   "deadline": "2026-09-30",
    "deadlineType": "date",
-   "deadlineRaw": "2026/09/18 募集要項 https://np-foundation.or.jp/infor",
-   "summary": "精神障害や精神疾患のある人が自分らしく生きられる社会を目指す地域活動や啓発活動を表彰し、副賞を授与する顕彰事業です。日本国内で精神障害に関する支援活動に取り組む団体が対象です。",
+   "deadlineRaw": "2026/09/30 必着 募集要項 https://www.fuso-inc.co.jp/fun",
+   "openFrom": "2026-08-01",
+   "conditionsUrl": "https://www.fuso-inc.co.jp/fund/",
+   "summary": "水処理技術や環境・エネルギー事業に関する研究、技術開発及び製品開発等を支援する助成。個人や法人が応募可能。",
    "fields": [
-    "障害"
+    "共通"
    ],
    "uses": [
-    "表彰"
+    "研究・調査"
    ],
-   "applicants": [],
-   "amount": "1件1,000千円",
+   "applicants": [
+    "NPO・公益法人",
+    "個人"
+   ],
+   "amount": "1,000千円/1件",
    "conditions": [
     {
      "axis": "所在地",
-     "quote": "日本国内に活動の主となる事務所があり、活動実績5年以上の団体・法人"
+     "quote": "国内に事務所、連絡先を有する個人、団体、法人"
     },
     {
-     "axis": "事業の実施地",
-     "quote": "日本国内で実施された、精神疾患を含む精神障害のある人が自分らしく生きることができる社会を育む取り組み。"
+     "axis": "受給歴",
+     "quote": "過去に累計3 回の助成を受けた申請者は、直近の助成決定の翌年度から数えて2 回(2 年間)の公募において、応募を受け付けることができません。"
     },
     {
-     "axis": "設立・活動年数",
-     "quote": "日本国内に活動の主となる事務所があり、活動実績5年以上の団体・法人"
+     "axis": "提出書類",
+     "quote": "助成申請書( 様式I )に必要事項を記入の上、事務局宛に原本1部ご提出ください。"
     },
     {
-     "axis": "主体の付帯条件",
-     "quote": "電子申請システム「Graain」から、応募書類・団体情報をご提出いただきます。"
+     "axis": "その他の対象限定",
+     "quote": "※ただし、学生(大学院生、大学生等)による申請は不可とします。"
     }
-   ],
-   "conditionsUrl": "https://np-foundation.or.jp/information/000404.html",
-   "openFrom": "2026-08-03"
+   ]
   },
   {
    "hash": "1dabc591c1297dcc",
@@ -492,6 +392,58 @@
    "openFrom": "2026-08-01"
   },
   {
+   "hash": "e6292ab04d2d816d",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "研究助成",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e7%a0%94%e7%a9%b6%e5%8a%a9%e6%88%90-24/",
+   "postedAt": "2026-09-01",
+   "deadline": "2026-11-17",
+   "deadlineType": "date",
+   "deadlineRaw": "2026/11/17 1件あたりの上限金額 一般枠:400万円 / 若手枠:150万円 募集要項",
+   "openFrom": "2026-09-01",
+   "conditionsUrl": "https://kawanozaidan.or.jp/research_support/",
+   "summary": "小児医学の発展を支援するため、小児疾患に関する基礎・臨床・社会医学的研究を行う小児医学研究者を対象とした研究助成。",
+   "fields": [
+    "共通"
+   ],
+   "uses": [
+    "研究・調査"
+   ],
+   "applicants": [
+    "個人",
+    "研究者・大学"
+   ],
+   "amount": "一般枠:400万円 / 若手枠:150万円",
+   "conditions": [
+    {
+     "axis": "事業の実施地",
+     "quote": "ただし、日本国内の研究機関で行う研究に限ります"
+    },
+    {
+     "axis": "受給歴",
+     "quote": "(4) 過去3事業年度で、当財団の「研究助成」事業において助成金を受けていないこと"
+    },
+    {
+     "axis": "主体の付帯条件",
+     "quote": "(3) 所属する組織の責任者から推薦を受けていること"
+    },
+    {
+     "axis": "提出書類",
+     "quote": "(1)申請書1(Excel) (2)申請書2(PDF) (3)推薦書(PDF) (4)論文(PDF)"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "(1) 日本国内の総合大学医学部、医科大学、医学研究機関、医療機関等に所属し、日本国内の所属機関で小児医学研究に従事していること ※学生の申請は不可とします"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "(5) 若手枠の場合は40歳以下であること"
+    }
+   ]
+  },
+  {
    "hash": "29e02ea2e0f0ab03",
    "source": "中央共同募金会",
    "sourceKind": "org",
@@ -518,6 +470,49 @@
     }
    ],
    "conditionsUrl": "https://www.akaihane.or.jp/subsidies/sub-corp-prog/47845/"
+  },
+  {
+   "hash": "d325aee00fa61a0a",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "2027年度 公益財団法人三菱UFJ信託奨学財団 研究助成金",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e7%a0%94%e7%a9%b6%e5%8a%a9%e6%88%90%e4%ba%8b%e6%a5%ad-2/",
+   "postedAt": "2026-09-01",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "11月30日 募集要項 https://www.scholarship.or.jp/newgrant/ WEB",
+   "conditionsUrl": "https://www.scholarship.or.jp/newgrant/",
+   "summary": "我が国の信託制度や経済の発展に資する信託関連および金融に関する調査・研究を対象に、専門家による研究グループを支援する助成。",
+   "fields": [
+    "共通"
+   ],
+   "uses": [
+    "研究・調査"
+   ],
+   "applicants": [
+    "個人",
+    "研究者・大学"
+   ],
+   "amount": "1グループ1年間あたり300万円を超えない範囲",
+   "conditions": [
+    {
+     "axis": "主体の付帯条件",
+     "quote": "また、応募にあたっては、当該研究の必要性をよく理解する推薦者の推薦を受けることが必要です。"
+    },
+    {
+     "axis": "提出書類",
+     "quote": "助成金申込書(名称をクリックするとファイルが開きますのでそれを印刷するか、パソコンに保存してください。)に必要事項を記入し財団事務局あて郵送してください。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "(1) 研究内容: 信託に関連した業務および法律に関する研究"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "(2) 助成対象:法律・経済・経営・商学の専門家を核とした研究グループ"
+    }
+   ]
   },
   {
    "hash": "e3392e5ccf02e958",
@@ -598,6 +593,38 @@
     }
    ],
    "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/250919nissei.html"
+  },
+  {
+   "hash": "bc4271f9c8239166",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "野口遵研究助成金（第18回, 2026年度）",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e9%87%8e%e5%8f%a3%e9%81%b5%e7%a0%94%e7%a9%b6%e5%8a%a9%e6%88%90%e9%87%91%ef%bc%88%e7%ac%ac18%e5%9b%9e-2026%e5%b9%b4%e5%ba%a6%ef%bc%89/",
+   "postedAt": "2026-08-07",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "10月30日(金) 正午 募集要項 WEBサイト関連ページURL 助成・奨学金情",
+   "openFrom": "2026-09-01",
+   "conditionsUrl": "https://noguchi.or.jp/human_resource/subsidy_award/",
+   "summary": "独創的かつチャレンジングな若手研究者の独立した基礎研究を支援するため、国内の大学等に勤務する若手研究者を対象とした研究助成。",
+   "fields": [
+    "共通"
+   ],
+   "uses": [
+    "研究・調査"
+   ],
+   "applicants": [
+    "個人",
+    "研究者・大学"
+   ],
+   "amount": "2,200千円/1件",
+   "conditions": [
+    {
+     "axis": "その他の対象限定",
+     "quote": "若手研究者を対象に"
+    }
+   ]
   }
  ]
 }
