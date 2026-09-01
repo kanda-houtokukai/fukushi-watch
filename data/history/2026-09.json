@@ -3,8 +3,8 @@
   "2026-09-01": {
    "counts": {
     "高": 4,
-    "中": 12,
-    "低": 21
+    "中": 14,
+    "低": 24
    },
    "items": [
     {
@@ -532,6 +532,84 @@
       "児童"
      ],
      "reason": "民間団体による子ども支援の公募情報であり、相談支援等での案内・活用が期待されるため。"
+    },
+    {
+     "hash": "e6dc62e324c4657c",
+     "source": "厚生労働省",
+     "title": "第91回労働政策審議会雇用環境・均等分科会の資料を掲載しました。",
+     "url": "https://www.mhlw.go.jp/stf/newpage_75855.html",
+     "date": "2026-09-01",
+     "category": "審議会等",
+     "summary": "労働政策審議会雇用環境・均等分科会の配布資料。育児・介護休業やハラスメント防止など、福祉事業所の労務管理に関わる検討動向を確認できる。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "審議会資料であり、直ちに行動は不要だが将来の労務制度改正に向け把握が必要なため。"
+    },
+    {
+     "hash": "b184be8681f65c27",
+     "source": "厚生労働省",
+     "title": "労働政策審議会 (雇用環境・均等分科会）",
+     "url": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126989.html",
+     "date": "2026-09-01",
+     "category": "審議会等",
+     "summary": "雇用環境・均等分科会の開催案内・概要。ハラスメント防止や働き方改革など労務管理に関する政策議論の動向が示されている。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "審議会の情報であり、福祉現場の労務や職場環境整備に関する政策動向を把握すべき情報のため。",
+     "related": [
+      {
+       "day": "2026-08-26",
+       "title": "労働政策審議会 (雇用環境・均等分科会）",
+       "url": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126989.html"
+      }
+     ]
+    },
+    {
+     "hash": "aa24058ce34c3c01",
+     "source": "厚生労働省",
+     "title": "第50回救急救命士国家試験の施行について",
+     "url": "http://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/index.html",
+     "date": "2026-09-01",
+     "category": "その他",
+     "summary": "救急救命士国家試験の施行に関する案内。主に受験者や医療機関向けの試験実施告示。",
+     "importance": "低",
+     "fields": [],
+     "reason": "救急救命士資格試験の告示であり、福祉事業所の実務・事業運営に直接関わらないため。"
+    },
+    {
+     "hash": "9b11bee069faa7f6",
+     "source": "厚生労働省",
+     "title": "WEBマガジン「厚生労働」（特集[戦没者慰霊]ほか更新）",
+     "url": "https://www.mhlw.go.jp/web_magazine/",
+     "date": "2026-09-01",
+     "category": "その他",
+     "summary": "厚生労働省の広報WEBマガジン「厚生労働」の更新案内。戦没者慰霊などの特集記事が掲載されている。",
+     "importance": "低",
+     "fields": [],
+     "reason": "行政の広報コンテンツの更新であり、福祉事業者としての実務に影響しないため。"
+    },
+    {
+     "hash": "e207f4a446366762",
+     "source": "厚生労働省",
+     "title": "世界メンタルヘルスデー JAPAN 2026 特設サイト",
+     "url": "https://www.mhlw.go.jp/kokoro/mental_health_day/index.html",
+     "date": "2026-09-01",
+     "category": "その他",
+     "summary": "メンタルヘルスへの理解促進を目的とした啓発イベント「世界メンタルヘルスデー」の特設サイト開設案内。",
+     "importance": "低",
+     "fields": [],
+     "reason": "啓発イベント・広報に関する情報であり、福祉事業所の実務運営への影響が薄いため。",
+     "related": [
+      {
+       "day": "2026-08-22",
+       "title": "世界メンタルヘルスデー JAPAN 2026 特設サイト",
+       "url": "https://www.mhlw.go.jp/kokoro/mental_health_day/index.html"
+      }
+     ]
     }
    ],
    "press": [
