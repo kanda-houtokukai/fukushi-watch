@@ -629,9 +629,9 @@
   },
   "2026-09-02": {
    "counts": {
-    "高": 5,
-    "中": 6,
-    "低": 25
+    "高": 7,
+    "中": 9,
+    "低": 29
    },
    "items": [
     {
@@ -1171,6 +1171,176 @@
      ],
      "reason": "施設における安全対策補助金の募集案内であり、該当事業者は要件確認や補助申請の対応が必要になるため。",
      "action": "一般に、こうした通知では該当地域内の対象となる届出保育施設において補助対象設備や申請要件を確認し、設備の導入計画や期日までの申請対応が必要になります。"
+    },
+    {
+     "hash": "e19bf4cfb4213a7f",
+     "source": "厚生労働省",
+     "title": "「障害福祉サービスデータベースの集計機能の拡充に伴う改修等作業一式（令和９年度）」に係る意見招請の公示について",
+     "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-iken/newpage_10486.html",
+     "date": "2026-09-02",
+     "category": "その他",
+     "summary": "障害福祉サービスデータベースの改修作業調達に向けた意見招請の公示情報です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "行政側のシステム調達に関する手続きの公示であり、福祉事業者の運営実務には直接関係しないため。"
+    },
+    {
+     "hash": "96451a52a7e671fa",
+     "source": "厚生労働省",
+     "title": "被保護者調査（令和８年６月分概数）",
+     "url": "https://www.mhlw.go.jp/toukei/saikin/hw/hihogosya/m2026/06.html",
+     "date": "2026-09-02",
+     "category": "統計情報",
+     "summary": "生活保護の受給世帯数や被保護人員の最新動向をまとめた月次統計調査の結果公表です。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "生活保護の受給動向を示す公的統計であり、地域福祉や困窮者支援の動向を把握する上で参考となるため。"
+    },
+    {
+     "hash": "bccf5c94d16ccbad",
+     "source": "厚生労働省",
+     "title": "人事労務マガジン 定例第191号",
+     "url": "https://www.mhlw.go.jp/stf/newpage_75831.html",
+     "date": "2026-09-02",
+     "category": "その他",
+     "summary": "厚生労働省が発行する労働行政や人事労務に関する情報を掲載した定例メールマガジンのバックナンバー案内です。",
+     "importance": "低",
+     "fields": [
+      "共通"
+     ],
+     "reason": "定例の広報メールマガジンの発行通知であり、直ちに事業者の実務対応や確認を求める内容ではないため。"
+    },
+    {
+     "hash": "41e443aa1e1bb958",
+     "source": "厚生労働省",
+     "title": "公益事業に関する争議行為の予告公表ページについて更新されました",
+     "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudouseisaku/sougikoui/index.html",
+     "date": "2026-09-02",
+     "category": "政策分野",
+     "summary": "労働関係調整法に基づく公益事業におけるストライキ等の争議行為予告情報の更新通知です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "一般の労働争議予告に関する情報公表であり、福祉事業者の日常的な実務運営には影響しないため。"
+    },
+    {
+     "hash": "b476bd856f1cced3",
+     "source": "WAM NET",
+     "title": "第214回 社会保障審議会 医療保険部会の開催について（令和8年9月3日開催予定）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22827&ct=070010030&from=rss",
+     "date": "2026-09-02",
+     "category": "行政資料",
+     "summary": "医療保険制度の改正や給付・負担の見直しについて審議する社会保障審議会医療保険部会の開催案内です。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "医療保険制度の議論を行う審議会であり、今後の社会保障制度や医療費負担の動向を把握するために重要であるため。",
+     "related": [
+      {
+       "day": "2026-08-27",
+       "title": "第213回 社会保障審議会 医療保険部会の開催について（令和8年8月27日開催予定）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22809&ct=070010030&from=rss"
+      }
+     ]
+    },
+    {
+     "hash": "a6a231e219a6d48d",
+     "source": "WAM NET",
+     "title": "第15回 こども家庭審議会 科学技術部会 ヒト受精胚を用いる生殖補助医療研究等に関する専門委員会（令和8年9月2日開催）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22831&ct=090080225&from=rss",
+     "date": "2026-09-02",
+     "category": "行政資料",
+     "summary": "ヒト受精胚を用いる生殖補助医療研究等の倫理・技術的課題を審議する専門委員会の開催案内です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "生殖補助医療研究に関する専門的な審議会であり、福祉事業者の実務や事業運営には関係しないため。",
+     "related": [
+      {
+       "day": "2026-08-05",
+       "title": "第14回 こども家庭審議会 科学技術部会 ヒト受精胚を用いる生殖補助医療研究等に関する専門委員会（令和8年8月5日開催）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22777&ct=090080225&from=rss"
+      }
+     ]
+    },
+    {
+     "hash": "50891b7f55578033",
+     "source": "WAM NET",
+     "title": "第67回 厚生科学審議会 予防接種・ワクチン分科会（令和8年9月2日開催）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22830&ct=010020130&from=rss",
+     "date": "2026-09-02",
+     "category": "行政資料",
+     "summary": "予防接種施策やワクチンの定期接種化・安全性等について検討する審議会の開催案内です。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "予防接種方針を検討する審議会であり、福祉施設・事業所における感染症対策や利用者への周知方針に影響するため。"
+    },
+    {
+     "hash": "72f38c4a6d5a718e",
+     "source": "WAM NET",
+     "title": "麻しん最新情報（令和8年9月1日更新）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22829&ct=030100110&from=rss",
+     "date": "2026-09-02",
+     "category": "行政資料",
+     "summary": "国内外における麻しん（はしか）の感染発生動向や注意喚起に関する最新情報の更新です。",
+     "importance": "高",
+     "fields": [
+      "共通"
+     ],
+     "reason": "感染力が非常に強い麻しんの発生情報であり、施設内感染防止や初期対応の確認など事業者での対応が必要となるため。",
+     "action": "一般に、こうした通知では最新の感染発生動向の確認や、施設内における感染予防対策および注意喚起の再徹底といった対応が必要になります。",
+     "related": [
+      {
+       "day": "2026-08-27",
+       "title": "麻しん最新情報（令和8年8月25日更新）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22812&ct=030100110&from=rss"
+      },
+      {
+       "day": "2026-08-20",
+       "title": "麻しん最新情報（令和8年8月18日更新）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22797&ct=030100110&from=rss"
+      },
+      {
+       "day": "2026-08-13",
+       "title": "麻しん最新情報（令和8年8月12日更新）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22789&ct=030100110&from=rss"
+      }
+     ]
+    },
+    {
+     "hash": "27cc806ee627bec2",
+     "source": "WAM NET",
+     "title": "風しん最新情報（令和8年9月1日更新）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22828&ct=030100130&from=rss",
+     "date": "2026-09-02",
+     "category": "行政資料",
+     "summary": "風しんの流行状況や抗体検査・予防接種に関する最新動向の更新情報です。",
+     "importance": "高",
+     "fields": [
+      "共通"
+     ],
+     "reason": "風しんの発生状況に関する情報であり、事業所内での感染対策や妊娠中職員・利用者への安全確保の確認が必要なため。",
+     "action": "一般に、こうした通知では流行状況の把握とともに、職員や利用者に対する抗体検査や予防接種に関する情報提供・周知などの対応が必要になります。",
+     "related": [
+      {
+       "day": "2026-08-27",
+       "title": "風しん最新情報（令和8年8月25日更新）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22811&ct=030100130&from=rss"
+      },
+      {
+       "day": "2026-08-20",
+       "title": "風しん最新情報（令和8年8月18日更新）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22795&ct=030100130&from=rss"
+      },
+      {
+       "day": "2026-08-13",
+       "title": "風しん最新情報（令和8年8月12日更新）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22788&ct=030100130&from=rss"
+      }
+     ]
     }
    ],
    "press": [

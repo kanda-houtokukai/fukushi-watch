@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-09-02T00:12:57.994Z",
+      "lastCrawled": "2026-09-02T01:25:20.496Z",
       "items": [
         {
           "hash": "9adbb2bc51ac225e",
@@ -440,8 +440,36 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-09-02T00:12:58.267Z",
+      "lastCrawled": "2026-09-02T01:25:21.387Z",
       "items": [
+        {
+          "hash": "e19bf4cfb4213a7f",
+          "title": "「障害福祉サービスデータベースの集計機能の拡充に伴う改修等作業一式（令和９年度）」に係る意見招請の公示について",
+          "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-iken/newpage_10486.html",
+          "date": "2026-09-02",
+          "category": "その他"
+        },
+        {
+          "hash": "96451a52a7e671fa",
+          "title": "被保護者調査（令和８年６月分概数）",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/hihogosya/m2026/06.html",
+          "date": "2026-09-02",
+          "category": "統計情報"
+        },
+        {
+          "hash": "bccf5c94d16ccbad",
+          "title": "人事労務マガジン 定例第191号",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75831.html",
+          "date": "2026-09-02",
+          "category": "その他"
+        },
+        {
+          "hash": "41e443aa1e1bb958",
+          "title": "公益事業に関する争議行為の予告公表ページについて更新されました",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudouseisaku/sougikoui/index.html",
+          "date": "2026-09-02",
+          "category": "政策分野"
+        },
         {
           "hash": "f5a2186bb82b686b",
           "title": "令和８年９月１日付大臣会見概要",
@@ -3861,8 +3889,43 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-09-02T00:12:59.324Z",
+      "lastCrawled": "2026-09-02T01:25:22.905Z",
       "items": [
+        {
+          "hash": "b476bd856f1cced3",
+          "title": "第214回 社会保障審議会 医療保険部会の開催について（令和8年9月3日開催予定）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22827&ct=070010030&from=rss",
+          "date": "2026-09-02",
+          "category": "行政資料"
+        },
+        {
+          "hash": "a6a231e219a6d48d",
+          "title": "第15回 こども家庭審議会 科学技術部会 ヒト受精胚を用いる生殖補助医療研究等に関する専門委員会（令和8年9月2日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22831&ct=090080225&from=rss",
+          "date": "2026-09-02",
+          "category": "行政資料"
+        },
+        {
+          "hash": "50891b7f55578033",
+          "title": "第67回 厚生科学審議会 予防接種・ワクチン分科会（令和8年9月2日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22830&ct=010020130&from=rss",
+          "date": "2026-09-02",
+          "category": "行政資料"
+        },
+        {
+          "hash": "72f38c4a6d5a718e",
+          "title": "麻しん最新情報（令和8年9月1日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22829&ct=030100110&from=rss",
+          "date": "2026-09-02",
+          "category": "行政資料"
+        },
+        {
+          "hash": "27cc806ee627bec2",
+          "title": "風しん最新情報（令和8年9月1日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22828&ct=030100130&from=rss",
+          "date": "2026-09-02",
+          "category": "行政資料"
+        },
         {
           "hash": "7ef7656096ff648d",
           "title": "介護保険最新情報Vol.1539（PDF：120KB）",
@@ -5455,7 +5518,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-09-02T00:13:00.240Z",
+      "lastCrawled": "2026-09-02T01:25:24.167Z",
       "items": [
         {
           "hash": "51bffe9d6fed8913",
@@ -5691,7 +5754,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-09-02T00:13:00.506Z",
+      "lastCrawled": "2026-09-02T01:25:24.544Z",
       "items": [
         {
           "hash": "a65207d0ac8ddd89",
@@ -6212,7 +6275,7 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-09-02T00:13:02.107Z",
+      "lastCrawled": "2026-09-02T01:25:25.767Z",
       "items": [
         {
           "hash": "a39b787213b51f37",
@@ -6427,7 +6490,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-09-02T00:13:00.648Z",
+      "lastCrawled": "2026-09-02T01:25:24.764Z",
       "items": [
         {
           "hash": "cc45938bf97029c2",
@@ -6754,7 +6817,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-09-02T00:13:02.818Z",
+      "lastCrawled": "2026-09-02T01:25:26.779Z",
       "items": [
         {
           "hash": "7f02b6f6df29dc34",
@@ -7188,5 +7251,5 @@
   },
   "preferredModel": "gemini-3.6-flash",
   "lastSentDate": "2026-09-02",
-  "lastRunAt": "2026-09-02T00:15:17.207Z"
+  "lastRunAt": "2026-09-02T01:26:10.411Z"
 }
