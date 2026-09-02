@@ -1,52 +1,359 @@
 {
-  "generatedAt": "2026-09-01T02:03:34.373Z",
+  "generatedAt": "2026-09-02T00:13:02.820Z",
   "newItems": [
     {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "9adbb2bc51ac225e",
+      "title": "黄川田大臣記者会見（令和8年9月1日）を掲載しました",
+      "url": "https://www.cfa.go.jp/speech/b00217c0",
+      "date": "2026-09-01",
+      "category": "会見"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "f4187af7575d831a",
+      "title": "ヒト受精胚を用いる生殖補助医療研究等に関する専門委員会（第15回）の会議情報を掲載しました",
+      "url": "https://www.cfa.go.jp/councils/shingikai/kagaku_gijutsu/art/eafb9e4e",
+      "date": "2026-09-01",
+      "category": "会議等"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "83d5bd8290e68b55",
+      "title": "令和8年度就学前教育・保育施設整備交付金の内示について （第3次）を掲載しました",
+      "url": "https://www.cfa.go.jp/press/16e97a96-4c9d-4098-bbb8-2d2790681c12",
+      "date": "2026-09-01",
+      "category": "報道発表"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "bd2e9b72ab5b6242",
+      "title": "令和8年度次世代育成対策施設整備交付金の内示について （第3次）を掲載しました",
+      "url": "https://www.cfa.go.jp/press/e6e7b195-a73a-4162-a043-a9770764edc5",
+      "date": "2026-09-01",
+      "category": "報道発表"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "8a86d240e77e558a",
+      "title": "令和8年度子ども・子育て支援施設整備交付金の内示について （第3次）を掲載しました",
+      "url": "https://www.cfa.go.jp/press/36776672-8177-48fe-98bd-4990e9c507fd",
+      "date": "2026-09-01",
+      "category": "報道発表"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "781c6140620a1115",
+      "title": "インクルージョン推進に向けた関係者懇談会の議事概要を掲載しました",
+      "url": "https://www.cfa.go.jp/councils/meetings/inclusion/01",
+      "date": "2026-09-01",
+      "category": "会議等"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "d9bdf6b415dfca5d",
+      "title": "「令和8年熊本地震への対応について（被災したこどもの居場所づくり支援）」を掲載しました",
+      "url": "https://www.cfa.go.jp/policies/ibasho/saigaiji",
+      "date": "2026-09-01",
+      "category": "政策"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "f9d6f59cccdaf5eb",
+      "title": "自殺予防週間に向けた厚生労働大臣、文部科学大臣、こども政策担当大臣、孤独・孤立対策担当大臣による連名メッセージを掲載しました",
+      "url": "https://www.cfa.go.jp/policies/kodomonojisatsutaisaku/jisatsuyoboushukan",
+      "date": "2026-09-01",
+      "category": "政策"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "d68a79e0d85a4a9a",
+      "title": "黄川田大臣臨時記者会見（令和8年8月31日）を掲載しました",
+      "url": "https://www.cfa.go.jp/speech/442409fd",
+      "date": "2026-08-31",
+      "category": "会見"
+    },
+    {
       "source": "厚生労働省",
       "kind": "gov",
-      "hash": "e6dc62e324c4657c",
-      "title": "第91回労働政策審議会雇用環境・均等分科会の資料を掲載しました。",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75855.html",
+      "hash": "f5a2186bb82b686b",
+      "title": "令和８年９月１日付大臣会見概要",
+      "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00964.html",
+      "date": "2026-09-01",
+      "category": "大臣会見等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "8d7afb27eadb4721",
+      "title": "第４回ゲノム編集技術等を用いたヒト受精胚等の取扱い等に関する合同会議（第12回ゲノム編集技術等を用いたヒト受精胚等の臨床利用のあり方に関する専門委員会、第25回ヒト受精胚を用いる遺伝性・先天性疾患研究に関する専門委員会） 資料",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75883.html",
       "date": "2026-09-01",
       "category": "審議会等"
     },
     {
       "source": "厚生労働省",
       "kind": "gov",
-      "hash": "b184be8681f65c27",
-      "title": "労働政策審議会 (雇用環境・均等分科会）",
-      "url": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126989.html",
+      "hash": "51e7bbd6cdc12284",
+      "title": "「介護保険総合データベース及び第三者提供システムの追加改修業務（令和９年度）」に係る意見招請の公示について",
+      "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-iken/newpage_10490.html",
+      "date": "2026-09-01",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "5b2c85eaa292142a",
+      "title": "第214回社会保障審議会医療保険部会（ペーパーレス）の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75881.html",
       "date": "2026-09-01",
       "category": "審議会等"
     },
     {
       "source": "厚生労働省",
       "kind": "gov",
-      "hash": "aa24058ce34c3c01",
-      "title": "第50回救急救命士国家試験の施行について",
-      "url": "http://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/index.html",
+      "hash": "91a8cffc2ec0fdb7",
+      "title": "令和８年度 第１回戦没者の遺骨収集に関する有識者会議の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75868.html",
+      "date": "2026-09-01",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "9af22b2b7411bcae",
+      "title": "食品中の放射性物質の検査結果について（１５１０報）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75795.html",
+      "date": "2026-09-01",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "93b5b5e5191293b4",
+      "title": "第78回補装具評価検討会 開催案内",
+      "url": "https://www.mhlw.go.jp/stf/74hosougu_00004.html",
       "date": "2026-09-01",
       "category": "その他"
     },
     {
       "source": "厚生労働省",
       "kind": "gov",
-      "hash": "9b11bee069faa7f6",
-      "title": "WEBマガジン「厚生労働」（特集[戦没者慰霊]ほか更新）",
-      "url": "https://www.mhlw.go.jp/web_magazine/",
+      "hash": "580f00bbb9968c53",
+      "title": "令和８年度診療放射線技師国家試験の施行",
+      "url": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/shinryouhoushasengishi/",
       "date": "2026-09-01",
       "category": "その他"
     },
     {
       "source": "厚生労働省",
       "kind": "gov",
-      "hash": "e207f4a446366762",
-      "title": "世界メンタルヘルスデー JAPAN 2026 特設サイト",
-      "url": "https://www.mhlw.go.jp/kokoro/mental_health_day/index.html",
+      "hash": "e1b724979d6d93eb",
+      "title": "令和８年度臨床検査技師国家試験の施行",
+      "url": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/rinshoukensagishi/",
       "date": "2026-09-01",
       "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "cc368e327850a344",
+      "title": "令和８年度理学療法士国家試験の施行",
+      "url": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/rigakuryouhoushi/",
+      "date": "2026-09-01",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "3da87d48b7f1b8a3",
+      "title": "令和８年度作業療法士国家試験の施行",
+      "url": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/sagyouryouhoushi/",
+      "date": "2026-09-01",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "88e0d68be3b565cd",
+      "title": "令和８年度視能訓練士国家試験の施行",
+      "url": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/shinoukunrenshi/",
+      "date": "2026-09-01",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "87e0f7d0b7909ec3",
+      "title": "令和８年度臨床工学技士国家試験の施行",
+      "url": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/rinshoukougakugishi/",
+      "date": "2026-09-01",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "91e78f25d9c1e513",
+      "title": "令和８年度義肢装具士国家試験の施行",
+      "url": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/gishisougushi/",
+      "date": "2026-09-01",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "ac9ca945b06baac2",
+      "title": "令和８年度歯科衛生士国家試験の施行",
+      "url": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/shikaeiseishi/",
+      "date": "2026-09-01",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "ec2e6f8f077cc7f5",
+      "title": "令和８年度歯科技工士国家試験の施行",
+      "url": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/shikagikoushi/",
+      "date": "2026-09-01",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "cf0a279457449b4a",
+      "title": "令和８年度あん摩マッサージ指圧師国家試験の施行",
+      "url": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/anma/",
+      "date": "2026-09-01",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "415e624ea584671d",
+      "title": "令和８年度はり師国家試験の施行",
+      "url": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/harishi/",
+      "date": "2026-09-01",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "15e9f6a24976cb27",
+      "title": "令和８年度きゅう師国家試験の施行",
+      "url": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/kyushi/",
+      "date": "2026-09-01",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "feba2ad2d265eef2",
+      "title": "令和８年度柔道整復師国家試験の施行",
+      "url": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/judouseihukushi/",
+      "date": "2026-09-01",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "38dcfd18a30d6462",
+      "title": "令和８年度言語聴覚士国家試験の施行",
+      "url": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/gengochoukakushi/",
+      "date": "2026-09-01",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "e198295715fee30d",
+      "title": "第78回「保健文化賞」受賞者が決まりました",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75807.html",
+      "date": "2026-09-01",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "6c5dd3c11290780b",
+      "title": "令和８年度第１回医道審議会医師分科会医師専門研修部会",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75784.html",
+      "date": "2026-08-25",
+      "category": "審議会等"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "7ef7656096ff648d",
+      "title": "介護保険最新情報Vol.1539（PDF：120KB）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0901093334645/ksvol.1539.pdf?from=rss",
+      "date": "2026-09-01",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "f56b11b4916e6ea9",
+      "title": "第67回 厚生科学審議会 予防接種・ワクチン分科会 （令和8年9月2日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22826&ct=070010010&from=rss",
+      "date": "2026-09-01",
+      "category": "行政資料"
+    },
+    {
+      "source": "福岡県（障がい福祉）",
+      "kind": "gov",
+      "hash": "d6a8a10dee49a429",
+      "title": "令和８年度障がい者就労施設等からの「まごころ製品」の調達の推進を図るための方針を策定しました",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/magokoro2026.html",
+      "date": "2026年8月25日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（子ども・青少年）",
+      "kind": "gov",
+      "hash": "b3a9975b6bccc0e7",
+      "title": "令和８年度福岡県届出保育施設における性被害防止対策に係る設備等支援事業費補助金についてのお知らせ",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/todokedehoiku-seihigai.html",
+      "date": "2026年8月24日更新",
+      "category": ""
     }
   ],
-  "newPress": [],
+  "newPress": [
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "a39b787213b51f37",
+      "title": "居宅介護支援の処遇改善加算、初月の算定率は76.0% 訪問看護は7割弱＝厚労省",
+      "url": "https://www.joint-kaigo.com/articles/48394/",
+      "date": "2026-09-01",
+      "category": "介護給付費分科会"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "0f754411f32883ec",
+      "title": "介護職の処遇改善加算、最上位の算定率は4割弱にとどまる サービス間で大きな格差＝厚労省",
+      "url": "https://www.joint-kaigo.com/articles/48385/",
+      "date": "2026-09-01",
+      "category": "介護給付費分科会"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "e6317c0045f279c7",
+      "title": "働きやすい職場づくりの総理大臣表彰に居宅介護支援 高市首相、生産性向上の「評価を検討」",
+      "url": "https://www.joint-kaigo.com/articles/48369/",
+      "date": "2026-09-01",
+      "category": "福祉用具"
+    }
+  ],
   "crawlErrors": []
 }
