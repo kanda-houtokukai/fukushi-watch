@@ -1,129 +1,159 @@
 {
-  "generatedAt": "2026-09-02T01:26:10.339Z",
-  "model": "gemini-3.6-flash",
+  "generatedAt": "2026-09-03T00:15:47.230Z",
+  "model": "gemini-3.7-flash",
   "items": [
     {
-      "hash": "e19bf4cfb4213a7f",
+      "hash": "ec1b1bead1cf61d7",
       "source": "厚生労働省",
-      "title": "「障害福祉サービスデータベースの集計機能の拡充に伴う改修等作業一式（令和９年度）」に係る意見招請の公示について",
-      "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-iken/newpage_10486.html",
+      "title": "戦没者慰霊事業のお知らせ（令和８年９月実施分）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75941.html",
       "date": "2026-09-02",
-      "category": "その他",
-      "summary": "障害福祉サービスデータベースの改修作業調達に向けた意見招請の公示情報です。",
+      "category": "報道発表",
+      "summary": "厚生労働省による戦没者慰霊事業の実施予定に関する案内です。",
       "importance": "低",
       "fields": [],
-      "reason": "行政側のシステム調達に関する手続きの公示であり、福祉事業者の運営実務には直接関係しないため。"
+      "reason": "福祉事業の運営に直接関わらない行政事業の案内のため。"
     },
     {
-      "hash": "96451a52a7e671fa",
+      "hash": "4bc41cc792306f93",
       "source": "厚生労働省",
-      "title": "被保護者調査（令和８年６月分概数）",
-      "url": "https://www.mhlw.go.jp/toukei/saikin/hw/hihogosya/m2026/06.html",
+      "title": "救急医療功労者及び産科医療功労者厚生労働大臣表彰式を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75762.html",
+      "date": "2026-09-02",
+      "category": "その他",
+      "summary": "救急医療及び産科医療における功労者を対象とした大臣表彰式の開催案内です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医療分野の式典開催案内であり、福祉事業の実務への影響がないため。"
+    },
+    {
+      "hash": "6d5d83ca760f33bb",
+      "source": "厚生労働省",
+      "title": "（開催案内）第120回厚生科学審議会 再生医療等評価部会",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75617.html",
+      "date": "2026-09-02",
+      "category": "審議会等",
+      "summary": "再生医療等の安全性や評価を議論する厚生科学審議会部会の開催案内です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "高度医療技術に関する専門審議会であり、福祉事業運営に直接関係しないため。"
+    },
+    {
+      "hash": "4c387c051e1cec72",
+      "source": "厚生労働省",
+      "title": "第264回社会保障審議会介護給付費分科会（Web会議）を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75592.html",
+      "date": "2026-09-02",
+      "category": "審議会等",
+      "summary": "介護報酬や介護給付の基準等の見直しを審議する介護給付費分科会の開催案内です。",
+      "importance": "中",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "将来の介護報酬改定や制度改正の動向を把握する上で重要な審議会であるため。"
+    },
+    {
+      "hash": "9a3f0d74727f378a",
+      "source": "厚生労働省",
+      "title": "令和８年国民健康・栄養調査 ご協力のお願い",
+      "url": "https://www.mhlw.go.jp/stf/newpage_32214.html",
       "date": "2026-09-02",
       "category": "統計情報",
-      "summary": "生活保護の受給世帯数や被保護人員の最新動向をまとめた月次統計調査の結果公表です。",
-      "importance": "中",
-      "fields": [
-        "共通"
-      ],
-      "reason": "生活保護の受給動向を示す公的統計であり、地域福祉や困窮者支援の動向を把握する上で参考となるため。"
-    },
-    {
-      "hash": "bccf5c94d16ccbad",
-      "source": "厚生労働省",
-      "title": "人事労務マガジン 定例第191号",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75831.html",
-      "date": "2026-09-02",
-      "category": "その他",
-      "summary": "厚生労働省が発行する労働行政や人事労務に関する情報を掲載した定例メールマガジンのバックナンバー案内です。",
+      "summary": "国民の身体状況や栄養摂取状況等を把握するための全国調査への協力依頼です。",
       "importance": "低",
-      "fields": [
-        "共通"
-      ],
-      "reason": "定例の広報メールマガジンの発行通知であり、直ちに事業者の実務対応や確認を求める内容ではないため。"
+      "fields": [],
+      "reason": "一般対象の統計調査への協力依頼であり、福祉事業の実務への影響は低いため。"
     },
     {
-      "hash": "41e443aa1e1bb958",
+      "hash": "6511fedbdae3cf09",
       "source": "厚生労働省",
-      "title": "公益事業に関する争議行為の予告公表ページについて更新されました",
-      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudouseisaku/sougikoui/index.html",
+      "title": "キャリアコンサルタント更新講習について、講習一覧を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koushin.html",
       "date": "2026-09-02",
       "category": "政策分野",
-      "summary": "労働関係調整法に基づく公益事業におけるストライキ等の争議行為予告情報の更新通知です。",
+      "summary": "キャリアコンサルタント資格の更新に必要な指定講習一覧の更新情報です。",
       "importance": "低",
       "fields": [],
-      "reason": "一般の労働争議予告に関する情報公表であり、福祉事業者の日常的な実務運営には影響しないため。"
+      "reason": "個人の専門資格更新に関する案内であり、福祉事業の運営実務に直接関わらないため。"
     },
     {
-      "hash": "b476bd856f1cced3",
-      "source": "WAM NET",
-      "title": "第214回 社会保障審議会 医療保険部会の開催について（令和8年9月3日開催予定）",
-      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22827&ct=070010030&from=rss",
+      "hash": "3613e886dc844fe5",
+      "source": "厚生労働省",
+      "title": "キャリアコンサルタントとして活動している方へ（ホームページを更新しました）",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/career_consultant02.html",
       "date": "2026-09-02",
-      "category": "行政資料",
-      "summary": "医療保険制度の改正や給付・負担の見直しについて審議する社会保障審議会医療保険部会の開催案内です。",
-      "importance": "中",
-      "fields": [
-        "共通"
-      ],
-      "reason": "医療保険制度の議論を行う審議会であり、今後の社会保障制度や医療費負担の動向を把握するために重要であるため。"
-    },
-    {
-      "hash": "a6a231e219a6d48d",
-      "source": "WAM NET",
-      "title": "第15回 こども家庭審議会 科学技術部会 ヒト受精胚を用いる生殖補助医療研究等に関する専門委員会（令和8年9月2日開催）",
-      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22831&ct=090080225&from=rss",
-      "date": "2026-09-02",
-      "category": "行政資料",
-      "summary": "ヒト受精胚を用いる生殖補助医療研究等の倫理・技術的課題を審議する専門委員会の開催案内です。",
+      "category": "政策分野",
+      "summary": "キャリアコンサルタントとして活動する有資格者向けポータルページの更新案内です。",
       "importance": "低",
       "fields": [],
-      "reason": "生殖補助医療研究に関する専門的な審議会であり、福祉事業者の実務や事業運営には関係しないため。"
+      "reason": "特定資格者向けの情報更新であり、福祉事業者の実務に直接影響しないため。"
     },
     {
-      "hash": "50891b7f55578033",
+      "hash": "60de29797e39d647",
+      "source": "厚生労働省",
+      "title": "第59回労働政策審議会人材開発分科会（オンライン併用）の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75946.html",
+      "date": "2026-09-01",
+      "category": "審議会等",
+      "summary": "国の職業能力開発施策などを検討する人材開発分科会の開催案内です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "労働政策に関する一般的な審議会であり、福祉現場の実務への直接の影響は薄いため。"
+    },
+    {
+      "hash": "065a8cc3d3ff9a54",
+      "source": "厚生労働省",
+      "title": "労災保険年金・特別遺族年金の定期報告書 提出期限延長のお知らせ",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/16849_00004.html",
+      "date": "2026-08-31",
+      "category": "その他",
+      "summary": "労災保険年金等の受給者が提出する定期報告書の期限延長に関する案内です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "年金受給者個人に関する手続きの案内であり、福祉事業運営には直接関係しないため。"
+    },
+    {
+      "hash": "5ab3c682b15a4467",
       "source": "WAM NET",
-      "title": "第67回 厚生科学審議会 予防接種・ワクチン分科会（令和8年9月2日開催）",
-      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22830&ct=010020130&from=rss",
-      "date": "2026-09-02",
+      "title": "介護保険最新情報Vol.1540（PDF：120KB）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0903085523450/ksvol.1540.pdf?from=rss",
+      "date": "2026-09-03",
       "category": "行政資料",
-      "summary": "予防接種施策やワクチンの定期接種化・安全性等について検討する審議会の開催案内です。",
+      "summary": "厚生労働省から発出された介護保険制度の運用や取扱いに関する最新の事務連絡通知です。",
+      "importance": "高",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "介護保険事業者において業務運用の確認や実務対応が必要となる通知であるため。",
+      "action": "一般に、こうした通知では示された最新の運用基準や取扱いの内容を確認し、自事業所の運営や業務手順に関連する変更がないか把握する対応が必要になります。"
+    },
+    {
+      "hash": "cd78d49e4dc3c1e2",
+      "source": "福岡県（介護・高齢者福祉）",
+      "title": "福岡県における認知症カフェ等実施状況",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/ninchisyocafe.html",
+      "date": "2026年9月3日更新",
+      "category": "",
+      "summary": "福岡県内における認知症カフェ等の設置および取り組み状況をまとめた資料です。",
       "importance": "中",
       "fields": [
-        "共通"
+        "高齢"
       ],
-      "reason": "予防接種方針を検討する審議会であり、福祉施設・事業所における感染症対策や利用者への周知方針に影響するため。"
-    },
-    {
-      "hash": "72f38c4a6d5a718e",
-      "source": "WAM NET",
-      "title": "麻しん最新情報（令和8年9月1日更新）",
-      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22829&ct=030100110&from=rss",
-      "date": "2026-09-02",
-      "category": "行政資料",
-      "summary": "国内外における麻しん（はしか）の感染発生動向や注意喚起に関する最新情報の更新です。",
-      "importance": "高",
-      "fields": [
-        "共通"
-      ],
-      "reason": "感染力が非常に強い麻しんの発生情報であり、施設内感染防止や初期対応の確認など事業者での対応が必要となるため。",
-      "action": "一般に、こうした通知では最新の感染発生動向の確認や、施設内における感染予防対策および注意喚起の再徹底といった対応が必要になります。"
-    },
-    {
-      "hash": "27cc806ee627bec2",
-      "source": "WAM NET",
-      "title": "風しん最新情報（令和8年9月1日更新）",
-      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22828&ct=030100130&from=rss",
-      "date": "2026-09-02",
-      "category": "行政資料",
-      "summary": "風しんの流行状況や抗体検査・予防接種に関する最新動向の更新情報です。",
-      "importance": "高",
-      "fields": [
-        "共通"
-      ],
-      "reason": "風しんの発生状況に関する情報であり、事業所内での感染対策や妊娠中職員・利用者への安全確保の確認が必要なため。",
-      "action": "一般に、こうした通知では流行状況の把握とともに、職員や利用者に対する抗体検査や予防接種に関する情報提供・周知などの対応が必要になります。"
+      "reason": "地域の認知症ケアの動向や社会資源の把握に資する情報であるため。"
     }
   ],
-  "press": []
+  "press": [
+    {
+      "hash": "2dcf3bd84504a739",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "カスハラで介護サービス拒否、ルール明確化が俎上に 厚労省が報酬改定へ論点提示 審議会では慎重論も",
+      "url": "https://www.joint-kaigo.com/articles/48478/",
+      "date": "2026-09-02",
+      "category": "超高齢化",
+      "fields": [
+        "高齢"
+      ]
+    }
+  ]
 }

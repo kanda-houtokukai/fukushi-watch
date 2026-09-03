@@ -1,88 +1,116 @@
 {
-  "generatedAt": "2026-09-02T01:25:26.782Z",
+  "generatedAt": "2026-09-03T00:15:06.356Z",
   "newItems": [
     {
       "source": "厚生労働省",
       "kind": "gov",
-      "hash": "e19bf4cfb4213a7f",
-      "title": "「障害福祉サービスデータベースの集計機能の拡充に伴う改修等作業一式（令和９年度）」に係る意見招請の公示について",
-      "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-iken/newpage_10486.html",
+      "hash": "ec1b1bead1cf61d7",
+      "title": "戦没者慰霊事業のお知らせ（令和８年９月実施分）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75941.html",
+      "date": "2026-09-02",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "4bc41cc792306f93",
+      "title": "救急医療功労者及び産科医療功労者厚生労働大臣表彰式を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75762.html",
       "date": "2026-09-02",
       "category": "その他"
     },
     {
       "source": "厚生労働省",
       "kind": "gov",
-      "hash": "96451a52a7e671fa",
-      "title": "被保護者調査（令和８年６月分概数）",
-      "url": "https://www.mhlw.go.jp/toukei/saikin/hw/hihogosya/m2026/06.html",
+      "hash": "6d5d83ca760f33bb",
+      "title": "（開催案内）第120回厚生科学審議会 再生医療等評価部会",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75617.html",
+      "date": "2026-09-02",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "4c387c051e1cec72",
+      "title": "第264回社会保障審議会介護給付費分科会（Web会議）を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75592.html",
+      "date": "2026-09-02",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "9a3f0d74727f378a",
+      "title": "令和８年国民健康・栄養調査 ご協力のお願い",
+      "url": "https://www.mhlw.go.jp/stf/newpage_32214.html",
       "date": "2026-09-02",
       "category": "統計情報"
     },
     {
       "source": "厚生労働省",
       "kind": "gov",
-      "hash": "bccf5c94d16ccbad",
-      "title": "人事労務マガジン 定例第191号",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75831.html",
-      "date": "2026-09-02",
-      "category": "その他"
-    },
-    {
-      "source": "厚生労働省",
-      "kind": "gov",
-      "hash": "41e443aa1e1bb958",
-      "title": "公益事業に関する争議行為の予告公表ページについて更新されました",
-      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudouseisaku/sougikoui/index.html",
+      "hash": "6511fedbdae3cf09",
+      "title": "キャリアコンサルタント更新講習について、講習一覧を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koushin.html",
       "date": "2026-09-02",
       "category": "政策分野"
     },
     {
-      "source": "WAM NET",
+      "source": "厚生労働省",
       "kind": "gov",
-      "hash": "b476bd856f1cced3",
-      "title": "第214回 社会保障審議会 医療保険部会の開催について（令和8年9月3日開催予定）",
-      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22827&ct=070010030&from=rss",
+      "hash": "3613e886dc844fe5",
+      "title": "キャリアコンサルタントとして活動している方へ（ホームページを更新しました）",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/career_consultant02.html",
       "date": "2026-09-02",
-      "category": "行政資料"
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "60de29797e39d647",
+      "title": "第59回労働政策審議会人材開発分科会（オンライン併用）の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75946.html",
+      "date": "2026-09-01",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "065a8cc3d3ff9a54",
+      "title": "労災保険年金・特別遺族年金の定期報告書 提出期限延長のお知らせ",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/16849_00004.html",
+      "date": "2026-08-31",
+      "category": "その他"
     },
     {
       "source": "WAM NET",
       "kind": "gov",
-      "hash": "a6a231e219a6d48d",
-      "title": "第15回 こども家庭審議会 科学技術部会 ヒト受精胚を用いる生殖補助医療研究等に関する専門委員会（令和8年9月2日開催）",
-      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22831&ct=090080225&from=rss",
-      "date": "2026-09-02",
+      "hash": "5ab3c682b15a4467",
+      "title": "介護保険最新情報Vol.1540（PDF：120KB）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0903085523450/ksvol.1540.pdf?from=rss",
+      "date": "2026-09-03",
       "category": "行政資料"
     },
     {
-      "source": "WAM NET",
+      "source": "福岡県（介護・高齢者福祉）",
       "kind": "gov",
-      "hash": "50891b7f55578033",
-      "title": "第67回 厚生科学審議会 予防接種・ワクチン分科会（令和8年9月2日開催）",
-      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22830&ct=010020130&from=rss",
-      "date": "2026-09-02",
-      "category": "行政資料"
-    },
-    {
-      "source": "WAM NET",
-      "kind": "gov",
-      "hash": "72f38c4a6d5a718e",
-      "title": "麻しん最新情報（令和8年9月1日更新）",
-      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22829&ct=030100110&from=rss",
-      "date": "2026-09-02",
-      "category": "行政資料"
-    },
-    {
-      "source": "WAM NET",
-      "kind": "gov",
-      "hash": "27cc806ee627bec2",
-      "title": "風しん最新情報（令和8年9月1日更新）",
-      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22828&ct=030100130&from=rss",
-      "date": "2026-09-02",
-      "category": "行政資料"
+      "hash": "cd78d49e4dc3c1e2",
+      "title": "福岡県における認知症カフェ等実施状況",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/ninchisyocafe.html",
+      "date": "2026年9月3日更新",
+      "category": ""
     }
   ],
-  "newPress": [],
+  "newPress": [
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "2dcf3bd84504a739",
+      "title": "カスハラで介護サービス拒否、ルール明確化が俎上に 厚労省が報酬改定へ論点提示 審議会では慎重論も",
+      "url": "https://www.joint-kaigo.com/articles/48478/",
+      "date": "2026-09-02",
+      "category": "超高齢化"
+    }
+  ],
   "crawlErrors": []
 }

@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-02T01:27:19.895Z",
+ "updatedAt": "2026-09-03T00:16:24.882Z",
  "items": [
   {
    "hash": "2f33b69c8e68fb75",
@@ -593,38 +593,6 @@
     }
    ],
    "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/250919nissei.html"
-  },
-  {
-   "hash": "bc4271f9c8239166",
-   "source": "助成財団センター 助成金募集ニュース",
-   "sourceKind": "org",
-   "funder": "",
-   "title": "野口遵研究助成金（第18回, 2026年度）",
-   "url": "https://www.jfc.or.jp/news_subsidy/%e9%87%8e%e5%8f%a3%e9%81%b5%e7%a0%94%e7%a9%b6%e5%8a%a9%e6%88%90%e9%87%91%ef%bc%88%e7%ac%ac18%e5%9b%9e-2026%e5%b9%b4%e5%ba%a6%ef%bc%89/",
-   "postedAt": "2026-08-07",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "10月30日(金) 正午 募集要項 WEBサイト関連ページURL 助成・奨学金情",
-   "openFrom": "2026-09-01",
-   "conditionsUrl": "https://noguchi.or.jp/human_resource/subsidy_award/",
-   "summary": "独創的かつチャレンジングな若手研究者の独立した基礎研究を支援するため、国内の大学等に勤務する若手研究者を対象とした研究助成。",
-   "fields": [
-    "共通"
-   ],
-   "uses": [
-    "研究・調査"
-   ],
-   "applicants": [
-    "個人",
-    "研究者・大学"
-   ],
-   "amount": "2,200千円/1件",
-   "conditions": [
-    {
-     "axis": "その他の対象限定",
-     "quote": "若手研究者を対象に"
-    }
-   ]
   }
  ]
 }
