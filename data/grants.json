@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-03T01:28:00.664Z",
+ "updatedAt": "2026-09-04T00:07:45.243Z",
  "items": [
   {
    "hash": "2f33b69c8e68fb75",
@@ -345,53 +345,6 @@
    "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260812saito.html"
   },
   {
-   "hash": "f86b3b711081c8dd",
-   "source": "助成財団センター 助成金募集ニュース",
-   "sourceKind": "org",
-   "funder": "",
-   "title": "アジア生協協力基金 一般公募助成",
-   "url": "https://www.jfc.or.jp/news_subsidy/%e3%82%a2%e3%82%b8%e3%82%a2%e7%94%9f%e5%8d%94%e5%8d%94%e5%8a%9b%e5%9f%ba%e9%87%91-%e4%b8%80%e8%88%ac%e5%85%ac%e5%8b%9f%e5%8a%a9%e6%88%90/",
-   "postedAt": "2026-08-14",
-   "deadline": "2026-10-31",
-   "deadlineType": "date",
-   "deadlineRaw": "2026 年 10 月 31 日 募集要項 https://ccij.jp/jyosei",
-   "summary": "アジア地域において住民の協同の力で暮らしの向上や課題解決を目指すプロジェクトの活動費を助成します。日本国内に拠点を有するNPO等の非営利組織が応募できます。",
-   "fields": [
-    "共通"
-   ],
-   "uses": [
-    "事業・活動"
-   ],
-   "applicants": [
-    "NPO・公益法人"
-   ],
-   "amount": "1件当たり上限120万円",
-   "conditions": [
-    {
-     "axis": "所在地",
-     "quote": "日本国内に拠点(事務局など)を有する非政府かつ非営利である組織。"
-    },
-    {
-     "axis": "事業の実施地",
-     "quote": "アジア地域で実施される事業。"
-    },
-    {
-     "axis": "設立・活動年数",
-     "quote": "国際協力分野での活動実績を、3事業年度以上有する組織(2023年度・2024年度・2025年度に活動実績を有する組織)。"
-    },
-    {
-     "axis": "受給歴",
-     "quote": "継続申請の場合を除き、過去2事業年度以内(2025年度、2026年度)に本基金からの助成を受けていない組織。"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "原則として、直近3事業年度(2023年度・2024年度・2025年度)における収入(経常収益など)が平均で「1億円未満」の組織。"
-    }
-   ],
-   "conditionsUrl": "https://ccij.jp/jyosei/kikinkoubo260709_01.html",
-   "openFrom": "2026-08-01"
-  },
-  {
    "hash": "e6292ab04d2d816d",
    "source": "助成財団センター 助成金募集ニュース",
    "sourceKind": "org",
@@ -470,6 +423,44 @@
     }
    ],
    "conditionsUrl": "https://www.akaihane.or.jp/subsidies/sub-corp-prog/47845/"
+  },
+  {
+   "hash": "079e56a81eb5e8cd",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "東海３県「食×農」応援基金",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e6%9d%b1%e6%b5%b7%ef%bc%93%e7%9c%8c%e3%80%8c%e9%a3%9fx%e8%be%b2%e3%80%8d%e5%bf%9c%e6%8f%b4%e5%9f%ba%e9%87%91-2/",
+   "postedAt": "2026-09-03",
+   "deadline": "2027-01-05",
+   "deadlineType": "date",
+   "deadlineRaw": "2027/01/05 募集要項 https://kosuikyo.com/wp-content/t",
+   "openFrom": "2026-09-01",
+   "conditionsUrl": "https://kosuikyo.com/%e5%8a%a9%e6%88%90%e9%87%91-2",
+   "summary": "東海3県における食と農業の活性化や農福連携などの活動経費を助成するもので、同地域で活動する団体や認定農業者が応募できます。",
+   "fields": [
+    "共通"
+   ],
+   "uses": [
+    "事業・活動"
+   ],
+   "applicants": [
+    "社会福祉法人",
+    "NPO・公益法人",
+    "任意団体",
+    "個人"
+   ],
+   "amount": "500千円/1件 総額 5,000千円",
+   "conditions": [
+    {
+     "axis": "事業の実施地",
+     "quote": "東海3県"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "食と農業活性化(農業者、団体支援)"
+    }
+   ]
   },
   {
    "hash": "d325aee00fa61a0a",

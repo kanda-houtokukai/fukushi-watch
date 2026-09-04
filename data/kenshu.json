@@ -1,151 +1,6 @@
 {
- "updatedAt": "2026-09-03T01:30:13.384Z",
+ "updatedAt": "2026-09-04T00:09:48.495Z",
  "items": [
-  {
-   "hash": "a768a91c7c2d70d3",
-   "source": "福岡県介護福祉士会",
-   "sourceKind": "org",
-   "via": "fkaigo",
-   "title": "成果を高める!発展の介護DX講座",
-   "url": "https://www.f-kaigo.jp/training/detail_498.php",
-   "deadline": "2026-09-03",
-   "deadlineType": "date",
-   "deadlineRaw": "開催要綱PDFより 令和8年9月3日",
-   "heldDates": [
-    "2026-09-20"
-   ],
-   "expireOn": "2026-09-20",
-   "openFrom": null,
-   "fields": [
-    "高齢"
-   ],
-   "kind": "テーマ別",
-   "keepUntilHeld": true,
-   "outline": [
-    {
-     "name": "日時",
-     "value": "令和８年９月２０日（日）９：３０～１１：３０（受付９：００～）"
-    },
-    {
-     "name": "会場",
-     "value": "サザンクス筑後研修室➀（福岡県筑後市大字若菜１１０４）"
-    },
-    {
-     "name": "講師",
-     "value": "大森和義氏（麻生教育サービス株式会社介護ＤＸ支援センターセンター長）"
-    },
-    {
-     "name": "参加費",
-     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
-    },
-    {
-     "name": "定員",
-     "value": "２０名"
-    },
-    {
-     "name": "ポイント",
-     "value": "２ポイント"
-    }
-   ],
-   "outlineUrl": "https://www.f-kaigo.jp/upimg/a6a6983376a6af.pdf"
-  },
-  {
-   "hash": "1bb00b502eaad38e",
-   "source": "福岡県介護福祉士会",
-   "sourceKind": "org",
-   "via": "fkaigo",
-   "title": "排泄ケアのファーストステップ【2日間研修】",
-   "url": "https://www.f-kaigo.jp/training/detail_497.php",
-   "deadline": "2026-09-03",
-   "deadlineType": "date",
-   "deadlineRaw": "開催要綱PDFより 令和8年9月3日",
-   "heldDates": [
-    "2026-09-18",
-    "2026-11-06"
-   ],
-   "expireOn": "2026-11-06",
-   "openFrom": null,
-   "fields": [
-    "高齢"
-   ],
-   "kind": "テーマ別",
-   "keepUntilHeld": true,
-   "outline": [
-    {
-     "name": "日時",
-     "value": "１日目令和８年９月１８日（金）１０:００～１２:００（受付９:３０～）\n２日目令和８年１１月６日（金）１０:００～１２:００（受付９:３０～）"
-    },
-    {
-     "name": "会場",
-     "value": "１日目福岡県介護福祉士会研修室（福岡市博多区博多駅東１－１－１６第２高田ビル２階）\n２日目ふくふくプラザ介護実習室（福岡市中央区荒戸３－３－３９）"
-    },
-    {
-     "name": "講師",
-     "value": "安武哲宏氏(作業療法士オムツフィッター１級)"
-    },
-    {
-     "name": "参加費",
-     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
-    },
-    {
-     "name": "定員",
-     "value": "２４名"
-    },
-    {
-     "name": "ポイント",
-     "value": "各２ポイント"
-    }
-   ],
-   "outlineUrl": "https://www.f-kaigo.jp/upimg/o6a6982bda4b95.pdf"
-  },
-  {
-   "hash": "30904cd2dee8cab9",
-   "source": "福岡県介護福祉士会",
-   "sourceKind": "org",
-   "via": "fkaigo",
-   "title": "身体拘束・虐待について基本を振り返ろう!",
-   "url": "https://www.f-kaigo.jp/training/detail_480.php",
-   "deadline": "2026-09-03",
-   "deadlineType": "date",
-   "deadlineRaw": "開催要綱PDFより 令和8年9月3日",
-   "heldDates": [
-    "2026-09-26"
-   ],
-   "expireOn": "2026-09-26",
-   "openFrom": null,
-   "fields": [
-    "共通"
-   ],
-   "kind": "法令対応",
-   "keepUntilHeld": true,
-   "outline": [
-    {
-     "name": "日時",
-     "value": "令和８年９月２６日（土）１０：３０～１２：３０（受付１０：００～）"
-    },
-    {
-     "name": "会場",
-     "value": "リブリオ行橋Ａスタジオ(福岡県行橋市大橋３丁目１８－１)"
-    },
-    {
-     "name": "講師",
-     "value": "小島香代子氏（福岡県介護福祉士会副会長）"
-    },
-    {
-     "name": "参加費",
-     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
-    },
-    {
-     "name": "定員",
-     "value": "会場３０名・オンライン（Ｚｏｏｍ）３０名"
-    },
-    {
-     "name": "ポイント",
-     "value": "２ポイント"
-    }
-   ],
-   "outlineUrl": "https://www.f-kaigo.jp/upimg/d69eef1a92f583.pdf"
-  },
   {
    "hash": "c8115f73722c5835",
    "source": "福祉・介護研修センター 年間予定表",
@@ -998,6 +853,55 @@
    "outlineUrl": "https://www.f-kaigo.jp/upimg/l69eef75027987.pdf"
   },
   {
+   "hash": "1bb00b502eaad38e",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "排泄ケアのファーストステップ【2日間研修】",
+   "url": "https://www.f-kaigo.jp/training/detail_497.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "開催要綱PDFより 令和8年9月3日（締切後も受け付けることがあります）",
+   "heldDates": [
+    "2026-09-18",
+    "2026-11-06"
+   ],
+   "expireOn": "2026-11-06",
+   "openFrom": null,
+   "fields": [
+    "高齢"
+   ],
+   "kind": "テーマ別",
+   "keepUntilHeld": true,
+   "outline": [
+    {
+     "name": "日時",
+     "value": "１日目令和８年９月１８日（金）１０:００～１２:００（受付９:３０～）\n２日目令和８年１１月６日（金）１０:００～１２:００（受付９:３０～）"
+    },
+    {
+     "name": "会場",
+     "value": "１日目福岡県介護福祉士会研修室（福岡市博多区博多駅東１－１－１６第２高田ビル２階）\n２日目ふくふくプラザ介護実習室（福岡市中央区荒戸３－３－３９）"
+    },
+    {
+     "name": "講師",
+     "value": "安武哲宏氏(作業療法士オムツフィッター１級)"
+    },
+    {
+     "name": "参加費",
+     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
+    },
+    {
+     "name": "定員",
+     "value": "２４名"
+    },
+    {
+     "name": "ポイント",
+     "value": "各２ポイント"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/o6a6982bda4b95.pdf"
+  },
+  {
    "hash": "1a5f0358151ccf59",
    "source": "福岡県介護福祉士会",
    "sourceKind": "org",
@@ -1018,6 +922,102 @@
     "高齢"
    ],
    "kind": "階層別"
+  },
+  {
+   "hash": "a768a91c7c2d70d3",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "成果を高める!発展の介護DX講座",
+   "url": "https://www.f-kaigo.jp/training/detail_498.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "開催要綱PDFより 令和8年9月3日（締切後も受け付けることがあります）",
+   "heldDates": [
+    "2026-09-20"
+   ],
+   "expireOn": "2026-09-20",
+   "openFrom": null,
+   "fields": [
+    "高齢"
+   ],
+   "kind": "テーマ別",
+   "keepUntilHeld": true,
+   "outline": [
+    {
+     "name": "日時",
+     "value": "令和８年９月２０日（日）９：３０～１１：３０（受付９：００～）"
+    },
+    {
+     "name": "会場",
+     "value": "サザンクス筑後研修室➀（福岡県筑後市大字若菜１１０４）"
+    },
+    {
+     "name": "講師",
+     "value": "大森和義氏（麻生教育サービス株式会社介護ＤＸ支援センターセンター長）"
+    },
+    {
+     "name": "参加費",
+     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
+    },
+    {
+     "name": "定員",
+     "value": "２０名"
+    },
+    {
+     "name": "ポイント",
+     "value": "２ポイント"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/a6a6983376a6af.pdf"
+  },
+  {
+   "hash": "30904cd2dee8cab9",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "身体拘束・虐待について基本を振り返ろう!",
+   "url": "https://www.f-kaigo.jp/training/detail_480.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "開催要綱PDFより 令和8年9月3日（締切後も受け付けることがあります）",
+   "heldDates": [
+    "2026-09-26"
+   ],
+   "expireOn": "2026-09-26",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "法令対応",
+   "keepUntilHeld": true,
+   "outline": [
+    {
+     "name": "日時",
+     "value": "令和８年９月２６日（土）１０：３０～１２：３０（受付１０：００～）"
+    },
+    {
+     "name": "会場",
+     "value": "リブリオ行橋Ａスタジオ(福岡県行橋市大橋３丁目１８－１)"
+    },
+    {
+     "name": "講師",
+     "value": "小島香代子氏（福岡県介護福祉士会副会長）"
+    },
+    {
+     "name": "参加費",
+     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
+    },
+    {
+     "name": "定員",
+     "value": "会場３０名・オンライン（Ｚｏｏｍ）３０名"
+    },
+    {
+     "name": "ポイント",
+     "value": "２ポイント"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/d69eef1a92f583.pdf"
   },
   {
    "hash": "3a63f4e253694719",
