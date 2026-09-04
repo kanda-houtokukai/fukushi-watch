@@ -1,8 +1,22 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-09-04T00:05:31.888Z",
+      "lastCrawled": "2026-09-04T01:21:58.645Z",
       "items": [
+        {
+          "hash": "32e43aeb14c2fab3",
+          "title": "令和9年度予算概算要求について（障害児支援関係）掲載しました",
+          "url": "https://www.cfa.go.jp/policies/shougaijishien",
+          "date": "2026-09-04",
+          "category": "政策"
+        },
+        {
+          "hash": "5725201bd55d9b27",
+          "title": "令和9年度保育関係予算概算要求の概要について掲載しました",
+          "url": "https://www.cfa.go.jp/policies/hoiku/yosan",
+          "date": "2026-09-04",
+          "category": "政策"
+        },
         {
           "hash": "9b7f7ea820d5612b",
           "title": "一般競争入札：こども基本法及びこどもの権利に関する普及啓発コンテンツの企画・実施業務一式を掲載しました",
@@ -461,8 +475,15 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-09-04T00:05:32.829Z",
+      "lastCrawled": "2026-09-04T01:21:59.687Z",
       "items": [
+        {
+          "hash": "c84224ae5649ed0a",
+          "title": "毎月勤労統計調査［地方調査］－令和８年３月分結果概要",
+          "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/monthly/r08/0803/index.html",
+          "date": "2026-09-04",
+          "category": "統計情報"
+        },
         {
           "hash": "31839a3ba0a836e8",
           "title": "第１回「国民年金第３号被保険者制度等に関する検討会」資料",
@@ -511,6 +532,13 @@
           "url": "https://www.mhlw.go.jp/stf/newpage_75804.html",
           "date": "2026-09-03",
           "category": "報道発表"
+        },
+        {
+          "hash": "3fd0c68820e56236",
+          "title": "令和８年度第2回医道審議会医師分科会医師専門研修部会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75965.html",
+          "date": "2026-09-02",
+          "category": "審議会等"
         },
         {
           "hash": "ec1b1bead1cf61d7",
@@ -4029,8 +4057,43 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-09-04T00:05:33.961Z",
+      "lastCrawled": "2026-09-04T01:22:00.962Z",
       "items": [
+        {
+          "hash": "e5e4c885e971f5d2",
+          "title": "第35回 健康・医療・介護情報利活用検討会 医療等情報利活用ワーキンググループ（令和8年9月10日開催予定）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22834&ct=070010030&from=rss",
+          "date": "2026-09-04",
+          "category": "行政資料"
+        },
+        {
+          "hash": "0b996f15b2abd393",
+          "title": "第46回 匿名医療情報等の提供に関する専門委員会（令和8年9月2日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22838&ct=010010265&from=rss",
+          "date": "2026-09-04",
+          "category": "行政資料"
+        },
+        {
+          "hash": "c7d0bc1656cb65b7",
+          "title": "第264回 社会保障審議会 介護給付費分科会（令和8年9月3日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22837&ct=010010020&from=rss",
+          "date": "2026-09-04",
+          "category": "行政資料"
+        },
+        {
+          "hash": "38062b521f39416e",
+          "title": "第214回 社会保障審議会 医療保険部会（令和8年9月3日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22836&ct=010010050&from=rss",
+          "date": "2026-09-04",
+          "category": "行政資料"
+        },
+        {
+          "hash": "85f162960cc130ce",
+          "title": "第21回 高齢者の保健事業のあり方検討ワーキンググループ（令和8年9月10日開催予定）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22835&ct=070010010&from=rss",
+          "date": "2026-09-04",
+          "category": "行政資料"
+        },
         {
           "hash": "f63cae27f88837ea",
           "title": "介護保険最新情報Vol.1540（PDF：6.1MB）",
@@ -5672,7 +5735,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-09-04T00:05:35.504Z",
+      "lastCrawled": "2026-09-04T01:22:02.659Z",
       "items": [
         {
           "hash": "0d1c8e2ca3d8f2b7",
@@ -5915,7 +5978,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-09-04T00:05:35.828Z",
+      "lastCrawled": "2026-09-04T01:22:03.015Z",
       "items": [
         {
           "hash": "a97c5b2b8f024e83",
@@ -6450,7 +6513,7 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-09-04T00:05:37.084Z",
+      "lastCrawled": "2026-09-04T01:22:04.651Z",
       "items": [
         {
           "hash": "efbee4935997c0e1",
@@ -6693,7 +6756,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-09-04T00:05:36.001Z",
+      "lastCrawled": "2026-09-04T01:22:03.370Z",
       "items": [
         {
           "hash": "cc45938bf97029c2",
@@ -7027,7 +7090,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-09-04T00:05:37.741Z",
+      "lastCrawled": "2026-09-04T01:22:05.541Z",
       "items": [
         {
           "hash": "7f02b6f6df29dc34",
@@ -7459,7 +7522,7 @@
       ]
     }
   },
-  "preferredModel": "gemini-3.5-flash",
+  "preferredModel": "gemini-3.6-flash",
   "lastSentDate": "2026-09-04",
-  "lastRunAt": "2026-09-04T00:06:23.583Z"
+  "lastRunAt": "2026-09-04T01:23:59.675Z"
 }

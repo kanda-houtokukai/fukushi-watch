@@ -1,188 +1,88 @@
 {
-  "generatedAt": "2026-09-04T00:05:37.744Z",
+  "generatedAt": "2026-09-04T01:22:05.543Z",
   "newItems": [
     {
       "source": "こども家庭庁",
       "kind": "gov",
-      "hash": "9b7f7ea820d5612b",
-      "title": "一般競争入札：こども基本法及びこどもの権利に関する普及啓発コンテンツの企画・実施業務一式を掲載しました",
-      "url": "https://www.cfa.go.jp/procurement/portal",
-      "date": "2026-09-03",
-      "category": "調達情報"
-    },
-    {
-      "source": "こども家庭庁",
-      "kind": "gov",
-      "hash": "9ea89861025c5a29",
-      "title": "第7回 こどものケアニーズに応じた支援の在り方に関する専門委員会の開催についてを掲載しました",
-      "url": "https://www.cfa.go.jp/press/cc08f710-c1c1-425e-b0b0-ddbf95576e20",
-      "date": "2026-09-03",
-      "category": "報道発表"
-    },
-    {
-      "source": "こども家庭庁",
-      "kind": "gov",
-      "hash": "268c97b9756ad14f",
-      "title": "こども・若者参画及び意見反映専門委員会（第16回）についてを掲載しました",
-      "url": "https://www.cfa.go.jp/press/26e767e1-4869-47d9-ac65-a66932552e86",
-      "date": "2026-09-03",
-      "category": "報道発表"
-    },
-    {
-      "source": "厚生労働省",
-      "kind": "gov",
-      "hash": "31839a3ba0a836e8",
-      "title": "第１回「国民年金第３号被保険者制度等に関する検討会」資料",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75888.html",
+      "hash": "32e43aeb14c2fab3",
+      "title": "令和9年度予算概算要求について（障害児支援関係）掲載しました",
+      "url": "https://www.cfa.go.jp/policies/shougaijishien",
       "date": "2026-09-04",
-      "category": "審議会等"
+      "category": "政策"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "5725201bd55d9b27",
+      "title": "令和9年度保育関係予算概算要求の概要について掲載しました",
+      "url": "https://www.cfa.go.jp/policies/hoiku/yosan",
+      "date": "2026-09-04",
+      "category": "政策"
     },
     {
       "source": "厚生労働省",
       "kind": "gov",
-      "hash": "cd4b690da040802c",
-      "title": "第32回キャリアコンサルタント登録制度等に関する検討会 会議資料",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75979.html",
-      "date": "2026-09-03",
-      "category": "審議会等"
+      "hash": "c84224ae5649ed0a",
+      "title": "毎月勤労統計調査［地方調査］－令和８年３月分結果概要",
+      "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/monthly/r08/0803/index.html",
+      "date": "2026-09-04",
+      "category": "統計情報"
     },
     {
       "source": "厚生労働省",
       "kind": "gov",
-      "hash": "508d411c0f1bc3cb",
-      "title": "全ての都道府県で地域別最低賃金の答申がなされました",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75950.html",
-      "date": "2026-09-03",
-      "category": "報道発表"
-    },
-    {
-      "source": "厚生労働省",
-      "kind": "gov",
-      "hash": "6a0d6571a9ed9620",
-      "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
-      "url": "https://www.mhlw.go.jp/stf/newpage_76000.html",
-      "date": "2026-09-03",
-      "category": "報道発表"
-    },
-    {
-      "source": "厚生労働省",
-      "kind": "gov",
-      "hash": "e4c2c7d5a81efd05",
-      "title": "検体採取の結果について（８月）",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75897.html",
-      "date": "2026-09-03",
-      "category": "トピックス"
-    },
-    {
-      "source": "厚生労働省",
-      "kind": "gov",
-      "hash": "65f5b743e0e1dfdc",
-      "title": "硫黄島戦没者遺骨引渡式の開催（令和８年９月）",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75958.html",
-      "date": "2026-09-03",
-      "category": "報道発表"
-    },
-    {
-      "source": "厚生労働省",
-      "kind": "gov",
-      "hash": "5d217aa1ae3734fe",
-      "title": "労働者派遣法及び職業安定法違反に係る告発について",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75804.html",
-      "date": "2026-09-03",
-      "category": "報道発表"
-    },
-    {
-      "source": "厚生労働省",
-      "kind": "gov",
-      "hash": "5a01563842d89441",
-      "title": "「令和８年度 第１回 薬事審議会 毒物劇物部会 毒物劇物調査会」を開催します（開催案内）",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75884.html",
-      "date": "2026-08-31",
-      "category": "審議会等"
-    },
-    {
-      "source": "厚生労働省",
-      "kind": "gov",
-      "hash": "170520bc64dda8f2",
-      "title": "第35回 健康・医療・介護情報利活用検討会 医療等情報利活用ワーキンググループの開催案内",
-      "url": "https://www.mhlw.go.jp/stf/shingi/0001210262_00100.html",
-      "date": "2026-08-25",
-      "category": "審議会等"
-    },
-    {
-      "source": "厚生労働省",
-      "kind": "gov",
-      "hash": "e9092790013fa8c4",
-      "title": "第35回 健康・医療・介護情報利活用検討会 医療等情報利活用ワーキンググループ資料について",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75786.html",
-      "date": "2026-08-25",
+      "hash": "3fd0c68820e56236",
+      "title": "令和８年度第2回医道審議会医師分科会医師専門研修部会",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75965.html",
+      "date": "2026-09-02",
       "category": "審議会等"
     },
     {
       "source": "WAM NET",
       "kind": "gov",
-      "hash": "f63cae27f88837ea",
-      "title": "介護保険最新情報Vol.1540（PDF：6.1MB）",
-      "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0903085523450/ksvol.1540.pdf?from=rss",
-      "date": "2026-09-03",
+      "hash": "e5e4c885e971f5d2",
+      "title": "第35回 健康・医療・介護情報利活用検討会 医療等情報利活用ワーキンググループ（令和8年9月10日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22834&ct=070010030&from=rss",
+      "date": "2026-09-04",
       "category": "行政資料"
     },
     {
-      "source": "福岡県（障がい福祉）",
+      "source": "WAM NET",
       "kind": "gov",
-      "hash": "0d1c8e2ca3d8f2b7",
-      "title": "更生医療申請様式（PDF）",
-      "url": "https://www.pref.fukuoka.lg.jp/contents/ko-seiiryou2.html",
-      "date": "2026年9月4日更新",
-      "category": ""
+      "hash": "0b996f15b2abd393",
+      "title": "第46回 匿名医療情報等の提供に関する専門委員会（令和8年9月2日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22838&ct=010010265&from=rss",
+      "date": "2026-09-04",
+      "category": "行政資料"
     },
     {
-      "source": "福岡県（子ども・青少年）",
+      "source": "WAM NET",
       "kind": "gov",
-      "hash": "a97c5b2b8f024e83",
-      "title": "【福岡県 風しん情報】先天性風しん症候群の発生を予防するために",
-      "url": "https://www.pref.fukuoka.lg.jp/contents/kansen2013040801.html",
-      "date": "2026年9月3日更新",
-      "category": ""
+      "hash": "c7d0bc1656cb65b7",
+      "title": "第264回 社会保障審議会 介護給付費分科会（令和8年9月3日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22837&ct=010010020&from=rss",
+      "date": "2026-09-04",
+      "category": "行政資料"
     },
     {
-      "source": "福岡県（子ども・青少年）",
+      "source": "WAM NET",
       "kind": "gov",
-      "hash": "c603bc40ea2655d4",
-      "title": "保育士試験受験資格認定書について",
-      "url": "https://www.pref.fukuoka.lg.jp/contents/tiji-nintei.html",
-      "date": "2026年9月3日更新",
-      "category": ""
+      "hash": "38062b521f39416e",
+      "title": "第214回 社会保障審議会 医療保険部会（令和8年9月3日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22836&ct=010010050&from=rss",
+      "date": "2026-09-04",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "85f162960cc130ce",
+      "title": "第21回 高齢者の保健事業のあり方検討ワーキンググループ（令和8年9月10日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22835&ct=070010010&from=rss",
+      "date": "2026-09-04",
+      "category": "行政資料"
     }
   ],
-  "newPress": [
-    {
-      "source": "介護ニュースJoint",
-      "kind": "press",
-      "hash": "efbee4935997c0e1",
-      "title": "【介護報酬改定】LIFE関連加算、テコ入れへ具体策を検討 厚労省 審議会では改善要請や不満の声も",
-      "url": "https://www.joint-kaigo.com/articles/48516/",
-      "date": "2026-09-03",
-      "category": "介護給付費分科会"
-    },
-    {
-      "source": "介護ニュースJoint",
-      "kind": "press",
-      "hash": "45a97d0ffc1c67ff",
-      "title": "WHILLが最軽量の新モデル発表 折りたたみで介護保険レンタルにも対応可",
-      "url": "https://www.joint-kaigo.com/articles/48509/",
-      "date": "2026-09-03",
-      "category": "福祉用具"
-    },
-    {
-      "source": "介護ニュースJoint",
-      "kind": "press",
-      "hash": "3ff1a0ebc1e33e4e",
-      "title": "【千葉豪雨】介護施設に残した無残な爪痕 深刻な経営への打撃と影響の長期化",
-      "url": "https://www.joint-kaigo.com/articles/48408/",
-      "date": "2026-09-03",
-      "category": "国会"
-    }
-  ],
+  "newPress": [],
   "crawlErrors": []
 }
