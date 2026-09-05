@@ -1,23 +1,6 @@
 {
- "updatedAt": "2026-09-04T01:33:11.501Z",
+ "updatedAt": "2026-09-05T00:10:02.851Z",
  "items": [
-  {
-   "hash": "c8115f73722c5835",
-   "source": "福祉・介護研修センター 年間予定表",
-   "sourceKind": "org",
-   "title": "BCP(業務継続計画)研修",
-   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/08/R8-BCP.pdf",
-   "deadline": "2026-09-04",
-   "deadlineType": "date",
-   "deadlineRaw": "一覧の申込終了日より 9月4日",
-   "openFrom": "2026-08-02",
-   "fields": [
-    "共通"
-   ],
-   "kind": "法令対応",
-   "via": "schedule",
-   "expireOn": "2026-12-04"
-  },
   {
    "hash": "6b27ebe70841b027",
    "source": "福祉・介護研修センター 年間予定表",
