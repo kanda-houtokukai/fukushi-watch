@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-09-05T01:25:18.167Z",
+      "lastCrawled": "2026-09-05T23:53:40.893Z",
       "items": [
         {
           "hash": "b1bb1da4a55b1c3d",
@@ -510,7 +510,7 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-09-05T01:25:19.425Z",
+      "lastCrawled": "2026-09-05T23:53:41.879Z",
       "items": [
         {
           "hash": "4a4fe9f927920818",
@@ -4190,7 +4190,7 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-09-05T01:25:20.661Z",
+      "lastCrawled": "2026-09-05T23:53:43.257Z",
       "items": [
         {
           "hash": "e5e4c885e971f5d2",
@@ -5868,7 +5868,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-09-05T01:25:22.307Z",
+      "lastCrawled": "2026-09-05T23:53:44.350Z",
       "items": [
         {
           "hash": "a73e7b52b5c0bda8",
@@ -6125,7 +6125,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-09-05T01:25:22.807Z",
+      "lastCrawled": "2026-09-05T23:53:45.398Z",
       "items": [
         {
           "hash": "c8e4e74cf7cf3573",
@@ -6163,6 +6163,13 @@
           "category": ""
         },
         {
+          "hash": "d45f63ddbc543471",
+          "title": "令和８年度福岡県届出保育施設におけるＩＣＴ導入支援費補助金についてのお知らせ",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/ictshinsei.html",
+          "date": "2026年9月4日更新",
+          "category": ""
+        },
+        {
           "hash": "dc4ff8e7186839c5",
           "title": "経済的にお困りの世帯のこどもの大学等受験料を助成します。",
           "url": "https://www.pref.fukuoka.lg.jp/contents/daigakutou-jyukenryo.html",
@@ -6188,13 +6195,6 @@
           "title": "物価高対応福岡県子育て応援金を支給します！",
           "url": "https://www.pref.fukuoka.lg.jp/contents/fukuoka-kosodate-ouenkin.html",
           "date": "2026年8月24日更新",
-          "category": ""
-        },
-        {
-          "hash": "6ddb2e730a5dcd4f",
-          "title": "県営住宅の入居者募集（抽選方式）を実施します",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/chusenboshur809.html",
-          "date": "2026年8月20日更新",
           "category": ""
         },
         {
@@ -6667,8 +6667,15 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-09-05T01:25:24.582Z",
+      "lastCrawled": "2026-09-05T23:53:47.306Z",
       "items": [
+        {
+          "hash": "39268b6abfda64e1",
+          "title": "【能本守康】ケアマネジャーのための「ケアプラン点検の手引き」年内発刊へ！ 双方の質を高める活用ノウハウ",
+          "url": "https://www.joint-kaigo.com/articles/48553/",
+          "date": "2026-09-05",
+          "category": "介護保険"
+        },
         {
           "hash": "cf34837d2aa71a0f",
           "title": "最低賃金1177円 過去2番目の引き上げ 介護経営の圧迫懸念 業界は報酬増を要請",
@@ -6681,14 +6688,14 @@
           "title": "【介護報酬改定】LIFE関連加算、テコ入れへ具体策を検討 厚労省 審議会では改善要請や不満の声も",
           "url": "https://www.joint-kaigo.com/articles/48516/",
           "date": "2026-09-03",
-          "category": "介護給付費分科会"
+          "category": "介護保険"
         },
         {
           "hash": "45a97d0ffc1c67ff",
           "title": "WHILLが最軽量の新モデル発表 折りたたみで介護保険レンタルにも対応可",
           "url": "https://www.joint-kaigo.com/articles/48509/",
           "date": "2026-09-03",
-          "category": "福祉用具"
+          "category": "生産性向上"
         },
         {
           "hash": "3ff1a0ebc1e33e4e",
@@ -6702,7 +6709,7 @@
           "title": "カスハラで介護サービス拒否、ルール明確化が俎上に 厚労省が報酬改定へ論点提示 審議会では慎重論も",
           "url": "https://www.joint-kaigo.com/articles/48478/",
           "date": "2026-09-02",
-          "category": "認知症"
+          "category": "超高齢化"
         },
         {
           "hash": "a39b787213b51f37",
@@ -6716,7 +6723,7 @@
           "title": "介護職の処遇改善加算、最上位の算定率は4割弱にとどまる サービス間で大きな格差＝厚労省",
           "url": "https://www.joint-kaigo.com/articles/48385/",
           "date": "2026-09-01",
-          "category": "介護保険"
+          "category": "介護給付費分科会"
         },
         {
           "hash": "e6317c0045f279c7",
@@ -6730,7 +6737,7 @@
           "title": "介護施設の夜間の人員配置、さらなる基準緩和を俎上に 厚労省 見守り機器活用で検討",
           "url": "https://www.joint-kaigo.com/articles/48355/",
           "date": "2026-08-31",
-          "category": "超高齢化"
+          "category": "介護保険"
         },
         {
           "hash": "da1d2d231c106d3c",
@@ -6917,7 +6924,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-09-05T01:25:22.992Z",
+      "lastCrawled": "2026-09-05T23:53:46.168Z",
       "items": [
         {
           "hash": "cc45938bf97029c2",
@@ -7251,7 +7258,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-09-05T01:25:25.545Z",
+      "lastCrawled": "2026-09-05T23:53:48.311Z",
       "items": [
         {
           "hash": "7f02b6f6df29dc34",
@@ -7684,6 +7691,6 @@
     }
   },
   "preferredModel": "gemini-3.6-flash",
-  "lastSentDate": "2026-09-05",
-  "lastRunAt": "2026-09-05T01:25:25.630Z"
+  "lastSentDate": "2026-09-06",
+  "lastRunAt": "2026-09-05T23:54:04.272Z"
 }
