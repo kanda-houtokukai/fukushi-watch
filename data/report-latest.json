@@ -1,35 +1,6 @@
 {
-  "generatedAt": "2026-09-05T23:54:04.203Z",
-  "model": "gemini-3.6-flash",
-  "items": [
-    {
-      "hash": "d45f63ddbc543471",
-      "source": "福岡県（子ども・青少年）",
-      "title": "令和８年度福岡県届出保育施設におけるＩＣＴ導入支援費補助金についてのお知らせ",
-      "url": "https://www.pref.fukuoka.lg.jp/contents/ictshinsei.html",
-      "date": "2026年9月4日更新",
-      "category": "",
-      "summary": "福岡県内の届出保育施設（認可外保育施設等）を対象とした、業務効率化等のためのICTシステム導入支援補助金に関する案内です。",
-      "importance": "高",
-      "fields": [
-        "保育"
-      ],
-      "reason": "補助金の案内であり、対象となる保育施設において申請要件や手続きの確認・対応が必要となるため。",
-      "action": "一般に、こうした通知では、自施設が補助の対象事業所に該当するかや、導入を検討しているICTシステムが補助対象となるか等の要件を確認する対応が必要になります。"
-    }
-  ],
-  "press": [
-    {
-      "hash": "39268b6abfda64e1",
-      "source": "介護ニュースJoint",
-      "kind": "press",
-      "title": "【能本守康】ケアマネジャーのための「ケアプラン点検の手引き」年内発刊へ！ 双方の質を高める活用ノウハウ",
-      "url": "https://www.joint-kaigo.com/articles/48553/",
-      "date": "2026-09-05",
-      "category": "介護保険",
-      "fields": [
-        "高齢"
-      ]
-    }
-  ]
+  "generatedAt": "2026-09-06T01:20:47.205Z",
+  "model": null,
+  "items": [],
+  "press": []
 }

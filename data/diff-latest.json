@@ -1,26 +1,11 @@
 {
-  "generatedAt": "2026-09-05T23:53:48.314Z",
-  "newItems": [
-    {
-      "source": "福岡県（子ども・青少年）",
-      "kind": "gov",
-      "hash": "d45f63ddbc543471",
-      "title": "令和８年度福岡県届出保育施設におけるＩＣＴ導入支援費補助金についてのお知らせ",
-      "url": "https://www.pref.fukuoka.lg.jp/contents/ictshinsei.html",
-      "date": "2026年9月4日更新",
-      "category": ""
-    }
-  ],
-  "newPress": [
+  "generatedAt": "2026-09-06T01:20:47.160Z",
+  "newItems": [],
+  "newPress": [],
+  "crawlErrors": [
     {
       "source": "介護ニュースJoint",
-      "kind": "press",
-      "hash": "39268b6abfda64e1",
-      "title": "【能本守康】ケアマネジャーのための「ケアプラン点検の手引き」年内発刊へ！ 双方の質を高める活用ノウハウ",
-      "url": "https://www.joint-kaigo.com/articles/48553/",
-      "date": "2026-09-05",
-      "category": "介護保険"
+      "error": "fetch failed"
     }
-  ],
-  "crawlErrors": []
+  ]
 }
