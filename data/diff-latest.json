@@ -1,11 +1,6 @@
 {
-  "generatedAt": "2026-09-06T01:20:47.160Z",
+  "generatedAt": "2026-09-06T23:53:30.229Z",
   "newItems": [],
   "newPress": [],
-  "crawlErrors": [
-    {
-      "source": "介護ニュースJoint",
-      "error": "fetch failed"
-    }
-  ]
+  "crawlErrors": []
 }
