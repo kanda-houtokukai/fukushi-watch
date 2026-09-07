@@ -1,6 +1,43 @@
 {
-  "generatedAt": "2026-09-06T23:53:30.229Z",
-  "newItems": [],
+  "generatedAt": "2026-09-07T01:18:32.239Z",
+  "newItems": [
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "73ecaae416c320f0",
+      "title": "中央社会保険医療協議会の開催について（令和8年9月9日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22839&ct=070010030&from=rss",
+      "date": "2026-09-07",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "64b21ab64f57586f",
+      "title": "第47回 匿名医療情報等の提供に関する専門委員会（令和8年9月7日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22840&ct=010010265&from=rss",
+      "date": "2026-09-07",
+      "category": "行政資料"
+    },
+    {
+      "source": "福岡県（介護・高齢者福祉）",
+      "kind": "gov",
+      "hash": "79ec7c3975f7a414",
+      "title": "令和８年度介護サービス情報の公表制度に係る報告及び情報公表計画（対象事業所）",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/keikakutaishoujigyousho.html",
+      "date": "2026年9月7日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（介護・高齢者福祉）",
+      "kind": "gov",
+      "hash": "fdbc7ea8973eadd8",
+      "title": "令和８年度介護サービス情報公表システム",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/kouhyou-sisutemu.html",
+      "date": "2026年9月7日更新",
+      "category": ""
+    }
+  ],
   "newPress": [],
   "crawlErrors": []
 }
