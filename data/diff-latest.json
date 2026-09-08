@@ -1,134 +1,16 @@
 {
-  "generatedAt": "2026-09-08T00:24:42.021Z",
+  "generatedAt": "2026-09-08T01:24:20.674Z",
   "newItems": [
     {
       "source": "厚生労働省",
       "kind": "gov",
-      "hash": "749b0e1f6e0dc6f5",
-      "title": "毎月勤労統計調査ー2026（令和8）年７月分結果速報",
-      "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/monthly/r08/2607p/2607p.html",
+      "hash": "149f91cd07737f1a",
+      "title": "令和８年度 第１回戦没者の遺骨収集に関する有識者会議資料",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76061.html",
       "date": "2026-09-08",
-      "category": "統計情報"
-    },
-    {
-      "source": "厚生労働省",
-      "kind": "gov",
-      "hash": "7cbc0ece87b713b7",
-      "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
-      "url": "https://www.mhlw.go.jp/stf/newpage_76057.html",
-      "date": "2026-09-07",
-      "category": "報道発表"
-    },
-    {
-      "source": "厚生労働省",
-      "kind": "gov",
-      "hash": "aa7da33a73553811",
-      "title": "第131回労働政策審議会労働条件分科会労災保険部会資料",
-      "url": "https://www.mhlw.go.jp/stf/newpage_76056.html",
-      "date": "2026-09-07",
-      "category": "審議会等"
-    },
-    {
-      "source": "厚生労働省",
-      "kind": "gov",
-      "hash": "0a4eb463ec85c5e9",
-      "title": "第２回厚生労働省ヘルスケアＡＸ・ＤＸ推進本部の開催案内",
-      "url": "https://www.mhlw.go.jp/stf/shingi/0001210262_00101.html",
-      "date": "2026-09-07",
-      "category": "報道発表"
-    },
-    {
-      "source": "厚生労働省",
-      "kind": "gov",
-      "hash": "8a300c4139cbfd6b",
-      "title": "第59回労働政策審議会人材開発分科会（オンライン併用）の開催について",
-      "url": "https://www.mhlw.go.jp/stf/newpage_76050.html",
-      "date": "2026-09-07",
-      "category": "審議会等"
-    },
-    {
-      "source": "厚生労働省",
-      "kind": "gov",
-      "hash": "bca645f63445894b",
-      "title": "第59回労働政策審議会人材開発分科会（オンライン併用）の開催について",
-      "url": "https://www.mhlw.go.jp/stf/newpage_76047.html",
-      "date": "2026-09-07",
-      "category": "審議会等"
-    },
-    {
-      "source": "厚生労働省",
-      "kind": "gov",
-      "hash": "4e4bb6ed973ba91f",
-      "title": "第２回 令和８年度医師の働き方改革の推進等に関する検討会：開催案内",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75971.html",
-      "date": "2026-09-07",
-      "category": "審議会等"
-    },
-    {
-      "source": "厚生労働省",
-      "kind": "gov",
-      "hash": "17ec03f75e4c5341",
-      "title": "令和７年度第９回薬事審議会化学物質安全対策部会化学物質調査会",
-      "url": "https://www.mhlw.go.jp/stf/newpage_75906.html",
-      "date": "2026-08-31",
-      "category": "審議会等"
-    },
-    {
-      "source": "厚生労働省",
-      "kind": "gov",
-      "hash": "3fa715756fae8fbe",
-      "title": "第８回労働政策審議会労働条件分科会「組織再編に伴う労働関係の調整に関する部会」(開催案内)",
-      "url": "https://www.mhlw.go.jp/stf/shinngi_00021.html",
-      "date": "2026-08-27",
-      "category": "審議会等"
-    },
-    {
-      "source": "福岡県（介護・高齢者福祉）",
-      "kind": "gov",
-      "hash": "36427d776be9cfcd",
-      "title": "緊急時介護人材確保・職場環境復旧等支援事業費補助金の仕入控除税額の報告について",
-      "url": "https://www.pref.fukuoka.lg.jp/contents/shiirekoujyo2.html",
-      "date": "2026年9月8日更新",
-      "category": ""
-    },
-    {
-      "source": "福岡県（介護・高齢者福祉）",
-      "kind": "gov",
-      "hash": "c0fcda94851b1dd6",
-      "title": "在宅医療・介護現場における利用者等からの暴力・ハラスメント対策について",
-      "url": "https://www.pref.fukuoka.lg.jp/contents/ztiryoukaigo-bouhara.html",
-      "date": "2026年9月8日更新",
-      "category": ""
-    },
-    {
-      "source": "福岡県（介護・高齢者福祉）",
-      "kind": "gov",
-      "hash": "b39ef4112c997f07",
-      "title": "介護特定技能外国人マッチング支援事業受入れ施設見学会及び事業説明会の開催について",
-      "url": "https://www.pref.fukuoka.lg.jp/contents/kaigotokuteiginou-matching.html",
-      "date": "2026年8月21日更新",
-      "category": ""
+      "category": "その他"
     }
   ],
-  "newPress": [
-    {
-      "source": "介護ニュースJoint",
-      "kind": "press",
-      "hash": "2689973a177deee2",
-      "title": "【要警戒】LIFE関連加算、運営指導で報酬返還になる盲点 「送信完了＝安心」の落とし穴＝小濱道博",
-      "url": "https://www.joint-kaigo.com/articles/48575/",
-      "date": "2026-09-07",
-      "category": "超高齢化"
-    },
-    {
-      "source": "介護ニュースJoint",
-      "kind": "press",
-      "hash": "89eaa3ac1b98d4cf",
-      "title": "有料老人ホームの入居時費用が高騰 東京は相場1千万円超 関西でも軒並み上昇",
-      "url": "https://www.joint-kaigo.com/articles/48560/",
-      "date": "2026-09-07",
-      "category": "自治体"
-    }
-  ],
+  "newPress": [],
   "crawlErrors": []
 }

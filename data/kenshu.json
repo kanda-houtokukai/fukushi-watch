@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-08T00:30:03.370Z",
+ "updatedAt": "2026-09-08T01:26:19.702Z",
  "items": [
   {
    "hash": "6b27ebe70841b027",
@@ -740,11 +740,11 @@
    "kind": "テーマ別"
   },
   {
-   "hash": "e6a8c35db0534472",
+   "hash": "b823004de108e318",
    "source": "福岡県介護福祉士会",
    "sourceKind": "org",
    "via": "fkaigo",
-   "title": "嚥下のしくみを理解して自信をもって介助をおこなおう!",
+   "title": "【申込〆切ました】嚥下のしくみを理解して自信をもって介助をおこなおう!",
    "url": "https://www.f-kaigo.jp/training/detail_478.php",
    "deadline": null,
    "deadlineType": "unknown",
@@ -758,7 +758,6 @@
     "高齢"
    ],
    "kind": "テーマ別",
-   "keepUntilHeld": true,
    "outline": [
     {
      "name": "日時",
@@ -785,7 +784,8 @@
      "value": "２ポイント"
     }
    ],
-   "outlineUrl": "https://www.f-kaigo.jp/upimg/d69eef0ef8c8c1.pdf"
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/d69eef0ef8c8c1.pdf",
+   "keepUntilHeld": true
   },
   {
    "hash": "051dd2359cf09e71",

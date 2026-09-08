@@ -2564,7 +2564,7 @@
    "counts": {
     "高": 2,
     "中": 6,
-    "低": 4
+    "低": 5
    },
    "items": [
     {
@@ -2780,6 +2780,18 @@
        "url": "https://www.pref.fukuoka.lg.jp/contents/kaigotokuteiginou-matching2.html"
       }
      ]
+    },
+    {
+     "hash": "149f91cd07737f1a",
+     "source": "厚生労働省",
+     "title": "令和８年度 第１回戦没者の遺骨収集に関する有識者会議資料",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76061.html",
+     "date": "2026-09-08",
+     "category": "その他",
+     "summary": "戦没者の遺骨収集事業に関する有識者会議の開催資料です。福祉事業所の運営や実務には直接関係のない行政情報となります。",
+     "importance": "低",
+     "fields": [],
+     "reason": "戦没者遺骨収集事業に関する有識者会議資料であり、福祉事業の実務や運営には影響しないため。"
     }
    ],
    "press": [

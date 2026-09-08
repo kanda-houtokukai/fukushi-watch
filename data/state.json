@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-09-08T00:24:34.047Z",
+      "lastCrawled": "2026-09-08T01:24:13.935Z",
       "items": [
         {
           "hash": "b1bb1da4a55b1c3d",
@@ -510,8 +510,15 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-09-08T00:24:34.977Z",
+      "lastCrawled": "2026-09-08T01:24:15.167Z",
       "items": [
+        {
+          "hash": "149f91cd07737f1a",
+          "title": "令和８年度 第１回戦没者の遺骨収集に関する有識者会議資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76061.html",
+          "date": "2026-09-08",
+          "category": "その他"
+        },
         {
           "hash": "749b0e1f6e0dc6f5",
           "title": "毎月勤労統計調査ー2026（令和8）年７月分結果速報",
@@ -3959,7 +3966,7 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-09-08T00:24:36.348Z",
+      "lastCrawled": "2026-09-08T01:24:16.215Z",
       "items": [
         {
           "hash": "73ecaae416c320f0",
@@ -5651,7 +5658,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-09-08T00:24:37.738Z",
+      "lastCrawled": "2026-09-08T01:24:17.696Z",
       "items": [
         {
           "hash": "a73e7b52b5c0bda8",
@@ -5908,7 +5915,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-09-08T00:24:38.556Z",
+      "lastCrawled": "2026-09-08T01:24:17.872Z",
       "items": [
         {
           "hash": "c8e4e74cf7cf3573",
@@ -6457,7 +6464,7 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-09-08T00:24:41.033Z",
+      "lastCrawled": "2026-09-08T01:24:19.635Z",
       "items": [
         {
           "hash": "2689973a177deee2",
@@ -6728,7 +6735,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-09-08T00:24:39.442Z",
+      "lastCrawled": "2026-09-08T01:24:18.039Z",
       "items": [
         {
           "hash": "36427d776be9cfcd",
@@ -7097,7 +7104,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-09-08T00:24:42.018Z",
+      "lastCrawled": "2026-09-08T01:24:20.671Z",
       "items": [
         {
           "hash": "7f02b6f6df29dc34",
@@ -7529,7 +7536,7 @@
       ]
     }
   },
-  "preferredModel": "gemini-3.7-flash",
+  "preferredModel": "gemini-3.6-flash",
   "lastSentDate": "2026-09-08",
-  "lastRunAt": "2026-09-08T00:25:59.102Z"
+  "lastRunAt": "2026-09-08T01:24:40.282Z"
 }
