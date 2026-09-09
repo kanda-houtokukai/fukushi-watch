@@ -1,88 +1,173 @@
 {
-  "generatedAt": "2026-09-09T01:33:17.862Z",
-  "model": "gemini-3.6-flash",
+  "generatedAt": "2026-09-09T19:53:17.130Z",
+  "model": "gemini-3.5-flash",
   "items": [
     {
-      "hash": "7849b7c411889139",
+      "hash": "fa7390bcbd11b4ae",
       "source": "こども家庭庁",
-      "title": "国立武蔵野学院：児童相談所等で働くための資格が取得できる国立武蔵野学院附属人材育成センター養成部通信課程について、令和9年度第6期生の募集要項等を掲載しました",
-      "url": "https://www.cfa.go.jp/musashino/tsuushin-katei",
+      "title": "一般競争入札：児童の権利に関する条約の認知度等調査を掲載しました",
+      "url": "https://www.cfa.go.jp/procurement/portal",
       "date": "2026-09-09",
-      "category": "政策",
-      "summary": "児童相談所や児童福祉施設等で働くための資格取得を目的とした受講生募集の案内です。職員のキャリアアップや専門人材育成に関わる情報です。",
-      "importance": "中",
-      "fields": [
-        "児童"
-      ],
-      "reason": "児童福祉分野の専門資格取得に関する研修・受講生の募集案内であるため。"
-    },
-    {
-      "hash": "21fdaac885c4270f",
-      "source": "厚生労働省",
-      "title": "公募公示（年金給付システムの最適化に係る第三者評価業務及び総括管理支援業務 一式",
-      "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-oth-kikakukoubo/newpage_10501.html",
-      "date": "2026-09-09",
-      "category": "その他",
-      "summary": "年金給付システム最適化業務の委託に関する調達（公募公示）情報です。福祉事業者の実務運営には関係しません。",
+      "category": "調達情報",
+      "summary": "こども家庭庁等による「児童の権利に関する条約」認知度調査に関する一般競争入札の告知。",
       "importance": "低",
       "fields": [],
-      "reason": "省庁の年金システム調達に関する情報であり、福祉事業の運営に直接影響しないため。"
+      "reason": "一般競争入札（調達情報）であり、福祉事業者の実務や事業運営に直接影響しないため。"
     },
     {
-      "hash": "aa3bfac40cf75a5a",
+      "hash": "313e23b9efabd8a3",
       "source": "厚生労働省",
-      "title": "中途採用比率の公表について",
-      "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/chuto-hiritsu.html",
+      "title": "第２回 令和８年度医師の働き方改革の推進等に関する検討会：資料",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76089.html",
       "date": "2026-09-09",
-      "category": "採用情報",
-      "summary": "行政機関等における自組織の中途採用比率の公表情報です。事業者への要件課与や制度対応ではありません。",
+      "category": "審議会等",
+      "summary": "医師の働き方改革の推進に関する検討会資料。医療機関での労務管理や体制整備などの議論内容が掲載されている。",
       "importance": "低",
       "fields": [],
-      "reason": "発信組織自身の人事・広報情報であり、福祉事業者の実務への影響が薄いため。"
+      "reason": "医療機関の医師を対象とした労働政策の検討資料であり、福祉事業の実務への直接的な影響が薄いため。"
     },
     {
-      "hash": "ac93291793b378c9",
-      "source": "WAM NET",
-      "title": "第61回 社会保障審議会 生活保護基準部会（令和8年9月15日開催予定）",
-      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22847&ct=070010070&from=rss",
+      "hash": "1166767c866d4603",
+      "source": "厚生労働省",
+      "title": "第215回社会保障審議会医療保険部会（ペーパーレス）の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76068.html",
       "date": "2026-09-09",
-      "category": "行政資料",
-      "summary": "生活保護基準の見直し等を検討する審議会部会の開催案内です。困窮者支援や福祉施策の将来的な方向性を把握する上で関わります。",
-      "importance": "中",
+      "category": "審議会等",
+      "summary": "医療保険制度の改正や運用等を議論する社会保障審議会医療保険部会の開催案内。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医療保険制度に関する審議会の開催案内であり、福祉事業者の実務や運営に関係がないため。"
+    },
+    {
+      "hash": "d9551fb59d6c0832",
+      "source": "厚生労働省",
+      "title": "女性支援事業７０周年記念厚生労働大臣表彰について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_260903_00011.html",
+      "date": "2026-09-09",
+      "category": "報道発表",
+      "summary": "女性支援事業（旧婦人保護事業）の70周年を記念した厚生労働大臣表彰の実施に関する発表。",
+      "importance": "低",
       "fields": [
         "共通"
       ],
-      "reason": "社会保障施策に関する審議会の開催情報であり、将来的な制度動向を把握すべき情報であるため。"
+      "reason": "表彰および広報に関する発表であり、福祉事業者の実務への直接的な影響が薄いため。"
     },
     {
-      "hash": "bda32e887947d777",
-      "source": "WAM NET",
-      "title": "介護保険最新情報Vol.1541（PDF：136KB）",
-      "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0909091640559/ksvol.1541.pdf?from=rss",
+      "hash": "51bac6fa312247ee",
+      "source": "厚生労働省",
+      "title": "第265回社会保障審議会介護給付費分科会（Web会議）を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75978.html",
       "date": "2026-09-09",
-      "category": "行政資料",
-      "summary": "厚生労働省から介護事業者等へ発出された行政通知です。介護保険制度の解釈や実務上の取扱いや注意事項が示されています。",
+      "category": "審議会等",
+      "summary": "介護報酬改定や介護保険制度の見直し等を議論する介護給付費分科会の開催案内。",
+      "importance": "中",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "介護報酬や指定基準に直結する審議会の開催告知であり、今後の制度変更の動向を把握しておくべき情報のため。"
+    },
+    {
+      "hash": "cf6e4100fe554cbb",
+      "source": "厚生労働省",
+      "title": "中国残留邦人２名が集団一時帰国します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75937.html",
+      "date": "2026-09-09",
+      "category": "報道発表",
+      "summary": "中国残留邦人の集団一時帰国受入れに関する報道発表。",
+      "importance": "低",
+      "fields": [],
+      "reason": "福祉事業の運営に関係のない行政の一般広報情報であるため。"
+    },
+    {
+      "hash": "f4f47342f00d0236",
+      "source": "厚生労働省",
+      "title": "令和６年度後期高齢者医療制度(後期高齢者医療広域連合)の財政状況について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75858.html",
+      "date": "2026-09-09",
+      "category": "報道発表",
+      "summary": "後期高齢者医療広域連合における財政状況の集計結果に関する発表資料。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医療保険の財政状況に関する報告であり、福祉事業者の実務や運営に影響しないため。"
+    },
+    {
+      "hash": "ab6a7f94ef68364d",
+      "source": "厚生労働省",
+      "title": "後期高齢者医療事業状況報告",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/iryouhoken/database/seido/kouki_houkoku.html",
+      "date": "2026-09-09",
+      "category": "統計情報",
+      "summary": "後期高齢者医療制度の加入状況や事業実績をまとめた統計報告。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医療保険の統計情報であり、福祉事業の実務や運営に関係がないため。"
+    },
+    {
+      "hash": "193c690bf9dbc49e",
+      "source": "厚生労働省",
+      "title": "国民健康保険事業年報・月報",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/iryouhoken/database/seido/kokumin_nenpo.html",
+      "date": "2026-09-09",
+      "category": "統計情報",
+      "summary": "国民健康保険の加入・給付状況等をまとめた年報および月報の統計資料。",
+      "importance": "低",
+      "fields": [],
+      "reason": "国民健康保険に関する統計情報であり、福祉事業の実務や運営に直接関係しないため。"
+    },
+    {
+      "hash": "9a21552506f59c50",
+      "source": "厚生労働省",
+      "title": "介護施設等の自然災害からの復旧について",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/fukushi/shisetsu_hukkyuu_0000.html",
+      "date": "2026-09-08",
+      "category": "政策分野",
+      "summary": "自然災害により被災した介護施設等に対する復旧支援手続きや事業継続に向けた対応方針の案内。",
       "importance": "高",
       "fields": [
         "高齢"
       ],
-      "reason": "介護事業者において内容の確認や実務上の対応が必要となる行政通知であるため。",
-      "action": "一般に、こうした通知では、示された制度の解釈や実務上の注意事項を確認し、自事業所の運営や取扱いに見直しが必要かどうかの確認が必要になります。"
+      "reason": "災害対応や事業復旧に関わる手続き・方針についての案内であり、被災時の事業者による対応が必要となり得るため。",
+      "action": "一般に、こうした通知では被災時の復旧支援手続きの対象条件や申請手順を確認し、自施設の被災状況に応じた事業継続や支援適用の検討が必要になります。"
     },
     {
-      "hash": "8af28551280293ca",
-      "source": "WAM NET",
-      "title": "第142回 労働政策審議会障害者雇用分科会（令和8年9月15日開催予定）",
-      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22848&ct=070010010&from=rss",
-      "date": "2026-09-09",
-      "category": "行政資料",
-      "summary": "障害者雇用施策や就労支援等について議論する審議会分科会の開催案内です。今後の障害者雇用率や就労支援の方向性に影響します。",
+      "hash": "acfddf687f18fe03",
+      "source": "福岡県（子ども・青少年）",
+      "title": "産後ケア事業について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/sanngokea.html",
+      "date": "2026年7月28日更新",
+      "category": "",
+      "summary": "母子保健施策に基づく産後ケア事業の制度概要や実施ガイドライン等に関する情報。",
       "importance": "中",
       "fields": [
-        "障害"
+        "児童"
       ],
-      "reason": "障害者雇用施策に関する審議会の開催情報であり、今後の制度・施策動向を把握しておくべき情報であるため。"
+      "reason": "産後ケア事業の運用や方針に関する行政文書であり、該当事業の把握や運用のために確認しておくべき内容のため。"
     }
   ],
-  "press": []
+  "press": [
+    {
+      "hash": "740525cbdf7f689e",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "ケアプー、居宅介護支援と通所介護で導入率6割超に サービス間の格差も",
+      "url": "https://www.joint-kaigo.com/articles/48630/",
+      "date": "2026-09-09",
+      "category": "福祉用具",
+      "fields": [
+        "高齢"
+      ]
+    },
+    {
+      "hash": "ab56ad84eb269601",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "行方不明の高齢者、介護保険料の全額免除も可 厚労省が取り扱い整理 払い過ぎなら返還も",
+      "url": "https://www.joint-kaigo.com/articles/48621/",
+      "date": "2026-09-09",
+      "category": "超高齢化",
+      "fields": [
+        "高齢"
+      ]
+    }
+  ]
 }

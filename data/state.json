@@ -1,8 +1,15 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-09-09T01:32:53.151Z",
+      "lastCrawled": "2026-09-09T19:52:13.587Z",
       "items": [
+        {
+          "hash": "fa7390bcbd11b4ae",
+          "title": "一般競争入札：児童の権利に関する条約の認知度等調査を掲載しました",
+          "url": "https://www.cfa.go.jp/procurement/portal",
+          "date": "2026-09-09",
+          "category": "調達情報"
+        },
         {
           "hash": "7849b7c411889139",
           "title": "国立武蔵野学院：児童相談所等で働くための資格が取得できる国立武蔵野学院附属人材育成センター養成部通信課程について、令和9年度第6期生の募集要項等を掲載しました",
@@ -531,8 +538,64 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-09-09T01:32:54.162Z",
+      "lastCrawled": "2026-09-09T19:52:14.744Z",
       "items": [
+        {
+          "hash": "313e23b9efabd8a3",
+          "title": "第２回 令和８年度医師の働き方改革の推進等に関する検討会：資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76089.html",
+          "date": "2026-09-09",
+          "category": "審議会等"
+        },
+        {
+          "hash": "1166767c866d4603",
+          "title": "第215回社会保障審議会医療保険部会（ペーパーレス）の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76068.html",
+          "date": "2026-09-09",
+          "category": "審議会等"
+        },
+        {
+          "hash": "d9551fb59d6c0832",
+          "title": "女性支援事業７０周年記念厚生労働大臣表彰について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_260903_00011.html",
+          "date": "2026-09-09",
+          "category": "報道発表"
+        },
+        {
+          "hash": "51bac6fa312247ee",
+          "title": "第265回社会保障審議会介護給付費分科会（Web会議）を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75978.html",
+          "date": "2026-09-09",
+          "category": "審議会等"
+        },
+        {
+          "hash": "cf6e4100fe554cbb",
+          "title": "中国残留邦人２名が集団一時帰国します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75937.html",
+          "date": "2026-09-09",
+          "category": "報道発表"
+        },
+        {
+          "hash": "f4f47342f00d0236",
+          "title": "令和６年度後期高齢者医療制度(後期高齢者医療広域連合)の財政状況について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75858.html",
+          "date": "2026-09-09",
+          "category": "報道発表"
+        },
+        {
+          "hash": "ab6a7f94ef68364d",
+          "title": "後期高齢者医療事業状況報告",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/iryouhoken/database/seido/kouki_houkoku.html",
+          "date": "2026-09-09",
+          "category": "統計情報"
+        },
+        {
+          "hash": "193c690bf9dbc49e",
+          "title": "国民健康保険事業年報・月報",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/iryouhoken/database/seido/kokumin_nenpo.html",
+          "date": "2026-09-09",
+          "category": "統計情報"
+        },
         {
           "hash": "21fdaac885c4270f",
           "title": "公募公示（年金給付システムの最適化に係る第三者評価業務及び総括管理支援業務 一式",
@@ -546,6 +609,13 @@
           "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/chuto-hiritsu.html",
           "date": "2026-09-09",
           "category": "採用情報"
+        },
+        {
+          "hash": "9a21552506f59c50",
+          "title": "介護施設等の自然災害からの復旧について",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/fukushi/shisetsu_hukkyuu_0000.html",
+          "date": "2026-09-08",
+          "category": "政策分野"
         },
         {
           "hash": "54e63ae772d6c05b",
@@ -3938,7 +4008,7 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-09-09T01:32:55.305Z",
+      "lastCrawled": "2026-09-09T19:52:15.769Z",
       "items": [
         {
           "hash": "ac93291793b378c9",
@@ -3973,13 +4043,6 @@
           "title": "麻しん最新情報（令和8年9月8日更新）",
           "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22846&ct=030100110&from=rss",
           "date": "2026-09-08",
-          "category": "行政資料"
-        },
-        {
-          "hash": "73ecaae416c320f0",
-          "title": "中央社会保険医療協議会の開催について（令和8年9月9日開催予定）",
-          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22839&ct=070010030&from=rss",
-          "date": "2026-09-07",
           "category": "行政資料"
         },
         {
@@ -5348,6 +5411,13 @@
           "category": "行政資料"
         },
         {
+          "hash": "73ecaae416c320f0",
+          "title": "中央社会保険医療協議会の開催について（令和8年9月9日開催予定）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22839&ct=070010030&from=rss",
+          "date": "2026-09-07",
+          "category": "行政資料"
+        },
+        {
           "hash": "f39880e35afe4c3a",
           "title": "第46回 がん検診のあり方に関する検討会（令和8年3月23日開催）",
           "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22460&ct=030100395&from=rss",
@@ -5665,7 +5735,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-09-09T01:32:56.586Z",
+      "lastCrawled": "2026-09-09T19:52:17.390Z",
       "items": [
         {
           "hash": "87c11bbec41713a0",
@@ -5936,7 +6006,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-09-09T01:32:57.475Z",
+      "lastCrawled": "2026-09-09T19:52:17.562Z",
       "items": [
         {
           "hash": "c8e4e74cf7cf3573",
@@ -5960,17 +6030,17 @@
           "category": ""
         },
         {
+          "hash": "acfddf687f18fe03",
+          "title": "産後ケア事業について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/sanngokea.html",
+          "date": "2026年7月28日更新",
+          "category": ""
+        },
+        {
           "hash": "c097585255eadb06",
           "title": "【妊娠希望者等とその同居者向け】風しん抗体検査が無料で受けられます",
           "url": "https://www.pref.fukuoka.lg.jp/contents/fushinkoutai-2019.html",
           "date": "2026年7月21日更新",
-          "category": ""
-        },
-        {
-          "hash": "5619efa74bce9197",
-          "title": "令和８年６月２４日からの大雨に伴う災害の被災者に係る公費負担医療及び妊婦健康診査等の母子保健サービスの取扱い等について",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/0624koutekihutaniryoutou.html",
-          "date": "2026年6月26日更新",
           "category": ""
         },
         {
@@ -6216,6 +6286,13 @@
           "title": "こどもの居場所づくりをサポートします！",
           "url": "https://www.pref.fukuoka.lg.jp/contents/kodomonoibasyosuishin.html",
           "date": "2025年12月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "5619efa74bce9197",
+          "title": "令和８年６月２４日からの大雨に伴う災害の被災者に係る公費負担医療及び妊婦健康診査等の母子保健サービスの取扱い等について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/0624koutekihutaniryoutou.html",
+          "date": "2026年6月26日更新",
           "category": ""
         },
         {
@@ -6485,8 +6562,22 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-09-09T01:32:59.493Z",
+      "lastCrawled": "2026-09-09T19:52:18.674Z",
       "items": [
+        {
+          "hash": "740525cbdf7f689e",
+          "title": "ケアプー、居宅介護支援と通所介護で導入率6割超に サービス間の格差も",
+          "url": "https://www.joint-kaigo.com/articles/48630/",
+          "date": "2026-09-09",
+          "category": "福祉用具"
+        },
+        {
+          "hash": "ab56ad84eb269601",
+          "title": "行方不明の高齢者、介護保険料の全額免除も可 厚労省が取り扱い整理 払い過ぎなら返還も",
+          "url": "https://www.joint-kaigo.com/articles/48621/",
+          "date": "2026-09-09",
+          "category": "超高齢化"
+        },
         {
           "hash": "b4611f2e26700f80",
           "title": "厚労省、介護事業所のカスハラ・防犯対策に補助 概算要求に新事業 ヘルパーやケアマネらの安全確保に予算措置",
@@ -6499,7 +6590,7 @@
           "title": "介護施設と協力医療機関の連携、経過措置の期限迫る 延長・特例も俎上に 今秋にも判断",
           "url": "https://www.joint-kaigo.com/articles/48586/",
           "date": "2026-09-08",
-          "category": "介護保険"
+          "category": "超高齢化"
         },
         {
           "hash": "2689973a177deee2",
@@ -6520,7 +6611,7 @@
           "title": "【能本守康】ケアマネジャーのための「ケアプラン点検の手引き」年内発刊へ！ 双方の質を高める活用ノウハウ",
           "url": "https://www.joint-kaigo.com/articles/48553/",
           "date": "2026-09-05",
-          "category": "超高齢化"
+          "category": "認知症"
         },
         {
           "hash": "cf34837d2aa71a0f",
@@ -6534,14 +6625,14 @@
           "title": "【介護報酬改定】LIFE関連加算、テコ入れへ具体策を検討 厚労省 審議会では改善要請や不満の声も",
           "url": "https://www.joint-kaigo.com/articles/48516/",
           "date": "2026-09-03",
-          "category": "介護給付費分科会"
+          "category": "介護保険"
         },
         {
           "hash": "45a97d0ffc1c67ff",
           "title": "WHILLが最軽量の新モデル発表 折りたたみで介護保険レンタルにも対応可",
           "url": "https://www.joint-kaigo.com/articles/48509/",
           "date": "2026-09-03",
-          "category": "福祉用具"
+          "category": "介護保険"
         },
         {
           "hash": "3ff1a0ebc1e33e4e",
@@ -6770,7 +6861,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-09-09T01:32:58.235Z",
+      "lastCrawled": "2026-09-09T19:52:17.734Z",
       "items": [
         {
           "hash": "36427d776be9cfcd",
@@ -7139,7 +7230,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-09-09T01:33:00.450Z",
+      "lastCrawled": "2026-09-09T19:52:19.363Z",
       "items": [
         {
           "hash": "991f11d9619c8ed7",
@@ -7585,7 +7676,8 @@
       ]
     }
   },
-  "preferredModel": "gemini-3.6-flash",
-  "lastSentDate": "2026-09-09",
-  "lastRunAt": "2026-09-09T01:33:17.932Z"
+  "preferredModel": "gemini-3.5-flash",
+  "lastSentDate": "2026-09-10",
+  "lastRunAt": "2026-09-09T19:53:17.215Z",
+  "lastCrawlDate": "2026-09-10"
 }

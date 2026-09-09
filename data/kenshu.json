@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-09T01:36:41.697Z",
+ "updatedAt": "2026-09-09T19:56:01.886Z",
  "items": [
   {
    "hash": "6b27ebe70841b027",
@@ -7,7 +7,7 @@
    "sourceKind": "org",
    "via": "schedule",
    "title": "コーチング研修",
-   "url": "https://fuku-shakyo-kenshu.jp/info/%e3%82%b3%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0%e7%a0%94%e4%bf%ae%e3%81%ae%e9%96%8b%e5%82%ac%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/08/5f37687554014ed286055943156e5e07.pdf",
    "deadline": "2026-09-18",
    "deadlineType": "date",
    "deadlineRaw": "一覧の申込終了日より 9月18日",
@@ -1715,5 +1715,6 @@
    "keepUntilHeld": true,
    "expireOn": "2026-09-12"
   }
- ]
+ ],
+ "lastFetchDate": "2026-09-10"
 }
