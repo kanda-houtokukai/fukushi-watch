@@ -18,17 +18,31 @@
     --ink:#17181a; --sub:#75716b; --faint:#a8a49d; --rule:#e6e3de;
     --paper:#fcfcfb; --high:#a04a32; --mid-bar:#cfccc6; --low-bar:#e6e3de;
     --link:#1f4e79; --press-bg:#f5f3ef;
+    /* P60: 机（紙の外側）。⚠️「新しい色は持ち込まない」の5色（墨・薄墨・極薄墨・紙・朱）は
+       **紙面の中で意味を運ぶ語彙**。机は紙の外で情報を持たず、暖灰の濃度違い（色相は足さない）に
+       留める。⚠️--press-bg（報道の帯）と同色にしない——帯が机への切り抜き穴に見える */
+    --desk:#f3f1ec;
     --ink-press:#4e4e4c; /* 墨の濃度約80%（P40-5・タブの押し込まれた面。色相は増やしていない） */
     /* 分野色(並びは全箇所 保育・児童・障害・高齢): 保育=山吹/児童=梅/障害=藍/高齢=松葉 */
     --f-hoiku:#b0873a; --f-jido:#a05a78; --f-shogai:#3a6ea5; --f-korei:#5a7d4f;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
-  body{background:var(--paper);color:var(--ink);
+  /* P60: body＝机・.wrap＝紙。机には文字・記号・操作を置かない。縦の階調は #f5f3ef→#f1efea の
+     2pt だけ（画像なし・文書の高さに沿って流れる）。
+     ⚠️background-attachment:fixed を使わない——固定背景は Chromium の文字描画をサブピクセルAAから
+     グレースケールAAへ落とし、紙の中の全文字のにじみ方が変わる（375px の byte 照合で実測・P60） */
+  body{background-color:var(--desk);background-image:linear-gradient(180deg,#f5f3ef 0%,#f1efea 100%);
+    color:var(--ink);
     font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","BIZ UDPGothic",Meiryo,sans-serif;
     font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
   a{color:var(--link)}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px 80px}
+  /* P60: 紙。⚠️min-height:100vh は必須——紙が画面より短い日に下端で机が見えてカードに見える。
+     縁の線は --rule 1px。⚠️border ではなく blur 0 の box-shadow で描く: 全要素が border-box のため
+     border だと紙の中身が左右1pxずつ縮み、行の折り返しが変わりうる（紙の中は1pxも変えない）。
+     影（ぼかし）は付けない——線と影を重ねると「浮いたカード」になる */
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px 80px;background:var(--paper);min-height:100vh;
+    box-shadow:-1px 0 0 var(--rule),1px 0 0 var(--rule)}
   @media(max-width:600px){.wrap{padding:0 18px 70px}}
 
   /* ==== 欄外 ==== */
@@ -700,6 +714,11 @@
   .about td:last-child{color:var(--faint);text-align:right;white-space:nowrap}
   .disc{margin-top:20px;font-size:11.5px;color:var(--faint);line-height:1.9}
   .disc a{color:var(--faint)}
+  /* P60: 印刷では机を出さない（紙も線も白に戻す） */
+  @media print{
+    body,.wrap{background:#fff;background-image:none}
+    .wrap{box-shadow:none;min-height:0}
+  }
 </style>
 </head>
 <body data-view="paper"><!-- 面の初期値。JSより前に効かせて助成面のちらつきを防ぐ(P24) -->
