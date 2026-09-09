@@ -1214,8 +1214,9 @@ async function main() {
   }
   // ★P56①: 全滅でなければ「今日の取得は成功」として記録する（書くのは取得の後）。
   //   kenshu.js は全滅でも throw しない（前日分を温存する設計）ため、条件で判定する。
-  //   ⚠️合流（kenshu-goryu）は data/deadlines.json を読むだけで外部に出ない。これを数えると
-  //   外部が全滅の日でも「成功」になり2本目がやり直さない（実測で発見）。外部取得する源だけで判定する
+  //   ⚠️★★ 全滅の判定は**外部取得する源だけ**で行う。合流（kenshu-goryu）は deadlines.json を
+  //   読むだけで外部に出ないため、源の数に含めると**全fetchが失敗した日でも「1つ成功」と数えられ、
+  //   2本目がやり直さない**（2026-09-09に実測で発見・P58）。新しい系統を足すときも同じ罠がある。
   const fetching = sources.filter((s) => s.method !== "kenshu-goryu");
   const fetchFailed = errors.filter((e) => fetching.some((s) => s.name === e.source)).length;
   if (fetching.length === 0 || fetchFailed < fetching.length) store.lastFetchDate = today;

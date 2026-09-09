@@ -1088,7 +1088,8 @@ async function main() {
     return;
   }
   // ★P56①: 全滅でなければ「今日の取得は成功」として記録する（書くのは取得の後）。
-  //   grants.js は全滅でも throw しない（前日分を温存する設計）ため、条件で判定する
+  //   grants.js は全滅でも throw しない（前日分を温存する設計）ため、条件で判定する。
+  //   ⚠️外部に出ない源を足すときは、全滅判定の注意を kenshu.js の同処理のコメントで見よ（P58）
   if (errors.length < sources.length) store.lastFetchDate = today;
   mkdirSync(dirname(GRANTS_PATH), { recursive: true });
   writeFileSync(GRANTS_PATH, JSON.stringify(store, null, 1) + "\n");

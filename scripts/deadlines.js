@@ -277,7 +277,8 @@ async function main() {
   }
 
   store.items.sort((a, b) => (a.deadline < b.deadline ? -1 : 1));
-  // ★P56①: 全滅でなければ「今日の取得は成功」として記録する（書くのは取得の後）
+  // ★P56①: 全滅でなければ「今日の取得は成功」として記録する（書くのは取得の後）。
+  //   ⚠️外部に出ない対象を混ぜるときは、全滅判定の注意を kenshu.js の同処理のコメントで見よ（P58）
   const lastFetchDate = failed < targets.length ? today : (store.lastFetchDate ?? null);
   writeFileSync(
     DEADLINES_PATH,
