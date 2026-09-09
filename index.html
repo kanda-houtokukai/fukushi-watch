@@ -476,6 +476,7 @@
   .dl .t{font-size:12px;color:var(--sub);line-height:1.6;margin-top:2px;
     display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .dl-empty{font-size:12px;color:var(--faint)}
+  .dl-more{font-size:11.5px;color:var(--sub);padding:8px 0 0;letter-spacing:.02em} /* 60日より先の件数 */
   /* 項目メタ行の期限表示 */
   .dlmeta{color:var(--sub)}
   .dlmeta.soon{color:var(--high);font-weight:600}
@@ -1171,19 +1172,40 @@
     Math.round((new Date(date + "T00:00:00Z") - new Date(jstToday() + "T00:00:00Z")) / 86400000);
   const remainText = (n) => (n === 0 ? "本日締切" : n === 1 ? "明日まで" : `残り${n}日`);
 
+  /* 期限欄の絞り込み（2026-09-09・**表示側だけ**。deadlines.js の抽出と値は変えない）。
+     調査で20件すべて quote と原文が一致＝誤抽出ゼロ。溜まったのは「正しいが遠い期限」。
+     **種別で外すのが主・60日の上限は保険**。外すかどうかは label（AIが付けた日付の性質）の語で判定:
+       ・適用・発効・施行 … 締切ではなく施策の開始日（読者に行動を求めない）
+       ・報告           … 交付を受けた法人だけの事後事務（実績報告・仕入控除税額の報告 等）
+       ・傍聴           … 研修面で「会議の傍聴は受講でない」と除外済み。面をまたいで同じ基準にする
+     ⚠️「申請書類の提出期限」は"提出"の語を含むが本命（申請）なので、切る語は「報告」にし
+       「提出」では切らない。⚠️外した項目は紙面の項目カード（dlMeta）には従来どおり出る。 */
+  const DL_SKIP = /傍聴|適用|発効|施行|報告/;
+  const DL_NEAR_DAYS = 60; // 保険の日数上限。超える分は件数だけ見せる（[DECISION] 件数を必ず見せる）
+  const isActionDeadline = (d) => !DL_SKIP.test(String(d.label ?? ""));
+
   function renderDeadlines() {
     const today = jstToday();
-    const list = state.deadlines.filter((d) => d.deadline >= today); // 過ぎたものは出さない
-    $("dlList").innerHTML = list.length === 0
+    const action = state.deadlines
+      .filter((d) => d.deadline >= today && isActionDeadline(d)) // 過ぎたもの・行動を求めないものは出さない
+      .sort((a, b) => (a.deadline < b.deadline ? -1 : 1));
+    const near = action.filter((d) => dayDiff(d.deadline) <= DL_NEAR_DAYS);
+    const far = action.length - near.length;
+    const rows = near.map((d) => {
+      const n = dayDiff(d.deadline);
+      const f = fmtDay(d.deadline);
+      return `<div class="dl" data-goday="${d.day}" data-goitem="${d.hash}">
+        <div class="when"><b>${f.main}</b><span class="${n <= 3 ? "soon" : ""}">（${remainText(n)}）</span><span class="lbl">${esc(d.label)}</span></div>
+        <div class="t">${esc(d.title)}</div>
+      </div>`;
+    }).join("");
+    // 60日より先は件数だけ。総数も添える（欄の規模が分かるように）
+    const more = far > 0
+      ? `<div class="dl-more">ほか ${far}件（${DL_NEAR_DAYS}日より先・全${action.length}件）</div>`
+      : "";
+    $("dlList").innerHTML = action.length === 0
       ? `<div class="dl-empty">いま追いかけている期限はありません。</div>`
-      : list.map((d) => {
-          const n = dayDiff(d.deadline);
-          const f = fmtDay(d.deadline);
-          return `<div class="dl" data-goday="${d.day}" data-goitem="${d.hash}">
-            <div class="when"><b>${f.main}</b><span class="${n <= 3 ? "soon" : ""}">（${remainText(n)}）</span><span class="lbl">${esc(d.label)}</span></div>
-            <div class="t">${esc(d.title)}</div>
-          </div>`;
-        }).join("");
+      : (rows || `<div class="dl-empty">${DL_NEAR_DAYS}日以内の期限はありません。</div>`) + more;
   }
 
   /* 項目メタ行の期限表示（期限が確定した項目のみ・控えめに） */

@@ -152,6 +152,15 @@ async function main() {
   const store = existsSync(DEADLINES_PATH)
     ? JSON.parse(readFileSync(DEADLINES_PATH, "utf8"))
     : { items: [] };
+  // ★P56①（全系統）: その日の取得が既に成功していれば、外部への取得自体をスキップする。
+  //   対外4通に「毎朝1回のみ」と説明済み（WAM NETは承諾済み）で、約束は全系統に掛かる。
+  //   判定は「送信済み」ではなく「取得の成功」。lastFetchDate は取得が完了した後にだけ書く
+  //   （全滅の日は書かない）ので、失敗した日は残らず、保険の2本目が取得からやり直す。
+  //   ⚠️記録は系統ごとに自分の JSON に持つ——1系統の失敗が他系統を巻き込まない。
+  if (store.lastFetchDate === today) {
+    console.log(`本日（${today}）は締切の取得済みのため取得をスキップします（保険の2本目・P56①）。`);
+    return;
+  }
 
   // 期限切れは表示からも保存からも消す（最小化方針）
   const before = store.items.length;
@@ -172,7 +181,11 @@ async function main() {
   if (targets.length === 0) {
     writeFileSync(
       DEADLINES_PATH,
-      JSON.stringify({ updatedAt: new Date().toISOString(), items: store.items }, null, 1) + "\n"
+      JSON.stringify(
+        // P56①: 取得の必要が無かった日も「完了」として記録する（2本目が空振りしないため）
+        { updatedAt: new Date().toISOString(), lastFetchDate: today, items: store.items },
+        null, 1
+      ) + "\n"
     );
     console.log(`対象0件。期限切れ${pruned}件を整理して終了`);
     return;
@@ -264,9 +277,11 @@ async function main() {
   }
 
   store.items.sort((a, b) => (a.deadline < b.deadline ? -1 : 1));
+  // ★P56①: 全滅でなければ「今日の取得は成功」として記録する（書くのは取得の後）
+  const lastFetchDate = failed < targets.length ? today : (store.lastFetchDate ?? null);
   writeFileSync(
     DEADLINES_PATH,
-    JSON.stringify({ updatedAt: new Date().toISOString(), items: store.items }, null, 1) + "\n"
+    JSON.stringify({ updatedAt: new Date().toISOString(), lastFetchDate, items: store.items }, null, 1) + "\n"
   );
   console.log(
     `完了: 採用${found}件・失敗${failed}件・期限切れ整理${pruned}件・保持${store.items.length}件` +

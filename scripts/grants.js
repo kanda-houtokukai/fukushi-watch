@@ -874,6 +874,15 @@ async function main() {
   }
 
   const store = loadStore();
+  // ★P56①（全系統）: その日の取得が既に成功していれば、外部への取得自体をスキップする。
+  //   対外4通に「毎朝1回のみ」と説明済み（WAM NETは承諾済み）で、約束は全系統に掛かる。
+  //   判定は「送信済み」ではなく「取得の成功」。lastFetchDate は取得が完了した後にだけ書く
+  //   （全滅の日は書かない）ので、失敗した日は残らず、保険の2本目が取得からやり直す。
+  //   ⚠️記録は系統ごとに自分の JSON に持つ——1系統の失敗が他系統を巻き込まない。
+  if (store.lastFetchDate === today) {
+    console.log(`本日（${today}）は助成の取得済みのため取得をスキップします（保険の2本目・P56①）。`);
+    return;
+  }
   // ★期限切れの整理（保存からも消す。deadlines.js と同じ最小化方針）
   const before = store.items.length;
   store.items = store.items.filter(
@@ -1078,6 +1087,9 @@ async function main() {
     }
     return;
   }
+  // ★P56①: 全滅でなければ「今日の取得は成功」として記録する（書くのは取得の後）。
+  //   grants.js は全滅でも throw しない（前日分を温存する設計）ため、条件で判定する
+  if (errors.length < sources.length) store.lastFetchDate = today;
   mkdirSync(dirname(GRANTS_PATH), { recursive: true });
   writeFileSync(GRANTS_PATH, JSON.stringify(store, null, 1) + "\n");
   const byType = store.items.reduce((a, it) => ((a[it.deadlineType] = (a[it.deadlineType] ?? 0) + 1), a), {});
