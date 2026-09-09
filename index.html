@@ -44,6 +44,10 @@
     letter-spacing:inherit;color:inherit;text-align:left}
   .ear .ear-date:enabled{color:var(--link);cursor:pointer;
     text-decoration:underline;text-underline-offset:3px}
+  /* P56④: 本日を見ているとき（disabled）は極薄墨にする。--sub の静止色のままだと
+     「薄墨＝リンク」と紛れて押せそうに見える（外部レビュー指摘）。過去日は :enabled の
+     まま紺＋下線＝押せる合図を保つ。 */
+  .ear .ear-date:disabled{color:var(--faint)}
 
   /* ==== 面の切り替え(P24) ====
      紙面＝日々の記録（過去に積み上がる）／助成＝いま応募できる助成（締切に向かって減る）。
@@ -578,7 +582,7 @@
   /* ==== スマホ幅(900px未満)のみ: 紙面上部の占有を減らす。PCは一切変更しない ==== */
   @media(max-width:899px){
     .ear{flex-wrap:nowrap;font-size:11px}
-    .ear .ear-auto{display:none} /* 「毎朝7時 自動発行」は省き日付と号数のみ */
+    .ear .ear-auto{display:none} /* 「毎朝 自動発行」は省き日付と号数のみ */
     .ear .ear-full{display:none} /* スマホは短い日付に切り替え（本日併記の余白を確保） */
     .ear .ear-short{display:inline}
     .masthead{padding:20px 0 14px}
@@ -703,7 +707,7 @@
   <div id="topHead"><!-- スマホでは二重罫より上を固定ヘッダーにする(P10) -->
     <div class="ear">
       <button class="ear-date" id="btnToday" type="button"><span class="ear-full"></span><span class="ear-short"></span></button>
-      <span class="ear-auto">毎朝7時 自動発行</span>
+      <span class="ear-auto">毎朝 自動発行</span>
       <span>創刊から <b id="issueNo"></b></span>
     </div>
 
@@ -830,11 +834,11 @@
              県協会への提示予定・助成は金銭が絡むため）。「予想できる語は排除」の原則を適用 -->
         <p>行政と全国団体の福祉情報を毎朝巡回し、新着を掲載しています。要約と重要度はAIによる参考情報です。</p>
         <table>
-          <tr><td>こども家庭庁 新着情報（全カテゴリ）</td><td>毎朝7時</td></tr>
-          <tr><td>厚生労働省 新着情報（全カテゴリ）</td><td>毎朝7時</td></tr>
-          <tr><td>WAM NET 行政資料（新着）</td><td>毎朝7時</td></tr>
-          <tr><td>福岡県 障がい福祉／子ども・青少年／介護・高齢者福祉</td><td>毎朝7時</td></tr>
-          <tr><td>全国社会福祉協議会 新着情報</td><td>毎朝7時</td></tr>
+          <tr><td>こども家庭庁 新着情報（全カテゴリ）</td><td>毎日 未明までに更新</td></tr>
+          <tr><td>厚生労働省 新着情報（全カテゴリ）</td><td>毎日 未明までに更新</td></tr>
+          <tr><td>WAM NET 行政資料（新着）</td><td>毎日 未明までに更新</td></tr>
+          <tr><td>福岡県 障がい福祉／子ども・青少年／介護・高齢者福祉</td><td>毎日 未明までに更新</td></tr>
+          <tr><td>全国社会福祉協議会 新着情報</td><td>毎日 未明までに更新</td></tr>
         </table>
         <p class="disc">最終判断は必ず原本（各項目のリンク先）でご確認ください。掲載内容の正確性を保証するものではありません。</p>
       </section>
@@ -1675,7 +1679,7 @@
       const n = dayDiff(it.deadline);
       const f = fmtDay(it.deadline);
       // 年は今年と違うときだけ出す（残り日数で年の取り違えは起きないため・P29）
-      const y = String(it.deadline).slice(0, 4) !== String(new Date().getFullYear()) ? `${f.y}年` : "";
+      const y = String(it.deadline).slice(0, 4) !== jstToday().slice(0, 4) ? `${f.y}年` : "";
       when = `<div class="when dated${n <= GRANT_SOON_DAYS ? " soon" : ""}">締切 <b>${y}${f.main}</b>（${remainText(n)}）</div>`;
     } else if (it.deadlineType === "rolling") {
       when = `<div class="when">随時・通年（締切なし）</div>`;
@@ -1857,7 +1861,7 @@
     } else if (it.deadlineType === "date" && it.deadline) {
       const n = dayDiff(it.deadline);
       const f = fmtDay(it.deadline);
-      const y = String(it.deadline).slice(0, 4) !== String(new Date().getFullYear()) ? `${f.y}年` : "";
+      const y = String(it.deadline).slice(0, 4) !== jstToday().slice(0, 4) ? `${f.y}年` : "";
       when = `<div class="when dated${n <= GRANT_SOON_DAYS ? " soon" : ""}">締切 <b>${y}${f.main}</b>（${remainText(n)}）</div>`;
     } else if (it.preOpenNote) {
       // 受付前で日付がまだ無いもの（P51）。⚠️**原文をそのまま添える**——

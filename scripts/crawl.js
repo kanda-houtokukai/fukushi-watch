@@ -390,6 +390,11 @@ export function itemHash(item) {
     .slice(0, 16);
 }
 
+/** JST の「今日」（YYYY-MM-DD）。閲覧・実行環境のタイムゾーンに依存しないよう
+ *  Asia/Tokyo で固定する（notify.js・kenshu.js と同じ作法） */
+const jstToday = () =>
+  new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Tokyo" }).format(new Date());
+
 function loadState() {
   if (!existsSync(STATE_PATH)) return { sources: {} };
   return JSON.parse(readFileSync(STATE_PATH, "utf8"));
@@ -418,6 +423,25 @@ async function main() {
   }
 
   const state = loadState();
+  const todayJST = jstToday();
+  // ★P56①: その日の巡回が既に成功しているなら、取得（外部サイトへのリクエスト）自体を
+  //   スキップする。保険の2本目（daily.yml）は、1本目が丸ごと飛んだ日だけ本当に取得すればよい。
+  //   判定は「送信済み」ではなく「巡回の成功」——lastCrawlDate は main の最後（全処理の後）に
+  //   だけ書くので、途中で失敗した日は残らず、2本目が取得からやり直せる（P49の思想）。
+  //   ⚠️空の diff を書いてから返る: 後続の summarize は新規0件でAPIを呼ばず、notify は
+  //   送信済みで黙り、archive はハッシュ併合で二重登録しない（＝下流も外部に叩かない）。
+  if (state.lastCrawlDate === todayJST) {
+    console.log(`本日（${todayJST}）は巡回済みのため取得をスキップします（保険の2本目・P56①）。`);
+    writeFileSync(
+      DIFF_PATH,
+      JSON.stringify(
+        { generatedAt: new Date().toISOString(), newItems: [], newPress: [], crawlErrors: [] },
+        null,
+        2
+      ) + "\n"
+    );
+    return;
+  }
   const newItems = [];  // 行政（区分=gov）の新規項目
   const newPress = []; // 報道（区分=press）の新規項目。件数集計・グラフに含めない（P9）
   const crawlErrors = []; // 1源の失敗は記録して続行する（後述の全滅チェックで使う）
@@ -511,6 +535,9 @@ async function main() {
     );
   }
 
+  // ★P56①: ここに到達＝巡回が（部分失敗を含め）完了した（全滅なら上で throw 済み）。
+  //   今日を記録し、同日の2本目が取得をスキップできるようにする。書くのは全処理の後。
+  state.lastCrawlDate = todayJST;
   mkdirSync(dirname(STATE_PATH), { recursive: true });
   writeFileSync(STATE_PATH, JSON.stringify(state, null, 2) + "\n");
   writeFileSync(
