@@ -2823,9 +2823,9 @@
   },
   "2026-09-09": {
    "counts": {
-    "高": 0,
-    "中": 7,
-    "低": 7
+    "高": 1,
+    "中": 10,
+    "低": 9
    },
    "items": [
     {
@@ -3119,6 +3119,94 @@
       "高齢"
      ],
      "reason": "地域での高齢者福祉活動やシニア向け事業に関連する助成・顕彰情報であるため。"
+    },
+    {
+     "hash": "7849b7c411889139",
+     "source": "こども家庭庁",
+     "title": "国立武蔵野学院：児童相談所等で働くための資格が取得できる国立武蔵野学院附属人材育成センター養成部通信課程について、令和9年度第6期生の募集要項等を掲載しました",
+     "url": "https://www.cfa.go.jp/musashino/tsuushin-katei",
+     "date": "2026-09-09",
+     "category": "政策",
+     "summary": "児童相談所や児童福祉施設等で働くための資格取得を目的とした受講生募集の案内です。職員のキャリアアップや専門人材育成に関わる情報です。",
+     "importance": "中",
+     "fields": [
+      "児童"
+     ],
+     "reason": "児童福祉分野の専門資格取得に関する研修・受講生の募集案内であるため。"
+    },
+    {
+     "hash": "21fdaac885c4270f",
+     "source": "厚生労働省",
+     "title": "公募公示（年金給付システムの最適化に係る第三者評価業務及び総括管理支援業務 一式",
+     "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-oth-kikakukoubo/newpage_10501.html",
+     "date": "2026-09-09",
+     "category": "その他",
+     "summary": "年金給付システム最適化業務の委託に関する調達（公募公示）情報です。福祉事業者の実務運営には関係しません。",
+     "importance": "低",
+     "fields": [],
+     "reason": "省庁の年金システム調達に関する情報であり、福祉事業の運営に直接影響しないため。"
+    },
+    {
+     "hash": "aa3bfac40cf75a5a",
+     "source": "厚生労働省",
+     "title": "中途採用比率の公表について",
+     "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/chuto-hiritsu.html",
+     "date": "2026-09-09",
+     "category": "採用情報",
+     "summary": "行政機関等における自組織の中途採用比率の公表情報です。事業者への要件課与や制度対応ではありません。",
+     "importance": "低",
+     "fields": [],
+     "reason": "発信組織自身の人事・広報情報であり、福祉事業者の実務への影響が薄いため。"
+    },
+    {
+     "hash": "ac93291793b378c9",
+     "source": "WAM NET",
+     "title": "第61回 社会保障審議会 生活保護基準部会（令和8年9月15日開催予定）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22847&ct=070010070&from=rss",
+     "date": "2026-09-09",
+     "category": "行政資料",
+     "summary": "生活保護基準の見直し等を検討する審議会部会の開催案内です。困窮者支援や福祉施策の将来的な方向性を把握する上で関わります。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "社会保障施策に関する審議会の開催情報であり、将来的な制度動向を把握すべき情報であるため。",
+     "related": [
+      {
+       "day": "2026-08-20",
+       "title": "第60回 社会保障審議会 生活保護基準部会（令和8年8月25日開催予定）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22796&ct=070010070&from=rss"
+      }
+     ]
+    },
+    {
+     "hash": "bda32e887947d777",
+     "source": "WAM NET",
+     "title": "介護保険最新情報Vol.1541（PDF：136KB）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0909091640559/ksvol.1541.pdf?from=rss",
+     "date": "2026-09-09",
+     "category": "行政資料",
+     "summary": "厚生労働省から介護事業者等へ発出された行政通知です。介護保険制度の解釈や実務上の取扱いや注意事項が示されています。",
+     "importance": "高",
+     "fields": [
+      "高齢"
+     ],
+     "reason": "介護事業者において内容の確認や実務上の対応が必要となる行政通知であるため。",
+     "action": "一般に、こうした通知では、示された制度の解釈や実務上の注意事項を確認し、自事業所の運営や取扱いに見直しが必要かどうかの確認が必要になります。"
+    },
+    {
+     "hash": "8af28551280293ca",
+     "source": "WAM NET",
+     "title": "第142回 労働政策審議会障害者雇用分科会（令和8年9月15日開催予定）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22848&ct=070010010&from=rss",
+     "date": "2026-09-09",
+     "category": "行政資料",
+     "summary": "障害者雇用施策や就労支援等について議論する審議会分科会の開催案内です。今後の障害者雇用率や就労支援の方向性に影響します。",
+     "importance": "中",
+     "fields": [
+      "障害"
+     ],
+     "reason": "障害者雇用施策に関する審議会の開催情報であり、今後の制度・施策動向を把握しておくべき情報であるため。"
     }
    ],
    "press": [
