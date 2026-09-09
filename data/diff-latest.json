@@ -1,16 +1,152 @@
 {
-  "generatedAt": "2026-09-08T01:24:20.674Z",
+  "generatedAt": "2026-09-09T00:14:04.822Z",
   "newItems": [
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "4fb478032c985745",
+      "title": "第19回 補償金・優生手術等一時金認定審査部会の開催について掲載しました",
+      "url": "https://www.cfa.go.jp/press/505a3c49-572f-4fa5-a879-6a8fc9abf122",
+      "date": "2026-09-08",
+      "category": "報道発表"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "21e35bfc389c4659",
+      "title": "黄川田大臣記者会見（令和8年9月8日）を掲載しました",
+      "url": "https://www.cfa.go.jp/speech/b771b817",
+      "date": "2026-09-08",
+      "category": "会見"
+    },
     {
       "source": "厚生労働省",
       "kind": "gov",
-      "hash": "149f91cd07737f1a",
-      "title": "令和８年度 第１回戦没者の遺骨収集に関する有識者会議資料",
-      "url": "https://www.mhlw.go.jp/stf/newpage_76061.html",
+      "hash": "54e63ae772d6c05b",
+      "title": "令和８年９月８日付大臣会見概要",
+      "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00966.html",
       "date": "2026-09-08",
-      "category": "その他"
+      "category": "大臣会見等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "9833eeb598b9ff2a",
+      "title": "「人口動態統計月報（概数）」令和８（2026）年４月分",
+      "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/m2026/04.html",
+      "date": "2026-09-08",
+      "category": "統計情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "25ff982fcd221702",
+      "title": "病院報告（令和８(2026)年6月分概数）",
+      "url": "https://www.mhlw.go.jp/toukei/saikin/hw/byouin/m26/06.html",
+      "date": "2026-09-08",
+      "category": "統計情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "31623ea3c47c9024",
+      "title": "食品中の放射性物質の検査結果について（１５１１報）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75962.html",
+      "date": "2026-09-08",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "9dd9d232872e1b6e",
+      "title": "検体採取の結果について（８月）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75590.html",
+      "date": "2026-09-08",
+      "category": "トピックス"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "904f123f3e8383be",
+      "title": "「第142回労働政策審議会障害者雇用分科会」を開催します（開催案内）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75947.html",
+      "date": "2026-09-01",
+      "category": "審議会等"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "d3d7bbe64a15117e",
+      "title": "風しん最新情報（令和8年9月8日更新）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22845&ct=030100130&from=rss",
+      "date": "2026-09-08",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "277fa395bbb22726",
+      "title": "麻しん最新情報（令和8年9月8日更新）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22846&ct=030100110&from=rss",
+      "date": "2026-09-08",
+      "category": "行政資料"
+    },
+    {
+      "source": "福岡県（障がい福祉）",
+      "kind": "gov",
+      "hash": "87c11bbec41713a0",
+      "title": "令和8年度障害支援区分認定調査員（現任者向け）研修について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/2shienkubungennin.html",
+      "date": "2026年9月9日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（障がい福祉）",
+      "kind": "gov",
+      "hash": "6c1745e3c3e8e60f",
+      "title": "令和８年度第１回福岡県障がい者施策審議会の議事録について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/syogaisyashingikai-r801-giziroku.html",
+      "date": "2026年9月8日更新",
+      "category": ""
+    },
+    {
+      "source": "全国社会福祉協議会",
+      "kind": "org",
+      "hash": "991f11d9619c8ed7",
+      "title": "日本生命財団「児童・少年の健全育成助成」",
+      "url": "https://www.shakyo.or.jp/guide/sponsor/p/260908nissei.html",
+      "date": "2026-09-08",
+      "category": "助成"
+    },
+    {
+      "source": "全国社会福祉協議会",
+      "kind": "org",
+      "hash": "5035c4ee7908c138",
+      "title": "日本生命財団「生き生きシニア活動顕彰」",
+      "url": "https://www.shakyo.or.jp/news/2026/0908nissei.html",
+      "date": "2026-09-08",
+      "category": "告知"
     }
   ],
-  "newPress": [],
+  "newPress": [
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "b4611f2e26700f80",
+      "title": "厚労省、介護事業所のカスハラ・防犯対策に補助 概算要求に新事業 ヘルパーやケアマネらの安全確保に予算措置",
+      "url": "https://www.joint-kaigo.com/articles/48597/",
+      "date": "2026-09-08",
+      "category": "超高齢化"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "111cd52f396c99b3",
+      "title": "介護施設と協力医療機関の連携、経過措置の期限迫る 延長・特例も俎上に 今秋にも判断",
+      "url": "https://www.joint-kaigo.com/articles/48586/",
+      "date": "2026-09-08",
+      "category": "介護保険"
+    }
+  ],
   "crawlErrors": []
 }

@@ -2820,6 +2820,333 @@
      ]
     }
    ]
+  },
+  "2026-09-09": {
+   "counts": {
+    "高": 0,
+    "中": 7,
+    "低": 7
+   },
+   "items": [
+    {
+     "hash": "4fb478032c985745",
+     "source": "こども家庭庁",
+     "title": "第19回 補償金・優生手術等一時金認定審査部会の開催について掲載しました",
+     "url": "https://www.cfa.go.jp/press/505a3c49-572f-4fa5-a879-6a8fc9abf122",
+     "date": "2026-09-08",
+     "category": "報道発表",
+     "summary": "旧優生保護法に基づく一時金等の支給認定に関する審査部会の開催案内です。",
+     "importance": "低",
+     "fields": [
+      "障害"
+     ],
+     "reason": "旧優生保護法補償に関する個別の審査部会開催案内であり、事業所運営への直接的な影響は低いため。",
+     "related": [
+      {
+       "day": "2026-08-07",
+       "title": "第18回補償金・優生手術等一時金認定審査部会の開催について掲載しました",
+       "url": "https://www.cfa.go.jp/press/fa11cc9a-a3e1-4749-a1f4-20cdcdfd5d84"
+      }
+     ]
+    },
+    {
+     "hash": "21e35bfc389c4659",
+     "source": "こども家庭庁",
+     "title": "黄川田大臣記者会見（令和8年9月8日）を掲載しました",
+     "url": "https://www.cfa.go.jp/speech/b771b817",
+     "date": "2026-09-08",
+     "category": "会見",
+     "summary": "こども政策や福祉施策等に関する大臣の記者会見の記録です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "定例の大臣記者会見であり、具体的な制度変更等の通知ではないため。",
+     "related": [
+      {
+       "day": "2026-09-05",
+       "title": "黄川田大臣記者会見（令和8年9月4日）を掲載しました",
+       "url": "https://www.cfa.go.jp/speech/b9ee0e7a"
+      },
+      {
+       "day": "2026-09-02",
+       "title": "黄川田大臣記者会見（令和8年9月1日）を掲載しました",
+       "url": "https://www.cfa.go.jp/speech/b00217c0"
+      },
+      {
+       "day": "2026-08-29",
+       "title": "黄川田大臣記者会見（令和8年8月28日）を掲載しました",
+       "url": "https://www.cfa.go.jp/speech/58acdea4"
+      }
+     ]
+    },
+    {
+     "hash": "54e63ae772d6c05b",
+     "source": "厚生労働省",
+     "title": "令和８年９月８日付大臣会見概要",
+     "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00966.html",
+     "date": "2026-09-08",
+     "category": "大臣会見等",
+     "summary": "厚生労働行政全般に関する大臣記者会見の概要記録です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "定例の大臣会見概要であり、個別の事業所実務への直接の影響は薄いため。",
+     "related": [
+      {
+       "day": "2026-09-05",
+       "title": "令和８年９月４日付大臣会見概要",
+       "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00965.html"
+      },
+      {
+       "day": "2026-09-02",
+       "title": "令和８年９月１日付大臣会見概要",
+       "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00964.html"
+      },
+      {
+       "day": "2026-08-04",
+       "title": "令和８年８月４日付大臣会見概要",
+       "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00962.html"
+      }
+     ]
+    },
+    {
+     "hash": "9833eeb598b9ff2a",
+     "source": "厚生労働省",
+     "title": "「人口動態統計月報（概数）」令和８（2026）年４月分",
+     "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/m2026/04.html",
+     "date": "2026-09-08",
+     "category": "統計情報",
+     "summary": "出生数や死亡数など、全国の人口動態に関する月次統計データです。",
+     "importance": "低",
+     "fields": [],
+     "reason": "一般的な人口統計概数の公表であり、日々の福祉事業所運営への直接的影響は低いため。"
+    },
+    {
+     "hash": "25ff982fcd221702",
+     "source": "厚生労働省",
+     "title": "病院報告（令和８(2026)年6月分概数）",
+     "url": "https://www.mhlw.go.jp/toukei/saikin/hw/byouin/m26/06.html",
+     "date": "2026-09-08",
+     "category": "統計情報",
+     "summary": "全国の病院および診療所の患者数や病床利用率等に関する統計報告です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "医療機関の患者・病床動向統計であり、福祉事業所実務への直接の影響はないため。"
+    },
+    {
+     "hash": "31623ea3c47c9024",
+     "source": "厚生労働省",
+     "title": "食品中の放射性物質の検査結果について（１５１１報）",
+     "url": "https://www.mhlw.go.jp/stf/newpage_75962.html",
+     "date": "2026-09-08",
+     "category": "報道発表",
+     "summary": "厚生労働省が公表した食品中の放射性物質検査結果の定期報告です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "定期的な検査結果報告であり、福祉施設の給食管理等への新たな要請等はないため。",
+     "related": [
+      {
+       "day": "2026-09-02",
+       "title": "食品中の放射性物質の検査結果について（１５１０報）",
+       "url": "https://www.mhlw.go.jp/stf/newpage_75795.html"
+      },
+      {
+       "day": "2026-08-26",
+       "title": "食品中の放射性物質の検査結果について（１５０９報）",
+       "url": "https://www.mhlw.go.jp/stf/newpage_75662.html"
+      },
+      {
+       "day": "2026-08-19",
+       "title": "食品中の放射性物質の検査結果について（１５０８報）",
+       "url": "https://www.mhlw.go.jp/stf/newpage_75508.html"
+      }
+     ]
+    },
+    {
+     "hash": "9dd9d232872e1b6e",
+     "source": "厚生労働省",
+     "title": "検体採取の結果について（８月）",
+     "url": "https://www.mhlw.go.jp/stf/newpage_75590.html",
+     "date": "2026-09-08",
+     "category": "トピックス",
+     "summary": "行政機関等による定期的な検体検査・モニタリングの結果報告です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "一般的な検査結果公表であり、福祉事業所の実務に直接関係しないため。",
+     "related": [
+      {
+       "day": "2026-09-04",
+       "title": "検体採取の結果について（８月）",
+       "url": "https://www.mhlw.go.jp/stf/newpage_75897.html"
+      }
+     ]
+    },
+    {
+     "hash": "904f123f3e8383be",
+     "source": "厚生労働省",
+     "title": "「第142回労働政策審議会障害者雇用分科会」を開催します（開催案内）",
+     "url": "https://www.mhlw.go.jp/stf/newpage_75947.html",
+     "date": "2026-09-01",
+     "category": "審議会等",
+     "summary": "障害者の雇用促進策や法定雇用率等の政策を議論する審議会分科会の開催案内です。",
+     "importance": "中",
+     "fields": [
+      "障害"
+     ],
+     "reason": "就労系障害福祉サービスや事業主としての障害者雇用方針に関わる審議会のため。",
+     "related": [
+      {
+       "day": "2026-08-25",
+       "title": "「第141回労働政策審議会障害者雇用分科会」を開催します（開催案内）",
+       "url": "https://www.mhlw.go.jp/stf/newpage_75431.html"
+      }
+     ]
+    },
+    {
+     "hash": "d3d7bbe64a15117e",
+     "source": "WAM NET",
+     "title": "風しん最新情報（令和8年9月8日更新）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22845&ct=030100130&from=rss",
+     "date": "2026-09-08",
+     "category": "行政資料",
+     "summary": "国内における風しんの発生動向や感染状況に関する最新の行政報告です。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "施設・事業所内での感染症対策や妊婦・利用者・職員の健康管理に関わる情報であるため。",
+     "related": [
+      {
+       "day": "2026-09-02",
+       "title": "風しん最新情報（令和8年9月1日更新）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22828&ct=030100130&from=rss"
+      },
+      {
+       "day": "2026-08-27",
+       "title": "風しん最新情報（令和8年8月25日更新）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22811&ct=030100130&from=rss"
+      },
+      {
+       "day": "2026-08-20",
+       "title": "風しん最新情報（令和8年8月18日更新）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22795&ct=030100130&from=rss"
+      }
+     ]
+    },
+    {
+     "hash": "277fa395bbb22726",
+     "source": "WAM NET",
+     "title": "麻しん最新情報（令和8年9月8日更新）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22846&ct=030100110&from=rss",
+     "date": "2026-09-08",
+     "category": "行政資料",
+     "summary": "国内における麻しん（はしか）の発生状況と感染動向に関する最新情報です。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "感染力が極めて強く、保育所や福祉施設等での集団感染対策や衛生管理に留意が必要なため。",
+     "related": [
+      {
+       "day": "2026-09-02",
+       "title": "麻しん最新情報（令和8年9月1日更新）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22829&ct=030100110&from=rss"
+      },
+      {
+       "day": "2026-08-27",
+       "title": "麻しん最新情報（令和8年8月25日更新）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22812&ct=030100110&from=rss"
+      },
+      {
+       "day": "2026-08-20",
+       "title": "麻しん最新情報（令和8年8月18日更新）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22797&ct=030100110&from=rss"
+      }
+     ]
+    },
+    {
+     "hash": "87c11bbec41713a0",
+     "source": "福岡県（障がい福祉）",
+     "title": "令和8年度障害支援区分認定調査員（現任者向け）研修について",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/2shienkubungennin.html",
+     "date": "2026年9月9日更新",
+     "category": "",
+     "summary": "自治体等の障害支援区分認定調査員を対象とした現任者研修の実施案内です。",
+     "importance": "中",
+     "fields": [
+      "障害"
+     ],
+     "reason": "相談支援専門員など認定調査業務に従事する職員の資質向上・受講に関わる研修情報のため。"
+    },
+    {
+     "hash": "6c1745e3c3e8e60f",
+     "source": "福岡県（障がい福祉）",
+     "title": "令和８年度第１回福岡県障がい者施策審議会の議事録について",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/syogaisyashingikai-r801-giziroku.html",
+     "date": "2026年9月8日更新",
+     "category": "",
+     "summary": "福岡県における障害者施策推進や計画見直しに関する審議会の議事録です。",
+     "importance": "中",
+     "fields": [
+      "障害"
+     ],
+     "reason": "自治体の今後の障害福祉施策や計画の方向性を把握するための資料であるため。"
+    },
+    {
+     "hash": "991f11d9619c8ed7",
+     "source": "全国社会福祉協議会",
+     "kind": "org",
+     "title": "日本生命財団「児童・少年の健全育成助成」",
+     "url": "https://www.shakyo.or.jp/guide/sponsor/p/260908nissei.html",
+     "date": "2026-09-08",
+     "category": "助成",
+     "summary": "児童・少年の健全育成に取り組む民間団体や活動を支援する助成金募集案内です。",
+     "importance": "中",
+     "fields": [
+      "児童"
+     ],
+     "reason": "児童福祉や地域の子ども支援活動を行う団体が活用可能な助成金公募であるため。"
+    },
+    {
+     "hash": "5035c4ee7908c138",
+     "source": "全国社会福祉協議会",
+     "kind": "org",
+     "title": "日本生命財団「生き生きシニア活動顕彰」",
+     "url": "https://www.shakyo.or.jp/news/2026/0908nissei.html",
+     "date": "2026-09-08",
+     "category": "告知",
+     "summary": "高齢者の地域貢献活動やボランティア活動等を顕彰・支援する公募案内です。",
+     "importance": "中",
+     "fields": [
+      "高齢"
+     ],
+     "reason": "地域での高齢者福祉活動やシニア向け事業に関連する助成・顕彰情報であるため。"
+    }
+   ],
+   "press": [
+    {
+     "hash": "b4611f2e26700f80",
+     "source": "介護ニュースJoint",
+     "kind": "press",
+     "title": "厚労省、介護事業所のカスハラ・防犯対策に補助 概算要求に新事業 ヘルパーやケアマネらの安全確保に予算措置",
+     "url": "https://www.joint-kaigo.com/articles/48597/",
+     "date": "2026-09-08",
+     "category": "超高齢化",
+     "fields": [
+      "高齢"
+     ]
+    },
+    {
+     "hash": "111cd52f396c99b3",
+     "source": "介護ニュースJoint",
+     "kind": "press",
+     "title": "介護施設と協力医療機関の連携、経過措置の期限迫る 延長・特例も俎上に 今秋にも判断",
+     "url": "https://www.joint-kaigo.com/articles/48586/",
+     "date": "2026-09-08",
+     "category": "介護保険",
+     "fields": [
+      "高齢"
+     ]
+    }
+   ]
   }
  }
 }
