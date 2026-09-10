@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-09T19:56:01.886Z",
+ "updatedAt": "2026-09-10T19:56:00.527Z",
  "items": [
   {
    "hash": "6b27ebe70841b027",
@@ -317,6 +317,28 @@
     }
    ],
    "outlineUrl": "https://www.f-kaigo.jp/upimg/l69eef300c0c44.pdf"
+  },
+  {
+   "hash": "c9c427bfae5b6667",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "via": "schedule",
+   "title": "看護実務者研修",
+   "url": "https://fuku-shakyo-kenshu.jp/info/%e7%a6%8f%e5%b2%a1%e7%9c%8c%e9%ab%98%e9%bd%a2%e8%80%85%e6%a8%a9%e5%88%a9%e6%93%81%e8%ad%b7%e7%ad%89%e6%8e%a8%e9%80%b2%e7%a0%94%e4%bf%ae%e7%9c%8b%e8%ad%b7%e5%ae%9f%e5%8b%99%e8%80%85%e7%a0%94%e4%bf%ae/",
+   "deadline": "2026-10-09",
+   "deadlineType": "date",
+   "deadlineRaw": "一覧の申込終了日より 10月9日",
+   "openFrom": "2026-09-10",
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別",
+   "expireOn": "2027-01-09",
+   "heldDates": [
+    "2026-10-29",
+    "2026-11-10",
+    "2026-12-15"
+   ]
   },
   {
    "hash": "ab217ca9d4bcb9d2",
@@ -718,28 +740,6 @@
    "expireOn": "2027-01-31"
   },
   {
-   "hash": "2e502c8c385183ac",
-   "source": "福岡県介護福祉士会",
-   "sourceKind": "org",
-   "via": "fkaigo",
-   "title": "令和8年度訪問介護サービス提供責任者就任前・経験3年未満研修",
-   "url": "https://www.f-kaigo.jp/training/detail_492.php",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "締切の記載なし",
-   "heldDates": [
-    "2026-09-10",
-    "2026-10-04",
-    "2026-10-22"
-   ],
-   "expireOn": "2026-10-22",
-   "openFrom": null,
-   "fields": [
-    "高齢"
-   ],
-   "kind": "テーマ別"
-  },
-  {
    "hash": "b823004de108e318",
    "source": "福岡県介護福祉士会",
    "sourceKind": "org",
@@ -1090,23 +1090,26 @@
    "expireOn": "2026-11-30"
   },
   {
-   "hash": "4e23071013b2ae18",
-   "source": "福祉・介護研修センター 年間予定表",
+   "hash": "2e502c8c385183ac",
+   "source": "福岡県介護福祉士会",
    "sourceKind": "org",
-   "via": "schedule",
-   "title": "看護実務者研修",
-   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/#link4",
+   "via": "fkaigo",
+   "title": "令和8年度訪問介護サービス提供責任者就任前・経験3年未満研修",
+   "url": "https://www.f-kaigo.jp/training/detail_492.php",
    "deadline": null,
    "deadlineType": "unknown",
-   "deadlineRaw": "10月開始予定",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-09-10",
+    "2026-10-04",
+    "2026-10-22"
+   ],
+   "expireOn": "2026-10-22",
    "openFrom": null,
    "fields": [
-    "共通"
+    "高齢"
    ],
-   "kind": "テーマ別",
-   "preOpenNote": "10月開始予定",
-   "preOpenSort": "2026-10",
-   "expireOn": "2026-11-30"
+   "kind": "テーマ別"
   },
   {
    "hash": "08ea41bbbf0f656c",
@@ -1716,5 +1719,5 @@
    "expireOn": "2026-09-12"
   }
  ],
- "lastFetchDate": "2026-09-10"
+ "lastFetchDate": "2026-09-11"
 }
