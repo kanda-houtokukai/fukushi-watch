@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-10T19:53:54.355Z",
+ "updatedAt": "2026-09-11T19:54:17.479Z",
  "items": [
   {
    "hash": "2f33b69c8e68fb75",
@@ -351,6 +351,40 @@
    ]
   },
   {
+   "hash": "a5d178e8a97fa20c",
+   "source": "全社協 福祉の助成情報",
+   "sourceKind": "org",
+   "funder": "雨宮児童福祉財団",
+   "title": "2026年度 修学助成金",
+   "url": "https://www.shakyo.or.jp/guide/sponsor/p/260911amemiya.html",
+   "postedAt": "2026-09-11",
+   "deadline": "2026-11-15",
+   "deadlineType": "date",
+   "deadlineRaw": "2026年11月15日",
+   "summary": "児童福祉施設に入所または里親のもとで養育されている児童の進学を支援する奨学金で、高等教育機関への進学を目指す該当児童が応募できます。",
+   "fields": [
+    "児童"
+   ],
+   "uses": [
+    "事業・活動"
+   ],
+   "applicants": [
+    "個人"
+   ],
+   "amount": "一人20万円",
+   "conditions": [
+    {
+     "axis": "併願・重複",
+     "quote": "民間団体からの奨学金を利用する方は対象外となります。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "全国の児童福祉施設に入所している児童および里親のもとで養育されている児童で、2027年4月に「大学」「短大」「専門学校」に入学を希望する者"
+    }
+   ],
+   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260911amemiya.html"
+  },
+  {
    "hash": "29e02ea2e0f0ab03",
    "source": "中央共同募金会",
    "sourceKind": "org",
@@ -379,42 +413,33 @@
    "conditionsUrl": "https://www.akaihane.or.jp/subsidies/sub-corp-prog/47845/"
   },
   {
-   "hash": "079e56a81eb5e8cd",
+   "hash": "10444a14161fc457",
    "source": "助成財団センター 助成金募集ニュース",
    "sourceKind": "org",
    "funder": "",
-   "title": "東海３県「食×農」応援基金",
-   "url": "https://www.jfc.or.jp/news_subsidy/%e6%9d%b1%e6%b5%b7%ef%bc%93%e7%9c%8c%e3%80%8c%e9%a3%9fx%e8%be%b2%e3%80%8d%e5%bf%9c%e6%8f%b4%e5%9f%ba%e9%87%91-2/",
-   "postedAt": "2026-09-03",
-   "deadline": "2027-01-05",
+   "title": "日本郵便年賀寄付金配分事業",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e6%97%a5%e6%9c%ac%e9%83%b5%e4%be%bf%e5%b9%b4%e8%b3%80%e5%af%84%e4%bb%98%e9%87%91%e9%85%8d%e5%88%86%e4%ba%8b%e6%a5%ad-2/",
+   "postedAt": "2026-09-11",
+   "deadline": "2026-11-18",
    "deadlineType": "date",
-   "deadlineRaw": "2027/01/05 募集要項 https://kosuikyo.com/wp-content/t",
-   "openFrom": "2026-09-01",
-   "conditionsUrl": "https://kosuikyo.com/%e5%8a%a9%e6%88%90%e9%87%91-2",
-   "summary": "東海3県における食と農業の活性化や農福連携などの活動経費を助成するもので、同地域で活動する団体や認定農業者が応募できます。",
+   "deadlineRaw": "2026/11/18 募集要項 https://www.post.japanpost.jp/abo",
+   "openFrom": "2026-09-29",
+   "conditionsUrl": "http://www.post.japanpost.jp/kifu/",
+   "summary": "社会福祉の増進や被災者支援などの活動・施設改修・機器や車両の購入等を助成するもので、社会福祉法人やNPO法人等が応募できます。",
    "fields": [
     "共通"
    ],
    "uses": [
-    "事業・活動"
+    "設備・改修",
+    "機器・用具",
+    "車両"
    ],
    "applicants": [
     "社会福祉法人",
-    "NPO・公益法人",
-    "任意団体",
-    "個人"
+    "NPO・公益法人"
    ],
-   "amount": "500千円/1件 総額 5,000千円",
-   "conditions": [
-    {
-     "axis": "事業の実施地",
-     "quote": "東海3県"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "食と農業活性化(農業者、団体支援)"
-    }
-   ]
+   "amount": "上限250万円/件（活動・チャレンジプログラムは50万円）",
+   "conditions": []
   },
   {
    "hash": "8cf63c024f328db8",
@@ -494,5 +519,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-09-11"
+ "lastFetchDate": "2026-09-12"
 }

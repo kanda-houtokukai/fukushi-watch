@@ -1,6 +1,269 @@
 {
-  "generatedAt": "2026-09-11T01:13:01.695Z",
-  "newItems": [],
-  "newPress": [],
+  "generatedAt": "2026-09-11T19:51:33.691Z",
+  "newItems": [
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "560f4acedfe5026d",
+      "title": "黄川田大臣記者会見（令和8年9月11日）を掲載しました",
+      "url": "https://www.cfa.go.jp/speech/d79fe337",
+      "date": "2026-09-11",
+      "category": "会見"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "148d3d0d41b774ab",
+      "title": "令和８年度 第３回化学物質管理に係る専門家検討会 議事録",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76185.html",
+      "date": "2026-09-11",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "39f5675ec70a6e3e",
+      "title": "第30回キャリアコンサルタント登録制度等に関する検討会（議事録）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76159.html",
+      "date": "2026-09-11",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "fce9659f3bc7e947",
+      "title": "第79回ハンセン病元患者家族補償金認定審査会",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76184.html",
+      "date": "2026-09-11",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "da13a45b22f8c2f7",
+      "title": "第17回出生動向基本調査（結婚と出産に関する全国調査）結果の概要",
+      "url": "https://www.mhlw.go.jp/toukei/list/118-1.html",
+      "date": "2026-09-11",
+      "category": "統計情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "0965990a54aa756d",
+      "title": "厚生労働省及びPMDAはProject Orbisに参加します ～抗がん剤領域におけるドラッグラグ・ロスの解消を目指します～",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76104.html",
+      "date": "2026-09-11",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "8e125cd94c84c05e",
+      "title": "令和８年民間主要企業夏季一時金妥結状況を公表します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76038.html",
+      "date": "2026-09-11",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "7eac08a06e36277b",
+      "title": "特定募集等提供事業者に対する事業停止命令について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76028.html",
+      "date": "2026-09-11",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "27dd5cb10753a722",
+      "title": "第266回社会保障審議会介護給付費分科会（Web会議）を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75983.html",
+      "date": "2026-09-11",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "9e61c1c46cedbb29",
+      "title": "第211回労働政策審議会労働条件分科会 開催案内",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75967.html",
+      "date": "2026-09-11",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "20334a22aec6efb7",
+      "title": "「食品衛生監視部会伝達性海綿状脳症対策に関する小委員会」の開催について",
+      "url": "https://www.mhlw.go.jp/stf/other-kenkou_128610_00042.html",
+      "date": "2026-09-11",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "ce1cbdbe2936592e",
+      "title": "樺太等残留邦人11名が集団一時帰国します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75938.html",
+      "date": "2026-09-11",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "dacdb52e71f9c1b2",
+      "title": "「令和７年度使用者による障害者虐待の状況等」の結果を公表します",
+      "url": "https://www.mhlw.go.jp/stf/houdou/0000172598_00013.html",
+      "date": "2026-09-11",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "1be133362ca9e7e5",
+      "title": "インフルエンザに関する報道発表資料を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou_00025.html",
+      "date": "2026-09-11",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "dbd18ccc6c8761fa",
+      "title": "新型コロナウイルス感染症に関する報道発表資料を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00485.html",
+      "date": "2026-09-11",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "27966e1ca19e4ef6",
+      "title": "インフルエンザ・新型コロナウイルス感染症の定点当たり報告数の推移を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/houkokusuunosuii_00007.html",
+      "date": "2026-09-11",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "d124ee1936d1743e",
+      "title": "インフルエンザの発生状況を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
+      "date": "2026-09-11",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "520687216c053297",
+      "title": "「第１回 創薬力向上のための官民協議会 施策検討・推進部会」を開催します（開催案内）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76042.html",
+      "date": "2026-09-11",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "158e970b97251543",
+      "title": "薬事工業生産動態統計令和8年6月分月報について",
+      "url": "https://www.mhlw.go.jp/toukei/list/105-1c.html",
+      "date": "2026-09-11",
+      "category": "統計情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "0c5500004746b79f",
+      "title": "採用情報（期間業務職員（健康・生活衛生局）募集情報）",
+      "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-kenkou_seikatueiseikyoku01.html",
+      "date": "2026-09-11",
+      "category": "採用情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "3561fef66551d682",
+      "title": "落札者等の公示（「年金財政計算システム構築・移行及び運用・保守業務一式」他３件）",
+      "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/e-wto-rakusatu/newpage_10487.html",
+      "date": "2026-09-11",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "5ed73c7d895d26d8",
+      "title": "第25回医薬品等行政評価・監視委員会を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76113.html",
+      "date": "2026-09-09",
+      "category": "審議会等"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "e8bee4933525d22b",
+      "title": "介護保険最新情報Vol.1542（PDF：251KB）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0911091804631/ksvol.1542.pdf?from=rss",
+      "date": "2026-09-11",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "fb080c6f6f7a1ead",
+      "title": "第192回 先進医療技術審査部会（令和8年9月10日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22859&ct=030010150&from=rss",
+      "date": "2026-09-11",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "4deaf9a3d15b23c4",
+      "title": "第159回 社会保障審議会 障害者部会（令和8年9月17日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22856&ct=070010040&from=rss",
+      "date": "2026-09-11",
+      "category": "行政資料"
+    },
+    {
+      "source": "福岡県（介護・高齢者福祉）",
+      "kind": "gov",
+      "hash": "2200b58ea1978b28",
+      "title": "令和９年度介護施設等の整備に関する事業見込量等について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/chimitsu-jigyouryouchosa-r9.html",
+      "date": "2026年9月11日更新",
+      "category": ""
+    },
+    {
+      "source": "全国社会福祉協議会",
+      "kind": "org",
+      "hash": "aebde44e576980a5",
+      "title": "雨宮児童福祉財団「2026年度 修学助成金」",
+      "url": "https://www.shakyo.or.jp/guide/sponsor/p/260911amemiya.html",
+      "date": "2026-09-11",
+      "category": "助成"
+    }
+  ],
+  "newPress": [
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "7cec01a7a109bc04",
+      "title": "厚労省、ケアプー活用セミナーをYouTubeで開催へ 業務効率化の実践事例など紹介",
+      "url": "https://www.joint-kaigo.com/articles/48681/",
+      "date": "2026-09-11",
+      "category": "福祉用具"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "157a0bd87d89726b",
+      "title": "介護保険優先でも補装具を利用可能 厚労省通知 ケアマネらに留意点を解説",
+      "url": "https://www.joint-kaigo.com/articles/48672/",
+      "date": "2026-09-11",
+      "category": "福祉用具"
+    }
+  ],
   "crawlErrors": []
 }
