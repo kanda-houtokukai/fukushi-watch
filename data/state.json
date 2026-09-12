@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-09-11T19:51:27.748Z",
+      "lastCrawled": "2026-09-12T19:28:28.866Z",
       "items": [
         {
           "hash": "560f4acedfe5026d",
@@ -559,7 +559,7 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-09-11T19:51:28.016Z",
+      "lastCrawled": "2026-09-12T19:28:29.970Z",
       "items": [
         {
           "hash": "148d3d0d41b774ab",
@@ -4232,7 +4232,7 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-09-11T19:51:29.130Z",
+      "lastCrawled": "2026-09-12T19:28:31.046Z",
       "items": [
         {
           "hash": "e8bee4933525d22b",
@@ -6008,7 +6008,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-09-11T19:51:30.166Z",
+      "lastCrawled": "2026-09-12T19:28:32.380Z",
       "items": [
         {
           "hash": "87c11bbec41713a0",
@@ -6279,7 +6279,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-09-11T19:51:30.433Z",
+      "lastCrawled": "2026-09-12T19:28:32.702Z",
       "items": [
         {
           "hash": "9d045d8cba129ace",
@@ -6842,8 +6842,15 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-09-11T19:51:31.417Z",
+      "lastCrawled": "2026-09-12T19:28:34.074Z",
       "items": [
+        {
+          "hash": "40a3b120ec6074c1",
+          "title": "「加算ではなく基本報酬の引き上げを」 来年度改定へ要望相次ぐ 物価高などで現場に危機感",
+          "url": "https://www.joint-kaigo.com/articles/48703/",
+          "date": "2026-09-12",
+          "category": "介護給付費分科会"
+        },
         {
           "hash": "7cec01a7a109bc04",
           "title": "厚労省、ケアプー活用セミナーをYouTubeで開催へ 業務効率化の実践事例など紹介",
@@ -6877,14 +6884,14 @@
           "title": "ケアプー、居宅介護支援と通所介護で導入率6割超に サービス間の格差も",
           "url": "https://www.joint-kaigo.com/articles/48630/",
           "date": "2026-09-09",
-          "category": "福祉用具"
+          "category": "テクノロジ"
         },
         {
           "hash": "ab56ad84eb269601",
           "title": "行方不明の高齢者、介護保険料の全額免除も可 厚労省が取り扱い整理 払い過ぎなら返還も",
           "url": "https://www.joint-kaigo.com/articles/48621/",
           "date": "2026-09-09",
-          "category": "自治体"
+          "category": "超高齢化"
         },
         {
           "hash": "b4611f2e26700f80",
@@ -6898,14 +6905,14 @@
           "title": "介護施設と協力医療機関の連携、経過措置の期限迫る 延長・特例も俎上に 今秋にも判断",
           "url": "https://www.joint-kaigo.com/articles/48586/",
           "date": "2026-09-08",
-          "category": "超高齢化"
+          "category": "介護給付費分科会"
         },
         {
           "hash": "2689973a177deee2",
           "title": "【要警戒】LIFE関連加算、運営指導で報酬返還になる盲点 「送信完了＝安心」の落とし穴＝小濱道博",
           "url": "https://www.joint-kaigo.com/articles/48575/",
           "date": "2026-09-07",
-          "category": "介護保険"
+          "category": "コラム"
         },
         {
           "hash": "89eaa3ac1b98d4cf",
@@ -7169,7 +7176,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-09-11T19:51:30.604Z",
+      "lastCrawled": "2026-09-12T19:28:33.013Z",
       "items": [
         {
           "hash": "36427d776be9cfcd",
@@ -7545,7 +7552,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-09-11T19:51:33.688Z",
+      "lastCrawled": "2026-09-12T19:28:34.954Z",
       "items": [
         {
           "hash": "aebde44e576980a5",
@@ -7999,7 +8006,7 @@
     }
   },
   "preferredModel": "gemini-3.6-flash",
-  "lastSentDate": "2026-09-12",
-  "lastRunAt": "2026-09-12T01:15:21.970Z",
-  "lastCrawlDate": "2026-09-12"
+  "lastSentDate": "2026-09-13",
+  "lastRunAt": "2026-09-12T19:28:40.284Z",
+  "lastCrawlDate": "2026-09-13"
 }

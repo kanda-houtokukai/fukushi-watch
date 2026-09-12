@@ -1,6 +1,19 @@
 {
-  "generatedAt": "2026-09-12T01:15:21.900Z",
-  "model": null,
+  "generatedAt": "2026-09-12T19:28:40.178Z",
+  "model": "gemini-3.6-flash",
   "items": [],
-  "press": []
+  "press": [
+    {
+      "hash": "40a3b120ec6074c1",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "「加算ではなく基本報酬の引き上げを」 来年度改定へ要望相次ぐ 物価高などで現場に危機感",
+      "url": "https://www.joint-kaigo.com/articles/48703/",
+      "date": "2026-09-12",
+      "category": "介護給付費分科会",
+      "fields": [
+        "高齢"
+      ]
+    }
+  ]
 }

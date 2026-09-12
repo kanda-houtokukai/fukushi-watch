@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-11T19:56:22.751Z",
+ "updatedAt": "2026-09-12T19:31:02.084Z",
  "items": [
   {
    "hash": "6b27ebe70841b027",
@@ -740,102 +740,6 @@
    "expireOn": "2027-01-31"
   },
   {
-   "hash": "b823004de108e318",
-   "source": "福岡県介護福祉士会",
-   "sourceKind": "org",
-   "via": "fkaigo",
-   "title": "【申込〆切ました】嚥下のしくみを理解して自信をもって介助をおこなおう!",
-   "url": "https://www.f-kaigo.jp/training/detail_478.php",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "開催要綱PDFより 令和8年8月27日（締切後も受け付けることがあります）",
-   "heldDates": [
-    "2026-09-12"
-   ],
-   "expireOn": "2026-09-12",
-   "openFrom": null,
-   "fields": [
-    "高齢"
-   ],
-   "kind": "テーマ別",
-   "outline": [
-    {
-     "name": "日時",
-     "value": "令和８年９月１２日（土）１０時３０分～１２時００分（受付１０：００～）"
-    },
-    {
-     "name": "会場",
-     "value": "日本赤十字社福岡県支部やすらぎの郷（糟屋郡志免町吉原６００番地）"
-    },
-    {
-     "name": "講師",
-     "value": "平井美希氏（医療法人うえの病院言語聴覚士）"
-    },
-    {
-     "name": "参加費",
-     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
-    },
-    {
-     "name": "定員",
-     "value": "２０名"
-    },
-    {
-     "name": "ポイント",
-     "value": "２ポイント"
-    }
-   ],
-   "outlineUrl": "https://www.f-kaigo.jp/upimg/d69eef0ef8c8c1.pdf",
-   "keepUntilHeld": true
-  },
-  {
-   "hash": "051dd2359cf09e71",
-   "source": "福岡県介護福祉士会",
-   "sourceKind": "org",
-   "via": "fkaigo",
-   "title": "地域生活の継続と家族支援(認定介護福祉士養成研修)",
-   "url": "https://www.f-kaigo.jp/training/detail_491.php",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "締切の記載なし",
-   "heldDates": [
-    "2026-09-12",
-    "2026-09-19"
-   ],
-   "expireOn": "2026-09-19",
-   "openFrom": null,
-   "fields": [
-    "高齢"
-   ],
-   "kind": "資格要件",
-   "outline": [
-    {
-     "name": "日時",
-     "value": "記載なし"
-    },
-    {
-     "name": "会場",
-     "value": "福岡県介護福祉士会研修室（予定・福岡市博多区博多駅東１-１-16-2F）"
-    },
-    {
-     "name": "講師",
-     "value": "記載なし"
-    },
-    {
-     "name": "参加費",
-     "value": "会員17,000 円非会員34,000 円"
-    },
-    {
-     "name": "定員",
-     "value": "25 名"
-    },
-    {
-     "name": "ポイント",
-     "value": "記載なし"
-    }
-   ],
-   "outlineUrl": "https://www.f-kaigo.jp/upimg/l69eef75027987.pdf"
-  },
-  {
    "hash": "1bb00b502eaad38e",
    "source": "福岡県介護福祉士会",
    "sourceKind": "org",
@@ -905,6 +809,54 @@
     "高齢"
    ],
    "kind": "階層別"
+  },
+  {
+   "hash": "051dd2359cf09e71",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "地域生活の継続と家族支援(認定介護福祉士養成研修)",
+   "url": "https://www.f-kaigo.jp/training/detail_491.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "heldDates": [
+    "2026-09-12",
+    "2026-09-19"
+   ],
+   "expireOn": "2026-09-19",
+   "openFrom": null,
+   "fields": [
+    "高齢"
+   ],
+   "kind": "資格要件",
+   "outline": [
+    {
+     "name": "日時",
+     "value": "記載なし"
+    },
+    {
+     "name": "会場",
+     "value": "福岡県介護福祉士会研修室（予定・福岡市博多区博多駅東１-１-16-2F）"
+    },
+    {
+     "name": "講師",
+     "value": "記載なし"
+    },
+    {
+     "name": "参加費",
+     "value": "会員17,000 円非会員34,000 円"
+    },
+    {
+     "name": "定員",
+     "value": "25 名"
+    },
+    {
+     "name": "ポイント",
+     "value": "記載なし"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/l69eef75027987.pdf"
   },
   {
    "hash": "a768a91c7c2d70d3",
@@ -1647,24 +1599,6 @@
    "expireOn": "2026-11-07"
   },
   {
-   "hash": "4a112b3db59bdc0d",
-   "source": "福祉・介護研修センター 年間予定表",
-   "sourceKind": "org",
-   "title": "小規模多機能型サービス等計画作成担当者研修 1回目",
-   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/05/0f91156fccbcf3a353a91572777591b1.pdf",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "開催要綱PDFより 令和8年6月12日（締切後も受け付けることがあります）",
-   "openFrom": "2026-05-13",
-   "fields": [
-    "高齢"
-   ],
-   "kind": "資格要件",
-   "via": "schedule",
-   "keepUntilHeld": true,
-   "expireOn": "2026-09-12"
-  },
-  {
    "hash": "ac30afdad328d79e",
    "source": "福祉・介護研修センター 年間予定表",
    "sourceKind": "org",
@@ -1681,43 +1615,7 @@
    "via": "schedule",
    "keepUntilHeld": true,
    "expireOn": "2026-10-31"
-  },
-  {
-   "hash": "864e58dc292760fa",
-   "source": "福祉・介護研修センター 年間予定表",
-   "sourceKind": "org",
-   "title": "認知症対応型サービス事業管理者研修 1回目",
-   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/05/70b79d68f45fd43cc124edf74879b573.pdf",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "開催要綱PDFより 令和8年6月12日（締切後も受け付けることがあります）",
-   "openFrom": "2026-05-13",
-   "fields": [
-    "高齢"
-   ],
-   "kind": "資格要件",
-   "via": "schedule",
-   "keepUntilHeld": true,
-   "expireOn": "2026-09-12"
-  },
-  {
-   "hash": "1a1e2ca3f26d723e",
-   "source": "福祉・介護研修センター 年間予定表",
-   "sourceKind": "org",
-   "title": "認知症対応型サービス事業開設者研修 1回目",
-   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/05/b429846019b9e233c8c7dc9ede385e00.pdf",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "開催要綱PDFより 令和8年6月12日（締切後も受け付けることがあります）",
-   "openFrom": "2026-05-13",
-   "fields": [
-    "高齢"
-   ],
-   "kind": "資格要件",
-   "via": "schedule",
-   "keepUntilHeld": true,
-   "expireOn": "2026-09-12"
   }
  ],
- "lastFetchDate": "2026-09-12"
+ "lastFetchDate": "2026-09-13"
 }
