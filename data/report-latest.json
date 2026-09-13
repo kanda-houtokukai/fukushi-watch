@@ -1,6 +1,19 @@
 {
-  "generatedAt": "2026-09-13T01:10:19.131Z",
-  "model": null,
-  "items": [],
+  "generatedAt": "2026-09-13T19:33:34.986Z",
+  "model": "gemini-3.6-flash",
+  "items": [
+    {
+      "hash": "6329c0583d21efff",
+      "source": "福岡県（子ども・青少年）",
+      "title": "（参加者募集中！）Glocal Discovery Camp in 源じいの森",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/glocaldiscoverycamp.html",
+      "date": "2026年9月14日更新",
+      "category": "",
+      "summary": "源じいの森で開催される体験キャンプイベント「Glocal Discovery Camp」の参加者募集案内です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "一般向けのイベント募集情報であり、福祉事業の運営実務に直接影響しないため。"
+    }
+  ],
   "press": []
 }
