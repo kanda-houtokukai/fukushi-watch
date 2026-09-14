@@ -1,6 +1,296 @@
 {
-  "generatedAt": "2026-09-14T01:14:32.640Z",
-  "newItems": [],
-  "newPress": [],
+  "generatedAt": "2026-09-14T20:59:00.468Z",
+  "newItems": [
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "d38f6b517beb50ec",
+      "title": "補償金・優生手術等一時金認定審査部会（第19回）の会議資料を掲載しました",
+      "url": "https://www.cfa.go.jp/councils/hoshokin-yuseishujutsu/0db49aca",
+      "date": "2026-09-14",
+      "category": "会議等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "8dbac46b48b5c58a",
+      "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76213.html",
+      "date": "2026-09-14",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "39408da8e39ce7e6",
+      "title": "映画『ファーストボイス』とタイアップします",
+      "url": "https://www.mhlw.go.jp/stf/houdou/tie-up_firstvoicemovie.html",
+      "date": "2026-09-14",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "72e4a25d54dab54c",
+      "title": "第216回社会保障審議会医療保険部会（ペーパーレス）の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76148.html",
+      "date": "2026-09-14",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "7927d17dd965a87a",
+      "title": "令和８年度医療機関等の経営状況に係る臨時調査について",
+      "url": "https://www.mhlw.go.jp/topics/2026/09/tp0914-1.html",
+      "date": "2026-09-14",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "5234e2767c1be988",
+      "title": "第136回社会保障審議会介護保険部会の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76016.html",
+      "date": "2026-09-14",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "88c2c2f59e73795b",
+      "title": "法的脳死判定基準に関する作業班",
+      "url": "https://www.mhlw.go.jp/stf/shingi/newpage_75970.html",
+      "date": "2026-09-14",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "f2d09deb4cc82de4",
+      "title": "第1回法的脳死判定基準に関する作業班（Web会議）を開催します",
+      "url": "https://www.mhlw.go.jp/stf/shingi/newpage_75952.html",
+      "date": "2026-09-14",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "3fa95eece7a5a814",
+      "title": "勤務時間が短い正規型の労働者として事業所に使用されている個人事業主等に係る被保険者資格の取扱い等について",
+      "url": "https://www.mhlw.go.jp/stf/houdou/newpage_75927.html",
+      "date": "2026-09-14",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "a43d2eefeab71931",
+      "title": "薬事審議会血液事業部会令和８年度第２回運営委員会（ペーパーレス・Web併用）の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75517.html",
+      "date": "2026-09-14",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "b190b2f380484814",
+      "title": "社会保障審議会（介護保険部会）",
+      "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126734.html",
+      "date": "2026-09-14",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "71a703a500c4a451",
+      "title": "厚生労働省改革実行チーム",
+      "url": "https://www.mhlw.go.jp/stf/shingi/other-soumu_198922_00003.html",
+      "date": "2026-09-14",
+      "category": "トピックス"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "76a0c5e8df55c6c3",
+      "title": "民間競争入札実施事業 就労条件総合調査の実施状況について（令和５・６年度分）",
+      "url": "https://www.mhlw.go.jp/topics/2026/09/tp0914-2.html",
+      "date": "2026-09-14",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "aa59eb5cf7cd5ad2",
+      "title": "障害福祉関係手続共通化のシステムの改修・運用保守・移行支援に関する工程管理等 【フェーズ２】一式（令和９年度）",
+      "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-iken/newpage_10496.html",
+      "date": "2026-09-14",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "dffb8521eb12f87c",
+      "title": "採用情報（任期付職員（社会・援護局保護課主査）募集情報）",
+      "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/ninkituki/ninki-syakai-engokyokuhogokasyusa.html",
+      "date": "2026-09-14",
+      "category": "採用情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "2f0c12f240371047",
+      "title": "2026年11月17日は世界さい帯血の日（World cord blood day）",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/ishoku/zouketukansaibo_00005.html",
+      "date": "2026-09-14",
+      "category": "トピックス"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "171d7b2f51b5e7ea",
+      "title": "造血幹細胞移植普及推進月間について",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/ishoku/zouketukansaibo_00004.html",
+      "date": "2026-09-14",
+      "category": "トピックス"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "75f7a868e9b8b9ce",
+      "title": "令和８年度「医療安全推進週間」について",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/iryouanzen2026.html",
+      "date": "2026-09-11",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "0e025e5579e900fb",
+      "title": "第８回労働政策審議会（労働条件分科会「組織再編に伴う労働関係の調整に関する部会」）（資料）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76153.html",
+      "date": "2026-09-10",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "f3d21f739fbfecb7",
+      "title": "第６回 健康・医療・介護情報利活用検討会 医療等情報の二次利用に関するワーキンググループの開催案内",
+      "url": "https://www.mhlw.go.jp/stf/shingi/0001210262_00103.html",
+      "date": "2026-09-09",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "155b8b9793d2fa13",
+      "title": "第16回厚生科学審議会結核部会 議事録",
+      "url": "https://www.mhlw.go.jp/stf/shingi2/000246207_00002.html",
+      "date": "2026-08-28",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "500781f62a4d0a29",
+      "title": "第９回有料老人ホームにおける望ましいサービス提供のあり方に関する検討会を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75774.html",
+      "date": "2026-08-25",
+      "category": "審議会等"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "15c8c1b695bbc8af",
+      "title": "第266回 社会保障審議会 介護給付費分科会（令和8年9月14日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22860&ct=010010020&from=rss",
+      "date": "2026-09-14",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "9f30c625c072246b",
+      "title": "第215回 社会保障審議会 医療保険部会（令和8年9月11日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22863&ct=010010050&from=rss",
+      "date": "2026-09-14",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "d6fb0860cf024761",
+      "title": "介護保険最新情報Vol.1543（PDF：699KB）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0914092951846/ksvol.1543.pdf?from=rss",
+      "date": "2026-09-14",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "fd2cfaad2f2a50a1",
+      "title": "中央社会保険医療協議会の開催について（令和8年9月16日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22861&ct=070010030&from=rss",
+      "date": "2026-09-14",
+      "category": "行政資料"
+    },
+    {
+      "source": "福岡県（障がい福祉）",
+      "kind": "gov",
+      "hash": "0f08c2d1f3b883a6",
+      "title": "【出店者募集！】令和８年度福岡県農福連携マルシェを開催します",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/nouhuku2026.html",
+      "date": "2026年9月14日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（子ども・青少年）",
+      "kind": "gov",
+      "hash": "dd54f2f918240ec1",
+      "title": "こども性暴力防止法について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/kodomoseibouryokubousihou.html",
+      "date": "2026年9月14日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（介護・高齢者福祉）",
+      "kind": "gov",
+      "hash": "18950fdab1fd9971",
+      "title": "「新しい認知症観」を知るための認知症フォーラムを開催します！～認知症の本人とともにつくる地域社会～",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/r8ninchisyo-forum.html",
+      "date": "2026年9月14日更新",
+      "category": ""
+    }
+  ],
+  "newPress": [
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "35dd9f2beb1c8ee0",
+      "title": "ケアマネのシャドウワークはなくなるか 身寄りのない高齢者の支援が全国で制度化 大きな前進と残る課題",
+      "url": "https://www.joint-kaigo.com/articles/48690/",
+      "date": "2026-09-14",
+      "category": "認知症"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "7107f1160728914b",
+      "title": "【介護報酬改定】生産性向上加算を「もっと使いやすく」 関係団体から見直し要求相次ぐ 複雑な要件の簡素化も",
+      "url": "https://www.joint-kaigo.com/articles/48728/",
+      "date": "2026-09-14",
+      "category": "介護保険"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "dedae6d085dc643a",
+      "title": "ケアマネのシャドウワーク解消へ 長崎県協会、全国に先駆けて自費サービス活用の「長崎モデル」始動",
+      "url": "https://www.joint-kaigo.com/articles/48709/",
+      "date": "2026-09-14",
+      "category": "福祉用具"
+    }
+  ],
   "crawlErrors": []
 }

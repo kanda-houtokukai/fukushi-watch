@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-13T19:34:08.177Z",
+ "updatedAt": "2026-09-14T21:03:05.066Z",
  "items": [
   {
    "hash": "2f33b69c8e68fb75",
@@ -310,47 +310,6 @@
    ]
   },
   {
-   "hash": "e1063bc89470c7b0",
-   "source": "助成財団センター 助成金募集ニュース",
-   "sourceKind": "org",
-   "funder": "",
-   "title": "第1回「茅ヶ崎１００年基金」",
-   "url": "https://www.jfc.or.jp/news_subsidy/%e7%ac%ac1%e5%9b%9e%e3%80%8c%e8%8c%85%e3%83%b6%e5%b4%8e%ef%bc%91%ef%bc%90%ef%bc%90%e5%b9%b4%e5%9f%ba%e9%87%91%e3%80%8d/",
-   "postedAt": "2026-09-08",
-   "deadline": "2026-10-30",
-   "deadlineType": "date",
-   "deadlineRaw": "2026年10月30日 募集要項 WEBサイト関連ページURL https://np-foundat",
-   "openFrom": "2026-09-08",
-   "conditionsUrl": "https://np-foundation.or.jp/information/000416.html",
-   "summary": "茅ヶ崎地域において、子ども・若者の育成や困難な環境にある次世代を支援する活動を対象に事業費を助成するものです。",
-   "fields": [
-    "児童"
-   ],
-   "uses": [
-    "事業・活動"
-   ],
-   "applicants": [],
-   "amount": "7件~10件/10万円~上限30万円 総額210万円(予定)",
-   "conditions": [
-    {
-     "axis": "事業の実施地",
-     "quote": "茅ヶ崎地域で実施する事業で、以下5テーマのうちいずれかに該当する事業"
-    },
-    {
-     "axis": "主体の付帯条件",
-     "quote": "助成電子申請システム「Graain」から、必要書類・団体情報をご提出いただきます。"
-    },
-    {
-     "axis": "提出書類",
-     "quote": "・応募用紙 書式ダウンロード: 第1回「茅ヶ崎100年基金」応募用紙 ・団体の紹介資料 ・過去2事業年度の財務報告書 ・団体の今事業年度の収支予算書 ・登記簿謄本/履歴事項全部証明書の写し ・定款"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "本公募では主に茅ヶ崎地域に住む子ども・若者が参加する事業が対象です。"
-    }
-   ]
-  },
-  {
    "hash": "a5d178e8a97fa20c",
    "source": "全社協 福祉の助成情報",
    "sourceKind": "org",
@@ -519,5 +478,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-09-14"
+ "lastFetchDate": "2026-09-15"
 }
