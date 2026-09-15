@@ -1,47 +1,6 @@
 {
- "updatedAt": "2026-09-14T21:03:05.066Z",
+ "updatedAt": "2026-09-15T20:21:54.470Z",
  "items": [
-  {
-   "hash": "2f33b69c8e68fb75",
-   "source": "全社協 福祉の助成情報",
-   "sourceKind": "org",
-   "funder": "大和証券財団",
-   "title": "ボランティア活動助成",
-   "url": "https://www.shakyo.or.jp/guide/sponsor/p/260812daiwa.html",
-   "postedAt": "2026-08-12",
-   "deadline": "2026-09-15",
-   "deadlineType": "date",
-   "deadlineRaw": "2026年9月15日",
-   "summary": "高齢者、障害児・者、子どもへの支援や自然災害の被災者支援などを行うボランティア団体に対し、活動費や普及啓発費用を助成します。",
-   "fields": [
-    "児童",
-    "障害",
-    "高齢"
-   ],
-   "uses": [
-    "行事・啓発"
-   ],
-   "applicants": [
-    "NPO・公益法人",
-    "任意団体"
-   ],
-   "amount": "1団体あたり30万円上限",
-   "conditions": [
-    {
-     "axis": "設立・活動年数",
-     "quote": "設立して間もない団体による応募は、助成対象期間の活動予定が決まっている団体に限ります。"
-    },
-    {
-     "axis": "併願・重複",
-     "quote": "「第9回子ども支援活動助成」の募集を同時に行っています(同時応募はできません)。"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "5名以上で活動し、かつ営利を目的としない団体 (任意団体、NPO法人、財団法人、社団法人、大学のボランティアサークル等)"
-    }
-   ],
-   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260812daiwa.html"
-  },
   {
    "hash": "116ea69aef15c65c",
    "source": "全社協 福祉の助成情報",
@@ -478,5 +437,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-09-15"
+ "lastFetchDate": "2026-09-16"
 }
