@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-16T20:19:02.534Z",
+ "updatedAt": "2026-09-17T20:28:07.133Z",
  "items": [
   {
    "hash": "6b27ebe70841b027",
@@ -489,7 +489,7 @@
    "source": "福祉・介護研修センター 年間予定表",
    "sourceKind": "org",
    "title": "利用者・家族とのコミュニケーション力向上研修",
-   "url": "https://fuku-shakyo-kenshu.jp/info/%e5%88%a9%e7%94%a8%e8%80%85%e3%83%bb%e5%ae%b6%e6%97%8f%e3%81%a8%e3%81%ae%e3%82%b3%e3%83%9f%e3%83%a5%e3%83%8b%e3%82%b1%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e5%8a%9b%e5%90%91%e4%b8%8a%e7%a0%94%e4%bf%ae/",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/08/a4e0393ed40d0b8cc9a09df74d54d88d.pdf",
    "deadline": "2026-10-20",
    "deadlineType": "date",
    "deadlineRaw": "一覧の申込終了日より 10月20日",
@@ -1617,5 +1617,5 @@
    "expireOn": "2026-10-31"
   }
  ],
- "lastFetchDate": "2026-09-17"
+ "lastFetchDate": "2026-09-18"
 }
