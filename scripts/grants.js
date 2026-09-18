@@ -591,8 +591,13 @@ function collectGrantGoryu(srcByName) {
       applicants: [],
       amount: "",
       // ⚠️**undefined にしない**。extractConditions は conditions === undefined を対象に
-      //   本文を取りに行きAIを呼ぶ。空配列なら対象外になり、画面は「記載なし」を出す
+      //   本文を取りに行きAIを呼ぶ。空配列なら対象外になる
       conditions: [],
+      // ⚠️合流の目印（研修の kenshu.js と同じ語彙）。画面はこれを見て「応募の条件」の
+      //   展開を出さない。**conditions が空かどうかでは判定できない**——AIが読んだ結果
+      //   0件だった既存カード（日本郵便年賀寄付金配分事業）があり、そちらは
+      //   「確認できませんでした」を出すことに意味がある（読んだ上で無かった）
+      via: "goryu",
       _source: it.source, // 出どころの行政名（印章は名前判定で［県］が付く）
     });
   }

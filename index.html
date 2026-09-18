@@ -1654,6 +1654,12 @@
 
   function condBlock(it) {
     if (it.conditions === undefined) return "";
+    /* ⚠️P61: 紙面からの合流（via=goryu）は条件をそもそも読んでいない（AIを通さない）。
+       開くと必ず「確認できませんでした」になる展開は情報ゼロなので出さない
+       （P31「予測できる語は書かない」／P46「要点が0件の研修は展開を出さない」と同じ扱い）。
+       ⚠️**conditions が空かどうかでは判定しない**——AIが読んだ結果0件だった既存カードが
+       あり（日本郵便年賀寄付金配分事業）、そちらは「読んだが無かった」ことに意味がある。 */
+    if (it.via === "goryu") return "";
     return quoteBlock({
       label: "応募の条件",
       rows: (it.conditions ?? []).map((c) => ({ axis: c.axis, quote: c.quote })),
