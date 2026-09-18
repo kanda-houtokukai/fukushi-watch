@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-17T20:26:02.962Z",
+ "updatedAt": "2026-09-18T19:47:26.157Z",
  "items": [
   {
    "hash": "116ea69aef15c65c",
@@ -36,6 +36,27 @@
     }
    ],
    "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260831kidsdoor.html"
+  },
+  {
+   "hash": "afbdc2becc112155",
+   "source": "福岡県（子ども・青少年）",
+   "sourceKind": "",
+   "funder": "福岡県（子ども・青少年）",
+   "title": "令和８年度福岡県届出保育施設における性被害防止対策に係る設備等支援事業費補助金についてのお知らせ",
+   "url": "https://www.pref.fukuoka.lg.jp/contents/todokedehoiku-seihigai.html",
+   "postedAt": "2026-09-02",
+   "deadline": "2026-09-30",
+   "deadlineType": "date",
+   "deadlineRaw": "交付申請期限 2026-09-30",
+   "fields": [
+    "児童"
+   ],
+   "summary": "",
+   "uses": [],
+   "applicants": [],
+   "amount": "",
+   "conditions": [],
+   "via": "goryu"
   },
   {
    "hash": "78471666e9e39690",
@@ -269,6 +290,48 @@
    ]
   },
   {
+   "hash": "98f7c0a098770628",
+   "source": "福岡県（子ども・青少年）",
+   "sourceKind": "",
+   "funder": "福岡県（子ども・青少年）",
+   "title": "福岡県こどもホスピス活動支援費補助金について",
+   "url": "https://www.pref.fukuoka.lg.jp/contents/kodomohospice-hojokin.html",
+   "postedAt": "2026-08-27",
+   "deadline": "2026-10-30",
+   "deadlineType": "date",
+   "deadlineRaw": "申請期限 2026-10-30",
+   "fields": [
+    "児童"
+   ],
+   "summary": "",
+   "uses": [],
+   "applicants": [],
+   "amount": "",
+   "conditions": [],
+   "via": "goryu"
+  },
+  {
+   "hash": "45c00d1b0f531d29",
+   "source": "福岡県（子ども・青少年）",
+   "sourceKind": "",
+   "funder": "福岡県（子ども・青少年）",
+   "title": "2027年度ニッセイ財団「児童・少年の健全育成助成」及び「生き生きシニア活動顕彰」候補団体を募集します！",
+   "url": "https://www.pref.fukuoka.lg.jp/contents/nissei2027.html",
+   "postedAt": "2026-09-17",
+   "deadline": "2026-11-04",
+   "deadlineType": "date",
+   "deadlineRaw": "提出期限 2026-11-04",
+   "fields": [
+    "児童"
+   ],
+   "summary": "",
+   "uses": [],
+   "applicants": [],
+   "amount": "",
+   "conditions": [],
+   "via": "goryu"
+  },
+  {
    "hash": "a5d178e8a97fa20c",
    "source": "全社協 福祉の助成情報",
    "sourceKind": "org",
@@ -329,6 +392,90 @@
     }
    ],
    "conditionsUrl": "https://www.akaihane.or.jp/subsidies/sub-corp-prog/47845/"
+  },
+  {
+   "hash": "2dbffd2b88875550",
+   "source": "福岡県（子ども・青少年）",
+   "sourceKind": "",
+   "funder": "福岡県（子ども・青少年）",
+   "title": "福岡県届出保育施設給食費支援金についてのお知らせ",
+   "url": "https://www.pref.fukuoka.lg.jp/contents/todokedehoiku-kyushokushien.html",
+   "postedAt": "2026-09-18",
+   "deadline": "2026-12-18",
+   "deadlineType": "date",
+   "deadlineRaw": "支援金の申請期限 2026-12-18",
+   "fields": [
+    "児童"
+   ],
+   "summary": "",
+   "uses": [],
+   "applicants": [],
+   "amount": "",
+   "conditions": [],
+   "via": "goryu"
+  },
+  {
+   "hash": "840d84b8213158ed",
+   "source": "厚生労働省",
+   "sourceKind": "",
+   "funder": "厚生労働省",
+   "title": "令和８年熊本地震に伴う雇用調整助成金の特例を実施します",
+   "url": "https://www.mhlw.go.jp/stf/newpage_75665.html",
+   "postedAt": "2026-08-21",
+   "deadline": "2027-01-27",
+   "deadlineType": "date",
+   "deadlineRaw": "特例対象となる休業等の開始期限 2027-01-27",
+   "fields": [
+    "共通"
+   ],
+   "summary": "",
+   "uses": [],
+   "applicants": [],
+   "amount": "",
+   "conditions": [],
+   "via": "goryu"
+  },
+  {
+   "hash": "246460a83186a01f",
+   "source": "福岡県（子ども・青少年）",
+   "sourceKind": "",
+   "funder": "福岡県（子ども・青少年）",
+   "title": "経済的にお困りの世帯のこどもの大学等受験料を助成します。",
+   "url": "https://www.pref.fukuoka.lg.jp/contents/daigakutou-jyukenryo.html",
+   "postedAt": "2026-08-28",
+   "deadline": "2027-03-31",
+   "deadlineType": "date",
+   "deadlineRaw": "申請期間 2027-03-31",
+   "fields": [
+    "児童"
+   ],
+   "summary": "",
+   "uses": [],
+   "applicants": [],
+   "amount": "",
+   "conditions": [],
+   "via": "goryu"
+  },
+  {
+   "hash": "630372f257541c2f",
+   "source": "福岡県（子ども・青少年）",
+   "sourceKind": "",
+   "funder": "福岡県（子ども・青少年）",
+   "title": "令和８年度福岡県届出保育施設におけるＩＣＴ導入支援費補助金についてのお知らせ",
+   "url": "https://www.pref.fukuoka.lg.jp/contents/ictshinsei.html",
+   "postedAt": "2026-09-06",
+   "deadline": "2027-10-06",
+   "deadlineType": "date",
+   "deadlineRaw": "補助金交付申請期限 2027-10-06",
+   "fields": [
+    "児童"
+   ],
+   "summary": "",
+   "uses": [],
+   "applicants": [],
+   "amount": "",
+   "conditions": [],
+   "via": "goryu"
   },
   {
    "hash": "10444a14161fc457",
@@ -437,5 +584,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-09-18"
+ "lastFetchDate": "2026-09-19"
 }
