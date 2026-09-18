@@ -547,6 +547,59 @@ async function collectUmanushiRss(src, today) {
  */
 const RSS_METHODS = new Set(["jfc-subsidy-rss", "kyobo-rss", "wam-josei-rss", "umanushi-rss"]);
 
+/* ===========================================================================
+ * 紙面からの助成合流（grant-goryu・P61）
+ * 研修の合流（kenshu.js の collectKenshuGoryu）と同じ型。**外部取得をしない**——
+ * data/deadlines.json（紙面の記事から締切を抽出済み）を読み、助成の語彙で絞って再発行する。
+ * 狙い: 福岡県の補助金は区分=行政の紙面にしか出ず、助成面に載っていなかった（P60の調査）。
+ * ⚠️AIは通さない（API呼び出しを増やさない）。summary・amount・uses・applicants は空、
+ *   conditions は**空配列**にする。P28の「応募の条件」は原文の逐語引用であり、県の発表に
+ *   その構造があるとは限らない。無いものは「記載なし」（P31の[DECISION]）。
+ * ======================================================================== */
+
+const GGORYU_INCLUDE = /助成|補助金|補助事業|給付金|交付金|支援金|支援費/;
+/** ⚠️除外は必須。これが無いと厚労省・こども家庭庁の「内示」12件と、交付後の事後事務
+ *  （仕入控除税額の報告・実績報告）が流れ込む（P58で期限欄から外したのと同じ種類のもの）。
+ *  ⚠️見出しだけでなく**ラベル側にも効かせる**——「…補助金について」の見出しで、
+ *  ラベルが「事業実績報告書の提出期限」の項目があるため（実測）。 */
+const GGORYU_EXCLUDE = /内示|交付額|採択課題|実施結果|贈呈式|仕入控除|実績報告/;
+
+function collectGrantGoryu(srcByName) {
+  const path = join(ROOT, "data", "deadlines.json");
+  if (!existsSync(path)) return { items: [], raw: 0, allowEmpty: true };
+  const list = JSON.parse(readFileSync(path, "utf8")).items ?? [];
+  const items = [];
+  for (const it of list) {
+    if (!GGORYU_INCLUDE.test(it.title)) continue;
+    if (GGORYU_EXCLUDE.test(it.title)) continue;
+    if (GGORYU_EXCLUDE.test(it.label ?? "")) continue;
+    const owner = srcByName.get(it.source);
+    items.push({
+      // ⚠️funder は grantHash の材料。空だとハッシュが不安定になるので源の名前で埋める
+      funder: it.source,
+      title: it.title,
+      url: it.url,
+      postedAt: it.day,
+      deadline: it.deadline,
+      deadlineType: "date",
+      deadlineRaw: `${it.label ?? "締切"} ${it.deadline}`,
+      // ⚠️分野が空だと、画面で分野を絞った瞬間に消える（grantMatches）。
+      //   源の既定分野（P36・正本は sources.md）で機械的に埋め、無い源は「共通」に倒す
+      fields: owner?.defaultFields?.length ? [...owner.defaultFields] : ["共通"],
+      summary: "",
+      uses: [],
+      applicants: [],
+      amount: "",
+      // ⚠️**undefined にしない**。extractConditions は conditions === undefined を対象に
+      //   本文を取りに行きAIを呼ぶ。空配列なら対象外になり、画面は「記載なし」を出す
+      conditions: [],
+      _source: it.source, // 出どころの行政名（印章は名前判定で［県］が付く）
+    });
+  }
+  // ⚠️締切ウォッチが空の朝は0件が正常（構造変化ではない）
+  return { items, raw: list.length, allowEmpty: true };
+}
+
 const COLLECTORS = {
   "zenshakyo-sponsor": async (src) => {
     const items = parseZenshakyoSponsor(await fetchHtml(src.url), src.url);
@@ -557,6 +610,7 @@ const COLLECTORS = {
   "kyobo-rss": async (src, today) => collectKyoboRss(src, today),
   "wam-josei-rss": async (src, today) => collectWamRss(src, today),
   "umanushi-rss": async (src, today) => collectUmanushiRss(src, today),
+  "grant-goryu": async (src, today, srcByName) => collectGrantGoryu(srcByName),
 };
 
 /** 助成の項目ハッシュ。タイトル＋出し手＋URL（締切は延長されうるので入れない） */
@@ -867,7 +921,10 @@ function loadStore() {
 
 async function main() {
   const today = jstToday();
-  const sources = readSources().filter((s) => s.kind === "grant" && s.status === "巡回中");
+  const allSources = readSources();
+  const sources = allSources.filter((s) => s.kind === "grant" && s.status === "巡回中");
+  // 合流が出どころの既定分野（P36）を引くための対応表（区分を問わず全行）
+  const srcByName = new Map(allSources.map((s) => [s.name, s]));
   if (sources.length === 0) {
     console.log("状態が「巡回中」の助成の源がありません（docs/sources.md の区分=助成）");
     return;
@@ -900,10 +957,10 @@ async function main() {
       const collect = COLLECTORS[src.method];
       if (!collect) throw new Error(`巡回方法「${src.method}」に対応するコレクタがありません`);
       console.log(`取得: ${src.name} (${src.url})`);
-      const { items: parsed, raw } = await collect(src, today);
+      const { items: parsed, raw, allowEmpty } = await collect(src, today, srcByName);
       // ★読み取り0件は構造変化の疑いとして失敗扱い（サイレント0件の禁止）。
       //   絞り込み後の0件は正常（募集中が無い時期がある源のため）
-      if (raw === 0) {
+      if (raw === 0 && !allowEmpty) {
         throw new Error("1件も読み取れませんでした（ページ構造の変化の疑い）");
       }
       const open = parsed.filter(
@@ -928,8 +985,12 @@ async function main() {
         // 印章の種別。⚠️WAMは独立行政法人なので「団」ではなく「独」。
         //   sourceKind を空にすると index.html の sealHtml が源の名前から判定する
         //   （"WAM" を含む → 独）。他の助成の源はいずれも全国団体なので "org"（団）
-        const sourceKind = src.method === "wam-josei-rss" ? "" : "org";
-        fresh.push({ hash, source: src.name, sourceKind, _method: src.method, ...it });
+        //   合流（P61）も出どころが行政なので空にする（福岡県 → ［県］が付く）
+        const sourceKind =
+          src.method === "wam-josei-rss" || src.method === "grant-goryu" ? "" : "org";
+        fresh.push({
+          hash, source: it._source ?? src.name, sourceKind, _method: src.method, ...it,
+        });
       }
     } catch (e) {
       console.error(`  失敗（続行）: ${src.name}: ${e.message}`);
@@ -947,13 +1008,24 @@ async function main() {
 
   console.log(`新規${fresh.length}件 / 既知${store.items.length}件 / 期限切れ整理${pruned}件`);
 
-  if (fresh.length > 0 && !dryRun) {
+  // ★P61: 紙面からの合流はAI判定を通さず、そのまま確定させる（API呼び出しを増やさない）。
+  //   タグは源の既定分野だけ・本文系は空。以降の judge/extractConditions の対象にしない。
+  const goryu = fresh.filter((it) => it._method === "grant-goryu");
+  for (const it of goryu) {
+    store.items.push(Object.fromEntries(Object.entries(it).filter(([k]) => !k.startsWith("_"))));
+  }
+  if (goryu.length) {
+    console.log(`  紙面からの合流: ${goryu.length}件（AI判定は通さない・分野は源の既定分野）`);
+  }
+  const aiFresh = fresh.filter((it) => it._method !== "grant-goryu");
+
+  if (aiFresh.length > 0 && !dryRun) {
     const targets = [];
 
     // (a) APIの源: 応募資格(SEIGEN)を新規のみ・1回10件まで読み、本文はAPIが返した文面を使う。
     //     ⚠️禁止文言の確認は全社協への届出で約束したものなので、この源には適用しない
     //     （相手も目的も違う。無関係な相手に確認リクエストを撃たない）
-    const naviFresh = fresh.filter((it) => it._method === "jyosei-navi-api");
+    const naviFresh = aiFresh.filter((it) => it._method === "jyosei-navi-api");
     if (naviFresh.length) {
       await naviFillDetails(naviFresh);
       for (const it of naviFresh) {
@@ -964,11 +1036,11 @@ async function main() {
     }
 
     // (b) RSSの源: 本文(content:encoded)を既に持っているので追加の取得をしない
-    for (const it of fresh.filter((x) => RSS_METHODS.has(x._method))) targets.push(it);
+    for (const it of aiFresh.filter((x) => RSS_METHODS.has(x._method))) targets.push(it);
 
     // (c) HTMLの源(全社協): 個別ページの本文を読む。
     //     ⚠️届出で約束した禁止文言の確認を同じ関門として必ず通す
-    for (const it of fresh.filter(
+    for (const it of aiFresh.filter(
       (x) => x._method !== "jyosei-navi-api" && !RSS_METHODS.has(x._method)
     )) {
       const verdict = await checkReprintNotice(it.url);
@@ -1089,8 +1161,12 @@ async function main() {
   }
   // ★P56①: 全滅でなければ「今日の取得は成功」として記録する（書くのは取得の後）。
   //   grants.js は全滅でも throw しない（前日分を温存する設計）ため、条件で判定する。
-  //   ⚠️外部に出ない源を足すときは、全滅判定の注意を kenshu.js の同処理のコメントで見よ（P58）
-  if (errors.length < sources.length) store.lastFetchDate = today;
+  //   ⚠️★★ 全滅の判定は**外部取得する源だけ**で行う。合流（grant-goryu）は deadlines.json を
+  //   読むだけで外部に出ないため、源の数に含めると**全fetchが失敗した日でも「1つ成功」と
+  //   数えられ、2本目がやり直さない**（P58でkenshuが踏んだ罠。同処理のコメントも見よ）。
+  const fetching = sources.filter((s) => s.method !== "grant-goryu");
+  const fetchFailed = errors.filter((e) => fetching.some((s) => s.name === e.source)).length;
+  if (fetching.length === 0 || fetchFailed < fetching.length) store.lastFetchDate = today;
   mkdirSync(dirname(GRANTS_PATH), { recursive: true });
   writeFileSync(GRANTS_PATH, JSON.stringify(store, null, 1) + "\n");
   const byType = store.items.reduce((a, it) => ((a[it.deadlineType] = (a[it.deadlineType] ?? 0) + 1), a), {});

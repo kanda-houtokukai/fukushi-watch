@@ -70,6 +70,7 @@
 | 18 | 福祉・介護研修センター 年間予定表 | **研修** | https://fuku-shakyo-kenshu.jp/schedule-r8/ | kenshu-schedule | 巡回中 | | 福祉・介護研修センター | | | | | |
 | 19 | 福祉・介護研修センター 新着 | **研修** | https://fuku-shakyo-kenshu.jp/info/ | kenshu-info | 巡回中 | | 福祉・介護研修センター | | | | | |
 | 20 | 紙面からの研修合流（既存6源） | **研修** | なし（data/deadlines.json を読む） | kenshu-goryu | 巡回中 | | | | | | | |
+| 27 | 紙面からの助成合流（既存6源） | **助成** | なし（data/deadlines.json を読む） | grant-goryu | 巡回中 | | | | | | | |
 | 21 | 福岡県介護福祉士会 | **研修** | https://www.f-kaigo.jp/training/index.php | kenshu-fkaigo | 巡回中 | 高齢 | | 研修会の概要・参加申込書 | 開催要綱 | 《 締 切 》 | 《 》 | 日時・会場・講師・参加費・定員・ポイント |
 | 22 | 中央福祉学院（全社協の研修機関） | **研修** | https://www.gakuin.gr.jp/info-cate/course/ | kenshu-gakuin | 見送り | | 中央福祉学院 | | | | | |
 | 23 | 社会福祉士会 サビ管・児発管研修ページ | **研修** | https://www.facsw.or.jp/service_training/select | kenshu-watch | 巡回中 | 障害 | 社会福祉士会 | | | | | |
