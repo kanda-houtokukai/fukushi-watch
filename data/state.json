@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-09-18T19:45:18.958Z",
+      "lastCrawled": "2026-09-19T19:23:21.890Z",
       "items": [
         {
           "hash": "4dbac670b03ea855",
@@ -720,7 +720,7 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-09-18T19:45:19.939Z",
+      "lastCrawled": "2026-09-19T19:23:22.279Z",
       "items": [
         {
           "hash": "585b423bfa811e9d",
@@ -4484,7 +4484,7 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-09-18T19:45:21.463Z",
+      "lastCrawled": "2026-09-19T19:23:23.284Z",
       "items": [
         {
           "hash": "a10e1320fb28c260",
@@ -6400,7 +6400,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-09-18T19:45:22.938Z",
+      "lastCrawled": "2026-09-19T19:23:24.175Z",
       "items": [
         {
           "hash": "1de28bf4c7f6556e",
@@ -6678,7 +6678,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-09-18T19:45:23.156Z",
+      "lastCrawled": "2026-09-19T19:23:24.432Z",
       "items": [
         {
           "hash": "89e0799b4a2b2116",
@@ -7290,8 +7290,22 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-09-18T19:45:24.345Z",
+      "lastCrawled": "2026-09-19T19:23:25.792Z",
       "items": [
+        {
+          "hash": "dc07842a3787f4e0",
+          "title": "介護・障害福祉の支援「急を要する」 上野厚労相、来年度改定での賃上げ・経営安定に意欲",
+          "url": "https://www.joint-kaigo.com/articles/48914/",
+          "date": "2026-09-19",
+          "category": "政府与党"
+        },
+        {
+          "hash": "dff5194c0cc07e5f",
+          "title": "介護経営DBが10月から受付再開 事業者の経営情報の報告、12月末頃までに",
+          "url": "https://www.joint-kaigo.com/articles/48907/",
+          "date": "2026-09-19",
+          "category": "超高齢化"
+        },
         {
           "hash": "bc39014e50d30488",
           "title": "住宅型ホームの「囲い込み」対策 ケアマネの独立性を法令上の登録基準に明記 厚労省案",
@@ -7304,7 +7318,7 @@
           "title": "高市首相、医療・介護のAI活用加速を表明 第2次高市改造内閣が発足",
           "url": "https://www.joint-kaigo.com/articles/48874/",
           "date": "2026-09-17",
-          "category": "政府与党"
+          "category": "生産性向上"
         },
         {
           "hash": "8e45199d5c665e59",
@@ -7346,7 +7360,7 @@
           "title": "介護報酬改定、2年に1度の案も 3年サイクルの見直しを求める声が相次ぐ",
           "url": "https://www.joint-kaigo.com/articles/48755/",
           "date": "2026-09-15",
-          "category": "超高齢化"
+          "category": "介護給付費分科会"
         },
         {
           "hash": "b5f944330da18fe8",
@@ -7708,7 +7722,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-09-18T19:45:23.342Z",
+      "lastCrawled": "2026-09-19T19:23:24.693Z",
       "items": [
         {
           "hash": "ab8de273f8706135",
@@ -8126,7 +8140,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-09-18T19:45:25.350Z",
+      "lastCrawled": "2026-09-19T19:23:26.453Z",
       "items": [
         {
           "hash": "aebde44e576980a5",
@@ -8580,7 +8594,7 @@
     }
   },
   "preferredModel": "gemini-3.5-flash-lite",
-  "lastSentDate": "2026-09-19",
-  "lastRunAt": "2026-09-19T01:17:42.594Z",
-  "lastCrawlDate": "2026-09-19"
+  "lastSentDate": "2026-09-20",
+  "lastRunAt": "2026-09-19T19:23:27.403Z",
+  "lastCrawlDate": "2026-09-20"
 }
