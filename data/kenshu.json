@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-19T19:25:45.080Z",
+ "updatedAt": "2026-09-20T19:36:02.185Z",
  "items": [
   {
    "hash": "b623f3444f49a6f1",
@@ -198,7 +198,7 @@
    "source": "福祉・介護研修センター 年間予定表",
    "sourceKind": "org",
    "title": "リスクマネジメント研修",
-   "url": "https://fuku-shakyo-kenshu.jp/info/%e3%83%aa%e3%82%b9%e3%82%af%e3%83%9e%e3%83%8d%e3%82%b8%e3%83%a1%e3%83%b3%e3%83%88%e7%a0%94%e4%bf%ae/",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/08/a836a112a72befc59251375a8528f110.pdf",
    "deadline": "2026-10-02",
    "deadlineType": "date",
    "deadlineRaw": "一覧の申込終了日より 10月2日",
@@ -586,6 +586,26 @@
    "outlineUrl": "https://www.f-kaigo.jp/upimg/c6a69855ded6ca.pdf"
   },
   {
+   "hash": "a33ead884bd46368",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "via": "schedule",
+   "title": "記録技術研修(高齢者分野)",
+   "url": "https://fuku-shakyo-kenshu.jp/info/%e8%a8%98%e9%8c%b2%e6%8a%80%e8%a1%93%e7%a0%94%e4%bf%ae%ef%bc%88%e9%ab%98%e9%bd%a2%e8%80%85%e5%88%86%e9%87%8e%ef%bc%89%e3%81%ae%e9%96%8b%e5%82%ac%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/",
+   "deadline": "2026-10-28",
+   "deadlineType": "date",
+   "deadlineRaw": "一覧の申込終了日より 10月28日",
+   "openFrom": "2026-09-20",
+   "fields": [
+    "高齢"
+   ],
+   "kind": "テーマ別",
+   "expireOn": "2027-01-28",
+   "heldDates": [
+    "2026-11-19"
+   ]
+  },
+  {
    "hash": "08c77a08100dc191",
    "source": "福岡県介護福祉士会",
    "sourceKind": "org",
@@ -700,54 +720,6 @@
    "preOpenNote": "9月~12月開催予定",
    "preOpenSort": "2026-09",
    "expireOn": "2027-01-31"
-  },
-  {
-   "hash": "a768a91c7c2d70d3",
-   "source": "福岡県介護福祉士会",
-   "sourceKind": "org",
-   "via": "fkaigo",
-   "title": "成果を高める!発展の介護DX講座",
-   "url": "https://www.f-kaigo.jp/training/detail_498.php",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "開催要綱PDFより 令和8年9月3日（締切後も受け付けることがあります）",
-   "heldDates": [
-    "2026-09-20"
-   ],
-   "expireOn": "2026-09-20",
-   "openFrom": null,
-   "fields": [
-    "高齢"
-   ],
-   "kind": "テーマ別",
-   "keepUntilHeld": true,
-   "outline": [
-    {
-     "name": "日時",
-     "value": "令和８年９月２０日（日）９：３０～１１：３０（受付９：００～）"
-    },
-    {
-     "name": "会場",
-     "value": "サザンクス筑後研修室➀（福岡県筑後市大字若菜１１０４）"
-    },
-    {
-     "name": "講師",
-     "value": "大森和義氏（麻生教育サービス株式会社介護ＤＸ支援センターセンター長）"
-    },
-    {
-     "name": "参加費",
-     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
-    },
-    {
-     "name": "定員",
-     "value": "２０名"
-    },
-    {
-     "name": "ポイント",
-     "value": "２ポイント"
-    }
-   ],
-   "outlineUrl": "https://www.f-kaigo.jp/upimg/a6a6983376a6af.pdf"
   },
   {
    "hash": "30904cd2dee8cab9",
@@ -987,25 +959,6 @@
    "openFrom": null,
    "fields": [
     "障害"
-   ],
-   "kind": "テーマ別",
-   "preOpenNote": "11月~12月開催予定",
-   "preOpenSort": "2026-11",
-   "expireOn": "2027-01-31"
-  },
-  {
-   "hash": "e5bff3b06feee328",
-   "source": "福祉・介護研修センター 年間予定表",
-   "sourceKind": "org",
-   "via": "schedule",
-   "title": "記録技術研修(高齢者分野)",
-   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/#link3",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "11月~12月開催予定",
-   "openFrom": null,
-   "fields": [
-    "高齢"
    ],
    "kind": "テーマ別",
    "preOpenNote": "11月~12月開催予定",
@@ -1531,5 +1484,5 @@
    "expireOn": "2026-10-31"
   }
  ],
- "lastFetchDate": "2026-09-20"
+ "lastFetchDate": "2026-09-21"
 }
