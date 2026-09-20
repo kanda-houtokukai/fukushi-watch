@@ -1,25 +1,6 @@
 {
-  "generatedAt": "2026-09-19T19:23:26.456Z",
+  "generatedAt": "2026-09-20T01:18:33.239Z",
   "newItems": [],
-  "newPress": [
-    {
-      "source": "介護ニュースJoint",
-      "kind": "press",
-      "hash": "dc07842a3787f4e0",
-      "title": "介護・障害福祉の支援「急を要する」 上野厚労相、来年度改定での賃上げ・経営安定に意欲",
-      "url": "https://www.joint-kaigo.com/articles/48914/",
-      "date": "2026-09-19",
-      "category": "政府与党"
-    },
-    {
-      "source": "介護ニュースJoint",
-      "kind": "press",
-      "hash": "dff5194c0cc07e5f",
-      "title": "介護経営DBが10月から受付再開 事業者の経営情報の報告、12月末頃までに",
-      "url": "https://www.joint-kaigo.com/articles/48907/",
-      "date": "2026-09-19",
-      "category": "超高齢化"
-    }
-  ],
+  "newPress": [],
   "crawlErrors": []
 }
