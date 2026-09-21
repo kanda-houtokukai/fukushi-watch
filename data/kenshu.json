@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-20T19:36:02.185Z",
+ "updatedAt": "2026-09-21T21:11:06.156Z",
  "items": [
   {
    "hash": "b623f3444f49a6f1",
@@ -473,7 +473,7 @@
    "sourceKind": "org",
    "via": "schedule",
    "title": "感染症予防研修(後期)",
-   "url": "https://fuku-shakyo-kenshu.jp/info/%e6%84%9f%e6%9f%93%e7%97%87%e4%ba%88%e9%98%b2%e7%a0%94%e4%bf%ae%e3%83%bb%e5%be%8c%e6%9c%9f%ef%bc%88%ef%bd%97%ef%bd%85%ef%bd%82%e7%a0%94%e4%bf%ae%ef%bc%89%e3%81%ae%e9%96%8b%e5%82%ac%e3%81%ab%e3%81%a4/",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/08/e9884305e5ec37f96e4c3bf628e95c9b.pdf",
    "deadline": "2026-10-20",
    "deadlineType": "date",
    "deadlineRaw": "一覧の申込終了日より 10月20日",
@@ -1484,5 +1484,5 @@
    "expireOn": "2026-10-31"
   }
  ],
- "lastFetchDate": "2026-09-21"
+ "lastFetchDate": "2026-09-22"
 }

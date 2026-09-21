@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-09-20T19:33:22.986Z",
+      "lastCrawled": "2026-09-21T21:08:33.701Z",
       "items": [
         {
           "hash": "4dbac670b03ea855",
@@ -720,7 +720,7 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-09-20T19:33:23.216Z",
+      "lastCrawled": "2026-09-21T21:08:34.674Z",
       "items": [
         {
           "hash": "585b423bfa811e9d",
@@ -4484,7 +4484,7 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-09-20T19:33:24.342Z",
+      "lastCrawled": "2026-09-21T21:08:36.020Z",
       "items": [
         {
           "hash": "a10e1320fb28c260",
@@ -6400,7 +6400,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-09-20T19:33:25.532Z",
+      "lastCrawled": "2026-09-21T21:08:37.655Z",
       "items": [
         {
           "hash": "1de28bf4c7f6556e",
@@ -6678,7 +6678,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-09-20T19:33:26.055Z",
+      "lastCrawled": "2026-09-21T21:08:38.557Z",
       "items": [
         {
           "hash": "89e0799b4a2b2116",
@@ -7290,8 +7290,22 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-09-20T19:33:27.185Z",
+      "lastCrawled": "2026-09-21T21:08:40.071Z",
       "items": [
+        {
+          "hash": "cdbb88bf61396e6f",
+          "title": "介護情報基盤、全国の約9割の市町村で来年度までに始動 2028年度から全国運用へ",
+          "url": "https://www.joint-kaigo.com/articles/48942/",
+          "date": "2026-09-21",
+          "category": "テクノロジ"
+        },
+        {
+          "hash": "31c44d2f18a6828c",
+          "title": "住宅型ホーム、人員配置の規制を強化 日中は職員常駐 夜間はオンコール体制を義務化 厚労省案",
+          "url": "https://www.joint-kaigo.com/articles/48928/",
+          "date": "2026-09-21",
+          "category": "超高齢化"
+        },
         {
           "hash": "dc07842a3787f4e0",
           "title": "介護・障害福祉の支援「急を要する」 上野厚労相、来年度改定での賃上げ・経営安定に意欲",
@@ -7304,7 +7318,7 @@
           "title": "介護経営DBが10月から受付再開 事業者の経営情報の報告、12月末頃までに",
           "url": "https://www.joint-kaigo.com/articles/48907/",
           "date": "2026-09-19",
-          "category": "超高齢化"
+          "category": "介護保険"
         },
         {
           "hash": "bc39014e50d30488",
@@ -7318,7 +7332,7 @@
           "title": "高市首相、医療・介護のAI活用加速を表明 第2次高市改造内閣が発足",
           "url": "https://www.joint-kaigo.com/articles/48874/",
           "date": "2026-09-17",
-          "category": "生産性向上"
+          "category": "政府与党"
         },
         {
           "hash": "8e45199d5c665e59",
@@ -7346,7 +7360,7 @@
           "title": "介護施設の夜勤に安心を 外部看護師が夜間オンコールを代行 相談20万件突破",
           "url": "https://www.joint-kaigo.com/articles/48785/",
           "date": "2026-09-16",
-          "category": "超高齢化"
+          "category": "生産性向上"
         },
         {
           "hash": "327dd90096899429",
@@ -7722,7 +7736,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-09-20T19:33:26.544Z",
+      "lastCrawled": "2026-09-21T21:08:39.085Z",
       "items": [
         {
           "hash": "ab8de273f8706135",
@@ -8140,7 +8154,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-09-20T19:33:27.846Z",
+      "lastCrawled": "2026-09-21T21:08:41.167Z",
       "items": [
         {
           "hash": "aebde44e576980a5",
@@ -8594,7 +8608,7 @@
     }
   },
   "preferredModel": "gemini-3.5-flash-lite",
-  "lastSentDate": "2026-09-21",
-  "lastRunAt": "2026-09-21T01:15:08.503Z",
-  "lastCrawlDate": "2026-09-21"
+  "lastSentDate": "2026-09-22",
+  "lastRunAt": "2026-09-21T21:08:42.136Z",
+  "lastCrawlDate": "2026-09-22"
 }
