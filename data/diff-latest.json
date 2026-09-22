@@ -1,25 +1,6 @@
 {
-  "generatedAt": "2026-09-21T21:08:41.170Z",
+  "generatedAt": "2026-09-22T01:38:44.750Z",
   "newItems": [],
-  "newPress": [
-    {
-      "source": "介護ニュースJoint",
-      "kind": "press",
-      "hash": "cdbb88bf61396e6f",
-      "title": "介護情報基盤、全国の約9割の市町村で来年度までに始動 2028年度から全国運用へ",
-      "url": "https://www.joint-kaigo.com/articles/48942/",
-      "date": "2026-09-21",
-      "category": "テクノロジ"
-    },
-    {
-      "source": "介護ニュースJoint",
-      "kind": "press",
-      "hash": "31c44d2f18a6828c",
-      "title": "住宅型ホーム、人員配置の規制を強化 日中は職員常駐 夜間はオンコール体制を義務化 厚労省案",
-      "url": "https://www.joint-kaigo.com/articles/48928/",
-      "date": "2026-09-21",
-      "category": "超高齢化"
-    }
-  ],
+  "newPress": [],
   "crawlErrors": []
 }
