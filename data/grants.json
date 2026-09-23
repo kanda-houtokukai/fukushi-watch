@@ -1,42 +1,6 @@
 {
- "updatedAt": "2026-09-22T20:16:27.095Z",
+ "updatedAt": "2026-09-23T20:32:30.765Z",
  "items": [
-  {
-   "hash": "116ea69aef15c65c",
-   "source": "全社協 福祉の助成情報",
-   "sourceKind": "org",
-   "funder": "キッズドア",
-   "title": "進学応援奨学金2026 supported by 日本生命",
-   "url": "https://www.shakyo.or.jp/guide/sponsor/p/260831kidsdoor.html",
-   "postedAt": "2026-08-31",
-   "deadline": "2026-09-23",
-   "deadlineType": "date",
-   "deadlineRaw": "2026年9月23日",
-   "summary": "経済的に困難な世帯から大学・短大等への進学をめざす高校3年生等を対象とした給付型奨学金の支給。",
-   "fields": [
-    "共通"
-   ],
-   "uses": [],
-   "applicants": [
-    "個人"
-   ],
-   "amount": "1人につき10万円",
-   "conditions": [
-    {
-     "axis": "主体の付帯条件",
-     "quote": "応募方法は、電子申請によります。"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "経済的に困難なご家庭から大学・短大等への進学をめざす高校3年生、浪人生(1浪まで)等に、給付型奨学金を募集しています。"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "児童扶養手当受給世帯、住民税非課税世帯、生活保護世帯、社会的養護下、のご家庭が対象です。"
-    }
-   ],
-   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260831kidsdoor.html"
-  },
   {
    "hash": "afbdc2becc112155",
    "source": "福岡県（子ども・青少年）",
@@ -584,5 +548,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-09-23"
+ "lastFetchDate": "2026-09-24"
 }

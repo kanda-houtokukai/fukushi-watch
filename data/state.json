@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-09-22T20:15:53.618Z",
+      "lastCrawled": "2026-09-23T20:32:01.139Z",
       "items": [
         {
           "hash": "4dbac670b03ea855",
@@ -720,7 +720,7 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-09-22T20:15:55.511Z",
+      "lastCrawled": "2026-09-23T20:32:02.054Z",
       "items": [
         {
           "hash": "585b423bfa811e9d",
@@ -4484,7 +4484,7 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-09-22T20:15:56.521Z",
+      "lastCrawled": "2026-09-23T20:32:03.352Z",
       "items": [
         {
           "hash": "a10e1320fb28c260",
@@ -6400,7 +6400,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-09-22T20:15:58.473Z",
+      "lastCrawled": "2026-09-23T20:32:05.046Z",
       "items": [
         {
           "hash": "1de28bf4c7f6556e",
@@ -6678,7 +6678,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-09-22T20:15:58.672Z",
+      "lastCrawled": "2026-09-23T20:32:05.395Z",
       "items": [
         {
           "hash": "89e0799b4a2b2116",
@@ -7290,7 +7290,7 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-09-22T20:15:59.584Z",
+      "lastCrawled": "2026-09-23T20:32:06.803Z",
       "items": [
         {
           "hash": "cdbb88bf61396e6f",
@@ -7736,7 +7736,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-09-22T20:15:58.852Z",
+      "lastCrawled": "2026-09-23T20:32:05.756Z",
       "items": [
         {
           "hash": "ab8de273f8706135",
@@ -8161,7 +8161,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-09-22T20:16:00.423Z",
+      "lastCrawled": "2026-09-23T20:32:07.829Z",
       "items": [
         {
           "hash": "aebde44e576980a5",
@@ -8615,7 +8615,7 @@
     }
   },
   "preferredModel": "gemini-3.5-flash-lite",
-  "lastSentDate": "2026-09-23",
-  "lastRunAt": "2026-09-23T01:33:39.171Z",
-  "lastCrawlDate": "2026-09-23"
+  "lastSentDate": "2026-09-24",
+  "lastRunAt": "2026-09-23T20:32:07.967Z",
+  "lastCrawlDate": "2026-09-24"
 }
