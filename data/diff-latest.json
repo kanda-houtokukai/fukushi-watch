@@ -1,6 +1,305 @@
 {
-  "generatedAt": "2026-09-25T01:38:18.319Z",
-  "newItems": [],
-  "newPress": [],
+  "generatedAt": "2026-09-25T20:34:11.747Z",
+  "newItems": [
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "0581fb0ed65014aa",
+      "title": "中司大臣記者会見（令和8年9月25日）を掲載しました",
+      "url": "https://www.cfa.go.jp/speech/af0437cd",
+      "date": "2026-09-25",
+      "category": "政策"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "ce333aa6cef9dee1",
+      "title": "「こども性暴力防止法」に関する情報処理安全確保支援士への相談支援を開始します（民間の中小規模事業者向け）",
+      "url": "https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/security-specialist",
+      "date": "2026-09-25",
+      "category": "政策"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "5c354e02cc08d276",
+      "title": "国民健康保険実態調査に関する報告システムについて",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/iryouhoken/database/seido/kokuho_jittai_system.html",
+      "date": "2026-09-28",
+      "category": "統計情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "d918bfd73304c915",
+      "title": "「医師法第16条の10第１項に基づく厚生労働大臣から一般社団法人日本専門医機構等への意見」について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76393.html",
+      "date": "2026-09-25",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "00329f6e78b43623",
+      "title": "令和８年９月２５日付大臣会見概要",
+      "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00970.html",
+      "date": "2026-09-25",
+      "category": "大臣会見等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "f135b5b92ff8a1bb",
+      "title": "第４回介護保険制度における預貯金等の把握等に係る検討の場の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76380.html",
+      "date": "2026-09-25",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "a93571c393335154",
+      "title": "「人口動態統計速報」令和８（2026）年07月分",
+      "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/s2026/07.html",
+      "date": "2026-09-25",
+      "category": "統計情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "b8d56f7fb223da0f",
+      "title": "妊娠・出産・産後における診療やケアの内容等に関する検討会",
+      "url": "https://www.mhlw.go.jp/stf/shingi/other-hoken_474087_00009.html",
+      "date": "2026-09-25",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "7e8a69487862f322",
+      "title": "健康的で持続可能な食環境戦略イニシアチブ オープンフォーラム2026「食環境づくりを通じた企業と社会の価値創出～もっと大きなムーブメントへ～」 開催のお知らせ",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76354.html",
+      "date": "2026-09-25",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "53bde4908d956a78",
+      "title": "第188回市町村職員を対象とするセミナー「頼れる身寄りがいない高齢者等への支援について」開催案内",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76326.html",
+      "date": "2026-09-25",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "6716032ab8771334",
+      "title": "令和７（2025）年「転職者実態調査」の結果を公表します",
+      "url": "https://www.mhlw.go.jp/toukei/list/6-18c-r07.html",
+      "date": "2026-09-25",
+      "category": "統計情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "3f7763216b3bae5d",
+      "title": "第41回労働政策審議会労働政策基本部会を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75993.html",
+      "date": "2026-09-25",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "3301dc033cb7c497",
+      "title": "労働者派遣事業及び有料の職業紹介事業の許可を取り消しました",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75956.html",
+      "date": "2026-09-25",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "dd3f3bc3ffce2947",
+      "title": "労働者派遣事業の許可を取り消しました（関係派遣先派遣割合報告書未提出）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75794.html",
+      "date": "2026-09-25",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "3290cc128825510d",
+      "title": "かかりつけ医機能に関する情報の医療情報ネット（ナビイ）での提供について",
+      "url": "https://www.mhlw.go.jp/stf/houdou/newpage_75698.html",
+      "date": "2026-09-25",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "9b94a5061d332bcd",
+      "title": "インドネシアにおける入国前結核スクリーニングを開始します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76360.html",
+      "date": "2026-09-25",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "5e4d26b0a77fae01",
+      "title": "令和９～11年度教育訓練給付金情報管理・検索システムのガバメントクラウド移行及びシステム刷新に係る設計・開発及び運用保守業務一式",
+      "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-iken/newpage_10506.html",
+      "date": "2026-09-25",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "9dfc27435122660a",
+      "title": "令和９～10年教育訓練給付金情報管理・検索システムのガバメントクラウド移行及び刷新に係る設計・開発のための工程管理支援業務一式",
+      "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-iken/newpage_10505.html",
+      "date": "2026-09-25",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "345cae2b3bf2cbe9",
+      "title": "第92回労働政策審議会雇用環境・均等分科会（ペーパーレス会議）を開催します（開催案内）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76341.html",
+      "date": "2026-09-25",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "f90af18329e746e7",
+      "title": "労働政策審議会 (雇用環境・均等分科会）",
+      "url": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126989.html",
+      "date": "2026-09-25",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "525a701a936bf0d2",
+      "title": "ＵＨＣナレッジハブの第六回調整委員会の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76368.html",
+      "date": "2026-09-24",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "eb75516cec5d9892",
+      "title": "第３回死因究明等推進計画検証等推進会議を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76210.html",
+      "date": "2026-09-14",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "d0a23c45d6d5afff",
+      "title": "第26回匿名医療・介護情報等の提供に関する委員会 開催案内",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76202.html",
+      "date": "2026-09-14",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "f1fa8570146ff46d",
+      "title": "第２回介護保険制度における預貯金等の把握等に係る検討の場議事要旨",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75238.html",
+      "date": "2026-08-03",
+      "category": "審議会等"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "36c4c09f02472345",
+      "title": "第64回 障害福祉サービス等報酬改定検討チーム（令和8年9月28日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22893&ct=070010040&from=rss",
+      "date": "2026-09-25",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "e2b8ac7fae15b343",
+      "title": "麻しん最新情報（令和8年9月24日更新）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22897&ct=030100110&from=rss",
+      "date": "2026-09-25",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "4c9f64bdddd579df",
+      "title": "風しん最新情報（令和8年9月24日更新）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22896&ct=030100130&from=rss",
+      "date": "2026-09-25",
+      "category": "行政資料"
+    },
+    {
+      "source": "福岡県（介護・高齢者福祉）",
+      "kind": "gov",
+      "hash": "1608629da8abaec5",
+      "title": "令和８年度に１００歳を迎えられる阿部史郎さんを訪問しました",
+      "url": "https://www.pref.fukuoka.lg.jp/site/chiji-top/100sai08.html",
+      "date": "2026年9月20日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（介護・高齢者福祉）",
+      "kind": "gov",
+      "hash": "6e570160d09f95cf",
+      "title": "福岡県身体拘束ゼロ宣言を実施しています",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/zerosengen.html",
+      "date": "2026年9月25日更新",
+      "category": ""
+    },
+    {
+      "source": "全国社会福祉協議会",
+      "kind": "org",
+      "hash": "9d7e8c8c78955157",
+      "title": "キリン福祉財団「キリン・地域のちから応援事業」",
+      "url": "https://www.shakyo.or.jp/guide/sponsor/p/260925kirinC.html",
+      "date": "2026-09-25",
+      "category": "助成"
+    },
+    {
+      "source": "全国社会福祉協議会",
+      "kind": "org",
+      "hash": "516538b5f32b1af5",
+      "title": "キリン福祉財団「キリン・福祉のちから開拓事業」",
+      "url": "https://www.shakyo.or.jp/guide/sponsor/p/260925kirinH.html",
+      "date": "2026-09-25",
+      "category": "助成"
+    }
+  ],
+  "newPress": [
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "fda0ff8e880207b0",
+      "title": "障害福祉の訪問サービス、支援に不可欠な車移動を評価 厚労省提案 来年度報酬改定へ検討",
+      "url": "https://www.joint-kaigo.com/articles/48991/",
+      "date": "2026-09-25",
+      "category": "共生社会"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "6e49553f459142a6",
+      "title": "行動援護の職員の資格要件、減算付きで経過措置を3年延長 厚労省提案｜障害福祉報酬改定",
+      "url": "https://www.joint-kaigo.com/articles/48974/",
+      "date": "2026-09-25",
+      "category": "共生社会"
+    }
+  ],
   "crawlErrors": []
 }
