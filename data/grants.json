@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-25T20:36:02.045Z",
+ "updatedAt": "2026-09-26T19:59:02.017Z",
  "items": [
   {
    "hash": "afbdc2becc112155",
@@ -475,6 +475,54 @@
    "via": "goryu"
   },
   {
+   "hash": "f26c6e17688b01fd",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "2026年度＜特定課題＞先端技術と共創する新たな人間社会",
+   "url": "https://www.jfc.or.jp/news_subsidy/2026%e5%b9%b4%e5%ba%a6%ef%bc%9c%e7%89%b9%e5%ae%9a%e8%aa%b2%e9%a1%8c%ef%bc%9e%e5%85%88%e7%ab%af%e6%8a%80%e8%a1%93%e3%81%a8%e5%85%b1%e5%89%b5%e3%81%99%e3%82%8b%e6%96%b0%e3%81%9f%e3%81%aa%e4%ba%ba-2/",
+   "postedAt": "2026-09-11",
+   "deadline": "2026-11-13",
+   "deadlineType": "date",
+   "deadlineRaw": "2026/11/13 締め切り時間:日本時間15:00 個人研究プロジェクト 募集要項 https",
+   "openFrom": "2026-09-10",
+   "conditionsUrl": "https://www.toyotafound.or.jp/grant/advanced/",
+   "summary": "先端的なデジタル技術をめぐる社会的諸課題に対応する独創的な個人研究プロジェクトを支援する助成です。助成開始時に40歳以下の若手研究者が応募できます。",
+   "fields": [
+    "共通"
+   ],
+   "uses": [
+    "研究・調査"
+   ],
+   "applicants": [
+    "個人",
+    "研究者・大学"
+   ],
+   "amount": "2,000千円/1件（総額5,000千円）",
+   "conditions": [
+    {
+     "axis": "所在地",
+     "quote": "プロジェクト代表者の主たる居住地が日本国内で"
+    },
+    {
+     "axis": "主体の付帯条件",
+     "quote": "日本語で日常的なコミュニケーションがとれること。応募書類の受け付けは日本語のみとなります。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "先端的なデジタル技術をとりまく社会的諸課題の解決に資するプロジェクトであること。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "2 名以上による共同研究プロジェクトで、代表者の年齢が助成開始時に 45 歳以下であること。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "助成開始時の年齢が40歳以下であること。"
+    }
+   ]
+  },
+  {
    "hash": "a5d178e8a97fa20c",
    "source": "全社協 福祉の助成情報",
    "sourceKind": "org",
@@ -727,5 +775,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-09-26"
+ "lastFetchDate": "2026-09-27"
 }

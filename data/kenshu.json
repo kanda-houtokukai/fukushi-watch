@@ -1,6 +1,54 @@
 {
- "updatedAt": "2026-09-25T20:38:05.096Z",
+ "updatedAt": "2026-09-26T20:00:07.354Z",
  "items": [
+  {
+   "hash": "9bcf747e04350e94",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "【※会場が変更になりました】運動実践のポイントについて理解を深めよう",
+   "url": "https://www.f-kaigo.jp/training/detail_482.php",
+   "deadline": "2026-10-01",
+   "deadlineType": "date",
+   "deadlineRaw": "開催要綱PDFより 令和8年10月1日",
+   "heldDates": [
+    "2026-10-17"
+   ],
+   "expireOn": "2026-10-17",
+   "openFrom": null,
+   "fields": [
+    "高齢"
+   ],
+   "kind": "テーマ別",
+   "outline": [
+    {
+     "name": "日時",
+     "value": "令和８年１０月１７日(土)１４：００～１６：００(受付１３：３０～)"
+    },
+    {
+     "name": "会場",
+     "value": "えーるピア久留米(久留米市諏訪野町１８３０－６)※予定\n有料駐車場有西鉄久留米駅から徒歩で１０分"
+    },
+    {
+     "name": "講師",
+     "value": "田口尚人氏（医学博士、社会福祉士）"
+    },
+    {
+     "name": "参加費",
+     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
+    },
+    {
+     "name": "定員",
+     "value": "２０名"
+    },
+    {
+     "name": "ポイント",
+     "value": "２ポイント"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/l69eef2af3aae5.pdf",
+   "keepUntilHeld": true
+  },
   {
    "hash": "4a9b499f836613ee",
    "source": "福岡県介護福祉士会",
@@ -96,54 +144,6 @@
     }
    ],
    "outlineUrl": "https://www.f-kaigo.jp/upimg/x69eef26ad663f.pdf"
-  },
-  {
-   "hash": "9f04495d6ba53b32",
-   "source": "福岡県介護福祉士会",
-   "sourceKind": "org",
-   "via": "fkaigo",
-   "title": "運動実践のポイントについて理解を深めよう",
-   "url": "https://www.f-kaigo.jp/training/detail_482.php",
-   "deadline": "2026-10-01",
-   "deadlineType": "date",
-   "deadlineRaw": "開催要綱PDFより 令和8年10月1日",
-   "heldDates": [
-    "2026-10-17"
-   ],
-   "expireOn": "2026-10-17",
-   "openFrom": null,
-   "fields": [
-    "高齢"
-   ],
-   "kind": "テーマ別",
-   "keepUntilHeld": true,
-   "outline": [
-    {
-     "name": "日時",
-     "value": "令和８年１０月１７日(土)１４：００～１６：００(受付１３：３０～)"
-    },
-    {
-     "name": "会場",
-     "value": "えーるピア久留米(久留米市諏訪野町１８３０－６)※予定\n有料駐車場有西鉄久留米駅から徒歩で１０分"
-    },
-    {
-     "name": "講師",
-     "value": "田口尚人氏（医学博士、社会福祉士）"
-    },
-    {
-     "name": "参加費",
-     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
-    },
-    {
-     "name": "定員",
-     "value": "２０名"
-    },
-    {
-     "name": "ポイント",
-     "value": "２ポイント"
-    }
-   ],
-   "outlineUrl": "https://www.f-kaigo.jp/upimg/l69eef2af3aae5.pdf"
   },
   {
    "hash": "abf92a3c3c034ebf",
@@ -399,27 +399,6 @@
    "outlineUrl": "https://www.f-kaigo.jp/upimg/q69eef3474b1c3.pdf"
   },
   {
-   "hash": "9cf8124aaa8ddc56",
-   "source": "福祉・介護研修センター 年間予定表",
-   "sourceKind": "org",
-   "title": "利用者・家族とのコミュニケーション力向上研修",
-   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/08/a4e0393ed40d0b8cc9a09df74d54d88d.pdf",
-   "deadline": "2026-10-20",
-   "deadlineType": "date",
-   "deadlineRaw": "一覧の申込終了日より 10月20日",
-   "openFrom": "2026-08-18",
-   "fields": [
-    "共通"
-   ],
-   "kind": "テーマ別",
-   "via": "schedule",
-   "heldDates": [
-    "2026-11-24",
-    "2026-11-26"
-   ],
-   "expireOn": "2027-01-20"
-  },
-  {
    "hash": "bd9d9bbb6c10e43d",
    "source": "福祉・介護研修センター 年間予定表",
    "sourceKind": "org",
@@ -672,54 +651,6 @@
    "preOpenNote": "9月~12月開催予定",
    "preOpenSort": "2026-09",
    "expireOn": "2027-01-31"
-  },
-  {
-   "hash": "30904cd2dee8cab9",
-   "source": "福岡県介護福祉士会",
-   "sourceKind": "org",
-   "via": "fkaigo",
-   "title": "身体拘束・虐待について基本を振り返ろう!",
-   "url": "https://www.f-kaigo.jp/training/detail_480.php",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "開催要綱PDFより 令和8年9月3日（締切後も受け付けることがあります）",
-   "heldDates": [
-    "2026-09-26"
-   ],
-   "expireOn": "2026-09-26",
-   "openFrom": null,
-   "fields": [
-    "共通"
-   ],
-   "kind": "法令対応",
-   "keepUntilHeld": true,
-   "outline": [
-    {
-     "name": "日時",
-     "value": "令和８年９月２６日（土）１０：３０～１２：３０（受付１０：００～）"
-    },
-    {
-     "name": "会場",
-     "value": "リブリオ行橋Ａスタジオ(福岡県行橋市大橋３丁目１８－１)"
-    },
-    {
-     "name": "講師",
-     "value": "小島香代子氏（福岡県介護福祉士会副会長）"
-    },
-    {
-     "name": "参加費",
-     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
-    },
-    {
-     "name": "定員",
-     "value": "会場３０名・オンライン（Ｚｏｏｍ）３０名"
-    },
-    {
-     "name": "ポイント",
-     "value": "２ポイント"
-    }
-   ],
-   "outlineUrl": "https://www.f-kaigo.jp/upimg/d69eef1a92f583.pdf"
   },
   {
    "hash": "3a63f4e253694719",
@@ -1484,5 +1415,5 @@
    "expireOn": "2026-10-31"
   }
  ],
- "lastFetchDate": "2026-09-26"
+ "lastFetchDate": "2026-09-27"
 }
