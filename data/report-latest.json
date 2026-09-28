@@ -1,6 +1,297 @@
 {
-  "generatedAt": "2026-09-28T01:46:38.459Z",
-  "model": null,
-  "items": [],
-  "press": []
+  "generatedAt": "2026-09-28T22:36:01.666Z",
+  "model": "gemini-3.5-flash-lite",
+  "items": [
+    {
+      "hash": "34b0d961024690e4",
+      "source": "こども家庭庁",
+      "title": "人工妊娠中絶一時金認定審査部会（第19回）を掲載しました",
+      "url": "https://www.cfa.go.jp/councils/jinkoninshinchuzetsu-ichijikin/bf8cb456",
+      "date": "2026-09-28",
+      "category": "会議等",
+      "summary": "人工妊娠中絶一時金認定審査部会の開催資料に関する情報です。直接的な福祉事業者の実務への影響は薄いため、低としています。",
+      "importance": "低",
+      "fields": [],
+      "reason": "一般医療や保険給付に関する審査会であり福祉事業者の実務に直接影響しないため"
+    },
+    {
+      "hash": "4fe1234e05c13818",
+      "source": "厚生労働省",
+      "title": "第132回労働政策審議会労働条件分科会労災保険部会資料",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76405.html",
+      "date": "2026-09-28",
+      "category": "審議会等",
+      "summary": "労働政策審議会における労災保険部会の資料です。労災保険制度全般の審議であり、法人運営において参考として把握しておくべき情報です。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "労働条件や労災に関する審議会資料であり、労務管理の観点から把握が必要なため"
+    },
+    {
+      "hash": "a7b6fdb14470f9e2",
+      "source": "厚生労働省",
+      "title": "薬事審議会血液事業部会令和８年度第２回運営委員会（資料）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76054.html",
+      "date": "2026-09-28",
+      "category": "審議会等",
+      "summary": "薬事審議会血液事業部会の運営委員会資料です。福祉事業の運営とは直接関係しないため、空配列としています。",
+      "importance": "低",
+      "fields": [],
+      "reason": "血液事業に関する専門的な審議会であり福祉事業の実務に関係しないため"
+    },
+    {
+      "hash": "904073a9aeaacf25",
+      "source": "厚生労働省",
+      "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76404.html",
+      "date": "2026-09-28",
+      "category": "報道発表",
+      "summary": "厚生労働大臣の定例記者会見のお知らせです。一般的な動向把握にとどまるため、実務上の影響は薄い情報です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "大臣の定例会見であり、個別の福祉施策の決定通知等ではないため"
+    },
+    {
+      "hash": "5abb6d6554e5bc94",
+      "source": "厚生労働省",
+      "title": "第１回と畜場の制度に関する研究会 配付資料",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76383.html",
+      "date": "2026-09-28",
+      "category": "審議会等",
+      "summary": "と畜場の制度に関する研究会の配付資料です。福祉事業とは無関係の行政情報となります。",
+      "importance": "低",
+      "fields": [],
+      "reason": "と畜場制度に関する研究会であり福祉分野の事業運営と無関係なため"
+    },
+    {
+      "hash": "b6f1f4006ef7da1a",
+      "source": "厚生労働省",
+      "title": "「第1回と畜場の制度に関する研究会」の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76377.html",
+      "date": "2026-09-28",
+      "category": "審議会等",
+      "summary": "と畜場の制度に関する研究会の開催案内です。福祉事業の運営には直接関係しません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "と畜場制度の会議開催案内であり福祉事業に影響しないため"
+    },
+    {
+      "hash": "ee4b16a003f6168a",
+      "source": "厚生労働省",
+      "title": "第３回 困難な問題を抱える女性への支援に関する検討会を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76344.html",
+      "date": "2026-09-28",
+      "category": "審議会等",
+      "summary": "困難な問題を抱える女性への支援に関する検討会の開催案内です。女性支援施設や関連する児童・福祉施策の動向として把握が必要です。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "困難な女性支援に関する検討会であり、関連福祉分野の動向として重要であるため"
+    },
+    {
+      "hash": "043b7606514c29f5",
+      "source": "厚生労働省",
+      "title": "第３回 困難な問題を抱える女性への支援に関する検討会を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76305.html",
+      "date": "2026-09-28",
+      "category": "報道発表",
+      "summary": "困難な問題を抱える女性への支援に関する検討会の開催に関する報道発表です。今後の制度改正に向けた動向把握に役立ちます。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "支援施策の検討状況に関する報道発表であり、今後の動向把握のため"
+    },
+    {
+      "hash": "f8f07e49127cee90",
+      "source": "厚生労働省",
+      "title": "第105回「電離放射線障害の業務上外に関する検討会」を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76236.html",
+      "date": "2026-09-28",
+      "category": "審議会等",
+      "summary": "電離放射線障害の業務上外に関する検討会の開催案内です。労働安全衛生に関わるため、労務管理の観点から確認が推奨されます。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "労働者の健康障害や労災認定に関する検討会であり、労務管理に関係するため"
+    },
+    {
+      "hash": "34d0a7209f626dbf",
+      "source": "厚生労働省",
+      "title": "雇用環境・均等行政情報システムデジタル推進専門官の募集について",
+      "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/ninkituki/ninki-koyoukankyou_kintougyouseijouhou.html",
+      "date": "2026-09-28",
+      "category": "採用情報",
+      "summary": "省庁の専門官の採用情報です。福祉事業者の実務には影響しません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "行政機関の職員採用情報であり福祉事業の運営に関係しないため"
+    },
+    {
+      "hash": "36c0716bb92a4816",
+      "source": "厚生労働省",
+      "title": "毎月勤労統計調査ー2026（令和８）年７月分結果確報",
+      "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/monthly/r08/2607r/2607r.html",
+      "date": "2026-09-28",
+      "category": "統計情報",
+      "summary": "毎月勤労統計調査の確報値です。賃金や労働時間の動向を示す全体統計として、労務管理の参考になります。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "賃金等の全国統計であり、処遇改善や労務管理の参考情報となるため"
+    },
+    {
+      "hash": "34d88d0b1062476f",
+      "source": "厚生労働省",
+      "title": "2024年度 特定健康診査・特定保健指導の実施状況 ※掲載一時中止",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/newpage_00084.html",
+      "date": "2026-09-16",
+      "category": "その他",
+      "summary": "特定健康診査・特定保健指導の実施状況に関する掲載一時中止のお知らせです。医療保険者向けのデータであり福祉事業には影響しません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "特定健診等の実施状況に関するものであり福祉事業者の実務対象外のため"
+    },
+    {
+      "hash": "c26c2add9b8b3dac",
+      "source": "WAM NET",
+      "title": "中央社会保険医療協議会の開催について（令和8年9月30日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22899&ct=070010030&from=rss",
+      "date": "2026-09-28",
+      "category": "行政資料",
+      "summary": "中央社会保険医療協議会（中医協）の開催案内です。医療保険制度の議論であり、介護報酬等への影響を先々に把握するために確認します。",
+      "importance": "中",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "医療保険の協議会であり、高齢者医療や将来の介護報酬等に間接的に影響するため"
+    },
+    {
+      "hash": "ac052a0437898de7",
+      "source": "WAM NET",
+      "title": "第26回 匿名医療・介護情報等の提供に関する委員会（令和8年9月28日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22900&ct=010010495&from=rss",
+      "date": "2026-09-28",
+      "category": "行政資料",
+      "summary": "匿名医療・介護情報等の提供に関する委員会の開催情報です。医療・介護データの利活用に関する動向を把握できます。",
+      "importance": "中",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "介護情報等のデータ利活用に関する委員会であり、高齢福祉の動向把握に繋がるため"
+    },
+    {
+      "hash": "01dabf39dc987f6c",
+      "source": "福岡県（子ども・青少年）",
+      "title": "令和8年度地域少子化対策重点推進交付金の活用について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/tiikisyousikataisaku-2025.html",
+      "date": "2026年9月28日更新",
+      "category": "",
+      "summary": "地域少子化対策重点推進交付金の活用に関する情報です。保育や児童福祉分野における自治体施策や財源活用に関わる重要な案内です。",
+      "importance": "高",
+      "fields": [
+        "保育",
+        "児童"
+      ],
+      "reason": "少子化対策の交付金活用に関し、事業者の申請や自治体連携の検討材料となるため",
+      "action": "一般に、こうした通知では自治体の施策方針や財源活用の要件の確認が必要になります。"
+    },
+    {
+      "hash": "edf69b74c049686d",
+      "source": "福岡県（子ども・青少年）",
+      "title": "（参加者募集中！）嘉飯桂未来塾",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/kahankei2026.html",
+      "date": "2026年9月28日更新",
+      "category": "",
+      "summary": "地域の人材育成や学びに関する塾の参加者募集です。一般的なイベント情報に該当します。",
+      "importance": "低",
+      "fields": [],
+      "reason": "地域の一般向けのイベント・講座案内であり福祉事業の運営に直接影響しないため"
+    },
+    {
+      "hash": "6461d0f1e177f54c",
+      "source": "福岡県（介護・高齢者福祉）",
+      "title": "令和８年度高齢者福祉施設等の整備方針に基づいて採択した施設整備（追加分）の一覧を掲載しています。",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/seibi-list-r8tuika.html",
+      "date": "2026年9月28日更新",
+      "category": "",
+      "summary": "高齢者福祉施設等の整備方針に基づく追加採択施設の公表です。地域における競合や整備動向の把握に役立ちます。",
+      "importance": "中",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "高齢者施設の整備状況に関する公表であり、地域における事業環境の把握に役立つため"
+    },
+    {
+      "hash": "7c1ba4dab9814dcb",
+      "source": "福岡県（介護・高齢者福祉）",
+      "title": "令和８年度第１回福岡県高齢者保健福祉計画策定検討委員会を開催しました",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/koreikeikaku-r8-1iinkai-kaisai.html",
+      "date": "2026年9月28日更新",
+      "category": "",
+      "summary": "高齢者保健福祉計画策定検討委員会の開催結果です。自治体の高齢者福祉施策の方向性を知るために把握しておくべき情報です。",
+      "importance": "中",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "自治体の高齢者保健福祉計画の策定に関わる会議であり、中長期の方針に影響するため"
+    },
+    {
+      "hash": "c454ed29216a906c",
+      "source": "福岡県（介護・高齢者福祉）",
+      "title": "令和７年度福岡県介護施設等に対する食料品購入費等補助金について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/syokuzai2025.html",
+      "date": "2026年9月28日更新",
+      "category": "",
+      "summary": "介護施設等を対象とした食料品購入費等補助金に関する案内です。補助金の申請や事務手続きが伴うため、事業所での対応が必要です。",
+      "importance": "高",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "介護施設向けの補助金交付に関する情報であり、申請手続き等の実務対応が必要なため",
+      "action": "一般に、こうした通知では補助金の対象要件の確認や申請手続きの対応が必要になります。"
+    }
+  ],
+  "press": [
+    {
+      "hash": "2e6bcd3e77104b13",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "就労系サービスの在宅支援、要件の厳格化や基本報酬の引き下げを提案＝厚労省",
+      "url": "https://www.joint-kaigo.com/articles/49050/",
+      "date": "2026-09-28",
+      "category": "自治体",
+      "fields": [
+        "障害"
+      ]
+    },
+    {
+      "hash": "d99f7df9dab4b695",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "【高野龍昭】変わりゆく要介護の原因 これからの「自立支援・重度化防止」のターゲット",
+      "url": "https://www.joint-kaigo.com/articles/49037/",
+      "date": "2026-09-28",
+      "category": "超高齢化",
+      "fields": [
+        "高齢"
+      ]
+    },
+    {
+      "hash": "741c4d86915199b2",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "就労B型、基本報酬の算定ルール見直しへ 厚労省 スコア方式の導入を提案 多面的な評価を検討｜障害福祉報酬改定",
+      "url": "https://www.joint-kaigo.com/articles/49018/",
+      "date": "2026-09-28",
+      "category": "自治体",
+      "fields": [
+        "障害"
+      ]
+    }
+  ]
 }

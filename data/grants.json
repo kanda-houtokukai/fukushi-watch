@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-27T20:14:56.813Z",
+ "updatedAt": "2026-09-28T22:38:03.020Z",
  "items": [
   {
    "hash": "afbdc2becc112155",
@@ -557,6 +557,35 @@
    "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260911amemiya.html"
   },
   {
+   "hash": "10444a14161fc457",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "日本郵便年賀寄付金配分事業",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e6%97%a5%e6%9c%ac%e9%83%b5%e4%be%bf%e5%b9%b4%e8%b3%80%e5%af%84%e4%bb%98%e9%87%91%e9%85%8d%e5%88%86%e4%ba%8b%e6%a5%ad-2/",
+   "postedAt": "2026-09-11",
+   "deadline": "2026-11-18",
+   "deadlineType": "date",
+   "deadlineRaw": "2026/11/18 募集要項 https://www.post.japanpost.jp/abo",
+   "openFrom": "2026-09-29",
+   "conditionsUrl": "http://www.post.japanpost.jp/kifu/",
+   "summary": "社会福祉の増進や被災者支援などの活動・施設改修・機器や車両の購入等を助成するもので、社会福祉法人やNPO法人等が応募できます。",
+   "fields": [
+    "共通"
+   ],
+   "uses": [
+    "設備・改修",
+    "機器・用具",
+    "車両"
+   ],
+   "applicants": [
+    "社会福祉法人",
+    "NPO・公益法人"
+   ],
+   "amount": "上限250万円/件（活動・チャレンジプログラムは50万円）",
+   "conditions": []
+  },
+  {
    "hash": "29e02ea2e0f0ab03",
    "source": "中央共同募金会",
    "sourceKind": "org",
@@ -669,35 +698,6 @@
    "via": "goryu"
   },
   {
-   "hash": "10444a14161fc457",
-   "source": "助成財団センター 助成金募集ニュース",
-   "sourceKind": "org",
-   "funder": "",
-   "title": "日本郵便年賀寄付金配分事業",
-   "url": "https://www.jfc.or.jp/news_subsidy/%e6%97%a5%e6%9c%ac%e9%83%b5%e4%be%bf%e5%b9%b4%e8%b3%80%e5%af%84%e4%bb%98%e9%87%91%e9%85%8d%e5%88%86%e4%ba%8b%e6%a5%ad-2/",
-   "postedAt": "2026-09-11",
-   "deadline": "2026-11-18",
-   "deadlineType": "date",
-   "deadlineRaw": "2026/11/18 募集要項 https://www.post.japanpost.jp/abo",
-   "openFrom": "2026-09-29",
-   "conditionsUrl": "http://www.post.japanpost.jp/kifu/",
-   "summary": "社会福祉の増進や被災者支援などの活動・施設改修・機器や車両の購入等を助成するもので、社会福祉法人やNPO法人等が応募できます。",
-   "fields": [
-    "共通"
-   ],
-   "uses": [
-    "設備・改修",
-    "機器・用具",
-    "車両"
-   ],
-   "applicants": [
-    "社会福祉法人",
-    "NPO・公益法人"
-   ],
-   "amount": "上限250万円/件（活動・チャレンジプログラムは50万円）",
-   "conditions": []
-  },
-  {
    "hash": "8cf63c024f328db8",
    "source": "全社協 福祉の助成情報",
    "sourceKind": "org",
@@ -775,5 +775,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-09-28"
+ "lastFetchDate": "2026-09-29"
 }

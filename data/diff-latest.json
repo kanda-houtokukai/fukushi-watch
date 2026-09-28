@@ -1,6 +1,206 @@
 {
-  "generatedAt": "2026-09-28T01:46:38.393Z",
-  "newItems": [],
-  "newPress": [],
+  "generatedAt": "2026-09-28T22:34:58.603Z",
+  "newItems": [
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "34b0d961024690e4",
+      "title": "人工妊娠中絶一時金認定審査部会（第19回）を掲載しました",
+      "url": "https://www.cfa.go.jp/councils/jinkoninshinchuzetsu-ichijikin/bf8cb456",
+      "date": "2026-09-28",
+      "category": "会議等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "4fe1234e05c13818",
+      "title": "第132回労働政策審議会労働条件分科会労災保険部会資料",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76405.html",
+      "date": "2026-09-28",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "a7b6fdb14470f9e2",
+      "title": "薬事審議会血液事業部会令和８年度第２回運営委員会（資料）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76054.html",
+      "date": "2026-09-28",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "904073a9aeaacf25",
+      "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76404.html",
+      "date": "2026-09-28",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "5abb6d6554e5bc94",
+      "title": "第１回と畜場の制度に関する研究会 配付資料",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76383.html",
+      "date": "2026-09-28",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "b6f1f4006ef7da1a",
+      "title": "「第1回と畜場の制度に関する研究会」の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76377.html",
+      "date": "2026-09-28",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "ee4b16a003f6168a",
+      "title": "第３回 困難な問題を抱える女性への支援に関する検討会を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76344.html",
+      "date": "2026-09-28",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "043b7606514c29f5",
+      "title": "第３回 困難な問題を抱える女性への支援に関する検討会を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76305.html",
+      "date": "2026-09-28",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "f8f07e49127cee90",
+      "title": "第105回「電離放射線障害の業務上外に関する検討会」を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76236.html",
+      "date": "2026-09-28",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "34d0a7209f626dbf",
+      "title": "雇用環境・均等行政情報システムデジタル推進専門官の募集について",
+      "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/ninkituki/ninki-koyoukankyou_kintougyouseijouhou.html",
+      "date": "2026-09-28",
+      "category": "採用情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "36c0716bb92a4816",
+      "title": "毎月勤労統計調査ー2026（令和８）年７月分結果確報",
+      "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/monthly/r08/2607r/2607r.html",
+      "date": "2026-09-28",
+      "category": "統計情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "34d88d0b1062476f",
+      "title": "2024年度 特定健康診査・特定保健指導の実施状況 ※掲載一時中止",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/newpage_00084.html",
+      "date": "2026-09-16",
+      "category": "その他"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "c26c2add9b8b3dac",
+      "title": "中央社会保険医療協議会の開催について（令和8年9月30日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22899&ct=070010030&from=rss",
+      "date": "2026-09-28",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "ac052a0437898de7",
+      "title": "第26回 匿名医療・介護情報等の提供に関する委員会（令和8年9月28日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22900&ct=010010495&from=rss",
+      "date": "2026-09-28",
+      "category": "行政資料"
+    },
+    {
+      "source": "福岡県（子ども・青少年）",
+      "kind": "gov",
+      "hash": "01dabf39dc987f6c",
+      "title": "令和8年度地域少子化対策重点推進交付金の活用について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/tiikisyousikataisaku-2025.html",
+      "date": "2026年9月28日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（子ども・青少年）",
+      "kind": "gov",
+      "hash": "edf69b74c049686d",
+      "title": "（参加者募集中！）嘉飯桂未来塾",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/kahankei2026.html",
+      "date": "2026年9月28日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（介護・高齢者福祉）",
+      "kind": "gov",
+      "hash": "6461d0f1e177f54c",
+      "title": "令和８年度高齢者福祉施設等の整備方針に基づいて採択した施設整備（追加分）の一覧を掲載しています。",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/seibi-list-r8tuika.html",
+      "date": "2026年9月28日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（介護・高齢者福祉）",
+      "kind": "gov",
+      "hash": "7c1ba4dab9814dcb",
+      "title": "令和８年度第１回福岡県高齢者保健福祉計画策定検討委員会を開催しました",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/koreikeikaku-r8-1iinkai-kaisai.html",
+      "date": "2026年9月28日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（介護・高齢者福祉）",
+      "kind": "gov",
+      "hash": "c454ed29216a906c",
+      "title": "令和７年度福岡県介護施設等に対する食料品購入費等補助金について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/syokuzai2025.html",
+      "date": "2026年9月28日更新",
+      "category": ""
+    }
+  ],
+  "newPress": [
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "2e6bcd3e77104b13",
+      "title": "就労系サービスの在宅支援、要件の厳格化や基本報酬の引き下げを提案＝厚労省",
+      "url": "https://www.joint-kaigo.com/articles/49050/",
+      "date": "2026-09-28",
+      "category": "自治体"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "d99f7df9dab4b695",
+      "title": "【高野龍昭】変わりゆく要介護の原因 これからの「自立支援・重度化防止」のターゲット",
+      "url": "https://www.joint-kaigo.com/articles/49037/",
+      "date": "2026-09-28",
+      "category": "超高齢化"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "741c4d86915199b2",
+      "title": "就労B型、基本報酬の算定ルール見直しへ 厚労省 スコア方式の導入を提案 多面的な評価を検討｜障害福祉報酬改定",
+      "url": "https://www.joint-kaigo.com/articles/49018/",
+      "date": "2026-09-28",
+      "category": "自治体"
+    }
+  ],
   "crawlErrors": []
 }
