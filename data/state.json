@@ -1,8 +1,43 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-09-28T22:34:52.971Z",
+      "lastCrawled": "2026-09-29T21:27:24.274Z",
       "items": [
+        {
+          "hash": "5f2db789cbd1db7f",
+          "title": "中司大臣記者会見（令和8年9月29日）を掲載しました",
+          "url": "https://www.cfa.go.jp/speech/6b7e57d9",
+          "date": "2026-09-29",
+          "category": "会見"
+        },
+        {
+          "hash": "c02404cdcce12b78",
+          "title": "青少年インターネット環境整備法の在り方等に関する検討ワーキンググループ（第9回）の開催を掲載しました",
+          "url": "https://www.cfa.go.jp/press/e3f549f5-065b-4c1c-8e24-5ba309b90424",
+          "date": "2026-09-29",
+          "category": "報道発表"
+        },
+        {
+          "hash": "f8e78a24b4bdbd8d",
+          "title": "青少年インターネット環境整備法の在り方等に関する検討ワーキンググループ（第9回）の開催案内を掲載しました",
+          "url": "https://www.cfa.go.jp/councils/internet-kaigi/5468bf4a",
+          "date": "2026-09-29",
+          "category": "会議等"
+        },
+        {
+          "hash": "fad89cc27f3991cf",
+          "title": "一般競争入札：旧優生保護法補償金等に係る周知・広報等業務一式を掲載しました",
+          "url": "https://www.cfa.go.jp/procurement/portal",
+          "date": "2026-09-29",
+          "category": "調達情報"
+        },
+        {
+          "hash": "664b6f2517338a18",
+          "title": "令和8年度里親月間 10月は「里親月間」です",
+          "url": "https://www.cfa.go.jp/press/ae304a7d-0c06-4b27-9733-df3cc8772a10",
+          "date": "2026-09-29",
+          "category": "報道発表"
+        },
         {
           "hash": "34b0d961024690e4",
           "title": "人工妊娠中絶一時金認定審査部会（第19回）を掲載しました",
@@ -741,8 +776,141 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-09-28T22:34:53.214Z",
+      "lastCrawled": "2026-09-29T21:27:25.322Z",
       "items": [
+        {
+          "hash": "12f8e046491eb8f1",
+          "title": "令和８年９月２９日付大臣会見概要",
+          "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00971.html",
+          "date": "2026-09-29",
+          "category": "大臣会見等"
+        },
+        {
+          "hash": "120dac566a756bb7",
+          "title": "医薬品等安全性関連情報",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iyakuhin/iyaku/index.html",
+          "date": "2026-09-29",
+          "category": "政策分野"
+        },
+        {
+          "hash": "8215c3e9526ca299",
+          "title": "労働災害発生状況",
+          "url": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei11/rousai-hassei/index.html",
+          "date": "2026-09-29",
+          "category": "統計情報"
+        },
+        {
+          "hash": "00bfa6cf32c89c83",
+          "title": "介護給付費等実態統計月報（令和８（2026）年６月審査分）",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/kaigo/kyufu/2026/06.html",
+          "date": "2026-09-29",
+          "category": "統計情報"
+        },
+        {
+          "hash": "9940be2a0b744a95",
+          "title": "第217回社会保障審議会医療保険部会（ペーパーレス）の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76382.html",
+          "date": "2026-09-29",
+          "category": "審議会等"
+        },
+        {
+          "hash": "a37128ad642bb209",
+          "title": "食品中の放射性物質の検査結果について（１５１４報）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76372.html",
+          "date": "2026-09-29",
+          "category": "報道発表"
+        },
+        {
+          "hash": "f0503e31fd03e7ca",
+          "title": "令和７（2025）年医療施設（動態）調査・病院報告の概況",
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/iryosd/25/",
+          "date": "2026-09-29",
+          "category": "統計情報"
+        },
+        {
+          "hash": "66c2e2b65bd5e6c7",
+          "title": "労働経済動向調査（令和８(2026)年８月）の概況",
+          "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/koyou/keizai/2608/",
+          "date": "2026-09-29",
+          "category": "統計情報"
+        },
+        {
+          "hash": "7d6e93b3551914ce",
+          "title": "第268回社会保障審議会介護給付費分科会（Web会議）を開催します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76244.html",
+          "date": "2026-09-29",
+          "category": "審議会等"
+        },
+        {
+          "hash": "12c690b3bb0819e5",
+          "title": "技能実習法に基づく行政処分等を行いました",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76201.html",
+          "date": "2026-09-29",
+          "category": "報道発表"
+        },
+        {
+          "hash": "7a207cf564600254",
+          "title": "第48回技能五輪国際大会(中国・上海）での 日本選手団の成績を公表します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76044.html",
+          "date": "2026-09-29",
+          "category": "報道発表"
+        },
+        {
+          "hash": "f72bd1aad3863d41",
+          "title": "インフルエンザに関する報道発表資料を更新しました",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou_00025.html",
+          "date": "2026-09-29",
+          "category": "報道発表"
+        },
+        {
+          "hash": "4b744bfcdc8574b8",
+          "title": "新型コロナウイルス感染症に関する報道発表資料を更新しました",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00485.html",
+          "date": "2026-09-29",
+          "category": "報道発表"
+        },
+        {
+          "hash": "5953274f7c706ed4",
+          "title": "インフルエンザ・新型コロナウイルス感染症の定点当たり報告数の推移を更新しました",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/houkokusuunosuii_00007.html",
+          "date": "2026-09-29",
+          "category": "その他"
+        },
+        {
+          "hash": "16a71b7f3f93ad78",
+          "title": "インフルエンザの発生状況を更新しました",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
+          "date": "2026-09-29",
+          "category": "報道発表"
+        },
+        {
+          "hash": "6867bbaea4a9b69b",
+          "title": "令和７年度「少子高齢社会等調査検討事業」の報告書を公表します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75934.html",
+          "date": "2026-09-29",
+          "category": "報道発表"
+        },
+        {
+          "hash": "10822d68d1c6c8bf",
+          "title": "「令和８年版厚生労働白書」を公表します",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75936.html",
+          "date": "2026-09-29",
+          "category": "報道発表"
+        },
+        {
+          "hash": "cb82112653b23c39",
+          "title": "「令和８年版 労働経済の分析」を公表します ～分析テーマは「ＡＩ等技術革新が進む中での労働市場の現状と課題」～",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75700.html",
+          "date": "2026-09-29",
+          "category": "報道発表"
+        },
+        {
+          "hash": "2ca1bb2f6c9d05af",
+          "title": "厚生労働省関係の主な制度変更（令和８年10月）について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76324.html",
+          "date": "2026-09-29",
+          "category": "その他"
+        },
         {
           "hash": "4fe1234e05c13818",
           "title": "第132回労働政策審議会労働条件分科会労災保険部会資料",
@@ -763,13 +931,6 @@
           "url": "https://www.mhlw.go.jp/stf/newpage_76404.html",
           "date": "2026-09-28",
           "category": "報道発表"
-        },
-        {
-          "hash": "5abb6d6554e5bc94",
-          "title": "第１回と畜場の制度に関する研究会 配付資料",
-          "url": "https://www.mhlw.go.jp/stf/newpage_76383.html",
-          "date": "2026-09-28",
-          "category": "審議会等"
         },
         {
           "hash": "b6f1f4006ef7da1a",
@@ -819,6 +980,13 @@
           "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/monthly/r08/2607r/2607r.html",
           "date": "2026-09-28",
           "category": "統計情報"
+        },
+        {
+          "hash": "4832ff22cade9acc",
+          "title": "第４回介護保険制度における預貯金等の把握等に係る検討の場の資料について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76407.html",
+          "date": "2026-09-28",
+          "category": "その他"
         },
         {
           "hash": "d918bfd73304c915",
@@ -945,6 +1113,13 @@
           "url": "https://www.mhlw.go.jp/stf/newpage_76368.html",
           "date": "2026-09-24",
           "category": "その他"
+        },
+        {
+          "hash": "5290924aec4960a8",
+          "title": "「第143回労働政策審議会障害者雇用分科会」を開催します（開催案内）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76367.html",
+          "date": "2026-09-24",
+          "category": "審議会等"
         },
         {
           "hash": "e1221481c70cabd5",
@@ -1192,34 +1367,6 @@
           "category": "統計情報"
         },
         {
-          "hash": "32086cc884a39576",
-          "title": "インフルエンザに関する報道発表資料を更新しました",
-          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou_00025.html",
-          "date": "2026-09-18",
-          "category": "報道発表"
-        },
-        {
-          "hash": "03d279e1f3d67f1e",
-          "title": "新型コロナウイルス感染症に関する報道発表資料を更新しました",
-          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00485.html",
-          "date": "2026-09-18",
-          "category": "報道発表"
-        },
-        {
-          "hash": "b9471f4a06e5628d",
-          "title": "インフルエンザ・新型コロナウイルス感染症の定点当たり報告数の推移を更新しました",
-          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/houkokusuunosuii_00007.html",
-          "date": "2026-09-18",
-          "category": "その他"
-        },
-        {
-          "hash": "1daac3611f9cb8ee",
-          "title": "インフルエンザの発生状況を更新しました",
-          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
-          "date": "2026-09-18",
-          "category": "報道発表"
-        },
-        {
           "hash": "6841b591e082138a",
           "title": "病院の耐震改修状況調査の結果",
           "url": "https://www.mhlw.go.jp/stf/newpage_76330.html",
@@ -1262,6 +1409,13 @@
           "category": "審議会等"
         },
         {
+          "hash": "e216ac62ba444471",
+          "title": "令和８年版厚生労働白書を公表します",
+          "url": "https://www.mhlw.go.jp/stf/wp/hakusyo/kousei/26/26-3.html",
+          "date": "2026-09-17",
+          "category": "その他"
+        },
+        {
           "hash": "e6f2ece9eea5a0a5",
           "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
           "url": "https://www.mhlw.go.jp/stf/newpage_76306.html",
@@ -1302,6 +1456,13 @@
           "url": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_474670.html",
           "date": "2026-09-17",
           "category": "審議会等"
+        },
+        {
+          "hash": "823d2d1a8e0a4990",
+          "title": "令和８年版厚生労働白書を公表します",
+          "url": "https://www.mhlw.go.jp/stf/wp/hakusyo/kousei/26/index.html",
+          "date": "2026-09-17",
+          "category": "その他"
         },
         {
           "hash": "60e87382b2ca403f",
@@ -1897,6 +2058,13 @@
           "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/m2026/04.html",
           "date": "2026-09-08",
           "category": "統計情報"
+        },
+        {
+          "hash": "42b8aacabd8677de",
+          "title": "令和８年版 労働経済の分析 －ＡＩ等技術革新が進む中での労働市場の現状と課題－",
+          "url": "https://www.mhlw.go.jp/stf/wp/hakusyo/roudou/26/26-1.html",
+          "date": "2026-09-08",
+          "category": "その他"
         },
         {
           "hash": "25ff982fcd221702",
@@ -3019,13 +3187,6 @@
           "category": "審議会等"
         },
         {
-          "hash": "39a363edd9fda5a5",
-          "title": "医薬品等安全性関連情報",
-          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iyakuhin/iyaku/index.html",
-          "date": "2026-08-24",
-          "category": "政策分野"
-        },
-        {
           "hash": "866f4bdd59200c49",
           "title": "2025年 海外情勢報告",
           "url": "https://www.mhlw.go.jp/stf/toukei_hakusho/kaigai25.html",
@@ -4102,95 +4263,11 @@
           "url": "https://www.mhlw.go.jp/stf/newpage_74767.html",
           "date": "2026-07-31",
           "category": "報道発表"
-        },
-        {
-          "hash": "234dfe8ad794af1e",
-          "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
-          "url": "https://www.mhlw.go.jp/stf/newpage_75157.html",
-          "date": "2026-07-30",
-          "category": "報道発表"
-        },
-        {
-          "hash": "1f02685b0c1bb05b",
-          "title": "令和８年度第３回医薬品等安全対策部会安全対策調査会 議事録",
-          "url": "https://www.mhlw.go.jp/stf/newpage_75120.html",
-          "date": "2026-07-30",
-          "category": "その他"
-        },
-        {
-          "hash": "bfd68d55e73764c0",
-          "title": "第24回 医薬品等行政評価・監視委員会 議事録",
-          "url": "https://www.mhlw.go.jp/stf/newpage_75135.html",
-          "date": "2026-07-30",
-          "category": "審議会等"
-        },
-        {
-          "hash": "3e384e4e31db06c4",
-          "title": "令和８年熊本地震について 倒産等による未払賃金の立替払制度について、申請手続の簡略化を行っています",
-          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/16849_00002.html",
-          "date": "2026-07-30",
-          "category": "その他"
-        },
-        {
-          "hash": "0414c8a002264e0e",
-          "title": "先進医療会議の開催について",
-          "url": "https://www.mhlw.go.jp/stf/newpage_74733.html",
-          "date": "2026-07-30",
-          "category": "審議会等"
-        },
-        {
-          "hash": "a4577a68c573403f",
-          "title": "無歯科医地区等調査（令和７年度）の結果について",
-          "url": "https://www.mhlw.go.jp/toukei/list/77-16.html",
-          "date": "2026-07-30",
-          "category": "統計情報"
-        },
-        {
-          "hash": "4a7318706b335542",
-          "title": "無医地区等調査（令和７年度）の結果について",
-          "url": "https://www.mhlw.go.jp/toukei/list/76-16.html",
-          "date": "2026-07-30",
-          "category": "統計情報"
-        },
-        {
-          "hash": "98920fb30c6603fe",
-          "title": "第１回毎月勤労統計調査の調査手法の検討等に関するワーキンググループ資料",
-          "url": "https://www.mhlw.go.jp/stf/newpage_74499.html",
-          "date": "2026-07-30",
-          "category": "その他"
-        },
-        {
-          "hash": "d7ba6fc6058bb7ef",
-          "title": "検体採取の結果について（５月）",
-          "url": "https://www.mhlw.go.jp/stf/newpage_74428.html",
-          "date": "2026-07-30",
-          "category": "トピックス"
-        },
-        {
-          "hash": "3c808bc84034921e",
-          "title": "オンライン・ハローワークシステム（第２期）操作用端末賃貸借及び端末保守一式",
-          "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-iken/newpage_10460.html",
-          "date": "2026-07-30",
-          "category": "その他"
-        },
-        {
-          "hash": "33df3e17d5f9e488",
-          "title": "説明会情報の更新（総合職（数理・デジタル系））",
-          "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/suuri.html",
-          "date": "2026-07-30",
-          "category": "採用情報"
-        },
-        {
-          "hash": "eb68a7e55f9dabe4",
-          "title": "第15回医師養成過程を通じた医師の偏在対策等に関する検討会",
-          "url": "https://www.mhlw.go.jp/stf/newpage_75085.html",
-          "date": "2026-07-30",
-          "category": "審議会等"
         }
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-09-28T22:34:54.200Z",
+      "lastCrawled": "2026-09-29T21:27:26.490Z",
       "items": [
         {
           "hash": "c26c2add9b8b3dac",
@@ -6155,7 +6232,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-09-28T22:34:55.493Z",
+      "lastCrawled": "2026-09-29T21:27:28.365Z",
       "items": [
         {
           "hash": "40025e937873db0a",
@@ -6440,7 +6517,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-09-28T22:34:56.138Z",
+      "lastCrawled": "2026-09-29T21:27:28.718Z",
       "items": [
         {
           "hash": "89e0799b4a2b2116",
@@ -7066,8 +7143,22 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-09-28T22:34:57.830Z",
+      "lastCrawled": "2026-09-29T21:27:29.890Z",
       "items": [
+        {
+          "hash": "64729694b8301126",
+          "title": "カイポケ、会話から記録を自動作成するAIと連携 訪問看護で先行 ケアマネや訪問介護、福祉用具も対応へ",
+          "url": "https://www.joint-kaigo.com/articles/49062/",
+          "date": "2026-09-29",
+          "category": "福祉用具"
+        },
+        {
+          "hash": "ec36e1c31265d45c",
+          "title": "介護福祉士養成校の入学者、外国人留学生が初の6割超に 638人増で全体を押し上げ",
+          "url": "https://www.joint-kaigo.com/articles/49076/",
+          "date": "2026-09-29",
+          "category": "介護福祉士"
+        },
         {
           "hash": "2e6bcd3e77104b13",
           "title": "就労系サービスの在宅支援、要件の厳格化や基本報酬の引き下げを提案＝厚労省",
@@ -7575,7 +7666,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-09-28T22:34:56.789Z",
+      "lastCrawled": "2026-09-29T21:27:28.905Z",
       "items": [
         {
           "hash": "ab8de273f8706135",
@@ -7620,13 +7711,6 @@
           "category": ""
         },
         {
-          "hash": "7c1ba4dab9814dcb",
-          "title": "令和８年度第１回福岡県高齢者保健福祉計画策定検討委員会を開催しました",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/koreikeikaku-r8-1iinkai-kaisai.html",
-          "date": "2026年9月28日更新",
-          "category": ""
-        },
-        {
           "hash": "1608629da8abaec5",
           "title": "令和８年度に１００歳を迎えられる阿部史郎さんを訪問しました",
           "url": "https://www.pref.fukuoka.lg.jp/site/chiji-top/100sai08.html",
@@ -7645,6 +7729,13 @@
           "title": "「高齢者の福祉」（令和７年度版）",
           "url": "https://www.pref.fukuoka.lg.jp/contents/koureisyanofukusi6.html",
           "date": "2026年7月21日更新",
+          "category": ""
+        },
+        {
+          "hash": "0e31dfc3f927177e",
+          "title": "福岡県の高齢者人口及び高齢化率の推移（令和８年４月１日現在）",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/koreisyajinko.html",
+          "date": "2026年6月8日更新",
           "category": ""
         },
         {
@@ -7858,10 +7949,10 @@
           "category": ""
         },
         {
-          "hash": "0e31dfc3f927177e",
-          "title": "福岡県の高齢者人口及び高齢化率の推移（令和８年４月１日現在）",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/koreisyajinko.html",
-          "date": "2026年6月8日更新",
+          "hash": "7c1ba4dab9814dcb",
+          "title": "令和８年度第１回福岡県高齢者保健福祉計画策定検討委員会を開催しました",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/koreikeikaku-r8-1iinkai-kaisai.html",
+          "date": "2026年9月28日更新",
           "category": ""
         },
         {
@@ -8035,7 +8126,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-09-28T22:34:58.600Z",
+      "lastCrawled": "2026-09-29T21:27:30.643Z",
       "items": [
         {
           "hash": "9d7e8c8c78955157",
@@ -8503,7 +8594,7 @@
     }
   },
   "preferredModel": "gemini-3.5-flash-lite",
-  "lastSentDate": "2026-09-29",
-  "lastRunAt": "2026-09-29T02:36:34.483Z",
-  "lastCrawlDate": "2026-09-29"
+  "lastSentDate": "2026-09-30",
+  "lastRunAt": "2026-09-29T21:27:44.068Z",
+  "lastCrawlDate": "2026-09-30"
 }
