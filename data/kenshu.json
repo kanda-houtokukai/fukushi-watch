@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-29T21:31:25.275Z",
+ "updatedAt": "2026-09-30T21:31:23.648Z",
  "items": [
   {
    "hash": "9bcf747e04350e94",
@@ -632,25 +632,6 @@
     }
    ],
    "outlineUrl": "https://www.f-kaigo.jp/upimg/y6a6985ab9e66f.pdf"
-  },
-  {
-   "hash": "b51739d6a22d7bac",
-   "source": "福祉・介護研修センター 年間予定表",
-   "sourceKind": "org",
-   "via": "schedule",
-   "title": "ファシリテーション技術向上研修",
-   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/#link3",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "9月~12月開催予定",
-   "openFrom": null,
-   "fields": [
-    "共通"
-   ],
-   "kind": "テーマ別",
-   "preOpenNote": "9月~12月開催予定",
-   "preOpenSort": "2026-09",
-   "expireOn": "2027-01-31"
   },
   {
    "hash": "301bdea05d98db88",
@@ -1379,6 +1360,25 @@
    "expireOn": "2027-03-31"
   },
   {
+   "hash": "b51739d6a22d7bac",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "via": "schedule",
+   "title": "ファシリテーション技術向上研修",
+   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/#link3",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "9月~12月開催予定",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別",
+   "preOpenNote": "9月~12月開催予定",
+   "preOpenSort": "2027-09",
+   "expireOn": "2028-01-31"
+  },
+  {
    "hash": "d2a4ba43f40ba2dc",
    "source": "福祉・介護研修センター 年間予定表",
    "sourceKind": "org",
@@ -1415,5 +1415,5 @@
    "expireOn": "2026-10-31"
   }
  ],
- "lastFetchDate": "2026-09-30"
+ "lastFetchDate": "2026-10-01"
 }
