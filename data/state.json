@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-09-30T21:27:46.482Z",
+      "lastCrawled": "2026-10-01T21:52:23.083Z",
       "items": [
         {
           "hash": "fe16369bf3dcd97a",
@@ -818,8 +818,148 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-09-30T21:27:46.784Z",
+      "lastCrawled": "2026-10-01T21:52:24.203Z",
       "items": [
+        {
+          "hash": "2de99a7fc1dc1ea2",
+          "title": "説明会情報の更新（総合職（数理・デジタル系））",
+          "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/suuri.html",
+          "date": "2026-10-01",
+          "category": "採用情報"
+        },
+        {
+          "hash": "6798d0604ea6a570",
+          "title": "キャリアコンサルタントになりたい方へ（キャリアコンサルタント試験結果概要を更新しました）",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/career_consultant01.html",
+          "date": "2026-10-01",
+          "category": "政策分野"
+        },
+        {
+          "hash": "2d159b3998549e85",
+          "title": "キャリアコンサルタント養成講習・更新講習の申請を希望する機関の方へ（令和8年11月申請の説明会のご案内）",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/koushu_jisshi.html",
+          "date": "2026-10-01",
+          "category": "政策分野"
+        },
+        {
+          "hash": "3c3fd851ea61bbb7",
+          "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76538.html",
+          "date": "2026-10-01",
+          "category": "報道発表"
+        },
+        {
+          "hash": "b331eed5bad35b03",
+          "title": "厚生労働省薬系技官（選考採用）募集情報",
+          "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/yakukei_00002.html",
+          "date": "2026-10-01",
+          "category": "採用情報"
+        },
+        {
+          "hash": "e76c23c16e58a141",
+          "title": "「化学物質による健康障害防止のための濃度の基準の適用等に関する技術上の指針」について（公示）（令和８年10月１日技術上の指針公示第30号）",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/anzen/newpage_00015.html",
+          "date": "2026-10-01",
+          "category": "その他"
+        },
+        {
+          "hash": "b74f90cce1816115",
+          "title": "「令和８年度 第１回 薬事審議会 化学物質安全対策部会 家庭用品安全対策調査会」 を開催します（開催案内）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76512.html",
+          "date": "2026-10-01",
+          "category": "審議会等"
+        },
+        {
+          "hash": "db801d8e16b8dd6b",
+          "title": "戦没者慰霊事業のお知らせ（令和８年10月実施分）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76396.html",
+          "date": "2026-10-01",
+          "category": "報道発表"
+        },
+        {
+          "hash": "0aa202c4404f5351",
+          "title": "令和８年度栄養関係功労者に対する厚生労働大臣表彰について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76387.html",
+          "date": "2026-10-01",
+          "category": "報道発表"
+        },
+        {
+          "hash": "b24b311c67944aa8",
+          "title": "「ハタラクエール2027」応募受付の開始について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76271.html",
+          "date": "2026-10-01",
+          "category": "報道発表"
+        },
+        {
+          "hash": "022c8ff5ce3134ba",
+          "title": "令和８年10月１日付幹部名簿",
+          "url": "https://www.mhlw.go.jp/kouseiroudoushou/kanbumeibo/index.html",
+          "date": "2026-10-01",
+          "category": "その他"
+        },
+        {
+          "hash": "dff8d5152eb6fb85",
+          "title": "令和８年度老人保健健康増進等事業（老人保健事業推進費等補助金）の国庫補助協議（３次公募）について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76519.html",
+          "date": "2026-10-01",
+          "category": "政策分野"
+        },
+        {
+          "hash": "43718400da62b26e",
+          "title": "毎月勤労統計調査［地方調査］－令和８年４月分結果概要",
+          "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/monthly/r08/0804/index.html",
+          "date": "2026-10-01",
+          "category": "統計情報"
+        },
+        {
+          "hash": "935b286e66b47851",
+          "title": "採用情報（任期付職員（肝炎対策専門官又は主査）募集情報）",
+          "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/ninkituki/ninki-kanensenmonkan.html",
+          "date": "2026-10-01",
+          "category": "採用情報"
+        },
+        {
+          "hash": "d48a3fd2a00fcc38",
+          "title": "WEBマガジン「厚生労働」（特集[臓器移植を考える]ほか更新）",
+          "url": "https://www.mhlw.go.jp/web_magazine/",
+          "date": "2026-10-01",
+          "category": "その他"
+        },
+        {
+          "hash": "1a7ec415aa986d65",
+          "title": "薬剤師免許の申請手続き等について",
+          "url": "https://www.mhlw.go.jp/bunya/iyakuhin/yakuzaishi/menkyo.html",
+          "date": "2026-10-01",
+          "category": "政策分野"
+        },
+        {
+          "hash": "5a6f44e8de2b8601",
+          "title": "世界メンタルヘルスデー JAPAN 2026 特設サイト",
+          "url": "https://www.mhlw.go.jp/kokoro/mental_health_day/index.html",
+          "date": "2026-10-01",
+          "category": "その他"
+        },
+        {
+          "hash": "d85bc3bbc5f992ea",
+          "title": "世界メンタルヘルスデー2026に応援サポーターとして リラックマ・コリラックマが登場 取組開始から8年目、内閣府主催「ともともフェスタ2026」に初参画 シルバーリボンジャパン主催イベントへの参画や 自治体・企業における「心のサポーター」…",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76263.html",
+          "date": "2026-10-01",
+          "category": "報道発表"
+        },
+        {
+          "hash": "81572f92d0c8f83e",
+          "title": "労働経済動向調査にご協力をお願いします ～令和８(2026)年11月調査～",
+          "url": "https://www.mhlw.go.jp/toukei/oshirase/261001.html",
+          "date": "2026-10-01",
+          "category": "統計情報"
+        },
+        {
+          "hash": "452d35d0ef7318e6",
+          "title": "第58回社会保険労務士試験の合格者発表",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76425.html",
+          "date": "2026-10-01",
+          "category": "その他"
+        },
         {
           "hash": "1dd2b32956058945",
           "title": "地域ブロック別の職種別平均手数料及び離職率について",
@@ -1393,13 +1533,6 @@
           "url": "https://www.mhlw.go.jp/seisakunitsuite/soshiki/toukei/fukushikaigochousa.html",
           "date": "2026-09-24",
           "category": "統計情報"
-        },
-        {
-          "hash": "a8ac684a93e2101a",
-          "title": "令和８年９月18日付幹部名簿",
-          "url": "https://www.mhlw.go.jp/kouseiroudoushou/kanbumeibo/index.html",
-          "date": "2026-09-24",
-          "category": "その他"
         },
         {
           "hash": "15ac869ba82d318e",
@@ -4288,12 +4421,40 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-09-30T21:27:47.825Z",
+      "lastCrawled": "2026-10-01T21:52:25.356Z",
       "items": [
         {
-          "hash": "9a13656f6cc15fe9",
-          "title": "第217回 社会保障審議会 医療保険部会の開催について（令和8年10月1日開催予定）",
-          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22901&ct=070010030&from=rss",
+          "hash": "376a4854e0e8fce9",
+          "title": "第217回 社会保障審議会 医療保険部会（令和8年10月1日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22906&ct=010010050&from=rss",
+          "date": "2026-10-01",
+          "category": "行政資料"
+        },
+        {
+          "hash": "80898ba379464625",
+          "title": "第107回 厚生科学審議会 感染症部会（令和8年9月30日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22908&ct=010020080&from=rss",
+          "date": "2026-10-01",
+          "category": "行政資料"
+        },
+        {
+          "hash": "a02efda23466abe8",
+          "title": "第268回 社会保障審議会 介護給付費分科会（令和8年9月30日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22907&ct=010010020&from=rss",
+          "date": "2026-10-01",
+          "category": "行政資料"
+        },
+        {
+          "hash": "a1ae6321940b1ade",
+          "title": "第143回 労働政策審議会障害者雇用分科会（令和8年10月6日開催予定）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22902&ct=070010010&from=rss",
+          "date": "2026-09-30",
+          "category": "行政資料"
+        },
+        {
+          "hash": "6c8e49da8eaac25e",
+          "title": "第65回 障害福祉サービス等報酬改定検討チーム（令和8年10月5日開催予定）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22904&ct=070010040&from=rss",
           "date": "2026-09-30",
           "category": "行政資料"
         },
@@ -4301,13 +4462,6 @@
           "hash": "0cc48b8239d966df",
           "title": "第62回 社会保障審議会 生活保護基準部会（令和8年10月6日開催予定）",
           "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22903&ct=070010070&from=rss",
-          "date": "2026-09-30",
-          "category": "行政資料"
-        },
-        {
-          "hash": "a1ae6321940b1ade",
-          "title": "第143回 労働政策審議会障害者雇用分科会（令和8年10月6日開催予定）",
-          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22902&ct=070010010&from=rss",
           "date": "2026-09-30",
           "category": "行政資料"
         },
@@ -5670,6 +5824,13 @@
           "category": "行政資料"
         },
         {
+          "hash": "9a13656f6cc15fe9",
+          "title": "第217回 社会保障審議会 医療保険部会の開催について（令和8年10月1日開催予定）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22901&ct=070010030&from=rss",
+          "date": "2026-09-30",
+          "category": "行政資料"
+        },
+        {
           "hash": "84d891533f6b87af",
           "title": "第56回 社会保障審議会 生活保護基準部会（令和8年4月14日開催）",
           "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22491&ct=010010220&from=rss",
@@ -6274,8 +6435,15 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-09-30T21:27:49.043Z",
+      "lastCrawled": "2026-10-01T21:52:27.250Z",
       "items": [
+        {
+          "hash": "cc94582d2f0bc47b",
+          "title": "身体障害者福祉法第１５条指定医師名簿",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/shiteiishimeibo.html",
+          "date": "2026年10月1日更新",
+          "category": ""
+        },
         {
           "hash": "ed74897de5e3f4bf",
           "title": "指定自立支援医療機関名簿（精神通院医療）",
@@ -6302,13 +6470,6 @@
           "title": "福岡県のユニバーサルデザインに関する取組をご紹介します",
           "url": "https://www.pref.fukuoka.lg.jp/contents/universaldesign-fukuoka.html",
           "date": "2026年9月15日更新",
-          "category": ""
-        },
-        {
-          "hash": "87c11bbec41713a0",
-          "title": "令和8年度障害支援区分認定調査員（現任者向け）研修について",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/2shienkubungennin.html",
-          "date": "2026年9月9日更新",
           "category": ""
         },
         {
@@ -6442,6 +6603,13 @@
           "title": "IT業務を発注して障がいのある方の自立を支える力に！",
           "url": "https://www.pref.fukuoka.lg.jp/contents/it-kyodozyuchu.html",
           "date": "2026年3月5日更新",
+          "category": ""
+        },
+        {
+          "hash": "87c11bbec41713a0",
+          "title": "令和8年度障害支援区分認定調査員（現任者向け）研修について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/2shienkubungennin.html",
+          "date": "2026年9月9日更新",
           "category": ""
         },
         {
@@ -6580,7 +6748,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-09-30T21:27:49.452Z",
+      "lastCrawled": "2026-10-01T21:52:28.098Z",
       "items": [
         {
           "hash": "c16f59eab0cefc3b",
@@ -6723,6 +6891,13 @@
           "category": ""
         },
         {
+          "hash": "882253e392dbe01b",
+          "title": "令和８年度福岡県ひとり親世帯等実態調査を実施します。",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/hitorioya-chousa-jisshi.html",
+          "date": "2026年10月1日更新",
+          "category": ""
+        },
+        {
           "hash": "55e58a015b7f679d",
           "title": "（ひとり親世帯の方、離婚を考えている方向け）困ったときの相談窓口",
           "url": "https://www.pref.fukuoka.lg.jp/contents/hitorioya-madoguchi.html",
@@ -6747,13 +6922,6 @@
           "hash": "2bcfb589f22cba51",
           "title": "ひとり親家庭の方を対象に給付金を支給します",
           "url": "https://www.pref.fukuoka.lg.jp/contents/hitorioyakyuuhukin.html",
-          "date": "2026年4月1日更新",
-          "category": ""
-        },
-        {
-          "hash": "2918ba8677fe6fdc",
-          "title": "ひとり親家庭の医療費を助成します",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/hitorioyairyo.html",
           "date": "2026年4月1日更新",
           "category": ""
         },
@@ -6860,6 +7028,13 @@
           "title": "こどもの居場所づくりをサポートします！",
           "url": "https://www.pref.fukuoka.lg.jp/contents/kodomonoibasyosuishin.html",
           "date": "2025年12月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "2918ba8677fe6fdc",
+          "title": "ひとり親家庭の医療費を助成します",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/hitorioyairyo.html",
+          "date": "2026年4月1日更新",
           "category": ""
         },
         {
@@ -7764,7 +7939,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-09-30T21:27:49.611Z",
+      "lastCrawled": "2026-10-01T21:52:29.113Z",
       "items": [
         {
           "hash": "ab8de273f8706135",
@@ -7816,8 +7991,8 @@
           "category": ""
         },
         {
-          "hash": "2200b58ea1978b28",
-          "title": "令和９年度介護施設等の整備に関する事業見込量等について",
+          "hash": "bebf6f20e761a126",
+          "title": "【受付は終了しました】令和９年度介護施設等の整備に関する事業見込量等について",
           "url": "https://www.pref.fukuoka.lg.jp/contents/chimitsu-jigyouryouchosa-r9.html",
           "date": "2026年9月11日更新",
           "category": ""
@@ -7907,6 +8082,13 @@
           "category": ""
         },
         {
+          "hash": "a71d54d9bbe909d3",
+          "title": "令和８年度福岡県外国人介護人材確保強化事業費補助金に係るご案内",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kakuhokyoka.html",
+          "date": "2026年10月1日更新",
+          "category": ""
+        },
+        {
           "hash": "8c64827511f01413",
           "title": "介護保険指定更新事業所（令和８年１０月更新）リスト",
           "url": "https://www.pref.fukuoka.lg.jp/contents/kousin.html",
@@ -7932,13 +8114,6 @@
           "title": "介護事業所等の連絡用メールアドレスの変更手続きについて",
           "url": "https://www.pref.fukuoka.lg.jp/contents/addresshenkou.html",
           "date": "2026年9月14日更新",
-          "category": ""
-        },
-        {
-          "hash": "42461e3837ad2cb4",
-          "title": "令和８年度福岡県介護ＤＸ支援事業費補助金に係るご案内（交付申請受付は終了しました）",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/kaigodx.html",
-          "date": "2026年9月1日更新",
           "category": ""
         },
         {
@@ -8012,6 +8187,27 @@
           "category": ""
         },
         {
+          "hash": "2b12826b488edc29",
+          "title": "介護人材確保・定着促進に係る取組",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kakuhoteityakusokusin.html",
+          "date": "2026年10月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "a71d54d9bbe909d3",
+          "title": "令和８年度福岡県外国人介護人材確保強化事業費補助金に係るご案内",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kakuhokyoka.html",
+          "date": "2026年10月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "cacce4fef86e2840",
+          "title": "外国人介護人材",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/gaikokukaigo.html",
+          "date": "2026年9月30日更新",
+          "category": ""
+        },
+        {
           "hash": "2fc6dbb507605bd3",
           "title": "福岡県ノーリフティングケア普及促進事業（地域連絡協議会）",
           "url": "https://www.pref.fukuoka.lg.jp/contents/care-nolift-chiiki.html",
@@ -8023,6 +8219,20 @@
           "title": "在宅医療・介護現場における利用者等からの暴力・ハラスメント対策について",
           "url": "https://www.pref.fukuoka.lg.jp/contents/ztiryoukaigo-bouhara.html",
           "date": "2026年9月8日更新",
+          "category": ""
+        },
+        {
+          "hash": "2200b58ea1978b28",
+          "title": "令和９年度介護施設等の整備に関する事業見込量等について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/chimitsu-jigyouryouchosa-r9.html",
+          "date": "2026年9月11日更新",
+          "category": ""
+        },
+        {
+          "hash": "42461e3837ad2cb4",
+          "title": "令和８年度福岡県介護ＤＸ支援事業費補助金に係るご案内（交付申請受付は終了しました）",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kaigodx.html",
+          "date": "2026年9月1日更新",
           "category": ""
         },
         {
@@ -8238,8 +8448,29 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-09-30T21:27:51.241Z",
+      "lastCrawled": "2026-10-01T21:53:00.925Z",
       "items": [
+        {
+          "hash": "3167d5ba09bd9d91",
+          "title": "カスハラ対策、就活ハラスメント防止に関する基本方針",
+          "url": "https://www.shakyo.or.jp/tsuite/koukai/index.html#jump04",
+          "date": "2026-10-01",
+          "category": "案内"
+        },
+        {
+          "hash": "74975e7b2625ea9d",
+          "title": "「社会人一年生スタート応援助成」（資格等取得）",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/261001SLshikaku/index.html",
+          "date": "2026-10-01",
+          "category": "助成"
+        },
+        {
+          "hash": "4efee2910b5ff872",
+          "title": "「幼い子どものゆたかな育ち応援助成」（七五三祝い）",
+          "url": "https://www.shakyo.or.jp/guide/sponsor/p/261001SL753/index.html",
+          "date": "2026-10-01",
+          "category": "助成"
+        },
         {
           "hash": "9d7e8c8c78955157",
           "title": "キリン福祉財団「キリン・地域のちから応援事業」",
@@ -8706,7 +8937,7 @@
     }
   },
   "preferredModel": "gemini-3.5-flash-lite",
-  "lastSentDate": "2026-10-01",
-  "lastRunAt": "2026-10-01T02:13:33.800Z",
-  "lastCrawlDate": "2026-10-01"
+  "lastSentDate": "2026-10-02",
+  "lastRunAt": "2026-10-01T21:53:13.698Z",
+  "lastCrawlDate": "2026-10-02"
 }

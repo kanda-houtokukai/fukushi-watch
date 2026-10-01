@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-30T21:29:35.280Z",
+ "updatedAt": "2026-10-01T21:55:40.097Z",
  "items": [
   {
    "hash": "78471666e9e39690",
@@ -115,6 +115,27 @@
     }
    ],
    "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260812saito.html"
+  },
+  {
+   "hash": "173aed374673fae7",
+   "source": "厚生労働省",
+   "sourceKind": "",
+   "funder": "厚生労働省",
+   "title": "令和８年度老人保健健康増進等事業（老人保健事業推進費等補助金）の国庫補助協議（３次公募）について",
+   "url": "https://www.mhlw.go.jp/stf/newpage_76519.html",
+   "postedAt": "2026-10-02",
+   "deadline": "2026-10-15",
+   "deadlineType": "date",
+   "deadlineRaw": "国庫補助協議の提出期限 2026-10-15",
+   "fields": [
+    "共通"
+   ],
+   "summary": "",
+   "uses": [],
+   "applicants": [],
+   "amount": "",
+   "conditions": [],
+   "via": "goryu"
   },
   {
    "hash": "bbfd74006c4b2d67",
@@ -318,6 +339,55 @@
     }
    ],
    "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260925kirinH.html"
+  },
+  {
+   "hash": "ed5649da94860399",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "未来をひらくTJF助成プログラム",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e6%9c%aa%e6%9d%a5%e3%82%92%e3%81%b2%e3%82%89%e3%81%8ftjf%e5%8a%a9%e6%88%90%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%a0-2/",
+   "postedAt": "2026-10-01",
+   "deadline": "2026-10-31",
+   "deadlineType": "date",
+   "deadlineRaw": "2026/10/31 募集要項 https://www.tjf.or.jp/information",
+   "openFrom": "2026-10-01",
+   "conditionsUrl": "https://www.tjf.or.jp/information/20748?utm_source=google&#038;utm_medium=jyoseinavi&#038;utm_campaign=grant_boshu_jnavi",
+   "summary": "国内外の児童生徒や青少年を対象に、多文化受容や複言語教育などを推進するプロジェクトを対象とした助成です。若い組織を中心に広く申請を受け付けています。",
+   "fields": [
+    "児童"
+   ],
+   "uses": [
+    "事業・活動"
+   ],
+   "applicants": [],
+   "amount": "1,000千円/1件 総額 8,000千円",
+   "conditions": [
+    {
+     "axis": "所在地",
+     "quote": "プロジェクトの連絡責任者、会計責任者の主たる居住地が日本であること"
+    },
+    {
+     "axis": "設立・活動年数",
+     "quote": "申請案件と関連する分野での活動について1年以上の実績があること"
+    },
+    {
+     "axis": "提出書類",
+     "quote": "1.申請時の年度の団体運営の事業計画書 2.申請時の年度の団体運営の年間予算計画書 3.申請時の前年の団体の事業報告書 4.収支決算報告書 5.団体の定款・会則(学校要覧等準ずるものも可) 6.反社会的勢力ではないことの表明誓約書(TJF様式)"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "NPO法人、公益財団法人、公益社団法人、一般財団法人、一般社団法人、その他非営利活動や公益事業の実施運営を目的とした団体(国公立の学校および学校法人等を含む)"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "営利団体、地方自治体、個人の活動家・研究者などは対象外とする"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "プロジェクト参加者の年齢層は、児童・生徒、大学生~30歳代の青年層(ユース)が主体・中心であること、及びその層を支える大人を原則とする"
+    }
+   ]
   },
   {
    "hash": "0354d4189feabfa0",
@@ -538,6 +608,57 @@
    "via": "goryu"
   },
   {
+   "hash": "d55048e134c86218",
+   "source": "全社協 福祉の助成情報",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "「幼い子どものゆたかな育ち応援助成」（「ゆたかな育ちと自立」応援助成事業）",
+   "url": "https://www.shakyo.or.jp/guide/sponsor/p/261001SL753/index.html",
+   "postedAt": "2026-10-01",
+   "deadline": "2027-01-12",
+   "deadlineType": "date",
+   "deadlineRaw": "2027年1月12日",
+   "summary": "乳児院や里親家庭、ファミリーホーム等で生活する児童を対象に、七五三のお祝いにかかった費用の一部を助成します。",
+   "fields": [
+    "児童"
+   ],
+   "uses": [
+    "行事・啓発"
+   ],
+   "applicants": [
+    "個人"
+   ],
+   "amount": "児童1名につき3万円(上限)",
+   "conditions": [
+    {
+     "axis": "その他の対象限定",
+     "quote": "乳児院の入所児童、または里親家庭もしくはファミリーホームにおける委託児童のうち、2026(令和8)年において七五三(7歳・5歳・3歳の子どもの成長を祝う行事)を行った児童"
+    }
+   ],
+   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/261001SL753/index.html"
+  },
+  {
+   "hash": "651e7acff6c12fa1",
+   "source": "全国社会福祉協議会",
+   "sourceKind": "",
+   "funder": "全国社会福祉協議会",
+   "title": "「幼い子どものゆたかな育ち応援助成」（七五三祝い）",
+   "url": "https://www.shakyo.or.jp/guide/sponsor/p/261001SL753/index.html",
+   "postedAt": "2026-10-02",
+   "deadline": "2027-01-12",
+   "deadlineType": "date",
+   "deadlineRaw": "申請期限 2027-01-12",
+   "fields": [
+    "共通"
+   ],
+   "summary": "",
+   "uses": [],
+   "applicants": [],
+   "amount": "",
+   "conditions": [],
+   "via": "goryu"
+  },
+  {
    "hash": "840d84b8213158ed",
    "source": "厚生労働省",
    "sourceKind": "",
@@ -548,6 +669,69 @@
    "deadline": "2027-01-27",
    "deadlineType": "date",
    "deadlineRaw": "特例対象となる休業等の開始期限 2027-01-27",
+   "fields": [
+    "共通"
+   ],
+   "summary": "",
+   "uses": [],
+   "applicants": [],
+   "amount": "",
+   "conditions": [],
+   "via": "goryu"
+  },
+  {
+   "hash": "3dede38aaa2012e2",
+   "source": "全社協 福祉の助成情報",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "「社会人一年生スタート応援助成」（「ゆたかな育ちと自立」応援助成事業）",
+   "url": "https://www.shakyo.or.jp/guide/sponsor/p/261001SLshikaku/index.html",
+   "postedAt": "2026-10-01",
+   "deadline": "2027-01-29",
+   "deadlineType": "date",
+   "deadlineRaw": "2027年1月29日",
+   "summary": "児童養護施設や自立援助ホーム等で生活し就職を予定している児童を対象に、普通自動車運転免許や各種資格の取得にかかる費用を助成します。",
+   "fields": [
+    "児童"
+   ],
+   "uses": [
+    "人材・研修"
+   ],
+   "applicants": [
+    "個人"
+   ],
+   "amount": "児童1名につき20万円を限度",
+   "conditions": [
+    {
+     "axis": "主体の付帯条件",
+     "quote": "本助成を活用して取得する資格証等の写しを、施設をとおして申請先に提出できる"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "助成申請時に、当該施設に入所している、または退所しているが2024(令和6)年4月1日以降において入所していた"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "原則として、2027(令和9)年4月から9月までの間に就職を予定している ※ 進学の場合は申請できません。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "助成申請時に、当該施設に入所している、または退所しているが2024年4月1日以降において3か月以上継続して入所していた"
+    }
+   ],
+   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/261001SLshikaku/index.html"
+  },
+  {
+   "hash": "a98abda401ff9da4",
+   "source": "全国社会福祉協議会",
+   "sourceKind": "",
+   "funder": "全国社会福祉協議会",
+   "title": "「社会人一年生スタート応援助成」（資格等取得）",
+   "url": "https://www.shakyo.or.jp/guide/sponsor/p/261001SLshikaku/index.html",
+   "postedAt": "2026-10-02",
+   "deadline": "2027-01-29",
+   "deadlineType": "date",
+   "deadlineRaw": "申請期限 2027-01-29",
    "fields": [
     "共通"
    ],
@@ -678,5 +862,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-10-01"
+ "lastFetchDate": "2026-10-02"
 }

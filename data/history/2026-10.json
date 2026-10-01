@@ -649,6 +649,539 @@
      ]
     }
    ]
+  },
+  "2026-10-02": {
+   "counts": {
+    "高": 6,
+    "中": 14,
+    "低": 13
+   },
+   "items": [
+    {
+     "hash": "2de99a7fc1dc1ea2",
+     "source": "厚生労働省",
+     "title": "説明会情報の更新（総合職（数理・デジタル系））",
+     "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/suuri.html",
+     "date": "2026-10-01",
+     "category": "採用情報",
+     "summary": "省庁の採用説明会に関する案内情報です。福祉事業所の実務や運営には直接関係ありません。",
+     "importance": "低",
+     "fields": [],
+     "reason": "採用情報の案内であり福祉事業運営に影響しないため"
+    },
+    {
+     "hash": "6798d0604ea6a570",
+     "source": "厚生労働省",
+     "title": "キャリアコンサルタントになりたい方へ（キャリアコンサルタント試験結果概要を更新しました）",
+     "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/career_consultant01.html",
+     "date": "2026-10-01",
+     "category": "政策分野",
+     "summary": "国家資格であるキャリアコンサルタント試験の結果概要の更新情報です。一般労働政策に関する内容です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "資格試験の結果概要であり福祉現場の実務に影響しないため"
+    },
+    {
+     "hash": "2d159b3998549e85",
+     "source": "厚生労働省",
+     "title": "キャリアコンサルタント養成講習・更新講習の申請を希望する機関の方へ（令和8年11月申請の説明会のご案内）",
+     "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/koushu_jisshi.html",
+     "date": "2026-10-01",
+     "category": "政策分野",
+     "summary": "キャリアコンサルタント養成・更新講習の申請に関する説明会の案内です。機関向けの行政手続きとなります。",
+     "importance": "低",
+     "fields": [],
+     "reason": "講習機関向けの申請案内であり福祉事業所の実務対象外であるため"
+    },
+    {
+     "hash": "3c3fd851ea61bbb7",
+     "source": "厚生労働省",
+     "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76538.html",
+     "date": "2026-10-01",
+     "category": "報道発表",
+     "summary": "厚生労働大臣の閣議後記者会見の開催案内です。個別具体的な福祉施策の通知ではありません。",
+     "importance": "低",
+     "fields": [],
+     "reason": "大臣の定例会見の案内であり個別の対応を要しないため",
+     "related": [
+      {
+       "day": "2026-09-29",
+       "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+       "url": "https://www.mhlw.go.jp/stf/newpage_76404.html"
+      },
+      {
+       "day": "2026-09-25",
+       "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+       "url": "https://www.mhlw.go.jp/stf/newpage_76364.html"
+      },
+      {
+       "day": "2026-09-18",
+       "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+       "url": "https://www.mhlw.go.jp/stf/newpage_76306.html"
+      }
+     ]
+    },
+    {
+     "hash": "b331eed5bad35b03",
+     "source": "厚生労働省",
+     "title": "厚生労働省薬系技官（選考採用）募集情報",
+     "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/yakukei_00002.html",
+     "date": "2026-10-01",
+     "category": "採用情報",
+     "summary": "省庁における薬系技官の選考採用募集の案内です。福祉施設の運営には直接影響しません。",
+     "importance": "低",
+     "fields": [],
+     "reason": "行政機関の職員採用情報であるため"
+    },
+    {
+     "hash": "e76c23c16e58a141",
+     "source": "厚生労働省",
+     "title": "「化学物質による健康障害防止のための濃度の基準の適用等に関する技術上の指針」について（公示）（令和８年10月１日技術上の指針公示第30号）",
+     "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/anzen/newpage_00015.html",
+     "date": "2026-10-01",
+     "category": "その他",
+     "summary": "化学物質による健康障害防止に関する技術上の指針の公示です。労務管理や安全衛生に関わる一般的な基準となります。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "労働安全衛生や化学物質管理に関わる基準の公示のため"
+    },
+    {
+     "hash": "b74f90cce1816115",
+     "source": "厚生労働省",
+     "title": "「令和８年度 第１回 薬事審議会 化学物質安全対策部会 家庭用品安全対策調査会」 を開催します（開催案内）",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76512.html",
+     "date": "2026-10-01",
+     "category": "審議会等",
+     "summary": "薬事審議会の部会および調査会の開催案内です。家庭用品の安全対策に関する審議が行われます。",
+     "importance": "低",
+     "fields": [],
+     "reason": "薬事や家庭用品の審議会であり福祉事業所の運営に直接影響しないため"
+    },
+    {
+     "hash": "db801d8e16b8dd6b",
+     "source": "厚生労働省",
+     "title": "戦没者慰霊事業のお知らせ（令和８年10月実施分）",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76396.html",
+     "date": "2026-10-01",
+     "category": "報道発表",
+     "summary": "戦没者慰霊事業の実施に関するお知らせです。一般的な国の方針・行事に関する情報です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "戦没者慰霊に関する行事案内であり福祉実務に関係ないため"
+    },
+    {
+     "hash": "0aa202c4404f5351",
+     "source": "厚生労働省",
+     "title": "令和８年度栄養関係功労者に対する厚生労働大臣表彰について",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76387.html",
+     "date": "2026-10-01",
+     "category": "報道発表",
+     "summary": "栄養関係の功労者に対する厚生労働大臣表彰の発表です。受賞者の公表に関するお知らせです。",
+     "importance": "低",
+     "fields": [],
+     "reason": "大臣表彰の受賞者発表であり業務上の対応を伴わないため"
+    },
+    {
+     "hash": "b24b311c67944aa8",
+     "source": "厚生労働省",
+     "title": "「ハタラクエール2027」応募受付の開始について",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76271.html",
+     "date": "2026-10-01",
+     "category": "報道発表",
+     "summary": "福利厚生表彰事業「ハタラクエール」の応募受付開始の案内です。職員の定着や福利厚生施策の参考になります。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "福利厚生や労働環境改善の参考になる情報のため"
+    },
+    {
+     "hash": "022c8ff5ce3134ba",
+     "source": "厚生労働省",
+     "title": "令和８年10月１日付幹部名簿",
+     "url": "https://www.mhlw.go.jp/kouseiroudoushou/kanbumeibo/index.html",
+     "date": "2026-10-01",
+     "category": "その他",
+     "summary": "省庁の幹部名簿の更新情報です。人事異動に伴う名簿の改定となります。",
+     "importance": "低",
+     "fields": [],
+     "reason": "人事異動や組織図に関する情報であり事業所の実務に影響しないため"
+    },
+    {
+     "hash": "dff8d5152eb6fb85",
+     "source": "厚生労働省",
+     "title": "令和８年度老人保健健康増進等事業（老人保健事業推進費等補助金）の国庫補助協議（３次公募）について",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76519.html",
+     "date": "2026-10-01",
+     "category": "政策分野",
+     "summary": "老人保健健康増進等事業における国庫補助金の3次公募の案内です。高齢者福祉に関する調査研究等の公募となります。",
+     "importance": "高",
+     "fields": [
+      "高齢"
+     ],
+     "reason": "高齢者福祉分野の補助金・公募情報にあたるため",
+     "action": "一般に、こうした通知では調査研究や補助金活用の要件に関する詳細な公募要領の確認が必要になります。"
+    },
+    {
+     "hash": "43718400da62b26e",
+     "source": "厚生労働省",
+     "title": "毎月勤労統計調査［地方調査］－令和８年４月分結果概要",
+     "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/monthly/r08/0804/index.html",
+     "date": "2026-10-01",
+     "category": "統計情報",
+     "summary": "地方における毎月勤労統計調査の結果概要です。賃金や労働時間の動向に関する統計データです。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "賃金や労務の動向を示す統計データであり参考になるため"
+    },
+    {
+     "hash": "935b286e66b47851",
+     "source": "厚生労働省",
+     "title": "採用情報（任期付職員（肝炎対策専門官又は主査）募集情報）",
+     "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/ninkituki/ninki-kanensenmonkan.html",
+     "date": "2026-10-01",
+     "category": "採用情報",
+     "summary": "省庁における任期付職員の募集情報です。特定業務の採用案内となります。",
+     "importance": "低",
+     "fields": [],
+     "reason": "行政機関の職員採用情報であるため"
+    },
+    {
+     "hash": "d48a3fd2a00fcc38",
+     "source": "厚生労働省",
+     "title": "WEBマガジン「厚生労働」（特集[臓器移植を考える]ほか更新）",
+     "url": "https://www.mhlw.go.jp/web_magazine/",
+     "date": "2026-10-01",
+     "category": "その他",
+     "summary": "厚生労働省のWEBマガジンの記事更新情報です。啓発コンテンツが含まれます。",
+     "importance": "低",
+     "fields": [],
+     "reason": "広報誌の更新情報であり実務上の対応が不要なため"
+    },
+    {
+     "hash": "1a7ec415aa986d65",
+     "source": "厚生労働省",
+     "title": "薬剤師免許の申請手続き等について",
+     "url": "https://www.mhlw.go.jp/bunya/iyakuhin/yakuzaishi/menkyo.html",
+     "date": "2026-10-01",
+     "category": "政策分野",
+     "summary": "薬剤師免許の申請手続き等に関する案内です。医療・福祉分野における有資格者の手続き情報です。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "医療・福祉関連の有資格者の登録手続きに関する情報のため"
+    },
+    {
+     "hash": "5a6f44e8de2b8601",
+     "source": "厚生労働省",
+     "title": "世界メンタルヘルスデー JAPAN 2026 特設サイト",
+     "url": "https://www.mhlw.go.jp/kokoro/mental_health_day/index.html",
+     "date": "2026-10-01",
+     "category": "その他",
+     "summary": "世界メンタルヘルスデーに向けた特設サイトの開設案内です。メンタルヘルス啓発に関する情報です。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "メンタルヘルス対策や普及啓発に関連するため",
+     "related": [
+      {
+       "day": "2026-09-01",
+       "title": "世界メンタルヘルスデー JAPAN 2026 特設サイト",
+       "url": "https://www.mhlw.go.jp/kokoro/mental_health_day/index.html"
+      }
+     ]
+    },
+    {
+     "hash": "d85bc3bbc5f992ea",
+     "source": "厚生労働省",
+     "title": "世界メンタルヘルスデー2026に応援サポーターとして リラックマ・コリラックマが登場 取組開始から8年目、内閣府主催「ともともフェスタ2026」に初参画 シルバーリボンジャパン主催イベントへの参画や 自治体・企業における「心のサポーター」…",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76263.html",
+     "date": "2026-10-01",
+     "category": "報道発表",
+     "summary": "メンタルヘルスデーにおけるイベント参画や企業の取り組みに関する報道発表です。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "メンタルヘルス関連の普及啓発活動の動向把握のため"
+    },
+    {
+     "hash": "81572f92d0c8f83e",
+     "source": "厚生労働省",
+     "title": "労働経済動向調査にご協力をお願いします ～令和８(2026)年11月調査～",
+     "url": "https://www.mhlw.go.jp/toukei/oshirase/261001.html",
+     "date": "2026-10-01",
+     "category": "統計情報",
+     "summary": "労働経済動向調査への協力依頼に関する統計情報です。事業所における労務状況の調査となります。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "労働経済や雇用に関する行政調査への協力案内であるため"
+    },
+    {
+     "hash": "452d35d0ef7318e6",
+     "source": "厚生労働省",
+     "title": "第58回社会保険労務士試験の合格者発表",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76425.html",
+     "date": "2026-10-01",
+     "category": "その他",
+     "summary": "社会保険労務士試験の合格者発表に関する情報です。労務管理に関連する資格試験の結果となります。",
+     "importance": "低",
+     "fields": [],
+     "reason": "国家試験の合格発表であり事業所の直接的な実務に影響しないため"
+    },
+    {
+     "hash": "376a4854e0e8fce9",
+     "source": "WAM NET",
+     "title": "第217回 社会保障審議会 医療保険部会（令和8年10月1日開催）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22906&ct=010010050&from=rss",
+     "date": "2026-10-01",
+     "category": "行政資料",
+     "summary": "社会保障審議会医療保険部会の開催資料等です。医療保険制度の動向や見直しに関する議論が行われます。",
+     "importance": "中",
+     "fields": [
+      "高齢"
+     ],
+     "reason": "社会保障制度全体の動向として把握しておくべき審議会資料のため",
+     "related": [
+      {
+       "day": "2026-09-18",
+       "title": "第216回 社会保障審議会 医療保険部会（令和8年9月16日開催）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22882&ct=010010050&from=rss"
+      },
+      {
+       "day": "2026-09-15",
+       "title": "第215回 社会保障審議会 医療保険部会（令和8年9月11日開催）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22863&ct=010010050&from=rss"
+      },
+      {
+       "day": "2026-09-04",
+       "title": "第214回 社会保障審議会 医療保険部会（令和8年9月3日開催）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22836&ct=010010050&from=rss"
+      }
+     ]
+    },
+    {
+     "hash": "80898ba379464625",
+     "source": "WAM NET",
+     "title": "第107回 厚生科学審議会 感染症部会（令和8年9月30日開催）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22908&ct=010020080&from=rss",
+     "date": "2026-10-01",
+     "category": "行政資料",
+     "summary": "厚生科学審議会感染症部会の開催資料等です。感染症対策や法制度に関する議論が行われます。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "感染症対策の動向は全福祉施設で把握が必要なため"
+    },
+    {
+     "hash": "a02efda23466abe8",
+     "source": "WAM NET",
+     "title": "第268回 社会保障審議会 介護給付費分科会（令和8年9月30日開催）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22907&ct=010010020&from=rss",
+     "date": "2026-10-01",
+     "category": "行政資料",
+     "summary": "社会保障審議会介護給付費分科会の開催資料等です。介護報酬や基準に関する議論が行われます。",
+     "importance": "高",
+     "fields": [
+      "高齢"
+     ],
+     "reason": "介護報酬や基準改定に直結する重要会議の資料のため",
+     "action": "一般に、こうした通知では介護報酬や制度改正に関する議論の動向および配布資料の確認が必要になります。",
+     "related": [
+      {
+       "day": "2026-09-18",
+       "title": "第267回 社会保障審議会 介護給付費分科会（令和8年9月16日開催）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22884&ct=010010020&from=rss"
+      },
+      {
+       "day": "2026-09-15",
+       "title": "第266回 社会保障審議会 介護給付費分科会（令和8年9月14日開催）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22860&ct=010010020&from=rss"
+      },
+      {
+       "day": "2026-09-11",
+       "title": "第265回 社会保障審議会 介護給付費分科会（令和8年9月10日開催）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22851&ct=010010020&from=rss"
+      }
+     ]
+    },
+    {
+     "hash": "6c8e49da8eaac25e",
+     "source": "WAM NET",
+     "title": "第65回 障害福祉サービス等報酬改定検討チーム（令和8年10月5日開催予定）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22904&ct=070010040&from=rss",
+     "date": "2026-09-30",
+     "category": "行政資料",
+     "summary": "障害福祉サービス等報酬改定検討チームの開催予定に関する情報です。障害福祉の報酬や制度見直しに向けた議論が行われます。",
+     "importance": "高",
+     "fields": [
+      "障害"
+     ],
+     "reason": "障害福祉サービスの報酬改定や基準見直しに直結する重要検討会のため",
+     "action": "一般に、こうした通知では障害福祉サービスの報酬改定や制度見直しに向けた議論内容の把握が必要になります。",
+     "related": [
+      {
+       "day": "2026-09-26",
+       "title": "第64回 障害福祉サービス等報酬改定検討チーム（令和8年9月28日開催予定）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22893&ct=070010040&from=rss"
+      },
+      {
+       "day": "2026-09-19",
+       "title": "第63回 障害福祉サービス等報酬改定検討チーム（令和8年9月24日開催予定）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22887&ct=070010040&from=rss"
+      }
+     ]
+    },
+    {
+     "hash": "cc94582d2f0bc47b",
+     "source": "福岡県（障がい福祉）",
+     "title": "身体障害者福祉法第１５条指定医師名簿",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/shiteiishimeibo.html",
+     "date": "2026年10月1日更新",
+     "category": "",
+     "summary": "身体障害者福祉法に基づく指定医師の名簿更新情報です。障害福祉サービス等の申請や判定に関わる重要情報です。",
+     "importance": "高",
+     "fields": [
+      "障害"
+     ],
+     "reason": "障害福祉の申請手続きや判定に関わる指定医の確認に不可欠なため",
+     "action": "一般に、こうした通知ではサービス申請や判定に関わる指定医師の最新状況の確認が必要になります。"
+    },
+    {
+     "hash": "882253e392dbe01b",
+     "source": "福岡県（子ども・青少年）",
+     "title": "令和８年度福岡県ひとり親世帯等実態調査を実施します。",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/hitorioya-chousa-jisshi.html",
+     "date": "2026年10月1日更新",
+     "category": "",
+     "summary": "福岡県が実施するひとり親世帯等の実態調査に関する案内です。今後の児童福祉や母子保健施策の立案に向けた基礎資料となるため、動向を把握しておくべき情報です。",
+     "importance": "中",
+     "fields": [
+      "児童"
+     ],
+     "reason": "行政の福祉施策の方向性に関わる調査のため、先々の影響を考慮し把握が必要。"
+    },
+    {
+     "hash": "bebf6f20e761a126",
+     "source": "福岡県（介護・高齢者福祉）",
+     "title": "【受付は終了しました】令和９年度介護施設等の整備に関する事業見込量等について",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/chimitsu-jigyouryouchosa-r9.html",
+     "date": "2026年9月11日更新",
+     "category": "",
+     "summary": "介護施設等の整備に関する事業見込量の調査受付終了の通知です。今後の高齢者福祉施設の計画や整備動向を把握する上で参考になります。",
+     "importance": "低",
+     "fields": [
+      "高齢"
+     ],
+     "reason": "すでに受付が終了しており、実務上の新規の対応や影響が発生しないため。"
+    },
+    {
+     "hash": "a71d54d9bbe909d3",
+     "source": "福岡県（介護・高齢者福祉）",
+     "title": "令和８年度福岡県外国人介護人材確保強化事業費補助金に係るご案内",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/kakuhokyoka.html",
+     "date": "2026年10月1日更新",
+     "category": "",
+     "summary": "外国人介護人材の確保強化を目的とした補助金の案内です。申請を検討する事業者にとって対応が必要な資金支援情報です。",
+     "importance": "高",
+     "fields": [
+      "高齢"
+     ],
+     "reason": "補助金と申請案内に関連し、事業者側の対応が必要になりうるため。",
+     "action": "一般に、こうした通知では補助金の対象要件や申請手続き、スケジュール等の確認が必要になります。"
+    },
+    {
+     "hash": "2b12826b488edc29",
+     "source": "福岡県（介護・高齢者福祉）",
+     "title": "介護人材確保・定着促進に係る取組",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/kakuhoteityakusokusin.html",
+     "date": "2026年10月1日更新",
+     "category": "",
+     "summary": "介護分野における人材確保および定着促進のための取り組みを紹介するページです。労務管理や採用戦略の参考になります。",
+     "importance": "中",
+     "fields": [
+      "高齢"
+     ],
+     "reason": "人材確保に関する行政の施策や好事例の把握につながるため。"
+    },
+    {
+     "hash": "cacce4fef86e2840",
+     "source": "福岡県（介護・高齢者福祉）",
+     "title": "外国人介護人材",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/gaikokukaigo.html",
+     "date": "2026年9月30日更新",
+     "category": "",
+     "summary": "外国人介護人材の受け入れや支援に関する総合的な情報ページです。雇用管理や制度改正の確認に活用できます。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "外国人材の雇用管理や関連情報として継続的に把握しておくべき事項のため。",
+     "related": [
+      {
+       "day": "2026-09-01",
+       "title": "外国人介護人材",
+       "url": "https://www.pref.fukuoka.lg.jp/contents/gaikokukaigo.html"
+      }
+     ]
+    },
+    {
+     "hash": "3167d5ba09bd9d91",
+     "source": "全国社会福祉協議会",
+     "kind": "org",
+     "title": "カスハラ対策、就活ハラスメント防止に関する基本方針",
+     "url": "https://www.shakyo.or.jp/tsuite/koukai/index.html#jump04",
+     "date": "2026-10-01",
+     "category": "案内",
+     "summary": "カスタマーハラスメントおよび就職活動中のハラスメント防止に関する基本方針の策定・案内です。全福祉施設において労務管理や窓口対応の見直しが求められます。",
+     "importance": "高",
+     "fields": [
+      "共通"
+     ],
+     "reason": "ハラスメント防止は全福祉事業所の労務・安全管理において対応が必須となるため。",
+     "action": "一般に、こうした通知ではハラスメント防止に向けた基本方針の確認や労務管理・窓口対応の見直しが必要になります。"
+    },
+    {
+     "hash": "74975e7b2625ea9d",
+     "source": "全国社会福祉協議会",
+     "kind": "org",
+     "title": "「社会人一年生スタート応援助成」（資格等取得）",
+     "url": "https://www.shakyo.or.jp/guide/sponsor/p/261001SLshikaku/index.html",
+     "date": "2026-10-01",
+     "category": "助成",
+     "summary": "社会人一年生の資格取得等を支援する助成金の案内です。新入職員のスキルアップや福利厚生の観点から活用を検討できます。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "業界団体や行政等による助成金の公募案内であり、職員の育成に活用できるため。"
+    },
+    {
+     "hash": "4efee2910b5ff872",
+     "source": "全国社会福祉協議会",
+     "kind": "org",
+     "title": "「幼い子どものゆたかな育ち応援助成」（七五三祝い）",
+     "url": "https://www.shakyo.or.jp/guide/sponsor/p/261001SL753/index.html",
+     "date": "2026-10-01",
+     "category": "助成",
+     "summary": "子どもの育ちや家庭を支援する七五三祝い等の助成金に関する案内です。直接的な福祉事業の運営というよりは子育て支援施策に関連する情報です。",
+     "importance": "中",
+     "fields": [
+      "児童"
+     ],
+     "reason": "児童福祉や子育て支援に関連する助成金の公募案内として把握しておくべき情報のため。"
+    }
+   ]
   }
  }
 }
