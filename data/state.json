@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-10-03T20:00:24.699Z",
+      "lastCrawled": "2026-10-04T20:15:05.781Z",
       "items": [
         {
           "hash": "4ebe4d955b7aa6cd",
@@ -832,7 +832,7 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-10-03T20:00:25.795Z",
+      "lastCrawled": "2026-10-04T20:15:06.741Z",
       "items": [
         {
           "hash": "f5673aecdf030eb7",
@@ -4512,7 +4512,7 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-10-03T20:00:27.154Z",
+      "lastCrawled": "2026-10-04T20:15:08.207Z",
       "items": [
         {
           "hash": "6c97f80fe22fd6ae",
@@ -6547,7 +6547,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-10-03T20:00:28.902Z",
+      "lastCrawled": "2026-10-04T20:15:09.209Z",
       "items": [
         {
           "hash": "cc94582d2f0bc47b",
@@ -6860,7 +6860,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-10-03T20:00:29.967Z",
+      "lastCrawled": "2026-10-04T20:15:09.400Z",
       "items": [
         {
           "hash": "c16f59eab0cefc3b",
@@ -7507,8 +7507,22 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-10-03T20:00:32.167Z",
+      "lastCrawled": "2026-10-04T20:15:11.024Z",
       "items": [
+        {
+          "hash": "de562eb7a2dac1b3",
+          "title": "【天野尊明】来年度の報酬改定は転換点 介護経営そのものを問い直す局面に",
+          "url": "https://www.joint-kaigo.com/articles/49217/",
+          "date": "2026-10-05",
+          "category": "福祉用具"
+        },
+        {
+          "hash": "f35ca1802f3ca974",
+          "title": "【深層対談】介護AIの過熱PRに警鐘 「何でもできる」と煽らない誠実さと協調が生む力 NDソフト×BOS｜後編",
+          "url": "https://www.joint-kaigo.com/articles/48838/",
+          "date": "2026-10-05",
+          "category": "超高齢化"
+        },
         {
           "hash": "db90bc9668e2e9da",
           "title": "身寄りのない高齢者の支援、事業者選びに新たな判断材料 全終協が初の優良事業者を認定",
@@ -8100,7 +8114,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-10-03T20:00:30.867Z",
+      "lastCrawled": "2026-10-04T20:15:09.605Z",
       "items": [
         {
           "hash": "ab8de273f8706135",
@@ -8138,6 +8152,13 @@
           "category": ""
         },
         {
+          "hash": "9a222f7ae2c5338c",
+          "title": "令和８年度福岡県介護支援専門員実務研修受講試験会場等のお知らせ",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/shiken.html",
+          "date": "2026年10月5日更新",
+          "category": ""
+        },
+        {
           "hash": "6461d0f1e177f54c",
           "title": "令和８年度高齢者福祉施設等の整備方針に基づいて採択した施設整備（追加分）の一覧を掲載しています。",
           "url": "https://www.pref.fukuoka.lg.jp/contents/seibi-list-r8tuika.html",
@@ -8163,13 +8184,6 @@
           "title": "「高齢者の福祉」（令和７年度版）",
           "url": "https://www.pref.fukuoka.lg.jp/contents/koureisyanofukusi6.html",
           "date": "2026年7月21日更新",
-          "category": ""
-        },
-        {
-          "hash": "0e31dfc3f927177e",
-          "title": "福岡県の高齢者人口及び高齢化率の推移（令和８年４月１日現在）",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/koreisyajinko.html",
-          "date": "2026年6月8日更新",
           "category": ""
         },
         {
@@ -8348,6 +8362,20 @@
           "category": ""
         },
         {
+          "hash": "c719b295a34f5eac",
+          "title": "令和8年度介護支援専門員実務研修受講試験",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/keamaneshiken.html",
+          "date": "2026年10月5日更新",
+          "category": ""
+        },
+        {
+          "hash": "9a222f7ae2c5338c",
+          "title": "令和８年度福岡県介護支援専門員実務研修受講試験会場等のお知らせ",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/shiken.html",
+          "date": "2026年10月5日更新",
+          "category": ""
+        },
+        {
           "hash": "7282e2f093c3c7cf",
           "title": "介護支援専門員証更新交付申請書の提出",
           "url": "https://www.pref.fukuoka.lg.jp/contents/keamanekoushinnkoufu.html",
@@ -8369,10 +8397,10 @@
           "category": ""
         },
         {
-          "hash": "a71d54d9bbe909d3",
-          "title": "令和８年度福岡県外国人介護人材確保強化事業費補助金に係るご案内",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/kakuhokyoka.html",
-          "date": "2026年10月1日更新",
+          "hash": "0e31dfc3f927177e",
+          "title": "福岡県の高齢者人口及び高齢化率の推移（令和８年４月１日現在）",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/koreisyajinko.html",
+          "date": "2026年6月8日更新",
           "category": ""
         },
         {
@@ -8623,7 +8651,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-10-03T20:00:33.150Z",
+      "lastCrawled": "2026-10-04T20:15:12.601Z",
       "items": [
         {
           "hash": "3167d5ba09bd9d91",
@@ -9112,7 +9140,7 @@
     }
   },
   "preferredModel": "gemini-3.5-flash-lite",
-  "lastSentDate": "2026-10-04",
-  "lastRunAt": "2026-10-04T02:45:21.913Z",
-  "lastCrawlDate": "2026-10-04"
+  "lastSentDate": "2026-10-05",
+  "lastRunAt": "2026-10-04T20:15:15.341Z",
+  "lastCrawlDate": "2026-10-05"
 }
