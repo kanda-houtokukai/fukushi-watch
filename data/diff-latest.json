@@ -1,6 +1,161 @@
 {
-  "generatedAt": "2026-10-05T02:07:18.080Z",
-  "newItems": [],
-  "newPress": [],
+  "generatedAt": "2026-10-05T23:13:23.142Z",
+  "newItems": [
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "fcd6ec28f752abad",
+      "title": "関係法令、その他関係通知等",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76430.html",
+      "date": "2026-10-05",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "bd60afcda3f31297",
+      "title": "ヒトゲノム編集胚等の取扱いの規制について",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/saisei_iryou/index_00019.html",
+      "date": "2026-10-05",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "0e8008aabcae95ca",
+      "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76586.html",
+      "date": "2026-10-05",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "7b95b325b73f8606",
+      "title": "WHOとの共同プレスリリースを公表しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000120172.html",
+      "date": "2026-10-05",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "352c73cf46cc7988",
+      "title": "第78回厚生科学審議会予防接種・ワクチン分科会予防接種基本方針部会の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76200.html",
+      "date": "2026-10-05",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "4ed3eb8635c9f0fe",
+      "title": "令和８年度 薬事功労者厚生労働大臣表彰を行います",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76394.html",
+      "date": "2026-10-05",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "b75476ca9e8a05ac",
+      "title": "第82回厚生科学審議会疾病対策部会臓器移植委員会 (Web会議) を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76092.html",
+      "date": "2026-10-05",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "53dfe0a41827aaf7",
+      "title": "「第21回若年者ものづくり競技大会」における選手表彰の追加について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_75929.html",
+      "date": "2026-10-05",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "8213a11abe6383ba",
+      "title": "公益事業に関する争議行為の予告公表ページについて更新されました",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudouseisaku/sougikoui/index.html",
+      "date": "2026-10-03",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "5459b9c35f5551a8",
+      "title": "第10回有料老人ホームにおける望ましいサービス提供のあり方に関する検討会を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76462.html",
+      "date": "2026-09-29",
+      "category": "審議会等"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "98fa029628de25ed",
+      "title": "中央社会保険医療協議会の開催について（令和8年10月7日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22916&ct=070010030&from=rss",
+      "date": "2026-10-05",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "7ac5f6b6fb3fa9c6",
+      "title": "介護保険最新情報Vol.1545（PDF：558KB）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/1005093222401/ksvol.1545.pdf?from=rss",
+      "date": "2026-10-05",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "51cafa0396dc8eca",
+      "title": "第158回 先進医療会議（令和8年10月9日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22917&ct=070010030&from=rss",
+      "date": "2026-10-05",
+      "category": "行政資料"
+    },
+    {
+      "source": "福岡県（子ども・青少年）",
+      "kind": "gov",
+      "hash": "d7fadf881c873ddf",
+      "title": "11月は「ふくおか・みんなで家族月間」！協賛事業を募集しています！",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/kazokugekkann2026.html",
+      "date": "2026年9月17日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（介護・高齢者福祉）",
+      "kind": "gov",
+      "hash": "74202a70e5e77ddd",
+      "title": "福岡県ノーリフティングケア普及促進事業（地域連絡協議会）",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/care-nolift-chiiki.html",
+      "date": "2026年10月5日更新",
+      "category": ""
+    }
+  ],
+  "newPress": [
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "fff702d700b70468",
+      "title": "高市首相、医療・介護のAX推進に意欲 「社会実装を大胆に進める」＝所信表明演説",
+      "url": "https://www.joint-kaigo.com/articles/49248/",
+      "date": "2026-10-05",
+      "category": "政府与党"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "2c9bae6a12e3af35",
+      "title": "障害児支援、すべての常勤職員に研修受講を 国が提案 児発や放デイなど対象 来年度の報酬改定で",
+      "url": "https://www.joint-kaigo.com/articles/49227/",
+      "date": "2026-10-05",
+      "category": "政府与党"
+    }
+  ],
   "crawlErrors": []
 }
