@@ -1,53 +1,6 @@
 {
-  "generatedAt": "2026-10-04T20:15:12.604Z",
-  "newItems": [
-    {
-      "source": "福岡県（介護・高齢者福祉）",
-      "kind": "gov",
-      "hash": "9a222f7ae2c5338c",
-      "title": "令和８年度福岡県介護支援専門員実務研修受講試験会場等のお知らせ",
-      "url": "https://www.pref.fukuoka.lg.jp/contents/shiken.html",
-      "date": "2026年10月5日更新",
-      "category": ""
-    },
-    {
-      "source": "福岡県（介護・高齢者福祉）",
-      "kind": "gov",
-      "hash": "c719b295a34f5eac",
-      "title": "令和8年度介護支援専門員実務研修受講試験",
-      "url": "https://www.pref.fukuoka.lg.jp/contents/keamaneshiken.html",
-      "date": "2026年10月5日更新",
-      "category": ""
-    },
-    {
-      "source": "福岡県（介護・高齢者福祉）",
-      "kind": "gov",
-      "hash": "9a222f7ae2c5338c",
-      "title": "令和８年度福岡県介護支援専門員実務研修受講試験会場等のお知らせ",
-      "url": "https://www.pref.fukuoka.lg.jp/contents/shiken.html",
-      "date": "2026年10月5日更新",
-      "category": ""
-    }
-  ],
-  "newPress": [
-    {
-      "source": "介護ニュースJoint",
-      "kind": "press",
-      "hash": "de562eb7a2dac1b3",
-      "title": "【天野尊明】来年度の報酬改定は転換点 介護経営そのものを問い直す局面に",
-      "url": "https://www.joint-kaigo.com/articles/49217/",
-      "date": "2026-10-05",
-      "category": "福祉用具"
-    },
-    {
-      "source": "介護ニュースJoint",
-      "kind": "press",
-      "hash": "f35ca1802f3ca974",
-      "title": "【深層対談】介護AIの過熱PRに警鐘 「何でもできる」と煽らない誠実さと協調が生む力 NDソフト×BOS｜後編",
-      "url": "https://www.joint-kaigo.com/articles/48838/",
-      "date": "2026-10-05",
-      "category": "超高齢化"
-    }
-  ],
+  "generatedAt": "2026-10-05T02:07:18.080Z",
+  "newItems": [],
+  "newPress": [],
   "crawlErrors": []
 }
