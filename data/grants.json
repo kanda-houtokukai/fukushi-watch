@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-05T23:14:14.134Z",
+ "updatedAt": "2026-10-06T21:46:09.596Z",
  "items": [
   {
    "hash": "78471666e9e39690",
@@ -408,54 +408,6 @@
    "via": "goryu"
   },
   {
-   "hash": "f26c6e17688b01fd",
-   "source": "助成財団センター 助成金募集ニュース",
-   "sourceKind": "org",
-   "funder": "",
-   "title": "2026年度＜特定課題＞先端技術と共創する新たな人間社会",
-   "url": "https://www.jfc.or.jp/news_subsidy/2026%e5%b9%b4%e5%ba%a6%ef%bc%9c%e7%89%b9%e5%ae%9a%e8%aa%b2%e9%a1%8c%ef%bc%9e%e5%85%88%e7%ab%af%e6%8a%80%e8%a1%93%e3%81%a8%e5%85%b1%e5%89%b5%e3%81%99%e3%82%8b%e6%96%b0%e3%81%9f%e3%81%aa%e4%ba%ba-2/",
-   "postedAt": "2026-09-11",
-   "deadline": "2026-11-13",
-   "deadlineType": "date",
-   "deadlineRaw": "2026/11/13 締め切り時間:日本時間15:00 個人研究プロジェクト 募集要項 https",
-   "openFrom": "2026-09-10",
-   "conditionsUrl": "https://www.toyotafound.or.jp/grant/advanced/",
-   "summary": "先端的なデジタル技術をめぐる社会的諸課題に対応する独創的な個人研究プロジェクトを支援する助成です。助成開始時に40歳以下の若手研究者が応募できます。",
-   "fields": [
-    "共通"
-   ],
-   "uses": [
-    "研究・調査"
-   ],
-   "applicants": [
-    "個人",
-    "研究者・大学"
-   ],
-   "amount": "2,000千円/1件（総額5,000千円）",
-   "conditions": [
-    {
-     "axis": "所在地",
-     "quote": "プロジェクト代表者の主たる居住地が日本国内で"
-    },
-    {
-     "axis": "主体の付帯条件",
-     "quote": "日本語で日常的なコミュニケーションがとれること。応募書類の受け付けは日本語のみとなります。"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "先端的なデジタル技術をとりまく社会的諸課題の解決に資するプロジェクトであること。"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "2 名以上による共同研究プロジェクトで、代表者の年齢が助成開始時に 45 歳以下であること。"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "助成開始時の年齢が40歳以下であること。"
-    }
-   ]
-  },
-  {
    "hash": "a5d178e8a97fa20c",
    "source": "全社協 福祉の助成情報",
    "sourceKind": "org",
@@ -490,33 +442,49 @@
    "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260911amemiya.html"
   },
   {
-   "hash": "10444a14161fc457",
+   "hash": "e0ef554bf9efe92a",
    "source": "助成財団センター 助成金募集ニュース",
    "sourceKind": "org",
    "funder": "",
-   "title": "日本郵便年賀寄付金配分事業",
-   "url": "https://www.jfc.or.jp/news_subsidy/%e6%97%a5%e6%9c%ac%e9%83%b5%e4%be%bf%e5%b9%b4%e8%b3%80%e5%af%84%e4%bb%98%e9%87%91%e9%85%8d%e5%88%86%e4%ba%8b%e6%a5%ad-2/",
-   "postedAt": "2026-09-11",
-   "deadline": "2026-11-18",
+   "title": "第2回「大阪子どもゆめ応援基金」",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e7%ac%ac2%e5%9b%9e%e3%80%8c%e5%a4%a7%e9%98%aa%e5%ad%90%e3%81%a9%e3%82%82%e3%82%86%e3%82%81%e5%bf%9c%e6%8f%b4%e5%9f%ba%e9%87%91%e3%80%8d/",
+   "postedAt": "2026-10-06",
+   "deadline": "2026-11-24",
    "deadlineType": "date",
-   "deadlineRaw": "2026/11/18 募集要項 https://www.post.japanpost.jp/abo",
-   "openFrom": "2026-09-29",
-   "conditionsUrl": "http://www.post.japanpost.jp/kifu/",
-   "summary": "社会福祉の増進や被災者支援などの活動・施設改修・機器や車両の購入等を助成するもので、社会福祉法人やNPO法人等が応募できます。",
+   "deadlineRaw": "2026年11月24日 募集要項 https://np-foundation.or.jp/info",
+   "openFrom": "2026-10-06",
+   "conditionsUrl": "https://np-foundation.or.jp/information/000428.html",
+   "summary": "経済状況や養育環境等による格差に左右されず、子どもが夢を持ち自分らしく生きる力を育むための体験機会を提供する取り組みを支援。応募資格の記載はなし。",
    "fields": [
-    "共通"
+    "児童"
    ],
    "uses": [
-    "設備・改修",
-    "機器・用具",
-    "車両"
+    "行事・啓発"
    ],
-   "applicants": [
-    "社会福祉法人",
-    "NPO・公益法人"
-   ],
-   "amount": "上限250万円/件（活動・チャレンジプログラムは50万円）",
-   "conditions": []
+   "applicants": [],
+   "amount": "上限 300万円/1件",
+   "conditions": [
+    {
+     "axis": "事業の実施地",
+     "quote": "※本公募では日本国内で実施する事業が対象です。"
+    },
+    {
+     "axis": "主体の付帯条件",
+     "quote": "助成電子申請システム「Graain」から、必要書類・団体情報をご提出いただきます。"
+    },
+    {
+     "axis": "提出書類",
+     "quote": "提出書類 ・応募用紙 書式ダウンロード: 第2回大阪子どもゆめ応援基金_応募用紙 ・団体の紹介資料 ・過去2事業年度の財務報告書 ・団体の今事業年度の収支予算書 ・登記簿謄本/履歴事項全部証明書の写し ・定款"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "大阪府内に住み、様々な理由により学びや体験の機会が限られる子どもへ、学校外での学習やスポーツ・エンターテインメント体験、多世代交流などを提供する事業。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "※本公募では主に大阪府に住む子どもが参加する事業が対象です。"
+    }
+   ]
   },
   {
    "hash": "2dbffd2b88875550",
@@ -794,5 +762,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-10-06"
+ "lastFetchDate": "2026-10-07"
 }
