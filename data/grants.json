@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-06T21:46:09.596Z",
+ "updatedAt": "2026-10-07T22:10:15.064Z",
  "items": [
   {
    "hash": "78471666e9e39690",
@@ -322,71 +322,6 @@
    ]
   },
   {
-   "hash": "0354d4189feabfa0",
-   "source": "助成財団センター 助成金募集ニュース",
-   "sourceKind": "org",
-   "funder": "",
-   "title": "第3回大分発！ソーシャル・スタートアップ基金",
-   "url": "https://www.jfc.or.jp/news_subsidy/%e7%ac%ac3%e5%9b%9e%e5%a4%a7%e5%88%86%e7%99%ba%ef%bc%81%e3%82%bd%e3%83%bc%e3%82%b7%e3%83%a3%e3%83%ab%e3%83%bb%e3%82%b9%e3%82%bf%e3%83%bc%e3%83%88%e3%82%a2%e3%83%83%e3%83%97%e5%9f%ba%e9%87%91/",
-   "postedAt": "2026-09-25",
-   "deadline": "2026-10-31",
-   "deadlineType": "date",
-   "deadlineRaw": "2026/10/31 募集要項 WEBサイト関連ページURL https://np-foundat",
-   "openFrom": "2026-09-25",
-   "conditionsUrl": "https://np-foundation.or.jp/information/000427.html",
-   "summary": "大分県内で社会課題の解決を目指す新たな技術やサービスの立ち上げ、開発実証、調査、研究を行うスタートアップを支援する助成金です。応募資格の記載はありません。",
-   "fields": [
-    "共通"
-   ],
-   "uses": [
-    "研究・調査"
-   ],
-   "applicants": [],
-   "amount": "3,000千円/1件",
-   "conditions": [
-    {
-     "axis": "所在地",
-     "quote": "大分県内に本店または主たる事務所があること"
-    },
-    {
-     "axis": "事業の実施地",
-     "quote": "日本国内の社会課題や地域課題の解決を目的とする新たな技術・商品・サービスの立ち上げに関する開発・調査・研究事業"
-    },
-    {
-     "axis": "設立・活動年数",
-     "quote": "設立から 1 年以上~ 10 年未満の法人( 2026 年 9 月 1 日現在)"
-    },
-    {
-     "axis": "補助率・自己負担",
-     "quote": "助成率を助成対象経費の100%としました"
-    },
-    {
-     "axis": "主体の付帯条件",
-     "quote": "「助成先団体に求められる義務・条件」"
-    },
-    {
-     "axis": "提出書類",
-     "quote": "・応募用紙"
-    },
-    {
-     "axis": "提出書類",
-     "quote": "・応募事業経費予算書"
-    },
-    {
-     "axis": "提出書類",
-     "quote": "・法人の紹介資料"
-    },
-    {
-     "axis": "提出書類",
-     "quote": "・過去2期分の事業年度の財務報告書"
-    },
-    {
-     "axis": "提出書類",
-     "quote": "・法人の今事業年度の収支予算書"
-    }
-   ]
-  },
-  {
    "hash": "45c00d1b0f531d29",
    "source": "福岡県（子ども・青少年）",
    "sourceKind": "",
@@ -406,6 +341,45 @@
    "amount": "",
    "conditions": [],
    "via": "goryu"
+  },
+  {
+   "hash": "8262f5d7f9651581",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "2026-2027 研究助成",
+   "url": "https://www.jfc.or.jp/news_subsidy/2026-2027-%e3%81%97%e3%81%ae%e3%81%af%e3%82%89%e7%a0%94%e7%a9%b6%e5%8a%a9%e6%88%90/",
+   "postedAt": "2026-10-06",
+   "deadline": "2026-11-15",
+   "deadlineType": "date",
+   "deadlineRaw": "2026/11/15 募集要項 https://ysmf-res-grant.jp/ WEBサイト",
+   "openFrom": "2026-09-18",
+   "summary": "医療・介護・福祉等のフロントライン領域における労働環境改善や生産性向上を目指す研究を対象に、大学や研究機関等の研究者を支援する助成です。",
+   "fields": [
+    "共通"
+   ],
+   "uses": [
+    "研究・調査"
+   ],
+   "applicants": [
+    "研究者・大学"
+   ],
+   "amount": "1件あたり最大300万円",
+   "conditions": [
+    {
+     "axis": "所在地",
+     "quote": "対象機関:日本国内の大学、研究機関等(営利法人を除く)"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "対象機関:日本国内の大学、研究機関等(営利法人を除く)"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "応募資格:国籍、年齢、性別、経歴不問(若手・実務家研究者歓迎/過去テーマの再応募可)"
+    }
+   ],
+   "conditionsUrl": "https://www.jfc.or.jp/news_subsidy/2026-2027-%e3%81%97%e3%81%ae%e3%81%af%e3%82%89%e7%a0%94%e7%a9%b6%e5%8a%a9%e6%88%90/"
   },
   {
    "hash": "a5d178e8a97fa20c",
@@ -762,5 +736,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-10-07"
+ "lastFetchDate": "2026-10-08"
 }

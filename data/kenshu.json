@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-06T21:48:01.225Z",
+ "updatedAt": "2026-10-07T22:12:14.441Z",
  "items": [
   {
    "hash": "a4256e276737211d",
@@ -417,6 +417,26 @@
    "heldDates": [
     "2026-11-19"
    ]
+  },
+  {
+   "hash": "21de85f937c57fa1",
+   "source": "福祉・介護研修センター 新着",
+   "sourceKind": "org",
+   "via": "info",
+   "title": "第2回 福祉・介護現場のための対話力・調整力向上研修",
+   "url": "https://fuku-shakyo-kenshu.jp/info/%e7%a6%8f%e7%a5%89%e3%83%bb%e4%bb%8b%e8%ad%b7%e7%8f%be%e5%a0%b4%e3%81%ae%e3%81%9f%e3%82%81%e3%81%ae%e5%af%be%e8%a9%b1%e5%8a%9b%e3%83%bb%e8%aa%bf%e6%95%b4%e5%8a%9b%e5%90%91%e4%b8%8a%e7%a0%94%e4%bf%ae/",
+   "deadline": "2026-11-06",
+   "deadlineType": "date",
+   "deadlineRaw": "一覧の申込終了日より 申込締切 2026-11-06",
+   "heldDates": [
+    "2026-12-15"
+   ],
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別",
+   "expireOn": "2027-02-06"
   },
   {
    "hash": "08c77a08100dc191",
@@ -1393,5 +1413,5 @@
    "expireOn": "2026-10-31"
   }
  ],
- "lastFetchDate": "2026-10-07"
+ "lastFetchDate": "2026-10-08"
 }

@@ -2698,6 +2698,409 @@
      ]
     }
    ]
+  },
+  "2026-10-08": {
+   "counts": {
+    "高": 0,
+    "中": 10,
+    "低": 10
+   },
+   "items": [
+    {
+     "hash": "d3d8021e9b626510",
+     "source": "こども家庭庁",
+     "title": "採用情報【きぬ川学院】：国立児童自立支援施設職員（心理療法士）の募集情報を掲載しました",
+     "url": "https://www.cfa.go.jp/kinugawa",
+     "date": "2026-10-07",
+     "category": "採用",
+     "summary": "国立児童自立支援施設の職員募集情報です。個別の事業所における採用活動に関する内容のため、一般の福祉事業者への影響はありません。",
+     "importance": "低",
+     "fields": [],
+     "reason": "特定の国立施設の職員採用情報であり、福祉事業一般の実務には影響しないため。"
+    },
+    {
+     "hash": "6aa49d00e85ec273",
+     "source": "こども家庭庁",
+     "title": "採用情報【武蔵野学院】：国立児童自立支援施設職員（心理療法士）の募集情報を掲載しました",
+     "url": "https://www.cfa.go.jp/musashino/others",
+     "date": "2026-10-07",
+     "category": "採用",
+     "summary": "国立児童自立支援施設の職員募集情報です。個別の事業所における採用活動に関する内容のため、一般の福祉事業者への影響はありません。",
+     "importance": "低",
+     "fields": [],
+     "reason": "特定の国立施設の職員採用情報であり、福祉事業一般の実務には影響しないため。"
+    },
+    {
+     "hash": "71b3f326f9008bf3",
+     "source": "厚生労働省",
+     "title": "厚生科学審議会感染症部会第２７回新型インフルエンザ対策に関する小委員会 ・第１２回危機対応医薬品等に関する小委員会についてを開催します",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76638.html",
+     "date": "2026-10-07",
+     "category": "審議会等",
+     "summary": "新型インフルエンザ対策等に関する厚生科学審議会の小委員会開催のお知らせです。今後の感染症対策の方向性に影響するため、衛生管理担当者は動向を把握する必要があります。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "感染症対策の審議会であり、今後のガイドライン改定等の動向を把握しておくべき情報のため。"
+    },
+    {
+     "hash": "972c919e0f08c0b2",
+     "source": "厚生労働省",
+     "title": "厚生科学審議会 (新型インフルエンザ対策に関する小委員会)",
+     "url": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_263447_00003.html",
+     "date": "2026-10-07",
+     "category": "審議会等",
+     "summary": "新型インフルエンザ対策に関する厚生科学審議会小委員会の開催情報です。感染症対策の検討状況を把握するために確認します。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "感染症対策に関する審議会の開催案内であり、今後の施策動向の把握に繋がるため。"
+    },
+    {
+     "hash": "d1aca3a259889349",
+     "source": "厚生労働省",
+     "title": "第１７回厚生科学審議会結核部会の開催について",
+     "url": "https://www.mhlw.go.jp/stf/shingi2/0000068982_00003.html",
+     "date": "2026-10-07",
+     "category": "審議会等",
+     "summary": "厚生科学審議会結核部会の開催案内です。結核に関する防疫政策の議論が行われ、医療・福祉現場における感染症管理の参考となります。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "感染症に関する審議会であり、直接的な実務対応は不要だが動向把握が必要なため。"
+    },
+    {
+     "hash": "49fa64571a0f026d",
+     "source": "厚生労働省",
+     "title": "第188回市町村セミナーの資料について",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76616.html",
+     "date": "2026-10-07",
+     "category": "その他",
+     "summary": "市町村セミナーの資料公開に関する情報です。行政の動向や施策方針を理解するための資料となります。",
+     "importance": "低",
+     "fields": [],
+     "reason": "市町村向けのセミナー資料であり、民間福祉事業者の実務に直接影響しないため。"
+    },
+    {
+     "hash": "6cc8cb548d68a9c0",
+     "source": "厚生労働省",
+     "title": "薬事審議会 医薬品第二部会を開催します",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76547.html",
+     "date": "2026-10-07",
+     "category": "審議会等",
+     "summary": "薬事審議会の部会開催情報です。医薬品の承認等に関する審査が行われますが、一般の福祉事業者の運営には直接関与しません。",
+     "importance": "低",
+     "fields": [],
+     "reason": "薬事に関する審議会であり、福祉事業者の実務への影響が薄いため。"
+    },
+    {
+     "hash": "492211b4c5f65eb7",
+     "source": "厚生労働省",
+     "title": "第38回特定石綿被害建設業務労働者等認定審査会専門委員会 開催案内",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76524.html",
+     "date": "2026-10-07",
+     "category": "審議会等",
+     "summary": "石綿被害に関する認定審査会専門委員会の開催案内です。労働安全や労務管理に関連しますが、特定の補償・認定手続きに関するものです。",
+     "importance": "低",
+     "fields": [],
+     "reason": "特定の労働被害認定に関する審査会であり、福祉事業運営への影響が薄いため。"
+    },
+    {
+     "hash": "6996838af04ff825",
+     "source": "厚生労働省",
+     "title": "公募公示（厚生労働本省災害用備蓄食料品（即席スープ、クラッカー、保存水）） 売払契約 【オープンカウンター方式】",
+     "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/b-oth-kikakukoubo/newpage_10517.html",
+     "date": "2026-10-07",
+     "category": "その他",
+     "summary": "厚生労働本省の災害用備蓄食料品等の売払に関する公募情報です。行政の調達・処分に関する案件です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "官庁の物品売買に関する調達情報であり、福祉事業の運営に関係しないため。"
+    },
+    {
+     "hash": "3d8edfa127ff90af",
+     "source": "厚生労働省",
+     "title": "被保護者調査（令和８年７月分概数）",
+     "url": "https://www.mhlw.go.jp/toukei/saikin/hw/hihogosya/m2026/07.html",
+     "date": "2026-10-07",
+     "category": "統計情報",
+     "summary": "被保護者調査の概数に関する統計情報です。生活保護受給の動向を示すもので、社会保障制度全体のトレンド把握に活用されます。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "社会保障に関する公的統計であり、福祉施策の動向把握として参考になるため。"
+    },
+    {
+     "hash": "2ad64cc94cc9b4e2",
+     "source": "厚生労働省",
+     "title": "毎月勤労統計調査ー2026（令和8）年８月分結果速報",
+     "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/monthly/r08/2608p/2608p.html",
+     "date": "2026-10-07",
+     "category": "統計情報",
+     "summary": "毎月勤労統計調査の速報結果です。賃金や労働時間の動向を示し、福祉業界全体の処遇改善や賃上げのベンチマークとして活用されます。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "労働経済に関する重要統計であり、労務管理や処遇改善の動向把握に役立つため。"
+    },
+    {
+     "hash": "2031684adf208d23",
+     "source": "厚生労働省",
+     "title": "第５回ゲノム編集技術等を用いたヒト受精胚等の取扱い等に関する合同会議（第13回ゲノム編集技術等を用いたヒト受精胚等の臨床利用のあり方に関する専門委員会、第26回ヒト受精胚を用いる遺伝性・先天性疾患研究に関する専門委員会） 資料",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76567.html",
+     "date": "2026-10-06",
+     "category": "審議会等",
+     "summary": "ゲノム編集技術やヒト受精胚の取扱いに関する合同会議の資料です。最先端の生命倫理に関する審議会であり、福祉現場の実務には直接影響しません。",
+     "importance": "低",
+     "fields": [],
+     "reason": "先端医療・研究倫理に関する審議会であり、福祉事業の実務に関連しないため。",
+     "related": [
+      {
+       "day": "2026-10-07",
+       "title": "第５回ゲノム編集技術等を用いたヒト受精胚等の取扱い等に関する合同会議（第13回ゲノム編集技術等を用いたヒト受精胚等の臨床利用のあり方に関する専門委員会、第26回ヒト受精胚を用いる遺伝性・先天性疾患研究に関する専門委員会） 資料",
+       "url": "https://www.mhlw.go.jp/stf/newpage_76509.html"
+      },
+      {
+       "day": "2026-09-02",
+       "title": "第４回ゲノム編集技術等を用いたヒト受精胚等の取扱い等に関する合同会議（第12回ゲノム編集技術等を用いたヒト受精胚等の臨床利用のあり方に関する専門委員会、第25回ヒト受精胚を用いる遺伝性・先天性疾患研究に関する専門委員会） 資料",
+       "url": "https://www.mhlw.go.jp/stf/newpage_75883.html"
+      }
+     ]
+    },
+    {
+     "hash": "6410088c5bbd65bb",
+     "source": "厚生労働省",
+     "title": "人事労務マガジン 定例第192号",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76577.html",
+     "date": "2026-10-05",
+     "category": "その他",
+     "summary": "人事労務マガジンの定例号の発行案内です。一般的な労務管理情報が掲載されており、参考情報として活用できます。",
+     "importance": "低",
+     "fields": [],
+     "reason": "一般的な労務関連の情報提供マガジンであり、行政からの義務的な通知等ではないため。"
+    },
+    {
+     "hash": "0057354bd09951cb",
+     "source": "厚生労働省",
+     "title": "第２回法的脳死判定基準に関する作業班 資料",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76401.html",
+     "date": "2026-09-28",
+     "category": "審議会等",
+     "summary": "法的脳死判定基準に関する作業班の配布資料です。医療分野の専門的な基準検討に関するもので、福祉事業の運営には直接影響しません。",
+     "importance": "低",
+     "fields": [],
+     "reason": "医療の専門的な判定基準に関する検討資料であり、福祉事業の実務に直接影響しないため。",
+     "related": [
+      {
+       "day": "2026-09-17",
+       "title": "第１回法的脳死判定基準に関する作業班 資料",
+       "url": "https://www.mhlw.go.jp/stf/newpage_76035.html"
+      }
+     ]
+    },
+    {
+     "hash": "4f84a2abbca2b6eb",
+     "source": "WAM NET",
+     "title": "風しん最新情報（令和8年10月6日更新）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22931&ct=030100130&from=rss",
+     "date": "2026-10-07",
+     "category": "行政資料",
+     "summary": "風しんの最新発生状況に関する行政資料です。感染症の流行状況を把握し、利用者や職員に対する注意喚起や感染対策の参考とします。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "感染症の発生動向に関する情報であり、施設内での感染管理上の注意喚起に活用すべきため。",
+     "related": [
+      {
+       "day": "2026-10-03",
+       "title": "風しん最新情報（令和8年10月1日更新）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22909&ct=030100130&from=rss"
+      },
+      {
+       "day": "2026-09-26",
+       "title": "風しん最新情報（令和8年9月24日更新）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22896&ct=030100130&from=rss"
+      },
+      {
+       "day": "2026-09-17",
+       "title": "風しん最新情報（令和8年9月15日更新）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22872&ct=030100130&from=rss"
+      }
+     ]
+    },
+    {
+     "hash": "b91da5913326b7a0",
+     "source": "WAM NET",
+     "title": "第62回 社会保障審議会 生活保護基準部会（令和8年10月6日開催）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22936&ct=010010220&from=rss",
+     "date": "2026-10-07",
+     "category": "行政資料",
+     "summary": "社会保障審議会生活保護基準部会の開催資料です。生活保護基準の改定議論は、生活保護受給者を対象とする各種福祉サービスの利用料や補助に間接的な影響を与えます。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "社会保障の基本基準に関する審議会であり、福祉施策の動向として把握が必要なため。",
+     "related": [
+      {
+       "day": "2026-09-18",
+       "title": "第61回 社会保障審議会 生活保護基準部会（令和8年9月15日開催）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22885&ct=010010220&from=rss"
+      }
+     ]
+    },
+    {
+     "hash": "89f67f16571fc147",
+     "source": "WAM NET",
+     "title": "第16回 こども家庭審議会 科学技術部会 ヒト受精胚を用いる生殖補助医療研究等に関する専門委員会（令和8年10月7日開催）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22934&ct=090080225&from=rss",
+     "date": "2026-10-07",
+     "category": "行政資料",
+     "summary": "こども家庭審議会の専門委員会開催に関する行政資料です。生殖補助医療等の研究に関する審議であり、児童福祉の制度全般への影響は限定的です。",
+     "importance": "低",
+     "fields": [
+      "児童"
+     ],
+     "reason": "特定の医療研究に関する専門委員会であり、児童福祉事業の実務への影響は薄いため。",
+     "related": [
+      {
+       "day": "2026-09-02",
+       "title": "第15回 こども家庭審議会 科学技術部会 ヒト受精胚を用いる生殖補助医療研究等に関する専門委員会（令和8年9月2日開催）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22831&ct=090080225&from=rss"
+      }
+     ]
+    },
+    {
+     "hash": "fddac9fd4fc0f8e0",
+     "source": "WAM NET",
+     "title": "麻しん最新情報（令和8年10月6日更新）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22933&ct=030100110&from=rss",
+     "date": "2026-10-07",
+     "category": "行政資料",
+     "summary": "麻しんの最新発生状況に関する行政資料です。麻しんの流行動向を把握し、施設での感染予防やワクチン接種の呼びかけなどの対策に役立てます。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "感染症の流行に関する行政情報であり、施設における感染対策の徹底に結びつくため。",
+     "related": [
+      {
+       "day": "2026-10-03",
+       "title": "麻しん最新情報（令和8年10月1日更新）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22910&ct=030100110&from=rss"
+      },
+      {
+       "day": "2026-09-26",
+       "title": "麻しん最新情報（令和8年9月24日更新）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22897&ct=030100110&from=rss"
+      },
+      {
+       "day": "2026-09-17",
+       "title": "麻しん最新情報（令和8年9月15日更新）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22873&ct=030100110&from=rss"
+      }
+     ]
+    },
+    {
+     "hash": "037e9749520abd80",
+     "source": "WAM NET",
+     "title": "第23回成年後見制度利用促進専門家会議について（令和8年10月13日開催予定）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22932&ct=070010010&from=rss",
+     "date": "2026-10-07",
+     "category": "行政資料",
+     "summary": "成年後見制度利用促進に関する専門家会議の開催予定案内です。権利擁護支援や高齢者・障害者の福祉サービス利用を支える制度の今後の方向性に関わります。",
+     "importance": "中",
+     "fields": [
+      "障害",
+      "高齢"
+     ],
+     "reason": "成年後見制度の利用促進に関する会議であり、高齢・障害分野の権利擁護に関わるため。",
+     "related": [
+      {
+       "day": "2026-09-18",
+       "title": "第22回成年後見制度利用促進専門家会議について（令和8年9月25日開催予定）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22881&ct=070010010&from=rss"
+      }
+     ]
+    },
+    {
+     "hash": "306c750b69c1ec39",
+     "source": "福岡県（介護・高齢者福祉）",
+     "title": "令和８年度第１回福岡県高齢者保健福祉計画策定検討委員会を開催しました",
+     "url": "https://www.pref.fukuoka.lg.jp/contents/koreikeikaku-r8-1iinkai-kaisai.html",
+     "date": "2026年10月6日更新",
+     "category": "",
+     "summary": "福岡県高齢者保健福祉計画策定検討委員会の開催結果です。地域における高齢者福祉施策の中長期計画策定に関わるため、対象地域の事業者は動向を把握する必要があります。",
+     "importance": "中",
+     "fields": [
+      "高齢"
+     ],
+     "reason": "自治体の高齢者保健福祉計画の策定に関するものであり、地域密着型等の事業運営に影響するため。",
+     "related": [
+      {
+       "day": "2026-09-29",
+       "title": "令和８年度第１回福岡県高齢者保健福祉計画策定検討委員会を開催しました",
+       "url": "https://www.pref.fukuoka.lg.jp/contents/koreikeikaku-r8-1iinkai-kaisai.html"
+      }
+     ]
+    }
+   ],
+   "press": [
+    {
+     "hash": "2033b5e567e218e1",
+     "source": "介護ニュースJoint",
+     "kind": "press",
+     "title": "「STOP！介護崩壊」 介護17団体が決起集会 毎年の賃上げ訴える 基本報酬の引き上げも",
+     "url": "https://www.joint-kaigo.com/articles/49325/",
+     "date": "2026-10-07",
+     "category": "福祉用具",
+     "fields": [
+      "高齢"
+     ]
+    },
+    {
+     "hash": "30e87472662c28d1",
+     "source": "介護ニュースJoint",
+     "kind": "press",
+     "title": "放デイと児発、職員の休暇取得を後押し 国が人員配置基準の見直しを提案",
+     "url": "https://www.joint-kaigo.com/articles/49306/",
+     "date": "2026-10-07",
+     "category": "処遇改善",
+     "fields": [
+      "児童"
+     ]
+    },
+    {
+     "hash": "5e3e7c58b4e4dd06",
+     "source": "介護ニュースJoint",
+     "kind": "press",
+     "title": "【小濱道博】来年度の介護報酬改定、いよいよ2巡目の具体論へ 国の「基本的な視点」に見る期待と不安",
+     "url": "https://www.joint-kaigo.com/articles/49298/",
+     "date": "2026-10-07",
+     "category": "生産性向上",
+     "fields": [
+      "高齢"
+     ]
+    },
+    {
+     "hash": "3435d193efdf79c9",
+     "source": "介護ニュースJoint",
+     "kind": "press",
+     "title": "介護の賃上げ率、今年3.93% 他産業に遅れ 17団体緊急調査 賃金格差の拡大懸念",
+     "url": "https://www.joint-kaigo.com/articles/49285/",
+     "date": "2026-10-07",
+     "category": "介護福祉士",
+     "fields": [
+      "高齢"
+     ]
+    }
+   ]
   }
  }
 }
