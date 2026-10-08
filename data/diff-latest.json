@@ -1,6 +1,242 @@
 {
-  "generatedAt": "2026-10-08T02:44:58.363Z",
-  "newItems": [],
-  "newPress": [],
+  "generatedAt": "2026-10-08T22:13:10.417Z",
+  "newItems": [
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "540de565ca4d9d54",
+      "title": "一般競争入札：令和8年度こども家庭庁システム監査及び情報セキュリティ監査支援業務を掲載しました",
+      "url": "https://www.cfa.go.jp/procurement/portal",
+      "date": "2026-10-08",
+      "category": "調達情報"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "f5f7b2c743b0fe9b",
+      "title": "国立きぬ川学院：国立きぬ川学院公用車の交換購入一式の入札公告を掲載しました",
+      "url": "https://www.cfa.go.jp/kinugawa/nyuusatu-r8",
+      "date": "2026-10-08",
+      "category": "調達情報"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "64bb97c196dd7598",
+      "title": "採用情報：期間業務職員の募集情報を掲載しました",
+      "url": "https://www.cfa.go.jp/recruitment/kikan",
+      "date": "2026-10-08",
+      "category": "採用"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "d18832c5db3ffc83",
+      "title": "第133回労働政策審議会労働条件分科会労災保険部会資料",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76665.html",
+      "date": "2026-10-08",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "6ed8ae3a7bf2985d",
+      "title": "第60回労働政策審議会人材開発分科会（オンライン併用）の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76663.html",
+      "date": "2026-10-08",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "9c46a8e1d809ec0b",
+      "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76658.html",
+      "date": "2026-10-08",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "5f67718e371b933b",
+      "title": "第269回社会保障審議会介護給付費分科会（Web会議）を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76455.html",
+      "date": "2026-10-08",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "31b5495759215929",
+      "title": "薬事審議会 再生医療等製品・生物由来技術部会を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76385.html",
+      "date": "2026-10-08",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "1780deeaf3b4df81",
+      "title": "令和８年度「食品衛生事業功労者厚生労働大臣表彰」の受賞者の決定について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76332.html",
+      "date": "2026-10-08",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "80ab308925b1d2cf",
+      "title": "化学物質審査専門官の募集について",
+      "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/ninkituki/ninki-kagakubushitsushinsasenmonkan.html",
+      "date": "2026-10-08",
+      "category": "採用情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "ca418a9ac2838b1d",
+      "title": "令和９年度「公共職業安定所（ハローワーク）利用促進のための周知広報業務一式」",
+      "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/e-wto-iken/newpage_10518.html",
+      "date": "2026-10-08",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "4609c3f2a971ee72",
+      "title": "第38回全国健康福祉祭埼玉大会（ねんりんピック彩の国さいたま２０２６）の開催及び美術展における厚生労働大臣賞等の決定について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76588.html",
+      "date": "2026-10-08",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "f1086b8518372f41",
+      "title": "世界メンタルヘルスデー JAPAN 2026 特設サイト",
+      "url": "https://www.mhlw.go.jp/kokoro/mental_health_day/",
+      "date": "2026-10-08",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "3a0b804277c8e432",
+      "title": "採用情報（期間業務職員（大臣官房会計課）募集情報",
+      "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-daijinkanboukaikeika-kanrieiyoushi01.html",
+      "date": "2026-10-08",
+      "category": "採用情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "6bd2824f458300b8",
+      "title": "第80回ハンセン病元患者家族補償金認定審査会",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76654.html",
+      "date": "2026-10-08",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "aa76f51d3266848d",
+      "title": "令和８年度第５回医薬品等安全対策部会安全対策調査会 議事録",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76578.html",
+      "date": "2026-10-07",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "41dc9a9dc587e5d5",
+      "title": "11月は「過労死等防止啓発月間」です",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76625.html",
+      "date": "2026-10-07",
+      "category": "報道発表"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "324272cdba1a072b",
+      "title": "第27回 厚生科学審議会 新型インフルエンザ対策に関する小委員会 ・第１２回危機対応医薬品等に関する小委員会（令和8年10月14日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22937&ct=010020210&from=rss",
+      "date": "2026-10-08",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "9c882fb29a33875a",
+      "title": "インフルエンザ最新情報（令和8年10月2日更新）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22939&ct=030100310&from=rss",
+      "date": "2026-10-08",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "80d21a729d1d10c1",
+      "title": "介護保険事務処理システム変更に係る参考資料（その１）（令和8年10月6日事務連絡）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22911&ct=020050010&from=rss",
+      "date": "2026-10-06",
+      "category": "行政資料"
+    },
+    {
+      "source": "福岡県（子ども・青少年）",
+      "kind": "gov",
+      "hash": "dcd6c5db1f93e29e",
+      "title": "【県庁ロビー】ピンク＆ブルーリボン啓発ロビー展示を実施します！",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/griefcaretenji.html",
+      "date": "2026年10月9日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（介護・高齢者福祉）",
+      "kind": "gov",
+      "hash": "168fa493e6fcb94d",
+      "title": "消費生活用製品（福祉用具）の重大製品事故に係る公表について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/fukushiyougujiko2026.html",
+      "date": "2026年10月8日更新",
+      "category": ""
+    },
+    {
+      "source": "全国社会福祉協議会",
+      "kind": "org",
+      "hash": "1e34abf9ba73bbcb",
+      "title": "令和8年 豪雨・台風災害",
+      "url": "https://www.shakyo.or.jp/bunya/saigai/archive/2026flood/index.html",
+      "date": "2026-10-08",
+      "category": "案内"
+    },
+    {
+      "source": "全国社会福祉協議会",
+      "kind": "org",
+      "hash": "677f826f40b3984d",
+      "title": "日本社会福祉弘済会「社会福祉助成事業」",
+      "url": "https://www.shakyo.or.jp/guide/sponsor/p/261008nisshasai.html",
+      "date": "2026-10-08",
+      "category": "助成"
+    }
+  ],
+  "newPress": [
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "7f76dbb6135fc9d8",
+      "title": "施設ケアマネにできる意思決定支援 ACP研修会、11月開催＝日本介護支援専門員協会",
+      "url": "https://www.joint-kaigo.com/articles/49338/",
+      "date": "2026-10-08",
+      "category": "超高齢化"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "19b5354d2dd4a18a",
+      "title": "デイサービス倒産、1〜9月で過去最多 昨年年間を超える 人材難・コスト増など苦境深まる",
+      "url": "https://www.joint-kaigo.com/articles/49317/",
+      "date": "2026-10-08",
+      "category": "超高齢化"
+    }
+  ],
   "crawlErrors": []
 }

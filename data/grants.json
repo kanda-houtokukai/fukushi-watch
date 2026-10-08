@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-07T22:10:15.064Z",
+ "updatedAt": "2026-10-08T22:14:58.469Z",
  "items": [
   {
    "hash": "78471666e9e39690",
@@ -461,6 +461,71 @@
    ]
   },
   {
+   "hash": "7bace69fe009a891",
+   "source": "全社協 福祉の助成情報",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "日本社会福祉弘済会 2027年度「社会福祉助成事業」",
+   "url": "https://www.shakyo.or.jp/guide/sponsor/p/261008nisshasai.html",
+   "postedAt": "2026-10-08",
+   "deadline": "2026-12-15",
+   "deadlineType": "date",
+   "deadlineRaw": "2026年12月15日",
+   "summary": "社会福祉事業等を行う非営利団体を対象に、福祉サービスの支援業務向上を目指す研修事業や先駆的な調査研究事業を支援する助成です。",
+   "fields": [
+    "共通"
+   ],
+   "uses": [
+    "人材・研修",
+    "研究・調査"
+   ],
+   "applicants": [
+    "社会福祉法人",
+    "任意団体"
+   ],
+   "amount": "1件(団体)50万円上限(助成対象経費合計の80%以内)",
+   "conditions": [
+    {
+     "axis": "補助率・自己負担",
+     "quote": "助成対象経費合計の80%以内"
+    },
+    {
+     "axis": "主体の付帯条件",
+     "quote": "申請方法は、電子メールでの手続きによります。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "社会福祉事業や福祉施設の運営、福祉活動などを目的とする非営利団体(社会福祉法人、任意団体、ボランティアサークルなど)"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "1団体につき1事業"
+    }
+   ],
+   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/261008nisshasai.html"
+  },
+  {
+   "hash": "a0df708d04f64ef9",
+   "source": "全国社会福祉協議会",
+   "sourceKind": "",
+   "funder": "全国社会福祉協議会",
+   "title": "日本社会福祉弘済会「社会福祉助成事業」",
+   "url": "https://www.shakyo.or.jp/guide/sponsor/p/261008nisshasai.html",
+   "postedAt": "2026-10-09",
+   "deadline": "2026-12-15",
+   "deadlineType": "date",
+   "deadlineRaw": "申請期限 2026-12-15",
+   "fields": [
+    "共通"
+   ],
+   "summary": "",
+   "uses": [],
+   "applicants": [],
+   "amount": "",
+   "conditions": [],
+   "via": "goryu"
+  },
+  {
    "hash": "2dbffd2b88875550",
    "source": "福岡県（子ども・青少年）",
    "sourceKind": "",
@@ -736,5 +801,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-10-08"
+ "lastFetchDate": "2026-10-09"
 }

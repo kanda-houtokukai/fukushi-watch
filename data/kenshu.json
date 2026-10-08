@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-07T22:12:14.441Z",
+ "updatedAt": "2026-10-08T22:16:57.660Z",
  "items": [
   {
    "hash": "a4256e276737211d",
@@ -50,60 +50,12 @@
    "outlineUrl": "https://www.f-kaigo.jp/upimg/x69eef26ad663f.pdf"
   },
   {
-   "hash": "8e6e25d85c0c7aa6",
-   "source": "福岡県介護福祉士会",
-   "sourceKind": "org",
-   "via": "fkaigo",
-   "title": "食事中の窒息急変対応を実践研修で学びませんか?",
-   "url": "https://www.f-kaigo.jp/training/detail_483.php",
-   "deadline": "2026-10-08",
-   "deadlineType": "date",
-   "deadlineRaw": "開催要綱PDFより 令和8年10月8日",
-   "heldDates": [
-    "2026-10-24"
-   ],
-   "expireOn": "2026-10-24",
-   "openFrom": null,
-   "fields": [
-    "高齢"
-   ],
-   "kind": "テーマ別",
-   "keepUntilHeld": true,
-   "outline": [
-    {
-     "name": "日時",
-     "value": "令和８年１０月２４日（土） １０：００～１１：３０（受付９：３０～）"
-    },
-    {
-     "name": "会場",
-     "value": "サンレイクかすや 研修室（糟屋郡粕屋町駕与丁１丁目６－１）"
-    },
-    {
-     "name": "講師",
-     "value": "川中直美氏（福岡赤十字病院救急看護認定看護師）"
-    },
-    {
-     "name": "参加費",
-     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
-    },
-    {
-     "name": "定員",
-     "value": "２０名"
-    },
-    {
-     "name": "ポイント",
-     "value": "１．５ポイント"
-    }
-   ],
-   "outlineUrl": "https://www.f-kaigo.jp/upimg/l69eef300c0c44.pdf"
-  },
-  {
    "hash": "c9c427bfae5b6667",
    "source": "福祉・介護研修センター 年間予定表",
    "sourceKind": "org",
    "via": "schedule",
    "title": "看護実務者研修",
-   "url": "https://fuku-shakyo-kenshu.jp/info/%e7%a6%8f%e5%b2%a1%e7%9c%8c%e9%ab%98%e9%bd%a2%e8%80%85%e6%a8%a9%e5%88%a9%e6%93%81%e8%ad%b7%e7%ad%89%e6%8e%a8%e9%80%b2%e7%a0%94%e4%bf%ae%e7%9c%8b%e8%ad%b7%e5%ae%9f%e5%8b%99%e8%80%85%e7%a0%94%e4%bf%ae/",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/09/4caf1b57e97c52f9d39710993459170a.pdf",
    "deadline": "2026-10-09",
    "deadlineType": "date",
    "deadlineRaw": "一覧の申込終了日より 10月9日",
@@ -439,6 +391,27 @@
    "expireOn": "2027-02-06"
   },
   {
+   "hash": "e5172a841f826c10",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "via": "schedule",
+   "title": "報・連・相強化研修",
+   "url": "https://fuku-shakyo-kenshu.jp/info/%e3%80%8c%e5%a0%b1%e3%83%bb%e9%80%a3%e3%83%bb%e7%9b%b8%e3%80%8d%e5%bc%b7%e5%8c%96%e7%a0%94%e4%bf%ae%e3%81%ae%e9%96%8b%e5%82%ac%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/",
+   "deadline": "2026-11-09",
+   "deadlineType": "date",
+   "deadlineRaw": "一覧の申込終了日より 11月9日",
+   "openFrom": "2026-10-08",
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別",
+   "expireOn": "2027-02-09",
+   "heldDates": [
+    "2026-12-01",
+    "2026-12-08"
+   ]
+  },
+  {
    "hash": "08c77a08100dc191",
    "source": "福岡県介護福祉士会",
    "sourceKind": "org",
@@ -553,25 +526,6 @@
    "preOpenNote": "10月~11月開催予定",
    "preOpenSort": "2026-10",
    "expireOn": "2026-12-31"
-  },
-  {
-   "hash": "644dae3f32bb14fa",
-   "source": "福祉・介護研修センター 年間予定表",
-   "sourceKind": "org",
-   "via": "schedule",
-   "title": "報・連・相強化研修",
-   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/#link1",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "10月開催予定",
-   "openFrom": null,
-   "fields": [
-    "共通"
-   ],
-   "kind": "テーマ別",
-   "preOpenNote": "10月開催予定",
-   "preOpenSort": "2026-10",
-   "expireOn": "2026-11-30"
   },
   {
    "hash": "3a63f4e253694719",
@@ -836,6 +790,54 @@
     "高齢"
    ],
    "kind": "テーマ別"
+  },
+  {
+   "hash": "8e6e25d85c0c7aa6",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "食事中の窒息急変対応を実践研修で学びませんか?",
+   "url": "https://www.f-kaigo.jp/training/detail_483.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "開催要綱PDFより 令和8年10月8日（締切後も受け付けることがあります）",
+   "heldDates": [
+    "2026-10-24"
+   ],
+   "expireOn": "2026-10-24",
+   "openFrom": null,
+   "fields": [
+    "高齢"
+   ],
+   "kind": "テーマ別",
+   "keepUntilHeld": true,
+   "outline": [
+    {
+     "name": "日時",
+     "value": "令和８年１０月２４日（土） １０：００～１１：３０（受付９：３０～）"
+    },
+    {
+     "name": "会場",
+     "value": "サンレイクかすや 研修室（糟屋郡粕屋町駕与丁１丁目６－１）"
+    },
+    {
+     "name": "講師",
+     "value": "川中直美氏（福岡赤十字病院救急看護認定看護師）"
+    },
+    {
+     "name": "参加費",
+     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
+    },
+    {
+     "name": "定員",
+     "value": "２０名"
+    },
+    {
+     "name": "ポイント",
+     "value": "１．５ポイント"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/l69eef300c0c44.pdf"
   },
   {
    "hash": "c4cea64f0bc13a51",
@@ -1413,5 +1415,5 @@
    "expireOn": "2026-10-31"
   }
  ],
- "lastFetchDate": "2026-10-08"
+ "lastFetchDate": "2026-10-09"
 }
