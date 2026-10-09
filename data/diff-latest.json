@@ -1,6 +1,224 @@
 {
-  "generatedAt": "2026-10-09T02:58:59.799Z",
-  "newItems": [],
-  "newPress": [],
+  "generatedAt": "2026-10-09T21:46:52.689Z",
+  "newItems": [
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "63a478953356342b",
+      "title": "中司大臣記者会見（令和8年10月9日）を掲載しました",
+      "url": "https://www.cfa.go.jp/speech/841eb9e1",
+      "date": "2026-10-09",
+      "category": "会見"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "4c791d4e04099bcf",
+      "title": "一般競争入札：プレコンセプションケア普及啓発事業に係る事務局運営及び広報実施業務等を掲載しました",
+      "url": "https://www.cfa.go.jp/procurement/portal",
+      "date": "2026-10-09",
+      "category": "調達情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "d2a35ef2b056e7cc",
+      "title": "令和８年１０月９日付大臣会見概要",
+      "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00974.html",
+      "date": "2026-10-09",
+      "category": "大臣会見等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "04eb950dc5fc34e3",
+      "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76679.html",
+      "date": "2026-10-09",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "40d0a9c32b0d64c5",
+      "title": "令和８年度（令和７年度からの繰越分）医療施設等施設整備費補助金の交付額の３回目内示について（２次募集分）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76647.html",
+      "date": "2026-10-09",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "8596334b393e32ff",
+      "title": "第222回国会（令和８年臨時会）提出法律案",
+      "url": "https://www.mhlw.go.jp/stf/topics/bukyoku/soumu/houritu/222.html",
+      "date": "2026-10-09",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "a647fc95d1bcc6d8",
+      "title": "第10回労働政策審議会職業安定分科会地方連携部会を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76621.html",
+      "date": "2026-10-09",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "e054387547bf0fd9",
+      "title": "薬事審議会 医薬品第一部会を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76600.html",
+      "date": "2026-10-09",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "b114ba1197d118c0",
+      "title": "令和８年度第９回「石綿に係る疾病の業務上外に関する検討会」を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76555.html",
+      "date": "2026-10-09",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "4e0e52712a9eab17",
+      "title": "第151回脳死下での臓器提供事例に係る検証会議を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76552.html",
+      "date": "2026-10-09",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "17b388f7a371e5e2",
+      "title": "第６回2040年に向けた看護職員の養成・確保の在り方に関する検討会の開催について：開催案内",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76493.html",
+      "date": "2026-10-09",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "57471a1e5093d68f",
+      "title": "インフルエンザに関する報道発表資料を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou_00025.html",
+      "date": "2026-10-09",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "db496d001cf44b5d",
+      "title": "新型コロナウイルス感染症に関する報道発表資料を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00485.html",
+      "date": "2026-10-09",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "f10551d6e0735364",
+      "title": "インフルエンザ・新型コロナウイルス感染症の定点当たり報告数の推移を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/houkokusuunosuii_00007.html",
+      "date": "2026-10-09",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "26bb977e24efa6be",
+      "title": "インフルエンザの発生状況を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
+      "date": "2026-10-09",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "dbf425d02b4f8ef8",
+      "title": "有料老人ホームにおける望ましいサービス提供のあり方に関する検討会（第10回）の資料について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76664.html",
+      "date": "2026-10-09",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "22f5a82e1cd312c3",
+      "title": "令和８年度 地域における医薬品提供体制等の構築・強化に係るモデル事業",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76653.html",
+      "date": "2026-10-08",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "ae9f02ea78ed136e",
+      "title": "「令和８年度地域・職域連携推進関係者会議 」開催案内",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76584.html",
+      "date": "2026-10-05",
+      "category": "審議会等"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "9b9f0d934fd675e3",
+      "title": "第78回 厚生科学審議会 予防接種・ワクチン分科会 予防接種基本方針部会（令和8年10月8日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22940&ct=010020270&from=rss",
+      "date": "2026-10-09",
+      "category": "行政資料"
+    },
+    {
+      "source": "福岡県（子ども・青少年）",
+      "kind": "gov",
+      "hash": "4569143db40f23af",
+      "title": "ヤングケアラーについて",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/carer.html",
+      "date": "2026年9月28日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（介護・高齢者福祉）",
+      "kind": "gov",
+      "hash": "b76b77276a875aa8",
+      "title": "令和８年度福岡県介護事業所の各種研修受講に係る代替職員派遣事業について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/hakenn05.html",
+      "date": "2026年10月5日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（介護・高齢者福祉）",
+      "kind": "gov",
+      "hash": "4a7e0f930dc6faa8",
+      "title": "介護特定技能外国人マッチング支援事業受入準備セミナー及び定着支援セミナーの開催について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/kaigotokuteiginou-matching3.html",
+      "date": "2026年10月9日更新",
+      "category": ""
+    }
+  ],
+  "newPress": [
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "b8cf08dfa2d5a9f8",
+      "title": "グループホームのケアマネ、配置緩和を提案 厚労省 居宅介護支援との連携も俎上",
+      "url": "https://www.joint-kaigo.com/articles/49365/",
+      "date": "2026-10-09",
+      "category": "超高齢化"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "1abaa2b432ec9567",
+      "title": "住宅型ホーム、運営ルール厳格化へ 登録基準とりまとめ 来年12月から新制度 厚労省",
+      "url": "https://www.joint-kaigo.com/articles/49354/",
+      "date": "2026-10-09",
+      "category": "医療・看護"
+    }
+  ],
   "crawlErrors": []
 }
