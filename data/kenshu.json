@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-10T20:38:47.923Z",
+ "updatedAt": "2026-10-11T21:02:44.746Z",
  "items": [
   {
    "hash": "a4256e276737211d",
@@ -48,23 +48,6 @@
     }
    ],
    "outlineUrl": "https://www.f-kaigo.jp/upimg/x69eef26ad663f.pdf"
-  },
-  {
-   "hash": "58b621e3ccc4363c",
-   "source": "福祉・介護研修センター 年間予定表",
-   "sourceKind": "org",
-   "title": "会計担当者研修(実践者コース)",
-   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2025/08/e9884305e5ec37f96e4c3bf628e95c9b-1.pdf",
-   "deadline": "2026-10-11",
-   "deadlineType": "date",
-   "deadlineRaw": "一覧の申込終了日より 10月11日",
-   "openFrom": "2026-07-15",
-   "fields": [
-    "共通"
-   ],
-   "kind": "テーマ別",
-   "via": "schedule",
-   "expireOn": "2027-01-11"
   },
   {
    "hash": "ab217ca9d4bcb9d2",
@@ -1383,5 +1366,5 @@
    "expireOn": "2026-10-31"
   }
  ],
- "lastFetchDate": "2026-10-11"
+ "lastFetchDate": "2026-10-12"
 }
