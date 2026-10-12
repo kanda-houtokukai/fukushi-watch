@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-10-11T21:00:08.785Z",
+      "lastCrawled": "2026-10-12T23:39:37.753Z",
       "items": [
         {
           "hash": "63a478953356342b",
@@ -902,7 +902,7 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-10-11T21:00:09.652Z",
+      "lastCrawled": "2026-10-12T23:39:38.853Z",
       "items": [
         {
           "hash": "d2a35ef2b056e7cc",
@@ -4582,7 +4582,7 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-10-11T21:00:10.994Z",
+      "lastCrawled": "2026-10-12T23:39:40.015Z",
       "items": [
         {
           "hash": "9b9f0d934fd675e3",
@@ -6687,8 +6687,15 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-10-11T21:00:11.978Z",
+      "lastCrawled": "2026-10-12T23:39:41.344Z",
       "items": [
+        {
+          "hash": "94a6c53fbde395e7",
+          "title": "令和8年度来所判定日程表（整形外科）",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/shogaishakoseiso-raishohanteir7.html",
+          "date": "2026年10月13日更新",
+          "category": ""
+        },
         {
           "hash": "cc94582d2f0bc47b",
           "title": "身体障害者福祉法第１５条指定医師名簿",
@@ -6715,13 +6722,6 @@
           "title": "【申込終了】令和８年度高次脳機能障がい支援者養成研修を実施します",
           "url": "https://www.pref.fukuoka.lg.jp/contents/koujinou2026kenshu.html",
           "date": "2026年9月24日更新",
-          "category": ""
-        },
-        {
-          "hash": "1de28bf4c7f6556e",
-          "title": "福岡県のユニバーサルデザインに関する取組をご紹介します",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/universaldesign-fukuoka.html",
-          "date": "2026年9月15日更新",
           "category": ""
         },
         {
@@ -6855,6 +6855,13 @@
           "title": "IT業務を発注して障がいのある方の自立を支える力に！",
           "url": "https://www.pref.fukuoka.lg.jp/contents/it-kyodozyuchu.html",
           "date": "2026年3月5日更新",
+          "category": ""
+        },
+        {
+          "hash": "1de28bf4c7f6556e",
+          "title": "福岡県のユニバーサルデザインに関する取組をご紹介します",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/universaldesign-fukuoka.html",
+          "date": "2026年9月15日更新",
           "category": ""
         },
         {
@@ -7000,7 +7007,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-10-11T21:00:12.170Z",
+      "lastCrawled": "2026-10-12T23:39:42.222Z",
       "items": [
         {
           "hash": "dcd6c5db1f93e29e",
@@ -7668,7 +7675,7 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-10-11T21:00:13.273Z",
+      "lastCrawled": "2026-10-12T23:39:43.910Z",
       "items": [
         {
           "hash": "b8cf08dfa2d5a9f8",
@@ -8366,7 +8373,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-10-11T21:00:12.362Z",
+      "lastCrawled": "2026-10-12T23:39:42.925Z",
       "items": [
         {
           "hash": "168fa493e6fcb94d",
@@ -8945,7 +8952,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-10-11T21:00:14.103Z",
+      "lastCrawled": "2026-10-12T23:39:44.740Z",
       "items": [
         {
           "hash": "1e34abf9ba73bbcb",
@@ -9448,7 +9455,7 @@
     }
   },
   "preferredModel": "gemini-3.5-flash-lite",
-  "lastSentDate": "2026-10-12",
-  "lastRunAt": "2026-10-12T02:29:55.448Z",
-  "lastCrawlDate": "2026-10-12"
+  "lastSentDate": "2026-10-13",
+  "lastRunAt": "2026-10-12T23:39:52.550Z",
+  "lastCrawlDate": "2026-10-13"
 }

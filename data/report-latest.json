@@ -1,6 +1,21 @@
 {
-  "generatedAt": "2026-10-12T02:29:55.371Z",
-  "model": null,
-  "items": [],
+  "generatedAt": "2026-10-12T23:39:52.494Z",
+  "model": "gemini-3.5-flash-lite",
+  "items": [
+    {
+      "hash": "94a6c53fbde395e7",
+      "source": "福岡県（障がい福祉）",
+      "title": "令和8年度来所判定日程表（整形外科）",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/shogaishakoseiso-raishohanteir7.html",
+      "date": "2026年10月13日更新",
+      "category": "",
+      "summary": "身体障害者手帳の交付判定などに用いられる整形外科の来所判定日程に関する情報です。利用者支援において必要となる医療判定のスケジュールを確認できます。",
+      "importance": "中",
+      "fields": [
+        "障害"
+      ],
+      "reason": "利用者支援の実務に直接関わる医療判定の日程情報であり、障害福祉サービスの利用調整において把握しておく必要があるため。"
+    }
+  ],
   "press": []
 }
