@@ -1,6 +1,363 @@
 {
-  "generatedAt": "2026-10-13T03:39:21.854Z",
-  "model": null,
-  "items": [],
-  "press": []
+  "generatedAt": "2026-10-13T21:54:03.545Z",
+  "model": "gemini-3.5-flash-lite",
+  "items": [
+    {
+      "hash": "f9e9811afdf62261",
+      "source": "こども家庭庁",
+      "title": "中司大臣記者会見（令和8年10月13日）を掲載しました",
+      "url": "https://www.cfa.go.jp/speech/61fab23e",
+      "date": "2026-10-13",
+      "category": "会見",
+      "summary": "大臣の定例記者会見情報を掲載したものです。福祉行政全般の方針や発言内容が含まれる場合があります。",
+      "importance": "低",
+      "fields": [
+        "共通"
+      ],
+      "reason": "大臣の一般的な会見であり、個別事業者への直接的な実務影響は薄いため。"
+    },
+    {
+      "hash": "bc56226ea328942c",
+      "source": "こども家庭庁",
+      "title": "一般競争入札：保育業務施設管理プラットフォームの軽微改修業務等（令和8年度）一式を掲載しました",
+      "url": "https://www.cfa.go.jp/procurement/service",
+      "date": "2026-10-13",
+      "category": "調達情報",
+      "summary": "保育業務関連の施設管理プラットフォーム改修等に関する一般競争入札の公示です。事業者向けの調達情報です。",
+      "importance": "低",
+      "fields": [
+        "保育"
+      ],
+      "reason": "行政の調達・入札情報であり、一般的な福祉事業者の実務運営には直接関係しないため。"
+    },
+    {
+      "hash": "aa89b8023f502aa7",
+      "source": "こども家庭庁",
+      "title": "意見招請：こども性暴力防止法に関する情報システムの改修及び運用・保守等業務一式を掲載しました",
+      "url": "https://www.cfa.go.jp/procurement/portal",
+      "date": "2026-10-13",
+      "category": "調達情報",
+      "summary": "こども性暴力防止法に関連する情報システムの改修や運用保守業務に関する意見招請です。",
+      "importance": "低",
+      "fields": [
+        "児童",
+        "保育"
+      ],
+      "reason": "システム開発・調達に関する意見招請であり、一般事業者の日常業務への影響は薄いため。"
+    },
+    {
+      "hash": "8d9f61e350847b80",
+      "source": "厚生労働省",
+      "title": "令和８年度第１回社会復帰促進等事業に関する検討会（議事録)",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76702.html",
+      "date": "2026-10-13",
+      "category": "審議会等",
+      "summary": "社会復帰促進等事業に関する検討会の議事録です。労働者福祉や労災保険に関連する施策の議論状況を示しています。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "検討会の動向把握として先々に影響する可能性があるため。"
+    },
+    {
+      "hash": "5285ae61d4d19f1b",
+      "source": "厚生労働省",
+      "title": "令和８年１０月１３日付大臣会見概要",
+      "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00975.html",
+      "date": "2026-10-13",
+      "category": "大臣会見等",
+      "summary": "大臣会見の概要をまとめたものです。福祉関連の施策方針言及の有無を確認する必要があります。",
+      "importance": "低",
+      "fields": [
+        "共通"
+      ],
+      "reason": "会見の概要であり、個別事業者への直接の義務や影響はないため。"
+    },
+    {
+      "hash": "739f1cd661e3a5cb",
+      "source": "厚生労働省",
+      "title": "第133回労働政策審議会労働条件分科会労災保険部会資料",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76698.html",
+      "date": "2026-10-13",
+      "category": "審議会等",
+      "summary": "労働政策審議会における労災保険部会の配付資料です。労災保険制度の見直し等に関する議論が分かります。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "労災保険制度に関する審議会の資料であり、職員の労務管理や安全衛生に関連するため。"
+    },
+    {
+      "hash": "52091211c15e97e1",
+      "source": "厚生労働省",
+      "title": "第２７回新型インフルエンザ対策に関する小委員会 第１２回危機対応医薬品等に関する小委員会 資料",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76692.html",
+      "date": "2026-10-13",
+      "category": "審議会等",
+      "summary": "新型インフルエンザ対策および危機対応医薬品等に関する小委員会の資料です。感染症対策の動向を確認できます。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "感染症対策の専門的な方針や医薬品確保に関する審議資料であり、事業所の衛生管理に影響するため。"
+    },
+    {
+      "hash": "34cbe73ebbb78213",
+      "source": "厚生労働省",
+      "title": "第228回労働政策審議会職業安定分科会を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_021225156_00115.html",
+      "date": "2026-10-13",
+      "category": "審議会等",
+      "summary": "職業安定分科会の開催案内です。雇用政策や労働市場に関する審議が行われます。",
+      "importance": "低",
+      "fields": [],
+      "reason": "一般的な労働政策・雇用対策に関する会議であり、福祉事業者の実務運営とは直接関係しないため。"
+    },
+    {
+      "hash": "dc8bab4da3aaae67",
+      "source": "厚生労働省",
+      "title": "食品中の放射性物質の検査結果について（１５１６報）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76634.html",
+      "date": "2026-10-13",
+      "category": "報道発表",
+      "summary": "食品中の放射性物質の検査結果に関する報道発表です。流通食品の安全確保に関する行政情報です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "食品中の放射性物質に関する一般的な検査結果であり、福祉施設の給食調達等に直接の法規制変更等を伴わないため。"
+    },
+    {
+      "hash": "8e07801d9ef5cece",
+      "source": "厚生労働省",
+      "title": "第24回 ASEAN・日本社会保障ハイレベル会合（開催案内）",
+      "url": "https://www.mhlw.go.jp/stf/aseanjapan_highlevelofficialsmeeting24.html",
+      "date": "2026-10-13",
+      "category": "報道発表",
+      "summary": "国際的な社会保障ハイレベル会合の開催案内です。諸外国との社会保障政策の共有を目的としています。",
+      "importance": "低",
+      "fields": [],
+      "reason": "国際会議の開催案内であり、国内の福祉事業者の実務に直接影響しないため。"
+    },
+    {
+      "hash": "eee8d900710482b3",
+      "source": "厚生労働省",
+      "title": "第270回社会保障審議会介護給付費分科会（Web会議）を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76627.html",
+      "date": "2026-10-13",
+      "category": "審議会等",
+      "summary": "介護給付費分科会の開催案内です。介護報酬改定や給付費に関する議論が行われる重要な会議です。",
+      "importance": "高",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "介護報酬や基準に関わる給付費分科会の開催であり、事業所の収支や運営基準に直結するため。",
+      "action": "一般に、こうした通知では介護報酬改定や給付費に関する今後の動向や議論の方向性の確認が必要になります。"
+    },
+    {
+      "hash": "68b2b3bc5b761e63",
+      "source": "厚生労働省",
+      "title": "薬物乱用防止を目的とした啓発特設サイトを公開しました",
+      "url": "https://www.mhlw.go.jp/stf/houdou/0000179105_00026.html",
+      "date": "2026-10-13",
+      "category": "報道発表",
+      "summary": "薬物乱用防止を目的とした啓発特設サイトの公開情報です。一般向けの啓発活動に関するお知らせです。",
+      "importance": "低",
+      "fields": [],
+      "reason": "一般向けの薬物乱用防止啓発であり、福祉事業者の運営管理には直接影響しないため。"
+    },
+    {
+      "hash": "322cdb0efc31df91",
+      "source": "厚生労働省",
+      "title": "家政婦(夫)サービスの求人情報の概要を発信する「家政婦(夫)ネット」の運用（モデル事業）を開始しました",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76363.html",
+      "date": "2026-10-13",
+      "category": "その他",
+      "summary": "家政婦サービスの求人情報発信を目的としたモデル事業の運用開始に関する情報です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "家政婦サービスに関する一般労働・求人支援のモデル事業であり、福祉事業所の実務対象外であるため。"
+    },
+    {
+      "hash": "0a1a8571fe08c14f",
+      "source": "厚生労働省",
+      "title": "落札者等の公示（「令和8～12年度病原体等管理システムの設計開発・運用保守業務一式」他6件）",
+      "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/e-wto-rakusatu/newpage_10519.html",
+      "date": "2026-10-13",
+      "category": "その他",
+      "summary": "病原体等管理システムの設計開発・運用保守業務等の落札者公示に関する情報です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "政府調達の落札結果公示であり、福祉事業者の実務に関係しないため。"
+    },
+    {
+      "hash": "4b543e891a23f132",
+      "source": "厚生労働省",
+      "title": "WEBマガジン「厚生労働」（特集[臓器移植を考える]ほか更新）",
+      "url": "https://www.mhlw.go.jp/web_magazine/",
+      "date": "2026-10-13",
+      "category": "その他",
+      "summary": "厚労省のWEBマガジン「厚生労働」の最新特集記事の更新案内です。臓器移植などのテーマを扱っています。",
+      "importance": "低",
+      "fields": [],
+      "reason": "広報誌の更新案内であり、事業者としての対応や実務影響はないため。"
+    },
+    {
+      "hash": "2b36c08681c8ed13",
+      "source": "厚生労働省",
+      "title": "自分らしく生きるための「人生会議」ポータルサイト",
+      "url": "https://www.mhlw.go.jp/acp-jinseikaigi/",
+      "date": "2026-10-13",
+      "category": "その他",
+      "summary": "人生の最終段階における医療・ケアについて話し合う「人生会議」のポータルサイトの案内です。",
+      "importance": "中",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "終末期ケアやアドバンス・ケア・プランニングに関わるガイドライン的情報であり、高齢者福祉施設等で把握が必要なため。"
+    },
+    {
+      "hash": "87fcedf918deede6",
+      "source": "厚生労働省",
+      "title": "第１回歯科情報に関する技術作業班資料について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76671.html",
+      "date": "2026-10-09",
+      "category": "審議会等",
+      "summary": "医療・介護情報の利活用に関する歯科情報技術作業班の配付資料です。医療・介護連携における情報共有の議論が含まれます。",
+      "importance": "中",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "医療・介護連携や情報基盤の整備に関する検討資料であり、今後のシステム対応等に影響するため。"
+    },
+    {
+      "hash": "ed95c065d45b3935",
+      "source": "厚生労働省",
+      "title": "健康・医療・介護情報利活用検討会 医療等情報利活用ワーキンググループ 第１回歯科情報に関する技術作業班の開催案内",
+      "url": "https://www.mhlw.go.jp/stf/shingi/0001210262_00104.html",
+      "date": "2026-10-02",
+      "category": "審議会等",
+      "summary": "歯科情報に関する技術作業班の開催案内です。医療介護情報の連携・利活用に向けた検討が行われます。",
+      "importance": "中",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "医療介護情報の連携に関する検討会の案内であり、今後の情報基盤整備の動向として把握すべきため。"
+    },
+    {
+      "hash": "779bfc774941520c",
+      "source": "WAM NET",
+      "title": "インフルエンザ最新情報（令和8年10月9日更新）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22941&ct=030100310&from=rss",
+      "date": "2026-10-13",
+      "category": "行政資料",
+      "summary": "インフルエンザの最新の流行状況や感染対策に関する行政資料の更新です。",
+      "importance": "高",
+      "fields": [
+        "共通"
+      ],
+      "reason": "感染症の流行状況に関する最新情報であり、福祉施設における感染対策の強化・注意喚起に直結するため。",
+      "action": "一般に、こうした通知では最新の流行状況に合わせた感染対策の周知や、事業所内の衛生管理体制の見直しの確認が必要になります。"
+    },
+    {
+      "hash": "c1019eb3cd8bed5c",
+      "source": "WAM NET",
+      "title": "第158回 先進医療会議（令和8年10月9日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22944&ct=030010140&from=rss",
+      "date": "2026-10-13",
+      "category": "行政資料",
+      "summary": "先進医療会議の開催結果に関する行政資料です。最新の医療技術の評価や保険導入に向けた議論を示しています。",
+      "importance": "低",
+      "fields": [],
+      "reason": "高度な医療技術の評価に関する会議であり、通常の福祉事業者の実務運営には直接影響しないため。"
+    },
+    {
+      "hash": "800e25bf614fde68",
+      "source": "WAM NET",
+      "title": "第150回 厚生科学審議会 科学技術部会（令和8年10月9日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22943&ct=010020020&from=rss",
+      "date": "2026-10-13",
+      "category": "行政資料",
+      "summary": "厚生科学審議会科学技術部会の開催結果資料です。科学技術政策や研究開発の方向性を議論しています。",
+      "importance": "低",
+      "fields": [],
+      "reason": "科学技術・研究に関する審議会資料であり、福祉事業者の実務運営に直接影響しないため。"
+    },
+    {
+      "hash": "ee59eb325c88b408",
+      "source": "WAM NET",
+      "title": "第269回 社会保障審議会 介護給付費分科会（令和8年10月9日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22942&ct=010010020&from=rss",
+      "date": "2026-10-13",
+      "category": "行政資料",
+      "summary": "社会保障審議会介護給付費分科会の開催結果資料です。介護報酬や基準等の見直しに向けた議論の推移が分かります。",
+      "importance": "高",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "介護給付費分科会の詳細な審議内容であり、今後の報酬改定や運営基準に対応するため不可欠な情報であるため。",
+      "action": "一般に、こうした通知では介護報酬や基準等の見直しに向けた議論の結果や今後の制度改正に関する情報の確認が必要になります。"
+    }
+  ],
+  "press": [
+    {
+      "hash": "4980d57c6bb31b5a",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "日本福祉用具供給協会、設立30周年で記念式典 厚労省「さらなる発展を期待」",
+      "url": "https://www.joint-kaigo.com/articles/49452/",
+      "date": "2026-10-13",
+      "category": "福祉用具",
+      "fields": [
+        "高齢",
+        "障害"
+      ]
+    },
+    {
+      "hash": "a305e65eb325ea45",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "グループホームのACP・看取りを学ぶ ケアマネ向け実践研修、11月20日開催",
+      "url": "https://www.joint-kaigo.com/articles/49444/",
+      "date": "2026-10-13",
+      "category": "医療・看護",
+      "fields": [
+        "高齢"
+      ]
+    },
+    {
+      "hash": "4b53bf87bb8512ee",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "高市首相、介護現場に「強い危機感」 国会で「非常に厳しい」と答弁 報酬改定へ対策検討",
+      "url": "https://www.joint-kaigo.com/articles/49427/",
+      "date": "2026-10-13",
+      "category": "政府与党",
+      "fields": [
+        "高齢"
+      ]
+    },
+    {
+      "hash": "47d4e0ece9f0fdfb",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "グループホームの夜勤、配置緩和を提案 厚労省 見守り機器の活用など要件｜来年度介護報酬改定",
+      "url": "https://www.joint-kaigo.com/articles/49403/",
+      "date": "2026-10-13",
+      "category": "介護給付費分科会",
+      "fields": [
+        "高齢"
+      ]
+    },
+    {
+      "hash": "5fbef955e7c874f7",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "NDソフト、介護ソフトの新領域へ 「ほのぼのONE」でケア品質と経営をつなぐ 現場のデータをより良い介護と経営の力に",
+      "url": "https://www.joint-kaigo.com/articles/49388/",
+      "date": "2026-10-13",
+      "category": "テクノロジ",
+      "fields": [
+        "高齢"
+      ]
+    }
+  ]
 }
