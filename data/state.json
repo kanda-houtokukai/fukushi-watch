@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-10-13T21:53:50.288Z",
+      "lastCrawled": "2026-10-14T20:47:46.116Z",
       "items": [
         {
           "hash": "f9e9811afdf62261",
@@ -923,8 +923,57 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-10-13T21:53:51.121Z",
+      "lastCrawled": "2026-10-14T20:47:47.156Z",
       "items": [
+        {
+          "hash": "d440dc0428b04670",
+          "title": "第212回労働政策審議会労働条件分科会（資料）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76683.html",
+          "date": "2026-10-14",
+          "category": "審議会等"
+        },
+        {
+          "hash": "258ce6d0edd9eb43",
+          "title": "第218回社会保障審議会医療保険部会（ペーパーレス）の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76677.html",
+          "date": "2026-10-14",
+          "category": "審議会等"
+        },
+        {
+          "hash": "3f5146e1416e95c1",
+          "title": "検体採取の結果について（９月）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76659.html",
+          "date": "2026-10-14",
+          "category": "トピックス"
+        },
+        {
+          "hash": "d2156fcf48dcfc57",
+          "title": "看護教育ポータル 発見・看護！｜厚生労働省",
+          "url": "https://www.mhlw.go.jp/kango_kyouiku/",
+          "date": "2026-10-14",
+          "category": "その他"
+        },
+        {
+          "hash": "6e12b470a140e3f6",
+          "title": "国民年金システム標準化研究会ワーキングチーム 資料(第１回)",
+          "url": "https://www.mhlw.go.jp/stf/nenkin_kenkyuukai-siryo02_00166.html",
+          "date": "2026-10-14",
+          "category": "その他"
+        },
+        {
+          "hash": "f0f699be393d36a7",
+          "title": "「第144回労働政策審議会障害者雇用分科会」を開催します（開催案内）",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76632.html",
+          "date": "2026-10-14",
+          "category": "審議会等"
+        },
+        {
+          "hash": "0314de4d84056e33",
+          "title": "看護系技官採用サイト更新",
+          "url": "https://www.mhlw.go.jp/general/saiyo/kangokei/",
+          "date": "2026-10-14",
+          "category": "採用情報"
+        },
         {
           "hash": "8d9f61e350847b80",
           "title": "令和８年度第１回社会復帰促進等事業に関する検討会（議事録)",
@@ -994,6 +1043,13 @@
           "url": "https://www.mhlw.go.jp/stf/newpage_76363.html",
           "date": "2026-10-13",
           "category": "その他"
+        },
+        {
+          "hash": "90e604f6762587e5",
+          "title": "第17回厚生科学審議会結核部会 資料",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76689.html",
+          "date": "2026-10-13",
+          "category": "審議会等"
         },
         {
           "hash": "0a1a8571fe08c14f",
@@ -1381,6 +1437,13 @@
           "category": "採用情報"
         },
         {
+          "hash": "c56867aa3184f9fb",
+          "title": "第2回精神医療に関する地域医療構想検討ワーキンググループの開催について：開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76595.html",
+          "date": "2026-10-06",
+          "category": "審議会等"
+        },
+        {
           "hash": "fcd6ec28f752abad",
           "title": "関係法令、その他関係通知等",
           "url": "https://www.mhlw.go.jp/stf/newpage_76430.html",
@@ -1701,6 +1764,13 @@
           "url": "https://www.mhlw.go.jp/kinkyu/151106.html",
           "date": "2026-09-30",
           "category": "政策分野"
+        },
+        {
+          "hash": "c33b2ff8a27bab66",
+          "title": "10月は「年次有給休暇取得促進期間」です",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76262.html",
+          "date": "2026-09-30",
+          "category": "報道発表"
         },
         {
           "hash": "c5bb929097ac92c6",
@@ -2548,13 +2618,6 @@
           "url": "https://www.mhlw.go.jp/stf/newpage_76266.html",
           "date": "2026-09-16",
           "category": "審議会等"
-        },
-        {
-          "hash": "2319521b0ab8f131",
-          "title": "10月は年次有給休暇取得促進期間です。",
-          "url": "https://www.mhlw.go.jp/stf/newpage_76262.html",
-          "date": "2026-09-16",
-          "category": "報道発表"
         },
         {
           "hash": "9cd54622960e0c0d",
@@ -4557,65 +4620,58 @@
           "url": "https://www.mhlw.go.jp/stf/newpage_75551.html",
           "date": "2026-08-17",
           "category": "その他"
-        },
-        {
-          "hash": "8ac4f791e4f83e38",
-          "title": "第４回 医療関係職種の安定的な養成・確保に関する検討会：資料",
-          "url": "https://www.mhlw.go.jp/stf/newpage_75535.html",
-          "date": "2026-08-14",
-          "category": "審議会等"
-        },
-        {
-          "hash": "46311d5262a8e0b5",
-          "title": "第４回 医療関係職種の安定的な養成・確保に関する検討会：開催案内",
-          "url": "https://www.mhlw.go.jp/stf/newpage_75532.html",
-          "date": "2026-08-14",
-          "category": "審議会等"
-        },
-        {
-          "hash": "c63c47f51f7662d8",
-          "title": "第40回キャリアコンサルタント登録制度等に関する検討会 更新講習（技能講習）作業部会の開催について",
-          "url": "https://www.mhlw.go.jp/stf/newpage_75340.html",
-          "date": "2026-08-14",
-          "category": "報道発表"
-        },
-        {
-          "hash": "8208b3178df9c227",
-          "title": "薬事審議会 指定薬物部会を開催します",
-          "url": "https://www.mhlw.go.jp/stf/newpage_74927.html",
-          "date": "2026-08-14",
-          "category": "審議会等"
-        },
-        {
-          "hash": "f51a7747ae1af5eb",
-          "title": "定期の予防接種実施者数",
-          "url": "https://www.mhlw.go.jp/topics/bcg/other/5.html",
-          "date": "2026-08-14",
-          "category": "政策分野"
-        },
-        {
-          "hash": "d077a8e991cf0a5f",
-          "title": "薬事工業生産動態統計令和8年5月分月報について",
-          "url": "https://www.mhlw.go.jp/toukei/list/105-1c.html",
-          "date": "2026-08-14",
-          "category": "統計情報"
-        },
-        {
-          "hash": "b57d57485b7fe6c6",
-          "title": "採用情報（期間業務職員（医薬局）募集情報）",
-          "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-iyakukyoku02-ippangyouseijimuhojo.html",
-          "date": "2026-08-14",
-          "category": "採用情報"
         }
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-10-13T21:53:52.424Z",
+      "lastCrawled": "2026-10-14T20:47:48.405Z",
       "items": [
+        {
+          "hash": "bc154d8a04156fde",
+          "title": "風しん最新情報（令和8年10月13日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22948&ct=030100130&from=rss",
+          "date": "2026-10-14",
+          "category": "行政資料"
+        },
+        {
+          "hash": "2882305647cca686",
+          "title": "第23回 成年後見制度利用促進専門家会議（令和8年10月13日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22954&ct=100100170&from=rss",
+          "date": "2026-10-14",
+          "category": "行政資料"
+        },
+        {
+          "hash": "dc3fc39a8837d246",
+          "title": "第16回 幼児期までのこどもの育ち部会（令和8年10月23日開催予定）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22953&ct=070010010&from=rss",
+          "date": "2026-10-14",
+          "category": "行政資料"
+        },
+        {
+          "hash": "66a1025f9b10750c",
+          "title": "第27回 新型インフルエンザ対策に関する小委員会 ・第12回 危機対応医薬品等に関する小委員会（令和8年10月14日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22951&ct=010020210&from=rss",
+          "date": "2026-10-14",
+          "category": "行政資料"
+        },
+        {
+          "hash": "2be553a65ef6d457",
+          "title": "麻しん最新情報（令和8年10月13日更新）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22950&ct=030100110&from=rss",
+          "date": "2026-10-14",
+          "category": "行政資料"
+        },
         {
           "hash": "779bfc774941520c",
           "title": "インフルエンザ最新情報（令和8年10月9日更新）",
           "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22941&ct=030100310&from=rss",
+          "date": "2026-10-13",
+          "category": "行政資料"
+        },
+        {
+          "hash": "3ef43ac591c134a1",
+          "title": "第160回 社会保障審議会 障害者部会（令和8年10月20日開催予定）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22949&ct=070010040&from=rss",
           "date": "2026-10-13",
           "category": "行政資料"
         },
@@ -4645,13 +4701,6 @@
           "title": "第78回 厚生科学審議会 予防接種・ワクチン分科会 予防接種基本方針部会（令和8年10月8日開催）",
           "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22940&ct=010020270&from=rss",
           "date": "2026-10-09",
-          "category": "行政資料"
-        },
-        {
-          "hash": "324272cdba1a072b",
-          "title": "第27回 厚生科学審議会 新型インフルエンザ対策に関する小委員会 ・第１２回危機対応医薬品等に関する小委員会（令和8年10月14日開催予定）",
-          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22937&ct=010020210&from=rss",
-          "date": "2026-10-08",
           "category": "行政資料"
         },
         {
@@ -5978,6 +6027,13 @@
           "category": "行政資料"
         },
         {
+          "hash": "324272cdba1a072b",
+          "title": "第27回 厚生科学審議会 新型インフルエンザ対策に関する小委員会 ・第１２回危機対応医薬品等に関する小委員会（令和8年10月14日開催予定）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22937&ct=010020210&from=rss",
+          "date": "2026-10-08",
+          "category": "行政資料"
+        },
+        {
           "hash": "a42fd8c6fb5ce32a",
           "title": "第127回 社会保障審議会 医療部会（令和8年4月28日開催）",
           "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22528&ct=010010040&from=rss",
@@ -6669,53 +6725,11 @@
           "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22433&ct=030010150&from=rss",
           "date": "2026-03-12",
           "category": "行政資料"
-        },
-        {
-          "hash": "0ea179982d988dc4",
-          "title": "第184回 先進医療技術審査部会（令和8年2月9日開催）",
-          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22432&ct=030010150&from=rss",
-          "date": "2026-03-12",
-          "category": "行政資料"
-        },
-        {
-          "hash": "965bf77d933c0540",
-          "title": "第60回 社会保障審議会 生活保護基準部会（令和8年8月25日開催予定）",
-          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22796&ct=070010070&from=rss",
-          "date": "2026-08-19",
-          "category": "行政資料"
-        },
-        {
-          "hash": "51f1a7258538afaa",
-          "title": "全国介護保険・高齢者保健福祉担当課長会議（令和8年3月11日開催）",
-          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22431&ct=020010070&from=rss",
-          "date": "2026-03-12",
-          "category": "行政資料"
-        },
-        {
-          "hash": "cbb6acfb8fd9834d",
-          "title": "第648回 中央社会保険医療協議会 総会（令和8年3月11日開催）",
-          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22423&ct=010050010&from=rss",
-          "date": "2026-03-11",
-          "category": "行政資料"
-        },
-        {
-          "hash": "cc731a1d1d98cc40",
-          "title": "令和7年度 全国高齢者医療主管課（部）長及び国民健康保険主管課（部）長並びに後期高齢者医療広域連合事務局長会議(令和8年3月11日開催)",
-          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22426&ct=030105030&from=rss",
-          "date": "2026-03-11",
-          "category": "行政資料"
-        },
-        {
-          "hash": "f002dbd68117ec12",
-          "title": "第102回 厚生科学審議会 感染症部会（令和8年3月11日開催）",
-          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22419&ct=010020080&from=rss",
-          "date": "2026-03-10",
-          "category": "行政資料"
         }
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-10-13T21:53:53.638Z",
+      "lastCrawled": "2026-10-14T20:47:50.030Z",
       "items": [
         {
           "hash": "94a6c53fbde395e7",
@@ -7035,7 +7049,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-10-13T21:53:53.999Z",
+      "lastCrawled": "2026-10-14T20:47:50.378Z",
       "items": [
         {
           "hash": "dcd6c5db1f93e29e",
@@ -7290,13 +7304,6 @@
           "category": ""
         },
         {
-          "hash": "a677ca2a5764e857",
-          "title": "「こどもの居場所づくりセミナー」を開催します！",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/ibasho-seminar2026-1.html",
-          "date": "2026年7月2日更新",
-          "category": ""
-        },
-        {
           "hash": "8e8f7d5677fb0f39",
           "title": "こどもの権利啓発教材について",
           "url": "https://www.pref.fukuoka.lg.jp/contents/kodomonokenri.html",
@@ -7315,6 +7322,20 @@
           "title": "こどもの居場所づくりをサポートします！",
           "url": "https://www.pref.fukuoka.lg.jp/contents/kodomonoibasyosuishin.html",
           "date": "2025年12月1日更新",
+          "category": ""
+        },
+        {
+          "hash": "aa4a7e797eb5e314",
+          "title": "福岡県こどもまんなかポータルサイトに「こどもの居場所マップ」ができました！",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kodomonoibasyomap1.html",
+          "date": "2025年6月6日更新",
+          "category": ""
+        },
+        {
+          "hash": "a677ca2a5764e857",
+          "title": "「こどもの居場所づくりセミナー」を開催します！",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/ibasho-seminar2026-1.html",
+          "date": "2026年7月2日更新",
           "category": ""
         },
         {
@@ -7703,8 +7724,43 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-10-13T21:53:55.265Z",
+      "lastCrawled": "2026-10-14T20:47:51.504Z",
       "items": [
+        {
+          "hash": "331811f52a4032d2",
+          "title": "ショートステイの送迎加算、引き上げを提案 厚労省 燃料費・人件費などの高騰を反映｜介護報酬改定",
+          "url": "https://www.joint-kaigo.com/articles/49504/",
+          "date": "2026-10-14",
+          "category": "介護給付費分科会"
+        },
+        {
+          "hash": "2d0ff293801207e5",
+          "title": "デイサービスの入浴介助加算、単価引き上げへ 厚労省案 物価高を反映 上位区分の要件緩和も検討｜介護報酬改定",
+          "url": "https://www.joint-kaigo.com/articles/49490/",
+          "date": "2026-10-14",
+          "category": "介護給付費分科会"
+        },
+        {
+          "hash": "0d496d41baf597a8",
+          "title": "デイサービスの送迎減算、急なキャンセルを対象外に 厚労省案｜介護報酬改定",
+          "url": "https://www.joint-kaigo.com/articles/49481/",
+          "date": "2026-10-14",
+          "category": "介護保険"
+        },
+        {
+          "hash": "a4e6c999b0457671",
+          "title": "デイサービスの入浴介助加算、単価見直し提案 厚労省 物価高騰を考慮｜介護報酬改定",
+          "url": "https://www.joint-kaigo.com/articles/49475/",
+          "date": "2026-10-14",
+          "category": "介護給付費分科会"
+        },
+        {
+          "hash": "46829e97823dd881",
+          "title": "高市首相、障害福祉報酬は支援の質で「メリハリ」 国会で明言 来年度改定での見直しが「必要不可欠」",
+          "url": "https://www.joint-kaigo.com/articles/49462/",
+          "date": "2026-10-14",
+          "category": "国会"
+        },
         {
           "hash": "4980d57c6bb31b5a",
           "title": "日本福祉用具供給協会、設立30周年で記念式典 厚労省「さらなる発展を期待」",
@@ -7717,14 +7773,14 @@
           "title": "グループホームのACP・看取りを学ぶ ケアマネ向け実践研修、11月20日開催",
           "url": "https://www.joint-kaigo.com/articles/49444/",
           "date": "2026-10-13",
-          "category": "医療・看護"
+          "category": "超高齢化"
         },
         {
           "hash": "4b53bf87bb8512ee",
           "title": "高市首相、介護現場に「強い危機感」 国会で「非常に厳しい」と答弁 報酬改定へ対策検討",
           "url": "https://www.joint-kaigo.com/articles/49427/",
           "date": "2026-10-13",
-          "category": "政府与党"
+          "category": "介護保険"
         },
         {
           "hash": "47d4e0ece9f0fdfb",
@@ -7738,7 +7794,7 @@
           "title": "NDソフト、介護ソフトの新領域へ 「ほのぼのONE」でケア品質と経営をつなぐ 現場のデータをより良い介護と経営の力に",
           "url": "https://www.joint-kaigo.com/articles/49388/",
           "date": "2026-10-13",
-          "category": "テクノロジ"
+          "category": "生産性向上"
         },
         {
           "hash": "b8cf08dfa2d5a9f8",
@@ -8436,7 +8492,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-10-13T21:53:54.184Z",
+      "lastCrawled": "2026-10-14T20:47:50.585Z",
       "items": [
         {
           "hash": "168fa493e6fcb94d",
@@ -9015,7 +9071,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-10-13T21:53:56.271Z",
+      "lastCrawled": "2026-10-14T20:47:52.245Z",
       "items": [
         {
           "hash": "1e34abf9ba73bbcb",
@@ -9518,7 +9574,7 @@
     }
   },
   "preferredModel": "gemini-3.5-flash-lite",
-  "lastSentDate": "2026-10-14",
-  "lastRunAt": "2026-10-14T01:59:40.641Z",
-  "lastCrawlDate": "2026-10-14"
+  "lastSentDate": "2026-10-15",
+  "lastRunAt": "2026-10-14T20:48:13.430Z",
+  "lastCrawlDate": "2026-10-15"
 }

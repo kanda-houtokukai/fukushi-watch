@@ -1,17 +1,7 @@
 {
- "updatedAt": "2026-10-13T21:54:25.529Z",
- "lastFetchDate": "2026-10-14",
+ "updatedAt": "2026-10-14T20:49:51.276Z",
+ "lastFetchDate": "2026-10-15",
  "items": [
-  {
-   "hash": "eee8d900710482b3",
-   "day": "2026-10-14",
-   "source": "厚生労働省",
-   "title": "第270回社会保障審議会介護給付費分科会（Web会議）を開催します",
-   "url": "https://www.mhlw.go.jp/stf/newpage_76627.html",
-   "deadline": "2026-10-14",
-   "label": "申込期限",
-   "quote": "として、10月14日(水)10時までにお申し込みいただくようお願い申し上げます。"
-  },
   {
    "hash": "dff8d5152eb6fb85",
    "day": "2026-10-02",
@@ -31,6 +21,36 @@
    "deadline": "2026-10-15",
    "label": "申し込み締切",
    "quote": "申し込み締切は、 10 月15 日(木 )の18時 とします。(18時以降の申込みは受け付けません。)"
+  },
+  {
+   "hash": "258ce6d0edd9eb43",
+   "day": "2026-10-15",
+   "source": "厚生労働省",
+   "title": "第218回社会保障審議会医療保険部会（ペーパーレス）の開催について",
+   "url": "https://www.mhlw.go.jp/stf/newpage_76677.html",
+   "deadline": "2026-10-15",
+   "label": "傍聴申込締切",
+   "quote": "今回の傍聴申込み締切は10月15日(木)15時00分です。"
+  },
+  {
+   "hash": "c56867aa3184f9fb",
+   "day": "2026-10-15",
+   "source": "厚生労働省",
+   "title": "第2回精神医療に関する地域医療構想検討ワーキンググループの開催について：開催案内",
+   "url": "https://www.mhlw.go.jp/stf/newpage_76595.html",
+   "deadline": "2026-10-19",
+   "label": "申込締切",
+   "quote": "申込先E-mail: chiikiseishin@mhlw.go.jp 申し込締切は、 10月19日(月)18時 とします。"
+  },
+  {
+   "hash": "f0f699be393d36a7",
+   "day": "2026-10-15",
+   "source": "厚生労働省",
+   "title": "「第144回労働政策審議会障害者雇用分科会」を開催します（開催案内）",
+   "url": "https://www.mhlw.go.jp/stf/newpage_76632.html",
+   "deadline": "2026-10-20",
+   "label": "申込みの締切り",
+   "quote": "(3) 申込みの締切りは、10月20日(火)12:00必着とします。"
   },
   {
    "hash": "63fce57ef0716b61",

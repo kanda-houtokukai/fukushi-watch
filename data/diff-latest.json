@@ -1,6 +1,206 @@
 {
-  "generatedAt": "2026-10-14T01:59:40.507Z",
-  "newItems": [],
-  "newPress": [],
+  "generatedAt": "2026-10-14T20:47:52.248Z",
+  "newItems": [
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "d440dc0428b04670",
+      "title": "第212回労働政策審議会労働条件分科会（資料）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76683.html",
+      "date": "2026-10-14",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "258ce6d0edd9eb43",
+      "title": "第218回社会保障審議会医療保険部会（ペーパーレス）の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76677.html",
+      "date": "2026-10-14",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "3f5146e1416e95c1",
+      "title": "検体採取の結果について（９月）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76659.html",
+      "date": "2026-10-14",
+      "category": "トピックス"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "d2156fcf48dcfc57",
+      "title": "看護教育ポータル 発見・看護！｜厚生労働省",
+      "url": "https://www.mhlw.go.jp/kango_kyouiku/",
+      "date": "2026-10-14",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "6e12b470a140e3f6",
+      "title": "国民年金システム標準化研究会ワーキングチーム 資料(第１回)",
+      "url": "https://www.mhlw.go.jp/stf/nenkin_kenkyuukai-siryo02_00166.html",
+      "date": "2026-10-14",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "f0f699be393d36a7",
+      "title": "「第144回労働政策審議会障害者雇用分科会」を開催します（開催案内）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76632.html",
+      "date": "2026-10-14",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "0314de4d84056e33",
+      "title": "看護系技官採用サイト更新",
+      "url": "https://www.mhlw.go.jp/general/saiyo/kangokei/",
+      "date": "2026-10-14",
+      "category": "採用情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "90e604f6762587e5",
+      "title": "第17回厚生科学審議会結核部会 資料",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76689.html",
+      "date": "2026-10-13",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "c56867aa3184f9fb",
+      "title": "第2回精神医療に関する地域医療構想検討ワーキンググループの開催について：開催案内",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76595.html",
+      "date": "2026-10-06",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "c33b2ff8a27bab66",
+      "title": "10月は「年次有給休暇取得促進期間」です",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76262.html",
+      "date": "2026-09-30",
+      "category": "報道発表"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "bc154d8a04156fde",
+      "title": "風しん最新情報（令和8年10月13日更新）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22948&ct=030100130&from=rss",
+      "date": "2026-10-14",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "2882305647cca686",
+      "title": "第23回 成年後見制度利用促進専門家会議（令和8年10月13日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22954&ct=100100170&from=rss",
+      "date": "2026-10-14",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "dc3fc39a8837d246",
+      "title": "第16回 幼児期までのこどもの育ち部会（令和8年10月23日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22953&ct=070010010&from=rss",
+      "date": "2026-10-14",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "66a1025f9b10750c",
+      "title": "第27回 新型インフルエンザ対策に関する小委員会 ・第12回 危機対応医薬品等に関する小委員会（令和8年10月14日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22951&ct=010020210&from=rss",
+      "date": "2026-10-14",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "2be553a65ef6d457",
+      "title": "麻しん最新情報（令和8年10月13日更新）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22950&ct=030100110&from=rss",
+      "date": "2026-10-14",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "3ef43ac591c134a1",
+      "title": "第160回 社会保障審議会 障害者部会（令和8年10月20日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22949&ct=070010040&from=rss",
+      "date": "2026-10-13",
+      "category": "行政資料"
+    },
+    {
+      "source": "福岡県（子ども・青少年）",
+      "kind": "gov",
+      "hash": "aa4a7e797eb5e314",
+      "title": "福岡県こどもまんなかポータルサイトに「こどもの居場所マップ」ができました！",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/kodomonoibasyomap1.html",
+      "date": "2025年6月6日更新",
+      "category": ""
+    }
+  ],
+  "newPress": [
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "331811f52a4032d2",
+      "title": "ショートステイの送迎加算、引き上げを提案 厚労省 燃料費・人件費などの高騰を反映｜介護報酬改定",
+      "url": "https://www.joint-kaigo.com/articles/49504/",
+      "date": "2026-10-14",
+      "category": "介護給付費分科会"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "2d0ff293801207e5",
+      "title": "デイサービスの入浴介助加算、単価引き上げへ 厚労省案 物価高を反映 上位区分の要件緩和も検討｜介護報酬改定",
+      "url": "https://www.joint-kaigo.com/articles/49490/",
+      "date": "2026-10-14",
+      "category": "介護給付費分科会"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "0d496d41baf597a8",
+      "title": "デイサービスの送迎減算、急なキャンセルを対象外に 厚労省案｜介護報酬改定",
+      "url": "https://www.joint-kaigo.com/articles/49481/",
+      "date": "2026-10-14",
+      "category": "介護保険"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "a4e6c999b0457671",
+      "title": "デイサービスの入浴介助加算、単価見直し提案 厚労省 物価高騰を考慮｜介護報酬改定",
+      "url": "https://www.joint-kaigo.com/articles/49475/",
+      "date": "2026-10-14",
+      "category": "介護給付費分科会"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "46829e97823dd881",
+      "title": "高市首相、障害福祉報酬は支援の質で「メリハリ」 国会で明言 来年度改定での見直しが「必要不可欠」",
+      "url": "https://www.joint-kaigo.com/articles/49462/",
+      "date": "2026-10-14",
+      "category": "国会"
+    }
+  ],
   "crawlErrors": []
 }
