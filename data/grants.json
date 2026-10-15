@@ -1,59 +1,6 @@
 {
- "updatedAt": "2026-10-14T20:50:32.757Z",
+ "updatedAt": "2026-10-15T20:27:33.495Z",
  "items": [
-  {
-   "hash": "8ccd26bb7b61ddc6",
-   "source": "全社協 福祉の助成情報",
-   "sourceKind": "org",
-   "funder": "齋藤茂昭記念財団",
-   "title": "2026年度 助成事業",
-   "url": "https://www.shakyo.or.jp/guide/sponsor/p/260812saito.html",
-   "postedAt": "2026-08-12",
-   "deadline": "2026-10-15",
-   "deadlineType": "date",
-   "deadlineRaw": "2026年10月15日",
-   "summary": "障害者や発達障害等の社会的マイノリティの自立支援、環境整備、啓発活動を行う個人および非営利団体に対し活動資金を助成します。",
-   "fields": [
-    "障害"
-   ],
-   "uses": [
-    "行事・啓発"
-   ],
-   "applicants": [
-    "社会福祉法人",
-    "NPO・公益法人",
-    "個人"
-   ],
-   "amount": "1団体/1個人あたり100万円上限",
-   "conditions": [
-    {
-     "axis": "その他の対象限定",
-     "quote": "非営利活動・公益事業を行う個人および団体 (社会福祉法人、NPO法人、財団法人、社団法人など)"
-    }
-   ],
-   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260812saito.html"
-  },
-  {
-   "hash": "173aed374673fae7",
-   "source": "厚生労働省",
-   "sourceKind": "",
-   "funder": "厚生労働省",
-   "title": "令和８年度老人保健健康増進等事業（老人保健事業推進費等補助金）の国庫補助協議（３次公募）について",
-   "url": "https://www.mhlw.go.jp/stf/newpage_76519.html",
-   "postedAt": "2026-10-02",
-   "deadline": "2026-10-15",
-   "deadlineType": "date",
-   "deadlineRaw": "国庫補助協議の提出期限 2026-10-15",
-   "fields": [
-    "共通"
-   ],
-   "summary": "",
-   "uses": [],
-   "applicants": [],
-   "amount": "",
-   "conditions": [],
-   "via": "goryu"
-  },
   {
    "hash": "98f7c0a098770628",
    "source": "福岡県（子ども・青少年）",
@@ -676,6 +623,48 @@
    ]
   },
   {
+   "hash": "09c770cfa25f8f33",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "2026年度 社会的養護施設（児童養護施設等）対象 設備・備品助成",
+   "url": "https://www.jfc.or.jp/news_subsidy/2026%e5%b9%b4%e5%ba%a6-%e7%a4%be%e4%bc%9a%e7%9a%84%e9%a4%8a%e8%ad%b7%e6%96%bd%e8%a8%ad%ef%bc%88%e5%85%90%e7%ab%a5%e9%a4%8a%e8%ad%b7%e6%96%bd%e8%a8%ad%e7%ad%89%ef%bc%89%e5%af%be%e8%b1%a1-%e8%a8%ad/",
+   "postedAt": "2026-10-15",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "11月20日(金) 13:00 募集要項 https://ysmf.or.jp/info/e",
+   "openFrom": "2026-10-06",
+   "conditionsUrl": "https://ysmf.or.jp/info/event_news/20261006/",
+   "summary": "社会的養護施設における生活環境改善のための設備や備品の購入費用を支援する助成で、児童養護施設や乳児院などの対象施設が応募できます。",
+   "fields": [
+    "児童"
+   ],
+   "uses": [
+    "設備・改修",
+    "機器・用具"
+   ],
+   "applicants": [],
+   "amount": "400千円/1件",
+   "conditions": [
+    {
+     "axis": "事業の実施地",
+     "quote": "・助成対象地域:全国"
+    },
+    {
+     "axis": "主体の付帯条件",
+     "quote": "・応募方法:助成業務システム「Graain(グラーイン)」よりオンライン申請"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "・助成対象施設:2026年10月1日現在で運営されている以下の施設 児童養護施設、児童心理治療施設、児童自立支援施設、乳児院、母子生活支援施設 児童自立生活援助事業所(I型)、女性自立支援施設"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "・運営・設置形態:公設民営(指定管理者制度または業務委託で運営)、民設民営の施設"
+    }
+   ]
+  },
+  {
    "hash": "8cf63c024f328db8",
    "source": "全社協 福祉の助成情報",
    "sourceKind": "org",
@@ -753,5 +742,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-10-15"
+ "lastFetchDate": "2026-10-16"
 }
