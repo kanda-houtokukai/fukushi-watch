@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-10-16T19:59:27.510Z",
+      "lastCrawled": "2026-10-17T19:31:53.482Z",
       "items": [
         {
           "hash": "ab14ae8537e30845",
@@ -979,7 +979,7 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-10-16T19:59:27.947Z",
+      "lastCrawled": "2026-10-17T19:31:53.854Z",
       "items": [
         {
           "hash": "eadeb5a4c1694154",
@@ -4883,7 +4883,7 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-10-16T19:59:29.249Z",
+      "lastCrawled": "2026-10-17T19:31:55.016Z",
       "items": [
         {
           "hash": "53ec5ab7606d4432",
@@ -6988,7 +6988,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-10-16T19:59:30.932Z",
+      "lastCrawled": "2026-10-17T19:31:56.510Z",
       "items": [
         {
           "hash": "1bfcc2260a1b3052",
@@ -7322,7 +7322,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-10-16T19:59:31.821Z",
+      "lastCrawled": "2026-10-17T19:31:56.892Z",
       "items": [
         {
           "hash": "c16f59eab0cefc3b",
@@ -8011,8 +8011,29 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-10-15T20:25:08.205Z",
+      "lastCrawled": "2026-10-17T19:31:58.065Z",
       "items": [
+        {
+          "hash": "e2aa2a84bcfefb93",
+          "title": "介護事業者の経営情報の報告、26日から再開 厚労省 決算時期ごとの報告期限を通知",
+          "url": "https://www.joint-kaigo.com/articles/49604/",
+          "date": "2026-10-17",
+          "category": "福祉用具"
+        },
+        {
+          "hash": "c8d7eb202711c459",
+          "title": "ショートステイの共同送迎、取り組みやすく 厚労省がルール明確化を提案｜介護報酬改定",
+          "url": "https://www.joint-kaigo.com/articles/49584/",
+          "date": "2026-10-16",
+          "category": "介護給付費分科会"
+        },
+        {
+          "hash": "7c5e42fc844816bb",
+          "title": "「介護崩壊は始まっている」 全国老施協、基本報酬の大胆な底上げを国に要請｜来年度改定",
+          "url": "https://www.joint-kaigo.com/articles/49577/",
+          "date": "2026-10-16",
+          "category": "超高齢化"
+        },
         {
           "hash": "4338597190a397c3",
           "title": "介護職が安心して働ける報酬を NCCUが83万筆超の署名を提出 他産業にも協力広がる｜来年度改定",
@@ -8032,7 +8053,7 @@
           "title": "デイサービスの共同送迎、対象者を拡大 買い物支援や通園・通学も可に 厚労省案｜介護報酬改定",
           "url": "https://www.joint-kaigo.com/articles/49524/",
           "date": "2026-10-15",
-          "category": "介護給付費分科会"
+          "category": "生産性向上"
         },
         {
           "hash": "23e9c3fd94367df5",
@@ -8807,7 +8828,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-10-16T19:59:32.623Z",
+      "lastCrawled": "2026-10-17T19:31:57.081Z",
       "items": [
         {
           "hash": "168fa493e6fcb94d",
@@ -9414,7 +9435,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-10-16T19:59:59.742Z",
+      "lastCrawled": "2026-10-17T19:31:58.938Z",
       "items": [
         {
           "hash": "1e34abf9ba73bbcb",
@@ -9916,8 +9937,8 @@
       ]
     }
   },
-  "preferredModel": "gemini-3.8-flash",
-  "lastSentDate": "2026-10-17",
-  "lastRunAt": "2026-10-17T01:22:31.411Z",
-  "lastCrawlDate": "2026-10-17"
+  "preferredModel": "gemini-3.7-flash",
+  "lastSentDate": "2026-10-18",
+  "lastRunAt": "2026-10-17T19:32:54.571Z",
+  "lastCrawlDate": "2026-10-18"
 }
