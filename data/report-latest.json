@@ -1,43 +1,6 @@
 {
-  "generatedAt": "2026-10-17T19:32:54.517Z",
-  "model": "gemini-3.7-flash",
+  "generatedAt": "2026-10-18T01:13:08.766Z",
+  "model": null,
   "items": [],
-  "press": [
-    {
-      "hash": "e2aa2a84bcfefb93",
-      "source": "介護ニュースJoint",
-      "kind": "press",
-      "title": "介護事業者の経営情報の報告、26日から再開 厚労省 決算時期ごとの報告期限を通知",
-      "url": "https://www.joint-kaigo.com/articles/49604/",
-      "date": "2026-10-17",
-      "category": "福祉用具",
-      "fields": [
-        "高齢"
-      ]
-    },
-    {
-      "hash": "c8d7eb202711c459",
-      "source": "介護ニュースJoint",
-      "kind": "press",
-      "title": "ショートステイの共同送迎、取り組みやすく 厚労省がルール明確化を提案｜介護報酬改定",
-      "url": "https://www.joint-kaigo.com/articles/49584/",
-      "date": "2026-10-16",
-      "category": "介護給付費分科会",
-      "fields": [
-        "高齢"
-      ]
-    },
-    {
-      "hash": "7c5e42fc844816bb",
-      "source": "介護ニュースJoint",
-      "kind": "press",
-      "title": "「介護崩壊は始まっている」 全国老施協、基本報酬の大胆な底上げを国に要請｜来年度改定",
-      "url": "https://www.joint-kaigo.com/articles/49577/",
-      "date": "2026-10-16",
-      "category": "超高齢化",
-      "fields": [
-        "高齢"
-      ]
-    }
-  ]
+  "press": []
 }
