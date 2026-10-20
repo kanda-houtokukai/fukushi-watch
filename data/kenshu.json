@@ -1,28 +1,6 @@
 {
- "updatedAt": "2026-10-19T21:42:59.061Z",
+ "updatedAt": "2026-10-20T20:54:42.494Z",
  "items": [
-  {
-   "hash": "bd9d9bbb6c10e43d",
-   "source": "福祉・介護研修センター 年間予定表",
-   "sourceKind": "org",
-   "via": "schedule",
-   "title": "感染症予防研修(後期)",
-   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/08/e9884305e5ec37f96e4c3bf628e95c9b.pdf",
-   "deadline": "2026-10-20",
-   "deadlineType": "date",
-   "deadlineRaw": "一覧の申込終了日より 10月20日",
-   "openFrom": "2026-09-01",
-   "fields": [
-    "共通"
-   ],
-   "kind": "法令対応",
-   "expireOn": "2027-01-20",
-   "heldDates": [
-    "2026-11-05",
-    "2026-11-14",
-    "2026-11-18"
-   ]
-  },
   {
    "hash": "ea3584c8565cff8f",
    "source": "福岡県介護福祉士会",
@@ -1174,5 +1152,5 @@
    "expireOn": "2026-10-31"
   }
  ],
- "lastFetchDate": "2026-10-20"
+ "lastFetchDate": "2026-10-21"
 }

@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-19T21:41:10.508Z",
+ "updatedAt": "2026-10-20T20:52:57.706Z",
  "items": [
   {
    "hash": "98f7c0a098770628",
@@ -385,6 +385,66 @@
    "via": "goryu"
   },
   {
+   "hash": "a00811aa77e4b60a",
+   "source": "全国社会福祉協議会",
+   "sourceKind": "",
+   "funder": "全国社会福祉協議会",
+   "title": "洲崎福祉財団「継続助成」（障害者／西日本・首都圏）",
+   "url": "https://www.shakyo.or.jp/guide/sponsor/p/261020susaki.html",
+   "postedAt": "2026-10-21",
+   "deadline": "2026-12-19",
+   "deadlineType": "date",
+   "deadlineRaw": "受付期間 2026-12-19",
+   "fields": [
+    "共通"
+   ],
+   "summary": "",
+   "uses": [],
+   "applicants": [],
+   "amount": "",
+   "conditions": [],
+   "via": "goryu"
+  },
+  {
+   "hash": "b69aa76ad953dce2",
+   "source": "全社協 福祉の助成情報",
+   "sourceKind": "org",
+   "funder": "洲崎福祉財団 令和8年度",
+   "title": "継続助成（西日本・首都圏）",
+   "url": "https://www.shakyo.or.jp/guide/sponsor/p/261020susaki.html",
+   "postedAt": "2026-10-20",
+   "deadline": "2026-12-19",
+   "deadlineType": "date",
+   "deadlineRaw": "2026年12月19日",
+   "summary": "障害児・者のQOL向上や社会課題の解決に寄与する中長期的な事業を支援する助成です。西日本エリアまたは首都圏に本店所在地がある法人格を持つ団体が応募できます。",
+   "fields": [
+    "障害"
+   ],
+   "uses": [
+    "事業・活動"
+   ],
+   "applicants": [
+    "社会福祉法人",
+    "NPO・公益法人"
+   ],
+   "amount": "1年目:2,000万円 2年目:1,000万円 3年目:1,000万円",
+   "conditions": [
+    {
+     "axis": "所在地",
+     "quote": "本店所在地が西日本エリア(三重県・滋賀県・京都府以西)、首都圏"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "営利を目的としない、法人格を取得している団体(社会福祉法人、特定非営利活動法人等)"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "物品購入や施設工事などを主とする事業は不可。"
+    }
+   ],
+   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/261020susaki.html"
+  },
+  {
    "hash": "d55048e134c86218",
    "source": "全社協 福祉の助成情報",
    "sourceKind": "org",
@@ -742,5 +802,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-10-20"
+ "lastFetchDate": "2026-10-21"
 }
