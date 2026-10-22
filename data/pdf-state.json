@@ -1301,8 +1301,8 @@
   "resultsVersion": 6
  },
  "_aiBudget": {
-  "date": "2026-10-22",
-  "calls": 0
+  "date": "2026-10-23",
+  "calls": 2
  },
  "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2025/06/e9884305e5ec37f96e4c3bf628e95c9b-2.pdf": {
   "etag": null,
@@ -1406,6 +1406,24 @@
      "iso": "2026-06-12",
      "raw": "令和8年6月12日",
      "model": "gemini-3.5-flash"
+    },
+    "outline": null
+   }
+  },
+  "resultsVersion": 6
+ },
+ "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/10/e9884305e5ec37f96e4c3bf628e95c9b.pdf": {
+  "etag": null,
+  "lastModified": "Thu, 22 Oct 2026 05:47:59 GMT",
+  "contentLength": null,
+  "size": 480759,
+  "seenAt": "2026-10-23",
+  "results": {
+   "dd12d5c80e21f51e": {
+    "deadline": {
+     "iso": "2026-11-13",
+     "raw": "令和8年11月13日",
+     "model": "gemini-3.7-flash"
     },
     "outline": null
    }

@@ -1,6 +1,296 @@
 {
-  "generatedAt": "2026-10-22T01:37:46.520Z",
-  "model": null,
-  "items": [],
-  "press": []
+  "generatedAt": "2026-10-22T20:37:49.551Z",
+  "model": "gemini-3.5-flash-lite",
+  "items": [
+    {
+      "hash": "385f455d89cec916",
+      "source": "こども家庭庁",
+      "title": "みて かんじて つながる劇体験 ～優良児童劇等公演事業～ 令和8年11月29日（日）三重県松坂市にて開催",
+      "url": "https://www.cfa.go.jp/press/2af7bcf9-bc05-4b75-be9a-155a2ad88045",
+      "date": "2026-10-22",
+      "category": "報道発表",
+      "summary": "三重県で開催される児童向けの優良劇公演に関する案内です。福祉事業者が直接主催・対応する業務ではなく、イベント告知となります。",
+      "importance": "低",
+      "fields": [
+        "児童"
+      ],
+      "reason": "児童向けの行事・イベント情報であり、事業者としての実務や制度対応には影響しないため。"
+    },
+    {
+      "hash": "2a56aab321d5381b",
+      "source": "厚生労働省",
+      "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76909.html",
+      "date": "2026-10-22",
+      "category": "報道発表",
+      "summary": "厚生労働大臣による定例の記者会見の案内です。福祉行政全体の方針や動向を把握するための参考情報となります。",
+      "importance": "低",
+      "fields": [
+        "共通"
+      ],
+      "reason": "大臣の定例会見であり、個別の事業者として直ちに行動を求められる実務情報ではないため。"
+    },
+    {
+      "hash": "62ab06c4ca1f4601",
+      "source": "厚生労働省",
+      "title": "委託事業に係る個人情報の漏えいについて",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76892.html",
+      "date": "2026-10-22",
+      "category": "報道発表",
+      "summary": "省庁の委託事業における個人情報の漏洩事故に関する公表です。情報管理の徹底や自法人のセキュリティ見直しの契機となります。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "個人情報保護の重要性にかんがみ、事業者全体のセキュリティ意識向上につながる事項であるため。"
+    },
+    {
+      "hash": "18c27a8e0a108e44",
+      "source": "厚生労働省",
+      "title": "令和８年度の医師臨床研修マッチング結果をお知らせします",
+      "url": "https://www.mhlw.go.jp/stf/houdou/0000180824_00012.html",
+      "date": "2026-10-22",
+      "category": "報道発表",
+      "summary": "医師の臨床研修マッチング結果の公表です。医療分野の人事・採用に関する情報であり、福祉事業者の実務には直接関わりません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医療分野の医師研修に関する結果発表であり、福祉事業の運営とは無関係であるため。"
+    },
+    {
+      "hash": "547bb05cb34ce1fe",
+      "source": "厚生労働省",
+      "title": "薬事審議会 医薬品等安全対策部会を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76824.html",
+      "date": "2026-10-22",
+      "category": "審議会等",
+      "summary": "医薬品等の安全対策を協議する薬事審議会の開催案内です。医療用医薬品等に関する内容であり、福祉事業所での直接的な実務影響は薄い情報です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "薬事に関する審議会であり、福祉事業の運営・実務には直接影響しないため。"
+    },
+    {
+      "hash": "c567a7e754979c72",
+      "source": "厚生労働省",
+      "title": "「2040年に向けた地域医療構想」について",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000080850_00019.html",
+      "date": "2026-10-22",
+      "category": "その他",
+      "summary": "中長期的な医療提供体制の方向性を示す地域医療構想に関する資料です。高齢者福祉や医療連携の将来動向を把握するために重要です。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "地域医療・高齢者福祉の将来的な方向性に関わる重要な施策方針であるため。"
+    },
+    {
+      "hash": "f210a297cdcffc9c",
+      "source": "厚生労働省",
+      "title": "地域医療構想の実現に向けた重点支援区域の選定を行いました",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76650.html",
+      "date": "2026-10-22",
+      "category": "報道発表",
+      "summary": "地域医療構想の実現に向けた重点支援区域の選定結果です。医療提供体制の再編等に関わるもので、高齢者福祉施設等の連携に影響する可能性があります。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "医療と高齢者福祉の連携体制の地域的な動向として把握しておくべき情報のため。"
+    },
+    {
+      "hash": "89d5c4e2bc93e945",
+      "source": "厚生労働省",
+      "title": "採用情報（期間業務職員（職業安定局） )募集情報",
+      "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-syokugyouanteikyoku.html",
+      "date": "2026-10-22",
+      "category": "採用情報",
+      "summary": "行政機関における職員の採用募集情報です。一般の求人案内であり、福祉事業所の運営には影響しません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "行政庁の人事・採用情報であり、福祉事業者の実務とは無関係であるため。"
+    },
+    {
+      "hash": "0ac64878f6beb3f7",
+      "source": "WAM NET",
+      "title": "介護保険最新情報Vol.1548（PDF：700KB）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/1022090859211/ksvol.1548.pdf?from=rss",
+      "date": "2026-10-22",
+      "category": "行政資料",
+      "summary": "介護保険制度に関する最新の通知・事務連絡です。介護報酬や運営基準に関連する重要な行政情報が含まれるため、確実な確認が必要です。",
+      "importance": "高",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "介護保険の最新通知であり、高齢者福祉事業者の実務や基準適合に直接関わるため。",
+      "action": "一般に、こうした通知では介護報酬や運営基準に関する最新情報の確認と、必要に応じた事業所内での周知徹底の対応が必要になります。"
+    },
+    {
+      "hash": "9e38ef5c7b5ced06",
+      "source": "WAM NET",
+      "title": "介護保険最新情報Vol.1547（PDF：521KB）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/1022090743857/ksvol.1547.pdf?from=rss",
+      "date": "2026-10-22",
+      "category": "行政資料",
+      "summary": "介護保険制度の運用に関する最新の通知・事務連絡です。事業所の運営管理や制度対応において確認が必要となる情報です。",
+      "importance": "高",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "介護保険最新情報の通知であり、事業所における実務対応が求められるため。",
+      "action": "一般に、こうした通知では制度運用や運営管理に関する変更点の確認と、現場の業務手順への反映に向けた見直しの対応が必要になります。"
+    },
+    {
+      "hash": "ae52ec49489034fd",
+      "source": "WAM NET",
+      "title": "第24回成年後見制度利用促進専門家会議について（令和8年10月27日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22972&ct=070010010&from=rss",
+      "date": "2026-10-22",
+      "category": "行政資料",
+      "summary": "成年後見制度の利用促進に関する専門家会議の開催案内です。権利擁護や高齢者・障害者の支援体制に関わる審議状況を把握できます。",
+      "importance": "中",
+      "fields": [
+        "障害",
+        "高齢"
+      ],
+      "reason": "権利擁護や成年後見に関する制度的動向として、福祉事業者として把握すべき事項のため。"
+    },
+    {
+      "hash": "e165735001be8884",
+      "source": "WAM NET",
+      "title": "風しん最新情報（令和8年10月20日更新）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22982&ct=030100130&from=rss",
+      "date": "2026-10-22",
+      "category": "行政資料",
+      "summary": "風しんの流行状況や予防に関する最新情報です。施設内での感染症対策や職員・利用者の健康管理の参考にします。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "感染症の流行・予防に関する行政情報であり、施設における衛生管理や注意喚起に活用するため。"
+    },
+    {
+      "hash": "00fa43f4fc69bd22",
+      "source": "WAM NET",
+      "title": "麻しん最新情報（令和8年10月20日更新）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22980&ct=030100110&from=rss",
+      "date": "2026-10-22",
+      "category": "行政資料",
+      "summary": "麻しん（はしか）の流行状況や予防に関する最新情報です。集団感染を防ぐための感染症対策として施設で共有・把握すべき情報です。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "感染症の発生動向に関する情報であり、福祉施設での感染対策に資するため。"
+    },
+    {
+      "hash": "68adb441ba7099b4",
+      "source": "WAM NET",
+      "title": "第108回 厚生科学審議会感染症部会（令和8年10月28日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22977&ct=070010010&from=rss",
+      "date": "2026-10-22",
+      "category": "行政資料",
+      "summary": "感染症対策のあり方を議論する厚生科学審議会感染症部会の開催案内です。今後の感染症法上の対応やガイドラインの変更に影響します。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "感染症施策の審議会であり、将来的な施設運営の感染対策基準に影響するため。"
+    },
+    {
+      "hash": "0e4aea579b033f76",
+      "source": "WAM NET",
+      "title": "第160回 社会保障審議会 障害者部会（令和8年10月20日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22976&ct=010010090&from=rss",
+      "date": "2026-10-22",
+      "category": "行政資料",
+      "summary": "障害福祉サービスの制度改革や報酬等について議論する社会保障審議会障害者部会の開催結果です。障害福祉分野の今後の法改正や動向に直結します。",
+      "importance": "中",
+      "fields": [
+        "障害"
+      ],
+      "reason": "障害福祉の制度設計や方針を決める重要な審議会であるため、先々の動向把握として必要。"
+    },
+    {
+      "hash": "55d901ecd1b196a5",
+      "source": "WAM NET",
+      "title": "第22回 こども家庭審議会 障害児支援部会（令和8年10月28日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22975&ct=070010010&from=rss",
+      "date": "2026-10-22",
+      "category": "行政資料",
+      "summary": "障害児支援のあり方や基準について議論するこども家庭審議会障害児支援部会の開催案内です。児童発達支援等の今後の制度改正に影響します。",
+      "importance": "中",
+      "fields": [
+        "障害",
+        "児童"
+      ],
+      "reason": "障害児支援の制度や報酬に関わる重要審議会の動向であり、関係事業者が把握すべきため。"
+    },
+    {
+      "hash": "a2804b6e7dad3b96",
+      "source": "WAM NET",
+      "title": "インフルエンザ最新情報（令和8年10月16日更新）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22979&ct=030100310&from=rss",
+      "date": "2026-10-16",
+      "category": "行政資料",
+      "summary": "インフルエンザの流行状況や対策に関する最新情報です。福祉施設における毎シーズンの感染拡大防止対策の参考となります。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "季節性インフルエンザの動向であり、利用者への注意喚起や施設内の感染対策に直結するため。"
+    },
+    {
+      "hash": "0ba4957c6674e5c6",
+      "source": "福岡県（障がい福祉）",
+      "title": "令和８年度障害支援区分認定に係る福岡県市町村審査会委員研修について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/shienkubunshinsakai.html",
+      "date": "2026年10月23日更新",
+      "category": "",
+      "summary": "障害支援区目の認定審査を行う市町村審査会の委員に向けた福岡県の研修案内です。自治体や審査会委員向けの研修ですが、障害支援区分の運用実態に関わります。",
+      "importance": "中",
+      "fields": [
+        "障害"
+      ],
+      "reason": "障害支援区目の認定実務・審査に関わる自治体主催の研修であり、障害福祉の運営に影響するため。"
+    },
+    {
+      "hash": "d8dad60ac190d689",
+      "source": "福岡県（子ども・青少年）",
+      "title": "令和８年度第６回福岡県社会福祉審議会児童福祉専門分科会こども権利擁護部会を開催しました",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/kodomokennri20261019.html",
+      "date": "2026年10月19日更新",
+      "category": "",
+      "summary": "子どもの権利擁護や福祉施策について審議する福岡県の社会福祉審議会児童福祉専門分科会の開催結果です。地域における児童福祉の方針や権利擁護の取り組みを確認できます。",
+      "importance": "中",
+      "fields": [
+        "児童"
+      ],
+      "reason": "自治体における児童福祉・権利擁護の審議状況であり、児童分野の施策動向として把握すべきため。"
+    }
+  ],
+  "press": [
+    {
+      "hash": "e25d359ed4c673d3",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "生活介護、基本報酬の区分を見直し 事業規模に応じた評価を強化 厚労省提案｜障害福祉報酬改定",
+      "url": "https://www.joint-kaigo.com/articles/49754/",
+      "date": "2026-10-22",
+      "category": "共生社会",
+      "fields": [
+        "障害"
+      ]
+    },
+    {
+      "hash": "4447a7083769c043",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "全老健・東会長「処遇改善と基本報酬の引き上げを」 厳しい経営環境に危機感 宇都宮で全国大会が開幕",
+      "url": "https://www.joint-kaigo.com/articles/49742/",
+      "date": "2026-10-22",
+      "category": "介護保険",
+      "fields": [
+        "高齢"
+      ]
+    }
+  ]
 }

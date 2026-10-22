@@ -1,6 +1,197 @@
 {
-  "generatedAt": "2026-10-22T01:37:46.462Z",
-  "newItems": [],
-  "newPress": [],
+  "generatedAt": "2026-10-22T20:37:20.493Z",
+  "newItems": [
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "385f455d89cec916",
+      "title": "みて かんじて つながる劇体験 ～優良児童劇等公演事業～ 令和8年11月29日（日）三重県松坂市にて開催",
+      "url": "https://www.cfa.go.jp/press/2af7bcf9-bc05-4b75-be9a-155a2ad88045",
+      "date": "2026-10-22",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "2a56aab321d5381b",
+      "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76909.html",
+      "date": "2026-10-22",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "62ab06c4ca1f4601",
+      "title": "委託事業に係る個人情報の漏えいについて",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76892.html",
+      "date": "2026-10-22",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "18c27a8e0a108e44",
+      "title": "令和８年度の医師臨床研修マッチング結果をお知らせします",
+      "url": "https://www.mhlw.go.jp/stf/houdou/0000180824_00012.html",
+      "date": "2026-10-22",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "547bb05cb34ce1fe",
+      "title": "薬事審議会 医薬品等安全対策部会を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76824.html",
+      "date": "2026-10-22",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "c567a7e754979c72",
+      "title": "「2040年に向けた地域医療構想」について",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000080850_00019.html",
+      "date": "2026-10-22",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "f210a297cdcffc9c",
+      "title": "地域医療構想の実現に向けた重点支援区域の選定を行いました",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76650.html",
+      "date": "2026-10-22",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "89d5c4e2bc93e945",
+      "title": "採用情報（期間業務職員（職業安定局） )募集情報",
+      "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-syokugyouanteikyoku.html",
+      "date": "2026-10-22",
+      "category": "採用情報"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "0ac64878f6beb3f7",
+      "title": "介護保険最新情報Vol.1548（PDF：700KB）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/1022090859211/ksvol.1548.pdf?from=rss",
+      "date": "2026-10-22",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "9e38ef5c7b5ced06",
+      "title": "介護保険最新情報Vol.1547（PDF：521KB）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/1022090743857/ksvol.1547.pdf?from=rss",
+      "date": "2026-10-22",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "ae52ec49489034fd",
+      "title": "第24回成年後見制度利用促進専門家会議について（令和8年10月27日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22972&ct=070010010&from=rss",
+      "date": "2026-10-22",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "e165735001be8884",
+      "title": "風しん最新情報（令和8年10月20日更新）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22982&ct=030100130&from=rss",
+      "date": "2026-10-22",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "00fa43f4fc69bd22",
+      "title": "麻しん最新情報（令和8年10月20日更新）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22980&ct=030100110&from=rss",
+      "date": "2026-10-22",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "68adb441ba7099b4",
+      "title": "第108回 厚生科学審議会感染症部会（令和8年10月28日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22977&ct=070010010&from=rss",
+      "date": "2026-10-22",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "0e4aea579b033f76",
+      "title": "第160回 社会保障審議会 障害者部会（令和8年10月20日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22976&ct=010010090&from=rss",
+      "date": "2026-10-22",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "55d901ecd1b196a5",
+      "title": "第22回 こども家庭審議会 障害児支援部会（令和8年10月28日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22975&ct=070010010&from=rss",
+      "date": "2026-10-22",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "a2804b6e7dad3b96",
+      "title": "インフルエンザ最新情報（令和8年10月16日更新）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22979&ct=030100310&from=rss",
+      "date": "2026-10-16",
+      "category": "行政資料"
+    },
+    {
+      "source": "福岡県（障がい福祉）",
+      "kind": "gov",
+      "hash": "0ba4957c6674e5c6",
+      "title": "令和８年度障害支援区分認定に係る福岡県市町村審査会委員研修について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/shienkubunshinsakai.html",
+      "date": "2026年10月23日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（子ども・青少年）",
+      "kind": "gov",
+      "hash": "d8dad60ac190d689",
+      "title": "令和８年度第６回福岡県社会福祉審議会児童福祉専門分科会こども権利擁護部会を開催しました",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/kodomokennri20261019.html",
+      "date": "2026年10月19日更新",
+      "category": ""
+    }
+  ],
+  "newPress": [
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "e25d359ed4c673d3",
+      "title": "生活介護、基本報酬の区分を見直し 事業規模に応じた評価を強化 厚労省提案｜障害福祉報酬改定",
+      "url": "https://www.joint-kaigo.com/articles/49754/",
+      "date": "2026-10-22",
+      "category": "共生社会"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "4447a7083769c043",
+      "title": "全老健・東会長「処遇改善と基本報酬の引き上げを」 厳しい経営環境に危機感 宇都宮で全国大会が開幕",
+      "url": "https://www.joint-kaigo.com/articles/49742/",
+      "date": "2026-10-22",
+      "category": "介護保険"
+    }
+  ],
   "crawlErrors": []
 }
