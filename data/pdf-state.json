@@ -660,6 +660,38 @@
       "value": "２ポイント"
      }
     ]
+   },
+   "393dee166bc18013": {
+    "deadline": {
+     "iso": "2026-10-15",
+     "raw": "令和8年10月15日"
+    },
+    "outline": [
+     {
+      "name": "日時",
+      "value": "令和８年１０月２５日(日)１０：００～１２：００（受付９：３０～）"
+     },
+     {
+      "name": "会場",
+      "value": "飯塚市穂波福祉総合センター(飯塚市枝国４０２－１００)"
+     },
+     {
+      "name": "講師",
+      "value": "武生えい佳氏（西日本医療福祉総合センター福祉教育研修課）"
+     },
+     {
+      "name": "参加費",
+      "value": null
+     },
+     {
+      "name": "定員",
+      "value": "３０名"
+     },
+     {
+      "name": "ポイント",
+      "value": "２ポイント"
+     }
+    ]
    }
   },
   "resultsVersion": 6
@@ -1301,8 +1333,8 @@
   "resultsVersion": 6
  },
  "_aiBudget": {
-  "date": "2026-10-23",
-  "calls": 2
+  "date": "2026-10-24",
+  "calls": 0
  },
  "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2025/06/e9884305e5ec37f96e4c3bf628e95c9b-2.pdf": {
   "etag": null,

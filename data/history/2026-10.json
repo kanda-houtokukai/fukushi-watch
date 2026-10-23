@@ -7904,6 +7904,598 @@
      ]
     }
    ]
+  },
+  "2026-10-24": {
+   "counts": {
+    "高": 1,
+    "中": 13,
+    "低": 12
+   },
+   "items": [
+    {
+     "hash": "3589ca10a8e02666",
+     "source": "こども家庭庁",
+     "title": "中司大臣記者会見（令和8年10月23日）を掲載しました",
+     "url": "https://www.cfa.go.jp/speech/f40f49cc",
+     "date": "2026-10-23",
+     "category": "会見",
+     "summary": "こども家庭庁等の大臣記者会見の記録です。個別の制度改正や実務対応に関する具体的な指示は含まれていません。",
+     "importance": "低",
+     "fields": [],
+     "reason": "大臣の定例記者会見であり、事業者に直接の実務対応を求めるものではないため。",
+     "related": [
+      {
+       "day": "2026-10-21",
+       "title": "中司大臣記者会見（令和8年10月20日）を掲載しました",
+       "url": "https://www.cfa.go.jp/speech/390f47b2"
+      },
+      {
+       "day": "2026-10-17",
+       "title": "中司大臣記者会見（令和8年10月16日）を掲載しました",
+       "url": "https://www.cfa.go.jp/speech/7f686acc"
+      },
+      {
+       "day": "2026-10-14",
+       "title": "中司大臣記者会見（令和8年10月13日）を掲載しました",
+       "url": "https://www.cfa.go.jp/speech/61fab23e"
+      }
+     ]
+    },
+    {
+     "hash": "a3ad8e89fbd99235",
+     "source": "こども家庭庁",
+     "title": "補償金・優生手術等一時金認定審査部会（第20回）の議事要旨を掲載しました",
+     "url": "https://www.cfa.go.jp/councils/hoshokin-yuseishujutsu/fadbc2c9",
+     "date": "2026-10-23",
+     "category": "会議等",
+     "summary": "旧優生保護法補償金等の支給認定審査部会における審議の議事要旨です。",
+     "importance": "低",
+     "fields": [
+      "障害"
+     ],
+     "reason": "審査部会の議事要旨の掲載であり、事業者の運営実務に直接の影響がないため。",
+     "related": [
+      {
+       "day": "2026-09-17",
+       "title": "補償金・優生手術等一時金認定審査部会（第19 回）の議事要旨を掲載しました",
+       "url": "https://www.cfa.go.jp/councils/hoshokin-yuseishujutsu/0db49aca"
+      }
+     ]
+    },
+    {
+     "hash": "287709bd79f179dc",
+     "source": "こども家庭庁",
+     "title": "旧優生保護法補償金等支給法に基づく補償金等の請求・相談件数及び支給認定件数、並びにサポート弁護士登録数等の状況について更新しました",
+     "url": "https://www.cfa.go.jp/kyuyusei-hoshokin",
+     "date": "2026-10-23",
+     "category": "政策",
+     "summary": "旧優生保護法補償金等の請求・相談件数や認定件数、サポート弁護士登録状況の最新集計です。",
+     "importance": "低",
+     "fields": [
+      "障害"
+     ],
+     "reason": "補償金請求の進捗状況に関する現況公表であり、福祉事業者の実務対応は不要なため。",
+     "related": [
+      {
+       "day": "2026-09-19",
+       "title": "旧優生保護法補償金等支給法に基づく補償金等の請求・相談件数及び支給認定件数、並びにサポート弁護士登録数等の状況について更新しました",
+       "url": "https://www.cfa.go.jp/kyuyusei-hoshokin"
+      }
+     ]
+    },
+    {
+     "hash": "ac80f322c39e8caf",
+     "source": "こども家庭庁",
+     "title": "医療的ケア児等及び重症心身障害者並びにそれらの家族に対する支援に関する法律第十四条第一項の政令で定める市を定める政令の公布について掲載いたしました",
+     "url": "https://www.cfa.go.jp/policies/shougaijishien/care-ji-shien",
+     "date": "2026-10-23",
+     "category": "政策",
+     "summary": "医療的ケア児及び重症心身障害者支援法に基づき、支援体制整備などの責務を担う政令市を定める政令が公布された案内です。",
+     "importance": "高",
+     "fields": [
+      "障害",
+      "児童"
+     ],
+     "reason": "政令の公布であり、対象自治体内での支援拠点や事業者との連携体制等に直結するため。",
+     "action": "一般に、こうした通知では自事業所の所在地やサービス提供エリアが対象となる政令市に該当するかを確認し、自治体による支援体制の整備状況や関連する施策の動向を把握する対応が必要になります。"
+    },
+    {
+     "hash": "b13de4e56336f0be",
+     "source": "こども家庭庁",
+     "title": "第16回 子ども・子育て支援等分科会の開催について掲載しました",
+     "url": "https://www.cfa.go.jp/press/57551703-bf00-4a79-94df-628dc8f2ae25",
+     "date": "2026-10-23",
+     "category": "報道発表",
+     "summary": "子ども・子育て支援給付や保育施策の制度設計等を審議する分科会の開催案内です。",
+     "importance": "中",
+     "fields": [
+      "保育",
+      "児童"
+     ],
+     "reason": "今後の保育・子ども子育て支援制度の動向を左右する審議会であり、把握しておくべきため。"
+    },
+    {
+     "hash": "41bb32439bb78cfe",
+     "source": "こども家庭庁",
+     "title": "第20回補償金・優生手術等一時金認定審査部会の審査結果について掲載しました",
+     "url": "https://www.cfa.go.jp/press/e7dfb273-df70-4294-ae60-d4cb7acbe922",
+     "date": "2026-10-23",
+     "category": "報道発表",
+     "summary": "旧優生保護法に基づく一時金・補償金認定審査部会における個別の審査結果の公表です。",
+     "importance": "低",
+     "fields": [
+      "障害"
+     ],
+     "reason": "個別の審査結果報告であり、事業者の実務運営に直接の影響を与えないため。",
+     "related": [
+      {
+       "day": "2026-09-17",
+       "title": "第19回補償金・優生手術等一時金認定審査部会の審査結果について掲載しました",
+       "url": "https://www.cfa.go.jp/press/92d507c4-9bec-4715-a94c-9419492572d2"
+      }
+     ]
+    },
+    {
+     "hash": "b0d1b3e21bc9960b",
+     "source": "こども家庭庁",
+     "title": "はじめの100か月の育ちビジョン全国大会・国際シンポジウムの開催について掲載しました",
+     "url": "https://www.cfa.go.jp/press/764bd6b4-ffdc-4727-b16f-aaeb48087882",
+     "date": "2026-10-23",
+     "category": "報道発表",
+     "summary": "乳幼児期から学童期までの育ちの基本方針に関する全国大会・シンポジウムの開催案内です。",
+     "importance": "低",
+     "fields": [
+      "保育",
+      "児童"
+     ],
+     "reason": "啓発を目的としたイベント・シンポジウムの案内であり、実務対応を要さないため。"
+    },
+    {
+     "hash": "c5fec59f201dd1ad",
+     "source": "厚生労働省",
+     "title": "第33回キャリアコンサルタント登録制度等に関する検討会（会議資料）",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76925.html",
+     "date": "2026-10-23",
+     "category": "審議会等",
+     "summary": "キャリアコンサルタントの登録制度や更新要件等の見直しを議論する検討会の配布資料です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "特定の国家資格制度に関する検討会であり、福祉事業の運営に直接影響しないため。",
+     "related": [
+      {
+       "day": "2026-09-04",
+       "title": "第32回キャリアコンサルタント登録制度等に関する検討会 会議資料",
+       "url": "https://www.mhlw.go.jp/stf/newpage_75979.html"
+      }
+     ]
+    },
+    {
+     "hash": "36fd3bdd0f6f87df",
+     "source": "厚生労働省",
+     "title": "令和８年１０月２３日付大臣会見概要",
+     "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00981.html",
+     "date": "2026-10-23",
+     "category": "大臣会見等",
+     "summary": "厚生労働大臣の定例記者会見における発言概要の記録です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "一般的な大臣定例会見の概要であり、事業者の実務対応を直接求めるものではないため。",
+     "related": [
+      {
+       "day": "2026-10-21",
+       "title": "令和８年１０月２０日付大臣会見概要",
+       "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00980.html"
+      },
+      {
+       "day": "2026-10-17",
+       "title": "令和８年１０月１５日付大臣会見概要",
+       "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00977.html"
+      },
+      {
+       "day": "2026-10-17",
+       "title": "令和８年１０月１６日付大臣会見概要",
+       "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00978.html"
+      }
+     ]
+    },
+    {
+     "hash": "10356c1da8686e0b",
+     "source": "厚生労働省",
+     "title": "「人口動態統計速報」令和８（2026）年08月分",
+     "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/s2026/08.html",
+     "date": "2026-10-23",
+     "category": "統計情報",
+     "summary": "出生数や死亡数などをまとめた直近の人口動態統計の速報値です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "マクロな統計速報であり、日々の福祉事業所運営に直接の影響がないため。"
+    },
+    {
+     "hash": "35834f8bcbc5a4b4",
+     "source": "厚生労働省",
+     "title": "労災レセプト電算処理システム 受付前点検チェック条件表",
+     "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/rousai/rezeptsystem/index.html",
+     "date": "2026-10-23",
+     "category": "政策分野",
+     "summary": "労災レセプト電算処理システムにおける受付前点検のチェックルールを示した技術資料です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "医療機関等の労災請求システムに関する仕様情報であり、福祉事業の実務に関係しないため。"
+    },
+    {
+     "hash": "28ad2d160e4a5e9d",
+     "source": "厚生労働省",
+     "title": "「第３回 創薬力向上のための官民協議会 施策検討・推進部会」を開催します（開催案内）",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76931.html",
+     "date": "2026-10-23",
+     "category": "審議会等",
+     "summary": "創薬力強化に向けた施策を検討する官民協議会の開催案内です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "医薬品開発政策に関する会議であり、福祉事業の運営とは無関係のため。",
+     "related": [
+      {
+       "day": "2026-10-03",
+       "title": "「第２回 創薬力向上のための官民協議会 施策検討・推進部会」を開催します（開催案内）",
+       "url": "https://www.mhlw.go.jp/stf/newpage_76402.html"
+      },
+      {
+       "day": "2026-09-12",
+       "title": "「第１回 創薬力向上のための官民協議会 施策検討・推進部会」を開催します（開催案内）",
+       "url": "https://www.mhlw.go.jp/stf/newpage_76042.html"
+      }
+     ]
+    },
+    {
+     "hash": "e9d368eb8a642dbe",
+     "source": "厚生労働省",
+     "title": "薬事審議会 指定薬物部会を開催します",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76814.html",
+     "date": "2026-10-23",
+     "category": "審議会等",
+     "summary": "危険ドラッグ等の指定薬物指定について審議する部会の開催案内です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "薬事規制に関する専門部会であり、福祉事業者の実務に直結しないため。"
+    },
+    {
+     "hash": "9ee3ae02557fed4e",
+     "source": "厚生労働省",
+     "title": "第38回アルコール健康障害対策関係者会議の開催について",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76788.html",
+     "date": "2026-10-23",
+     "category": "審議会等",
+     "summary": "アルコール健康障害対策の推進計画や依存症支援策を検討する関係者会議の開催案内です。",
+     "importance": "中",
+     "fields": [
+      "障害"
+     ],
+     "reason": "依存症支援や精神保健分野の施策動向に関わる検討会であり、先々の把握が必要なため。"
+    },
+    {
+     "hash": "e43c0f740f3d6671",
+     "source": "厚生労働省",
+     "title": "第33回社会保障審議会介護給付費分科会介護報酬改定検証・研究委員会（Web会議）を開催します",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76755.html",
+     "date": "2026-10-23",
+     "category": "審議会等",
+     "summary": "介護報酬改定の効果や影響を検証する調査・研究委員会の開催案内です。次期改定の議論の基礎となります。",
+     "importance": "中",
+     "fields": [
+      "高齢"
+     ],
+     "reason": "将来の介護報酬改定に向けた検証調査の検討であり、制度動向を把握しておくべきため。"
+    },
+    {
+     "hash": "d02161822081bc90",
+     "source": "厚生労働省",
+     "title": "新規学卒就職者の離職状況(令和５年３月卒業者)を公表します",
+     "url": "https://www.mhlw.go.jp/stf/houdou/0000177553_00011.html",
+     "date": "2026-10-23",
+     "category": "報道発表",
+     "summary": "新規学卒就職者の入社後3年以内の離職率に関する産業別等の集計結果の公表です。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "福祉・医療業界の離職率水準が把握でき、事業所の人材採用や定着施策の検討材料となるため。"
+    },
+    {
+     "hash": "5244ab18675f22c8",
+     "source": "厚生労働省",
+     "title": "第214回労働政策審議会労働条件分科会 開催案内",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76440.html",
+     "date": "2026-10-23",
+     "category": "審議会等",
+     "summary": "労働時間規制や労働契約のあり方など労働条件全般を審議する分科会の開催案内です。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "労働基準法等の法改正につながる審議会であり、福祉現場の労務管理の先行きを把握すべきため。",
+     "related": [
+      {
+       "day": "2026-10-17",
+       "title": "第213回労働政策審議会労働条件分科会 開催案内",
+       "url": "https://www.mhlw.go.jp/stf/newpage_76433.html"
+      },
+      {
+       "day": "2026-10-07",
+       "title": "第212回労働政策審議会労働条件分科会 開催案内",
+       "url": "https://www.mhlw.go.jp/stf/newpage_76388.html"
+      },
+      {
+       "day": "2026-09-12",
+       "title": "第211回労働政策審議会労働条件分科会 開催案内",
+       "url": "https://www.mhlw.go.jp/stf/newpage_75967.html"
+      }
+     ]
+    },
+    {
+     "hash": "06d71dd31e448c05",
+     "source": "厚生労働省",
+     "title": "インフルエンザに関する報道発表資料を更新しました",
+     "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou_00025.html",
+     "date": "2026-10-23",
+     "category": "報道発表",
+     "summary": "全国のインフルエンザ発生状況や定点当たり患者数の最新動向に関する公表資料です。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "施設内での集団感染を防ぐため、流行状況を把握し感染対策を強化する判断材料となるため。",
+     "related": [
+      {
+       "day": "2026-10-17",
+       "title": "インフルエンザに関する報道発表資料を更新しました",
+       "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou_00025.html"
+      },
+      {
+       "day": "2026-10-10",
+       "title": "インフルエンザに関する報道発表資料を更新しました",
+       "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou_00025.html"
+      },
+      {
+       "day": "2026-10-03",
+       "title": "インフルエンザに関する報道発表資料を更新しました",
+       "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou_00025.html"
+      }
+     ]
+    },
+    {
+     "hash": "633a359cefe4274a",
+     "source": "厚生労働省",
+     "title": "新型コロナウイルス感染症に関する報道発表資料を更新しました",
+     "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00485.html",
+     "date": "2026-10-23",
+     "category": "報道発表",
+     "summary": "新型コロナウイルス感染症の定点あたり患者報告数等の感染動向に関する最新情報です。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "事業所・施設内の感染防止対策や面会制限等の体制見直しの判断に必要な情報のため。",
+     "related": [
+      {
+       "day": "2026-10-17",
+       "title": "新型コロナウイルス感染症に関する報道発表資料を更新しました",
+       "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00485.html"
+      },
+      {
+       "day": "2026-10-10",
+       "title": "新型コロナウイルス感染症に関する報道発表資料を更新しました",
+       "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00485.html"
+      },
+      {
+       "day": "2026-10-03",
+       "title": "新型コロナウイルス感染症に関する報道発表資料を更新しました",
+       "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00485.html"
+      }
+     ]
+    },
+    {
+     "hash": "8fdf91f22087ae63",
+     "source": "厚生労働省",
+     "title": "インフルエンザ・新型コロナウイルス感染症の定点当たり報告数の推移を更新しました",
+     "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/houkokusuunosuii_00007.html",
+     "date": "2026-10-23",
+     "category": "その他",
+     "summary": "インフルエンザおよび新型コロナウイルス感染症の定点報告数の推移グラフ等の更新情報です。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "季節性感染症の感染拡大傾向を早期に把握し、事業所の衛生管理に備える必要があるため。",
+     "related": [
+      {
+       "day": "2026-10-17",
+       "title": "インフルエンザ・新型コロナウイルス感染症の定点当たり報告数の推移を更新しました",
+       "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/houkokusuunosuii_00007.html"
+      },
+      {
+       "day": "2026-10-10",
+       "title": "インフルエンザ・新型コロナウイルス感染症の定点当たり報告数の推移を更新しました",
+       "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/houkokusuunosuii_00007.html"
+      },
+      {
+       "day": "2026-10-03",
+       "title": "インフルエンザ・新型コロナウイルス感染症の定点当たり報告数の推移を更新しました",
+       "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/houkokusuunosuii_00007.html"
+      }
+     ]
+    },
+    {
+     "hash": "cb89778037118ab9",
+     "source": "厚生労働省",
+     "title": "インフルエンザの発生状況を更新しました",
+     "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
+     "date": "2026-10-23",
+     "category": "報道発表",
+     "summary": "インフルエンザの集団発生状況や定点医療機関からの報告状況の定期更新です。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "施設利用者の健康維持や学級閉鎖等の地域動向を踏まえた感染予防対策の参考となるため。",
+     "related": [
+      {
+       "day": "2026-10-17",
+       "title": "インフルエンザの発生状況を更新しました",
+       "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html"
+      },
+      {
+       "day": "2026-10-10",
+       "title": "インフルエンザの発生状況を更新しました",
+       "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html"
+      },
+      {
+       "day": "2026-10-03",
+       "title": "インフルエンザの発生状況を更新しました",
+       "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html"
+      }
+     ]
+    },
+    {
+     "hash": "40d621de7963590d",
+     "source": "厚生労働省",
+     "title": "第399回労働政策審議会職業安定分科会労働力需給制度部会 資料",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76436.html",
+     "date": "2026-10-23",
+     "category": "審議会等",
+     "summary": "労働者派遣制度や民間職業紹介の需給調整ルール等について議論された部会の会議資料です。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "人材派遣や紹介手数料等のルール見直しに関わり、福祉事業者の人材確保実務に影響しうるため。",
+     "related": [
+      {
+       "day": "2026-10-21",
+       "title": "第399回労働政策審議会職業安定分科会労働力需給制度部会 資料",
+       "url": "https://www.mhlw.go.jp/stf/newpage_76436.html"
+      }
+     ]
+    },
+    {
+     "hash": "68584355631d0103",
+     "source": "厚生労働省",
+     "title": "第213回労働政策審議会労働条件分科会（資料）",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76895.html",
+     "date": "2026-10-23",
+     "category": "審議会等",
+     "summary": "労働基準法見直しや労働時間管理のルール等に関する審議会の配付資料です。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "今後の労働法制改正の方向性が示されており、職員の労務管理や就業規則の見直しに備えるため。",
+     "related": [
+      {
+       "day": "2026-10-15",
+       "title": "第212回労働政策審議会労働条件分科会（資料）",
+       "url": "https://www.mhlw.go.jp/stf/newpage_76683.html"
+      },
+      {
+       "day": "2026-09-17",
+       "title": "第211回労働政策審議会労働条件分科会（資料）",
+       "url": "https://www.mhlw.go.jp/stf/newpage_76187.html"
+      }
+     ]
+    },
+    {
+     "hash": "39f57d9c90b45c40",
+     "source": "厚生労働省",
+     "title": "毎月勤労統計調査ー2026（令和８）年８月分結果確報",
+     "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/monthly/r08/2608r/2608r.html",
+     "date": "2026-10-23",
+     "category": "統計情報",
+     "summary": "全国の事業所における賃金や労働時間、雇用の動向を把握する毎月勤労統計の確報値です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "一般的な雇用・賃金統計の確報であり、事業所の日々の実務に直結しないため。"
+    },
+    {
+     "hash": "db72875230def8fb",
+     "source": "全国社会福祉協議会",
+     "kind": "org",
+     "title": "全社協 年次報告書「アニュアルレポート2025」",
+     "url": "https://www.shakyo.or.jp/tsuite/jigyo/annualreport/index.html",
+     "date": "2026-10-22",
+     "category": "案内",
+     "summary": "全国社会福祉協議会の活動実績や福祉施策の動向を取りまとめた2025年度の年次報告書です。",
+     "importance": "中",
+     "fields": [
+      "共通"
+     ],
+     "reason": "福祉界全体の施策方針や全国の実践動向が網羅されており、法人運営の動向把握に役立つため。"
+    },
+    {
+     "hash": "5a730f7a697f9c31",
+     "source": "全国社会福祉協議会",
+     "kind": "org",
+     "title": "日本フィランソロピック財団「子どもすこやか基金」",
+     "url": "https://www.shakyo.or.jp/guide/sponsor/p/261022jpf.html",
+     "date": "2026-10-22",
+     "category": "助成",
+     "summary": "日本フィランソロピック財団による、困難な状況にある子どもたちの支援や健やかな成長を支える活動を対象とした助成事業の案内です。",
+     "importance": "中",
+     "fields": [
+      "児童",
+      "保育"
+     ],
+     "reason": "子ども支援に取り組む事業者が活用できる民間助成金の公募情報であるため。"
+    }
+   ],
+   "press": [
+    {
+     "hash": "2cbff65a216f7416",
+     "source": "介護ニュースJoint",
+     "kind": "press",
+     "title": "特養の55.8%が赤字 全国老施協「介護崩壊と言うべき危険水域」 昨年度決算調査",
+     "url": "https://www.joint-kaigo.com/articles/49791/",
+     "date": "2026-10-23",
+     "category": "超高齢化",
+     "fields": [
+      "高齢"
+     ]
+    },
+    {
+     "hash": "4be91da3aa246b2f",
+     "source": "介護ニュースJoint",
+     "kind": "press",
+     "title": "【和田誠】介護報酬が上がれば、現場は救われるのか 介護保険は誰のもの？ 「サービス控え」を生まないために",
+     "url": "https://www.joint-kaigo.com/articles/49787/",
+     "date": "2026-10-23",
+     "category": "超高齢化",
+     "fields": [
+      "高齢"
+     ]
+    },
+    {
+     "hash": "c75e2e59a84f50d4",
+     "source": "介護ニュースJoint",
+     "kind": "press",
+     "title": "介護現場の事故報告、様式の見直し案を公表 厚労省 来年4月頃から新システム稼働へ",
+     "url": "https://www.joint-kaigo.com/articles/49779/",
+     "date": "2026-10-23",
+     "category": "生産性向上",
+     "fields": [
+      "高齢"
+     ]
+    },
+    {
+     "hash": "2574f2004f307d5f",
+     "source": "介護ニュースJoint",
+     "kind": "press",
+     "title": "生活介護、延長支援加算を拡充 厚労省提案 学校卒業後の夕方の居場所など評価｜障害福祉報酬改定",
+     "url": "https://www.joint-kaigo.com/articles/49765/",
+     "date": "2026-10-23",
+     "category": "自治体",
+     "fields": [
+      "障害"
+     ]
+    }
+   ]
   }
  }
 }
