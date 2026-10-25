@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-24T19:36:59.874Z",
+ "updatedAt": "2026-10-25T19:52:53.721Z",
  "items": [
   {
    "hash": "a33ead884bd46368",
@@ -47,7 +47,7 @@
    "sourceKind": "org",
    "via": "schedule",
    "title": "報・連・相強化研修",
-   "url": "https://fuku-shakyo-kenshu.jp/info/%e3%80%8c%e5%a0%b1%e3%83%bb%e9%80%a3%e3%83%bb%e7%9b%b8%e3%80%8d%e5%bc%b7%e5%8c%96%e7%a0%94%e4%bf%ae%e3%81%ae%e9%96%8b%e5%82%ac%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/10/a4e0393ed40d0b8cc9a09df74d54d88d.pdf",
    "deadline": "2026-11-09",
    "deadlineType": "date",
    "deadlineRaw": "一覧の申込終了日より 11月9日",
@@ -237,54 +237,6 @@
    ],
    "kind": "テーマ別",
    "expireOn": "2027-07-01"
-  },
-  {
-   "hash": "e94bbef51ddacfd8",
-   "source": "福岡県介護福祉士会",
-   "sourceKind": "org",
-   "via": "fkaigo",
-   "title": "素敵な接遇できていますか?",
-   "url": "https://www.f-kaigo.jp/training/detail_484.php",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "開催要綱PDFより 令和8年10月15日（締切後も受け付けることがあります）",
-   "heldDates": [
-    "2026-10-25"
-   ],
-   "expireOn": "2026-10-25",
-   "openFrom": null,
-   "fields": [
-    "高齢"
-   ],
-   "kind": "テーマ別",
-   "keepUntilHeld": true,
-   "outline": [
-    {
-     "name": "日時",
-     "value": "令和８年１０月２５日(日)１０：００～１２：００（受付９：３０～）"
-    },
-    {
-     "name": "会場",
-     "value": "飯塚市穂波福祉総合センター(飯塚市枝国４０２－１００)"
-    },
-    {
-     "name": "講師",
-     "value": "武生えい佳氏（西日本医療福祉総合センター福祉教育研修課）"
-    },
-    {
-     "name": "参加費",
-     "value": "記載なし"
-    },
-    {
-     "name": "定員",
-     "value": "３０名"
-    },
-    {
-     "name": "ポイント",
-     "value": "２ポイント"
-    }
-   ],
-   "outlineUrl": "https://www.f-kaigo.jp/upimg/q69eef3474b1c3.pdf"
   },
   {
    "hash": "ab217ca9d4bcb9d2",
@@ -1069,6 +1021,22 @@
    "expireOn": "2026-11-07"
   },
   {
+   "hash": "07169107fe3fd985",
+   "source": "福祉・介護研修センター 新着",
+   "sourceKind": "org",
+   "via": "info",
+   "title": "台風に伴う福岡県認知症介護実践リーダー研修10月26日(月)",
+   "url": "https://fuku-shakyo-kenshu.jp/info/%ef%bc%91%ef%bc%90%e6%9c%88%ef%bc%92%ef%bc%96%e6%97%a5%ef%bc%88%e6%9c%88%ef%bc%89%e7%a6%8f%e5%b2%a1%e7%9c%8c%e8%aa%8d%e7%9f%a5%e7%97%87%e4%bb%8b%e8%ad%b7%e5%ae%9f%e8%b7%b5%e3%83%aa%e3%83%bc%e3%83%80/",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "openFrom": null,
+   "fields": [
+    "高齢"
+   ],
+   "kind": "資格要件"
+  },
+  {
    "hash": "b144ec2a20152867",
    "source": "福祉・介護研修センター 新着",
    "sourceKind": "org",
@@ -1103,5 +1071,5 @@
    "expireOn": "2026-10-31"
   }
  ],
- "lastFetchDate": "2026-10-25"
+ "lastFetchDate": "2026-10-26"
 }
