@@ -1,51 +1,6 @@
 {
- "updatedAt": "2026-10-25T19:51:07.846Z",
+ "updatedAt": "2026-10-26T21:52:11.609Z",
  "items": [
-  {
-   "hash": "33f4f9eb2929925a",
-   "source": "助成財団センター 助成金募集ニュース",
-   "sourceKind": "org",
-   "funder": "",
-   "title": "第2回東海演奏家の架け橋基金",
-   "url": "https://www.jfc.or.jp/news_subsidy/%e7%ac%ac2%e5%9b%9e%e6%9d%b1%e6%b5%b7%e6%bc%94%e5%a5%8f%e5%ae%b6%e3%81%ae%e6%9e%b6%e3%81%91%e6%a9%8b%e5%9f%ba%e9%87%91-2/",
-   "postedAt": "2026-10-13",
-   "deadline": "2026-10-26",
-   "deadlineType": "date",
-   "deadlineRaw": "2026/10/26 募集要項 https://np-foundation.or.jp/infor",
-   "openFrom": "2026-09-10",
-   "conditionsUrl": "https://np-foundation.or.jp/information/000414.html",
-   "summary": "東海4県で活動する演奏家の公演やアウトリーチ活動等を通じてアーティストとしての力を育む事業を支援する助成です。非営利法人や任意団体が応募できます。",
-   "fields": [
-    "共通"
-   ],
-   "uses": [
-    "行事・啓発"
-   ],
-   "applicants": [
-    "社会福祉法人",
-    "NPO・公益法人",
-    "任意団体"
-   ],
-   "amount": "3,000千円/1件",
-   "conditions": [
-    {
-     "axis": "所在地",
-     "quote": "東海 4 県を中心に活動する演奏家"
-    },
-    {
-     "axis": "事業の実施地",
-     "quote": "本公募では日本国内で実施する事業が対象です。"
-    },
-    {
-     "axis": "主体の付帯条件",
-     "quote": "助成電子申請システム「Graain」から、必要書類・団体情報をご提出いただきます。"
-    },
-    {
-     "axis": "提出書類",
-     "quote": "・応募用紙 書式ダウンロード: 第3回東海演奏家の架け橋基金_応募用紙 ・申請事業収支予算書 書式ダウンロード: 第3回東海演奏家の架け橋基金_収支予算書 ・団体の紹介資料 ・過去2事業年度の財務報告書 ・団体の今事業年度の収支予算書 ・登記簿謄本/履歴事項全部証明書の写し ・定款"
-    }
-   ]
-  },
   {
    "hash": "98f7c0a098770628",
    "source": "福岡県（子ども・青少年）",
@@ -1003,5 +958,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-10-26"
+ "lastFetchDate": "2026-10-27"
 }
