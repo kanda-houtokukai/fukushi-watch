@@ -160,12 +160,15 @@ main { min-width: 0; padding-block: 24px 0; max-width: 980px; }
 .dateplate .sm-note { font-family: var(--f-mono); font-size: 11.5px; color: var(--ink-3); }
 
 .home-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; }
-.hb { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 18px 18px 18px; min-width: 0; }
-.hb-h { display: flex; justify-content: space-between; align-items: baseline; gap: 8px 14px; flex-wrap: wrap; margin-bottom: 12px; }
-.hb-h h2 { font-family: var(--f-display); font-size: 18px; margin: 0; line-height: 1.4; }
+/* ホームの大項目：箱の頭に薄い青緑の帯を敷き、見出しと印を置く（C案・ユーザー選択 2026-10-27・報酬改定ガイドと統一） */
+.hb { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 0 0 18px; min-width: 0; overflow: hidden; }
+.hb-h { display: flex; justify-content: space-between; align-items: center; gap: 6px 14px; flex-wrap: wrap; margin: 0 0 14px; padding: 12px 18px; background: var(--ai-soft); border-bottom: 1px solid #C9E6E0; }
+.hb-h h2 { display: flex; align-items: center; gap: 8px; font-family: var(--f-display); font-size: 17.5px; color: var(--ai); margin: 0; line-height: 1.4; }
+.hb-h h2 .hx { width: 20px; height: 20px; flex: none; }
 .hb-h a { font-size: 13px; }
+.hb > :not(.hb-h) { margin-left: 18px; margin-right: 18px; }
 .hb-tag { font-size: 12px; color: var(--kin); font-weight: 700; }
-.hb-deadline { grid-column: span 12; border: 0; background: transparent; padding: 0; }
+.hb-deadline { grid-column: span 12; }
 .hb-must { grid-column: span 12; }
 .hb-updates { grid-column: span 5; grid-row: span 2; }
 .hb-tools { grid-column: span 7; }
@@ -626,7 +629,9 @@ html.drawer-open { overflow: hidden; }
   .home-sub { font-size: 13.5px; }
   .home-lead { font-size: 14.5px; }
   .dateplate { padding: 16px 18px; }
-  .hb { padding: 16px 14px; }
+  .hb { padding: 0 0 14px; }
+  .hb-h { padding: 11px 14px; }
+  .hb > :not(.hb-h) { margin-left: 14px; margin-right: 14px; }
   .hb-h h2 { font-size: 17px; }
   .tool-tiles { grid-template-columns: minmax(0, 1fr); gap: 8px; }
   .roles { grid-template-columns: minmax(0, 1fr); }
@@ -748,12 +753,12 @@ html.drawer-open { overflow: hidden; }
 
   <div class="home-grid">
     <section class="hb hb-deadline" aria-labelledby="h-deadline">
-      <div class="hb-h"><h2 id="h-deadline">近づいている期限</h2><a href="#schedule">日程をすべて見る</a></div>
+      <div class="hb-h"><h2 id="h-deadline"><svg class="hx" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10.5" r="6.5"/><path d="M10 6.8v3.9l2.6 1.6M8 2.5h4"/></svg>近づいている期限</h2><a href="#schedule">日程をすべて見る</a></div>
       <div class="dl-cards" id="dl-cards"></div>
     </section>
 
     <section class="hb hb-must" aria-labelledby="h-must">
-      <div class="hb-h"><h2 id="h-must">施行日に必須の3項目</h2><span class="hb-tag">未実施はそれ自体が法違反（準備ガイドVer.1.2）</span></div>
+      <div class="hb-h"><h2 id="h-must"><svg class="hx" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="13" height="13" rx="2"/><path d="M6.5 10.2 9 12.6l4.6-5"/></svg>施行日に必須の3項目</h2><span class="hb-tag">未実施はそれ自体が法違反（準備ガイドVer.1.2）</span></div>
       <div class="must">
         <a class="must-c" href="#safety"><span class="pn">法5条1項・規則8条</span><b>報告・対応ルール</b><span>疑いを把握したとき、誰が、誰に、何を報告し、どう動くかを決めて周知する</span></a>
         <a class="must-c" href="#safety"><span class="pn">法5条2項・規則9条</span><b>相談体制</b><span>事業者内の窓口の設置と、外部窓口の周知。この2つは両方必要</span></a>
@@ -762,12 +767,12 @@ html.drawer-open { overflow: hidden; }
     </section>
 
     <section class="hb hb-updates" aria-labelledby="h-upd">
-      <div class="hb-h"><h2 id="h-upd">更新情報</h2><a href="#updates">すべて見る</a></div>
+      <div class="hb-h"><h2 id="h-upd"><svg class="hx" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5a4.5 4.5 0 0 0-4.5 4.5v3L4 13.5h12L14.5 11V8A4.5 4.5 0 0 0 10 3.5zM8.2 16a1.9 1.9 0 0 0 3.6 0"/></svg>更新情報</h2><a href="#updates">すべて見る</a></div>
       <ul class="feed" id="feed-home"></ul>
     </section>
 
     <section class="hb hb-tools" aria-labelledby="h-tools">
-      <div class="hb-h"><h2 id="h-tools">判定ツール</h2><a href="#tools">ツールを開く</a></div>
+      <div class="hb-h"><h2 id="h-tools"><svg class="hx" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 17 10 10 17 3 10z"/><path d="M10 7.5v3.2M10 13v.1"/></svg>判定ツール</h2><a href="#tools">ツールを開く</a></div>
       <div class="tool-tiles">
         <a class="tile" href="#tool-scope"><b>この事業は対象？</b><span>義務・認定・対象外を判定</span></a>
         <a class="tile" href="#tool-persons"><b>この人は対象？</b><span>職種・立場と3要件で判定</span></a>
@@ -777,17 +782,17 @@ html.drawer-open { overflow: hidden; }
     </section>
 
     <section class="hb hb-events" aria-labelledby="h-ev">
-      <div class="hb-h"><h2 id="h-ev">次の研修・説明会</h2><a href="#events">一覧を見る</a></div>
+      <div class="hb-h"><h2 id="h-ev"><svg class="hx" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="14" height="12.5" rx="1.5"/><path d="M3 8.5h14M7 3v3M13 3v3"/></svg>次の研修・説明会</h2><a href="#events">一覧を見る</a></div>
       <ul class="ev-mini" id="ev-home"></ul>
     </section>
 
     <section class="hb hb-faq" aria-labelledby="h-faq">
-      <div class="hb-h"><h2 id="h-faq">よく出る質問</h2><a href="#qa">Q&amp;Aを検索</a></div>
+      <div class="hb-h"><h2 id="h-faq"><svg class="hx" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="5.5"/><path d="m13 13 4 4"/></svg>よく出る質問</h2><a href="#qa">Q&amp;Aを検索</a></div>
       <ul class="faq" id="faq-home"></ul>
     </section>
 
     <section class="hb hb-roles" aria-labelledby="h-roles">
-      <div class="hb-h"><h2 id="h-roles">立場ごとの入口</h2></div>
+      <div class="hb-h"><h2 id="h-roles"><svg class="hx" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="7" r="2.6"/><path d="M2.8 16.5a4.7 4.7 0 0 1 9.4 0"/><circle cx="14" cy="7.8" r="2.1"/><path d="M13.2 12.3a3.9 3.9 0 0 1 4.6 4.2"/></svg>立場ごとの入口</h2></div>
       <div class="roles">
         <div class="role"><b>理事長・施設長</b><ul><li><a href="#overview">制度の全体像</a></li><li><a href="#supervision">監督・罰則</a></li><li><a href="#employment">該当者が出たときの雇用管理</a></li><li><a href="#system">GビズIDと権限</a></li></ul></div>
         <div class="role"><b>事務・人事・総務</b><ul><li><a href="#checklist">施行準備チェックリスト</a></li><li><a href="#docs">整える規程と書類</a></li><li><a href="#timing">確認の時期と期限</a></li><li><a href="#info">情報管理措置</a></li></ul></div>
