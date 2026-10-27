@@ -1,0 +1,318 @@
+{
+ "schema": 1,
+ "checkedAt": "2026-10-27T15:30:00+09:00",
+ "checkedPages": 5,
+ "checkNote": "検討チームの開催一覧と資料を確認しました。第66回（10月22日）までの資料をカードに反映しています。",
+ "currentStage": 1,
+ "notices": [],
+ "milestones": [
+  {
+   "date": "2026-11-30",
+   "label": "11月",
+   "approx": true,
+   "title": "残るサービスと横断的な事項の議論",
+   "desc": "居住系・訓練系・相談系と、処遇改善などサービス横断的な報酬の在り方",
+   "link": "#schedule"
+  },
+  {
+   "date": "2026-12-25",
+   "label": "12月",
+   "approx": true,
+   "title": "基本的な考え方の取りまとめ",
+   "desc": "報酬・基準の見直しの方向が固まる。同じ時期に政府予算の編成で改定率が決まる",
+   "link": "#stages"
+  },
+  {
+   "date": "2027-02-28",
+   "label": "1〜2月",
+   "approx": true,
+   "title": "報酬改定案のとりまとめ",
+   "desc": "単位数と算定要件の案。事業所ごとの影響を試算できる段階",
+   "link": "#stages"
+  },
+  {
+   "date": "2027-03-31",
+   "label": "3月",
+   "approx": true,
+   "title": "告示の改正と通知の発出",
+   "desc": "報酬と基準が法令として確定する",
+   "link": "#stages"
+  }
+ ],
+ "timeline": [
+  {
+   "date": "2026-04-28",
+   "done": true,
+   "title": "検討の開始（第55回）",
+   "desc": "令和9年度改定に向けた検討の進め方と、関係団体ヒアリングの実施を決めた"
+  },
+  {
+   "date": "2026-06-15",
+   "label": "6月〜8月",
+   "done": true,
+   "title": "関係団体ヒアリング（第56〜61回）",
+   "desc": "6回にわたり関係団体から意見を聴いた"
+  },
+  {
+   "date": "2026-08-27",
+   "done": true,
+   "title": "主な論点（案）（第62回）",
+   "desc": "改定の4つの柱と、想定される検討事項を示した"
+  },
+  {
+   "date": "2026-09-24",
+   "label": "9月〜11月",
+   "now": true,
+   "title": "サービスごとの論点（第63回〜）",
+   "desc": "訪問系（9/24）、就労系（9/28）、障害児支援（10/5）、施設入所支援・生活介護・短期入所・療養介護（10/22）。居住系・訓練系・相談系はこれから"
+  },
+  {
+   "date": "2026-11-30",
+   "label": "11月ごろ",
+   "title": "サービス横断的な報酬等の在り方",
+   "desc": "処遇改善などサービスをまたぐ事項の検討（検討の進め方より）"
+  },
+  {
+   "date": "2026-12-25",
+   "label": "12月",
+   "big": true,
+   "title": "基本的な考え方の取りまとめ・改定率の決定",
+   "desc": "報酬・基準に関する基本的な考え方の整理と、令和9年度政府予算の編成"
+  },
+  {
+   "date": "2027-02-28",
+   "label": "2027年1〜2月",
+   "title": "報酬改定案のとりまとめ",
+   "desc": "単位数と算定要件の案"
+  },
+  {
+   "date": "2027-03-31",
+   "label": "2027年3月",
+   "title": "告示の改正と通知の発出",
+   "desc": "報酬告示・基準の改正、留意事項通知。その後Q&Aが順次出る"
+  },
+  {
+   "date": "2027-04-01",
+   "label": "2027年4月〜",
+   "big": true,
+   "title": "改定後の報酬の適用",
+   "desc": "検討の進め方では「4月以降」とされている"
+  }
+ ],
+ "meetings": [
+  {
+   "no": "第66回",
+   "date": "2026-10-22",
+   "title": "令和9年度障害福祉報酬改定に向けて（施設入所支援、生活介護、短期入所、療養介護）",
+   "page_url": "https://www.mhlw.go.jp/stf/newpage_76886.html",
+   "status": "held"
+  },
+  {
+   "no": "第65回",
+   "date": "2026-10-05",
+   "title": "令和9年度障害福祉報酬改定に向けて（障害児支援）",
+   "page_url": "https://www.mhlw.go.jp/stf/newpage_76565.html",
+   "status": "held"
+  },
+  {
+   "no": "第64回",
+   "date": "2026-09-28",
+   "title": "令和9年度障害福祉報酬改定に向けて（就労系サービス）",
+   "page_url": "https://www.mhlw.go.jp/stf/newpage_76389.html",
+   "status": "held"
+  },
+  {
+   "no": "第63回",
+   "date": "2026-09-24",
+   "title": "令和9年度障害福祉報酬改定に向けて（訪問系サービス）",
+   "page_url": "https://www.mhlw.go.jp/stf/newpage_76339.html",
+   "status": "held"
+  },
+  {
+   "no": "第62回",
+   "date": "2026-08-27",
+   "title": "令和9年度障害福祉報酬改定に向けた主な論点（案）について",
+   "page_url": "https://www.mhlw.go.jp/stf/newpage_75819.html",
+   "status": "held"
+  },
+  {
+   "no": "第61回",
+   "date": "2026-08-03",
+   "title": "関係団体ヒアリング6",
+   "page_url": "https://www.mhlw.go.jp/stf/newpage_75169.html",
+   "status": "held"
+  },
+  {
+   "no": "第60回",
+   "date": "2026-07-27",
+   "title": "関係団体ヒアリング5",
+   "page_url": "https://www.mhlw.go.jp/stf/newpage_74901.html",
+   "status": "held"
+  },
+  {
+   "no": "第59回",
+   "date": "2026-07-17",
+   "title": "関係団体ヒアリング4",
+   "page_url": "https://www.mhlw.go.jp/stf/newpage_74720.html",
+   "status": "held"
+  },
+  {
+   "no": "第58回",
+   "date": "2026-07-03",
+   "title": "関係団体ヒアリング3",
+   "page_url": "https://www.mhlw.go.jp/stf/newpage_74265.html",
+   "status": "held"
+  },
+  {
+   "no": "第57回",
+   "date": "2026-06-26",
+   "title": "関係団体ヒアリング2",
+   "page_url": "https://www.mhlw.go.jp/stf/newpage_74112.html",
+   "status": "held"
+  },
+  {
+   "no": "第56回",
+   "date": "2026-06-15",
+   "title": "関係団体ヒアリング1",
+   "page_url": "https://www.mhlw.go.jp/stf/newpage_73858.html",
+   "status": "held"
+  },
+  {
+   "no": "第55回",
+   "date": "2026-04-28",
+   "title": "令和8年度従事者処遇状況等調査の実施／人員欠如に係る特例的な取扱い（報告）／令和9年度改定に向けた今後の検討の進め方",
+   "page_url": "https://www.mhlw.go.jp/stf/newpage_72919.html",
+   "status": "held"
+  },
+  {
+   "no": "第54回",
+   "date": "2026-03-10",
+   "title": "令和7年経営概況調査の結果（詳細版）／令和8年経営実態調査の実施",
+   "page_url": "https://www.mhlw.go.jp/stf/newpage_71418.html",
+   "status": "held"
+  },
+  {
+   "no": "公表",
+   "date": "2026-02-18",
+   "title": "令和8年度障害福祉サービス等報酬改定の概要",
+   "page_url": "https://www.mhlw.go.jp/stf/newpage_70634.html",
+   "status": "held"
+  },
+  {
+   "no": "第53回",
+   "date": "2026-02-18",
+   "title": "令和8年度障害福祉サービス等報酬改定の概要（案）（持ち回り）",
+   "page_url": "https://www.mhlw.go.jp/stf/newpage_70620.html",
+   "status": "held"
+  },
+  {
+   "no": "第52回",
+   "date": "2026-01-22",
+   "title": "令和8年度における臨時応急的な見直し",
+   "page_url": "https://www.mhlw.go.jp/stf/newpage_69057.html",
+   "status": "held"
+  },
+  {
+   "no": "第51回",
+   "date": "2025-12-16",
+   "title": "令和6年度報酬改定後の状況を踏まえた課題",
+   "page_url": "https://www.mhlw.go.jp/stf/newpage_67248.html",
+   "status": "held"
+  }
+ ],
+ "updates": [
+  {
+   "date": "2026-10-22",
+   "src": "国",
+   "title": "第66回 施設入所支援・生活介護・短期入所・療養介護の論点",
+   "url": "https://www.mhlw.go.jp/stf/newpage_76886.html",
+   "impact": "done",
+   "note": "4サービスの論点が示されました。日中活動系と施設系のカードにしています。",
+   "where": "#svc-nicchu"
+  },
+  {
+   "date": "2026-10-05",
+   "src": "国",
+   "title": "第65回 障害児支援の論点",
+   "url": "https://www.mhlw.go.jp/stf/newpage_76565.html",
+   "impact": "done",
+   "note": "児童発達支援・放課後等デイサービス・センター・保育所等訪問支援・居宅訪問型・障害児入所施設の論点が示されました。",
+   "where": "#svc-jitsusho"
+  },
+  {
+   "date": "2026-09-28",
+   "src": "国",
+   "title": "第64回 就労系サービスの論点",
+   "url": "https://www.mhlw.go.jp/stf/newpage_76389.html",
+   "impact": "done",
+   "note": "就労系サービスの論点が示されました。後日掲載された資料の一部訂正も反映しています。",
+   "where": "#svc-shuro"
+  },
+  {
+   "date": "2026-09-24",
+   "src": "国",
+   "title": "第63回 訪問系サービスの論点",
+   "url": "https://www.mhlw.go.jp/stf/newpage_76339.html",
+   "impact": "done",
+   "note": "訪問系の横断的事項2件と、各サービスの論点6件が示されました。",
+   "where": "#svc-houmon"
+  },
+  {
+   "date": "2026-08-27",
+   "src": "国",
+   "title": "第62回 令和9年度改定に向けた主な論点（案）",
+   "url": "https://www.mhlw.go.jp/stf/newpage_75819.html",
+   "impact": "done",
+   "note": "改定の4つの柱と、想定される検討事項が示されました。",
+   "where": "#overview"
+  },
+  {
+   "date": "2026-04-28",
+   "src": "国",
+   "title": "第55回 検討の進め方と人員欠如の特例",
+   "url": "https://www.mhlw.go.jp/stf/newpage_72919.html",
+   "impact": "done",
+   "note": "令和9年度改定の検討が始まり、日程の見込みが示されました。",
+   "where": "#schedule"
+  },
+  {
+   "date": "2026-02-18",
+   "src": "国",
+   "title": "令和8年度障害福祉サービス等報酬改定の概要",
+   "url": "https://www.mhlw.go.jp/stf/newpage_70634.html",
+   "impact": "done",
+   "note": "臨時改定の内容が確定しました。令和9年度改定の前提として整理しています。",
+   "where": "#base"
+  }
+ ],
+ "watch": [
+  {
+   "name": "障害福祉報酬改定検討チーム（開催一覧）",
+   "url": "https://www.mhlw.go.jp/stf/shingi/other-syougai_446935_00001.html"
+  },
+  {
+   "name": "審議会・研究会等の開催予定一覧（厚生労働省）",
+   "url": "https://www.mhlw.go.jp/topics/event/open_doors.html"
+  },
+  {
+   "name": "社会保障審議会 障害者部会",
+   "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126730.html"
+  },
+  {
+   "name": "こども家庭審議会 障害児支援部会",
+   "url": "https://www.cfa.go.jp/councils/shingikai/shougaiji_shien"
+  },
+  {
+   "name": "障害福祉サービス等報酬改定（厚生労働省の改定ページ）",
+   "url": ""
+  },
+  {
+   "name": "障害福祉サービス等経営実態調査",
+   "url": ""
+  },
+  {
+   "name": "障害福祉サービス等の報酬・改定に関するQ&A",
+   "url": ""
+  }
+ ]
+}
