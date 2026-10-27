@@ -1,6 +1,233 @@
 {
-  "generatedAt": "2026-10-27T02:10:10.938Z",
-  "newItems": [],
-  "newPress": [],
+  "generatedAt": "2026-10-27T21:23:38.212Z",
+  "newItems": [
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "b46a69a0f6110e90",
+      "title": "こども家庭審議会障害児支援部会（第22回）の資料を掲載しました",
+      "url": "https://www.cfa.go.jp/councils/shingikai/shougaiji_shien/779b0299",
+      "date": "2026-10-27",
+      "category": "会議等"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "0a684b9a92aae4d6",
+      "title": "中司大臣記者会見（令和8年10月27日）を掲載しました",
+      "url": "https://www.cfa.go.jp/speech/6cf28e85",
+      "date": "2026-10-27",
+      "category": "会見"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "8fb82c9d0c4a5e5e",
+      "title": "令和８年１０月２７日付大臣会見概要",
+      "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00982.html",
+      "date": "2026-10-27",
+      "category": "大臣会見等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "25f95a69d5cb8b24",
+      "title": "医薬品等安全性関連情報",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iyakuhin/iyaku/index.html",
+      "date": "2026-10-27",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "abe1d45319c7d5e9",
+      "title": "食品中の放射性物質の検査結果について（１５１８報）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76947.html",
+      "date": "2026-10-27",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "02f4597172d9cbdb",
+      "title": "令和７(2025)年度衛生行政報告例の概況",
+      "url": "https://www.mhlw.go.jp/toukei/saikin/hw/eisei_houkoku/25/",
+      "date": "2026-10-27",
+      "category": "統計情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "d7a476b5975e11c5",
+      "title": "危険ドラッグの成分３物質を新たに指定薬物に指定",
+      "url": "https://www.mhlw.go.jp/stf/houdou/0000212707_00057.html",
+      "date": "2026-10-27",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "6ed781615f05cea8",
+      "title": "「社会福祉施設職員等退職手当共済制度の在り方に関する検討会」（第５回）を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76910.html",
+      "date": "2026-10-27",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "bee3b01527b8e804",
+      "title": "第272回社会保障審議会介護給付費分科会（Web会議）を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76725.html",
+      "date": "2026-10-27",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "e31eac83a373f23c",
+      "title": "技能実習法に基づく行政処分等を行いました",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76693.html",
+      "date": "2026-10-27",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "8fb82be080fd9fd8",
+      "title": "第１回国民年金第３号被保険者制度等に関する検討会（議事録）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76904.html",
+      "date": "2026-10-27",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "a8aabe9edb2afa7e",
+      "title": "第61回労働政策審議会人材開発分科会（オンライン併用）の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76906.html",
+      "date": "2026-10-22",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "0b1d4cccfad1e0f1",
+      "title": "中央社会保険医療協議会診療報酬調査専門組織（入院・外来医療等の調査・評価分科会）の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76834.html",
+      "date": "2026-10-20",
+      "category": "審議会等"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "fa6ed989294e3fce",
+      "title": "第89回 障害者政策委員会（令和8年11月5日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22986&ct=070010040&from=rss",
+      "date": "2026-10-27",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "555b3920818cf440",
+      "title": "第24回 成年後見制度利用促進専門家会議（令和8年10月27日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22990&ct=100100170&from=rss",
+      "date": "2026-10-27",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "9873999a9259a79b",
+      "title": "第16回 こども家庭審議会 子ども・子育て支援等分科会（令和8年10月26日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22989&ct=090080185&from=rss",
+      "date": "2026-10-27",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "aac0a278077c5222",
+      "title": "介護保険最新情報Vol.1550（PDF：2.5MB）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/1027102734336/ksvol.1550.pdf?from=rss",
+      "date": "2026-10-27",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "c8f84da45c901e6b",
+      "title": "介護保険最新情報Vol.1549（PDF：426KB）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/1027102319586/ksvol.1549.pdf?from=rss",
+      "date": "2026-10-27",
+      "category": "行政資料"
+    },
+    {
+      "source": "福岡県（障がい福祉）",
+      "kind": "gov",
+      "hash": "4220347170390bfe",
+      "title": "旧優生保護法被害者の皆さまと面談しました（福岡市）",
+      "url": "https://www.pref.fukuoka.lg.jp/site/chiji-top/yusei-mendan.html",
+      "date": "2026年10月26日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（介護・高齢者福祉）",
+      "kind": "gov",
+      "hash": "3a65f840614e6137",
+      "title": "令和8年度 福岡県有料老人ホーム職員実務研修のご案内",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/jitsumu.html",
+      "date": "2026年10月13日更新",
+      "category": ""
+    }
+  ],
+  "newPress": [
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "9208b6ceca9def53",
+      "title": "高齢者とAIの対話をケアに生かす NTTデータが「ボイスタ！」を刷新 本人の思いや変化を可視化 介護現場を支援",
+      "url": "https://www.joint-kaigo.com/articles/49875/",
+      "date": "2026-10-27",
+      "category": "超高齢化"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "51214b10ac68e9e8",
+      "title": "看護職員の賃上げ、他産業に「遠く及ばない」 看護協会調査 賃金に8割弱が不満",
+      "url": "https://www.joint-kaigo.com/articles/49888/",
+      "date": "2026-10-27",
+      "category": "医療・看護"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "9510a0f0a839b2a7",
+      "title": "ケアマネ再研修、54時間から15.5時間に短縮 名称は「復職支援研修」に 厚労省方針",
+      "url": "https://www.joint-kaigo.com/articles/49870/",
+      "date": "2026-10-27",
+      "category": "自治体"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "490f8249fc48d5dc",
+      "title": "協力医療機関との連携、特養など9割超が要件満たす 一部に未対応の介護施設も 厚労省調査",
+      "url": "https://www.joint-kaigo.com/articles/49862/",
+      "date": "2026-10-27",
+      "category": "医療・看護"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "064492d5054fda91",
+      "title": "要介護認定、審査簡素化の要件を緩和 厚労省方針 対象となる更新申請を拡大",
+      "url": "https://www.joint-kaigo.com/articles/49852/",
+      "date": "2026-10-27",
+      "category": "超高齢化"
+    }
+  ],
   "crawlErrors": []
 }

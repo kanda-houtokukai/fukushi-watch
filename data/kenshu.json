@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-26T21:53:58.477Z",
+ "updatedAt": "2026-10-27T21:29:11.698Z",
  "items": [
   {
    "hash": "a33ead884bd46368",
@@ -20,6 +20,23 @@
    "heldDates": [
     "2026-11-19"
    ]
+  },
+  {
+   "hash": "5ea4d1e878896605",
+   "source": "福岡県（介護・高齢者福祉）",
+   "sourceKind": "",
+   "via": "goryu",
+   "title": "令和8年度 福岡県有料老人ホーム職員実務研修のご案内",
+   "url": "https://www.pref.fukuoka.lg.jp/contents/jitsumu.html",
+   "deadline": "2026-11-01",
+   "deadlineType": "date",
+   "deadlineRaw": "一覧の申込終了日より オンライン研修 募集締切 2026-11-01",
+   "openFrom": null,
+   "fields": [
+    "高齢"
+   ],
+   "kind": "資格要件",
+   "expireOn": "2027-02-01"
   },
   {
    "hash": "21de85f937c57fa1",
@@ -47,7 +64,7 @@
    "sourceKind": "org",
    "via": "schedule",
    "title": "報・連・相強化研修",
-   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/10/a4e0393ed40d0b8cc9a09df74d54d88d.pdf",
+   "url": "https://fuku-shakyo-kenshu.jp/info/%e3%80%8c%e5%a0%b1%e3%83%bb%e9%80%a3%e3%83%bb%e7%9b%b8%e3%80%8d%e5%bc%b7%e5%8c%96%e7%a0%94%e4%bf%ae%e3%81%ae%e9%96%8b%e5%82%ac%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/",
    "deadline": "2026-11-09",
    "deadlineType": "date",
    "deadlineRaw": "一覧の申込終了日より 11月9日",
@@ -71,8 +88,8 @@
    "url": "https://fuku-shakyo-kenshu.jp/info/%e3%82%a2%e3%83%b3%e3%82%ac%e3%83%bc%e3%83%9e%e3%83%8d%e3%82%b8%e3%83%a1%e3%83%b3%e3%83%88%e7%a0%94%e4%bf%ae%e3%81%ae%e9%96%8b%e5%82%ac%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/",
    "deadline": "2026-11-13",
    "deadlineType": "date",
-   "deadlineRaw": "開催要綱PDFより 令和8年11月13日",
-   "openFrom": null,
+   "deadlineRaw": "一覧の申込終了日より 11月13日",
+   "openFrom": "2026-10-22",
    "fields": [
     "共通"
    ],
@@ -220,6 +237,23 @@
     }
    ],
    "outlineUrl": "https://www.f-kaigo.jp/upimg/y6a6985ab9e66f.pdf"
+  },
+  {
+   "hash": "5ea4d1e878896605",
+   "source": "福岡県（介護・高齢者福祉）",
+   "sourceKind": "",
+   "via": "goryu",
+   "title": "令和8年度 福岡県有料老人ホーム職員実務研修のご案内",
+   "url": "https://www.pref.fukuoka.lg.jp/contents/jitsumu.html",
+   "deadline": "2027-02-07",
+   "deadlineType": "date",
+   "deadlineRaw": "一覧の申込終了日より オンデマンド研修 募集締切 2027-02-07",
+   "openFrom": null,
+   "fields": [
+    "高齢"
+   ],
+   "kind": "資格要件",
+   "expireOn": "2027-05-07"
   },
   {
    "hash": "248b8338b2f441e1",
@@ -727,7 +761,7 @@
    "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/#link3",
    "deadline": null,
    "deadlineType": "unknown",
-   "deadlineRaw": "1月~2月開催予定",
+   "deadlineRaw": "1月14日開催予定",
    "openFrom": null,
    "fields": [
     "共通"
@@ -746,7 +780,7 @@
    "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/#link1",
    "deadline": null,
    "deadlineType": "unknown",
-   "deadlineRaw": "1月開催予定",
+   "deadlineRaw": "1月27・28日開催予定",
    "openFrom": null,
    "fields": [
     "共通"
@@ -765,7 +799,7 @@
    "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/#link1",
    "deadline": null,
    "deadlineType": "unknown",
-   "deadlineRaw": "1月~2月開催予定",
+   "deadlineRaw": "1月14日開催予定",
    "openFrom": null,
    "fields": [
     "共通"
@@ -776,25 +810,6 @@
    "expireOn": "2027-03-31"
   },
   {
-   "hash": "640e4a97d41c3304",
-   "source": "福祉・介護研修センター 年間予定表",
-   "sourceKind": "org",
-   "via": "schedule",
-   "title": "社会福祉法人監事及び会計責任者研修",
-   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/#link1",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "1月開催予定",
-   "openFrom": null,
-   "fields": [
-    "共通"
-   ],
-   "kind": "テーマ別",
-   "preOpenNote": "1月開催予定",
-   "preOpenSort": "2027-01",
-   "expireOn": "2027-02-28"
-  },
-  {
    "hash": "2bd9cb946de3e713",
    "source": "福祉・介護研修センター 年間予定表",
    "sourceKind": "org",
@@ -803,7 +818,7 @@
    "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/#link1",
    "deadline": null,
    "deadlineType": "unknown",
-   "deadlineRaw": "1月~2月開催予定",
+   "deadlineRaw": "A:2月3日開催予定 B:2月24日開催予定",
    "openFrom": null,
    "fields": [
     "共通"
@@ -916,7 +931,7 @@
    "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/#link4",
    "deadline": null,
    "deadlineType": "unknown",
-   "deadlineRaw": "2月予定",
+   "deadlineRaw": "2月16日・17日予定",
    "openFrom": null,
    "fields": [
     "高齢"
@@ -935,13 +950,32 @@
    "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/#link1",
    "deadline": null,
    "deadlineType": "unknown",
-   "deadlineRaw": "2月開催予定",
+   "deadlineRaw": "2月10日開催予定",
    "openFrom": null,
    "fields": [
     "共通"
    ],
    "kind": "テーマ別",
    "preOpenNote": "2月開催予定",
+   "preOpenSort": "2027-02",
+   "expireOn": "2027-03-31"
+  },
+  {
+   "hash": "640e4a97d41c3304",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "via": "schedule",
+   "title": "社会福祉法人監事及び会計責任者研修",
+   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/#link1",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "1~2月開催予定",
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別",
+   "preOpenNote": "1~2月開催予定",
    "preOpenSort": "2027-02",
    "expireOn": "2027-03-31"
   },
@@ -954,7 +988,7 @@
    "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/#link4",
    "deadline": null,
    "deadlineType": "unknown",
-   "deadlineRaw": "2月予定",
+   "deadlineRaw": "2月9日・10日予定",
    "openFrom": null,
    "fields": [
     "高齢"
@@ -973,7 +1007,7 @@
    "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/#link4",
    "deadline": null,
    "deadlineType": "unknown",
-   "deadlineRaw": "2月予定",
+   "deadlineRaw": "2月2日・3日予定",
    "openFrom": null,
    "fields": [
     "高齢"
@@ -992,7 +1026,7 @@
    "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/#link3",
    "deadline": null,
    "deadlineType": "unknown",
-   "deadlineRaw": "9月~12月開催予定",
+   "deadlineRaw": "2月2日開催予定",
    "openFrom": null,
    "fields": [
     "共通"
@@ -1071,5 +1105,5 @@
    "expireOn": "2026-10-31"
   }
  ],
- "lastFetchDate": "2026-10-27"
+ "lastFetchDate": "2026-10-28"
 }
