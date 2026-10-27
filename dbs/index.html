@@ -148,7 +148,6 @@ main { min-width: 0; padding-block: 24px 0; max-width: 980px; }
 .home h1 .nw { white-space: nowrap; }
 .home h1 { font-family: var(--f-display); font-weight: 900; font-size: clamp(30px, 4.6vw, 50px); line-height: 1.22; letter-spacing: .02em; margin: 10px 0 10px; }
 .home-sub { word-break: keep-all; overflow-wrap: anywhere; font-family: var(--f-display); font-weight: 700; font-size: 15px; color: var(--ink-2); margin: 0 0 12px; line-height: 1.6; }
-.home-lead { color: var(--ink-2); font-size: 15px; margin: 0; max-width: 44em; line-height: 1.8; }
 .dateplate { background: var(--ai-soft); color: var(--ink); border-radius: 10px; border-top: 4px solid var(--ai); padding: 18px 22px 20px; display: flex; flex-direction: column; gap: 10px; }
 .dateplate .k { font-family: var(--f-mono); font-size: 12px; letter-spacing: .14em; color: var(--ai); }
 .dateplate .d { font-family: var(--f-display); font-weight: 900; font-size: clamp(40px, 5.6vw, 64px); line-height: 1; letter-spacing: .01em; font-variant-numeric: tabular-nums; color: var(--ai); }
@@ -504,10 +503,6 @@ code { font-family: var(--f-mono); font-size: .88em; background: var(--surface-2
 .card > :last-child { margin-bottom: 0; }
 
 /* 出典 */
-.srcs { list-style: none; padding: 0; margin: 14px 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
-.srcs li { display: grid; grid-template-columns: 7em minmax(0, 1fr); gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line-2); font-size: 13.5px; line-height: 1.6; }
-.srcs .k { font-family: var(--f-mono); font-size: 11.5px; color: var(--ink-3); padding-top: 2px; }
-.srcs a { word-break: break-all; }
 
 footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--ink); font-size: 13px; color: var(--ink-2); display: grid; gap: 6px; max-width: var(--measure); }
 
@@ -627,7 +622,6 @@ html.drawer-open { overflow: hidden; }
   .drawer { top: calc(env(safe-area-inset-top, 0px) + 54px); }
   .home h1 { font-size: 29px; }
   .home-sub { font-size: 13.5px; }
-  .home-lead { font-size: 14.5px; }
   .dateplate { padding: 16px 18px; }
   .hb { padding: 0 0 14px; }
   .hb-h { padding: 11px 14px; }
@@ -659,7 +653,6 @@ html.drawer-open { overflow: hidden; }
   .ev-when { grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 10px; padding: 10px 14px; }
   .tl li { grid-template-columns: 6.2em 20px minmax(0, 1fr); gap: 0 10px; }
   .tl .when { font-size: 11.5px; }
-  .srcs li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   .qa summary, .qa .a { padding-left: 40px; }
 }
 /* ── スマホ：上のバーの現在地と、前後のボタン（報酬改定ガイドと同じ・ユーザー指示 2026-10-27） ── */
@@ -697,6 +690,28 @@ html.drawer-open { overflow: hidden; }
   a { color: inherit; }
 }
 .tbl .num .sm { white-space: normal; }
+
+/* 資料リンク集（#sources）。build.py が scripts/linkbook.py で書き出す */
+.lk-find { position: relative; display: block; margin: 18px 0 4px; max-width: 32em; }
+.lk-find input { width: 100%; box-sizing: border-box; font: inherit; font-size: 15px; padding: 11px 14px 11px 40px; border: 1.5px solid var(--line); border-radius: var(--r); background: var(--surface); color: var(--ink); }
+.lk-find input:focus { border-color: var(--ai); outline: none; }
+.lk-find svg { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--ink-3); }
+.lk-g { margin-top: 28px; }
+.lk-h { font-family: var(--f-display); font-size: 15.5px; font-weight: 700; margin: 0 0 8px; padding-left: 10px; border-left: 3px solid var(--ai); line-height: 1.4; }
+.lk-l { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.lk-i { display: grid; grid-template-columns: 6.4em minmax(0, 1fr); gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--line-2); font-size: 14px; line-height: 1.6; }
+.lk-d { font-family: var(--f-mono); font-size: 12px; color: var(--ink-3); padding-top: 2px; white-space: nowrap; }
+.lk-b { min-width: 0; }
+.lk-b a { overflow-wrap: anywhere; }
+.lk-ty { display: inline-block; margin-left: 8px; font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .04em; color: var(--ink-3); border: 1px solid var(--line); border-radius: 3px; padding: 0 5px; line-height: 1.55; vertical-align: 1px; white-space: nowrap; }
+.lk-n { display: block; font-size: 12.5px; color: var(--ink-3); margin-top: 1px; }
+.lk-sub { list-style: none; margin: 6px 0 0; padding: 0 0 0 12px; border-left: 2px solid var(--line-2); }
+.lk-s { padding: 3px 0; font-size: 13.5px; }
+.lk-none { color: var(--ink-3); font-size: 14px; margin: 22px 0; }
+@media (max-width: 560px) {
+  .lk-i { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .lk-d:empty { display: none; }
+}
 
 </style>
 </head>
@@ -749,7 +764,6 @@ html.drawer-open { overflow: hidden; }
       <div class="eyebrow"><span id="checked-at">情報の確認 2026年10月27日</span></div>
       <h1>こども性暴力防止法 <span class="nw">実務ガイド</span></h1>
       <p class="home-sub">日本版DBS ―<wbr> 学校設置者等及び<wbr>民間教育保育等事業者による<wbr>児童対象性暴力等の<wbr>防止等のための<wbr>措置に関する法律<wbr>（令和6年法律第69号）</p>
-      <p class="home-lead">児童発達支援・放課後等デイサービス・認定こども園・保育所・障害児入所施設などを運営する法人向けに、こども家庭庁の公表資料（ガイドライン9月改訂版、Q&amp;A 9月29日改訂版、準備ガイドVer.1.2）をもとに、何を、いつまでに、どう進めるかを整理しました。</p>
     </div>
     <div class="dateplate">
       <span class="k">施行日</span>
@@ -817,7 +831,6 @@ html.drawer-open { overflow: hidden; }
   <header>
     <div class="ch-no">やること</div>
     <h2>施行までの最優先事項</h2>
-    <p class="ch-lead">日付が決まっている手続、施行日に整っていないとそれだけで法違反になる準備、施行後すぐに困る準備の順に並べました。</p>
   </header>
 
   <div class="points"><span class="pt">この章の要点</span><ol><li>11月4日より前に全国説明会（11月6日のオンライン配信）に申し込み、11月6日までに国のテストメールが届いているか確かめる</li><li>報告・対応ルール、相談体制、情報管理規程と体制の3つは、施行日に整っていなければそれ自体が法違反</li><li>2027年4月採用の選考が進んでいるなら、内定を出す前に募集要項・誓約書・内定通知書を切り替える</li></ol></div>
@@ -932,7 +945,7 @@ html.drawer-open { overflow: hidden; }
   <header>
     <div class="ch-no">やること</div>
     <h2>施行準備チェックリスト</h2>
-    <p class="ch-lead">準備ガイドVer.1.2とQ&amp;A基礎10-1が挙げる項目を、時期ごとに並べ直しました。チェックはこの端末のブラウザにだけ保存され、ほかの人には共有されません。</p>
+    <p class="ch-lead">準備ガイドVer.1.2・Q&amp;A基礎10-1の項目です。チェックはこの端末のブラウザにだけ保存され、ほかの人には共有されません。</p>
   </header>
   <div class="legend">
     <span><span class="pill kakunin">法違反</span>施行時に未実施ならそれ自体が法違反</span>
@@ -947,7 +960,6 @@ html.drawer-open { overflow: hidden; }
   <header>
     <div class="ch-no">やること</div>
     <h2>日程（これまでと今後）</h2>
-    <p class="ch-lead">成立から施行後の期限まで、決まっている日付を1本の線にまとめました。灰色の丸は済んだこと、山吹色の丸が今日、藍色の大きな丸が施行日です。済んだことの多くは折りたたんでいます。</p>
   </header>
 
   <div class="points"><span class="pt">この章の要点</span><ol><li>12月24日までに内定・内示を出した人は施行時現職者、12月25日以降に内定した人は新規として業務に就く前に確認する</li><li>2027年3月までは新規採用者を優先し、施行時現職者は2027年4月から27か月の分散申請で確認する</li><li>初回の定期報告は2028年5月31日まで、施行時現職者の確認期限は2029年12月24日</li></ol></div>
@@ -987,7 +999,6 @@ html.drawer-open { overflow: hidden; }
   <header>
     <div class="ch-no">判定ツール</div>
     <h2>判定ツール</h2>
-    <p class="ch-lead">質問に順に答えると、ガイドラインとQ&amp;Aにもとづく結論と根拠が出ます。迷うケースや公式の名指しがないものは「個別に確認」と表示します。</p>
   </header>
 
   <div class="tabs" data-tabs>
@@ -2860,7 +2871,7 @@ html.drawer-open { overflow: hidden; }
   <header>
     <div class="ch-no">事業別</div>
     <h2>事業別の実務ポイント</h2>
-    <p class="ch-lead">共通の手順は「しくみ」と「運用」の各章のとおりです。ここでは事業ごとに、とくに判断が分かれやすい点と、先に手を打っておきたい点をまとめました。【公式】はガイドライン・Q&amp;A、【自治体】は自治体の回答、【専門家】は弁護士・社労士・支援団体などの解説、【業界団体】は団体の意見、【整理】は公式資料からの読み取りで、公式見解ではありません。</p>
+    <p class="ch-lead">【公式】はガイドライン・Q&amp;A、【自治体】は自治体の回答、【専門家】は弁護士・社労士・支援団体などの解説、【業界団体】は団体の意見、【整理】は公式資料からの読み取りで、公式見解ではありません。</p>
   </header>
 
   <div class="tabs" data-tabs>
@@ -2990,7 +3001,7 @@ html.drawer-open { overflow: hidden; }
   <header>
     <div class="ch-no">Q&amp;A</div>
     <h2>ケース別Q&amp;A</h2>
-    <p class="ch-lead">説明会や現場でよく出る疑問を、国のガイドライン・Q&amp;A（9月29日改訂版）と自治体の回答にもとづいて答えました。言葉で検索するか、分類で絞り込んでください。各回答の最後に根拠を書いています。</p>
+    <p class="ch-lead">国のガイドライン・Q&amp;A（9月29日改訂版）と自治体の回答にもとづいています。</p>
   </header>
   <div class="qa-tools">
     <label class="qa-search" for="qa-q">
@@ -3007,7 +3018,7 @@ html.drawer-open { overflow: hidden; }
   <header>
     <div class="ch-no">研修・窓口</div>
     <h2>研修・説明会・相談窓口</h2>
-    <p class="ch-lead">主催者のページで確かめた研修・説明会を、毎朝の確認で更新しています。日付が過ぎたものは自動で「終了」になり、標準では隠れます。<span id="ev-local-note"></span>業界団体の研修は会員向けの通知だけで案内されることもあるため、所属団体の事務局にも確認してください。</p>
+    <p class="ch-lead"><span id="ev-local-note"></span>業界団体の研修は会員向けの通知だけで案内されることもあるため、所属団体の事務局にも確認してください。</p>
   </header>
 
   <div class="box key" id="ev-focus" hidden></div>
@@ -3044,7 +3055,6 @@ html.drawer-open { overflow: hidden; }
   <header>
     <div class="ch-no">更新情報</div>
     <h2>更新情報</h2>
-    <p class="ch-lead">こども家庭庁、福岡県・福岡市・北九州市、研修の主催者などのページを毎朝確認し、新しい資料や日程の変更をここに載せています。ガイドの書き換えが要るものは「反映待ち」と表示し、確かめてからガイドに反映します。</p>
   </header>
 
   <div class="check-meta" id="check-meta"></div>
@@ -3056,7 +3066,7 @@ html.drawer-open { overflow: hidden; }
   <ol class="upd" id="upd-list"></ol>
 
   <details class="more" id="watch">
-    <summary><span class="st">毎朝確認しているページ</span><small id="watch-count"></small></summary>
+    <summary><span class="st">確認しているページ</span><small id="watch-count"></small></summary>
     <div class="more-in">
       <ul class="watch" id="watch-list"></ul>
     </div>
@@ -3067,7 +3077,7 @@ html.drawer-open { overflow: hidden; }
   <header>
     <div class="ch-no">更新情報</div>
     <h2>未確定の事項と今後の更新</h2>
-    <p class="ch-lead">2026年10月27日時点で、国が日付や扱いを示していないもの、公式の名指しがないものの一覧です。施行前後に資料が更新される可能性が高いため、この資料の内容も更新が必要になります。</p>
+    <p class="ch-lead">2026年10月27日時点で、国が日付や扱いを示していないもの、公式の名指しがないものの一覧です。</p>
   </header>
   <div class="scroll">
     <table class="tbl">
@@ -3099,7 +3109,6 @@ html.drawer-open { overflow: hidden; }
   </div>
   <div class="box">
     <p class="box-t">国の資料が更新されそうな時期</p>
-    <p>毎朝の確認では、とくに次の時期の発表に注意しています。</p>
     <ul>
       <li>11月下旬〜12月上旬：東京会場のアーカイブ公開、暫定稼働の日付が分かった時点</li>
       <li>12月25日前後：マニュアル更新版、Q&amp;Aの改訂、ヘルプデスクの公表</li>
@@ -3108,37 +3117,28 @@ html.drawer-open { overflow: hidden; }
   </div>
 </section>
 
-<section class="chapter view" id="sources" data-group="updates" data-title="出典・原本">
+<section class="chapter view" id="sources" data-group="updates" data-title="資料リンク集">
   <header>
     <div class="ch-no">更新情報</div>
-    <h2>出典・原本</h2>
-    <p class="ch-lead">この資料の根拠にした一次資料です。本文中の「GL」はこども性暴力防止法施行ガイドライン（2026年9月改訂版、頁は印字頁）、「Q&amp;A」はこども性暴力防止法に関するQ&amp;A（2026年9月29日改訂版）を指します。判断に迷うときは必ず原本を確認してください。</p>
+    <h2>資料リンク集</h2>
+    <p class="ch-lead">本文中の「GL」は施行ガイドライン（令和8年9月改訂版、頁は印字頁）、「Q&amp;A」はQ&amp;A（令和8年9月29日改訂版）です。判断に迷うときは必ず原本を確認してください。</p>
   </header>
-  <ul class="srcs">
-    <li><span class="k">入口</span><span><a href="https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou" target="_blank" rel="noopener">こども家庭庁 こども性暴力防止法（すべての通知・資料の一覧）</a></span></li>
-    <li><span class="k">法律</span><span><a href="https://laws.e-gov.go.jp/law/506AC0000000069" target="_blank" rel="noopener">学校設置者等及び民間教育保育等事業者による児童対象性暴力等の防止等のための措置に関する法律（e-Gov）</a></span></li>
-    <li><span class="k">政令</span><span><a href="https://laws.e-gov.go.jp/law/507CO0000000440" target="_blank" rel="noopener">同法施行令（令和7年政令第440号）</a></span></li>
-    <li><span class="k">府令</span><span><a href="https://laws.e-gov.go.jp/law/507M60000002104" target="_blank" rel="noopener">同法施行規則（令和7年内閣府令第104号）</a></span></li>
-    <li><span class="k">GL</span><span><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/abc50df0/20260901_policies_child-safety_efforts_koseibouhou_72.pdf" target="_blank" rel="noopener">こども性暴力防止法施行ガイドライン（令和8年9月改訂）</a>／<a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/db530b67/20260908_policies_child-safety_efforts_koseibouhou_86.pdf" target="_blank" rel="noopener">改訂の概要</a></span></li>
-    <li><span class="k">Q&amp;A</span><span><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/379c2e9b/20260929_policies_child-safety_efforts_koseibouhou_100.pdf" target="_blank" rel="noopener">こども性暴力防止法に関するQ&amp;A（令和8年9月29日改訂）</a></span></li>
-    <li><span class="k">準備ガイド</span><span><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/51c45b26/20261023_policies_child-safety_efforts_koseibouhou_106.pdf" target="_blank" rel="noopener">義務事業者用準備ガイド Ver.1.2（2026年10月23日）</a>／<a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/19360ccf/20261023_policies_child-safety_efforts_koseibouhou_107.pdf" target="_blank" rel="noopener">参考資料</a></span></li>
-    <li><span class="k">分散申請</span><span><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/e8991b29/20260708_policies_child-safety_efforts_koseibouhou_54.pdf" target="_blank" rel="noopener">施行時現職者の分散方法について（2026年7月8日）</a>／<a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/471ac2c5/20260708_policies_child-safety_efforts_koseibouhou_57.pdf" target="_blank" rel="noopener">分散申請Q&amp;A</a></span></li>
-    <li><span class="k">監督</span><span><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/d03e3f90/20261001_policies_child-safety_efforts_koseibouhou_102.pdf" target="_blank" rel="noopener">監督等指針 別添1（犯罪事実確認実施者等、2026年10月1日）</a></span></li>
-    <li><span class="k">システム</span><span><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4cef2a90-9689-43d9-868d-ab445acdbce1/d6d50e73/20260828_councils_koseibo-jumbi_4cef2a90_28.pdf" target="_blank" rel="noopener">こまもろうシステム 義務事業者向けマニュアル（素案）</a>／<a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4cef2a90-9689-43d9-868d-ab445acdbce1/6f49120d/20260824_councils_koseibo-jumbi_4cef2a90_12.pdf" target="_blank" rel="noopener">従事者向け（素案）</a>／<a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4cef2a90-9689-43d9-868d-ab445acdbce1/490bf906/20260828_councils_koseibo-jumbi_4cef2a90_29.pdf" target="_blank" rel="noopener">認定事業者向け（素案）</a></span></li>
-    <li><span class="k">まとめ登録</span><span><a href="https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/matometouroku" target="_blank" rel="noopener">まとめ登録のページ（マニュアル・Q&amp;A）</a>／<a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1793a109-87b3-479f-8c60-46949bd0da3a/9aef20ed/20260830_policies_child-safety_efforts_koseibouhou_matometouroku_25.pdf" target="_blank" rel="noopener">テストメール配信等の周知依頼（こ支性第108号）</a></span></li>
-    <li><span class="k">戸籍</span><span><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/d4ac9164/20260929_policies_child-safety_efforts_koseibouhou_92.pdf" target="_blank" rel="noopener">戸籍関係事務について（こ支性第128号、2026年9月29日）</a></span></li>
-    <li><span class="k">ひな型</span><span><a href="https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/hinagata" target="_blank" rel="noopener">ひな型・参考例リンク集</a></span></li>
-    <li><span class="k">研修</span><span><a href="https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/jujisya" target="_blank" rel="noopener">従事者向け研修教材</a>／<a href="https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/jigyousya" target="_blank" rel="noopener">事業者向け解説動画・資料</a></span></li>
-    <li><span class="k">説明会</span><span><a href="https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/information-session-r8" target="_blank" rel="noopener">令和8年度 事業者向け全国説明会</a></span></li>
-    <li><span class="k">相談</span><span><a href="https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/security-specialist" target="_blank" rel="noopener">情報セキュリティの専門家への相談</a></span></li>
-    <li><span class="k">福岡県</span><span><a href="https://www.pref.fukuoka.lg.jp/contents/kodomoseibouryokubousihou.html" target="_blank" rel="noopener">こども性暴力防止法について（保育所、認定こども園、児童館の皆様へ）</a>／<a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/298447.pdf" target="_blank" rel="noopener">全国説明会資料（県掲載版）</a></span></li>
-    <li><span class="k">自治体</span><span><a href="https://www.pref.kanagawa.jp/documents/134496/child-safety-b-qa.pdf" target="_blank" rel="noopener">神奈川県 説明会質疑応答</a>／<a href="https://www.pref.saitama.lg.jp/a0605/seihigaibousi/seihigaibousi.html" target="_blank" rel="noopener">埼玉県（障害児支援）</a>／<a href="https://www.pref.osaka.lg.jp/o090080/kodomoseibouryokuboushihou.html" target="_blank" rel="noopener">大阪府（障がい福祉）</a>／<a href="https://www.city.sapporo.jp/shogaifukushi/kodomoseiboryokubosiho.html" target="_blank" rel="noopener">札幌市（障がい福祉）</a>／<a href="https://www.pref.aichi.jp/soshiki/shogai/seibouryokuboushi.html" target="_blank" rel="noopener">愛知県（障害福祉）</a></span></li>
-    <li><span class="k">国会</span><span><a href="https://www.sangiin.go.jp/japanese/gianjoho/ketsugi/213/f063_061801_1.pdf" target="_blank" rel="noopener">参議院内閣委員会 附帯決議（2024年6月18日）</a></span></li>
-    <li><span class="k">業界団体</span><span><a href="https://www.cfa.go.jp/councils/koseibo-jumbi/57f4ac43" target="_blank" rel="noopener">施行準備検討会 第6回（日本知的障害者福祉協会・全国児童発達支援協議会など）</a>／<a href="https://www.cfa.go.jp/councils/koseibo-jumbi/b2491342" target="_blank" rel="noopener">第5回（保育三団体・認定こども園3団体・全国児童養護施設協議会など）</a></span></li>
-  </ul>
+<label class="lk-find" for="lk-q"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><input type="search" id="lk-q" placeholder="資料名・日付で探す（例：説明会　10/15）" aria-label="資料名・日付で探す" autocomplete="off" enterkeyhint="search"></label>
+<div class="lk" id="lk">
+<div class="lk-g"><h3 class="lk-h">法令・ガイドライン・Q&amp;A</h3><ul class="lk-l"><li class="lk-i" data-q="こども家庭庁 こども性暴力防止法（すべての通知・資料の一覧）"><span class="lk-d"></span><span class="lk-b"><a href="https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou" target="_blank" rel="noopener">こども家庭庁 こども性暴力防止法（すべての通知・資料の一覧）</a></span></li><li class="lk-i" data-q="学校設置者等及び民間教育保育等事業者による児童対象性暴力等の防止等のための措置に関する法律（令和6年法律第69号）"><span class="lk-d"></span><span class="lk-b"><a href="https://laws.e-gov.go.jp/law/506AC0000000069" target="_blank" rel="noopener">学校設置者等及び民間教育保育等事業者による児童対象性暴力等の防止等のための措置に関する法律（令和6年法律第69号）</a></span></li><li class="lk-i" data-q="同法施行令（令和7年政令第440号）"><span class="lk-d"></span><span class="lk-b"><a href="https://laws.e-gov.go.jp/law/507CO0000000440" target="_blank" rel="noopener">同法施行令（令和7年政令第440号）</a></span></li><li class="lk-i" data-q="同法施行規則（令和7年内閣府令第104号）"><span class="lk-d"></span><span class="lk-b"><a href="https://laws.e-gov.go.jp/law/507M60000002104" target="_blank" rel="noopener">同法施行規則（令和7年内閣府令第104号）</a></span></li><li class="lk-i" data-q="こども性暴力防止法施行ガイドライン（令和8年9月改訂） 本文中の「GL」。頁は印字頁 2026-09-01 2026.09.01 2026/9/1 9/1 9月1日 2026年9月1日 2026年9月 PDF"><span class="lk-d">2026.09.01</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/abc50df0/20260901_policies_child-safety_efforts_koseibouhou_72.pdf" target="_blank" rel="noopener">こども性暴力防止法施行ガイドライン（令和8年9月改訂）</a><span class="lk-ty">PDF</span><span class="lk-n">本文中の「GL」。頁は印字頁</span></span></li><li class="lk-i" data-q="施行ガイドライン 改訂の概要 2026-09-08 2026.09.08 2026/9/8 9/8 9月8日 2026年9月8日 2026年9月 PDF"><span class="lk-d">2026.09.08</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/db530b67/20260908_policies_child-safety_efforts_koseibouhou_86.pdf" target="_blank" rel="noopener">施行ガイドライン 改訂の概要</a><span class="lk-ty">PDF</span></span></li><li class="lk-i" data-q="こども性暴力防止法に関するQ&amp;A（令和8年9月29日改訂） 本文中の「Q&amp;A」 2026-09-29 2026.09.29 2026/9/29 9/29 9月29日 2026年9月29日 2026年9月 PDF 9/29"><span class="lk-d">2026.09.29</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/379c2e9b/20260929_policies_child-safety_efforts_koseibouhou_100.pdf" target="_blank" rel="noopener">こども性暴力防止法に関するQ&amp;A（令和8年9月29日改訂）</a><span class="lk-ty">PDF</span><span class="lk-n">本文中の「Q&amp;A」</span></span></li><li class="lk-i" data-q="こども性暴力防止法に関するQ&amp;A（令和8年9月18日改訂） 9月29日改訂版の前の版 2026-09-18 2026.09.18 2026/9/18 9/18 9月18日 2026年9月18日 2026年9月 PDF 9/18 9/29"><span class="lk-d">2026.09.18</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/bd3ee897/20260918_policies_child-safety_efforts_koseibouhou_90.pdf" target="_blank" rel="noopener">こども性暴力防止法に関するQ&amp;A（令和8年9月18日改訂）</a><span class="lk-ty">PDF</span><span class="lk-n">9月29日改訂版の前の版</span></span></li><li class="lk-i" data-q="義務事業者用準備ガイド Ver.1.2 2026-10-23 2026.10.23 2026/10/23 10/23 10月23日 2026年10月23日 2026年10月 PDF"><span class="lk-d">2026.10.23</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/51c45b26/20261023_policies_child-safety_efforts_koseibouhou_106.pdf" target="_blank" rel="noopener">義務事業者用準備ガイド Ver.1.2</a><span class="lk-ty">PDF</span></span></li><li class="lk-i" data-q="義務事業者用準備ガイド Ver.1.2 参考資料 2026-10-23 2026.10.23 2026/10/23 10/23 10月23日 2026年10月23日 2026年10月 PDF"><span class="lk-d">2026.10.23</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/19360ccf/20261023_policies_child-safety_efforts_koseibouhou_107.pdf" target="_blank" rel="noopener">義務事業者用準備ガイド Ver.1.2 参考資料</a><span class="lk-ty">PDF</span></span></li><li class="lk-i" data-q="義務事業者用準備ガイド（初版） Ver.1.2の前の版 2026-07-17 2026.07.17 2026/7/17 7/17 7月17日 2026年7月17日 2026年7月 PDF"><span class="lk-d">2026.07.17</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/49761f84/20260717_policies_child-safety_efforts_koseibouhou_64.pdf" target="_blank" rel="noopener">義務事業者用準備ガイド（初版）</a><span class="lk-ty">PDF</span><span class="lk-n">Ver.1.2の前の版</span></span></li><li class="lk-i" data-q="監督等指針 別添1（犯罪事実確認実施者等） 2026-10-01 2026.10.01 2026/10/1 10/1 10月1日 2026年10月1日 2026年10月 PDF"><span class="lk-d">2026.10.01</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/d03e3f90/20261001_policies_child-safety_efforts_koseibouhou_102.pdf" target="_blank" rel="noopener">監督等指針 別添1（犯罪事実確認実施者等）</a><span class="lk-ty">PDF</span></span></li><li class="lk-i" data-q="施行規則第12条第2項第2号の規定に基づきこども家庭庁長官が定める措置（令和7年こども家庭庁告示第10号） 情報管理規程に関係する告示 2025-12-25 2025.12.25 2025/12/25 12/25 12月25日 2025年12月25日 2025年12月 PDF"><span class="lk-d">2025.12.25</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/8e825407/20251225_policies_child-safety_efforts_koseibouhou_19.pdf" target="_blank" rel="noopener">施行規則第12条第2項第2号の規定に基づきこども家庭庁長官が定める措置（令和7年こども家庭庁告示第10号）</a><span class="lk-ty">PDF</span><span class="lk-n">情報管理規程に関係する告示</span></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">関連する法律</h3><ul class="lk-l"><li class="lk-i" data-q="障害者虐待の防止、障害者の養護者に対する支援等に関する法律（平成23年法律第79号） 障害福祉の事業所で事案が起きたときの通報先（16条）"><span class="lk-d"></span><span class="lk-b"><a href="https://laws.e-gov.go.jp/law/423AC1000000079" target="_blank" rel="noopener">障害者虐待の防止、障害者の養護者に対する支援等に関する法律（平成23年法律第79号）</a><span class="lk-n">障害福祉の事業所で事案が起きたときの通報先（16条）</span></span></li><li class="lk-i" data-q="児童福祉法（昭和22年法律第164号）"><span class="lk-d"></span><span class="lk-b"><a href="https://laws.e-gov.go.jp/law/322AC0000000164" target="_blank" rel="noopener">児童福祉法（昭和22年法律第164号）</a></span></li><li class="lk-i" data-q="就学前の子どもに関する教育、保育等の総合的な提供の推進に関する法律（認定こども園法、平成18年法律第77号）"><span class="lk-d"></span><span class="lk-b"><a href="https://laws.e-gov.go.jp/law/418AC0000000077" target="_blank" rel="noopener">就学前の子どもに関する教育、保育等の総合的な提供の推進に関する法律（認定こども園法、平成18年法律第77号）</a></span></li><li class="lk-i" data-q="教育職員等による児童生徒性暴力等の防止等に関する法律（令和3年法律第57号）"><span class="lk-d"></span><span class="lk-b"><a href="https://laws.e-gov.go.jp/law/503AC0000000057" target="_blank" rel="noopener">教育職員等による児童生徒性暴力等の防止等に関する法律（令和3年法律第57号）</a></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">通知</h3><ul class="lk-l"><li class="lk-i" data-q="自治体あての通知「こども性暴力防止法の施行に向けたお願い」 2026-10-23 2026.10.23 2026/10/23 10/23 10月23日 2026年10月23日 2026年10月 PDF"><span class="lk-d">2026.10.23</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/fec451cc/20261023_policies_child-safety_efforts_koseibouhou_109.pdf" target="_blank" rel="noopener">自治体あての通知「こども性暴力防止法の施行に向けたお願い」</a><span class="lk-ty">PDF</span></span></li><li class="lk-i" data-q="戸籍関係事務について（こ支性第128号） 2026-09-29 2026.09.29 2026/9/29 9/29 9月29日 2026年9月29日 2026年9月 PDF"><span class="lk-d">2026.09.29</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/d4ac9164/20260929_policies_child-safety_efforts_koseibouhou_92.pdf" target="_blank" rel="noopener">戸籍関係事務について（こ支性第128号）</a><span class="lk-ty">PDF</span></span></li><li class="lk-i" data-q="テストメール配信等の周知依頼（こ支性第108号） 2026-08-30 2026.08.30 2026/8/30 8/30 8月30日 2026年8月30日 2026年8月 PDF"><span class="lk-d">2026.08.30</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1793a109-87b3-479f-8c60-46949bd0da3a/9aef20ed/20260830_policies_child-safety_efforts_koseibouhou_matometouroku_25.pdf" target="_blank" rel="noopener">テストメール配信等の周知依頼（こ支性第108号）</a><span class="lk-ty">PDF</span></span></li><li class="lk-i" data-q="施行時現職者の分散方法について（こ支性第63号） 2026-07-08 2026.07.08 2026/7/8 7/8 7月8日 2026年7月8日 2026年7月 PDF"><span class="lk-d">2026.07.08</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/e8991b29/20260708_policies_child-safety_efforts_koseibouhou_54.pdf" target="_blank" rel="noopener">施行時現職者の分散方法について（こ支性第63号）</a><span class="lk-ty">PDF</span></span></li><li class="lk-i" data-q="施行時現職者の分散申請に関するQ&amp;A 2026-07-08 2026.07.08 2026/7/8 7/8 7月8日 2026年7月8日 2026年7月 PDF"><span class="lk-d">2026.07.08</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/471ac2c5/20260708_policies_child-safety_efforts_koseibouhou_57.pdf" target="_blank" rel="noopener">施行時現職者の分散申請に関するQ&amp;A</a><span class="lk-ty">PDF</span></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">システム・まとめ登録</h3><ul class="lk-l"><li class="lk-i" data-q="まとめ登録のページ（マニュアル・Q&amp;A）"><span class="lk-d"></span><span class="lk-b"><a href="https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/matometouroku" target="_blank" rel="noopener">まとめ登録のページ（マニュアル・Q&amp;A）</a></span></li><li class="lk-i" data-q="まとめ登録の提出期限延長について（周知）（こ支性第85号） 4月以降に新設された施設・事業所は随時提出できる 2026-07-29 2026.07.29 2026/7/29 7/29 7月29日 2026年7月29日 2026年7月 PDF"><span class="lk-d">2026.07.29</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1793a109-87b3-479f-8c60-46949bd0da3a/bf0be2b7/20260724_policies_child-safety_efforts_koseibouhou_matometouroku_24.pdf" target="_blank" rel="noopener">まとめ登録の提出期限延長について（周知）（こ支性第85号）</a><span class="lk-ty">PDF</span><span class="lk-n">4月以降に新設された施設・事業所は随時提出できる</span></span></li><li class="lk-i" data-q="こまもろうシステム 義務事業者向けマニュアル（素案） 2026-08-28 2026.08.28 2026/8/28 8/28 8月28日 2026年8月28日 2026年8月 PDF"><span class="lk-d">2026.08.28</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4cef2a90-9689-43d9-868d-ab445acdbce1/d6d50e73/20260828_councils_koseibo-jumbi_4cef2a90_28.pdf" target="_blank" rel="noopener">こまもろうシステム 義務事業者向けマニュアル（素案）</a><span class="lk-ty">PDF</span></span></li><li class="lk-i" data-q="こまもろうシステム 認定事業者向けマニュアル（素案） 2026-08-28 2026.08.28 2026/8/28 8/28 8月28日 2026年8月28日 2026年8月 PDF"><span class="lk-d">2026.08.28</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4cef2a90-9689-43d9-868d-ab445acdbce1/490bf906/20260828_councils_koseibo-jumbi_4cef2a90_29.pdf" target="_blank" rel="noopener">こまもろうシステム 認定事業者向けマニュアル（素案）</a><span class="lk-ty">PDF</span></span></li><li class="lk-i" data-q="こまもろうシステム 従事者向けマニュアル（素案） 2026-08-24 2026.08.24 2026/8/24 8/24 8月24日 2026年8月24日 2026年8月 PDF"><span class="lk-d">2026.08.24</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4cef2a90-9689-43d9-868d-ab445acdbce1/6f49120d/20260824_councils_koseibo-jumbi_4cef2a90_12.pdf" target="_blank" rel="noopener">こまもろうシステム 従事者向けマニュアル（素案）</a><span class="lk-ty">PDF</span></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">ひな型・研修教材・相談</h3><ul class="lk-l"><li class="lk-i" data-q="ひな型・参考例リンク集"><span class="lk-d"></span><span class="lk-b"><a href="https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/hinagata" target="_blank" rel="noopener">ひな型・参考例リンク集</a></span></li><li class="lk-i" data-q="従事者向け研修教材（研修資料・演習資料・確認テスト・手引き・記録様式）"><span class="lk-d"></span><span class="lk-b"><a href="https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/jujisya" target="_blank" rel="noopener">従事者向け研修教材（研修資料・演習資料・確認テスト・手引き・記録様式）</a></span></li><li class="lk-i" data-q="従事者向け 標準研修動画（再生リスト・約90分） 動画"><span class="lk-d"></span><span class="lk-b"><a href="https://www.youtube.com/playlist?list=PLlQ7HtehdR3Lw0MnIF2kMrT-MrxcABcQr" target="_blank" rel="noopener">従事者向け 標準研修動画（再生リスト・約90分）</a><span class="lk-ty">動画</span></span></li><li class="lk-i" data-q="従事者向け 要点研修動画（約17分） 動画"><span class="lk-d"></span><span class="lk-b"><a href="https://youtu.be/tK5ZpsTwRs0" target="_blank" rel="noopener">従事者向け 要点研修動画（約17分）</a><span class="lk-ty">動画</span></span></li><li class="lk-i" data-q="事業者向け解説動画・資料（応用編：聴き取り、被害児への対応、保護者対応、防止措置と労働法制、情報管理措置）"><span class="lk-d"></span><span class="lk-b"><a href="https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/jigyousya" target="_blank" rel="noopener">事業者向け解説動画・資料（応用編：聴き取り、被害児への対応、保護者対応、防止措置と労働法制、情報管理措置）</a></span></li><li class="lk-i" data-q="事業者向け 解説動画 基礎編（再生リスト） 動画"><span class="lk-d"></span><span class="lk-b"><a href="https://www.youtube.com/playlist?list=PLlQ7HtehdR3JIMDFmG0DFVHR4R5qb6CT9" target="_blank" rel="noopener">事業者向け 解説動画 基礎編（再生リスト）</a><span class="lk-ty">動画</span></span></li><li class="lk-i" data-q="弁護士向け 解説資料 2026-10-21 2026.10.21 2026/10/21 10/21 10月21日 2026年10月21日 2026年10月 PDF"><span class="lk-d">2026.10.21</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/3e5497ff/20261021_policies_child-safety_efforts_koseibouhou_104.pdf" target="_blank" rel="noopener">弁護士向け 解説資料</a><span class="lk-ty">PDF</span></span></li><li class="lk-i" data-q="心理職向け 解説資料 2026-10-21 2026.10.21 2026/10/21 10/21 10月21日 2026年10月21日 2026年10月 PDF"><span class="lk-d">2026.10.21</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/65be32e8/20261021_policies_child-safety_efforts_koseibouhou_105.pdf" target="_blank" rel="noopener">心理職向け 解説資料</a><span class="lk-ty">PDF</span></span></li><li class="lk-i" data-q="こども家庭庁・日本弁護士連合会「弁護士向け研修会」アーカイブ（10月2日） 10/2"><span class="lk-d"></span><span class="lk-b"><a href="https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/lawyer-archive" target="_blank" rel="noopener">こども家庭庁・日本弁護士連合会「弁護士向け研修会」アーカイブ（10月2日）</a></span></li><li class="lk-i" data-q="コドモンカレッジ／ほいくis による国の研修教材の再配信"><span class="lk-d"></span><span class="lk-b"><a href="https://hoiku-is.jp/seminar/special/koseibouhou-jujisya/" target="_blank" rel="noopener">コドモンカレッジ／ほいくis による国の研修教材の再配信</a></span></li><li class="lk-i" data-q="情報セキュリティの専門家への相談（1事業者1時間まで無料） 2026-10-01 2026.10.01 2026/10/1 10/1 10月1日 2026年10月1日 2026年10月"><span class="lk-d">2026.10.01</span><span class="lk-b"><a href="https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/security-specialist" target="_blank" rel="noopener">情報セキュリティの専門家への相談（1事業者1時間まで無料）</a></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">全国説明会</h3><ul class="lk-l"><li class="lk-i" data-q="令和8年度 事業者向け全国説明会（日程・申込・アーカイブ）"><span class="lk-d"></span><span class="lk-b"><a href="https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/information-session-r8" target="_blank" rel="noopener">令和8年度 事業者向け全国説明会（日程・申込・アーカイブ）</a></span></li><li class="lk-i" data-q="全国説明会 共通の説明資料（約11MB） 全会場共通の資料（福岡会場 10月15日を含む） 2026-09-16 2026.09.16 2026/9/16 9/16 9月16日 2026年9月16日 2026年9月 PDF 10/15"><span class="lk-d">2026.09.16</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/60c23b17-4fa3-43ad-9438-0fe1cc64b9f9/6933a19d/20260916_policies_child-safety_efforts_koseibouhou_information-session-r8_13.pdf" target="_blank" rel="noopener">全国説明会 共通の説明資料（約11MB）</a><span class="lk-ty">PDF</span><span class="lk-n">全会場共通の資料（福岡会場 10月15日を含む）</span></span></li><li class="lk-i" data-q="全国説明会 京都会場（9月3日）アーカイブ 動画 9/3"><span class="lk-d"></span><span class="lk-b"><a href="https://www.youtube.com/watch?v=NUjMu_gY7Jw" target="_blank" rel="noopener">全国説明会 京都会場（9月3日）アーカイブ</a><span class="lk-ty">動画</span></span></li><li class="lk-i" data-q="令和7年度 全国説明会 東京会場（2026年2月13日）アーカイブ 「就業規則改正等の事前準備の留意点」などの資料も掲載 動画 2/13"><span class="lk-d"></span><span class="lk-b"><a href="https://www.youtube.com/watch?v=oxvWQUF6SWE" target="_blank" rel="noopener">令和7年度 全国説明会 東京会場（2026年2月13日）アーカイブ</a><span class="lk-ty">動画</span><span class="lk-n">「就業規則改正等の事前準備の留意点」などの資料も掲載</span></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">福岡県・福岡市</h3><ul class="lk-l"><li class="lk-i" data-q="福岡県 こども性暴力防止法について（保育所、認定こども園、児童館の皆様へ）"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/contents/kodomoseibouryokubousihou.html" target="_blank" rel="noopener">福岡県 こども性暴力防止法について（保育所、認定こども園、児童館の皆様へ）</a></span></li><li class="lk-i" data-q="福岡県 全国説明会資料（県掲載版） PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/298447.pdf" target="_blank" rel="noopener">福岡県 全国説明会資料（県掲載版）</a><span class="lk-ty">PDF</span></span></li><li class="lk-i" data-q="福岡県 令和8年度 集団指導（障がい児 通所・入所） 集団指導資料に制度の説明を掲載 2026-09-04 2026.09.04 2026/9/4 9/4 9月4日 2026年9月4日 2026年9月"><span class="lk-d">2026.09.04</span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/contents/-contents-yudanr8.html" target="_blank" rel="noopener">福岡県 令和8年度 集団指導（障がい児 通所・入所）</a><span class="lk-n">集団指導資料に制度の説明を掲載</span></span></li><li class="lk-i" data-q="福岡市 こども性暴力防止法について"><span class="lk-d"></span><span class="lk-b"><a href="https://kodomo.city.fukuoka.lg.jp/info/31954/" target="_blank" rel="noopener">福岡市 こども性暴力防止法について</a></span></li><li class="lk-i" data-q="福岡市 障がい児支援の事業者向けページ"><span class="lk-d"></span><span class="lk-b"><a href="https://www.city.fukuoka.lg.jp/kodomo-mirai/jigyosyo/health/syogaij-sien/index.html" target="_blank" rel="noopener">福岡市 障がい児支援の事業者向けページ</a></span></li><li class="lk-i" data-q="福岡県 届出保育施設における性被害防止対策に係る設備等支援事業費補助金（令和8年度） 北九州市・福岡市・久留米市の施設は対象外。交付申請の期限は10月13日 10/13"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/contents/todokedehoiku-seihigai.html" target="_blank" rel="noopener">福岡県 届出保育施設における性被害防止対策に係る設備等支援事業費補助金（令和8年度）</a><span class="lk-n">北九州市・福岡市・久留米市の施設は対象外。交付申請の期限は10月13日</span></span></li><li class="lk-i" data-q="福岡県 同補助金の交付要綱 PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/296008.pdf" target="_blank" rel="noopener">福岡県 同補助金の交付要綱</a><span class="lk-ty">PDF</span></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">ほかの自治体</h3><ul class="lk-l"><li class="lk-i" data-q="神奈川県 義務対象事業者向けオンライン説明会（7月30・31日）アーカイブと質疑応答"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.kanagawa.jp/docs/sy8/child-safety-b.html" target="_blank" rel="noopener">神奈川県 義務対象事業者向けオンライン説明会（7月30・31日）アーカイブと質疑応答</a></span></li><li class="lk-i" data-q="神奈川県 説明会の質疑応答 PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.kanagawa.jp/documents/134496/child-safety-b-qa.pdf" target="_blank" rel="noopener">神奈川県 説明会の質疑応答</a><span class="lk-ty">PDF</span></span></li><li class="lk-i" data-q="埼玉県 こども性暴力防止法（障害児支援）"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.saitama.lg.jp/a0605/seihigaibousi/seihigaibousi.html" target="_blank" rel="noopener">埼玉県 こども性暴力防止法（障害児支援）</a></span></li><li class="lk-i" data-q="大阪府 こども性暴力防止法（障がい福祉）"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.osaka.lg.jp/o090080/kodomoseibouryokuboushihou.html" target="_blank" rel="noopener">大阪府 こども性暴力防止法（障がい福祉）</a></span></li><li class="lk-i" data-q="札幌市 こども性暴力防止法（障がい福祉）"><span class="lk-d"></span><span class="lk-b"><a href="https://www.city.sapporo.jp/shogaifukushi/kodomoseiboryokubosiho.html" target="_blank" rel="noopener">札幌市 こども性暴力防止法（障がい福祉）</a></span></li><li class="lk-i" data-q="愛知県 こども性暴力防止法（障害福祉）"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.aichi.jp/soshiki/shogai/seibouryokuboushi.html" target="_blank" rel="noopener">愛知県 こども性暴力防止法（障害福祉）</a></span></li><li class="lk-i" data-q="兵庫県 説明会の見逃し配信（義務対象・認定検討事業者向け）"><span class="lk-d"></span><span class="lk-b"><a href="https://web.pref.hyogo.lg.jp/kf11/dbs.html" target="_blank" rel="noopener">兵庫県 説明会の見逃し配信（義務対象・認定検討事業者向け）</a></span></li><li class="lk-i" data-q="横浜市 戸籍電子証明書提供用識別符号 手数料は1件400円。同じ戸籍の証明書と同時に請求すれば無料"><span class="lk-d"></span><span class="lk-b"><a href="https://www.city.yokohama.lg.jp/kurashi/koseki-zei-hoken/todokede/koseki-juminhyo/shoumei/hugo.html" target="_blank" rel="noopener">横浜市 戸籍電子証明書提供用識別符号</a><span class="lk-n">手数料は1件400円。同じ戸籍の証明書と同時に請求すれば無料</span></span></li><li class="lk-i" data-q="神戸市 こども性暴力防止法に関するお知らせ 7月以降に新規指定の事業所は、指定後10日以内にまとめ登録の情報を提出"><span class="lk-d"></span><span class="lk-b"><a href="https://www.city.kobe.lg.jp/a20315/business/annaitsuchi/shogaifukushi/shinse/komamorousystem.html" target="_blank" rel="noopener">神戸市 こども性暴力防止法に関するお知らせ</a><span class="lk-n">7月以降に新規指定の事業所は、指定後10日以内にまとめ登録の情報を提出</span></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">国会・施行準備検討会・予算</h3><ul class="lk-l"><li class="lk-i" data-q="参議院内閣委員会 附帯決議 2024-06-18 2024.06.18 2024/6/18 6/18 6月18日 2024年6月18日 2024年6月 PDF"><span class="lk-d">2024.06.18</span><span class="lk-b"><a href="https://www.sangiin.go.jp/japanese/gianjoho/ketsugi/213/f063_061801_1.pdf" target="_blank" rel="noopener">参議院内閣委員会 附帯決議</a><span class="lk-ty">PDF</span></span></li><li class="lk-i" data-q="施行準備検討会 第6回（日本知的障害者福祉協会・全国児童発達支援協議会などのヒアリング）"><span class="lk-d"></span><span class="lk-b"><a href="https://www.cfa.go.jp/councils/koseibo-jumbi/57f4ac43" target="_blank" rel="noopener">施行準備検討会 第6回（日本知的障害者福祉協会・全国児童発達支援協議会などのヒアリング）</a></span></li><li class="lk-i" data-q="施行準備検討会 第5回（保育三団体・認定こども園3団体・全国児童養護施設協議会などのヒアリング）"><span class="lk-d"></span><span class="lk-b"><a href="https://www.cfa.go.jp/councils/koseibo-jumbi/b2491342" target="_blank" rel="noopener">施行準備検討会 第5回（保育三団体・認定こども園3団体・全国児童養護施設協議会などのヒアリング）</a></span></li><li class="lk-i" data-q="施行準備検討会 第12回 2026-04-23 2026.04.23 2026/4/23 4/23 4月23日 2026年4月23日 2026年4月"><span class="lk-d">2026.04.23</span><span class="lk-b"><a href="https://www.cfa.go.jp/councils/koseibo-jumbi/c2838492" target="_blank" rel="noopener">施行準備検討会 第12回</a></span></li><li class="lk-i" data-q="こども性暴力防止法に基づく防止措置と労働法制等を踏まえた留意点（第12回 資料5-8、益原大亮弁護士） 自宅待機中の賃金の扱いなど 2026-04-23 2026.04.23 2026/4/23 4/23 4月23日 2026年4月23日 2026年4月 PDF"><span class="lk-d">2026.04.23</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/c2838492-59b8-4ab9-baf8-d7088bd813fa/fe94fbc0/20260423_councils_koseibo-jumbi_c2838492_16.pdf" target="_blank" rel="noopener">こども性暴力防止法に基づく防止措置と労働法制等を踏まえた留意点（第12回 資料5-8、益原大亮弁護士）</a><span class="lk-ty">PDF</span><span class="lk-n">自宅待機中の賃金の扱いなど</span></span></li><li class="lk-i" data-q="施行準備委員会 第3回 2025-12-26 2025.12.26 2025/12/26 12/26 12月26日 2025年12月26日 2025年12月"><span class="lk-d">2025.12.26</span><span class="lk-b"><a href="https://www.cfa.go.jp/councils/koseibo-preparation-committee/03" target="_blank" rel="noopener">施行準備委員会 第3回</a></span></li><li class="lk-i" data-q="こども性暴力防止法の施行関係予算（令和8年度当初予算案＋令和7年度補正予算） 第3回 参考資料4 2025-12-26 2025.12.26 2025/12/26 12/26 12月26日 2025年12月26日 2025年12月 PDF"><span class="lk-d">2025.12.26</span><span class="lk-b"><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4df347a3-4811-4ec4-9535-9a50ec757f2c/0945e325/20251226_councils_koseibo-preparation-committee_03_09.pdf" target="_blank" rel="noopener">こども性暴力防止法の施行関係予算（令和8年度当初予算案＋令和7年度補正予算）</a><span class="lk-ty">PDF</span><span class="lk-n">第3回 参考資料4</span></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">研修・セミナーの告知</h3><ul class="lk-l"><li class="lk-i" data-q="【12/25施行】日本版DBS 年内の12項目、AIに任せられるのはどこまで？（保育施設向け）（株式会社カタグルマ） 2026-10-28 2026.10.28 2026/10/28 10/28 10月28日 2026年10月28日 2026年10月"><span class="lk-d">2026.10.28</span><span class="lk-b"><a href="https://prtimes.jp/main/html/rd/p/000000052.000079446.html" target="_blank" rel="noopener">【12/25施行】日本版DBS 年内の12項目、AIに任せられるのはどこまで？（保育施設向け）（株式会社カタグルマ）</a></span></li><li class="lk-i" data-q="放課後デイが日本版DBSに対応するには？ 施行に向けて今から備えること（株式会社テラセル（療育のミカタ）） 2026-10-28 2026.10.28 2026/10/28 10/28 10月28日 2026年10月28日 2026年10月"><span class="lk-d">2026.10.28</span><span class="lk-b"><a href="https://www.kokuchpro.com/event/196c877b966e57c0cbabb17d3c0956d0/3895394" target="_blank" rel="noopener">放課後デイが日本版DBSに対応するには？ 施行に向けて今から備えること（株式会社テラセル（療育のミカタ））</a></span></li><li class="lk-i" data-q="こどもの「こころ」と「からだ」を守るために園・所でできること（生命の安全教育・性の教育の具体的手法）（静岡県） 2026-10-30 2026.10.30 2026/10/30 10/30 10月30日 2026年10月30日 2026年10月"><span class="lk-d">2026.10.30</span><span class="lk-b"><a href="https://www.pref.shizuoka.jp/kurashikankyo/jinkennpo/jinkencenter/1002889/1075081/1086145.html" target="_blank" rel="noopener">こどもの「こころ」と「からだ」を守るために園・所でできること（生命の安全教育・性の教育の具体的手法）（静岡県）</a></span></li><li class="lk-i" data-q="こども性暴力防止法対策セミナー（社会保険労務士法人FINE） 2026-11-13 2026.11.13 2026/11/13 11/13 11月13日 2026年11月13日 2026年11月"><span class="lk-d">2026.11.13</span><span class="lk-b"><a href="https://www.kokuchpro.com/event/6e8016e255d8822e2328abd446c579ae" target="_blank" rel="noopener">こども性暴力防止法対策セミナー（社会保険労務士法人FINE）</a></span></li><li class="lk-i" data-q="園の信用を守る！個人情報保護セミナー（情報管理措置に関連）（株式会社いちたす） 2026-11-17 2026.11.17 2026/11/17 11/17 11月17日 2026年11月17日 2026年11月"><span class="lk-d">2026.11.17</span><span class="lk-b"><a href="https://ichitasu.co.jp/child-safety" target="_blank" rel="noopener">園の信用を守る！個人情報保護セミナー（情報管理措置に関連）（株式会社いちたす）</a></span></li><li class="lk-i" data-q="性暴力とトラウマを学ぶ ― 理解と支援（参考）（久留米市（男女平等推進センター）） 2026-11-19 2026.11.19 2026/11/19 11/19 11月19日 2026年11月19日 2026年11月"><span class="lk-d">2026.11.19</span><span class="lk-b"><a href="https://www.city.kurume.fukuoka.jp/1100keikaku/2100jinken/3025danjoevent/2026-0914-1120-254.html" target="_blank" rel="noopener">性暴力とトラウマを学ぶ ― 理解と支援（参考）（久留米市（男女平等推進センター））</a></span></li><li class="lk-i" data-q="「これって不適切?」をみんなで考える ― 児発・放課後デイ支援員向け実践ワーク（株式会社テラセル（療育のミカタ）） 2026-12-10 2026.12.10 2026/12/10 12/10 12月10日 2026年12月10日 2026年12月"><span class="lk-d">2026.12.10</span><span class="lk-b"><a href="https://www.kokuchpro.com/event/c5f11a5c93a0a7921ae924f6d52f5f57" target="_blank" rel="noopener">「これって不適切?」をみんなで考える ― 児発・放課後デイ支援員向け実践ワーク（株式会社テラセル（療育のミカタ））</a></span></li><li class="lk-i" data-q="こども性暴力防止法（日本版DBS）の施行に向けて ― 教育・保育事業者に求められる対応（ほいくis（株式会社e-CHANNEL）） 2026-07-03 2026.07.03 2026/7/3 7/3 7月3日 2026年7月3日 2026年7月"><span class="lk-d">2026.07.03</span><span class="lk-b"><a href="https://www.kokuchpro.com/event/ec73be122d642a02f6f6ecba27ab76e6/" target="_blank" rel="noopener">こども性暴力防止法（日本版DBS）の施行に向けて ― 教育・保育事業者に求められる対応（ほいくis（株式会社e-CHANNEL））</a></span></li><li class="lk-i" data-q="キャリアアップ研修（マネジメント）「こども性暴力防止法（日本版DBS）について」（公益社団法人 全国認定こども園研修研究機構） 2026-03-16 2026.03.16 2026/3/16 3/16 3月16日 2026年3月16日 2026年3月"><span class="lk-d">2026.03.16</span><span class="lk-b"><a href="https://kodomoenkikou.or.jp/2026/03/16/careeaup_management20260415/" target="_blank" rel="noopener">キャリアアップ研修（マネジメント）「こども性暴力防止法（日本版DBS）について」（公益社団法人 全国認定こども園研修研究機構）</a></span></li></ul></div>
+<p class="lk-none" hidden>該当する資料はありません。</p></div>
 </section>
 <footer class="foot">
-  <div><b>本文の基準日：2026年10月27日。</b>こども家庭庁の公表資料（施行ガイドライン 2026年9月改訂版、Q&amp;A 9月29日改訂版、準備ガイド Ver.1.2、各通知）と自治体の公開情報をもとに作成しました。<a href="#updates">更新情報</a>と<a href="#events">研修・説明会</a>は毎朝確認しています（最終確認 <span class="js-checked">2026年10月27日</span>）。</div>
+  <div><b>本文の基準日：2026年10月27日。</b>こども家庭庁の公表資料（施行ガイドライン 2026年9月改訂版、Q&amp;A 9月29日改訂版、準備ガイド Ver.1.2、各通知）と自治体の公開情報をもとに作成しました。</div>
   <div>このガイドは<a href="../">福祉情報ウォッチ</a>の特設ページです。</div>
   <div>【整理】【専門家】とした箇所は公式見解ではありません。個別の判断、とくに雇用上の措置は、所轄庁・こども家庭庁の窓口や、弁護士・社会保険労務士に確認してください。法的な助言を目的とした資料ではありません。</div>
 </footer>
@@ -3919,7 +3919,7 @@ GUIDE_DATA.trees.timing = {
     r_i6: { result: "kakunin", pill: "いとま特例 6か月", title: "従事開始から6か月以内に確認すれば足ります", body: "<p>確認までの措置（一対一にさせない・研修・巡回）は3か月の場合と同じです。合併などで承継した人のうち、承継元で確認済みで再確認期限が来ていない人は、研修を受ければ一対一も認められます（GL p.176）。</p>" },
     r_ino: { result: "gai", pill: "特例は使えない", title: "いとま特例は使えません。確認が済むまで対象業務に就かせない", body: "<p>確認が済むまでは、こどもと接しない業務に就いてもらうなどの対応になります。確認なしに従事させると犯罪事実確認義務違反で、事業者名などが公表されます（法17条）。</p>" },
     r_haiten: { result: "gimu", pill: "従事開始まで", title: "新たに対象業務に就く人として、内示の後・異動前に確認します", body: "<p>施行時に対象業務以外の部署にいた人が対象業務に移る場合も「新たに従事する者」です（GL p.169）。予算編成上の制約など、法人の責めによらない事情で内示が直前になった場合に限り、いとま特例の④（直前の異動内示）に当たり得ます。慣行で内示を直前にしている場合は当たりません（GL p.170・173）。</p>" },
-    r_idou: { result: "gai", pill: "再確認不要", title: "同じ法人内の異動なら、確認し直す必要はありません", body: "<p>義務は法人単位です（Q&amp;A応用6-5）。確認前の施行時現職者なら、異動先の対象月がまだなら異動先の時期に、過ぎていれば異動時に確認します。システム上の従事先の更新手順は、施行時に公表されるマニュアルで確認してください。</p>" },
+    r_idou: { result: "gai", pill: "再確認不要", title: "同じ法人内の異動なら、確認し直す必要はありません", body: "<p>義務は法人単位です（Q&amp;A応用6-5）。確認前の施行時現職者なら、異動先の対象月より前なら異動先の時期に、過ぎていれば異動時に確認します。システム上の従事先の更新手順は、施行時に公表されるマニュアルで確認してください。</p>" },
     r_tasha: { result: "gimu", pill: "新規扱い", title: "異なる事業者間の移動なので、新規として確認します", body: "<p>前の法人で確認済みでも、記録は共有できず（法12条）、改めて確認が必要です（Q&amp;A応用3-34）。施行時現職者の扱いにもなりません。研修も改めて受けます。</p>" },
     r_5nen: { result: "gimu", pill: "5年後の年度末", title: "確認日の翌日から5年を経過する日が属する年度の末日までです", body: "<p>例：確認日が2027年10月1日なら、2032年4月1日〜2033年3月31日に再確認します。</p>" },
     r_ret30: { result: "gai", pill: "再確認不要", title: "次の予定確認まで、確認し直す必要はありません", body: "<p>退職から30日以内で記録を廃棄する前に同じ法人へ再就職した場合です（GL p.177）。</p>" },
@@ -3992,8 +3992,8 @@ GUIDE_DATA.qa = [
   { cat: ["時期・期限"], q: "現職の職員の確認は、いつまでにすればよいですか？", a: "<p>2029年12月24日までです。2027年3月までは新規採用者を優先する期間で、現職者は申請しません。2027年4月から2029年6月までの27か月のうち、都道府県ごとに割り当てられた対象月（前後1か月を含め3か月以内。対象月が2027年4月なら4〜6月）に申請します。</p>", src: "法4条3項、令4条、こ支性第63号" },
   { cat: ["時期・期限"], q: "早めに終わらせたいので、対象月より前に現職者を申請できますか？", a: "<p>原則としてできません。割り当てられた月に申請します。休業に入る予定の人など、Q&amp;Aで示された場合には前倒しも認められています。</p>", src: "Q&A基礎6-16、応用6-6-2" },
   { cat: ["時期・期限", "採用・労務"], q: "2027年4月入職予定の新卒者に、12月に内定を出す予定です。扱いは？", a: "<p>12月24日までに内定を出せば「施行時現職者」となり、確認は都道府県の対象月（2027年4月以降）です。12月25日以降の内定なら新規となり、入職日までに確認書を受け取る必要があります。研修はどちらも業務に就く前に受講させます。内定日を境目のために動かすことは勧めない、という専門家の見解もあります。</p>", src: "Q&A基礎6-3、応用6-7-2、GL p.124" },
-  { cat: ["時期・期限"], q: "育児休業中の職員はどうなりますか？", a: "<p>施行時現職者に含まれます。対象月の4か月前の伝達時にまだ休業前なら休業前に戸籍を提出してもらい、休業中が見込まれるなら前倒し申請もできます。施行時から対象月までずっと休業している場合は、復職後速やかに確認します。研修は、こどもと接する業務に戻るまでに受ければよいとされています。</p>", src: "Q&A応用6-6・6-6-2、神奈川県説明会質疑" },
-  { cat: ["時期・期限"], q: "法人内で児童発達支援から放課後等デイサービスへ異動します。確認し直しますか？", a: "<p>同じ法人内なら不要です。確認前の施行時現職者なら、異動先の対象月がまだ来ていなければその時期に、来ていれば異動時に確認します。こどもと接しない部署から対象業務へ移る場合は、新たに従事する人として異動前に確認します。</p>", src: "Q&A応用6-4・6-5、GL p.169" },
+  { cat: ["時期・期限"], q: "育児休業中の職員はどうなりますか？", a: "<p>施行時現職者に含まれます。対象月の4か月前の伝達時に休業に入っていなければ、休業前に戸籍を提出してもらい、休業中が見込まれるなら前倒し申請もできます。施行時から対象月までずっと休業している場合は、復職後速やかに確認します。研修は、こどもと接する業務に戻るまでに受ければよいとされています。</p>", src: "Q&A応用6-6・6-6-2、神奈川県説明会質疑" },
+  { cat: ["時期・期限"], q: "法人内で児童発達支援から放課後等デイサービスへ異動します。確認し直しますか？", a: "<p>同じ法人内なら不要です。確認前の施行時現職者なら、異動先の対象月より前ならその時期に、過ぎていれば異動時に確認します。こどもと接しない部署から対象業務へ移る場合は、新たに従事する人として異動前に確認します。</p>", src: "Q&A応用6-4・6-5、GL p.169" },
   { cat: ["時期・期限"], q: "いとま特例を使うとき、自治体への申請は必要ですか？", a: "<p>必要ありません。「やむを得ない事情」に当たるかは事業者が判断します。交付申請に事情と講じる措置を記載し、事情を証する書類を保存して、定期報告でも報告します。</p>", src: "神奈川県説明会質疑、規則16条3項・32条" },
   { cat: ["時期・期限"], q: "5年ごとの再確認はいつ行いますか？", a: "<p>確認日の翌日から5年を経過する日が属する年度の、初日から末日までに行います。例：確認日が2027年10月1日なら、2032年4月1日〜2033年3月31日です。</p>", src: "法4条4項、GL図表37" },
   { cat: ["時期・期限"], q: "福岡県の申請対象月はいつですか？", a: "<p>公表されていません。各所轄庁には自分の月だけが伝えられます。2027年8〜12月が対象月なら2026年8月以降に所轄庁から、2028年1月以降ならその1年前にシステムで通知されます。法人内に通知が来ていないか確認し、分からなければ所轄庁に照会してください。</p>", src: "こ支性第63号" },
@@ -4035,7 +4035,7 @@ GUIDE_DATA.qa = [
 
   // 認定・費用
   { cat: ["費用・支援", "認定"], q: "認定の手数料と、かかる期間は？", a: "<p>オンライン申請で1事業3万円（書面申請は例外で31,500円）。同じ事業を複数の事業所で行っても1事業です。審査は1〜2か月（不備の訂正期間を除く）で、認定されなくても返金されません。更新制度はありません。申請受付は12月25日からです。</p>", src: "令7条、Q&A基礎4-2・4-5・4-6、認定事業者向けシステムマニュアル（素案）" },
-  { cat: ["費用・支援"], q: "対応にかかる費用への補助や報酬の加算はありますか？", a: "<p>事業者のシステム対応費や研修費を直接補助する制度、報酬・公定価格の加算は、2026年10月27日時点で確認できませんでした。国の予算はシステム・委託・相談窓口・広報が中心です。こども家庭庁所管施設の性被害防止設備（パーテーション、カメラなど）の補助は統合補助金の内数として示されており、福岡県は届出保育施設向けの設備補助を2026年8月から実施しています（北九州市・福岡市・久留米市を除く）。情報セキュリティ専門家への1時間無料相談は従業員100人以下が対象です。</p>", src: "施行関係予算資料、福岡県要綱、こども家庭庁ページ" },
+  { cat: ["費用・支援"], q: "対応にかかる費用への補助や報酬の加算はありますか？", a: "<p>事業者のシステム対応費や研修費を直接補助する制度、報酬・公定価格の加算は、2026年10月27日時点で確認できませんでした。国の予算はシステム・委託・相談窓口・広報が中心です。こども家庭庁所管施設の性被害防止設備（パーテーション、カメラなど）の補助は統合補助金の内数として示されており、福岡県は令和8年度、届出保育施設向けに設備の補助（1施設あたり上限7万5千円）を行っています（北九州市・福岡市・久留米市の施設は対象外。交付申請の期限は10月13日でした）。情報セキュリティ専門家への1時間無料相談は従業員100人以下が対象です。</p>", src: "施行関係予算資料、福岡県要綱、こども家庭庁ページ" },
   { cat: ["費用・支援", "認定"], q: "「こまもろうマーク」は使えますか？", a: "<p>義務事業者は法定事業者マーク（ピンク）を2026年12月25日から使えます。認定事業者マーク（水色）は認定後に使えます。制服、パンフレット、募集案内、ウェブサイト、名刺（対象事業の従事者に限る）、受付、看板、求人広告などに付けられますが、配った後に回収できない販促品には付けられません。</p>", src: "Q&A基礎4-11・4-12、GL p.99-100" }
 ];
 
@@ -4246,7 +4246,7 @@ GUIDE_DATA.qa = [
       else if (!insertBefore) insertBefore = li;
     });
     var p = parts(TODAY);
-    var now = el("li", { class: "now" }, '<span class="when">今日</span><span class="dot"></span><span class="what"><b>' + p.m + "月" + p.d + "日（" + p.w + "）</b><span>ここから下がこれからの日程です</span></span>");
+    var now = el("li", { class: "now" }, '<span class="when">今日</span><span class="dot"></span><span class="what"><b>' + p.m + "月" + p.d + "日（" + p.w + "）</b></span>");
     ol.insertBefore(now, insertBefore);
     var hide = done.slice(0, Math.max(0, done.length - 2));
     if (hide.length) {
@@ -4540,7 +4540,7 @@ GUIDE_DATA.qa = [
     var feed = $("feed-home");
     if (feed && LIVE.updates) {
       sortedUpdates().slice(0, 7).forEach(function (u) { feed.appendChild(updItem(u, true)); });
-      var meta = el("p", { class: "feed-meta" }, CHECKED ? "最終確認 " + md(CHECKED) + " " + hm(CHECKED) + "（毎朝確認）" : "");
+      var meta = el("p", { class: "feed-meta" }, CHECKED ? "最終確認 " + md(CHECKED) + " " + hm(CHECKED) : "");
       feed.parentNode.appendChild(meta);
     }
     // 次の研修・説明会
@@ -4581,7 +4581,6 @@ GUIDE_DATA.qa = [
     if (metaBox) {
       var todoN = (LIVE.updates || []).filter(function (u) { return u.impact === "todo"; }).length;
       metaBox.innerHTML = "<span>最終確認 <b>" + (CHECKED ? ymd(CHECKED) + " " + hm(CHECKED) : "―") + "</b></span>" +
-        "<span>確認したページ <b>" + (LIVE.checkedPages || (LIVE.watch || []).length) + "</b></span>" +
         "<span>反映待ち <b>" + todoN + "件</b></span>" +
         (LIVE.checkNote ? '<span class="cm-note">' + esc(LIVE.checkNote) + "</span>" : "");
     }
@@ -4721,6 +4720,35 @@ GUIDE_DATA.qa = [
   window.addEventListener("scroll", reqCx, { passive: true });
   window.addEventListener("resize", reqCx);
   route();
+
+  /* ── 資料リンク集：資料名・日付で絞り込む ────────── */
+  (function () {
+    var q = document.getElementById("lk-q"), box = document.getElementById("lk");
+    if (!q || !box) return;
+    var norm = function (s) { return (s || "").normalize("NFKC").toLowerCase(); };
+    var rows = [].slice.call(box.querySelectorAll(".lk-i"));
+    rows.forEach(function (li) {
+      li._t = norm(li.getAttribute("data-q"));
+      li._s = [].slice.call(li.querySelectorAll(".lk-s"));
+      li._s.forEach(function (s) { s._t = li._t + " " + norm(s.getAttribute("data-q")); });
+    });
+    var none = box.querySelector(".lk-none");
+    function run() {
+      var words = norm(q.value).split(/\s+/).filter(Boolean);
+      var hit = function (t) { return words.every(function (w) { return t.indexOf(w) >= 0; }); };
+      var shown = 0;
+      rows.forEach(function (li) {
+        var own = hit(li._t), any = own;
+        li._s.forEach(function (s) { var v = own || hit(s._t); s.hidden = !v; if (v) any = true; });
+        li.hidden = !any;
+        if (any) shown++;
+      });
+      each(box.querySelectorAll(".lk-g"), function (g) { g.hidden = !g.querySelector(".lk-i:not([hidden])"); });
+      if (none) none.hidden = shown > 0;
+    }
+    q.addEventListener("input", run);
+    if (q.value) run();
+  })();
 
   /* ── 印刷するときはすべて開く ────────── */
   window.addEventListener("beforeprint", function () { each(document.querySelectorAll("details"), function (d) { d.open = true; }); });

@@ -1,0 +1,415 @@
+{
+ "_説明": "資料リンク集（#sources）の台帳。build.py がこの並びで書き出す。ガイドの中で使っているのにここに無いリンクは、build.py が live.json などから題名と日付を拾って自動で足す（漏れを出さないため）。d は公表日（YYYY-MM-DD）。空なら build.py が更新情報の日付か URL の日付で補う。",
+ "groups": [
+  {
+   "id": "law",
+   "t": "法令・ガイドライン・Q&A"
+  },
+  {
+   "id": "rellaw",
+   "t": "関連する法律"
+  },
+  {
+   "id": "notice",
+   "t": "通知"
+  },
+  {
+   "id": "system",
+   "t": "システム・まとめ登録"
+  },
+  {
+   "id": "kit",
+   "t": "ひな型・研修教材・相談"
+  },
+  {
+   "id": "session",
+   "t": "全国説明会"
+  },
+  {
+   "id": "fukuoka",
+   "t": "福岡県・福岡市"
+  },
+  {
+   "id": "local",
+   "t": "ほかの自治体"
+  },
+  {
+   "id": "council",
+   "t": "国会・施行準備検討会・予算"
+  },
+  {
+   "id": "seminar",
+   "t": "研修・セミナーの告知"
+  }
+ ],
+ "items": [
+  {
+   "g": "law",
+   "t": "こども家庭庁 こども性暴力防止法（すべての通知・資料の一覧）",
+   "u": "https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou"
+  },
+  {
+   "g": "law",
+   "t": "学校設置者等及び民間教育保育等事業者による児童対象性暴力等の防止等のための措置に関する法律（令和6年法律第69号）",
+   "u": "https://laws.e-gov.go.jp/law/506AC0000000069"
+  },
+  {
+   "g": "law",
+   "t": "同法施行令（令和7年政令第440号）",
+   "u": "https://laws.e-gov.go.jp/law/507CO0000000440"
+  },
+  {
+   "g": "law",
+   "t": "同法施行規則（令和7年内閣府令第104号）",
+   "u": "https://laws.e-gov.go.jp/law/507M60000002104"
+  },
+  {
+   "g": "law",
+   "t": "こども性暴力防止法施行ガイドライン（令和8年9月改訂）",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/abc50df0/20260901_policies_child-safety_efforts_koseibouhou_72.pdf",
+   "d": "2026-09-01",
+   "n": "本文中の「GL」。頁は印字頁"
+  },
+  {
+   "g": "law",
+   "t": "施行ガイドライン 改訂の概要",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/db530b67/20260908_policies_child-safety_efforts_koseibouhou_86.pdf",
+   "d": "2026-09-08"
+  },
+  {
+   "g": "law",
+   "t": "こども性暴力防止法に関するQ&A（令和8年9月29日改訂）",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/379c2e9b/20260929_policies_child-safety_efforts_koseibouhou_100.pdf",
+   "d": "2026-09-29",
+   "n": "本文中の「Q&A」"
+  },
+  {
+   "g": "law",
+   "t": "こども性暴力防止法に関するQ&A（令和8年9月18日改訂）",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/bd3ee897/20260918_policies_child-safety_efforts_koseibouhou_90.pdf",
+   "d": "2026-09-18",
+   "n": "9月29日改訂版の前の版"
+  },
+  {
+   "g": "law",
+   "t": "義務事業者用準備ガイド Ver.1.2",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/51c45b26/20261023_policies_child-safety_efforts_koseibouhou_106.pdf",
+   "d": "2026-10-23"
+  },
+  {
+   "g": "law",
+   "t": "義務事業者用準備ガイド Ver.1.2 参考資料",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/19360ccf/20261023_policies_child-safety_efforts_koseibouhou_107.pdf",
+   "d": "2026-10-23"
+  },
+  {
+   "g": "law",
+   "t": "義務事業者用準備ガイド（初版）",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/49761f84/20260717_policies_child-safety_efforts_koseibouhou_64.pdf",
+   "d": "2026-07-17",
+   "n": "Ver.1.2の前の版"
+  },
+  {
+   "g": "law",
+   "t": "監督等指針 別添1（犯罪事実確認実施者等）",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/d03e3f90/20261001_policies_child-safety_efforts_koseibouhou_102.pdf",
+   "d": "2026-10-01"
+  },
+  {
+   "g": "law",
+   "t": "施行規則第12条第2項第2号の規定に基づきこども家庭庁長官が定める措置（令和7年こども家庭庁告示第10号）",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/8e825407/20251225_policies_child-safety_efforts_koseibouhou_19.pdf",
+   "d": "2025-12-25",
+   "n": "情報管理規程に関係する告示"
+  },
+  {
+   "g": "notice",
+   "t": "自治体あての通知「こども性暴力防止法の施行に向けたお願い」",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/fec451cc/20261023_policies_child-safety_efforts_koseibouhou_109.pdf",
+   "d": "2026-10-23"
+  },
+  {
+   "g": "notice",
+   "t": "戸籍関係事務について（こ支性第128号）",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/d4ac9164/20260929_policies_child-safety_efforts_koseibouhou_92.pdf",
+   "d": "2026-09-29"
+  },
+  {
+   "g": "notice",
+   "t": "テストメール配信等の周知依頼（こ支性第108号）",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1793a109-87b3-479f-8c60-46949bd0da3a/9aef20ed/20260830_policies_child-safety_efforts_koseibouhou_matometouroku_25.pdf",
+   "d": "2026-08-30"
+  },
+  {
+   "g": "notice",
+   "t": "施行時現職者の分散方法について（こ支性第63号）",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/e8991b29/20260708_policies_child-safety_efforts_koseibouhou_54.pdf",
+   "d": "2026-07-08"
+  },
+  {
+   "g": "notice",
+   "t": "施行時現職者の分散申請に関するQ&A",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/471ac2c5/20260708_policies_child-safety_efforts_koseibouhou_57.pdf",
+   "d": "2026-07-08"
+  },
+  {
+   "g": "system",
+   "t": "まとめ登録のページ（マニュアル・Q&A）",
+   "u": "https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/matometouroku"
+  },
+  {
+   "g": "system",
+   "t": "まとめ登録の提出期限延長について（周知）（こ支性第85号）",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1793a109-87b3-479f-8c60-46949bd0da3a/bf0be2b7/20260724_policies_child-safety_efforts_koseibouhou_matometouroku_24.pdf",
+   "d": "2026-07-29",
+   "n": "4月以降に新設された施設・事業所は随時提出できる"
+  },
+  {
+   "g": "system",
+   "t": "こまもろうシステム 義務事業者向けマニュアル（素案）",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4cef2a90-9689-43d9-868d-ab445acdbce1/d6d50e73/20260828_councils_koseibo-jumbi_4cef2a90_28.pdf",
+   "d": "2026-08-28"
+  },
+  {
+   "g": "system",
+   "t": "こまもろうシステム 認定事業者向けマニュアル（素案）",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4cef2a90-9689-43d9-868d-ab445acdbce1/490bf906/20260828_councils_koseibo-jumbi_4cef2a90_29.pdf",
+   "d": "2026-08-28"
+  },
+  {
+   "g": "system",
+   "t": "こまもろうシステム 従事者向けマニュアル（素案）",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4cef2a90-9689-43d9-868d-ab445acdbce1/6f49120d/20260824_councils_koseibo-jumbi_4cef2a90_12.pdf",
+   "d": "2026-08-24"
+  },
+  {
+   "g": "kit",
+   "t": "ひな型・参考例リンク集",
+   "u": "https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/hinagata"
+  },
+  {
+   "g": "kit",
+   "t": "従事者向け研修教材（研修資料・演習資料・確認テスト・手引き・記録様式）",
+   "u": "https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/jujisya"
+  },
+  {
+   "g": "kit",
+   "t": "従事者向け 標準研修動画（再生リスト・約90分）",
+   "u": "https://www.youtube.com/playlist?list=PLlQ7HtehdR3Lw0MnIF2kMrT-MrxcABcQr"
+  },
+  {
+   "g": "kit",
+   "t": "従事者向け 要点研修動画（約17分）",
+   "u": "https://youtu.be/tK5ZpsTwRs0"
+  },
+  {
+   "g": "kit",
+   "t": "事業者向け解説動画・資料（応用編：聴き取り、被害児への対応、保護者対応、防止措置と労働法制、情報管理措置）",
+   "u": "https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/jigyousya"
+  },
+  {
+   "g": "kit",
+   "t": "事業者向け 解説動画 基礎編（再生リスト）",
+   "u": "https://www.youtube.com/playlist?list=PLlQ7HtehdR3JIMDFmG0DFVHR4R5qb6CT9"
+  },
+  {
+   "g": "kit",
+   "t": "弁護士向け 解説資料",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/3e5497ff/20261021_policies_child-safety_efforts_koseibouhou_104.pdf",
+   "d": "2026-10-21"
+  },
+  {
+   "g": "kit",
+   "t": "心理職向け 解説資料",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/65be32e8/20261021_policies_child-safety_efforts_koseibouhou_105.pdf",
+   "d": "2026-10-21"
+  },
+  {
+   "g": "kit",
+   "t": "こども家庭庁・日本弁護士連合会「弁護士向け研修会」アーカイブ（10月2日）",
+   "u": "https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/lawyer-archive"
+  },
+  {
+   "g": "kit",
+   "t": "コドモンカレッジ／ほいくis による国の研修教材の再配信",
+   "u": "https://hoiku-is.jp/seminar/special/koseibouhou-jujisya/"
+  },
+  {
+   "g": "kit",
+   "t": "情報セキュリティの専門家への相談（1事業者1時間まで無料）",
+   "u": "https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/security-specialist",
+   "d": "2026-10-01"
+  },
+  {
+   "g": "session",
+   "t": "令和8年度 事業者向け全国説明会（日程・申込・アーカイブ）",
+   "u": "https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/information-session-r8"
+  },
+  {
+   "g": "session",
+   "t": "全国説明会 共通の説明資料（約11MB）",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/60c23b17-4fa3-43ad-9438-0fe1cc64b9f9/6933a19d/20260916_policies_child-safety_efforts_koseibouhou_information-session-r8_13.pdf",
+   "d": "2026-09-16",
+   "n": "全会場共通の資料（福岡会場 10月15日を含む）"
+  },
+  {
+   "g": "session",
+   "t": "全国説明会 京都会場（9月3日）アーカイブ",
+   "u": "https://www.youtube.com/watch?v=NUjMu_gY7Jw"
+  },
+  {
+   "g": "session",
+   "t": "令和7年度 全国説明会 東京会場（2026年2月13日）アーカイブ",
+   "u": "https://www.youtube.com/watch?v=oxvWQUF6SWE",
+   "n": "「就業規則改正等の事前準備の留意点」などの資料も掲載"
+  },
+  {
+   "g": "fukuoka",
+   "t": "福岡県 こども性暴力防止法について（保育所、認定こども園、児童館の皆様へ）",
+   "u": "https://www.pref.fukuoka.lg.jp/contents/kodomoseibouryokubousihou.html"
+  },
+  {
+   "g": "fukuoka",
+   "t": "福岡県 全国説明会資料（県掲載版）",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/298447.pdf"
+  },
+  {
+   "g": "fukuoka",
+   "t": "福岡県 令和8年度 集団指導（障がい児 通所・入所）",
+   "u": "https://www.pref.fukuoka.lg.jp/contents/-contents-yudanr8.html",
+   "d": "2026-09-04",
+   "n": "集団指導資料に制度の説明を掲載"
+  },
+  {
+   "g": "fukuoka",
+   "t": "福岡市 こども性暴力防止法について",
+   "u": "https://kodomo.city.fukuoka.lg.jp/info/31954/"
+  },
+  {
+   "g": "fukuoka",
+   "t": "福岡市 障がい児支援の事業者向けページ",
+   "u": "https://www.city.fukuoka.lg.jp/kodomo-mirai/jigyosyo/health/syogaij-sien/index.html"
+  },
+  {
+   "g": "fukuoka",
+   "t": "福岡県 届出保育施設における性被害防止対策に係る設備等支援事業費補助金（令和8年度）",
+   "u": "https://www.pref.fukuoka.lg.jp/contents/todokedehoiku-seihigai.html",
+   "n": "北九州市・福岡市・久留米市の施設は対象外。交付申請の期限は10月13日"
+  },
+  {
+   "g": "fukuoka",
+   "t": "福岡県 同補助金の交付要綱",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/296008.pdf"
+  },
+  {
+   "g": "local",
+   "t": "神奈川県 義務対象事業者向けオンライン説明会（7月30・31日）アーカイブと質疑応答",
+   "u": "https://www.pref.kanagawa.jp/docs/sy8/child-safety-b.html"
+  },
+  {
+   "g": "local",
+   "t": "神奈川県 説明会の質疑応答",
+   "u": "https://www.pref.kanagawa.jp/documents/134496/child-safety-b-qa.pdf"
+  },
+  {
+   "g": "local",
+   "t": "埼玉県 こども性暴力防止法（障害児支援）",
+   "u": "https://www.pref.saitama.lg.jp/a0605/seihigaibousi/seihigaibousi.html"
+  },
+  {
+   "g": "local",
+   "t": "大阪府 こども性暴力防止法（障がい福祉）",
+   "u": "https://www.pref.osaka.lg.jp/o090080/kodomoseibouryokuboushihou.html"
+  },
+  {
+   "g": "local",
+   "t": "札幌市 こども性暴力防止法（障がい福祉）",
+   "u": "https://www.city.sapporo.jp/shogaifukushi/kodomoseiboryokubosiho.html"
+  },
+  {
+   "g": "local",
+   "t": "愛知県 こども性暴力防止法（障害福祉）",
+   "u": "https://www.pref.aichi.jp/soshiki/shogai/seibouryokuboushi.html"
+  },
+  {
+   "g": "local",
+   "t": "兵庫県 説明会の見逃し配信（義務対象・認定検討事業者向け）",
+   "u": "https://web.pref.hyogo.lg.jp/kf11/dbs.html"
+  },
+  {
+   "g": "local",
+   "t": "横浜市 戸籍電子証明書提供用識別符号",
+   "u": "https://www.city.yokohama.lg.jp/kurashi/koseki-zei-hoken/todokede/koseki-juminhyo/shoumei/hugo.html",
+   "n": "手数料は1件400円。同じ戸籍の証明書と同時に請求すれば無料"
+  },
+  {
+   "g": "local",
+   "t": "神戸市 こども性暴力防止法に関するお知らせ",
+   "u": "https://www.city.kobe.lg.jp/a20315/business/annaitsuchi/shogaifukushi/shinse/komamorousystem.html",
+   "n": "7月以降に新規指定の事業所は、指定後10日以内にまとめ登録の情報を提出"
+  },
+  {
+   "g": "council",
+   "t": "参議院内閣委員会 附帯決議",
+   "u": "https://www.sangiin.go.jp/japanese/gianjoho/ketsugi/213/f063_061801_1.pdf",
+   "d": "2024-06-18"
+  },
+  {
+   "g": "council",
+   "t": "施行準備検討会 第6回（日本知的障害者福祉協会・全国児童発達支援協議会などのヒアリング）",
+   "u": "https://www.cfa.go.jp/councils/koseibo-jumbi/57f4ac43"
+  },
+  {
+   "g": "council",
+   "t": "施行準備検討会 第5回（保育三団体・認定こども園3団体・全国児童養護施設協議会などのヒアリング）",
+   "u": "https://www.cfa.go.jp/councils/koseibo-jumbi/b2491342"
+  },
+  {
+   "g": "council",
+   "t": "施行準備検討会 第12回",
+   "u": "https://www.cfa.go.jp/councils/koseibo-jumbi/c2838492",
+   "d": "2026-04-23"
+  },
+  {
+   "g": "council",
+   "t": "こども性暴力防止法に基づく防止措置と労働法制等を踏まえた留意点（第12回 資料5-8、益原大亮弁護士）",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/c2838492-59b8-4ab9-baf8-d7088bd813fa/fe94fbc0/20260423_councils_koseibo-jumbi_c2838492_16.pdf",
+   "d": "2026-04-23",
+   "n": "自宅待機中の賃金の扱いなど"
+  },
+  {
+   "g": "council",
+   "t": "施行準備委員会 第3回",
+   "u": "https://www.cfa.go.jp/councils/koseibo-preparation-committee/03",
+   "d": "2025-12-26"
+  },
+  {
+   "g": "council",
+   "t": "こども性暴力防止法の施行関係予算（令和8年度当初予算案＋令和7年度補正予算）",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4df347a3-4811-4ec4-9535-9a50ec757f2c/0945e325/20251226_councils_koseibo-preparation-committee_03_09.pdf",
+   "d": "2025-12-26",
+   "n": "第3回 参考資料4"
+  },
+  {
+   "g": "rellaw",
+   "t": "障害者虐待の防止、障害者の養護者に対する支援等に関する法律（平成23年法律第79号）",
+   "u": "https://laws.e-gov.go.jp/law/423AC1000000079",
+   "n": "障害福祉の事業所で事案が起きたときの通報先（16条）"
+  },
+  {
+   "g": "rellaw",
+   "t": "児童福祉法（昭和22年法律第164号）",
+   "u": "https://laws.e-gov.go.jp/law/322AC0000000164"
+  },
+  {
+   "g": "rellaw",
+   "t": "就学前の子どもに関する教育、保育等の総合的な提供の推進に関する法律（認定こども園法、平成18年法律第77号）",
+   "u": "https://laws.e-gov.go.jp/law/418AC0000000077"
+  },
+  {
+   "g": "rellaw",
+   "t": "教育職員等による児童生徒性暴力等の防止等に関する法律（令和3年法律第57号）",
+   "u": "https://laws.e-gov.go.jp/law/503AC0000000057"
+  }
+ ]
+}

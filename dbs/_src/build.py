@@ -8,10 +8,14 @@
   - 本文を直すときは sections/ などの部品を直して実行する。dbs/index.html を直接書き換えない。
 依存は Python 標準ライブラリだけ。
 """
-import json, pathlib, re, sys
+import html as H
+import json, pathlib, re, shutil, subprocess, sys
 
 SRC = pathlib.Path(__file__).resolve().parent
 OUT = SRC.parent / "index.html"
+sys.dont_write_bytecode = True   # scripts/__pycache__ を作らない（毎朝のタスクは変わったファイルを確かめて止まるため）
+sys.path.insert(0, str(SRC.parent.parent / "scripts"))
+import linkbook  # noqa: E402  資料リンク集（scripts/linkbook.py）
 
 HEAD = """<!doctype html>
 <html lang="ja">
@@ -41,6 +45,58 @@ img { max-width: 100%; }
 """
 
 
+def link_group(u):
+    """台帳にないリンクのグループを、置き場所から決める"""
+    if "e-gov.go.jp" in u:
+        return "law"
+    if any(k in u for k in ("fukuoka", "kitakyushu", "kurume")):
+        return "fukuoka"
+    if re.search(r"\.lg\.jp|//(www\.)?(pref|city)\.", u):
+        return "local"
+    if "cfa.go.jp" in u:
+        return "notice"
+    if ".go.jp" in u:
+        return "council"
+    return "seminar"
+
+
+def link_hints(live, sections):
+    """台帳にないリンクの題名・日付・グループの手がかり（先に入れたものが優先）"""
+    hints = {}
+
+    def put(u, t, d="", g=""):
+        if u and t and u not in hints:
+            hints[u] = {"t": t.strip(), "d": d, "g": g}
+    for x in live.get("library", []):
+        put(x.get("url"), x.get("title", ""), "", "kit" if x.get("kind") != "municipal" else link_group(x.get("url", "")))
+    for x in live.get("watch", []):
+        put(x.get("url"), x.get("name", ""), "", link_group(x.get("url", "")))
+    for x in live.get("events", []):
+        t = x.get("title", "") + ("（" + x["org"] + "）" if x.get("org") else "")
+        put(x.get("url"), t, (x.get("start") or "")[:10], "seminar")
+    for m in re.finditer(r'<a[^>]+href="(https?://[^"]+)"[^>]*>([\s\S]*?)</a>', sections):
+        put(H.unescape(m.group(1)), re.sub(r"<[^>]+>|\s+", "", H.unescape(m.group(2))))
+    for x in live.get("updates", []):
+        u = x.get("url", "")
+        put(u, x.get("title", ""), x.get("date", ""), link_group(u) if x.get("src") == "自治体" else ("seminar" if x.get("src") == "研修" else "notice"))
+        for v in linkbook.collect_urls(json.dumps(x, ensure_ascii=False)):   # 注記の中のリンク
+            put(v, x.get("title", "") + "（関連資料）", x.get("date", ""), "")
+    return hints
+
+
+def links_with_dates(book, live):
+    """台帳の日付が空なら、更新情報の日付か URL の日付で補う"""
+    upd = {x.get("url"): x.get("date", "") for x in live.get("updates", []) if x.get("url")}
+    items = []
+    for it in book["items"]:
+        it = dict(it)
+        if not it.get("d"):
+            # ページ（.html など）は中身が随時変わるので日付を付けない。資料のファイルだけ公表日で補う
+            it["d"] = (upd.get(it["u"], "") if linkbook.kind(it["u"]) == "PDF" else "") or linkbook.url_date(it["u"])
+        items.append(it)
+    return items
+
+
 def main():
     css = (SRC / "style.css").read_text(encoding="utf-8")
     shell_top = (SRC / "shell_top.html").read_text(encoding="utf-8")
@@ -59,17 +115,40 @@ def main():
                   + live_txt + '\n</script>\n<!--LIVE-DATA-END-->\n')
     html = (HEAD + "<style>\n" + RESET + css + "\n</style>\n</head>\n<body>\n" + shell_top + "\n".join(parts) + shell_bottom
             + live_block + "<script>\n" + data + "\n</script>\n<script>\n" + app + "\n</script>\n</body>\n</html>\n")
-    # 簡易検査: 開きタグと閉じタグの数
+    # 資料リンク集: ページの中で使っているリンクを全部集めて #sources に書き出す。欠けたら止める
+    book = json.loads((SRC / "links.json").read_text(encoding="utf-8"))
+    html, added, lost, n_links = linkbook.build(html, book["groups"], links_with_dates(book, live),
+                                                link_hints(live, "\n".join(parts)), link_group, "説明会　10/15")
     bad = []
+    if lost:
+        bad.append("資料リンク集に載っていないリンクがあります: " + " / ".join(lost[:5]))
+    # 画面の文に「まだ」「いま〇〇」を使わない（ふつうの情報サイトでは使わない言い方）
+    if "まだ" in html:
+        m = re.search("まだ", html)
+        bad.append("画面の文に「まだ」が含まれています（live.json などの該当する文を「未公表」「公表待ち」など事実の言い方に直して、組み立て直してください）: …" + html[max(0, m.start() - 20):m.end() + 15].replace("\n", " ") + "…")
+    m = re.search(r"(?<![ぁ-ん])いま(?![すせしそ])|今ここ|今いる|いますぐ|今すぐ", html)
+    if m:
+        bad.append("画面の文に「いま〇〇」の言い方が含まれています（live.json などの該当する文を「◯月◯日時点」など事実の言い方に直して、組み立て直してください）: …" + html[max(0, m.start() - 15):m.end() + 15].replace("\n", " ") + "…")
+    # 簡易検査: 開きタグと閉じタグの数
     for tag in ["section", "div", "figure", "table", "details", "ul", "ol", "svg", "p"]:
         o = len(re.findall(r"<%s[\s>]" % tag, html)); c = html.count("</%s>" % tag)
         if o != c:
             bad.append(f"<{tag}> open={o} close={c}")
+    # 画面を動かすスクリプトの書き間違い（node があるときだけ確かめる）
+    if shutil.which("node"):
+        r = subprocess.run(["node", "--check", str(SRC / "app.js")], capture_output=True, text=True)
+        if r.returncode:
+            bad.append("app.js に書き間違いがあります: " + (r.stderr.strip().splitlines() or [""])[0])
     if bad:
-        print("タグの数が合いません。書き出しを止めました:", *bad, sep="\n  ")
+        print("書き出しを止めました:", *bad, sep="\n  ")
         sys.exit(1)
     OUT.write_text(html, encoding="utf-8")
-    print(OUT, len(html.encode("utf-8")) // 1024, "KB")
+    print(OUT, len(html.encode("utf-8")) // 1024, "KB", "資料リンク集", n_links, "件")
+    if added:
+        print("  うち、links.json になく自動で足したもの", len(added), "件（研修の告知など）")
+    for a in added:
+        if a["t"] == a["u"]:
+            print("  題名が分からないリンク（links.json に題名を足すと整います）:", a["u"])
 
 
 if __name__ == "__main__":

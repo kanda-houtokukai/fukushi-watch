@@ -169,7 +169,7 @@
       var met = (g.discussed || []).map(function (m) { return "<b>" + esc(m.meeting) + "</b>（" + dot(m.date) + "）"; }).join("・");
       var status = met
         ? '<div class="status-line"><span>検討チームの議題 ' + met + "</span><span>論点 <b>" + rs.length + "件</b></span>" + stg(Math.max.apply(null, rs.map(function (r) { return r.stage || 1; }).concat([1]))) + "</div>"
-        : '<div class="status-line pending"><span>このサービスを議題にした回は開かれていません。' + (rs.length ? "ほかの回で触れられた論点を載せています。" : "") + "</span><span>" + esc(g.expect || "") + "</span></div>";
+        : '<div class="status-line pending"><span>このサービスを議題にした回は開かれていません。</span><span>' + esc(g.expect || "") + "</span></div>";
       sec.innerHTML = '<header><div class="ch-no">サービス別</div><h2>' + esc(g.name) + '</h2><p class="ch-lead">' + esc(g.services.join("・")) + "</p></header>" + status;
       if (rs.length) {
         var chips = el("div", { class: "chips svc-chips" });
@@ -331,7 +331,7 @@
     var list = $("upd-list"); if (!list) return;
     var meta = $("check-meta");
     var todoN = (LIVE.updates || []).filter(function (u) { return u.impact === "todo"; }).length;
-    if (meta) meta.innerHTML = "<span>最終確認 <b>" + (CHECKED ? ymd(CHECKED) + " " + hm(CHECKED) : "―") + "</b></span><span>確認したページ <b>" + (LIVE.checkedPages || (LIVE.watch || []).length) + "</b></span><span>反映待ち <b>" + todoN + "件</b></span>" + (LIVE.checkNote ? '<span class="cm-note">' + esc(LIVE.checkNote) + "</span>" : "");
+    if (meta) meta.innerHTML = "<span>最終確認 <b>" + (CHECKED ? ymd(CHECKED) + " " + hm(CHECKED) : "―") + "</b></span><span>反映待ち <b>" + todoN + "件</b></span>" + (LIVE.checkNote ? '<span class="cm-note">' + esc(LIVE.checkNote) + "</span>" : "");
     var only = $("upd-todo");
     var rows = sortedUpdates().map(function (u) { var li = updItem(u, false); list.appendChild(li); return { li: li, u: u }; });
     var empty = el("li", { class: "empty", hidden: "" }, "反映待ちの更新はありません。");
@@ -340,8 +340,6 @@
     only.addEventListener("change", draw); draw();
     var w = $("watch-list");
     if (w && LIVE.watch) { LIVE.watch.forEach(function (x) { w.appendChild(el("li", null, x.url ? '<a href="' + esc(x.url) + '" target="_blank" rel="noopener">' + esc(x.name) + "</a>" : esc(x.name))); }); if ($("watch-count")) $("watch-count").textContent = LIVE.watch.length + "か所"; }
-    var sl = $("src-list");
-    if (sl) (C.sources || []).forEach(function (s) { sl.appendChild(el("li", null, '<span class="k">' + esc(s.k) + "</span><span>" + (s.url ? '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.title) + "</a>" : esc(s.title)) + (s.note ? '<br><span class="sm">' + esc(s.note) + "</span>" : "") + "</span>")); });
   })();
 
   /* ── ホーム ───────────────────────── */
@@ -388,7 +386,6 @@
       host.innerHTML = "";
       if (picking) {
         var wrap = el("div", { class: "filters" });
-        if (!mine.length) wrap.appendChild(el("p", { class: "hb-sub", style: "margin:0" }, "担当のサービスを選ぶと、ここに論点が並びます。"));
         GRPS.forEach(function (g) {
           var row = el("div", { class: "frow" });
           row.appendChild(el("span", { class: "fl" }, esc(g.name)));
@@ -711,4 +708,33 @@
   window.addEventListener("scroll", reqCx, { passive: true });
   window.addEventListener("resize", reqCx);
   route();
+
+  /* ── 資料リンク集：資料名・日付で絞り込む（回の名前で引くと、その回の資料も出る） ── */
+  (function () {
+    var q = document.getElementById("lk-q"), box = document.getElementById("lk");
+    if (!q || !box) return;
+    var norm = function (s) { return (s || "").normalize("NFKC").toLowerCase(); };
+    var rows = [].slice.call(box.querySelectorAll(".lk-i"));
+    rows.forEach(function (li) {
+      li._t = norm(li.getAttribute("data-q"));
+      li._s = [].slice.call(li.querySelectorAll(".lk-s"));
+      li._s.forEach(function (s) { s._t = li._t + " " + norm(s.getAttribute("data-q")); });
+    });
+    var none = box.querySelector(".lk-none");
+    function run() {
+      var words = norm(q.value).split(/\s+/).filter(Boolean);
+      var hit = function (t) { return words.every(function (w) { return t.indexOf(w) >= 0; }); };
+      var shown = 0;
+      rows.forEach(function (li) {
+        var own = hit(li._t), any = own;
+        li._s.forEach(function (s) { var v = own || hit(s._t); s.hidden = !v; if (v) any = true; });
+        li.hidden = !any;
+        if (any) shown++;
+      });
+      each(box.querySelectorAll(".lk-g"), function (g) { g.hidden = !g.querySelector(".lk-i:not([hidden])"); });
+      if (none) none.hidden = shown > 0;
+    }
+    q.addEventListener("input", run);
+    if (q.value) run();
+  })();
 })();

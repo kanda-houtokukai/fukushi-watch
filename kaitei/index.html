@@ -180,8 +180,6 @@ main { min-width: 0; padding-block: 24px 0; max-width: 1000px; }
 .eyebrow { font-family: var(--f-mono); font-size: 12px; letter-spacing: .1em; color: var(--ink-3); display: flex; flex-wrap: wrap; gap: 4px 16px; }
 .home h1 { font-family: var(--f-display); font-weight: 900; font-size: clamp(30px, 4.6vw, 50px); line-height: 1.22; letter-spacing: .02em; margin: 10px 0 10px; }
 .home h1 .nw { white-space: nowrap; }
-.home-sub { font-family: var(--f-display); font-weight: 700; font-size: 15px; color: var(--ink-2); margin: 0 0 12px; line-height: 1.6; }
-.home-lead { color: var(--ink-2); font-size: 15px; margin: 0; max-width: 44em; line-height: 1.8; }
 .dateplate { background: var(--ac-soft); border-radius: 10px; border-top: 4px solid var(--ac); padding: 18px 22px 20px; display: flex; flex-direction: column; gap: 8px; }
 .dateplate .k { font-family: var(--f-mono); font-size: 12px; letter-spacing: .14em; color: var(--ac); }
 .dateplate .d { font-family: var(--f-display); font-weight: 900; font-size: clamp(38px, 5.2vw, 58px); line-height: 1; font-variant-numeric: tabular-nums; color: var(--ac); }
@@ -383,10 +381,6 @@ details.more > .more-in { padding: 6px 16px 16px; }
 .watch li { padding: 6px 0; border-bottom: 1px solid var(--line-2); }
 
 /* 出典 */
-.srcs { list-style: none; padding: 0; margin: 14px 0; display: grid; border-top: 1px solid var(--line); }
-.srcs li { display: grid; grid-template-columns: 8.5em minmax(0, 1fr); gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line-2); font-size: 13.5px; line-height: 1.6; }
-.srcs .k { font-family: var(--f-mono); font-size: 11.5px; color: var(--ink-3); padding-top: 2px; }
-.srcs a, .srcs .sm { overflow-wrap: anywhere; }   /* 注記に入った長いURLでスマホが横にずれないように */
 
 .box { border: 1px solid var(--line); border-radius: var(--r); padding: 16px 18px; margin: 18px 0; max-width: 52em; }
 .box > :last-child { margin-bottom: 0; }
@@ -465,8 +459,6 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
   .stage-chip { font-size: 11px; padding: 2px 8px; }
   .drawer { top: calc(env(safe-area-inset-top, 0px) + 54px); }
   .home h1 { font-size: 29px; }
-  .home-sub { font-size: 13.5px; }
-  .home-lead { font-size: 14.5px; }
   .dateplate { padding: 16px 18px; }
   .hb { padding: 0 0 14px; }
   .hb-h { padding: 11px 14px; }
@@ -486,7 +478,6 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
   .upd .u-b > :not(.tags) { grid-column: 1 / -1; }
   .tl li { grid-template-columns: 6.2em 20px minmax(0, 1fr); gap: 0 10px; }
   .tl .when { font-size: 11.5px; }
-  .srcs li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   .stage-def li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
   .rc > summary { padding: 12px 40px 12px 14px; }
   .rc .rb { padding: 4px 14px 14px; }
@@ -544,6 +535,28 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
+/* 資料リンク集（#sources）。build.py が scripts/linkbook.py で書き出す */
+.lk-find { position: relative; display: block; margin: 18px 0 4px; max-width: 32em; }
+.lk-find input { width: 100%; box-sizing: border-box; font: inherit; font-size: 15px; padding: 11px 14px 11px 40px; border: 1.5px solid var(--line); border-radius: var(--r); background: var(--surface); color: var(--ink); }
+.lk-find input:focus { border-color: var(--ac); outline: none; }
+.lk-find svg { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--ink-3); }
+.lk-g { margin-top: 28px; }
+.lk-h { font-family: var(--f-display); font-size: 15.5px; font-weight: 700; margin: 0 0 8px; padding-left: 10px; border-left: 3px solid var(--ac); line-height: 1.4; }
+.lk-l { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.lk-i { display: grid; grid-template-columns: 6.4em minmax(0, 1fr); gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--line-2); font-size: 14px; line-height: 1.6; }
+.lk-d { font-family: var(--f-mono); font-size: 12px; color: var(--ink-3); padding-top: 2px; white-space: nowrap; }
+.lk-b { min-width: 0; }
+.lk-b a { overflow-wrap: anywhere; }
+.lk-ty { display: inline-block; margin-left: 8px; font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .04em; color: var(--ink-3); border: 1px solid var(--line); border-radius: 3px; padding: 0 5px; line-height: 1.55; vertical-align: 1px; white-space: nowrap; }
+.lk-n { display: block; font-size: 12.5px; color: var(--ink-3); margin-top: 1px; }
+.lk-sub { list-style: none; margin: 6px 0 0; padding: 0 0 0 12px; border-left: 2px solid var(--line-2); }
+.lk-s { padding: 3px 0; font-size: 13.5px; }
+.lk-none { color: var(--ink-3); font-size: 14px; margin: 22px 0; }
+@media (max-width: 560px) {
+  .lk-i { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .lk-d:empty { display: none; }
+}
+
 </style>
 </head>
 <body>
@@ -593,8 +606,6 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
     <div>
       <div class="eyebrow"><span id="checked-at">情報の確認 2026年10月27日</span></div>
       <h1>令和9年度 <span class="nw">障害福祉</span> <span class="nw">報酬改定ガイド</span></h1>
-      <p class="home-sub">障害福祉サービス等報酬改定の検討を、論点ごとに追いかける</p>
-      <p class="home-lead">厚生労働省の障害福祉報酬改定検討チームが示した論点を、サービスごとに整理しています。新しい資料が出るたびに、各論点の中身と確度を書き直します。</p>
     </div>
     <div class="dateplate">
       <span class="k">改定後の報酬の適用（予定）</span>
@@ -639,7 +650,6 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
   <header>
     <div class="ch-no">論点一覧</div>
     <h2>すべての論点</h2>
-    <p class="ch-lead">サービス・方向・種類で絞り込めます。論点を開くと、現状、検討の方向性、資料のページが見られます。</p>
   </header>
   <div class="filters">
     <label class="search" for="q"><svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m12.6 12.6 4.4 4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><input id="q" type="search" placeholder="加算名・減算名・キーワードで検索" autocomplete="off"></label>
@@ -679,17 +689,13 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
     <p class="ch-lead">報酬改定の情報は、検討チームの論点から告示まで、段階を踏んで固まっていきます。各論点の5つの四角は、その論点がどこまで固まったかを示します。</p>
   </header>
   <ol class="stage-def" id="stage-def"></ol>
-  <div class="box key">
-    <p class="box-t">論点が書き換わるとき</p>
-    <p>新しい資料が出ると、同じ論点の本文を最新の内容に書き直し、確度を上げます。前の段階の内容は論点の「変遷」に残します。論点が統合されたり、取り下げられたりしたときも、変遷に記録します。</p>
-  </div>
 </section>
 
 <section class="chapter view" id="schedule" data-group="schedule" data-title="日程の見込み">
   <header>
     <div class="ch-no">日程</div>
     <h2>日程の見込み</h2>
-    <p class="ch-lead">第55回（2026年4月28日）の「検討の進め方（案）」と、これまでの開催実績をもとにしています。この先の日付は見込みで、開催案内が出たら確定日に書き換えます。</p>
+    <p class="ch-lead">第55回（2026年4月28日）の「検討の進め方（案）」と、これまでの開催実績をもとにしています。この先の日付は見込みです。</p>
   </header>
   <ol class="tl" id="tl"></ol>
 </section>
@@ -707,7 +713,6 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
   <header>
     <div class="ch-no">更新情報</div>
     <h2>更新情報</h2>
-    <p class="ch-lead">厚生労働省とこども家庭庁のページを毎朝確認しています。新しい資料が出た日は、ここに載せたうえで論点を書き直します。</p>
   </header>
   <div class="check-meta" id="check-meta"></div>
   <div class="upd-tools"><label for="upd-todo"><input type="checkbox" id="upd-todo" autocomplete="off">反映待ちのものだけ</label></div>
@@ -718,18 +723,21 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
   </details>
 </section>
 
-<section class="chapter view" id="sources" data-group="updates" data-title="出典・原本">
+<section class="chapter view" id="sources" data-group="updates" data-title="資料リンク集">
   <header>
     <div class="ch-no">更新情報</div>
-    <h2>出典・原本</h2>
-    <p class="ch-lead">このガイドで使った厚生労働省の資料です。各論点のページ番号は、原本のPDFのページです。</p>
+    <h2>資料リンク集</h2>
+    <p class="ch-lead">各論点に書いたページ番号は、原本のPDFのページです。</p>
   </header>
-  <ul class="srcs" id="src-list"></ul>
+<label class="lk-find" for="lk-q"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><input type="search" id="lk-q" placeholder="資料名・日付で探す（例：第64回　訂正）" aria-label="資料名・日付で探す" autocomplete="off" enterkeyhint="search"></label>
+<div class="lk" id="lk">
+<div class="lk-g"><h3 class="lk-h">障害福祉報酬改定検討チームの回と資料</h3><ul class="lk-l"><li class="lk-i" data-q="第67回 令和9年度障害福祉報酬改定に向けて（自立訓練、自立生活援助、地域移行支援、地域定着支援、地域生活支援拠点等、共同生活援助、強度行動障害の状態にある者等への支援） 2026-10-30 2026.10.30 2026/10/30 10/30 10月30日 2026年10月30日 2026年10月"><span class="lk-d">2026.10.30</span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/newpage_76934.html" target="_blank" rel="noopener">第67回 令和9年度障害福祉報酬改定に向けて（自立訓練、自立生活援助、地域移行支援、地域定着支援、地域生活支援拠点等、共同生活援助、強度行動障害の状態にある者等への支援）</a></span></li><li class="lk-i" data-q="第66回 令和9年度障害福祉報酬改定に向けて（施設入所支援、生活介護、短期入所、療養介護） 2026-10-22 2026.10.22 2026/10/22 10/22 10月22日 2026年10月22日 2026年10月"><span class="lk-d">2026.10.22</span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/newpage_76886.html" target="_blank" rel="noopener">第66回 令和9年度障害福祉報酬改定に向けて（施設入所支援、生活介護、短期入所、療養介護）</a><ul class="lk-sub"><li class="lk-s" data-q="施設入所支援、生活介護、短期入所、療養介護に係る報酬・基準について PDF"><span class="lk-b"><a href="https://www.mhlw.go.jp/content/12401000/001761843.pdf" target="_blank" rel="noopener">施設入所支援、生活介護、短期入所、療養介護に係る報酬・基準について</a><span class="lk-ty">PDF</span></span></li></ul></span></li><li class="lk-i" data-q="第65回 令和9年度障害福祉報酬改定に向けて（障害児支援） 2026-10-05 2026.10.05 2026/10/5 10/5 10月5日 2026年10月5日 2026年10月"><span class="lk-d">2026.10.05</span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/newpage_76565.html" target="_blank" rel="noopener">第65回 令和9年度障害福祉報酬改定に向けて（障害児支援）</a><ul class="lk-sub"><li class="lk-s" data-q="障害児支援に係る報酬・基準について PDF"><span class="lk-b"><a href="https://www.mhlw.go.jp/content/12401000/001755910.pdf" target="_blank" rel="noopener">障害児支援に係る報酬・基準について</a><span class="lk-ty">PDF</span></span></li></ul></span></li><li class="lk-i" data-q="第64回 令和9年度障害福祉報酬改定に向けて（就労系サービス） 2026-09-28 2026.09.28 2026/9/28 9/28 9月28日 2026年9月28日 2026年9月"><span class="lk-d">2026.09.28</span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/newpage_76389.html" target="_blank" rel="noopener">第64回 令和9年度障害福祉報酬改定に向けて（就労系サービス）</a><ul class="lk-sub"><li class="lk-s" data-q="就労系サービスに係る報酬・基準について PDF"><span class="lk-b"><a href="https://www.mhlw.go.jp/content/12401000/001752771.pdf" target="_blank" rel="noopener">就労系サービスに係る報酬・基準について</a><span class="lk-ty">PDF</span></span></li><li class="lk-s" data-q="資料の一部訂正（就労系サービスに係る報酬・基準について） PDF"><span class="lk-b"><a href="https://www.mhlw.go.jp/content/12401000/001757458.pdf" target="_blank" rel="noopener">資料の一部訂正（就労系サービスに係る報酬・基準について）</a><span class="lk-ty">PDF</span></span></li></ul></span></li><li class="lk-i" data-q="第63回 令和9年度障害福祉報酬改定に向けて（訪問系サービス） 2026-09-24 2026.09.24 2026/9/24 9/24 9月24日 2026年9月24日 2026年9月"><span class="lk-d">2026.09.24</span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/newpage_76339.html" target="_blank" rel="noopener">第63回 令和9年度障害福祉報酬改定に向けて（訪問系サービス）</a><ul class="lk-sub"><li class="lk-s" data-q="訪問系サービスに係る報酬・基準について PDF"><span class="lk-b"><a href="https://www.mhlw.go.jp/content/12401000/001761330.pdf" target="_blank" rel="noopener">訪問系サービスに係る報酬・基準について</a><span class="lk-ty">PDF</span></span></li></ul></span></li><li class="lk-i" data-q="第62回 令和9年度障害福祉報酬改定に向けた主な論点（案）について 2026-08-27 2026.08.27 2026/8/27 8/27 8月27日 2026年8月27日 2026年8月"><span class="lk-d">2026.08.27</span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/newpage_75819.html" target="_blank" rel="noopener">第62回 令和9年度障害福祉報酬改定に向けた主な論点（案）について</a><ul class="lk-sub"><li class="lk-s" data-q="令和９年度障害福祉報酬改定に向けた主な論点（案） PDF"><span class="lk-b"><a href="https://www.mhlw.go.jp/content/12401000/001742921.pdf" target="_blank" rel="noopener">令和９年度障害福祉報酬改定に向けた主な論点（案）</a><span class="lk-ty">PDF</span></span></li><li class="lk-s" data-q="令和９年度障害福祉報酬改定に関する主な意見（関係団体ヒアリング） PDF"><span class="lk-b"><a href="https://www.mhlw.go.jp/content/12401000/001742922.pdf" target="_blank" rel="noopener">令和９年度障害福祉報酬改定に関する主な意見（関係団体ヒアリング）</a><span class="lk-ty">PDF</span></span></li></ul></span></li><li class="lk-i" data-q="第61回 関係団体ヒアリング6 2026-08-03 2026.08.03 2026/8/3 8/3 8月3日 2026年8月3日 2026年8月"><span class="lk-d">2026.08.03</span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/newpage_75169.html" target="_blank" rel="noopener">第61回 関係団体ヒアリング6</a></span></li><li class="lk-i" data-q="第60回 関係団体ヒアリング5 2026-07-27 2026.07.27 2026/7/27 7/27 7月27日 2026年7月27日 2026年7月"><span class="lk-d">2026.07.27</span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/newpage_74901.html" target="_blank" rel="noopener">第60回 関係団体ヒアリング5</a></span></li><li class="lk-i" data-q="第59回 関係団体ヒアリング4 2026-07-17 2026.07.17 2026/7/17 7/17 7月17日 2026年7月17日 2026年7月"><span class="lk-d">2026.07.17</span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/newpage_74720.html" target="_blank" rel="noopener">第59回 関係団体ヒアリング4</a></span></li><li class="lk-i" data-q="第58回 関係団体ヒアリング3 2026-07-03 2026.07.03 2026/7/3 7/3 7月3日 2026年7月3日 2026年7月"><span class="lk-d">2026.07.03</span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/newpage_74265.html" target="_blank" rel="noopener">第58回 関係団体ヒアリング3</a></span></li><li class="lk-i" data-q="第57回 関係団体ヒアリング2 2026-06-26 2026.06.26 2026/6/26 6/26 6月26日 2026年6月26日 2026年6月"><span class="lk-d">2026.06.26</span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/newpage_74112.html" target="_blank" rel="noopener">第57回 関係団体ヒアリング2</a></span></li><li class="lk-i" data-q="第56回 関係団体ヒアリング1 2026-06-15 2026.06.15 2026/6/15 6/15 6月15日 2026年6月15日 2026年6月"><span class="lk-d">2026.06.15</span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/newpage_73858.html" target="_blank" rel="noopener">第56回 関係団体ヒアリング1</a></span></li><li class="lk-i" data-q="第55回 令和8年度従事者処遇状況等調査の実施／人員欠如に係る特例的な取扱い（報告）／令和9年度改定に向けた今後の検討の進め方 2026-04-28 2026.04.28 2026/4/28 4/28 4月28日 2026年4月28日 2026年4月"><span class="lk-d">2026.04.28</span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/newpage_72919.html" target="_blank" rel="noopener">第55回 令和8年度従事者処遇状況等調査の実施／人員欠如に係る特例的な取扱い（報告）／令和9年度改定に向けた今後の検討の進め方</a><ul class="lk-sub"><li class="lk-s" data-q="令和９年度障害福祉サービス等報酬改定に向けた検討の進め方について（案） PDF"><span class="lk-b"><a href="https://www.mhlw.go.jp/content/12401000/001696206.pdf" target="_blank" rel="noopener">令和９年度障害福祉サービス等報酬改定に向けた検討の進め方について（案）</a><span class="lk-ty">PDF</span></span></li><li class="lk-s" data-q="やむを得ない事情における人員欠如に係る特例的な取扱い（報告） PDF"><span class="lk-b"><a href="https://www.mhlw.go.jp/content/12401000/001696191.pdf" target="_blank" rel="noopener">やむを得ない事情における人員欠如に係る特例的な取扱い（報告）</a><span class="lk-ty">PDF</span></span></li></ul></span></li><li class="lk-i" data-q="第54回 令和7年経営概況調査の結果（詳細版）／令和8年経営実態調査の実施 2026-03-10 2026.03.10 2026/3/10 3/10 3月10日 2026年3月10日 2026年3月"><span class="lk-d">2026.03.10</span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/newpage_71418.html" target="_blank" rel="noopener">第54回 令和7年経営概況調査の結果（詳細版）／令和8年経営実態調査の実施</a><ul class="lk-sub"><li class="lk-s" data-q="次期報酬改定に向けた検討について PDF"><span class="lk-b"><a href="https://www.mhlw.go.jp/content/12401000/001669955.pdf" target="_blank" rel="noopener">次期報酬改定に向けた検討について</a><span class="lk-ty">PDF</span></span></li><li class="lk-s" data-q="令和８年障害福祉サービス等経営実態調査の実施について（案） PDF"><span class="lk-b"><a href="https://www.mhlw.go.jp/content/12401000/001669922.pdf" target="_blank" rel="noopener">令和８年障害福祉サービス等経営実態調査の実施について（案）</a><span class="lk-ty">PDF</span></span></li></ul></span></li><li class="lk-i" data-q="公表 令和8年度障害福祉サービス等報酬改定の概要 2026-02-18 2026.02.18 2026/2/18 2/18 2月18日 2026年2月18日 2026年2月"><span class="lk-d">2026.02.18</span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/newpage_70634.html" target="_blank" rel="noopener">公表 令和8年度障害福祉サービス等報酬改定の概要</a><ul class="lk-sub"><li class="lk-s" data-q="令和８年度障害福祉サービス等報酬改定における改定事項について PDF"><span class="lk-b"><a href="https://www.mhlw.go.jp/content/12200000/001658029.pdf" target="_blank" rel="noopener">令和８年度障害福祉サービス等報酬改定における改定事項について</a><span class="lk-ty">PDF</span></span></li><li class="lk-s" data-q="資料の一部訂正（令和８年度障害福祉サービス等報酬改定における改定事項について） PDF"><span class="lk-b"><a href="https://www.mhlw.go.jp/content/12200000/001661061.pdf" target="_blank" rel="noopener">資料の一部訂正（令和８年度障害福祉サービス等報酬改定における改定事項について）</a><span class="lk-ty">PDF</span></span></li></ul></span></li><li class="lk-i" data-q="第53回 令和8年度障害福祉サービス等報酬改定の概要（案）（持ち回り） 2026-02-18 2026.02.18 2026/2/18 2/18 2月18日 2026年2月18日 2026年2月"><span class="lk-d">2026.02.18</span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/newpage_70620.html" target="_blank" rel="noopener">第53回 令和8年度障害福祉サービス等報酬改定の概要（案）（持ち回り）</a><ul class="lk-sub"><li class="lk-s" data-q="令和８年度の障害福祉人材の処遇改善等の対応 PDF"><span class="lk-b"><a href="https://www.mhlw.go.jp/content/12401000/001657650.pdf" target="_blank" rel="noopener">令和８年度の障害福祉人材の処遇改善等の対応</a><span class="lk-ty">PDF</span></span></li></ul></span></li><li class="lk-i" data-q="第52回 令和8年度における臨時応急的な見直し 2026-01-22 2026.01.22 2026/1/22 1/22 1月22日 2026年1月22日 2026年1月"><span class="lk-d">2026.01.22</span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/newpage_69057.html" target="_blank" rel="noopener">第52回 令和8年度における臨時応急的な見直し</a><ul class="lk-sub"><li class="lk-s" data-q="令和８年度における臨時応急的な見直し PDF"><span class="lk-b"><a href="https://www.mhlw.go.jp/content/12401000/001638232.pdf" target="_blank" rel="noopener">令和８年度における臨時応急的な見直し</a><span class="lk-ty">PDF</span></span></li><li class="lk-s" data-q="令和８年度予算に関する「大臣折衝事項」について（報告） PDF"><span class="lk-b"><a href="https://www.mhlw.go.jp/content/12401000/001638099.pdf" target="_blank" rel="noopener">令和８年度予算に関する「大臣折衝事項」について（報告）</a><span class="lk-ty">PDF</span></span></li><li class="lk-s" data-q="地域区分について（報告） PDF"><span class="lk-b"><a href="https://www.mhlw.go.jp/content/12401000/001638100.pdf" target="_blank" rel="noopener">地域区分について（報告）</a><span class="lk-ty">PDF</span></span></li></ul></span></li><li class="lk-i" data-q="第51回 令和6年度報酬改定後の状況を踏まえた課題 2025-12-16 2025.12.16 2025/12/16 12/16 12月16日 2025年12月16日 2025年12月"><span class="lk-d">2025.12.16</span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/newpage_67248.html" target="_blank" rel="noopener">第51回 令和6年度報酬改定後の状況を踏まえた課題</a><ul class="lk-sub"><li class="lk-s" data-q="令和６年度報酬改定後の状況を踏まえた課題 PDF"><span class="lk-b"><a href="https://www.mhlw.go.jp/content/12401000/001612001.pdf" target="_blank" rel="noopener">令和６年度報酬改定後の状況を踏まえた課題</a><span class="lk-ty">PDF</span></span></li></ul></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">関連する会議・ページ</h3><ul class="lk-l"><li class="lk-i" data-q="障害福祉報酬改定検討チーム（開催一覧）"><span class="lk-d"></span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/shingi/other-syougai_446935_00001.html" target="_blank" rel="noopener">障害福祉報酬改定検討チーム（開催一覧）</a></span></li><li class="lk-i" data-q="審議会・研究会等の開催予定一覧（厚生労働省）"><span class="lk-d"></span><span class="lk-b"><a href="https://www.mhlw.go.jp/topics/event/open_doors.html" target="_blank" rel="noopener">審議会・研究会等の開催予定一覧（厚生労働省）</a></span></li><li class="lk-i" data-q="社会保障審議会 障害者部会"><span class="lk-d"></span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126730.html" target="_blank" rel="noopener">社会保障審議会 障害者部会</a></span></li><li class="lk-i" data-q="こども家庭審議会 障害児支援部会"><span class="lk-d"></span><span class="lk-b"><a href="https://www.cfa.go.jp/councils/shingikai/shougaiji_shien" target="_blank" rel="noopener">こども家庭審議会 障害児支援部会</a></span></li><li class="lk-i" data-q="報酬改定のページ（告示・通知・Q&amp;A。令和8年度分）"><span class="lk-d"></span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000202214_00013.html" target="_blank" rel="noopener">報酬改定のページ（告示・通知・Q&amp;A。令和8年度分）</a></span></li><li class="lk-i" data-q="障害福祉サービス等経営実態調査（結果の概要）"><span class="lk-d"></span><span class="lk-b"><a href="https://www.mhlw.go.jp/toukei/list/shougaihukushi_service_chousa01b.html" target="_blank" rel="noopener">障害福祉サービス等経営実態調査（結果の概要）</a></span></li><li class="lk-i" data-q="障害児支援部会 第22回（10/28）の開催案内 2026-10-27 2026.10.27 2026/10/27 10/27 10月27日 2026年10月27日 2026年10月"><span class="lk-d">2026.10.27</span><span class="lk-b"><a href="https://www.cfa.go.jp/councils/shingikai/shougaiji_shien/779b0299" target="_blank" rel="noopener">障害児支援部会 第22回（10/28）の開催案内</a></span></li><li class="lk-i" data-q="障害者部会 第160回 特定地域（中山間・人口減少地域）の考え方 2026-10-20 2026.10.20 2026/10/20 10/20 10月20日 2026年10月20日 2026年10月"><span class="lk-d">2026.10.20</span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/newpage_76820.html" target="_blank" rel="noopener">障害者部会 第160回 特定地域（中山間・人口減少地域）の考え方</a></span></li></ul></div>
+<p class="lk-none" hidden>該当する資料はありません。</p></div>
 </section>
 
 <footer class="foot">
   <div><b>本文の基準日：<span id="asof">2026年10月27日</span>。</b>厚生労働省「障害福祉報酬改定検討チーム」の公表資料をもとに、論点ごとに要約しています。要約は原文の言い回しと同じではありません。算定や届出の判断は、必ず原本と、告示・通知・Q&amp;Aで確かめてください。</div>
-  <div>更新情報は毎朝確認しています（最終確認 <span class="js-checked">2026年10月27日</span>）。</div>
   <div><a href="../">福祉情報ウォッチに戻る</a></div>
 </footer>
 </main>
@@ -7652,7 +7660,7 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
       var met = (g.discussed || []).map(function (m) { return "<b>" + esc(m.meeting) + "</b>（" + dot(m.date) + "）"; }).join("・");
       var status = met
         ? '<div class="status-line"><span>検討チームの議題 ' + met + "</span><span>論点 <b>" + rs.length + "件</b></span>" + stg(Math.max.apply(null, rs.map(function (r) { return r.stage || 1; }).concat([1]))) + "</div>"
-        : '<div class="status-line pending"><span>このサービスを議題にした回は開かれていません。' + (rs.length ? "ほかの回で触れられた論点を載せています。" : "") + "</span><span>" + esc(g.expect || "") + "</span></div>";
+        : '<div class="status-line pending"><span>このサービスを議題にした回は開かれていません。</span><span>' + esc(g.expect || "") + "</span></div>";
       sec.innerHTML = '<header><div class="ch-no">サービス別</div><h2>' + esc(g.name) + '</h2><p class="ch-lead">' + esc(g.services.join("・")) + "</p></header>" + status;
       if (rs.length) {
         var chips = el("div", { class: "chips svc-chips" });
@@ -7814,7 +7822,7 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
     var list = $("upd-list"); if (!list) return;
     var meta = $("check-meta");
     var todoN = (LIVE.updates || []).filter(function (u) { return u.impact === "todo"; }).length;
-    if (meta) meta.innerHTML = "<span>最終確認 <b>" + (CHECKED ? ymd(CHECKED) + " " + hm(CHECKED) : "―") + "</b></span><span>確認したページ <b>" + (LIVE.checkedPages || (LIVE.watch || []).length) + "</b></span><span>反映待ち <b>" + todoN + "件</b></span>" + (LIVE.checkNote ? '<span class="cm-note">' + esc(LIVE.checkNote) + "</span>" : "");
+    if (meta) meta.innerHTML = "<span>最終確認 <b>" + (CHECKED ? ymd(CHECKED) + " " + hm(CHECKED) : "―") + "</b></span><span>反映待ち <b>" + todoN + "件</b></span>" + (LIVE.checkNote ? '<span class="cm-note">' + esc(LIVE.checkNote) + "</span>" : "");
     var only = $("upd-todo");
     var rows = sortedUpdates().map(function (u) { var li = updItem(u, false); list.appendChild(li); return { li: li, u: u }; });
     var empty = el("li", { class: "empty", hidden: "" }, "反映待ちの更新はありません。");
@@ -7823,8 +7831,6 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
     only.addEventListener("change", draw); draw();
     var w = $("watch-list");
     if (w && LIVE.watch) { LIVE.watch.forEach(function (x) { w.appendChild(el("li", null, x.url ? '<a href="' + esc(x.url) + '" target="_blank" rel="noopener">' + esc(x.name) + "</a>" : esc(x.name))); }); if ($("watch-count")) $("watch-count").textContent = LIVE.watch.length + "か所"; }
-    var sl = $("src-list");
-    if (sl) (C.sources || []).forEach(function (s) { sl.appendChild(el("li", null, '<span class="k">' + esc(s.k) + "</span><span>" + (s.url ? '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.title) + "</a>" : esc(s.title)) + (s.note ? '<br><span class="sm">' + esc(s.note) + "</span>" : "") + "</span>")); });
   })();
 
   /* ── ホーム ───────────────────────── */
@@ -7871,7 +7877,6 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
       host.innerHTML = "";
       if (picking) {
         var wrap = el("div", { class: "filters" });
-        if (!mine.length) wrap.appendChild(el("p", { class: "hb-sub", style: "margin:0" }, "担当のサービスを選ぶと、ここに論点が並びます。"));
         GRPS.forEach(function (g) {
           var row = el("div", { class: "frow" });
           row.appendChild(el("span", { class: "fl" }, esc(g.name)));
@@ -8194,6 +8199,35 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
   window.addEventListener("scroll", reqCx, { passive: true });
   window.addEventListener("resize", reqCx);
   route();
+
+  /* ── 資料リンク集：資料名・日付で絞り込む（回の名前で引くと、その回の資料も出る） ── */
+  (function () {
+    var q = document.getElementById("lk-q"), box = document.getElementById("lk");
+    if (!q || !box) return;
+    var norm = function (s) { return (s || "").normalize("NFKC").toLowerCase(); };
+    var rows = [].slice.call(box.querySelectorAll(".lk-i"));
+    rows.forEach(function (li) {
+      li._t = norm(li.getAttribute("data-q"));
+      li._s = [].slice.call(li.querySelectorAll(".lk-s"));
+      li._s.forEach(function (s) { s._t = li._t + " " + norm(s.getAttribute("data-q")); });
+    });
+    var none = box.querySelector(".lk-none");
+    function run() {
+      var words = norm(q.value).split(/\s+/).filter(Boolean);
+      var hit = function (t) { return words.every(function (w) { return t.indexOf(w) >= 0; }); };
+      var shown = 0;
+      rows.forEach(function (li) {
+        var own = hit(li._t), any = own;
+        li._s.forEach(function (s) { var v = own || hit(s._t); s.hidden = !v; if (v) any = true; });
+        li.hidden = !any;
+        if (any) shown++;
+      });
+      each(box.querySelectorAll(".lk-g"), function (g) { g.hidden = !g.querySelector(".lk-i:not([hidden])"); });
+      if (none) none.hidden = shown > 0;
+    }
+    q.addEventListener("input", run);
+    if (q.value) run();
+  })();
 })();
 
 </script>

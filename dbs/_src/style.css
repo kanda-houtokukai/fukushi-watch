@@ -124,7 +124,6 @@ main { min-width: 0; padding-block: 24px 0; max-width: 980px; }
 .home h1 .nw { white-space: nowrap; }
 .home h1 { font-family: var(--f-display); font-weight: 900; font-size: clamp(30px, 4.6vw, 50px); line-height: 1.22; letter-spacing: .02em; margin: 10px 0 10px; }
 .home-sub { word-break: keep-all; overflow-wrap: anywhere; font-family: var(--f-display); font-weight: 700; font-size: 15px; color: var(--ink-2); margin: 0 0 12px; line-height: 1.6; }
-.home-lead { color: var(--ink-2); font-size: 15px; margin: 0; max-width: 44em; line-height: 1.8; }
 .dateplate { background: var(--ai-soft); color: var(--ink); border-radius: 10px; border-top: 4px solid var(--ai); padding: 18px 22px 20px; display: flex; flex-direction: column; gap: 10px; }
 .dateplate .k { font-family: var(--f-mono); font-size: 12px; letter-spacing: .14em; color: var(--ai); }
 .dateplate .d { font-family: var(--f-display); font-weight: 900; font-size: clamp(40px, 5.6vw, 64px); line-height: 1; letter-spacing: .01em; font-variant-numeric: tabular-nums; color: var(--ai); }
@@ -480,10 +479,6 @@ code { font-family: var(--f-mono); font-size: .88em; background: var(--surface-2
 .card > :last-child { margin-bottom: 0; }
 
 /* 出典 */
-.srcs { list-style: none; padding: 0; margin: 14px 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
-.srcs li { display: grid; grid-template-columns: 7em minmax(0, 1fr); gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line-2); font-size: 13.5px; line-height: 1.6; }
-.srcs .k { font-family: var(--f-mono); font-size: 11.5px; color: var(--ink-3); padding-top: 2px; }
-.srcs a { word-break: break-all; }
 
 footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--ink); font-size: 13px; color: var(--ink-2); display: grid; gap: 6px; max-width: var(--measure); }
 
@@ -603,7 +598,6 @@ html.drawer-open { overflow: hidden; }
   .drawer { top: calc(env(safe-area-inset-top, 0px) + 54px); }
   .home h1 { font-size: 29px; }
   .home-sub { font-size: 13.5px; }
-  .home-lead { font-size: 14.5px; }
   .dateplate { padding: 16px 18px; }
   .hb { padding: 0 0 14px; }
   .hb-h { padding: 11px 14px; }
@@ -635,7 +629,6 @@ html.drawer-open { overflow: hidden; }
   .ev-when { grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 10px; padding: 10px 14px; }
   .tl li { grid-template-columns: 6.2em 20px minmax(0, 1fr); gap: 0 10px; }
   .tl .when { font-size: 11.5px; }
-  .srcs li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   .qa summary, .qa .a { padding-left: 40px; }
 }
 /* ── スマホ：上のバーの現在地と、前後のボタン（報酬改定ガイドと同じ・ユーザー指示 2026-10-27） ── */
@@ -673,3 +666,25 @@ html.drawer-open { overflow: hidden; }
   a { color: inherit; }
 }
 .tbl .num .sm { white-space: normal; }
+
+/* 資料リンク集（#sources）。build.py が scripts/linkbook.py で書き出す */
+.lk-find { position: relative; display: block; margin: 18px 0 4px; max-width: 32em; }
+.lk-find input { width: 100%; box-sizing: border-box; font: inherit; font-size: 15px; padding: 11px 14px 11px 40px; border: 1.5px solid var(--line); border-radius: var(--r); background: var(--surface); color: var(--ink); }
+.lk-find input:focus { border-color: var(--ai); outline: none; }
+.lk-find svg { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--ink-3); }
+.lk-g { margin-top: 28px; }
+.lk-h { font-family: var(--f-display); font-size: 15.5px; font-weight: 700; margin: 0 0 8px; padding-left: 10px; border-left: 3px solid var(--ai); line-height: 1.4; }
+.lk-l { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.lk-i { display: grid; grid-template-columns: 6.4em minmax(0, 1fr); gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--line-2); font-size: 14px; line-height: 1.6; }
+.lk-d { font-family: var(--f-mono); font-size: 12px; color: var(--ink-3); padding-top: 2px; white-space: nowrap; }
+.lk-b { min-width: 0; }
+.lk-b a { overflow-wrap: anywhere; }
+.lk-ty { display: inline-block; margin-left: 8px; font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .04em; color: var(--ink-3); border: 1px solid var(--line); border-radius: 3px; padding: 0 5px; line-height: 1.55; vertical-align: 1px; white-space: nowrap; }
+.lk-n { display: block; font-size: 12.5px; color: var(--ink-3); margin-top: 1px; }
+.lk-sub { list-style: none; margin: 6px 0 0; padding: 0 0 0 12px; border-left: 2px solid var(--line-2); }
+.lk-s { padding: 3px 0; font-size: 13.5px; }
+.lk-none { color: var(--ink-3); font-size: 14px; margin: 22px 0; }
+@media (max-width: 560px) {
+  .lk-i { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .lk-d:empty { display: none; }
+}

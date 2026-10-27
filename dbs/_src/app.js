@@ -203,7 +203,7 @@
       else if (!insertBefore) insertBefore = li;
     });
     var p = parts(TODAY);
-    var now = el("li", { class: "now" }, '<span class="when">今日</span><span class="dot"></span><span class="what"><b>' + p.m + "月" + p.d + "日（" + p.w + "）</b><span>ここから下がこれからの日程です</span></span>");
+    var now = el("li", { class: "now" }, '<span class="when">今日</span><span class="dot"></span><span class="what"><b>' + p.m + "月" + p.d + "日（" + p.w + "）</b></span>");
     ol.insertBefore(now, insertBefore);
     var hide = done.slice(0, Math.max(0, done.length - 2));
     if (hide.length) {
@@ -497,7 +497,7 @@
     var feed = $("feed-home");
     if (feed && LIVE.updates) {
       sortedUpdates().slice(0, 7).forEach(function (u) { feed.appendChild(updItem(u, true)); });
-      var meta = el("p", { class: "feed-meta" }, CHECKED ? "最終確認 " + md(CHECKED) + " " + hm(CHECKED) + "（毎朝確認）" : "");
+      var meta = el("p", { class: "feed-meta" }, CHECKED ? "最終確認 " + md(CHECKED) + " " + hm(CHECKED) : "");
       feed.parentNode.appendChild(meta);
     }
     // 次の研修・説明会
@@ -538,7 +538,6 @@
     if (metaBox) {
       var todoN = (LIVE.updates || []).filter(function (u) { return u.impact === "todo"; }).length;
       metaBox.innerHTML = "<span>最終確認 <b>" + (CHECKED ? ymd(CHECKED) + " " + hm(CHECKED) : "―") + "</b></span>" +
-        "<span>確認したページ <b>" + (LIVE.checkedPages || (LIVE.watch || []).length) + "</b></span>" +
         "<span>反映待ち <b>" + todoN + "件</b></span>" +
         (LIVE.checkNote ? '<span class="cm-note">' + esc(LIVE.checkNote) + "</span>" : "");
     }
@@ -678,6 +677,35 @@
   window.addEventListener("scroll", reqCx, { passive: true });
   window.addEventListener("resize", reqCx);
   route();
+
+  /* ── 資料リンク集：資料名・日付で絞り込む ────────── */
+  (function () {
+    var q = document.getElementById("lk-q"), box = document.getElementById("lk");
+    if (!q || !box) return;
+    var norm = function (s) { return (s || "").normalize("NFKC").toLowerCase(); };
+    var rows = [].slice.call(box.querySelectorAll(".lk-i"));
+    rows.forEach(function (li) {
+      li._t = norm(li.getAttribute("data-q"));
+      li._s = [].slice.call(li.querySelectorAll(".lk-s"));
+      li._s.forEach(function (s) { s._t = li._t + " " + norm(s.getAttribute("data-q")); });
+    });
+    var none = box.querySelector(".lk-none");
+    function run() {
+      var words = norm(q.value).split(/\s+/).filter(Boolean);
+      var hit = function (t) { return words.every(function (w) { return t.indexOf(w) >= 0; }); };
+      var shown = 0;
+      rows.forEach(function (li) {
+        var own = hit(li._t), any = own;
+        li._s.forEach(function (s) { var v = own || hit(s._t); s.hidden = !v; if (v) any = true; });
+        li.hidden = !any;
+        if (any) shown++;
+      });
+      each(box.querySelectorAll(".lk-g"), function (g) { g.hidden = !g.querySelector(".lk-i:not([hidden])"); });
+      if (none) none.hidden = shown > 0;
+    }
+    q.addEventListener("input", run);
+    if (q.value) run();
+  })();
 
   /* ── 印刷するときはすべて開く ────────── */
   window.addEventListener("beforeprint", function () { each(document.querySelectorAll("details"), function (d) { d.open = true; }); });
