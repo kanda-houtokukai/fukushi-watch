@@ -110,6 +110,7 @@ main { min-width: 0; padding-block: 24px 0; max-width: 1000px; }
 .pager a.next { grid-column: 2; background: var(--ac-soft); color: var(--ac); }
 .pager a.next .pa { margin-left: auto; }
 .pager a.next:hover { background: #DAE5F3; }
+.pager .ps { display: none; }
 
 /* ── 確度の5段階 ─────────────────────── */
 .stg { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; line-height: 1; white-space: nowrap; color: var(--ac); }
@@ -491,6 +492,14 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
   .brand .cx small { font-family: var(--f-body); font-size: 10.5px; font-weight: 500; color: var(--ink-3); letter-spacing: .04em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .brand .cx b { font-size: 15px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   @keyframes cxIn { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+}
+/* スマホの前後のボタンは1列に並べる（ユーザー指示 2026-10-27「無駄に二行」）。前へは「‹ 前へ」だけ、次へは行き先まで */
+@media (max-width: 560px) {
+  .pager.two { grid-template-columns: auto minmax(0, 1fr); }
+  .pager.two a.prev { padding: 0 14px 0 12px; }
+  .pager.two a.prev .pk, .pager.two a.prev .pt { display: none; }
+  .pager.two a.prev .ps { display: inline; font-weight: 700; color: var(--ink); }
+  .pager.two a.next { grid-column: 2; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

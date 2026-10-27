@@ -134,6 +134,7 @@ main { min-width: 0; padding-block: 24px 0; max-width: 1000px; }
 .pager a.next { grid-column: 2; background: var(--ac-soft); color: var(--ac); }
 .pager a.next .pa { margin-left: auto; }
 .pager a.next:hover { background: #DAE5F3; }
+.pager .ps { display: none; }
 
 /* ── 確度の5段階 ─────────────────────── */
 .stg { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; line-height: 1; white-space: nowrap; color: var(--ac); }
@@ -515,6 +516,14 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
   .brand .cx small { font-family: var(--f-body); font-size: 10.5px; font-weight: 500; color: var(--ink-3); letter-spacing: .04em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .brand .cx b { font-size: 15px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   @keyframes cxIn { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+}
+/* スマホの前後のボタンは1列に並べる（ユーザー指示 2026-10-27「無駄に二行」）。前へは「‹ 前へ」だけ、次へは行き先まで */
+@media (max-width: 560px) {
+  .pager.two { grid-template-columns: auto minmax(0, 1fr); }
+  .pager.two a.prev { padding: 0 14px 0 12px; }
+  .pager.two a.prev .pk, .pager.two a.prev .pt { display: none; }
+  .pager.two a.prev .ps { display: inline; font-weight: 700; color: var(--ink); }
+  .pager.two a.next { grid-column: 2; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -7438,10 +7447,6 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
   var C = {}, LIVE = {};
   try { C = JSON.parse(document.getElementById("content-data").textContent) || {}; } catch (e) { C = {}; }
   try { LIVE = JSON.parse(document.getElementById("live-data").textContent) || {}; } catch (e) { LIVE = {}; }
-  var store = {
-    get: function (k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } },
-    set: function (k, v) { try { window.localStorage.setItem(k, v); } catch (e) {} }
-  };
   function $(id) { return document.getElementById(id); }
   var main = document.getElementById("main");
   function each(list, fn) { Array.prototype.forEach.call(list, fn); }
@@ -7811,31 +7816,36 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
       nx.appendChild(el("a", { class: "nx" + (i === 0 ? " first" : ""), href: m.link || "#schedule" }, '<span class="when">' + esc(m.label || mdw(m.date)) + (m.approx ? "（見込み）" : "") + "</span><b>" + esc(m.title) + '</b><span class="d">' + esc(m.desc || "") + "</span>"));
     });
 
-    // 担当サービスの論点（この端末に覚える）
-    var KEY = "hoshu-guide-mine-v1";
+    // 担当サービスの論点。選んだ内容は表示しているあいだだけ覚え、再読み込みで選び直しに戻る（ユーザー指示 2026-10-27）
+    try { window.localStorage.removeItem("hoshu-guide-mine-v1"); } catch (e) {}   // 以前の版が端末に残した選択を消す
     var mine = [];
-    try { mine = JSON.parse(store.get(KEY) || "[]") || []; } catch (e) { mine = []; }
     var host = $("mine"); if (!host) return;
-    var picking = !mine.length;
-    function save() { store.set(KEY, JSON.stringify(mine)); }
+    var picking = true;
+    // 決定・選び直しのあと、この欄の見出しが画面の上に隠れていたら、見出しが見える位置に戻す（決定で欄が縮み、下の欄から表示されるのを防ぐ）
+    function toSection() {
+      var sec = host.closest(".hb"); if (!sec) return;
+      var bar = document.querySelector(".topbar"), tbh = bar ? bar.getBoundingClientRect().bottom : 0;
+      var top = sec.getBoundingClientRect().top;
+      if (top < tbh + 4) jumpTo(Math.max(0, Math.round(top + window.scrollY - tbh - 10)));
+    }
     function render() {
       host.innerHTML = "";
       if (picking) {
         var wrap = el("div", { class: "filters" });
-        if (!mine.length) wrap.appendChild(el("p", { class: "hb-sub", style: "margin:0" }, "担当のサービスを選ぶと、ここに論点が並びます。選んだ内容はこの端末に残ります。"));
+        if (!mine.length) wrap.appendChild(el("p", { class: "hb-sub", style: "margin:0" }, "担当のサービスを選ぶと、ここに論点が並びます。"));
         GRPS.forEach(function (g) {
           var row = el("div", { class: "frow" });
           row.appendChild(el("span", { class: "fl" }, esc(g.name)));
           var chips = el("div", { class: "chips" });
           g.services.forEach(function (s) {
             var b = el("button", { class: "chip", type: "button", "aria-pressed": mine.indexOf(s) >= 0 ? "true" : "false" }, esc(s));
-            b.addEventListener("click", function () { var i = mine.indexOf(s); if (i >= 0) mine.splice(i, 1); else mine.push(s); save(); b.setAttribute("aria-pressed", mine.indexOf(s) >= 0 ? "true" : "false"); count(); });
+            b.addEventListener("click", function () { var i = mine.indexOf(s); if (i >= 0) mine.splice(i, 1); else mine.push(s); b.setAttribute("aria-pressed", mine.indexOf(s) >= 0 ? "true" : "false"); count(); });
             chips.appendChild(b);
           });
           row.appendChild(chips); wrap.appendChild(row);
         });
         var done = el("button", { class: "chip", type: "button", "aria-pressed": "true" }, "決定");
-        done.addEventListener("click", function () { picking = false; render(); });
+        done.addEventListener("click", function () { picking = false; render(); toSection(); });
         var foot = el("div", { class: "fmeta" }); foot.appendChild(el("span", { id: "mine-n" })); foot.appendChild(done);
         wrap.appendChild(foot);
         host.appendChild(wrap);
@@ -7845,7 +7855,7 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
       var head = el("div", { class: "mine-head" });
       head.appendChild(el("span", null, esc(mine.join("・"))));
       var again = el("button", { class: "linkbtn", type: "button" }, "選び直す");
-      again.addEventListener("click", function () { picking = true; render(); });
+      again.addEventListener("click", function () { picking = true; render(); toSection(); });
       head.appendChild(again);
       host.appendChild(head);
       var rs = SVCR.filter(function (r) { return (r.services || []).some(function (s) { return mine.indexOf(s) >= 0; }); }).sort(byNewest);
@@ -7906,15 +7916,19 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
     next: '<svg class="pa" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>'
   };
   function pgLink(dir, href, k, t) {
-    return el("a", { class: dir, href: href }, (dir === "prev" ? ARR.prev : "") + '<span class="pk">' + esc(k) + '</span><span class="pt">' + esc(t) + "</span>" + (dir === "next" ? ARR.next : ""));
+    return el("a", { class: dir, href: href, "aria-label": k + "：" + t }, (dir === "prev" ? ARR.prev : "") + '<span class="pk">' + esc(k) + "</span>" +
+      (dir === "prev" ? '<span class="ps">前へ</span>' : "") + '<span class="pt">' + esc(t) + "</span>" + (dir === "next" ? ARR.next : ""));
+  }
+  function pager(label, prev, next) {   // prev・next は [href, 見出し語, 行き先]
+    var nav = el("nav", { class: "pager" + (prev && next ? " two" : ""), "aria-label": label });
+    if (prev) nav.appendChild(pgLink("prev", prev[0], prev[1], prev[2]));
+    if (next) nav.appendChild(pgLink("next", next[0], next[1], next[2]));
+    return nav;
   }
   SEQ.forEach(function (v, i) {
     var prev = SEQ[i - 1], next = SEQ[i + 1];
     function dest(x) { return x.g !== v.g && x.t.indexOf(x.g.t) < 0 ? x.g.t + " › " + x.t : x.t; }
-    var nav = el("nav", { class: "pager", "aria-label": "前後のページ" });
-    if (prev) nav.appendChild(pgLink("prev", "#" + prev.id, "前へ", dest(prev)));
-    if (next) nav.appendChild(pgLink("next", "#" + next.id, "次へ", dest(next)));
-    if (prev || next) v.el.appendChild(nav);
+    if (prev || next) v.el.appendChild(pager("前後のページ", prev && ["#" + prev.id, "前へ", dest(prev)], next && ["#" + next.id, "次へ", dest(next)]));
   });
 
   var drawer = $("drawer"), drawerList = $("drawer-list"), menuBtn = $("menu-btn");
@@ -8028,9 +8042,8 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
     wrap.appendChild(body(r));
     DV.appendChild(wrap);
     if (prev || next) {
-      var nav = el("nav", { class: "pager rpager", "aria-label": "前後の論点" });
-      if (prev) nav.appendChild(pgLink("prev", "#r-" + prev.id, "前の論点", prev.title));
-      if (next) nav.appendChild(pgLink("next", "#r-" + next.id, "次の論点", next.title));
+      var nav = pager("前後の論点", prev && ["#r-" + prev.id, "前の論点", prev.title], next && ["#r-" + next.id, "次の論点", next.title]);
+      nav.classList.add("rpager");
       DV.appendChild(nav);
     }
     each(document.querySelectorAll(".view.is-active"), function (x) { x.classList.remove("is-active"); });
@@ -8060,9 +8073,14 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
     else { LAST = null; jumpTop(); reqCx(); }
   }
 
+  var NAVTYPE = "";
+  try { var ne = performance.getEntriesByType("navigation")[0]; NAVTYPE = ne ? ne.type : ""; } catch (e) {}
+  var firstRoute = true;
   function route() {
     var intent = navIntent; navIntent = null;
     var st = getState(), id = "";
+    if (firstRoute && NAVTYPE === "reload") st = { ctx: st.ctx };   // 再読み込みは選び直し・先頭から
+    firstRoute = false;
     try { id = decodeURIComponent((location.hash || "").slice(1)); } catch (e) { id = ""; }
     var pend = PENDING; PENDING = null;
     if (/^r-/.test(id) && MQ.matches && BYID[id.slice(2)]) {
