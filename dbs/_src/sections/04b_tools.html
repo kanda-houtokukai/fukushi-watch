@@ -1,0 +1,27 @@
+<section class="chapter view" id="tools" data-group="tools" data-title="判定ツール">
+  <header>
+    <div class="ch-no">判定ツール</div>
+    <h2>判定ツール</h2>
+    <p class="ch-lead">質問に順に答えると、ガイドラインとQ&amp;Aにもとづく結論と根拠が出ます。迷うケースや公式の名指しがないものは「個別に確認」と表示します。</p>
+  </header>
+
+  <div class="tabs" data-tabs>
+    <div class="tabbtns" role="tablist" aria-label="判定の種類"><button class="tabbtn" type="button" role="tab" aria-selected="true" aria-controls="tool-scope">この事業は対象？</button><button class="tabbtn" type="button" role="tab" aria-selected="false" aria-controls="tool-persons">この人は対象？</button><button class="tabbtn" type="button" role="tab" aria-selected="false" aria-controls="tool-timing">いつまでに確認？</button><button class="tabbtn" type="button" role="tab" aria-selected="false" aria-controls="tool-incident">どこへ通報？</button></div>
+    <div class="pane is-on" id="tool-scope" role="tabpanel">
+      <div data-tree="scope"></div>
+      <p class="tool-more">根拠と一覧表は<a href="#scope">対象になる事業</a></p>
+    </div>
+    <div class="pane" id="tool-persons" role="tabpanel">
+      <div data-tree="persons"></div>
+      <p class="tool-more">職種の一覧と判断例は<a href="#persons">対象になる人</a></p>
+    </div>
+    <div class="pane" id="tool-timing" role="tabpanel">
+      <div data-tree="timing"></div>
+      <p class="tool-more">期限の一覧といとま特例の要件は<a href="#timing">確認の時期と期限</a></p>
+    </div>
+    <div class="pane" id="tool-incident" role="tabpanel">
+      <div data-tree="incident"></div>
+      <p class="tool-more">初動の流れと迷いやすい点は<a href="#incident">事案が起きたとき</a></p>
+    </div>
+  </div>
+</section>

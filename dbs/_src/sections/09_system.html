@@ -1,0 +1,148 @@
+<section class="chapter view" id="system" data-group="basics" data-title="こまもろうシステム">
+  <header>
+    <div class="ch-no">しくみ</div>
+    <h2>こまもろうシステム</h2>
+    <p class="ch-lead">正式名称は「こども性暴力防止法関連システム」。交付申請、戸籍の提出、確認書の閲覧、情報管理規程の提出、記録の消去、定期報告などの手続はすべてここで行います。書面での申請は、通信障害や災害などでシステムが使えないときに限られます（規則31条1項）。</p>
+  </header>
+
+  <div class="points"><span class="pt">この章の要点</span><ol><li>理事長本人がGビズID（プライム）を取得して全権限者になる。確認書を見る犯歴閲覧者は最小限にする</li><li>事業者側の操作は業務用端末だけ。確認書は画面で見るだけで、出力も印刷もできない</li><li>職員本人はマイナンバーカードとマイナアプリで戸籍を国に出す。暗証番号とパスワードを前もって確かめてもらう</li></ol></div>
+
+
+  <h3>アカウントと権限</h3>
+  <div class="grid2">
+    <div class="card">
+      <h4>GビズID（プライム）</h4>
+      <p>すべての義務事業者が取得します。民間法人では<b>組織の長（理事長など）本人</b>が取得し、代理申請はできません。高齢でも本人申請が必要で、他の職員は手伝いだけできます（まとめ登録Q&amp;A 2-4〜2-9）。</p>
+    </div>
+    <div class="card">
+      <h4>GビズID メンバー（第一管理者）</h4>
+      <p>複数の人でシステムを使う場合に、プライムの所有者がマイページで作成します。まとめ登録で登録できる第一管理者は1名です。ほかの職員はGビズID不要で、ログイン後に権限を付けます。</p>
+    </div>
+  </div>
+  <div class="scroll">
+    <table class="tbl">
+      <thead><tr><th>権限</th><th>想定する人</th><th class="c">確認書の閲覧</th><th class="c">権限の設定</th><th class="c">申請などの事務</th><th>注意</th></tr></thead>
+      <tbody>
+        <tr><th>全権限者</th><td>理事長（GビズIDプライム）</td><td class="c">○</td><td class="c">○</td><td class="c">○</td><td class="sm">事業者で1名</td></tr>
+        <tr><th>犯歴閲覧者</th><td>情報管理の責任者など</td><td class="c">○</td><td class="c">―</td><td class="c">○</td><td class="sm">最小限に（小規模なら1人）。交付申請までに登録</td></tr>
+        <tr><th>権限設定権者</th><td>第一管理者</td><td class="c">―</td><td class="c">○</td><td class="c">○</td><td class="sm">人事異動のたびに設定変更</td></tr>
+        <tr><th>事務担当者</th><td>事務職員、外部の行政書士など</td><td class="c">―</td><td class="c">―</td><td class="c">○</td><td class="sm">外部委託可・GビズID不要。メールアドレスの共用は不可</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="prose">
+    <ul>
+      <li><b>登録の単位：</b>まとめ登録は施設・事業所ごと、さらに事業類型ごとに1行ずつ。認証は法人単位で、1つの事業者アカウントで複数の事業・事業所を管理でき、アカウントごとに参照範囲も設定できます（Q&amp;A応用8-15、神奈川県説明会質疑No.20）。</li>
+      <li><b>端末：</b>事業者側は業務用端末に限られ、私用端末は使えません。業務用の中でも専用端末を推奨（Q&amp;A応用8-2・8-3）。職員本人の端末には制限がありません。</li>
+      <li><b>ログイン：</b>マイナアプリ（マイナンバーカード）かパスキー。メールのワンタイムパスワードは推奨されず、どちらも使えない場合に例外的に認める運用を想定（Q&amp;A応用8-5）。</li>
+      <li><b>主な機能：</b>従事者のCSV一括登録、確認書は画面閲覧のみ（出力・印刷不可）、法定の期限（確認日から5年を経過した日の属する年度末から30日以内）での確認書の自動消去、帳簿の自動生成。定期報告など施行時点で必須でない機能は施行後に順次リリース。</li>
+      <li><b>指定管理・委託：</b>施設の運営を委託している場合は、委託元と委託先の両方がGビズIDを取得します。</li>
+    </ul>
+  </div>
+
+  <h3>職員本人の手続</h3>
+  <figure class="fig">
+    <div class="canvas">
+      <svg class="wide" viewBox="0 0 960 330" role="img" aria-label="マイナンバーカードがある場合とない場合に分けて、職員本人がアカウントを作り、ログインし、戸籍を提出するまでの流れを示した図">
+        <defs>
+          <marker id="ar9" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="m-ink3"/></marker>
+        </defs>
+        <rect x="20" y="128" width="150" height="74" rx="5" class="f-s2"/>
+        <text x="34" y="152" font-size="12.5" class="tb">依頼メールが届く</text>
+        <text x="34" y="170" font-size="11" class="t2">事業者が登録すると</text>
+        <text x="34" y="185" font-size="11" class="t2">システムから自動送信</text>
+        <path d="M170 165 H186 V77 H206" fill="none" class="s-ink3" stroke-width="1.3" marker-end="url(#ar9)"/>
+        <path d="M186 165 V253 H206" fill="none" class="s-ink3" stroke-width="1.3" marker-end="url(#ar9)"/>
+
+        <text x="210" y="30" font-size="12" class="tb tai">マイナンバーカードあり（原則）</text>
+        <rect x="210" y="40" width="172" height="74" rx="5" class="f-aisoft"/>
+        <text x="222" y="62" font-size="12.5" class="tb">アカウント作成</text>
+        <text x="222" y="80" font-size="11" class="t2">マイナアプリでカードを</text>
+        <text x="222" y="95" font-size="11" class="t2">読み取る（暗証番号4桁）</text>
+        <line x1="382" y1="77" x2="397" y2="77" class="s-ink3" stroke-width="1.3" marker-end="url(#ar9)"/>
+        <rect x="400" y="40" width="172" height="74" rx="5" class="f-aisoft"/>
+        <text x="412" y="62" font-size="12.5" class="tb">ログイン</text>
+        <text x="412" y="80" font-size="11" class="t2">マイナアプリで認証</text>
+        <line x1="572" y1="77" x2="587" y2="77" class="s-ink3" stroke-width="1.3" marker-end="url(#ar9)"/>
+        <rect x="590" y="40" width="172" height="74" rx="5" class="f-aisoft"/>
+        <text x="602" y="62" font-size="12.5" class="tb">戸籍を提出</text>
+        <text x="602" y="80" font-size="11" class="t2">マイナアプリで識別符号を</text>
+        <text x="602" y="95" font-size="11" class="t2">取得して提出（署名用PW）</text>
+
+        <text x="210" y="206" font-size="12" class="tb t2">カードなし</text>
+        <rect x="210" y="216" width="172" height="74" rx="5" class="f-surface s-ink3" stroke-width="1.2"/>
+        <text x="222" y="238" font-size="12.5" class="tb">アカウント作成</text>
+        <text x="222" y="256" font-size="11" class="t2">免許証などをアップロード</text>
+        <text x="222" y="271" font-size="11" class="t2">→国の審査に数営業日</text>
+        <line x1="382" y1="253" x2="397" y2="253" class="s-ink3" stroke-width="1.3" marker-end="url(#ar9)"/>
+        <rect x="400" y="216" width="172" height="74" rx="5" class="f-surface s-ink3" stroke-width="1.2"/>
+        <text x="412" y="238" font-size="12.5" class="tb">ログイン</text>
+        <text x="412" y="256" font-size="11" class="t2">パスキー（端末の指紋・</text>
+        <text x="412" y="271" font-size="11" class="t2">顔認証）を使う</text>
+        <line x1="572" y1="253" x2="587" y2="253" class="s-ink3" stroke-width="1.3" marker-end="url(#ar9)"/>
+        <rect x="590" y="216" width="172" height="74" rx="5" class="f-surface s-ink3" stroke-width="1.2"/>
+        <text x="602" y="238" font-size="12.5" class="tb">戸籍を提出</text>
+        <text x="602" y="256" font-size="11" class="t2">窓口・郵送で識別符号と</text>
+        <text x="602" y="271" font-size="11" class="t2">謄本を取り、入力・添付</text>
+
+        <path d="M676 114 V212" fill="none" class="s-kin dash" stroke-width="1.3" marker-end="url(#ar9)"/>
+        <text x="668" y="150" font-size="10.5" text-anchor="end" class="tkin">カードで取れない戸籍</text>
+        <text x="668" y="165" font-size="10.5" text-anchor="end" class="tkin">（改製不適合・紙の除籍・</text>
+        <text x="668" y="180" font-size="10.5" text-anchor="end" class="tkin">イメージ除籍など）は窓口へ</text>
+
+        <path d="M762 77 H790 V150 H802" fill="none" class="s-ink3" stroke-width="1.3" marker-end="url(#ar9)"/>
+        <path d="M762 253 H790 V180 H802" fill="none" class="s-ink3" stroke-width="1.3" marker-end="url(#ar9)"/>
+        <rect x="805" y="128" width="140" height="74" rx="5" class="f-ai"/>
+        <text x="817" y="152" font-size="12.5" class="tb tinv">提出完了</text>
+        <text x="817" y="170" font-size="11" class="tinv">事業者には提出状況</text>
+        <text x="817" y="185" font-size="11" class="tinv">だけが見える</text>
+        <text x="20" y="318" font-size="11.5" class="t3">識別符号の有効期限は発行から3か月。紙の戸籍は提出の日から6か月以内に発行されたもの。費用は本人負担。アカウント登録の代行はできません（休職者も同じ）。</text>
+      </svg>
+    </div>
+    <figcaption><b>事業者は戸籍の中身を見ません。</b>戸籍は本人から直接こども家庭庁に届きます。本人が希望すれば事業者経由の提出も拒めません（法33条7項）。マイナンバーを入力する必要はなく、事業者が個人番号を知ることもありません（Q&amp;A応用8-17）。</figcaption>
+  </figure>
+
+  <div class="grid2">
+    <div class="card">
+      <h4>職員に前もって準備してもらうこと</h4>
+      <ul>
+        <li>マイナンバーカードとマイナアプリ</li>
+        <li>利用者証明用暗証番号（数字4桁）</li>
+        <li>署名用パスワード（英数字6〜16文字）。忘れた・ロックされた場合は市区町村でリセット</li>
+        <li>出生から現在までの戸籍・除籍がつながること（転籍・改姓が多い人は窓口での取得が必要になることがある）</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>外国籍の職員</h4>
+      <ul>
+        <li>在留カード・住民票・旅券の写し、氏名等の変更があれば本国の戸籍に相当する書類（なければ誓約書）、出入国履歴、カナ・ローマ字の氏名、重国籍の有無</li>
+        <li>標準処理期間は1〜2か月に延びる</li>
+        <li>システムの案内は日本語のみ。日本語に慣れていない職員は事業者がサポート</li>
+      </ul>
+    </div>
+  </div>
+
+  <details class="more" id="manual">
+    <summary><span class="st">マニュアルと窓口</span><small>マニュアルの公表状況と問い合わせ先</small></summary>
+    <div class="more-in">
+  <div class="scroll">
+    <table class="tbl">
+      <thead><tr><th>資料・窓口</th><th>状況（2026年10月27日時点）</th></tr></thead>
+      <tbody>
+        <tr><th>システムマニュアル（義務事業者向け・認定事業者向け・従事者向け）</th><td>2026年8月28日に素案を公表。施行時に更新版を公表予定。従事者向けの簡易版は「秋ごろ」の公表予定</td></tr>
+        <tr><th>対象従事者リストのイメージ（Excel）</th><td>公表済み。従事者のメールアドレス（業務用・私用どちらでも可）の収集を求めている</td></tr>
+        <tr><th>システム専用ヘルプデスク</th><td>マニュアル素案では番号が空欄。開設時期は未公表</td></tr>
+        <tr><th>こども家庭庁 専用ダイヤル（制度全般）</th><td><span class="num">03-5357-1146</span>（平日9:00〜17:00、年末年始を除く）。混雑時は問い合わせフォーム</td></tr>
+        <tr><th>まとめ登録の連絡先</th><td><code>matome2026@cfa.go.jp</code></td></tr>
+        <tr><th>GビズID ヘルプデスク（デジタル庁）</th><td><span class="num">0570-023-797</span>（9:00〜17:00、土日祝・年末年始を除く）</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="box attn">
+    <p class="box-t">委託先からの確認連絡に注意</p>
+    <p>まとめ登録の内容確認のため、委託先の「こども性暴力防止法照会窓口」（メールの送信元ドメイン <code>@kodomono-shiro.jp</code>）から連絡が来ることがあります。テストメールの送信元は <code>comamorou.info@cfa.go.jp</code> です。迷惑メールに振り分けられていないか、法人のメール設定も確認してください。</p>
+  </div>
+    </div>
+  </details>
+
+</section>
