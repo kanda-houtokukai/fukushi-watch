@@ -379,19 +379,34 @@
   });
   // 並び順は ORDER と GROUPS に従う（同じグループ内は文書順）
   GROUPS.forEach(function (g) { g.views.forEach(function (v) { if (g.k !== "home") SEQ.push(v); }); });
+  // ページ（ビュー）の要素から id を外す。#schedule などで開いたとき、ブラウザがその位置へ勝手に移り、
+  // 上の「福祉情報ウォッチに戻る」が隠れて途中から表示されるのを防ぐ（報酬改定ガイドと同じ・切り替えは VIEWS で行う）
+  Object.keys(VIEWS).forEach(function (k) { var e = VIEWS[k].el; e.setAttribute("data-vid", k); e.removeAttribute("id"); });
   function viewTitle(id) {
+    if (VIEWS[id]) return VIEWS[id].t || "";
     var n = $(id); if (!n) return "";
-    var v = n.classList.contains("view") ? n : n.closest(".view");
-    return v ? (VIEWS[v.id] || {}).t || "" : "";
+    var v = n.closest(".view");
+    return v ? (VIEWS[v.getAttribute("data-vid")] || {}).t || "" : "";
   }
 
   /* ── 前後のページ ─────────────────── */
+  // 薄い色の面に、矢印・「次へ」・行き先を1行で収める（報酬改定ガイドと同じ部品・ユーザー指示 2026-10-27）
+  var ARR = {
+    prev: '<svg class="pa" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    next: '<svg class="pa" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+  };
+  function plain(t) { var d = document.createElement("div"); d.innerHTML = t; return d.textContent; }
+  function pgLink(dir, href, k, t) {
+    return el("a", { class: dir, href: href, "aria-label": k + "：" + plain(t) }, (dir === "prev" ? ARR.prev : "") + '<span class="pk">' + esc(k) + "</span>" +
+      (dir === "prev" ? '<span class="ps">前へ</span>' : "") + '<span class="pt">' + t + "</span>" + (dir === "next" ? ARR.next : ""));
+  }
   SEQ.forEach(function (v, i) {
     var prev = SEQ[i - 1], next = SEQ[i + 1];
     if (!prev && !next) return;
-    var nav = el("nav", { class: "pager", "aria-label": "前後のページ" });
-    if (prev) nav.appendChild(el("a", { class: "prev", href: "#" + prev.id }, "<span>前へ" + (prev.g !== v.g ? "・" + esc(prev.g.t) : "") + "</span>" + prev.t));
-    if (next) nav.appendChild(el("a", { class: "next", href: "#" + next.id }, "<span>次へ" + (next.g !== v.g ? "・" + esc(next.g.t) : "") + "</span>" + next.t));
+    function dest(x) { return x.g !== v.g && plain(x.t).indexOf(x.g.t) < 0 ? esc(x.g.t) + " › " + x.t : x.t; }
+    var nav = el("nav", { class: "pager" + (prev && next ? " two" : ""), "aria-label": "前後のページ" });
+    if (prev) nav.appendChild(pgLink("prev", "#" + prev.id, "前へ", dest(prev)));
+    if (next) nav.appendChild(pgLink("next", "#" + next.id, "次へ", dest(next)));
     v.el.appendChild(nav);
   });
 
@@ -431,7 +446,7 @@
     if (!tabs) return;
     each(tabs.querySelectorAll(":scope > .pane"), function (p) { p.classList.toggle("is-on", p === pane); });
     each(tabs.querySelectorAll(".tabbtn"), function (b) { b.setAttribute("aria-selected", b.getAttribute("aria-controls") === pane.id ? "true" : "false"); b.tabIndex = b.getAttribute("aria-controls") === pane.id ? 0 : -1; });
-    if (updateHash) { try { history.replaceState(null, "", "#" + pane.id); } catch (e) {} }
+    if (updateHash) { try { history.replaceState(history.state, "", "#" + pane.id); } catch (e) {} }   // 位置の記録（history.state）は残す
   }
   each(document.querySelectorAll("[data-tabs]"), function (tabs) {
     var btns = Array.prototype.slice.call(tabs.querySelectorAll(".tabbtn"));
@@ -554,8 +569,21 @@
   })();
 
   /* ── 表示の切り替え（#で指定） ───────── */
+  // 押したら「新しいページ」に切り替わる（先頭から出す）。戻る操作（スワイプ・ブラウザの戻る）では、
+  // 前のページを離れたときと同じ位置で出す。再読み込みは先頭から（報酬改定ガイドと同じ・ユーザー指示 2026-10-27）
   var shell = document.querySelector(".shell"), subnav = $("subnav");
   var current = null;
+  var MQ = window.matchMedia ? window.matchMedia("(max-width: 960px)") : { matches: false };
+  try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
+  function getState() { var s = null; try { s = history.state; } catch (e) {} return s && typeof s === "object" ? s : {}; }
+  function setState(patch) {
+    try { var s = getState(), n = {}; Object.keys(s).forEach(function (k) { n[k] = s[k]; }); Object.keys(patch).forEach(function (k) { n[k] = patch[k]; }); history.replaceState(n, ""); } catch (e) {}
+  }
+  var navIntent = null, saveT = null;
+  function saveY() { if (saveT) { clearTimeout(saveT); saveT = null; } setState({ y: Math.round(window.scrollY) }); }
+  window.addEventListener("scroll", function () { if (saveT) clearTimeout(saveT); saveT = setTimeout(function () { saveT = null; setState({ y: Math.round(window.scrollY) }); }, 150); }, { passive: true });
+  function jumpTop() { try { window.scrollTo({ top: 0, left: 0, behavior: "instant" }); } catch (e) { window.scrollTo(0, 0); } }
+  function jumpTo(y) { try { window.scrollTo({ top: y, left: 0, behavior: "instant" }); } catch (e) { window.scrollTo(0, y); } }
   function renderSubnav(g, v) {
     if (!subnav) return;
     subnav.innerHTML = "";
@@ -568,8 +596,9 @@
       ol.appendChild(li);
     });
     subnav.appendChild(ol);
+    // スマホの横並びは、いまのページを横方向だけ真ん中へ寄せる（縦には動かさない。動かすとページが途中から表示される）
     var act = subnav.querySelector(".is-active");
-    if (act && act.scrollIntoView && window.matchMedia("(max-width: 960px)").matches) { try { act.scrollIntoView({ block: "nearest", inline: "center" }); } catch (e) {} }
+    if (act && MQ.matches) { try { ol.scrollLeft = Math.max(0, act.offsetLeft - (ol.clientWidth - act.offsetWidth) / 2); } catch (e) {} }
   }
   function show(v) {
     if (current !== v) {
@@ -588,31 +617,66 @@
     each(document.querySelectorAll(".drawer a[data-v]"), function (a) { a.classList.toggle("is-active", a.getAttribute("data-v") === v.id); });
     document.title = (v.g.k === "home" ? "" : v.t.replace(/&amp;/g, "&") + "｜") + "こども性暴力防止法 実務ガイド";
   }
-  function jumpTop() { try { window.scrollTo({ top: 0, left: 0, behavior: "instant" }); } catch (e) { window.scrollTo(0, 0); } }
+  function place(intent, st) {
+    if (intent !== "push" && typeof st.y === "number") { var y = st.y; requestAnimationFrame(function () { jumpTo(y); reqCx(); }); }
+    else { jumpTop(); reqCx(); }
+  }
+  var NAVTYPE = "";
+  try { var ne = performance.getEntriesByType("navigation")[0]; NAVTYPE = ne ? ne.type : ""; } catch (e) {}
+  var firstRoute = true;
   function route() {
-    var id = "";
+    var intent = navIntent; navIntent = null;
+    var st = getState(), id = "";
+    if (firstRoute && NAVTYPE === "reload") st = {};   // 再読み込みは先頭から
+    firstRoute = false;
     try { id = decodeURIComponent((location.hash || "").slice(1)); } catch (e) { id = ""; }
-    if (!id || id === "top") { show(VIEWS.home); jumpTop(); return; }
-    if (VIEWS[id]) { show(VIEWS[id]); jumpTop(); return; }
+    if (!id || id === "top") { show(VIEWS.home); place(intent, st); return; }
+    if (VIEWS[id]) { show(VIEWS[id]); place(intent, st); return; }
     var t = $(id);
     var vEl = t && t.closest(".view");
-    if (!t || !vEl || !VIEWS[vEl.id]) { show(VIEWS.home); jumpTop(); return; }
-    show(VIEWS[vEl.id]);
+    var vid = vEl && vEl.getAttribute("data-vid");
+    if (!t || !vEl || !VIEWS[vid]) { show(VIEWS.home); place(intent, st); return; }
+    show(VIEWS[vid]);
     var pane = t.classList.contains("pane") ? t : t.closest(".pane");
     if (pane) activateTab(pane, false);
     var det = t.tagName === "DETAILS" ? t : null;
     if (det) det.open = true;
     var p = t.parentElement;
     while (p && p !== vEl) { if (p.tagName === "DETAILS") p.open = true; p = p.parentElement; }
-    if (pane && t === pane) { jumpTop(); return; }
-    requestAnimationFrame(function () { try { t.scrollIntoView({ block: "start", behavior: "instant" }); } catch (e) { t.scrollIntoView(); } });
+    if (intent !== "push" && typeof st.y === "number") { place(intent, st); return; }
+    if (pane && t === pane) { jumpTop(); reqCx(); return; }
+    requestAnimationFrame(function () { try { t.scrollIntoView({ block: "start", behavior: "instant" }); } catch (e) { t.scrollIntoView(); } reqCx(); });
   }
   window.addEventListener("hashchange", route);
   document.addEventListener("click", function (e) {
+    if (e.defaultPrevented || e.button > 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     var a = e.target.closest && e.target.closest('a[href^="#"]');
     if (!a) return;
+    if (a === brand && tb.classList.contains("cx-on")) { e.preventDefault(); return; }   // 現在地を出しているあいだは押しても動かない
+    saveY(); navIntent = "push";
     if (a.getAttribute("href") === location.hash || (a.getAttribute("href") === "#home" && !location.hash)) { e.preventDefault(); route(); }
-  });
+  }, true);
+
+  /* ── 上のバーの現在地（スマホ） ─────────
+     ページの見出しが上に隠れたら、ガイド名の代わりに「親 › いまのページ」を出す。押しても動かない */
+  var tb = document.querySelector(".topbar"), brand = tb && tb.querySelector(".brand"), BRAND = brand ? brand.innerHTML : "", cxKey = "", cxTick = false;
+  function updCx() {
+    cxTick = false; if (!brand) return;
+    var on = false, parent = "", title = "";
+    if (MQ.matches && current && current.g.k !== "home") {
+      var h = current.el.querySelector(".chapter > header h2, header h2, h2");
+      on = h ? h.getBoundingClientRect().bottom < tb.getBoundingClientRect().bottom : window.scrollY > 160;
+      title = plain(current.t); parent = title.indexOf(current.g.t) >= 0 ? "" : current.g.t;
+    }
+    var key = on ? parent + "|" + title : "";
+    if (key === cxKey) return;
+    cxKey = key;
+    tb.classList.toggle("cx-on", on);
+    brand.innerHTML = on ? '<span class="cx">' + (parent ? "<small>" + esc(parent) + "</small>" : "") + "<b>" + esc(title) + "</b></span>" : BRAND;
+  }
+  function reqCx() { if (!cxTick) { cxTick = true; requestAnimationFrame(updCx); } }
+  window.addEventListener("scroll", reqCx, { passive: true });
+  window.addEventListener("resize", reqCx);
   route();
 
   /* ── 印刷するときはすべて開く ────────── */

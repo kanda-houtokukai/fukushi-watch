@@ -535,8 +535,9 @@
       ol.appendChild(li);
     });
     subnav.appendChild(ol);
+    // スマホの横並びは、いまのページを横方向だけ真ん中へ寄せる（縦には動かさない。動かすとページが途中から表示される）
     var act = subnav.querySelector(".is-active");
-    if (act && act.scrollIntoView && MQ.matches) { try { act.scrollIntoView({ block: "nearest", inline: "center" }); } catch (e) {} }
+    if (act && MQ.matches) { try { ol.scrollLeft = Math.max(0, act.offsetLeft - (ol.clientWidth - act.offsetWidth) / 2); } catch (e) {} }
   }
   function markNav(gk, vid) {
     each(document.querySelectorAll(".gnav a, .tabbar a"), function (a) { var on = a.getAttribute("data-g") === gk; a.classList.toggle("is-active", on); if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
