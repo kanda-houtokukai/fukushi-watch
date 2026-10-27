@@ -1,8 +1,8 @@
 {
  "schema": 1,
- "checkedAt": "2026-10-27T19:25:00+09:00",
- "checkedPages": 1,
- "checkNote": "検討チームの開催一覧を確認しました。第66回（10月22日）より後の開催案内・資料はなく、新しい発表はありませんでした。",
+ "checkedAt": "2026-10-27T19:35:00+09:00",
+ "checkedPages": 6,
+ "checkNote": "障害児支援部会の第22回（10月28日）で、検討チームの議論の状況（障害児支援関係）が議題になります。検討チームの新しい開催案内・資料はありません。",
  "currentStage": 1,
  "notices": [],
  "milestones": [
@@ -222,6 +222,15 @@
  ],
  "updates": [
   {
+   "date": "2026-10-27",
+   "src": "こども家庭庁",
+   "title": "障害児支援部会 第22回（10/28）の開催案内",
+   "url": "https://www.cfa.go.jp/councils/shingikai/shougaiji_shien/779b0299",
+   "impact": "info",
+   "note": "10月28日の部会で「障害福祉報酬改定検討チームの議論の状況について（障害児支援関係）」が議題になります。資料が掲載されたら、障害児通所・障害児入所のカードと照らし合わせます。",
+   "where": "#svc-jitsusho"
+  },
+  {
    "date": "2026-10-22",
    "src": "国",
    "title": "第66回 施設入所支援・生活介護・短期入所・療養介護の論点",
@@ -303,16 +312,12 @@
    "url": "https://www.cfa.go.jp/councils/shingikai/shougaiji_shien"
   },
   {
-   "name": "障害福祉サービス等報酬改定（厚生労働省の改定ページ）",
-   "url": ""
+   "name": "報酬改定のページ（告示・通知・Q&A。令和8年度分）",
+   "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000202214_00013.html"
   },
   {
-   "name": "障害福祉サービス等経営実態調査",
-   "url": ""
-  },
-  {
-   "name": "障害福祉サービス等の報酬・改定に関するQ&A",
-   "url": ""
+   "name": "障害福祉サービス等経営実態調査（結果の概要）",
+   "url": "https://www.mhlw.go.jp/toukei/list/shougaihukushi_service_chousa01b.html"
   }
  ]
 }
