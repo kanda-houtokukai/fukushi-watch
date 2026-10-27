@@ -465,7 +465,7 @@
     });
   });
 
-  var IMP = { done: ["done", "本文に反映済み"], todo: ["todo", "本文に未反映"], info: ["info", "参考"] };
+  var IMP = { done: ["done", "ガイドに反映済み"], todo: ["todo", "反映待ち"], info: ["info", "参考"] };   // 報酬改定ガイドと同じ言葉にそろえる（2026-10-27）
   function sortedUpdates() { return (LIVE.updates || []).slice().sort(function (a, b) { return dayOf(b.date) - dayOf(a.date); }); }
   function updItem(u, compact) {
     var d = dayOf(u.date), p = parts(d);
@@ -539,7 +539,7 @@
       var todoN = (LIVE.updates || []).filter(function (u) { return u.impact === "todo"; }).length;
       metaBox.innerHTML = "<span>最終確認 <b>" + (CHECKED ? ymd(CHECKED) + " " + hm(CHECKED) : "―") + "</b></span>" +
         "<span>確認したページ <b>" + (LIVE.checkedPages || (LIVE.watch || []).length) + "</b></span>" +
-        "<span>本文に未反映 <b>" + todoN + "件</b></span>" +
+        "<span>反映待ち <b>" + todoN + "件</b></span>" +
         (LIVE.checkNote ? '<span class="cm-note">' + esc(LIVE.checkNote) + "</span>" : "");
     }
     var chips = $("upd-chips"), only = $("upd-todo");

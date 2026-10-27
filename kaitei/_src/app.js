@@ -317,7 +317,7 @@
   each(document.querySelectorAll(".js-checked"), function (n) { if (CHECKED) n.textContent = ymd(CHECKED) + " " + hm(CHECKED); });
   if ($("checked-at") && CHECKED) $("checked-at").textContent = "情報の確認 " + ymd(CHECKED);
   if ($("asof") && C.asof) $("asof").textContent = ymd(dayOf(C.asof));
-  var IMP = { done: ["done", "カードに反映済み"], todo: ["todo", "カードに反映する前"], info: ["info", "参考"] };
+  var IMP = { done: ["done", "ガイドに反映済み"], todo: ["todo", "反映待ち"], info: ["info", "参考"] };   // 画面に「カード」は出さない（ユーザー指摘 2026-10-27）
   function sortedUpdates() { return (LIVE.updates || []).slice().sort(function (a, b) { return dayOf(b.date) - dayOf(a.date); }); }
   function updItem(u, compact) {
     var p = parts(dayOf(u.date)), imp = IMP[u.impact] || IMP.info;
@@ -331,10 +331,10 @@
     var list = $("upd-list"); if (!list) return;
     var meta = $("check-meta");
     var todoN = (LIVE.updates || []).filter(function (u) { return u.impact === "todo"; }).length;
-    if (meta) meta.innerHTML = "<span>最終確認 <b>" + (CHECKED ? ymd(CHECKED) + " " + hm(CHECKED) : "―") + "</b></span><span>確認したページ <b>" + (LIVE.checkedPages || (LIVE.watch || []).length) + "</b></span><span>カードに反映する前 <b>" + todoN + "件</b></span>" + (LIVE.checkNote ? '<span class="cm-note">' + esc(LIVE.checkNote) + "</span>" : "");
+    if (meta) meta.innerHTML = "<span>最終確認 <b>" + (CHECKED ? ymd(CHECKED) + " " + hm(CHECKED) : "―") + "</b></span><span>確認したページ <b>" + (LIVE.checkedPages || (LIVE.watch || []).length) + "</b></span><span>反映待ち <b>" + todoN + "件</b></span>" + (LIVE.checkNote ? '<span class="cm-note">' + esc(LIVE.checkNote) + "</span>" : "");
     var only = $("upd-todo");
     var rows = sortedUpdates().map(function (u) { var li = updItem(u, false); list.appendChild(li); return { li: li, u: u }; });
-    var empty = el("li", { class: "empty", hidden: "" }, "カードに反映する前の更新はありません。");
+    var empty = el("li", { class: "empty", hidden: "" }, "反映待ちの更新はありません。");
     list.appendChild(empty);
     function draw() { var n = 0; rows.forEach(function (r) { var ok = !only.checked || r.u.impact === "todo"; r.li.hidden = !ok; if (ok) n++; }); empty.hidden = n !== 0; }
     only.addEventListener("change", draw); draw();
