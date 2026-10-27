@@ -112,18 +112,20 @@
     if (r.label) h += '<div class="lbl">' + esc(r.label) + "</div>";
     if (r.effective) h += '<div class="blk"><h5>適用</h5><p>' + esc(r.effective) + "</p></div>";
     if (r.genjo) h += '<div class="blk"><h5>現状・課題</h5><p>' + esc(r.genjo) + "</p></div>";
-    var dirHead = r.stageLabel ? "決まった内容" : ((r.stage || 1) >= 4 ? "決まった内容" : ((r.stage || 1) === 3 ? "改定案の内容" : "検討の方向性（案）"));
+    var sl = r.stageLabel || "";
+    var dirHead = /^確定/.test(sl) ? "決まった内容" : (sl === "調査" ? "調査の内容" : (sl ? "資料に書かれていること" : ((r.stage || 1) >= 4 ? "決まった内容" : ((r.stage || 1) === 3 ? "改定案の内容" : "検討の方向性（案）"))));
     if (r.houkousei) h += '<div class="blk dirb"><h5>' + dirHead + "</h5><p>" + esc(r.houkousei) + "</p></div>";
     if (r.r9) h += '<div class="blk dirb"><h5>令和9年度改定での扱い</h5><p>' + esc(r.r9) + "</p></div>";
     if (r.kentou && r.kentou.length) h += '<div class="blk"><h5>想定される検討事項</h5><ul class="kj">' + r.kentou.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul></div>";
     if (r.numbers && r.numbers.length) {
       h += '<div class="blk"><h5>資料にある数字</h5><ul class="nums">' + r.numbers.map(function (n) {
-        var u = pdfLink(r.src, n.page);
+        var u = n.url ? n.url + (n.page ? "#page=" + n.page : "") : pdfLink(r.src, n.page);
         return "<li><span>" + esc(n.text) + "</span>" + (n.page ? (u ? '<a class="pg" href="' + esc(u) + '" target="_blank" rel="noopener">p.' + esc(n.page) + "</a>" : '<span class="pg">p.' + esc(n.page) + "</span>") : "") + "</li>";
       }).join("") + "</ul></div>";
     }
     if (r.merged_into) h += '<div class="blk"><h5>統合先</h5><p><a href="#r-' + esc(r.merged_into) + '">統合先の論点を開く</a></p></div>';
     if (r.point) h += '<div class="blk point"><h5>事業所で確かめておくこと</h5><p>' + esc(r.point) + "</p></div>";
+    if (r.notes) h += '<div class="blk"><h5>資料のあいだの違い・注記</h5><p>' + esc(r.notes) + "</p></div>";
     if (r.history && r.history.length) {
       h += '<div class="blk"><h5>変遷</h5><ul class="hist">' + r.history.slice().reverse().map(function (x) {
         return "<li><time>" + dot(x.date) + "</time><span>" + stg(x.stage || 1, x.stageLabel) + " " + esc(x.text) + "</span></li>";
@@ -134,6 +136,11 @@
       h += '<div class="src"><span>出典：' + esc(r.src.meeting || "") + "（" + dot(r.src.date) + "）</span>" +
         (u ? '<a href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(r.src.title) + (r.pages ? " p." + esc(r.pages) : "") + "</a>" : "<span>" + esc(r.src.title) + "</span>") +
         (r.src.page_url ? '<a href="' + esc(r.src.page_url) + '" target="_blank" rel="noopener">資料の掲載ページ</a>' : "") + "</div>";
+    }
+    if (r.related && r.related.length) {
+      h += '<div class="src"><span>同じ内容がある資料：</span>' + r.related.map(function (x) {
+        return '<a href="' + esc(x.url) + (x.pages && /^\d+/.test(x.pages) ? "#page=" + esc(String(x.pages).match(/^\d+/)[0]) : "") + '" target="_blank" rel="noopener">' + esc((x.meeting ? x.meeting + " " : "") + x.title) + (x.pages ? " p." + esc(x.pages) : "") + "</a>";
+      }).join("") + "</div>";
     }
     b.innerHTML = h;
     return b;
@@ -150,7 +157,8 @@
     each(document.querySelectorAll("#main > section"), function (s) { if (s.id === "list") anchor = s; });
     GRPS.forEach(function (g) {
       var rs = SVCR.filter(function (r) { return r._g.indexOf(g.id) >= 0; }).sort(byNewest);
-      var bs = BASE.filter(function (r) { return r._g.indexOf(g.id) >= 0; });
+      var bs = BASE.filter(function (r) { return r.group !== "横断" && r._g.indexOf(g.id) >= 0; });
+      var bcross = BASE.filter(function (r) { return r.group === "横断"; }).length;
       g._n = rs.length;
       var sec = el("section", { class: "chapter view", id: "svc-" + g.id, "data-group": "svc", "data-title": g.name, "data-count": rs.length });
       var met = (g.discussed || []).map(function (m) { return "<b>" + esc(m.meeting) + "</b>（" + dot(m.date) + "）"; }).join("・");
@@ -181,7 +189,7 @@
         sec.appendChild(bc);
       }
       var cn = CROSS.filter(function (r) { return (r.services || []).indexOf("全サービス") >= 0 || (r.services || []).some(function (s) { return g.services.indexOf(s) >= 0; }); }).length;
-      sec.appendChild(el("p", { class: "prose" }, '全サービスにかかる論点が <a href="#overview">' + cn + "件</a> あります。"));
+      sec.appendChild(el("p", { class: "prose" }, '全サービスにかかる論点が <a href="#overview">' + cn + "件</a>" + (bcross ? '、確定済みの前提が <a href="#base">' + bcross + "件</a>" : "") + " あります。"));
       main.insertBefore(sec, anchor);
     });
   })();
@@ -242,7 +250,9 @@
       b.addEventListener("click", function () { active = c.v; each(box.children, function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); }); draw(); });
       box.appendChild(b);
     });
-    function draw() { fill(host, BASE.filter(function (r) { return !active || (active === "横断" ? r.group === "横断" : r._g.indexOf(active) >= 0); }), { noNew: true, primary: true, empty: "令和8年度改定の資料を整理しています。整理が終わりしだい、ここに載せます。" }); }
+    var ORD = { "確定（令和8年度）": 0, "確定（特例）": 1, "課題の提示": 2, "調査": 3 };
+    var SORTED = BASE.map(function (r, i) { return { r: r, i: i }; }).sort(function (a, b) { return ((ORD[a.r.stageLabel] != null ? ORD[a.r.stageLabel] : 9) - (ORD[b.r.stageLabel] != null ? ORD[b.r.stageLabel] : 9)) || a.i - b.i; }).map(function (x) { return x.r; });
+    function draw() { fill(host, SORTED.filter(function (r) { return !active || (active === "横断" ? r.group === "横断" : r._g.indexOf(active) >= 0); }), { noNew: true, primary: true, empty: "令和8年度改定の資料を整理しています。整理が終わりしだい、ここに載せます。" }); }
     draw();
   })();
 
