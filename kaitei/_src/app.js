@@ -157,8 +157,8 @@
     each(document.querySelectorAll("#main > section"), function (s) { if (s.id === "list") anchor = s; });
     GRPS.forEach(function (g) {
       var rs = SVCR.filter(function (r) { return r._g.indexOf(g.id) >= 0; }).sort(byNewest);
-      var bs = BASE.filter(function (r) { return r.group !== "横断" && r._g.indexOf(g.id) >= 0; });
-      var bcross = BASE.filter(function (r) { return r.group === "横断"; }).length;
+      var bs = BASE.filter(function (r) { return r.group !== "横断" && /^確定/.test(r.stageLabel || "") && r._g.indexOf(g.id) >= 0; });
+      var bcross = BASE.filter(function (r) { return r.group === "横断" && /^確定/.test(r.stageLabel || ""); }).length;
       g._n = rs.length;
       var sec = el("section", { class: "chapter view", id: "svc-" + g.id, "data-group": "svc", "data-title": g.name, "data-count": rs.length });
       var met = (g.discussed || []).map(function (m) { return "<b>" + esc(m.meeting) + "</b>（" + dot(m.date) + "）"; }).join("・");
@@ -240,19 +240,36 @@
   /* ── 前提 ─────────────────────────── */
   (function baseView() {
     var host = $("base-cards"); if (!host) return;
+    // 確定したものだけを最初に見せる。論点整理より前の課題・調査は、切り替えたときだけ出す（未確定の情報を増やしすぎない）
+    function isFixed(r) { return /^確定/.test(r.stageLabel || ""); }
+    var extraBox = $("base-extra");
     var cats = [{ v: "", t: "すべて" }, { v: "横断", t: "全サービス共通" }];
     GRPS.forEach(function (g) { if (BASE.some(function (r) { return r._g.indexOf(g.id) >= 0; })) cats.push({ v: g.id, t: g.name }); });
     var active = "";
     var box = $("base-chips");
-    cats.forEach(function (c) {
-      var n = c.v === "" ? BASE.length : BASE.filter(function (r) { return c.v === "横断" ? r.group === "横断" : r._g.indexOf(c.v) >= 0; }).length;
-      var b = el("button", { class: "chip", type: "button", "aria-pressed": c.v === active ? "true" : "false" }, esc(c.t) + '<span class="c">' + n + "</span>");
-      b.addEventListener("click", function () { active = c.v; each(box.children, function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); }); draw(); });
+    function inCat(r, v) { return !v || (v === "横断" ? r.group === "横断" : r._g.indexOf(v) >= 0); }
+    function shown(r) { return isFixed(r) || (extraBox && extraBox.checked); }
+    var btns = cats.map(function (c) {
+      var b = el("button", { class: "chip", type: "button", "aria-pressed": c.v === active ? "true" : "false" });
+      b.addEventListener("click", function () { active = c.v; btns.forEach(function (x) { x.b.setAttribute("aria-pressed", x.b === b ? "true" : "false"); }); draw(); });
       box.appendChild(b);
+      return { b: b, c: c };
     });
-    var ORD = { "確定（令和8年度）": 0, "確定（特例）": 1, "課題の提示": 2, "調査": 3 };
+    var ORD = { "確定（令和8年度）": 0, "確定（特例）": 1, "課題の提示": 2, "既存の考え方の再提示": 3, "調査": 4 };
     var SORTED = BASE.map(function (r, i) { return { r: r, i: i }; }).sort(function (a, b) { return ((ORD[a.r.stageLabel] != null ? ORD[a.r.stageLabel] : 9) - (ORD[b.r.stageLabel] != null ? ORD[b.r.stageLabel] : 9)) || a.i - b.i; }).map(function (x) { return x.r; });
-    function draw() { fill(host, SORTED.filter(function (r) { return !active || (active === "横断" ? r.group === "横断" : r._g.indexOf(active) >= 0); }), { noNew: true, primary: true, empty: "令和8年度改定の資料を整理しています。整理が終わりしだい、ここに載せます。" }); }
+    fill(host, SORTED, { noNew: true, primary: true, empty: "令和8年度改定の資料を整理しています。整理が終わりしだい、ここに載せます。" });
+    var cards = Array.prototype.slice.call(host.querySelectorAll(".rc"));
+    cards.forEach(function (d, i) { if (!isFixed(SORTED[i])) d.classList.add("extra"); });
+    var empty = el("div", { class: "empty", hidden: "" }, "この条件に当てはまる前提はありません。");
+    host.appendChild(empty);
+    function draw() {
+      var n = 0;
+      cards.forEach(function (d, i) { var ok = inCat(SORTED[i], active) && shown(SORTED[i]); d.hidden = !ok; if (ok) n++; });
+      empty.hidden = n !== 0 || !cards.length;
+      btns.forEach(function (x) { x.b.innerHTML = esc(x.c.t) + '<span class="c">' + BASE.filter(function (r) { return inCat(r, x.c.v) && shown(r); }).length + "</span>"; });
+    }
+    if (extraBox) extraBox.addEventListener("change", draw);
+    window.__showBaseExtra = function () { if (extraBox && !extraBox.checked) { extraBox.checked = true; draw(); } };
     draw();
   })();
 
@@ -503,6 +520,7 @@
     var vid = vEl && vEl.getAttribute("data-vid");
     if (!t || !vEl || !VIEWS[vid]) { show(VIEWS.home); jumpTop(); return; }
     show(VIEWS[vid]);
+    if (t.classList.contains("extra") && window.__showBaseExtra) window.__showBaseExtra();
     if (t.tagName === "DETAILS") t.open = true;
     var p = t.parentElement;
     while (p && p !== vEl) { if (p.tagName === "DETAILS") p.open = true; p = p.parentElement; }
