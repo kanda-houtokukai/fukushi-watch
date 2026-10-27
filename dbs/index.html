@@ -538,6 +538,17 @@ html.drawer-open { overflow: hidden; }
 .shell.no-sub:not(.is-home) main { max-width: 1040px; width: 100%; margin-inline: auto; }
 .shell.is-home main { max-width: none; }
 
+
+/* 福祉情報ウォッチへ戻る（ページ最上部・特設ページの入口と出口） */
+.crumb { background: var(--surface-2); border-bottom: 1px solid var(--line-2); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.crumb-in { max-width: 1320px; margin: 0 auto; display: flex; align-items: center; }
+.crumb-back { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 12px 0 0; color: var(--ink-2); text-decoration: none; font-size: 13px; }
+.crumb-back:hover { color: var(--ai); text-decoration: underline; text-underline-offset: 3px; }
+.crumb-back svg { width: 14px; height: 14px; flex: none; }
+.drawer .dback { display: flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 8px; margin: 0 0 14px; border-bottom: 1px solid var(--line-2); color: var(--ink-2); text-decoration: none; font-size: 14px; }
+.drawer .dback svg { width: 14px; height: 14px; }
+@media (max-width: 960px) { .crumb-back { min-height: 44px; } }
+
 /* ── 画面幅ごとの調整 ───────────────────── */
 @media (max-width: 1240px) {
   .countdown-chip { display: none; }
@@ -637,7 +648,7 @@ html.drawer-open { overflow: hidden; }
 /* ── 印刷（ブラウザのメニューから印刷したとき） ─ */
 @media print {
   :root { --bg: #fff; --surface: #fff; --surface-2: #f2f4f7; }
-  body::before, .topbar, .drawer, .tabbar, .subnav, .pager, .banner, .qa-tools, .dt-actions, .ck-count, .ck-meter, .tabbtns { display: none !important; }
+  body::before, .crumb, .topbar, .drawer, .tabbar, .subnav, .pager, .banner, .qa-tools, .dt-actions, .ck-count, .ck-meter, .tabbtns { display: none !important; }
   .shell { display: block; padding: 0; }
   main { max-width: none; }
   .view { display: block !important; animation: none; }
@@ -652,6 +663,11 @@ html.drawer-open { overflow: hidden; }
 </style>
 </head>
 <body>
+<div class="crumb" lang="ja">
+  <div class="crumb-in">
+    <a class="crumb-back" href="../"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>福祉情報ウォッチに戻る</span></a>
+  </div>
+</div>
 <header class="topbar" lang="ja">
   <div class="topbar-in">
     <a class="brand" href="#home">こども性暴力防止法<span>実務ガイド</span></a>
@@ -4387,6 +4403,7 @@ GUIDE_DATA.qa = [
   /* ── メニュー（全ページ） ───────────── */
   var drawer = $("drawer"), drawerList = $("drawer-list"), menuBtn = $("menu-btn");
   if (drawerList) {
+    drawerList.appendChild(el("a", { class: "dback", href: "../" }, '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>福祉情報ウォッチに戻る</span>'));
     GROUPS.forEach(function (g) {
       if (!g.views.length) return;
       var box = el("div", { class: "dg" });
@@ -4401,6 +4418,10 @@ GUIDE_DATA.qa = [
   }
   function setDrawer(open) {
     if (!drawer) return;
+    if (open) {
+      var tb = document.querySelector(".topbar");
+      if (tb) drawer.style.top = Math.max(0, Math.round(tb.getBoundingClientRect().bottom)) + "px";
+    }
     drawer.hidden = !open;
     menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
     document.documentElement.classList.toggle("drawer-open", open);

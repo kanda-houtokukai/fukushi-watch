@@ -398,6 +398,7 @@
   /* ── メニュー（全ページ） ───────────── */
   var drawer = $("drawer"), drawerList = $("drawer-list"), menuBtn = $("menu-btn");
   if (drawerList) {
+    drawerList.appendChild(el("a", { class: "dback", href: "../" }, '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>福祉情報ウォッチに戻る</span>'));
     GROUPS.forEach(function (g) {
       if (!g.views.length) return;
       var box = el("div", { class: "dg" });
@@ -412,6 +413,10 @@
   }
   function setDrawer(open) {
     if (!drawer) return;
+    if (open) {
+      var tb = document.querySelector(".topbar");
+      if (tb) drawer.style.top = Math.max(0, Math.round(tb.getBoundingClientRect().bottom)) + "px";
+    }
     drawer.hidden = !open;
     menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
     document.documentElement.classList.toggle("drawer-open", open);
