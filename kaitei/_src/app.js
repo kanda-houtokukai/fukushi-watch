@@ -88,11 +88,8 @@
   function pdfLink(src, page) { if (!src || !src.url) return ""; return src.url + (page ? "#page=" + page : ""); }
   function firstPage(r) { var m = String(r.pages || "").match(/\d+/); return m ? m[0] : ""; }
   function isNew(r) { var d = lastDate(r); return d && (TODAY - dayOf(d)) / DAY <= 14; }
-  function card(r, opts) {
-    opts = opts || {};
-    var prim = typeof opts.primary === "function" ? opts.primary(r) : !!opts.primary;
-    var cls = "rc" + (r.withdrawn ? " gone" : "");
-    var d = el("details", prim ? { class: cls, id: "r-" + r.id } : { class: cls, "data-rid": r.id });
+  var READ = {};   // スマホで論点のページを開いた論点（この表示のあいだだけ。一覧の行に「読んだ」印を付ける）
+  function tagsHtml(r, opts) {
     var tags = [];
     if (r.stageLabel) tags.push(stg(r.stage || 4, r.stageLabel)); else tags.push(stg(r.stage || 1));
     if (r.direction) tags.push(dirTag(r));
@@ -100,9 +97,21 @@
     if (r.merged_into) tags.push('<span class="kd">統合済み</span>');
     if (r.limited) tags.push('<span class="limit">期限つき</span>');
     (r.kind || []).slice(0, 3).forEach(function (k) { tags.push('<span class="kd">' + esc(k) + "</span>"); });
-    if (isNew(r) && !opts.noNew) tags.push('<span class="newmark">' + mdw(lastDate(r)).replace(/（.）/, "") + " 更新</span>");
+    if (isNew(r) && !(opts && opts.noNew)) tags.push('<span class="newmark">' + mdw(lastDate(r)).replace(/（.）/, "") + " 更新</span>");
+    return tags.join("");
+  }
+  function card(r, opts) {
+    opts = opts || {};
+    var prim = typeof opts.primary === "function" ? opts.primary(r) : !!opts.primary;
+    var cls = "rc" + (r.withdrawn ? " gone" : "");
+    // id 属性は付けない（#r-… を開いたとき、ブラウザが長い一覧の途中へ勝手に移るのを防ぐ）。
+    // そのカードの「持ち場」（サービス別の最初のグループ・前提・全体像）だけに data-anchor を付け、#r-… の行き先にする
+    var attrs = { class: cls, "data-rid": r.id };
+    if (prim) attrs["data-anchor"] = "r-" + r.id;
+    var d = el("details", attrs);
+    if (READ[r.id]) d.classList.add("is-read");
     var svcLine = (r.services || []).join("・");
-    d.innerHTML = "<summary><span class=\"tags\">" + tags.join("") + '</span><span class="rt">' + esc(r.title) + "</span>" + (svcLine && !opts.noSvc ? '<span class="rs">' + esc(svcLine) + "</span>" : "") + "</summary>";
+    d.innerHTML = "<summary><span class=\"tags\">" + tagsHtml(r, opts) + '</span><span class="rt">' + esc(r.title) + "</span>" + (svcLine && !opts.noSvc ? '<span class="rs">' + esc(svcLine) + "</span>" : "") + "</summary>";
     d.addEventListener("toggle", function () { if (d.open && !d._built) { d._built = true; d.appendChild(body(r)); } }, { once: false });
     return d;
   }
@@ -456,11 +465,20 @@
   // 上の「福祉情報ウォッチに戻る」が隠れるのを防ぐ（表示の切り替えは VIEWS で行う）
   Object.keys(VIEWS).forEach(function (k) { var e = VIEWS[k].el; e.setAttribute("data-vid", k); e.removeAttribute("id"); });
 
+  // 前後のボタン（ページの前後・論点の前後で共通）。薄い色の面に、矢印・「次へ」・行き先を1行で収める
+  var ARR = {
+    prev: '<svg class="pa" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    next: '<svg class="pa" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+  };
+  function pgLink(dir, href, k, t) {
+    return el("a", { class: dir, href: href }, (dir === "prev" ? ARR.prev : "") + '<span class="pk">' + esc(k) + '</span><span class="pt">' + esc(t) + "</span>" + (dir === "next" ? ARR.next : ""));
+  }
   SEQ.forEach(function (v, i) {
     var prev = SEQ[i - 1], next = SEQ[i + 1];
+    function dest(x) { return x.g !== v.g && x.t.indexOf(x.g.t) < 0 ? x.g.t + " › " + x.t : x.t; }
     var nav = el("nav", { class: "pager", "aria-label": "前後のページ" });
-    if (prev) nav.appendChild(el("a", { class: "prev", href: "#" + prev.id }, "<span>前へ" + (prev.g !== v.g ? "・" + esc(prev.g.t) : "") + "</span>" + esc(prev.t)));
-    if (next) nav.appendChild(el("a", { class: "next", href: "#" + next.id }, "<span>次へ" + (next.g !== v.g ? "・" + esc(next.g.t) : "") + "</span>" + esc(next.t)));
+    if (prev) nav.appendChild(pgLink("prev", "#" + prev.id, "前へ", dest(prev)));
+    if (next) nav.appendChild(pgLink("next", "#" + next.id, "次へ", dest(next)));
     if (prev || next) v.el.appendChild(nav);
   });
 
@@ -485,7 +503,22 @@
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !drawer.hidden) { setDrawer(false); menuBtn.focus(); } });
 
   /* ── 表示の切り替え（#で指定） ───────── */
+  // 押したら「新しいページ」に切り替わる（ページの中を移るだけのショートカットにしない）。
+  // 戻る操作（スワイプ・ブラウザの戻る）では、前のページを離れたときと同じ位置で出す。
   var shell = document.querySelector(".shell"), subnav = $("subnav"), current = null;
+  var MQ = window.matchMedia ? window.matchMedia("(max-width: 960px)") : { matches: false };
+  try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
+  function getState() { var s = null; try { s = history.state; } catch (e) {} return s && typeof s === "object" ? s : {}; }
+  function setState(patch) {
+    try { var s = getState(), n = {}; Object.keys(s).forEach(function (k) { n[k] = s[k]; }); Object.keys(patch).forEach(function (k) { n[k] = patch[k]; }); history.replaceState(n, ""); } catch (e) {}
+  }
+  var navIntent = null, saveT = null;   // navIntent "push"＝このページのボタン・リンクで移った（先頭から出す）
+  function saveY() { if (saveT) { clearTimeout(saveT); saveT = null; } setState({ y: Math.round(window.scrollY) }); }
+  window.addEventListener("scroll", function () { if (saveT) clearTimeout(saveT); saveT = setTimeout(function () { saveT = null; setState({ y: Math.round(window.scrollY) }); }, 150); }, { passive: true });
+  function go(hash) { saveY(); navIntent = "push"; location.hash = hash; }
+  function jumpTop() { try { window.scrollTo({ top: 0, left: 0, behavior: "instant" }); } catch (e) { window.scrollTo(0, 0); } }
+  function jumpTo(y) { try { window.scrollTo({ top: y, left: 0, behavior: "instant" }); } catch (e) { window.scrollTo(0, y); } }
+
   function renderSubnav(g, v) {
     subnav.innerHTML = "";
     if (g.views.length < 2) return;
@@ -498,39 +531,174 @@
     });
     subnav.appendChild(ol);
     var act = subnav.querySelector(".is-active");
-    if (act && act.scrollIntoView && window.matchMedia("(max-width: 960px)").matches) { try { act.scrollIntoView({ block: "nearest", inline: "center" }); } catch (e) {} }
+    if (act && act.scrollIntoView && MQ.matches) { try { act.scrollIntoView({ block: "nearest", inline: "center" }); } catch (e) {} }
+  }
+  function markNav(gk, vid) {
+    each(document.querySelectorAll(".gnav a, .tabbar a"), function (a) { var on = a.getAttribute("data-g") === gk; a.classList.toggle("is-active", on); if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
+    each(document.querySelectorAll(".drawer a[data-v]"), function (a) { a.classList.toggle("is-active", a.getAttribute("data-v") === vid); });
   }
   function show(v) {
     if (current !== v) { each(document.querySelectorAll(".view.is-active"), function (x) { x.classList.remove("is-active"); }); v.el.classList.add("is-active"); current = v; }
     shell.classList.toggle("no-sub", v.g.views.length < 2);
     shell.classList.toggle("is-home", v.g.k === "home");
     renderSubnav(v.g, v);
-    each(document.querySelectorAll(".gnav a, .tabbar a"), function (a) { var on = a.getAttribute("data-g") === v.g.k; a.classList.toggle("is-active", on); if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
-    each(document.querySelectorAll(".drawer a[data-v]"), function (a) { a.classList.toggle("is-active", a.getAttribute("data-v") === v.id); });
+    markNav(v.g.k, v.id);
     document.title = (v.g.k === "home" ? "" : v.t + "｜") + "令和9年度 障害福祉報酬改定ガイド";
   }
-  function jumpTop() { try { window.scrollTo({ top: 0, left: 0, behavior: "instant" }); } catch (e) { window.scrollTo(0, 0); } }
+
+  /* ── 論点のページ（スマホ） ───────────
+     一覧の行を押すと、その論点だけのページに切り替わる。上に戻り先（一覧の名前）と何件目か、下に前後の論点。
+     どの一覧から来たか（ctx）は履歴の各ページに持たせ、スワイプで戻っても進んでも崩れないようにする。
+     PCは従来どおり、一覧の中でカードを開く。 */
+  var BYID = {};
+  ALL.concat(BASE).forEach(function (r) { BYID[r.id] = r; });
+  var DV = el("section", { class: "chapter view detail", "data-vid": "detail" });
+  main.insertBefore(DV, main.querySelector(".foot"));
+  var DETAIL = { id: "detail", el: DV, t: "", parent: "" }, CTX = null, PENDING = null, LAST = null;
+  function rowsIn(box, withHidden) {
+    return Array.prototype.slice.call(box.querySelectorAll(":scope > .rc")).filter(function (d) { return withHidden || !d.hidden; }).map(function (d) { return d.getAttribute("data-rid"); });
+  }
+  function copy(o) { var n = {}; Object.keys(o || {}).forEach(function (k) { n[k] = Array.isArray(o[k]) ? o[k].slice() : o[k]; }); return n; }
+  // その場から開いた：戻り先＝いまのページ（履歴を1つ戻る）
+  function ctxHere(ids) {
+    var v = current;
+    if (!v || v === DETAIL) return null;
+    return { from: v.id, fromTitle: v.g.k === "home" ? "ホーム" : v.t, fromG: v.g.k, ids: ids, depth: 1, list: true };
+  }
+  // 外から直接来た（ウォッチの帯・共有されたリンクなど）：戻り先＝その論点の持ち場の一覧
+  function homeCtx(r) {
+    var a = document.querySelector('[data-anchor="r-' + r.id + '"]');
+    var vEl = a && a.closest("[data-vid]"), info = vEl && VIEWS[vEl.getAttribute("data-vid")];
+    if (!info) return { from: "home", fromTitle: "ホーム", fromG: "home", ids: [r.id], depth: 0, list: false };
+    return { from: info.id, fromTitle: info.t, fromG: info.g.k, ids: rowsIn(a.parentElement, a.hidden), depth: 0, list: false };
+  }
+  function openCard(id, ctx) { if (!BYID[id]) return; PENDING = ctx; go("r-" + id); }
+  function goBack() {
+    var c = CTX;
+    if (c && c.list && c.depth > 0) { try { history.go(-c.depth); return; } catch (e) {} }
+    go(c ? c.from : "home");
+  }
+  function showDetail(r, ctx, pushed) {
+    CTX = ctx; setState({ ctx: ctx });
+    var i = ctx.ids.indexOf(r.id), n = ctx.ids.length;
+    var prev = i > 0 ? BYID[ctx.ids[i - 1]] : null, next = i >= 0 && i < n - 1 ? BYID[ctx.ids[i + 1]] : null;
+    DV.innerHTML = "";
+    var top = el("div", { class: "dt-top" });
+    top.appendChild(el("a", { class: "dt-back", href: "#" + ctx.from }, ARR.prev + "<span>" + esc(ctx.fromTitle) + "</span>"));
+    if (n > 1 && i >= 0) top.appendChild(el("span", { class: "dt-pos" }, (i + 1) + " / " + n));
+    DV.appendChild(top);
+    var wrap = el("article", { class: "rc is-page" });
+    wrap.innerHTML = '<header class="dt-h"><span class="tags">' + tagsHtml(r, { noNew: !!r.stageLabel }) + '</span><h2 class="dt-t">' + esc(r.title) + "</h2>" +
+      ((r.services || []).length ? '<p class="dt-s">' + esc(r.services.join("・")) + "</p>" : "") + "</header>";
+    wrap.appendChild(body(r));
+    DV.appendChild(wrap);
+    if (prev || next) {
+      var nav = el("nav", { class: "pager rpager", "aria-label": "前後の論点" });
+      if (prev) nav.appendChild(pgLink("prev", "#r-" + prev.id, "前の論点", prev.title));
+      if (next) nav.appendChild(pgLink("next", "#r-" + next.id, "次の論点", next.title));
+      DV.appendChild(nav);
+    }
+    each(document.querySelectorAll(".view.is-active"), function (x) { x.classList.remove("is-active"); });
+    DV.classList.toggle("from-right", !!pushed);
+    DV.classList.add("is-active");
+    var h2 = DV.querySelector(".dt-t");   // 読み上げ・キーボードでも、新しいページの題名から始まるようにする
+    if (h2) { h2.setAttribute("tabindex", "-1"); if (pushed) { try { h2.focus({ preventScroll: true }); } catch (e) {} } }
+    DETAIL.t = r.title; DETAIL.parent = ctx.fromTitle; current = DETAIL;
+    shell.classList.add("no-sub"); shell.classList.remove("is-home");
+    subnav.innerHTML = "";
+    markNav(ctx.fromG || "svc", ctx.from);
+    document.title = r.title + "｜令和9年度 障害福祉報酬改定ガイド";
+    READ[r.id] = 1; LAST = r.id;
+    each(document.querySelectorAll('.rc[data-rid="' + r.id + '"]'), function (d) { d.classList.add("is-read"); });
+  }
+  // 論点のページから一覧へ戻ったとき、読んでいた行を少しだけ光らせる（どこまで読んだかを見失わない）
+  function flashLast() {
+    if (!current || current === DETAIL) return;
+    var id = LAST; LAST = null;
+    if (!id) return;
+    var d = current.el.querySelector('.rc[data-rid="' + id + '"]');
+    if (!d) return;
+    d.classList.remove("is-last"); void d.offsetWidth; d.classList.add("is-last");
+  }
+  function place(intent, st) {
+    if (intent !== "push" && typeof st.y === "number") { var y = st.y; requestAnimationFrame(function () { jumpTo(y); flashLast(); reqCx(); }); }
+    else { LAST = null; jumpTop(); reqCx(); }
+  }
+
   function route() {
-    var id = "";
+    var intent = navIntent; navIntent = null;
+    var st = getState(), id = "";
     try { id = decodeURIComponent((location.hash || "").slice(1)); } catch (e) { id = ""; }
-    if (!id || id === "top") { show(VIEWS.home); jumpTop(); return; }
-    if (VIEWS[id]) { show(VIEWS[id]); jumpTop(); return; }
-    var t = $(id);
+    var pend = PENDING; PENDING = null;
+    if (/^r-/.test(id) && MQ.matches && BYID[id.slice(2)]) {
+      var r = BYID[id.slice(2)];
+      var ctx = intent === "push" && pend ? pend : (st.ctx || null);
+      if (!ctx || !ctx.ids || ctx.ids.indexOf(r.id) < 0) ctx = homeCtx(r);
+      showDetail(r, ctx, intent === "push");
+      place(intent, st);
+      return;
+    }
+    if (!id || id === "top") { show(VIEWS.home); place(intent, st); return; }
+    if (VIEWS[id]) { show(VIEWS[id]); place(intent, st); return; }
+    var t = $(id) || document.querySelector('[data-anchor="' + id.replace(/["\\]/g, "") + '"]');
     var vEl = t && t.closest(".view");
     var vid = vEl && vEl.getAttribute("data-vid");
-    if (!t || !vEl || !VIEWS[vid]) { show(VIEWS.home); jumpTop(); return; }
+    if (!t || !vEl || !VIEWS[vid]) { show(VIEWS.home); place(intent, st); return; }
     show(VIEWS[vid]);
     if (t.classList.contains("extra") && window.__showBaseExtra) window.__showBaseExtra();
     if (t.tagName === "DETAILS") t.open = true;
     var p = t.parentElement;
     while (p && p !== vEl) { if (p.tagName === "DETAILS") p.open = true; p = p.parentElement; }
-    requestAnimationFrame(function () { try { t.scrollIntoView({ block: "start", behavior: "instant" }); } catch (e) { t.scrollIntoView(); } });
+    if (intent !== "push" && typeof st.y === "number") { place(intent, st); return; }
+    requestAnimationFrame(function () { try { t.scrollIntoView({ block: "start", behavior: "instant" }); } catch (e) { t.scrollIntoView(); } reqCx(); });
   }
   window.addEventListener("hashchange", route);
+  try { MQ.addEventListener("change", route); } catch (e) { try { MQ.addListener(route); } catch (e2) {} }
+
   document.addEventListener("click", function (e) {
-    var a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (e.defaultPrevented || e.button > 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var t = e.target; if (!t || !t.closest) return;
+    // スマホ：一覧の行（論点）を押したら、論点のページへ
+    var sm = MQ.matches && t.closest(".cards > .rc > summary");
+    if (sm) { e.preventDefault(); var d = sm.parentElement; openCard(d.getAttribute("data-rid"), ctxHere(rowsIn(d.parentElement, false))); return; }
+    var a = t.closest('a[href^="#"]');
     if (!a) return;
-    if (a.getAttribute("href") === location.hash || (a.getAttribute("href") === "#home" && !location.hash)) { e.preventDefault(); route(); }
-  });
+    var href = a.getAttribute("href");
+    if (a === brand && tb.classList.contains("cx-on")) { e.preventDefault(); return; }   // 現在地を出しているあいだは押しても動かない
+    if (a.classList.contains("dt-back")) { e.preventDefault(); goBack(); return; }
+    if (a.closest(".rpager")) { e.preventDefault(); var c = copy(CTX); c.depth = (CTX && CTX.depth || 0) + 1; openCard(href.slice(3), c); return; }
+    if (MQ.matches && /^#r-/.test(href)) {
+      e.preventDefault();
+      var box = a.closest("ul, ol");
+      var ids = box ? Array.prototype.slice.call(box.querySelectorAll('a[href^="#r-"]')).map(function (x) { return x.getAttribute("href").slice(3); }).filter(function (x) { return BYID[x]; }) : [];
+      openCard(href.slice(3), ctxHere(ids.length > 1 ? ids : [href.slice(3)]));
+      return;
+    }
+    saveY(); navIntent = "push";
+    if (href === location.hash || (href === "#home" && !location.hash)) { e.preventDefault(); route(); }
+  }, true);
+
+  /* ── 上のバーの現在地（スマホ） ─────────
+     ページの見出しが上に隠れたら、ガイド名の代わりに「親 › いまのページ」を出す。押しても動かない（ショートカットにしない） */
+  var tb = document.querySelector(".topbar"), brand = tb && tb.querySelector(".brand"), BRAND = brand ? brand.innerHTML : "", cxKey = "", cxTick = false;
+  function headOf(v) { return v === DETAIL ? DV.querySelector(".dt-t") : v.el.querySelector(".chapter > header h2"); }
+  function updCx() {
+    cxTick = false; if (!brand) return;
+    var on = false, parent = "", title = "";
+    if (MQ.matches && current && (current === DETAIL || current.g.k !== "home")) {
+      var h = headOf(current);
+      on = h ? h.getBoundingClientRect().bottom < tb.getBoundingClientRect().bottom : window.scrollY > 160;
+      if (current === DETAIL) { parent = DETAIL.parent; title = DETAIL.t; }
+      else { title = current.t; parent = current.t.indexOf(current.g.t) >= 0 ? "" : current.g.t; }
+    }
+    var key = on ? parent + "|" + title : "";
+    if (key === cxKey) return;
+    cxKey = key;
+    tb.classList.toggle("cx-on", on);
+    brand.innerHTML = on ? '<span class="cx">' + (parent ? "<small>" + esc(parent) + "</small>" : "") + "<b>" + esc(title) + "</b></span>" : BRAND;
+  }
+  function reqCx() { if (!cxTick) { cxTick = true; requestAnimationFrame(updCx); } }
+  window.addEventListener("scroll", reqCx, { passive: true });
+  window.addEventListener("resize", reqCx);
   route();
 })();

@@ -98,11 +98,18 @@ main { min-width: 0; padding-block: 24px 0; max-width: 1000px; }
 .banner { border: 1.5px solid var(--down); background: var(--down-soft); border-radius: var(--r); padding: 10px 14px; margin: 0 0 16px; font-size: 14px; display: grid; gap: 4px; }
 .banner b { color: var(--down); }
 
+/* 前後のボタン（ページの前後・論点の前後）。薄い色の面に1行で収める。次へ＝藍、前へ＝灰（ユーザー指示 2026-10-27・PCも同じ） */
 .pager { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 48px 0 0; padding-top: 18px; border-top: 1px solid var(--line); }
-.pager a { display: grid; gap: 2px; padding: 12px 14px; border: 1px solid var(--line); border-radius: var(--r); text-decoration: none; color: var(--ink); font-size: 14.5px; font-weight: 700; line-height: 1.5; }
-.pager a span { font-family: var(--f-mono); font-size: 11px; color: var(--ink-3); font-weight: 500; }
-.pager a:hover { border-color: var(--ac); }
-.pager a.next { text-align: right; grid-column: 2; }
+.pager a { display: flex; align-items: center; gap: 8px; min-width: 0; min-height: 50px; padding: 0 16px; border-radius: var(--r); text-decoration: none; font-size: 14.5px; line-height: 1.4; white-space: nowrap; transition: background-color .15s; }
+.pager a .pk { flex: none; font-size: 12.5px; font-weight: 500; }
+.pager a .pt { min-width: 0; overflow: hidden; text-overflow: ellipsis; font-weight: 700; }
+.pager a .pa { flex: none; width: 15px; height: 15px; }
+.pager a.prev { grid-column: 1; background: var(--surface-2); color: var(--ink-2); }
+.pager a.prev .pt { color: var(--ink); }
+.pager a.prev:hover { background: #E7EBF1; }
+.pager a.next { grid-column: 2; background: var(--ac-soft); color: var(--ac); }
+.pager a.next .pa { margin-left: auto; }
+.pager a.next:hover { background: #DAE5F3; }
 
 /* ── 確度の5段階 ─────────────────────── */
 .stg { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; line-height: 1; white-space: nowrap; color: var(--ac); }
@@ -351,7 +358,7 @@ details.more > .more-in { padding: 6px 16px 16px; }
 .srcs { list-style: none; padding: 0; margin: 14px 0; display: grid; border-top: 1px solid var(--line); }
 .srcs li { display: grid; grid-template-columns: 8.5em minmax(0, 1fr); gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line-2); font-size: 13.5px; line-height: 1.6; }
 .srcs .k { font-family: var(--f-mono); font-size: 11.5px; color: var(--ink-3); padding-top: 2px; }
-.srcs a { overflow-wrap: anywhere; }
+.srcs a, .srcs .sm { overflow-wrap: anywhere; }   /* 注記に入った長いURLでスマホが横にずれないように */
 
 .box { border: 1px solid var(--line); border-radius: var(--r); padding: 16px 18px; margin: 18px 0; max-width: 52em; }
 .box > :last-child { margin-bottom: 0; }
@@ -445,6 +452,45 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
   .rc > summary { padding: 12px 40px 12px 14px; }
   .rc .rb { padding: 4px 14px 14px; }
   .rc .hist li { grid-template-columns: minmax(0, 1fr); gap: 0; }
+}
+/* ── スマホ：押したら新しいページ（ユーザー指示 2026-10-27） ──
+   一覧は区切り線の行にし、押すとその論点だけのページに切り替わる（その場で長く伸ばさない）。
+   ページの見出しが隠れたら、上のバーに「親 › いまのページ」を出す（押しても動かない）。 */
+@media (max-width: 960px) {
+  .view .cards { gap: 0; border-top: 1px solid var(--line); }
+  .view .cards > .rc { position: relative; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; }
+  .view .cards > .rc > summary { gap: 4px; padding: 12px 30px 12px 2px; }
+  .view .cards > .rc > summary::after, .view .cards > .rc[open] > summary::after { right: 8px; top: 50%; margin-top: -5px; transform: rotate(-45deg); }
+  .view .cards > .rc > summary .tags { flex-wrap: nowrap; overflow: hidden; }
+  .view .cards > .rc > summary .rs { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .view .cards > .rc.is-read > summary .rt { color: var(--ink-2); }
+  .view .cards > .rc.is-read::before { content: ""; position: absolute; left: -9px; top: 14px; bottom: 14px; width: 3px; border-radius: 2px; background: var(--ac-mid); }
+  .view .cards > .rc.is-last { animation: lastRow 1.8s ease-out; }
+  @keyframes lastRow { from { background: var(--ac-soft); } to { background: transparent; } }
+  .view .cards > .empty { margin-top: 12px; }
+
+  .view.detail.is-active.from-right { animation: dtIn .24s cubic-bezier(.2, .8, .2, 1); }
+  @keyframes dtIn { from { opacity: .3; transform: translateX(28px); } to { opacity: 1; transform: none; } }
+  .dt-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 4px; }
+  .dt-back { display: inline-flex; align-items: center; gap: 4px; min-width: 0; min-height: 44px; padding-right: 8px; margin-left: -4px; color: var(--ac); font-weight: 700; font-size: 15px; text-decoration: none; }
+  .dt-back .pa { width: 16px; height: 16px; flex: none; }
+  .dt-back span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .dt-pos { font-family: var(--f-mono); font-size: 12.5px; color: var(--ink-3); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .rc.is-page { border: 0; border-radius: 0; background: none; }
+  .rc.is-page .dt-h { display: grid; gap: 8px; padding: 4px 0 16px; border-bottom: 1px solid var(--line); }
+  .rc.is-page .tags { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+  .rc.is-page .dt-t { font-size: 21px; line-height: 1.5; margin: 0; }
+  .rc.is-page .dt-t:focus { outline: none; }
+  .rc.is-page .dt-s { margin: 0; font-size: 13px; color: var(--ink-3); line-height: 1.6; }
+  .rc.is-page .rb { padding: 4px 0 0; font-size: 15px; }
+  .rpager { margin-top: 32px; }
+
+  .topbar.cx-on .stage-chip { display: none; }
+  .topbar.cx-on .brand { flex: 1 1 auto; min-width: 0; align-items: stretch; cursor: default; }
+  .brand .cx { display: flex; flex-direction: column; min-width: 0; overflow: hidden; line-height: 1.22; animation: cxIn .18s ease-out; }
+  .brand .cx small { font-family: var(--f-body); font-size: 10.5px; font-weight: 500; color: var(--ink-3); letter-spacing: .04em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .brand .cx b { font-size: 15px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  @keyframes cxIn { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
