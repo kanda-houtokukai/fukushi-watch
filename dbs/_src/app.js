@@ -515,7 +515,7 @@
     // よく出る質問
     var faq = $("faq-home");
     if (faq && DATA.qa) {
-      ["今いる職員の確認は", "2027年4月入職予定", "送迎の運転手", "研修はいつまで", "相談窓口は法人内", "人事台帳に", "前科の確認が済んでいますか", "どこに通報しますか"].forEach(function (key) {
+      ["現職の職員の確認は", "2027年4月入職予定", "送迎の運転手", "研修はいつまで", "相談窓口は法人内", "人事台帳に", "前科の確認が済んでいますか", "どこに通報しますか"].forEach(function (key) {
         for (var i = 0; i < DATA.qa.length; i++) if (DATA.qa[i].q.indexOf(key) >= 0) {
           var li = el("li"); li.appendChild(el("a", { href: "#qa-" + (i + 1) }, esc(DATA.qa[i].q))); faq.appendChild(li); break;
         }
@@ -596,7 +596,7 @@
       ol.appendChild(li);
     });
     subnav.appendChild(ol);
-    // スマホの横並びは、いまのページを横方向だけ真ん中へ寄せる（縦には動かさない。動かすとページが途中から表示される）
+    // スマホの横並びは、表示中のページを横方向だけ真ん中へ寄せる（縦には動かさない。動かすとページが途中から表示される）
     var act = subnav.querySelector(".is-active");
     if (act && MQ.matches) { try { ol.scrollLeft = Math.max(0, act.offsetLeft - (ol.clientWidth - act.offsetWidth) / 2); } catch (e) {} }
   }
@@ -658,7 +658,7 @@
   }, true);
 
   /* ── 上のバーの現在地（スマホ） ─────────
-     ページの見出しが上に隠れたら、ガイド名の代わりに「親 › いまのページ」を出す。押しても動かない */
+     ページの見出しが上に隠れたら、ガイド名の代わりに「親 › 表示中のページ」を出す。押しても動かない */
   var tb = document.querySelector(".topbar"), brand = tb && tb.querySelector(".brand"), BRAND = brand ? brand.innerHTML : "", cxKey = "", cxTick = false;
   function updCx() {
     cxTick = false; if (!brand) return;

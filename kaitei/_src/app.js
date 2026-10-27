@@ -291,7 +291,7 @@
     if (sd) STAGES.forEach(function (s) {
       sd.appendChild(el("li", { class: s.k === CUR ? "now" : "" }, stg(s.k) + "<div><b>" + esc(s.title) + "</b>" + '<span class="when">' + esc(s.when) + "</span>" + esc(s.desc) + "</div>"));
     });
-    var chip = $("stage-chip"); if (chip) chip.innerHTML = "いま <b>" + esc(stageOf(CUR).name) + "</b>";
+    var chip = $("stage-chip"); if (chip) chip.innerHTML = "検討段階 <b>" + esc(stageOf(CUR).name) + "</b>";
   })();
 
   /* ── 日程・開催状況 ───────────────── */
@@ -355,7 +355,7 @@
     var tr = $("track");
     if (tr) STAGES.forEach(function (s) {
       var cls = s.k < CUR ? "done" : (s.k === CUR ? "now" : "");
-      tr.appendChild(el("li", { class: cls }, '<span class="pt" aria-hidden="true"></span>' + (s.k === CUR ? '<span class="here">いまここ</span>' : "") + "<b>" + esc(s.name) + '</b><span class="w">' + esc(s.when) + '</span><span class="d">' + esc(s.short) + "</span>"));
+      tr.appendChild(el("li", { class: cls }, '<span class="pt" aria-hidden="true"></span>' + (s.k === CUR ? '<span class="here">' + (function () { var p = parts(CHECKED || TODAY); return p.m + "月" + p.d + "日時点"; })() + "</span>" : "") + "<b>" + esc(s.name) + '</b><span class="w">' + esc(s.when) + '</span><span class="d">' + esc(s.short) + "</span>"));
     });
 
     var fh = $("feed-home");
@@ -535,7 +535,7 @@
       ol.appendChild(li);
     });
     subnav.appendChild(ol);
-    // スマホの横並びは、いまのページを横方向だけ真ん中へ寄せる（縦には動かさない。動かすとページが途中から表示される）
+    // スマホの横並びは、表示中のページを横方向だけ真ん中へ寄せる（縦には動かさない。動かすとページが途中から表示される）
     var act = subnav.querySelector(".is-active");
     if (act && MQ.matches) { try { ol.scrollLeft = Math.max(0, act.offsetLeft - (ol.clientWidth - act.offsetWidth) / 2); } catch (e) {} }
   }
@@ -565,7 +565,7 @@
     return Array.prototype.slice.call(box.querySelectorAll(":scope > .rc")).filter(function (d) { return withHidden || !d.hidden; }).map(function (d) { return d.getAttribute("data-rid"); });
   }
   function copy(o) { var n = {}; Object.keys(o || {}).forEach(function (k) { n[k] = Array.isArray(o[k]) ? o[k].slice() : o[k]; }); return n; }
-  // その場から開いた：戻り先＝いまのページ（履歴を1つ戻る）
+  // その場から開いた：戻り先＝表示中のページ（履歴を1つ戻る）
   function ctxHere(ids) {
     var v = current;
     if (!v || v === DETAIL) return null;
@@ -689,7 +689,7 @@
   }, true);
 
   /* ── 上のバーの現在地（スマホ） ─────────
-     ページの見出しが上に隠れたら、ガイド名の代わりに「親 › いまのページ」を出す。押しても動かない（ショートカットにしない） */
+     ページの見出しが上に隠れたら、ガイド名の代わりに「親 › 表示中のページ」を出す。押しても動かない（ショートカットにしない） */
   var tb = document.querySelector(".topbar"), brand = tb && tb.querySelector(".brand"), BRAND = brand ? brand.innerHTML : "", cxKey = "", cxTick = false;
   function headOf(v) { return v === DETAIL ? DV.querySelector(".dt-t") : v.el.querySelector(".chapter > header h2"); }
   function updCx() {

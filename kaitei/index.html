@@ -494,7 +494,7 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
 }
 /* ── スマホ：押したら新しいページ（ユーザー指示 2026-10-27） ──
    一覧は区切り線の行にし、押すとその論点だけのページに切り替わる（その場で長く伸ばさない）。
-   ページの見出しが隠れたら、上のバーに「親 › いまのページ」を出す（押しても動かない）。 */
+   ページの見出しが隠れたら、上のバーに「親 › 表示中のページ」を出す（押しても動かない）。 */
 @media (max-width: 960px) {
   .view .cards { gap: 0; border-top: 1px solid var(--line); }
   .view .cards > .rc { position: relative; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; }
@@ -564,7 +564,7 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
       <a href="#schedule" data-g="schedule">日程</a>
       <a href="#updates" data-g="updates">更新情報</a>
     </nav>
-    <span class="stage-chip" id="stage-chip">いま <b>論点案</b></span>
+    <span class="stage-chip" id="stage-chip">検討段階 <b>論点案</b></span>
     <button class="menu-btn" id="menu-btn" type="button" aria-controls="drawer" aria-expanded="false">
       <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg><span>メニュー</span>
     </button>
@@ -591,7 +591,7 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
 <section class="view home" id="home" data-group="home" data-title="ホーム">
   <div class="home-head">
     <div>
-      <div class="eyebrow"><span>事業所長・経営層向け</span><span id="checked-at">情報の確認 2026年10月27日</span></div>
+      <div class="eyebrow"><span id="checked-at">情報の確認 2026年10月27日</span></div>
       <h1>令和9年度 <span class="nw">障害福祉</span> <span class="nw">報酬改定ガイド</span></h1>
       <p class="home-sub">障害福祉サービス等報酬改定の検討を、論点ごとに追いかける</p>
       <p class="home-lead">厚生労働省の障害福祉報酬改定検討チームが示した論点を、サービスごとに整理しています。新しい資料が出るたびに、各論点の中身と確度を書き直します。</p>
@@ -607,7 +607,7 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
 
   <div class="home-grid">
     <section class="hb hb-track" aria-labelledby="h-track">
-      <div class="hb-h"><h2 id="h-track"><svg class="hx" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h14"/><circle cx="4" cy="10" r="2.2" fill="currentColor"/><circle cx="10" cy="10" r="2.2"/><circle cx="16" cy="10" r="2.2"/></svg>いまの段階</h2><a href="#stages">確度の読み方</a></div>
+      <div class="hb-h"><h2 id="h-track"><svg class="hx" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h14"/><circle cx="4" cy="10" r="2.2" fill="currentColor"/><circle cx="10" cy="10" r="2.2"/><circle cx="16" cy="10" r="2.2"/></svg>検討の段階</h2><a href="#stages">確度の読み方</a></div>
       <ol class="track" id="track"></ol>
     </section>
 
@@ -7749,7 +7749,7 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
     if (sd) STAGES.forEach(function (s) {
       sd.appendChild(el("li", { class: s.k === CUR ? "now" : "" }, stg(s.k) + "<div><b>" + esc(s.title) + "</b>" + '<span class="when">' + esc(s.when) + "</span>" + esc(s.desc) + "</div>"));
     });
-    var chip = $("stage-chip"); if (chip) chip.innerHTML = "いま <b>" + esc(stageOf(CUR).name) + "</b>";
+    var chip = $("stage-chip"); if (chip) chip.innerHTML = "検討段階 <b>" + esc(stageOf(CUR).name) + "</b>";
   })();
 
   /* ── 日程・開催状況 ───────────────── */
@@ -7813,7 +7813,7 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
     var tr = $("track");
     if (tr) STAGES.forEach(function (s) {
       var cls = s.k < CUR ? "done" : (s.k === CUR ? "now" : "");
-      tr.appendChild(el("li", { class: cls }, '<span class="pt" aria-hidden="true"></span>' + (s.k === CUR ? '<span class="here">いまここ</span>' : "") + "<b>" + esc(s.name) + '</b><span class="w">' + esc(s.when) + '</span><span class="d">' + esc(s.short) + "</span>"));
+      tr.appendChild(el("li", { class: cls }, '<span class="pt" aria-hidden="true"></span>' + (s.k === CUR ? '<span class="here">' + (function () { var p = parts(CHECKED || TODAY); return p.m + "月" + p.d + "日時点"; })() + "</span>" : "") + "<b>" + esc(s.name) + '</b><span class="w">' + esc(s.when) + '</span><span class="d">' + esc(s.short) + "</span>"));
     });
 
     var fh = $("feed-home");
@@ -7993,7 +7993,7 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
       ol.appendChild(li);
     });
     subnav.appendChild(ol);
-    // スマホの横並びは、いまのページを横方向だけ真ん中へ寄せる（縦には動かさない。動かすとページが途中から表示される）
+    // スマホの横並びは、表示中のページを横方向だけ真ん中へ寄せる（縦には動かさない。動かすとページが途中から表示される）
     var act = subnav.querySelector(".is-active");
     if (act && MQ.matches) { try { ol.scrollLeft = Math.max(0, act.offsetLeft - (ol.clientWidth - act.offsetWidth) / 2); } catch (e) {} }
   }
@@ -8023,7 +8023,7 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
     return Array.prototype.slice.call(box.querySelectorAll(":scope > .rc")).filter(function (d) { return withHidden || !d.hidden; }).map(function (d) { return d.getAttribute("data-rid"); });
   }
   function copy(o) { var n = {}; Object.keys(o || {}).forEach(function (k) { n[k] = Array.isArray(o[k]) ? o[k].slice() : o[k]; }); return n; }
-  // その場から開いた：戻り先＝いまのページ（履歴を1つ戻る）
+  // その場から開いた：戻り先＝表示中のページ（履歴を1つ戻る）
   function ctxHere(ids) {
     var v = current;
     if (!v || v === DETAIL) return null;
@@ -8147,7 +8147,7 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
   }, true);
 
   /* ── 上のバーの現在地（スマホ） ─────────
-     ページの見出しが上に隠れたら、ガイド名の代わりに「親 › いまのページ」を出す。押しても動かない（ショートカットにしない） */
+     ページの見出しが上に隠れたら、ガイド名の代わりに「親 › 表示中のページ」を出す。押しても動かない（ショートカットにしない） */
   var tb = document.querySelector(".topbar"), brand = tb && tb.querySelector(".brand"), BRAND = brand ? brand.innerHTML : "", cxKey = "", cxTick = false;
   function headOf(v) { return v === DETAIL ? DV.querySelector(".dt-t") : v.el.querySelector(".chapter > header h2"); }
   function updCx() {

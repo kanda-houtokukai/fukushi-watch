@@ -99,6 +99,9 @@ def main():
             bad.append(f"<{tag}> open={o} close={c}")
     if "まだ" in html:
         bad.append("画面の文に「まだ」が含まれています")
+    m = re.search(r"(?<![ぁ-ん])いま(?![すせしそ])|今ここ|今いる|いますぐ|今すぐ", html)
+    if m:
+        bad.append("画面の文に「いま〇〇」の言い方が含まれています: …" + html[max(0, m.start() - 15):m.end() + 15].replace("\n", " ") + "…")
     if bad:
         print("書き出しを止めました:", *bad, sep="\n  ")
         sys.exit(1)

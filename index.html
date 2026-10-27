@@ -875,7 +875,7 @@
         if(nx){ next.appendChild(document.createTextNode("次の期限 ")); next.appendChild(mk("b",null,md(nx[0]))); next.appendChild(document.createTextNode(" "+nx[1])); }
       } else {
         // 段階を示す行（報酬改定ガイド）
-        right.appendChild(document.createTextNode("いま"));
+        right.appendChild(document.createTextNode("検討段階"));
         var st=mk("span","ft-stage",f.stageName||""); right.appendChild(st); right.appendChild(meter(f.stage||1));
         if(f.live){
           fetch(f.live,{cache:"no-cache"}).then(function(r){ return r.ok?r.json():null; }).then(function(j){
@@ -939,7 +939,7 @@
       <!-- 助成面(P24)。紙面とは別系統の data/grants.json を材料にする -->
       <section id="grantPane">
         <div class="ghead">
-          <h2>いま応募できる助成</h2>
+          <h2>応募できる助成</h2>
           <div class="gcount" id="gCount"></div>
         </div>
         <div class="gfilters">
@@ -965,7 +965,7 @@
            見た目・型は助成面のCSS(.g/.gsel/.chips等)を流用し、二重化しない -->
       <section id="kenshuPane">
         <div class="ghead">
-          <h2>いま申し込める研修</h2>
+          <h2>申し込める研修</h2>
           <div class="gcount" id="kCount"></div>
         </div>
         <div class="gfilters">
@@ -1356,7 +1356,7 @@
       ? `<div class="dl-more">ほか ${far}件（${DL_NEAR_DAYS}日より先・全${action.length}件）</div>`
       : "";
     $("dlList").innerHTML = action.length === 0
-      ? `<div class="dl-empty">いま追いかけている期限はありません。</div>`
+      ? `<div class="dl-empty">対応が要る期限はありません。</div>`
       : (rows || `<div class="dl-empty">${DL_NEAR_DAYS}日以内の期限はありません。</div>`) + more;
   }
 

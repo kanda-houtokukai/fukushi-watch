@@ -470,7 +470,7 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
 }
 /* ── スマホ：押したら新しいページ（ユーザー指示 2026-10-27） ──
    一覧は区切り線の行にし、押すとその論点だけのページに切り替わる（その場で長く伸ばさない）。
-   ページの見出しが隠れたら、上のバーに「親 › いまのページ」を出す（押しても動かない）。 */
+   ページの見出しが隠れたら、上のバーに「親 › 表示中のページ」を出す（押しても動かない）。 */
 @media (max-width: 960px) {
   .view .cards { gap: 0; border-top: 1px solid var(--line); }
   .view .cards > .rc { position: relative; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; }
