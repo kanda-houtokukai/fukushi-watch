@@ -3,7 +3,7 @@
 
 使い方: python3 kaitei/_src/build.py
   - 入力: kaitei/_src/ の部品（style.css・shell.html・app.js・content.json・live.json）
-  - 出力: kaitei/index.html（GitHub Pages が配信する）
+  - 出力: kaitei/index.html（GitHub Pages が配信する）と kaitei/feature.json（ウォッチの特設の帯が読む要約）
   - content.json＝本文（論点カード・前提・サービスの一覧・段階の定義）。書き換えは承認制。
   - live.json＝更新データ（最終確認・更新情報・開催状況・日程・お知らせ）。毎朝の定期タスクが書き換える。
   - kaitei/index.html を直接書き換えない。
@@ -66,6 +66,17 @@ def check(content, live):
     return errs
 
 
+def write_feature(content, live):
+    """福祉情報ウォッチの特設の帯が読む要約（kaitei/feature.json）。段階と、いちばん新しい公的な更新だけを持つ"""
+    stage = int(live.get("currentStage") or content.get("currentStage") or 1)
+    name = next((s["name"] for s in content.get("stages", []) if s.get("k") == stage), "")
+    ups = [u for u in live.get("updates", []) if u.get("src") != "報道" and u.get("date")]
+    ups.sort(key=lambda u: u["date"], reverse=True)
+    latest = {"date": ups[0]["date"][:10], "text": ups[0].get("title", "")} if ups else None
+    feat = {"stage": stage, "stageName": name, "latest": latest, "checkedAt": live.get("checkedAt", "")}
+    (SRC.parent / "feature.json").write_text(json.dumps(feat, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
 def main():
     css = (SRC / "style.css").read_text(encoding="utf-8")
     shell = (SRC / "shell.html").read_text(encoding="utf-8")
@@ -92,6 +103,7 @@ def main():
         print("書き出しを止めました:", *bad, sep="\n  ")
         sys.exit(1)
     OUT.write_text(html, encoding="utf-8")
+    write_feature(content, live)
     print(OUT, len(html.encode("utf-8")) // 1024, "KB", "論点", len(content.get("ronten", [])), "前提", len(content.get("zentei", [])))
 
 

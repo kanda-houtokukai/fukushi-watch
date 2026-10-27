@@ -720,30 +720,44 @@
     .wrap{box-shadow:none;min-height:0}
   }
 
-  /* ==== 特設の帯（期間限定の導線・P61） ====
+  /* ==== 特設の帯（期間限定の導線・P61→P63で2本に） ====
+     A案（ユーザー決定 2026-10-27）: 1本の帯に1件1行、「特」の印は左に1つ。
      色は既存の5色の範囲。背景は塗らず罫線だけ（報道の帯 --press-bg と区別する）。
-     朱は「特」の印と日数の数字だけ。日数は控えめ（ユーザー指示 2026-10-27）。
-     題名・リンク先・期間は #featureConf の JSON だけで変える */
+     朱は「特」の印と日数の数字だけ。日数は控えめ（P61）。
+     題名・リンク先・期間は #featureConf の JSON だけで変える。期間外の行は描画しない。 */
   .seal.toku{background:var(--paper);color:var(--high);border:1.5px solid var(--high)}
-  .feature{display:flex;align-items:center;gap:12px;min-height:48px;padding:8px 2px;margin:0 0 10px;
-    border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);color:var(--ink);text-decoration:none}
-  .feature[hidden]{display:none}
-  .feature .ft-title{font-weight:700;font-size:14.5px;letter-spacing:.04em;white-space:nowrap}
-  .feature .ft-next{font-size:12.5px;color:var(--sub);border-left:1px solid var(--rule);padding-left:12px;white-space:nowrap}
-  .feature .ft-next[hidden]{display:none}
-  .feature .ft-next b{color:var(--ink);font-weight:700}
-  .feature .ft-count{margin-left:auto;font-size:12.5px;color:var(--sub);white-space:nowrap}
-  .feature .ft-count b{font-size:16px;line-height:1;color:var(--high);font-weight:700;margin:0 2px;font-variant-numeric:tabular-nums}
-  .feature .ft-go{color:var(--sub);font-size:13px}
-  .feature:hover .ft-title{text-decoration:underline;text-underline-offset:3px}
+  .features{display:grid;grid-template-columns:22px minmax(0,1fr);column-gap:12px;align-items:center;
+    padding:0 2px;margin:0 0 10px;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+  .features[hidden]{display:none}
+  .features > .seal{grid-row:1/span 2;align-self:center}
+  .ft{grid-column:2;display:flex;align-items:center;gap:12px;min-height:44px;padding:6px 0;min-width:0;
+    color:var(--ink);text-decoration:none}
+  .ft + .ft{border-top:1px dotted var(--rule)}
+  .ft .ft-title{font-weight:700;font-size:14.5px;letter-spacing:.04em;white-space:nowrap;min-width:15.5em}
+  .ft:hover .ft-title{text-decoration:underline;text-underline-offset:3px}
+  .ft .ft-next{font-size:12.5px;color:var(--sub);border-left:1px solid var(--rule);padding-left:12px;white-space:nowrap;
+    overflow:hidden;text-overflow:ellipsis;min-width:0}
+  .ft .ft-next:empty{display:none}
+  .ft .ft-next b{color:var(--ink);font-weight:700}
+  .ft .ft-right{margin-left:auto;font-size:12.5px;color:var(--sub);white-space:nowrap;flex:none}
+  .ft .ft-right b{font-size:16px;line-height:1;color:var(--high);font-weight:700;margin:0 2px;font-variant-numeric:tabular-nums}
+  .ft .ft-stage{color:var(--ink);font-weight:700;margin:0 6px 0 4px}
+  /* 確度の目盛り（報酬改定ガイドと同じ5段階・墨だけで描く） */
+  .ft-meter{display:inline-grid;grid-template-columns:repeat(5,7px);gap:2px;vertical-align:1px}
+  .ft-meter i{width:7px;height:7px;border:1.2px solid var(--faint);box-sizing:border-box}
+  .ft-meter i.on{background:var(--ink);border-color:var(--ink)}
+  .ft .ft-go{color:var(--sub);font-size:13px;flex:none}
   @media(max-width:899px){
-    .feature{flex-wrap:wrap;row-gap:2px;column-gap:10px;padding:10px 2px}
-    .feature .ft-title{flex:1 1 calc(100% - 70px);min-width:0;font-size:15px;white-space:normal}
-    .feature .ft-count{order:3;margin-left:32px;flex:none}
-    .feature .ft-count b{font-size:15px}
-    .feature .ft-next{order:4;flex-basis:100%;border-left:0;padding-left:32px;white-space:normal}
+    .features{align-items:start}
+    .features > .seal{align-self:start;margin-top:12px}
+    .ft{flex-wrap:wrap;row-gap:0;column-gap:8px;padding:9px 0}
+    .ft .ft-title{flex:1 1 calc(100% - 24px);min-width:0;font-size:15px;white-space:normal}
+    .ft .ft-go{order:2}
+    .ft .ft-right{order:3;margin-left:0}
+    .ft .ft-right b{font-size:15px}
+    .ft .ft-next{order:4;flex:1 1 0;padding-left:8px}
   }
-  @media print{.feature{display:none}}
+  @media print{.features{display:none}}
 </style>
 </head>
 <body data-view="paper"><!-- 面の初期値。JSより前に効かせて助成面のちらつきを防ぐ(P24) -->
@@ -785,49 +799,97 @@
     <button class="view" data-view="grants" type="button">助　成</button>
     <button class="view" data-view="kenshu" type="button">研　修</button>
   </nav>
-  <!-- 特設の帯（期間限定・P61）。題名・リンク先・期間は直後の #featureConf だけを書き換える。
-       期間外は描画しない（hidden のまま・余白も残らない）。判定は直後のスクリプトで同期的に行う
-       ——読み込み後に帯が出て下の紙面がずれるのを防ぐため -->
-  <a class="feature" id="feature" hidden>
-    <span class="seal toku" aria-hidden="true">特</span>
-    <span class="ft-title"></span>
-    <span class="ft-next" hidden></span>
-    <span class="ft-count"></span>
-    <span class="ft-go" aria-hidden="true">→</span>
-  </a>
+  <!-- 特設の帯（期間限定・P61→P63）。題名・リンク先・期間は直後の #featureConf だけを書き換える。
+       期間外の行は描画しない（全部が期間外なら hidden のまま・余白も残らない）。行の組み立ては直後の
+       スクリプトで同期的に行う——読み込み後に帯が出て下の紙面がずれるのを防ぐため。
+       live を持つ行（報酬改定ガイド）は、段階と最新の更新を kaitei/feature.json から読み、同じ行の中で差し替える
+       （帯の高さは変わらない。読めなければ #featureConf の値のまま） -->
+  <div class="features" id="features" hidden></div>
   <script type="application/json" id="featureConf">
-  {"title":"こども性暴力防止法の実務ガイド",
-   "url":"dbs/",
-   "until":"2027-03-31",
-   "target":"2026-12-25",
-   "before":"12月25日施行まで あと{n}日",
-   "today":"本日施行",
-   "after":"施行から{n}日",
-   "milestones":[["2026-11-06","テストメールの受信確認"],["2026-12-24","施行時現職者の線引き"],["2027-04-01","現職者の分散申請が始まる"]]}
+  {
+   "features": [
+    {
+     "id": "dbs",
+     "title": "こども性暴力防止法の実務ガイド",
+     "url": "dbs/",
+     "until": "2027-03-31",
+     "target": "2026-12-25",
+     "before": "12月25日施行まで あと{n}日",
+     "today": "本日施行",
+     "after": "施行から{n}日",
+     "beforeShort": "施行まで あと{n}日",
+     "afterShort": "施行から{n}日",
+     "milestones": [
+      [
+       "2026-11-06",
+       "テストメールの受信確認"
+      ],
+      [
+       "2026-12-24",
+       "施行時現職者の線引き"
+      ],
+      [
+       "2027-04-01",
+       "現職者の分散申請が始まる"
+      ]
+     ]
+    },
+    {
+     "id": "kaitei",
+     "title": "令和9年度 障害福祉報酬改定ガイド",
+     "url": "kaitei/",
+     "until": "2027-06-30",
+     "stage": 1,
+     "stageName": "論点案",
+     "live": "kaitei/feature.json"
+    }
+   ]
+  }
   </script>
   <script>
   (function(){
-    var el=document.getElementById("feature"), conf=document.getElementById("featureConf");
-    if(!el||!conf) return;
+    var box=document.getElementById("features"), conf=document.getElementById("featureConf");
+    if(!box||!conf) return;
     var c; try{ c=JSON.parse(conf.textContent); }catch(e){ return; }
+    var list=c.features||[c];
     var DAY=864e5, JST=9*36e5, today=Math.floor((Date.now()+JST)/DAY)*DAY-JST;
     var d=function(s){ return Date.parse(s+"T00:00:00+09:00"); };
-    if(!c.until || today>d(c.until) || (c.from && today<d(c.from))) return;
-    el.href=c.url;
-    el.querySelector(".ft-title").textContent=c.title;
-    var left=Math.round((d(c.target)-today)/DAY);
-    var tpl= left>0 ? c.before : (left===0 ? c.today : c.after);
-    var cnt=el.querySelector(".ft-count"), parts=tpl.split("{n}");
-    cnt.textContent=parts[0];
-    if(parts.length>1){ var b=document.createElement("b"); b.textContent=String(Math.abs(left)); cnt.appendChild(b); cnt.appendChild(document.createTextNode(parts[1])); }
-    var next=null;
-    (c.milestones||[]).forEach(function(m){ if(!next && d(m[0])>=today) next=m; });
-    if(next){
-      var p=next[0].split("-"), nx=el.querySelector(".ft-next"), nb=document.createElement("b");
-      nx.textContent="次の期限 "; nb.textContent=(+p[1])+"/"+(+p[2]); nx.appendChild(nb);
-      nx.appendChild(document.createTextNode(" "+next[1])); nx.hidden=false;
-    }
-    el.hidden=false;
+    var live=list.filter(function(f){ return f.until && today<=d(f.until) && !(f.from && today<d(f.from)); });
+    if(!live.length) return;
+    var narrow=window.matchMedia("(max-width:899px)").matches;
+    function mk(tag,cls,txt){ var e=document.createElement(tag); if(cls) e.className=cls; if(txt!=null) e.textContent=txt; return e; }
+    function meter(k){ var m=mk("span","ft-meter"); m.setAttribute("aria-hidden","true"); for(var i=1;i<=5;i++){ m.appendChild(mk("i", i<=k?"on":"")); } return m; }
+    function md(s){ var p=s.split("-"); return (+p[1])+"/"+(+p[2]); }
+    var seal=mk("span","seal toku","特"); seal.setAttribute("aria-hidden","true"); box.appendChild(seal);
+    live.forEach(function(f){
+      var a=mk("a","ft"); a.href=f.url;
+      a.appendChild(mk("span","ft-title",f.title));
+      var next=mk("span","ft-next"), right=mk("span","ft-right");
+      if(f.target){
+        // 日数を数える行（こども性暴力防止法ガイド）
+        var left=Math.round((d(f.target)-today)/DAY);
+        var tpl= left>0 ? (narrow&&f.beforeShort||f.before) : (left===0 ? f.today : (narrow&&f.afterShort||f.after));
+        var parts=tpl.split("{n}"); right.appendChild(document.createTextNode(parts[0]));
+        if(parts.length>1){ right.appendChild(mk("b",null,String(Math.abs(left)))); right.appendChild(document.createTextNode(parts[1])); }
+        var nx=null; (f.milestones||[]).forEach(function(m){ if(!nx && d(m[0])>=today) nx=m; });
+        if(nx){ next.appendChild(document.createTextNode("次の期限 ")); next.appendChild(mk("b",null,md(nx[0]))); next.appendChild(document.createTextNode(" "+nx[1])); }
+      } else {
+        // 段階を示す行（報酬改定ガイド）
+        right.appendChild(document.createTextNode("いま"));
+        var st=mk("span","ft-stage",f.stageName||""); right.appendChild(st); right.appendChild(meter(f.stage||1));
+        if(f.live){
+          fetch(f.live,{cache:"no-cache"}).then(function(r){ return r.ok?r.json():null; }).then(function(j){
+            if(!j) return;
+            if(j.stageName && j.stage){ st.textContent=j.stageName; right.replaceChild(meter(j.stage), right.querySelector(".ft-meter")); }
+            if(j.latest && j.latest.date && j.latest.text){ next.textContent=""; next.appendChild(document.createTextNode("最新 ")); next.appendChild(mk("b",null,md(j.latest.date))); next.appendChild(document.createTextNode(" "+j.latest.text)); }
+          }).catch(function(){});
+        }
+      }
+      a.appendChild(next); a.appendChild(right);
+      var go=mk("span","ft-go","→"); go.setAttribute("aria-hidden","true"); a.appendChild(go);
+      box.appendChild(a);
+    });
+    box.hidden=false;
   })();
   </script>
 
