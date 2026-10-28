@@ -15,6 +15,12 @@
    "link": "#schedule"
   },
   {
+   "date": "2026-11-30",
+   "title": "福岡県の集団指導の受講登録の期限",
+   "desc": "集団指導を受講した事業所が、受講後に登録します",
+   "link": "#updates"
+  },
+  {
    "date": "2026-12-25",
    "label": "12月",
    "approx": true,
@@ -301,6 +307,15 @@
    "where": "#svc-houmon"
   },
   {
+   "date": "2026-09-04",
+   "src": "福岡県",
+   "title": "令和8年度集団指導の資料と受講登録（11月30日まで）",
+   "url": "https://www.pref.fukuoka.lg.jp/contents/-contents-yudanr8.html",
+   "impact": "info",
+   "note": "集団指導は9月11日から10月2日まで県庁で対面で開かれました。受講した事業所は、受講後に受講登録をします（登録期限は11月30日）。説明資料は全事業所共通編と、サービス類型ごとの5編です。",
+   "where": "#home"
+  },
+  {
    "date": "2026-08-27",
    "src": "国",
    "title": "第62回 令和9年度改定に向けた主な論点（案）",
@@ -352,6 +367,14 @@
   {
    "name": "障害福祉サービス等経営実態調査（結果の概要）",
    "url": "https://www.mhlw.go.jp/toukei/list/shougaihukushi_service_chousa01b.html"
+  },
+  {
+   "name": "福岡県 障がい福祉サービス事業所（県のお知らせの一覧）",
+   "url": "https://www.pref.fukuoka.lg.jp/life/3/27/110/"
+  },
+  {
+   "name": "福岡県 令和8年度集団指導",
+   "url": "https://www.pref.fukuoka.lg.jp/contents/-contents-yudanr8.html"
   }
  ]
 }

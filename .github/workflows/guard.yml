@@ -1,0 +1,31 @@
+# 見張り役 — 毎朝の更新3本（ウォッチの巡回・報酬改定ガイド・性暴力防止ガイド）が
+# 今日ちゃんと動いて公開まで済んだかを、毎日午後に確かめる（P64追記 10/29）。
+# 止まっていたら失敗で終わり、GitHub から「Run failed: guard」のメールが届く。
+#
+# ⚠️時刻: Actions の cron は数時間遅れて発火する（daily の実測で2〜4時間）。
+#    daily の保険の2本目（JST 08:23 指定）が遅れても済んでいる頃を狙い、JST 14:37 に置く。
+#    分は正時を避ける（daily.yml の注記を参照）。
+
+name: guard
+
+on:
+  schedule:
+    - cron: "37 5 * * *"   # UTC 05:37 = JST 14:37
+  workflow_dispatch: {} # 手動実行（確認用）
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: 毎朝の更新が止まっていないかの確認
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      - name: 3本の更新を確かめる
+        run: node scripts/guard.js
