@@ -92,4 +92,16 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           N=$(node -p "require('./data/diff-latest.json').newItems.length")
           git add data/
-          git diff --cached --quiet || { git commit -m "巡回: 新規${N}件 [auto]"; git push; }
+          git diff --cached --quiet && exit 0
+          git commit -m "巡回: 新規${N}件 [auto]"
+          # ⚠️巡回のあいだに別の担当（両ガイドの毎朝のタスク・dbs/ と kaitei/ だけを書く）が
+          #    push していると、そのままの push は拒否される（2026-10-29 に発生。メールは送られたのに
+          #    状態が残らず、新着17件の記録が消えた）。data/ はこのワークフローしか書かないので、
+          #    取り込み直してから push する。最大5回まで、間をあけて試す。
+          for i in 1 2 3 4 5; do
+            if git pull --rebase --quiet origin main && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((i * 15))
+          done
+          echo "push できませんでした（5回）" >&2
+          exit 1
