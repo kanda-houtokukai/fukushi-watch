@@ -66,6 +66,36 @@ def date_words(d):
     return " ".join([d, fmt_date(d), "%s/%s/%s" % (y, mi, di), "%d/%d" % (mi, di), "%d月%d日" % (mi, di), "%s年%d月%d日" % (y, mi, di), "%s年%d月" % (y, mi)])
 
 
+def resolve_cites(text, items):
+    """本文の根拠表記（例「GL p.94、Q&A応用6-21、横浜市ページ」）を、台帳の資料（cite の呼び名）に結びつける。
+    戻り値: (結びついた資料の URL の一覧, 結びつかなかった部分の一覧)。
+    「、」で区切った各部分の先頭が資料の呼び名。「・」の後ろが番号だけなら、前の資料の続き（4-5・4-6 など）とみなす。"""
+    aliases = sorted(((a, it["u"]) for it in items for a in it.get("cite", [])), key=lambda x: -len(x[0]))
+
+    def hit(part):
+        for a, u in aliases:
+            if part.startswith(a):
+                nxt = part[len(a):len(a) + 1]
+                if len(a) == 1 and nxt and not re.match(r"[0-9０-９〜第]", nxt):
+                    continue   # 「法」「令」は条番号が続くときだけ（「法人」「令和」に当てない）
+                return u
+        return None
+    found, bad = [], []
+    for chunk in re.split(r"[、，,]", text):
+        last = None
+        for part in chunk.split("・"):
+            part = part.strip()
+            if not part:
+                continue
+            u = hit(part)
+            if u:
+                last = u
+                found.append(u)
+            elif not (last and re.match(r"^[0-9０-９p別図基応No〜\-（(]", part)):
+                bad.append(part)
+    return found, bad
+
+
 def merge(items, found, hints, guess_group):
     """台帳 items に、found のうち未掲載のリンクを足す。hints[url] = {"t", "d", "g"}。足したものを返す"""
     have = set()
@@ -95,7 +125,7 @@ def missing(found, items):
 def _row(it, cls):
     d = it.get("d", "")
     ty = kind(it["u"])
-    q = " ".join(x for x in [it["t"], it.get("n", ""), date_words(d), ty] if x)
+    q = " ".join(x for x in [it["t"], it.get("n", ""), date_words(d), ty] + list(it.get("cite", [])) if x)
     # 題名や注記の「10月15日」も「10/15」で引けるように
     q += "".join(" %s/%s" % m for m in re.findall(r"(\d{1,2})月(\d{1,2})日", it["t"] + it.get("n", "")))
     sub = it.get("sub") or []

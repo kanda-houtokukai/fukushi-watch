@@ -120,6 +120,12 @@ def main():
     html, added, lost, n_links = linkbook.build(html, book["groups"], links_with_dates(book, live),
                                                 link_hints(live, "\n".join(parts)), link_group, "説明会　10/15")
     bad = []
+    # 根拠の表記（Q&A・判定ツールの src、章の ref）は、資料リンク集の資料に必ず結びつける（どの資料のどこかを辿れるように）
+    cites = [m.group(1) for m in re.finditer(r'\bsrc:\s*"([^"]+)"', data)]
+    cites += [re.sub(r"<[^>]+>", "", H.unescape(m.group(1))) for m in re.finditer(r'<span class="ref">([\s\S]*?)</span>', "\n".join(parts))]
+    unresolved = sorted({b for c in cites for b in linkbook.resolve_cites(c, book["items"])[1]})
+    if unresolved:
+        bad.append("根拠の表記が資料リンク集のどの資料にも結びつきません（links.json の cite に呼び名を足すか、表記を直してください）: " + " / ".join(unresolved[:8]))
     if lost:
         bad.append("資料リンク集に載っていないリンクがあります: " + " / ".join(lost[:5]))
     # 画面の文に「まだ」「いま〇〇」を使わない（ふつうの情報サイトでは使わない言い方）

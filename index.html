@@ -597,7 +597,6 @@
   /* ==== スマホ幅(900px未満)のみ: 紙面上部の占有を減らす。PCは一切変更しない ==== */
   @media(max-width:899px){
     .ear{flex-wrap:nowrap;font-size:11px}
-    .ear .ear-auto{display:none} /* 「毎朝 自動発行」は省き日付と号数のみ */
     .ear .ear-full{display:none} /* スマホは短い日付に切り替え（本日併記の余白を確保） */
     .ear .ear-short{display:inline}
     .masthead{padding:20px 0 14px}
@@ -757,6 +756,35 @@
     .ft .ft-right b{font-size:15px}
     .ft .ft-next{order:4;flex:1 1 0;padding-left:8px}
   }
+  /* PC（900px以上）: 2枚の札（案B・ユーザー決定 2026-10-28）。それぞれを独立した入口にし、こども家庭庁・厚生労働省の
+     テーマカラーを淡くした面（上段）と、詳しい1行（下段）に分ける。淡い面に白文字は読めないため、文字は各色の濃い色。
+     スマホは従来の1行ずつの帯のまま（.ft-head/.ft-foot を display:contents にして、従来の並びに戻す） */
+  .ft-head,.ft-foot{display:contents}
+  .ft .ft-ic,.ft .ft-key,.ft .ft-sub{display:none}
+  @media(min-width:900px){
+    .features{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:16px;
+      padding:10px 2px 2px 0;margin:0 0 12px;border-top:1px solid var(--ink);border-bottom:0;align-items:stretch}
+    .features > .seal{display:none}
+    .ft{grid-column:auto;display:flex;flex-direction:column;align-items:stretch;gap:0;min-height:0;padding:0;
+      border:1px solid var(--ft-ink);box-shadow:2px 2px 0 var(--ft-ink);background:var(--paper)}
+    .ft + .ft{border-top:1px solid var(--ft-ink)}
+    .ft.ft-dbs{--ft-bg:#f8e7dd;--ft-ink:#9c3f14;--ft-rule:#ebcdbb;--ft-faint:#d9a88c}
+    .ft.ft-kaitei{--ft-bg:#e3eaf5;--ft-ink:#1f4a8f;--ft-rule:#c6d3ea;--ft-faint:#9db2d6}
+    .ft-head{display:flex;align-items:center;gap:10px;padding:7px 14px;background:var(--ft-bg);color:var(--ft-ink)}
+    .ft .ft-ic{display:block;width:20px;height:20px;flex:none}
+    .ft .ft-title{min-width:0;font-size:16.5px;overflow:hidden;text-overflow:ellipsis}
+    .ft .ft-key{display:flex;align-items:center;gap:6px;margin-left:auto;font-weight:700;font-size:16.5px;white-space:nowrap;flex:none}
+    .ft .ft-key b{font-size:22px;line-height:1;font-variant-numeric:tabular-nums;margin:0 1px}
+    .ft .ft-key .ft-meter{grid-template-columns:repeat(5,8px);gap:3px;margin-left:2px}
+    .ft .ft-key .ft-meter i{width:8px;height:8px;border:1.5px solid var(--ft-faint)}
+    .ft .ft-key .ft-meter i.on{background:var(--ft-ink);border-color:var(--ft-ink)}
+    .ft-foot{display:flex;align-items:center;gap:10px;padding:5px 14px 6px;border-top:1px solid var(--ft-rule);
+      font-size:12.5px;color:var(--sub);white-space:nowrap;min-width:0}
+    .ft .ft-sub{display:inline;flex:none}
+    .ft .ft-next{flex:1 1 auto;padding-left:10px}
+    .ft .ft-right{display:none}
+    .ft .ft-go{margin-left:auto}
+  }
   @media print{.features{display:none}}
 </style>
 </head>
@@ -766,7 +794,6 @@
   <div id="topHead"><!-- スマホでは二重罫より上を固定ヘッダーにする(P10) -->
     <div class="ear">
       <button class="ear-date" id="btnToday" type="button"><span class="ear-full"></span><span class="ear-short"></span></button>
-      <span class="ear-auto">毎朝 自動発行</span>
       <span>創刊から <b id="issueNo"></b></span>
     </div>
 
@@ -819,6 +846,10 @@
      "after": "施行から{n}日",
      "beforeShort": "施行まで あと{n}日",
      "afterShort": "施行から{n}日",
+     "keyBefore": "あと{n}日",
+     "keyAfter": "施行から{n}日",
+     "sub": "12月25日施行",
+     "icon": "shield",
      "milestones": [
       [
        "2026-11-06",
@@ -841,6 +872,7 @@
      "until": "2027-06-30",
      "stage": 1,
      "stageName": "論点案",
+     "icon": "doc",
      "live": "kaitei/feature.json"
     }
    ]
@@ -861,9 +893,15 @@
     function meter(k){ var m=mk("span","ft-meter"); m.setAttribute("aria-hidden","true"); for(var i=1;i<=5;i++){ m.appendChild(mk("i", i<=k?"on":"")); } return m; }
     function md(s){ var p=s.split("-"); return (+p[1])+"/"+(+p[2]); }
     var seal=mk("span","seal toku","特"); seal.setAttribute("aria-hidden","true"); box.appendChild(seal);
+    var ICON={
+      shield:'<svg class="ft-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6z"/><path d="M9 12.2l2.1 2.1L15.2 10"/></svg>',
+      doc:'<svg class="ft-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M10 12h5M10 16h5"/></svg>'};
     live.forEach(function(f){
-      var a=mk("a","ft"); a.href=f.url;
-      a.appendChild(mk("span","ft-title",f.title));
+      // 札（PC）: 上段 head＝印・題名・要の数字／下段 foot＝補足・次の期限・→。スマホでは head/foot が消えて従来の1行の帯に戻る
+      var a=mk("a","ft"+(f.id?" ft-"+f.id:"")); a.href=f.url;
+      var head=mk("span","ft-head"), foot=mk("span","ft-foot"), key=mk("span","ft-key");
+      if(f.icon && ICON[f.icon]) head.insertAdjacentHTML("beforeend", ICON[f.icon]);
+      head.appendChild(mk("span","ft-title",f.title)); head.appendChild(key);
       var next=mk("span","ft-next"), right=mk("span","ft-right");
       if(f.target){
         // 日数を数える行（こども性暴力防止法ガイド）
@@ -871,22 +909,30 @@
         var tpl= left>0 ? (narrow&&f.beforeShort||f.before) : (left===0 ? f.today : (narrow&&f.afterShort||f.after));
         var parts=tpl.split("{n}"); right.appendChild(document.createTextNode(parts[0]));
         if(parts.length>1){ right.appendChild(mk("b",null,String(Math.abs(left)))); right.appendChild(document.createTextNode(parts[1])); }
+        var kt=(left>0 ? f.keyBefore : (left===0 ? f.today : f.keyAfter)) || tpl, kp=kt.split("{n}");
+        key.appendChild(document.createTextNode(kp[0]));
+        if(kp.length>1){ key.appendChild(mk("b",null,String(Math.abs(left)))); key.appendChild(document.createTextNode(kp[1])); }
+        if(f.sub) foot.appendChild(mk("span","ft-sub",f.sub));
         var nx=null; (f.milestones||[]).forEach(function(m){ if(!nx && d(m[0])>=today) nx=m; });
         if(nx){ next.appendChild(document.createTextNode("次の期限 ")); next.appendChild(mk("b",null,md(nx[0]))); next.appendChild(document.createTextNode(" "+nx[1])); }
       } else {
         // 段階を示す行（報酬改定ガイド）
         right.appendChild(document.createTextNode("検討段階"));
         var st=mk("span","ft-stage",f.stageName||""); right.appendChild(st); right.appendChild(meter(f.stage||1));
+        var kst=mk("span",null,f.stageName||""); key.appendChild(kst); key.appendChild(meter(f.stage||1));
+        foot.appendChild(mk("span","ft-sub","検討段階"));
         if(f.live){
           fetch(f.live,{cache:"no-cache"}).then(function(r){ return r.ok?r.json():null; }).then(function(j){
             if(!j) return;
-            if(j.stageName && j.stage){ st.textContent=j.stageName; right.replaceChild(meter(j.stage), right.querySelector(".ft-meter")); }
+            if(j.stageName && j.stage){ st.textContent=j.stageName; right.replaceChild(meter(j.stage), right.querySelector(".ft-meter"));
+              kst.textContent=j.stageName; key.replaceChild(meter(j.stage), key.querySelector(".ft-meter")); }
             if(j.latest && j.latest.date && j.latest.text){ next.textContent=""; next.appendChild(document.createTextNode("最新 ")); next.appendChild(mk("b",null,md(j.latest.date))); next.appendChild(document.createTextNode(" "+j.latest.text)); }
           }).catch(function(){});
         }
       }
-      a.appendChild(next); a.appendChild(right);
-      var go=mk("span","ft-go","→"); go.setAttribute("aria-hidden","true"); a.appendChild(go);
+      foot.appendChild(next); foot.appendChild(right);
+      var go=mk("span","ft-go","→"); go.setAttribute("aria-hidden","true"); foot.appendChild(go);
+      a.appendChild(head); a.appendChild(foot);
       box.appendChild(a);
     });
     box.hidden=false;

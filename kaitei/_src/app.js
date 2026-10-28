@@ -346,7 +346,7 @@
   (function home() {
     var left = Math.round((TEKIYO - TODAY) / DAY);
     var cd = $("cd-left");
-    if (cd) cd.innerHTML = left > 0 ? "4月1日まで あと<b>" + left + "</b>日" : "改定後の報酬を適用中";
+    if (cd) cd.innerHTML = left > 0 ? "令和9年4月まで あと<b>" + left + "</b>日" : "改定後の報酬を適用中";
     var bar = $("cd-bar");
     if (bar) { var pr = Math.max(0, Math.min(1, (NOW - KAISHI) / (TEKIYO - KAISHI))); requestAnimationFrame(function () { bar.style.width = (pr * 100).toFixed(1) + "%"; }); }
 

@@ -1,0 +1,574 @@
+{
+ "units": {
+  "前提:base-b-gata-kubun-kijun": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-b-gata-tanka-hyo": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-chiiki-kubun-genkou-keika": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-chiiki-kubun-r9-minaoshi": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 根拠のずれ",
+   "result": "fixed"
+  },
+  "前提:base-daijin-sessho-r9-kento": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-jido-jinzai-ikusei": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-jido-nyusho-arikata": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 期限切れ",
+   "result": "fixed"
+  },
+  "前提:base-jido-tsusho-shien-naiyo": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-jinin-ketsujo-gensan-tokurei": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-kaiteiritsu-r8": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 根拠のずれ",
+   "result": "fixed"
+  },
+  "前提:base-keiei-jittai-chosa-komoku": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-keiei-jittai-chosa-r8": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-kensho-chosa-r8": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-kokko-futan-kijun": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-oukyu-tanka-b-gata": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 根拠のずれ",
+   "result": "fixed"
+  },
+  "前提:base-oukyu-tanka-gaiyo": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 根拠のずれ",
+   "result": "fixed"
+  },
+  "前提:base-oukyu-tanka-gh": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 根拠のずれ",
+   "result": "fixed"
+  },
+  "前提:base-oukyu-tanka-houday": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 根拠のずれ",
+   "result": "fixed"
+  },
+  "前提:base-oukyu-tanka-jihatsu": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 根拠のずれ",
+   "result": "fixed"
+  },
+  "前提:base-r6-go-jokyo-kadai": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-r6-kadai-01-shisetsu": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-r6-kadai-02-gh-shitsu": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-r6-kadai-03-gh-kojin-kyotaku": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-r6-kadai-04-chiikisa": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 根拠のずれ",
+   "result": "fixed"
+  },
+  "前提:base-r6-kadai-05-soudan-comm": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-r6-kadai-06-jido-shitsu": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-r6-kadai-07-kohei-koritsu": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-r6-kadai-08-shogu-jittai": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 根拠のずれ",
+   "result": "fixed"
+  },
+  "前提:base-r6-kadai-09-keiei-bunseki": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 根拠のずれ",
+   "result": "fixed"
+  },
+  "前提:base-r6-kadai-10-jihatsu-chori": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-r6-kadai-10-shokuji-kasan": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 表現",
+   "result": "fixed"
+  },
+  "前提:base-r6-kadai-11-hosoku-kyufu": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-r6-kadai-12-yoshiki": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-seifu-hoshin-chinage": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-seifu-hoshin-shoryokuka": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 根拠のずれ",
+   "result": "fixed"
+  },
+  "前提:base-shogu-kaizen-kakuju": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 根拠のずれ",
+   "result": "fixed"
+  },
+  "前提:base-shogu-kaizen-kasanritsu": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-shogu-kaizen-r9-kadai": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-shogu-kaizen-shokuba-kankyo": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-shogu-kaizen-soudan-shinsetsu": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 根拠のずれ",
+   "result": "fixed"
+  },
+  "前提:base-shogu-kaizen-tokurei": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 根拠のずれ",
+   "result": "fixed"
+  },
+  "前提:base-shogu-kaizen-yoken": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 根拠のずれ",
+   "result": "fixed"
+  },
+  "前提:base-shuro-iko-taisei-kasan": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 根拠のずれ",
+   "result": "fixed"
+  },
+  "前提:base-shuro-shitei-guideline": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-shuro-zaitaku-shien": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "前提:base-shushisa-r6-service": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 根拠のずれ",
+   "result": "fixed"
+  },
+  "日程:timeline": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 根拠のずれ・誤り",
+   "result": "fixed"
+  },
+  "論点:houmon-douko-01": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:houmon-houkatsu-01": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:houmon-juhou-01": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:houmon-koudou-01": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:houmon-kyotaku-01": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:houmon-kyotaku-02": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:houmon-oudan-01": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:houmon-oudan-02": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:oudan-1": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:oudan-2-1": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:oudan-2-2": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:oudan-2-3": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:oudan-3-1": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:oudan-3-2": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:oudan-4": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 差分案の反映（第160回障害者部会）",
+   "result": "fixed"
+  },
+  "論点:oudan-kihon": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:ryoyo-kaigo-01": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:ryoyo-kaigo-02": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:seikatsu-kaigo-01": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:seikatsu-kaigo-02": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:seikatsu-kaigo-03": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shisetsu-nyusho-01": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shisetsu-nyusho-02": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shisetsu-nyusho-03": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shisetsu-nyusho-04": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shisetsu-nyusho-05": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shisetsu-nyusho-06": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-hoikusho-01": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-hoikusho-02": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-kyotaku-01": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-nyusho-01": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-nyusho-02": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-nyusho-03": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-nyusho-04": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-nyusho-05": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-nyusho-06": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-tsusho-01": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-tsusho-02": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-tsusho-03": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-tsusho-04": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-tsusho-05": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-tsusho-06": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-tsusho-07": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-tsusho-08": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-tsusho-09": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-tsusho-10": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-tsusho-11": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-tsusho-12": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-zenpan-01": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-zenpan-02": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shogaiji-zenpan-03": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 表現",
+   "result": "fixed"
+  },
+  "論点:shuro-a-01": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shuro-b-01": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shuro-oudan-01": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shuro-oudan-02": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shuro-oudan-03": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shuro-oudan-04": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shuro-oudan-05": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 表現",
+   "result": "fixed"
+  },
+  "論点:shuro-oudan-06": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shuro-oudan-07": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shuro-oudan-08": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shuro-oudan-09": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）で直した: 表現",
+   "result": "fixed"
+  },
+  "論点:shuro-sentaku-01": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shuro-sentaku-02": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shuro-sentaku-03": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:shuro-teichaku-01": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  },
+  "論点:tanki-nyusho-01": {
+   "checked": "2026-10-28",
+   "note": "全件照合（10/28）",
+   "result": "ok"
+  }
+ }
+}
