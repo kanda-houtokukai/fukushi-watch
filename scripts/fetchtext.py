@@ -46,7 +46,19 @@ def pdf_text(body):
         with open(p, "wb") as f:
             f.write(body)
         r = subprocess.run(["pdftotext", "-layout", p, "-"], capture_output=True)
-        return r.stdout.decode("utf-8", "replace")
+        text = r.stdout.decode("utf-8", "replace")
+        pages = max(1, text.count("\f"))
+        if len(re.sub(r"\s", "", text)) < 40 * pages:
+            # 日本語のフォントを埋め込んでいないPDFは pdftotext で文字が出ないので pdfminer で読み直す
+            try:
+                from pdfminer.high_level import extract_text
+                alt = extract_text(p)
+                if len(re.sub(r"\s", "", alt)) > len(re.sub(r"\s", "", text)):
+                    sys.stderr.write("pdftotext で文字が出なかったため pdfminer で読みました\n")
+                    return alt
+            except Exception as e:  # pdfminer が無い・読めない
+                sys.stderr.write(f"PDFの文字が少なく、pdfminer でも読めませんでした（{e}）。画像のPDFの可能性があります\n")
+        return text
 
 
 def decode(body, ctype):

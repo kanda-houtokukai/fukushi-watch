@@ -283,7 +283,7 @@
     if (en < NOW) return { t: "終了", c: "past" };
     if (e.status === "cancelled") return { t: "中止", c: "past" };
     if (e.status === "waitlist") return { t: "キャンセル待ち", c: "wait" };
-    if (e.status === "planned" && st > NOW) return { t: "公開予定", c: "plan" };
+    if (e.status === "planned") return { t: "公開予定", c: "plan" };
     if (st <= NOW) return { t: e.fmt.indexOf("ondemand") >= 0 ? "配信中" : "開催中", c: "live" };
     var d = Math.round((dayOf(e.start) - TODAY) / DAY);
     return { t: d <= 0 ? "今日" : (d === 1 ? "明日" : "あと" + d + "日"), c: "soon" };
@@ -479,7 +479,7 @@
 
   /* ── ホーム ───────────────────────── */
   (function home() {
-    // 近づいている期限
+    // 近づいている日程
     var dl = $("dl-cards");
     if (dl && LIVE.milestones) {
       var next = LIVE.milestones.filter(function (m) { return dayOf(m.date) >= TODAY; }).sort(function (a, b) { return dayOf(a.date) - dayOf(b.date); }).slice(0, 3);

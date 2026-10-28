@@ -17,7 +17,7 @@
 - 文の中身は、その資料のその箇所の原文で確かめられることだけにします。数字・日付・名称・条番号・問番号は、python で原文の文字列を探して確かめます（全角は半角にそろえ、空白を除いて探す）。資料は `scripts/fetchtext.py` で文字にしたものを読みます。
 - 日付は役割を区別して書きます（公布日・施行日・公表日・開催日・申請や届出の期限・対象期間）。要綱や告示の「◯日から施行」を、事業や制度が始まる日と取り違えません（実例：福岡県の補助金の要綱の施行日 8月24日を「8月から実施」と書き、対象期間 4/1〜2/28 と申請期限 10/13 を落としていた）。
 - 期限のあるもの（申請・届出・申込・意見募集）は期限も書きます。今日より前の期限を、これからのことのように書きません。
-- milestones（ホームの「近づいている期限」）の title は、その日付が何の日か（申込の期限・開催日・送付日・受信確認の期限など）を資料の言葉どおりに書きます。資料に期限と書かれていない日を「〜の申込」「〜まで」のように期限として書きません（実例：全国説明会の視聴URLが届く日 11月4日を「申込」の日として載せていた）。同じ催しを events にも載せるときは、milestones の日付と events の日付の役割が読んで分かるようにします。
+- milestones（ホームの「近づいている日程」）の title は、その日付が何の日か（申込の期限・開催日・送付日・受信確認の期限など）を資料の言葉どおりに書きます。資料に期限と書かれていない日を「〜の申込」「〜まで」のように期限として書きません（実例：全国説明会の視聴URLが届く日 11月4日を「申込」の日として載せていた）。同じ催しを events にも載せるときは、milestones の日付と events の日付の役割が読んで分かるようにします。
 - 本文の根拠の表記（Q&A の src、章の「ref」）は、資料リンク集の台帳 `dbs/_src/links.json` にある資料の呼び名（cite）で書きます。新しい資料を根拠にするときは、links.json にその資料を {g, t, u, d, cite} で足します。`build.py` は、根拠の表記がどの資料にも結びつかないと止まります。
 
 ## 手順
@@ -39,9 +39,9 @@ live.json の watch に並ぶページを `scripts/fetchtext.py` で読んで確
 JSON の形を保ったまま、次のとおり書き換えます。日付は日本時間の ISO 形式（例 2026-11-06、時刻つきは 2026-11-06T14:00:00+09:00）。
 - checkedAt: 今の日時（見積もらずに `TZ=Asia/Tokyo date +%Y-%m-%dT%H:%M:00+09:00` で取る）。checkedPages: 今日開いて確かめたページの数。checkNote: 今日の確認の結果を1文で（例「こども家庭庁がQ&Aを改訂しました」「新しい発表はありませんでした」）。
 - updates（新しい発表）: 先頭に足します。項目は {date: 発表日, src: "国"|"自治体"|"研修"|"その他", title, url, impact, note, where}。impact は、ガイドの本文の書き換えが要るなら、手順5で反映できたものは "done"、反映できなかったものは "todo"、本文に影響しない参考情報なら "info"、更新データの書き換え（研修の追加など）だけで対応が済んだなら "done"。where はガイドの関係する章の #id（#now #checklist #schedule #tools #overview #scope #persons #check #timing #system #safety #inappropriate #incident #employment #info #docs #supervision #sectors #qa #events #updates #open #sources）。note は何が変わったかを1〜2文で具体的に。60件を超えたら古いものから消します。
-- events（研修・説明会）: 新しいものは既存と同じ項目（id は英小文字とハイフンで一意に、start, end, date, fmt: ["online"|"venue"|"ondemand"|"fukuoka"], kind: "official"|"municipal"|"private", title, org, place, target, fee, cap, how, url, note, status, featured）で足します。福岡県内の会場なら fmt に "fukuoka" を入れます。民間の営業を含むものは note に書きます。満席は status "waitlist"、中止は "cancelled"、公開日が決まっていないものは "planned"。終了から60日を過ぎたものは消します。
+- events（研修・説明会）: 新しいものは既存と同じ項目（id は英小文字とハイフンで一意に、start, end, date, fmt: ["online"|"venue"|"ondemand"|"fukuoka"], kind: "official"|"municipal"|"private", title, org, place, target, fee, cap, how, url, note, status, featured）で足します。福岡県内の会場なら fmt に "fukuoka" を入れます。民間の営業を含むものは note に書きます。満席は status "waitlist"、中止は "cancelled"、公開日が決まっていないものは "planned"（planned のあいだは画面に「公開予定」と出る。公開・開催を主催者のページで確かめたら status を外す）。終了から60日を過ぎたものは消します。
 - library（いつでも見られる動画・資料）: アーカイブや資料が公開されたら足します（kind, title, note, url）。
-- milestones（ガイドのホームの「近づいている期限」）: 国が日付を確定・変更したら直します。たとえばシステムの暫定稼働日が発表されたら、その項目の date を確定日にし、approx と label を消します。
+- milestones（ガイドのホームの「近づいている日程」）: 国が日付を確定・変更したら直します。たとえばシステムの暫定稼働日が発表されたら、その項目の date を確定日にし、approx と label を消します。
 - notices（ガイドの全ページの上に出るお知らせ）: 2週間以内に法人が動く必要がある急な変更だけを {title, body, until, link} で足します。until を過ぎたものは消します。
 - eventsFocus と eventsLocalNote: 福岡からの参加に関する案内を、事実に合わせて直します（until を過ぎた eventsFocus は消すか更新）。
 - watch: 新しく確認すべきページ（例：福岡県障がい福祉課の専用ページ）が見つかったら足します。

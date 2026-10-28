@@ -897,7 +897,7 @@
       shield:'<svg class="ft-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6z"/><path d="M9 12.2l2.1 2.1L15.2 10"/></svg>',
       doc:'<svg class="ft-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M10 12h5M10 16h5"/></svg>'};
     live.forEach(function(f){
-      // 札（PC）: 上段 head＝印・題名・要の数字／下段 foot＝補足・次の期限・→。スマホでは head/foot が消えて従来の1行の帯に戻る
+      // 札（PC）: 上段 head＝印・題名・要の数字／下段 foot＝補足・次の日程・→。スマホでは head/foot が消えて従来の1行の帯に戻る
       var a=mk("a","ft"+(f.id?" ft-"+f.id:"")); a.href=f.url;
       var head=mk("span","ft-head"), foot=mk("span","ft-foot"), key=mk("span","ft-key");
       if(f.icon && ICON[f.icon]) head.insertAdjacentHTML("beforeend", ICON[f.icon]);
@@ -914,7 +914,7 @@
         if(kp.length>1){ key.appendChild(mk("b",null,String(Math.abs(left)))); key.appendChild(document.createTextNode(kp[1])); }
         if(f.sub) foot.appendChild(mk("span","ft-sub",f.sub));
         var nx=null; (f.milestones||[]).forEach(function(m){ if(!nx && d(m[0])>=today) nx=m; });
-        if(nx){ next.appendChild(document.createTextNode("次の期限 ")); next.appendChild(mk("b",null,md(nx[0]))); next.appendChild(document.createTextNode(" "+nx[1])); }
+        if(nx){ next.appendChild(document.createTextNode("次の日程 ")); next.appendChild(mk("b",null,md(nx[0]))); next.appendChild(document.createTextNode(" "+nx[1])); }
       } else {
         // 段階を示す行（報酬改定ガイド）
         right.appendChild(document.createTextNode("検討段階"));

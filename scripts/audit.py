@@ -62,7 +62,7 @@ def dbs_units():
         units["チェック:" + ph.get("title", "")] = {"title": ph.get("title", ""), "file": "dbs/_src/data.js",
                                                    "text": plain(json.dumps(ph.get("items", []), ensure_ascii=False)), "sources": []}
     live = json.loads((src / "live.json").read_text(encoding="utf-8"))
-    units["期限:milestones"] = {"title": "近づいている期限（live.json milestones）", "file": "dbs/_src/live.json",
+    units["期限:milestones"] = {"title": "近づいている日程（live.json milestones）", "file": "dbs/_src/live.json",
                                 "text": json.dumps(live.get("milestones", []), ensure_ascii=False), "sources": []}
     for u in units.values():
         u["source_titles"] = [title_of.get(x, x) for x in u["sources"]]
