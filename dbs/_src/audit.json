@@ -400,6 +400,14 @@
    "note": "全件照合（10/28）",
    "result": "ok"
   },
+  "章:docs": {
+   "checked": "2026-10-28",
+   "result": "ok"
+  },
+  "章:employment": {
+   "checked": "2026-10-28",
+   "result": "ok"
+  },
   "章:home": {
    "checked": "2026-10-28",
    "note": "全件照合（10/28）",
@@ -414,6 +422,10 @@
    "checked": "2026-10-28",
    "note": "全件照合（10/28）で直した: 根拠のずれ・誤り",
    "result": "fixed"
+  },
+  "章:info": {
+   "checked": "2026-10-28",
+   "result": "ok"
   },
   "章:now": {
    "checked": "2026-10-28",
@@ -444,6 +456,10 @@
    "checked": "2026-10-28",
    "note": "全件照合（10/28）で直した: 誤り",
    "result": "fixed"
+  },
+  "章:scope": {
+   "checked": "2026-10-28",
+   "result": "ok"
   },
   "章:supervision": {
    "checked": "2026-10-28",
