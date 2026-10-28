@@ -72,15 +72,6 @@
  ],
  "updates": [
   {
-   "date": "2026-10-29",
-   "src": "その他",
-   "title": "日程の章：情報セキュリティの専門家への相談窓口の日付を直しました",
-   "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/0a81db3a/20260929_policies_child-safety_efforts_koseibouhou_96.pdf",
-   "impact": "done",
-   "note": "10月1日に相談支援を開始としていた記載を、相談窓口の設置を知らせた通知（こ支性第123号、9月25日）の日付に直しました。下の10月1日付の「情報セキュリティの専門家への無料相談を開始」も同じ通知の内容で、開始日は資料に書かれていません",
-   "where": "#schedule"
-  },
-  {
    "date": "2026-10-28",
    "src": "国",
    "title": "従事者向け研修資料（PDF）を再び更新",
