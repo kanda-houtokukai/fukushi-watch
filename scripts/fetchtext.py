@@ -27,9 +27,9 @@ def fetch(url):
     os.close(fd)
     r = subprocess.run(
         ["curl", "-sS", "-L", "--max-time", "90", "--retry", "2", "-A", UA,
-         "-o", path, "-w", "%{http_code} %{content_type} %{url_effective}", url],
+         "-o", path, "-w", "%{http_code}\t%{content_type}\t%{url_effective}", url],
         capture_output=True, text=True)
-    meta = r.stdout.split(" ", 2) + ["", ""]
+    meta = r.stdout.split("\t", 2) + ["", ""]
     code, ctype, final = meta[0], meta[1], meta[2]
     with open(path, "rb") as f:
         body = f.read()
