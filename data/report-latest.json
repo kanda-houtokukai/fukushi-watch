@@ -1,6 +1,284 @@
 {
-  "generatedAt": "2026-10-28T02:25:36.373Z",
-  "model": null,
-  "items": [],
-  "press": []
+  "generatedAt": "2026-10-28T23:04:34.821Z",
+  "model": "gemini-3.5-flash-lite",
+  "items": [
+    {
+      "hash": "014906cd1b53ed5c",
+      "source": "こども家庭庁",
+      "title": "児童厚生施設及び放課後児童クラブに関する専門委員会（第8回）を掲載しました",
+      "url": "https://www.cfa.go.jp/councils/shingikai/kodomo_ibasho/jidoukan/5d5ae75e",
+      "date": "2026-10-28",
+      "category": "会議等",
+      "summary": "児童厚生施設や放課後児童クラブのあり方を議論する専門委員会の開催情報です。今後の制度改正や運営基準の動向を把握するために確認が必要です。",
+      "importance": "中",
+      "fields": [
+        "児童"
+      ],
+      "reason": "審議会の開催情報であり、先々の制度設計に関わるため。"
+    },
+    {
+      "hash": "94a01c2ee13211f9",
+      "source": "こども家庭庁",
+      "title": "児童厚生施設及び放課後児童クラブに関する専門委員会（第8回）について掲載しました",
+      "url": "https://www.cfa.go.jp/press/1a661ea3-dac7-4c0e-b3b6-d3ef735cfc45",
+      "date": "2026-10-28",
+      "category": "報道発表",
+      "summary": "児童厚生施設・放課後児童クラブに関する専門委員会の内容についての報道発表です。今後の関連施設の運営方針や施策の方向性を知ることができます。",
+      "importance": "中",
+      "fields": [
+        "児童"
+      ],
+      "reason": "専門委員会の報道発表であり、動向把握として有用なため。"
+    },
+    {
+      "hash": "bcf6657066fad148",
+      "source": "こども家庭庁",
+      "title": "第20回人工妊娠中絶一時金認定審査部会の議事要旨について掲載しました",
+      "url": "https://www.cfa.go.jp/councils/jinkoninshinchuzetsu-ichijikin/103de8b3",
+      "date": "2026-10-28",
+      "category": "会議等",
+      "summary": "人工妊娠中絶一時金の認定審査に関する部会の議事要旨です。母子保健や医療給付に関連する審議内容が公開されています。",
+      "importance": "中",
+      "fields": [
+        "児童"
+      ],
+      "reason": "母子保健・福祉に関わる審議会の議事要旨のため。"
+    },
+    {
+      "hash": "df962272565a9a36",
+      "source": "こども家庭庁",
+      "title": "第20回 人工妊娠中絶一時金認定審査部会の審査結果について掲載しました",
+      "url": "https://www.cfa.go.jp/press/4359160a-5c32-4321-83a2-0b33852287a6",
+      "date": "2026-10-28",
+      "category": "報道発表",
+      "summary": "人工妊娠中絶一時金認定審査部会の審査結果に関するお知らせです。医療費や給付に関する実務上の決定事項が含まれます。",
+      "importance": "中",
+      "fields": [
+        "児童"
+      ],
+      "reason": "関連する給付の審査結果であり、動向把握が必要なため。"
+    },
+    {
+      "hash": "8d1c6f27ad05eba3",
+      "source": "こども家庭庁",
+      "title": "意見招請：保育業務施設管理プラットフォームの運用・保守等業務（令和9年度～令和13年度）一式を掲載しました",
+      "url": "https://www.cfa.go.jp/procurement",
+      "date": "2026-10-28",
+      "category": "調達情報",
+      "summary": "保育業務関連のシステム運用・保守等業務に関する調達の意見招請です。行政のシステム調達情報であり、福祉事業者の直接の運営業務には影響しません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "行政の調達に関する意見招請のため実務への影響は薄い。"
+    },
+    {
+      "hash": "5dfa543731d37b04",
+      "source": "こども家庭庁",
+      "title": "「第44回青少年インターネット利用環境づくりフォーラムin熊本」の開催について掲載しました",
+      "url": "https://www.cfa.go.jp/policies/youth-kankyou/internet_use_gyouji/r08-forum",
+      "date": "2026-10-28",
+      "category": "政策",
+      "summary": "青少年のインターネット利用環境づくりに関するフォーラムの開催案内です。啓発活動やイベントの告知であり、事業所の実務に直接影響しません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "一般向けのイベント情報であるため。"
+    },
+    {
+      "hash": "3e1562ccc8e1d9ac",
+      "source": "厚生労働省",
+      "title": "労働災害発生状況",
+      "url": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei11/rousai-hassei/index.html",
+      "date": "2026-10-28",
+      "category": "統計情報",
+      "summary": "労働災害の発生状況に関する統計データです。労務管理や安全衛生対策の現状を把握するための参考資料となります。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "労働災害の統計であり、現場の安全管理・労働環境の把握に役立つため。"
+    },
+    {
+      "hash": "18b5f5b81e0fccbc",
+      "source": "厚生労働省",
+      "title": "第１回 生命科学・医学系研究等における個人情報の取扱い等に関する合同会議 第１タスクフォース",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76975.html",
+      "date": "2026-10-28",
+      "category": "審議会等",
+      "summary": "生命科学や医学系研究における個人情報の取扱いに関する合同会議の資料です。直接的な福祉サービスとは異なりますが、情報管理の動向に関わります。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医療・生命科学の研究倫理に関する会議であり、福祉事業への影響は薄いため。"
+    },
+    {
+      "hash": "7ba2ea50cf6b77b9",
+      "source": "厚生労働省",
+      "title": "労働者派遣事業及び有料の職業紹介事業の許可を取り消しました",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76850.html",
+      "date": "2026-10-28",
+      "category": "報道発表",
+      "summary": "労働者派遣・有料職業紹介事業の許可取り消し処分に関する報道発表です。一般の労働行政処分であり、福祉事業所の直接の運営には影響しません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "他業種の行政処分情報であり、福祉事業者の実務に関係しないため。"
+    },
+    {
+      "hash": "438c75875f10ed80",
+      "source": "厚生労働省",
+      "title": "2026年９月14日 第８回労働政策審議会労働条件分科会「組織再編に伴う労働関係の調整に関する部会」 議事録",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76987.html",
+      "date": "2026-10-28",
+      "category": "その他",
+      "summary": "労働政策審議会の労働条件分科会における組織再編と労働関係調整に関する議事録です。雇用環境や労務管理全般の法改正の動向を把握できます。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "労働政策の審議録であり、労務管理に関する先々の動向を把握するため。"
+    },
+    {
+      "hash": "2fa21da8bce78229",
+      "source": "厚生労働省",
+      "title": "民間競争入札実施事業 就労条件総合調査の実施状況について（令和７年度分）",
+      "url": "https://www.mhlw.go.jp/topics/2026/10/tp1028-1.html",
+      "date": "2026-10-28",
+      "category": "政策分野",
+      "summary": "就労条件総合調査の実施状況に関する政策情報です。労働者の賃金や労働時間の動向を知るための統計調査資料です。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "労務関連の調査状況であり、労働環境のベンチマークとして有用なため。"
+    },
+    {
+      "hash": "dbb2eec773772a20",
+      "source": "厚生労働省",
+      "title": "労働基準行政及び職業安定行政関係相談業務に係るコールセンター及び説明会等受付サイト設置・運営・広報業務一式",
+      "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/e-wto-iken/newpage_10524.html",
+      "date": "2026-10-28",
+      "category": "その他",
+      "summary": "労働基準行政等のコールセンター設置等に関する業務委託の案内です。行政の調達情報であり、福祉事業者の運営には直接関わりません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "行政側の調達・業務委託情報のため。"
+    },
+    {
+      "hash": "dea98c3959a27cb6",
+      "source": "厚生労働省",
+      "title": "令和８年度栄養関係功労者（食生活改善事業功労者・地区組織）厚生労働大臣表彰受賞者が決まりました",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76867.html",
+      "date": "2026-10-28",
+      "category": "報道発表",
+      "summary": "栄養関係功労者に対する厚生労働大臣表彰の受賞者決定の知らせです。食生活改善や福祉関連の功績を称える表彰の発表です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "大臣表彰の受賞者発表であり、事業所の実務に直接影響しないため。"
+    },
+    {
+      "hash": "d9518a5baed382f5",
+      "source": "厚生労働省",
+      "title": "採用情報（任期付職員（医業経営専門官又は主査）募集情報）",
+      "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/ninkituki/ninki-igyoukeieisenmonkanorsyusa.html",
+      "date": "2026-10-16",
+      "category": "採用情報",
+      "summary": "省庁における任期付職員の採用情報です。行政機関の職員募集であり、福祉事業者の採用や運営とは関係ありません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "官庁の採用情報のため。"
+    },
+    {
+      "hash": "f27ba702b0e5a656",
+      "source": "WAM NET",
+      "title": "風しん最新情報（令和8年10月27日更新）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22991&ct=030100130&from=rss",
+      "date": "2026-10-28",
+      "category": "行政資料",
+      "summary": "風しんの最新発生動向や感染対策に関する行政資料です。感染症予防の観点から、福祉施設における衛生管理や利用者への注意喚起に活用します。",
+      "importance": "高",
+      "fields": [
+        "共通"
+      ],
+      "reason": "感染症の最新情報であり、福祉施設での衛生管理・対応が必要になるため。",
+      "action": "一般に、こうした通知では最新の発生動向の把握や、施設内における衛生管理体制および利用者への注意喚起の状況を確認する対応が必要になります。"
+    },
+    {
+      "hash": "22c74d942eea7ef4",
+      "source": "WAM NET",
+      "title": "麻しん最新情報（令和8年10月27日更新）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22995&ct=030100110&from=rss",
+      "date": "2026-10-28",
+      "category": "行政資料",
+      "summary": "麻しんの最新発生動向や感染対策に関する行政資料です。感染症の流行状況を確認し、施設内での感染拡大防止対策に役立てます。",
+      "importance": "高",
+      "fields": [
+        "共通"
+      ],
+      "reason": "感染症の最新情報であり、福祉施設での衛生管理・対応が必要になるため。",
+      "action": "一般に、こうした通知では感染症の流行状況の確認と、施設内での感染拡大を防止するための衛生管理や予防対策の点検が必要になります。"
+    },
+    {
+      "hash": "e484e221ae8d062a",
+      "source": "WAM NET",
+      "title": "第67回 障害福祉報酬改定検討チーム（令和8年10月30日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22993&ct=070010040&from=rss",
+      "date": "2026-10-28",
+      "category": "行政資料",
+      "summary": "障害福祉サービス等の報酬改定に向けた検討チームの開催案内です。今後の障害福祉サービスの報酬や基準見直しの議論が行われる重要会議です。",
+      "importance": "高",
+      "fields": [
+        "障害"
+      ],
+      "reason": "障害福祉の報酬改定に関わる検討会であり、事業所の収支に直結するため。",
+      "action": "一般に、こうした通知では今後の報酬や基準の見直しに関する動向の把握や、会議資料を通じた検討項目の確認が必要になります。"
+    }
+  ],
+  "press": [
+    {
+      "hash": "9a022061cd710740",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "登録施設介護支援の報酬、居宅と同じ枠組みで設定 逓減制も適用 厚労省提案",
+      "url": "https://www.joint-kaigo.com/articles/49931/",
+      "date": "2026-10-28",
+      "category": "超高齢化",
+      "fields": [
+        "高齢"
+      ]
+    },
+    {
+      "hash": "1bf4e194ed61d0a3",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "【壷内令子】居宅介護支援は二極化へ向かうか 管理者要件の緩和などで変わる経営戦略",
+      "url": "https://www.joint-kaigo.com/articles/49924/",
+      "date": "2026-10-28",
+      "category": "超高齢化",
+      "fields": [
+        "高齢"
+      ]
+    },
+    {
+      "hash": "a9310151d8441055",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "来年度の介護報酬改定、6月1日施行で統一へ 厚労省 負担軽減へ調整",
+      "url": "https://www.joint-kaigo.com/articles/49914/",
+      "date": "2026-10-28",
+      "category": "福祉用具",
+      "fields": [
+        "高齢"
+      ]
+    },
+    {
+      "hash": "6bd5214d10ebdb49",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "福祉用具の給付対象を拡大 通信機能付きの車いす・介護ベッドなど 来年2月から適用 厚労省通知",
+      "url": "https://www.joint-kaigo.com/articles/49905/",
+      "date": "2026-10-28",
+      "category": "福祉用具",
+      "fields": [
+        "高齢",
+        "障害"
+      ]
+    }
+  ]
 }
