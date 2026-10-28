@@ -415,9 +415,8 @@
    "result": "fixed"
   },
   "章:home": {
-   "checked": "2026-10-28",
-   "note": "10/28 見出しを「近づいている日程」に（期限でない日付も並ぶため）",
-   "result": "fixed"
+   "checked": "2026-10-29",
+   "result": "ok"
   },
   "章:inappropriate": {
    "checked": "2026-10-28",
@@ -435,9 +434,8 @@
    "result": "fixed"
   },
   "章:now": {
-   "checked": "2026-10-28",
-   "note": "10/28 11/4 を申込の期限のように書いていた要点と図のラベルを、視聴URLの送付期限として書き直した",
-   "result": "fixed"
+   "checked": "2026-10-29",
+   "result": "ok"
   },
   "章:open": {
    "checked": "2026-10-28",
@@ -445,9 +443,8 @@
    "result": "fixed"
   },
   "章:overview": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 表現",
-   "result": "fixed"
+   "checked": "2026-10-29",
+   "result": "ok"
   },
   "章:persons": {
    "checked": "2026-10-28",
@@ -465,8 +462,8 @@
    "result": "fixed"
   },
   "章:schedule": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 誤り",
+   "checked": "2026-10-29",
+   "note": "10/29 10月1日の項目の情報セキュリティ相談の開始日を、こ支性第123号（9月25日）の通知の日に直した",
    "result": "fixed"
   },
   "章:scope": {
