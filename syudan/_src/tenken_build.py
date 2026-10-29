@@ -15,6 +15,8 @@ import hashlib, json, pathlib, re, unicodedata
 SRC = pathlib.Path(__file__).resolve().parent
 TK = SRC / "tenken"
 
+# 県の資料の区分に名前が出てこない国のサービス（区分の表示には入れるが、県の資料の見出し・指摘・年間・減算は結びつけない）
+KEN_EXCLUDE = {"hokatsu"}   # 重度障害者包括支援: 居宅訪問系の資料の対象は居宅介護・重度訪問介護・同行援護・行動援護
 GROUP_T = {"kyotaku": "居宅訪問系", "nicchu": "通所（日中活動）系・入所系", "gh": "共同生活援助", "ji": "障がい児（通所・入所）系", "soudan": "相談支援系"}
 
 # 県の資料の見出しにある対象の印（＜生介・短期＞ など）→ サービスの id
@@ -145,7 +147,8 @@ def build(toc, notes, docs):
     FL = {d["id"]: flat(d) for d in toc}
     ids_of = {}
     for s in services:
-        ids_of.setdefault(s["g"], []).append(s["id"])
+        if s["id"] not in KEN_EXCLUDE:
+            ids_of.setdefault(s["g"], []).append(s["id"])
     errs = []
 
     # 県の見出しごとの対象サービス
@@ -335,7 +338,7 @@ def build(toc, notes, docs):
         gs = it.get("g", [])
         svcs = set(it.get("s", []))
         for g in gs:
-            svcs |= set(SID) if g == "*" else set(ids_of.get(g, []))
+            svcs |= (set(SID) - KEN_EXCLUDE) if g == "*" else set(ids_of.get(g, []))
         svcs -= set(it.get("xs", []))
         need = it.get("need")
         if need:   # 国の確認項目に、その項目（例: 非常災害対策）があるサービスだけ
