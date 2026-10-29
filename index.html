@@ -23,6 +23,9 @@
        留める。⚠️--press-bg（報道の帯）と同色にしない——帯が机への切り抜き穴に見える */
     --desk:#f3f1ec;
     --ink-press:#4e4e4c; /* 墨の濃度約80%（P40-5・タブの押し込まれた面。色相は増やしていない） */
+    /* P65: 集団指導 特設ページの入口の面。暖灰の濃度違い（色相は足さない）。
+       モックの3段階 ①#f3f1ec ②#ebe8e2 ③#e2dfd6 からユーザーが②を選択（2026-10-29） */
+    --entry:#ebe8e2; --entry-sub:#5c5852; /* 灰の面の上の補足の文字（--sub では面の上で文字の濃さが足りない） */
     /* 分野色(並びは全箇所 保育・児童・障害・高齢): 保育=山吹/児童=梅/障害=藍/高齢=松葉 */
     --f-hoiku:#b0873a; --f-jido:#a05a78; --f-shogai:#3a6ea5; --f-korei:#5a7d4f;
   }
@@ -84,6 +87,26 @@
     box-shadow:2px 2px 0 var(--ink);transform:translate(0,0);white-space:nowrap;flex:none}
   .views .view.on{box-shadow:none;transform:translate(2px,2px);
     background:var(--ink-press);color:#fff;font-weight:700}
+  /* P65: 集団指導 特設ページの入口（案2・ユーザー決定 2026-10-29）。面の切り替えの右端に、2つの特設ガイドの札より
+     小さく置く。面のボタン（押しボタン型）と違って影を付けない平らな灰の面にし、「面の切り替え」ではなく
+     「別のページへの入口」であることを形で分ける。スマホは面の行に入らないため、メニューの先頭（.mm-syudan） */
+  .views .v-syudan{margin-left:auto;display:inline-flex;align-items:center;gap:8px;padding:6px 14px;
+    font-size:13px;background:var(--entry);color:var(--ink);text-decoration:none;white-space:nowrap;flex:none}
+  .views .v-syudan .k{font-size:12.5px}
+  .views .v-syudan b{letter-spacing:.04em}
+  .views .v-syudan .go{color:var(--entry-sub)}
+  .views .v-syudan:hover b{text-decoration:underline;text-underline-offset:3px}
+  .mm-syudan{display:none}
+  @media(max-width:899px){
+    .views .v-syudan{display:none}
+    .mm-syudan{display:flex;align-items:center;gap:10px;min-height:52px;padding:8px 12px;margin:0 0 26px;
+      background:var(--entry);color:var(--ink);text-decoration:none}
+    .mm-syudan .t{display:flex;flex-direction:column;gap:2px;min-width:0}
+    .mm-syudan b{font-size:15px;letter-spacing:.04em}
+    .mm-syudan .s{font-size:12px;color:var(--entry-sub)}
+    .mm-syudan .go{margin-left:auto;color:var(--entry-sub)}
+  }
+  @media print{.v-syudan,.mm-syudan{display:none !important}}
   /* P34: 3面になったので「その面のときだけ出す」:not の形にそろえる */
   body:not([data-view="paper"]) .ticker,
   body:not([data-view="paper"]) .dayhead,
@@ -825,6 +848,7 @@
     <button class="view on" data-view="paper" type="button">紙　面</button>
     <button class="view" data-view="grants" type="button">助　成</button>
     <button class="view" data-view="kenshu" type="button">研　修</button>
+    <a class="v-syudan" href="syudan/"><span class="k">福岡県</span><b>集団指導 特設ページ</b><span class="go" aria-hidden="true">→</span></a>
   </nav>
   <!-- 特設の帯（期間限定・P61→P63）。題名・リンク先・期間は直後の #featureConf だけを書き換える。
        期間外の行は描画しない（全部が期間外なら hidden のまま・余白も残らない）。行の組み立ては直後の
@@ -1156,6 +1180,7 @@
     <button id="btnMenuClose" aria-label="閉じる">✕</button>
   </div>
   <div id="mMenuBody">
+    <a class="mm-syudan" href="syudan/"><span class="t"><b>集団指導 特設ページ</b><span class="s">福岡県・令和8年度</span></span><span class="go" aria-hidden="true">→</span></a>
     <details class="mm-about" id="mAboutFold">
       <summary>このサイトについて</summary>
       <div id="mAboutSlot"></div>

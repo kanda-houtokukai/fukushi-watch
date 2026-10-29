@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>令和8年度 福岡県 集団指導 特設ページ</title>
+<meta name="description" content="福岡県の令和8年度 障がい福祉サービス事業所等集団指導の説明資料と参考資料を、サービス別の見出しと資料の中の検索で引けるようにしたページ。見出しからPDFの該当ページを開きます。">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:title" content="令和8年度 福岡県 集団指導 特設ページ">
+<meta property="og:description" content="福岡県の集団指導の資料を、サービス別の見出しと検索で引く。福祉情報ウォッチの特設ページ。">
+<meta property="og:url" content="https://fukushi-watch.fknd.jp/syudan/">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?v=2">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png?v=2">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap">
+<style>
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; }
+[hidden] { display: none !important; }
+/* 構成: こども性暴力防止法ガイド・報酬改定ガイドと同じサイト型（上のメニュー、スマホは下のタブ）。
+   中身は「県の資料の見出しと頁」。本文は持たず、見出しからPDFの該当頁を開く。色は深緑（ほかの2つのガイドと見分ける）。白基調のライトのみ */
+:root {
+  --bg: #FFFFFF;
+  --surface: #FFFFFF;
+  --surface-2: #F4F3F0;
+  --ink: #1E2421;
+  --ink-2: #474E4A;
+  --ink-3: #646B67;
+  --line: #DCD9D2;
+  --line-2: #ECEAE5;
+  --ac: #2C6650;          /* 深緑：見出し・リンク */
+  --ac-soft: #E8F1EC;
+  --ac-mid: #A9C7B8;
+  --warn: #A04A32;        /* 期限の日数だけ（福祉情報ウォッチの朱） */
+  --focus: #2C6650;
+  --f-display: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
+  --f-body: "BIZ UDPGothic", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  --f-mono: "IBM Plex Mono", "BIZ UDGothic", ui-monospace, monospace;
+  --r: 6px;
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-padding-top: 72px; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--f-body); font-size: 16px; line-height: 1.8; letter-spacing: .01em;
+  -webkit-text-size-adjust: 100%;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--surface); }
+a { color: var(--ac); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 3px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.nw { white-space: nowrap; }
+.ext { width: 12px; height: 12px; margin-left: 3px; vertical-align: -1px; flex: none; }
+
+/* ── 戻る・上部バー ───────────────────────── */
+.crumb { background: var(--surface-2); border-bottom: 1px solid var(--line-2); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.crumb-in { max-width: 1240px; margin: 0 auto; display: flex; align-items: center; }
+.crumb-back { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 12px 0 0; color: var(--ink-2); text-decoration: none; font-size: 13px; }
+.crumb-back:hover { color: var(--ac); text-decoration: underline; }
+.crumb-back svg { width: 14px; height: 14px; flex: none; }
+.topbar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40;
+  background: var(--surface); border-bottom: 1px solid var(--line);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.topbar-in { max-width: 1240px; margin: 0 auto; display: flex; align-items: center; gap: 14px; height: 58px; }
+.brand { font-family: var(--f-display); font-weight: 700; font-size: 14.5px; letter-spacing: .03em; white-space: nowrap; color: var(--ink); text-decoration: none; display: flex; align-items: baseline; gap: 6px; flex: none; }
+.brand span { font-size: 12px; color: var(--ink-3); font-weight: 500; }
+.gnav { display: flex; gap: 2px; flex: 1; min-width: 0; justify-content: center; margin-right: 180px; }
+.gnav a { font-size: 13.5px; color: var(--ink-2); text-decoration: none; padding: 7px 12px; border-radius: 4px; white-space: nowrap; position: relative; }
+.gnav a:hover { background: var(--surface-2); color: var(--ink); }
+.gnav a.is-active { color: var(--ac); font-weight: 700; }
+.gnav a.is-active::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: -12px; height: 3px; background: var(--ac); border-radius: 2px 2px 0 0; }
+.tabbar { display: none; }
+
+/* ── 全体レイアウト ───────────────────────── */
+.shell {
+  max-width: 1240px; margin: 0 auto;
+  display: grid; grid-template-columns: 232px minmax(0, 1fr); gap: 44px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 72px;
+}
+.shell.no-sub { grid-template-columns: minmax(0, 1fr); }
+.shell.no-sub .subnav { display: none; }
+.shell.no-sub:not(.is-home) main { max-width: 980px; width: 100%; margin-inline: auto; }
+main { padding-block: 28px 0; min-width: 0; }
+.view { display: none; }
+.view.is-active { display: block; animation: viewIn .22s ease-out; }
+@keyframes viewIn { from { opacity: .35; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .view.is-active { animation: none; } }
+
+.subnav { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 58px); align-self: start; padding-block: 28px 24px; max-height: calc(100vh - 58px - env(safe-area-inset-top, 0px)); overflow-y: auto; scrollbar-width: thin; }
+.subnav ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.subnav a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; padding: 8px 10px; border-radius: 5px; color: var(--ink-2); text-decoration: none; font-size: 14px; line-height: 1.5; align-items: baseline; }
+.subnav a .c { font-family: var(--f-mono); font-size: 11px; color: var(--ink-3); }
+.subnav a:hover { background: var(--surface-2); color: var(--ink); }
+.subnav a.is-active { background: var(--ac-soft); color: var(--ac); font-weight: 700; }
+
+.vh { font-family: var(--f-display); font-weight: 900; font-size: clamp(24px, 3.2vw, 32px); line-height: 1.3; margin: 0 0 6px; letter-spacing: .02em; }
+.vsub { color: var(--ink-3); font-size: 13.5px; margin: 0 0 18px; line-height: 1.7; }
+
+/* ── ホーム ───────────────────────── */
+.home-head { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(260px, 1fr); gap: 24px; align-items: stretch; margin-bottom: 22px; }
+.eyebrow { font-family: var(--f-mono); font-size: 12px; letter-spacing: .1em; color: var(--ink-3); display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.home h1 { font-family: var(--f-display); font-weight: 900; font-size: clamp(30px, 4.4vw, 46px); line-height: 1.22; letter-spacing: .03em; margin: 8px 0 18px; }
+.dateplate { background: var(--ac-soft); border-radius: 10px; border-top: 4px solid var(--ac); padding: 16px 20px 18px; display: flex; flex-direction: column; gap: 6px; }
+.dateplate .k { font-family: var(--f-mono); font-size: 12px; letter-spacing: .14em; color: var(--ac); }
+.dateplate .d { font-family: var(--f-display); font-weight: 900; font-size: clamp(34px, 4.6vw, 48px); line-height: 1.05; font-variant-numeric: tabular-nums; color: var(--ac); }
+.dateplate .left { font-size: 14px; color: var(--ink-2); }
+.dateplate .left b { font-size: 22px; font-family: var(--f-display); font-weight: 900; margin: 0 3px; color: var(--warn); font-variant-numeric: tabular-nums; }
+.reg-go { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 4px; font-size: 14px; font-weight: 700; padding: 8px 14px; background: var(--surface); border: 1px solid var(--ac-mid); border-radius: var(--r); text-decoration: none; }
+.reg-go svg { width: 13px; height: 13px; }
+.reg-go:hover { border-color: var(--ac); }
+
+.find { position: relative; display: flex; max-width: 40em; }
+.find svg { position: absolute; left: 13px; top: 50%; width: 18px; height: 18px; transform: translateY(-50%); color: var(--ink-3); pointer-events: none; }
+.find input { flex: 1; min-width: 0; font: inherit; font-size: 16px; padding: 11px 12px 11px 40px; border: 1.5px solid var(--line); border-right: 0; border-radius: var(--r) 0 0 var(--r); background: var(--surface); color: var(--ink); }
+.find input:focus { border-color: var(--ac); outline: none; }
+.find button { font: inherit; font-size: 15px; font-weight: 700; padding: 0 20px; border: 0; border-radius: 0 var(--r) var(--r) 0; background: var(--ac); color: #fff; cursor: pointer; }
+.find button:hover { filter: brightness(1.08); }
+.find.big input { font-size: 17px; padding-block: 14px; }
+
+.hb { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 0 0 18px; margin-bottom: 18px; min-width: 0; overflow: hidden; }
+.hb-h { display: flex; justify-content: space-between; align-items: center; gap: 6px 14px; flex-wrap: wrap; margin: 0 0 14px; padding: 11px 18px; background: var(--ac-soft); border-bottom: 1px solid #D2E2D9; }
+.hb-h h2 { font-family: var(--f-display); font-size: 17px; color: var(--ac); margin: 0; line-height: 1.4; }
+.hb-h a { font-size: 13px; }
+.hb > :not(.hb-h) { margin-left: 18px; margin-right: 18px; }
+
+.svc-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.svc-card { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; text-decoration: none; color: var(--ink); min-height: 74px; }
+.svc-card:hover { border-color: var(--ac); background: var(--ac-soft); }
+.svc-card b { font-family: var(--f-display); font-size: 16px; color: var(--ac); line-height: 1.45; }
+.svc-card span { font-size: 12.5px; color: var(--ink-3); line-height: 1.55; }
+.svc-card .m { font-family: var(--f-mono); font-size: 11.5px; margin-top: auto; padding-top: 4px; }
+#svc .svc-grid { margin-top: 18px; }
+
+.chap-quick { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; margin-top: 0; margin-bottom: 0; }
+.chap-quick li { border-bottom: 1px solid var(--line-2); }
+.chap-quick a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: baseline; padding: 8px 2px; font-size: 14.5px; line-height: 1.55; text-decoration: none; color: var(--ink); }
+.chap-quick a:hover .t { color: var(--ac); text-decoration: underline; }
+.pg { font-family: var(--f-mono); font-size: 12px; color: var(--ink-3); white-space: nowrap; display: inline-flex; align-items: center; }
+
+.plain { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 14.5px; }
+.plain a { display: inline-flex; align-items: center; min-height: 32px; }
+
+/* ── サービス別 ───────────────────────── */
+.svc-head { margin-bottom: 18px; }
+.svc-names { color: var(--ink-3); font-size: 13.5px; margin: 0; line-height: 1.7; }
+.find.inline { margin: 14px 0 6px; max-width: 34em; }
+.doc { border-top: 2px solid var(--ink); padding-top: 12px; margin-top: 26px; }
+.doc-h { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+.doc-h h2 { font-family: var(--f-display); font-size: 19px; margin: 0; line-height: 1.45; }
+.doc-h .meta { font-family: var(--f-mono); font-size: 12px; color: var(--ink-3); }
+.doc-h .open { margin-left: auto; font-size: 13.5px; display: inline-flex; align-items: center; white-space: nowrap; }
+.chs { margin-top: 8px; }
+.ch { border-bottom: 1px solid var(--line-2); }
+.ch > summary, .ch-row { list-style: none; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 12px; align-items: baseline; padding: 10px 26px 10px 2px; position: relative; font-weight: 700; font-size: 15px; line-height: 1.55; }
+.ch > summary::-webkit-details-marker { display: none; }
+.ch > summary::after { content: ""; position: absolute; right: 8px; top: 50%; width: 8px; height: 8px; margin-top: -6px; border-right: 1.6px solid var(--ink-3); border-bottom: 1.6px solid var(--ink-3); transform: rotate(45deg); transition: transform .15s; }
+.ch[open] > summary::after { transform: rotate(-135deg); margin-top: -2px; }
+.ch > summary:hover { color: var(--ac); }
+.ch .n { font-family: var(--f-mono); font-size: 11.5px; color: var(--ink-3); font-weight: 400; white-space: nowrap; }
+.ch-row { cursor: default; padding-right: 2px; grid-template-columns: minmax(0, 1fr) auto; }
+.ch-row a { color: var(--ink); text-decoration: none; }
+.ch-row a:hover { color: var(--ac); text-decoration: underline; }
+.subs { list-style: none; margin: 0 0 10px; padding: 0 0 0 12px; border-left: 2px solid var(--line-2); }
+.subs a, .ch-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: baseline; padding: 5px 4px; font-size: 14px; line-height: 1.6; color: var(--ink); text-decoration: none; border-radius: 4px; }
+.subs a:hover, .ch-top:hover { background: var(--surface-2); color: var(--ac); }
+.ch-top { font-size: 13px; color: var(--ink-3); }
+.also { margin-top: 30px; }
+.also h2, .refs h2 { font-family: var(--f-display); font-size: 16.5px; margin: 0 0 8px; }
+.rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.rows li { padding: 9px 2px; border-bottom: 1px solid var(--line-2); font-size: 14.5px; line-height: 1.6; }
+.rows .note { display: block; font-size: 12.5px; color: var(--ink-3); }
+.ty { display: inline-block; margin-left: 8px; font-family: var(--f-mono); font-size: 10.5px; color: var(--ink-3); border: 1px solid var(--line); border-radius: 3px; padding: 0 5px; line-height: 1.55; vertical-align: 1px; white-space: nowrap; }
+.refs { margin-top: 30px; }
+.refs h3 { font-size: 14px; color: var(--ink-2); margin: 18px 0 4px; font-weight: 700; }
+
+/* ── 探す ───────────────────────── */
+.scope { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 4px; }
+.scope button { font: inherit; font-size: 13px; padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink-2); cursor: pointer; min-height: 34px; }
+.scope button:hover { border-color: var(--ac); }
+.scope button[aria-pressed="true"] { background: var(--ac); border-color: var(--ac); color: #fff; font-weight: 700; }
+.s-sum { font-size: 13.5px; color: var(--ink-3); margin: 14px 0 0; min-height: 1.8em; }
+.s-sum b { color: var(--ink); }
+.s-doc { margin-top: 20px; }
+.s-doc h2 { font-family: var(--f-display); font-size: 16px; margin: 0 0 4px; display: flex; flex-wrap: wrap; gap: 2px 10px; align-items: baseline; }
+.s-doc h2 small { font-family: var(--f-mono); font-size: 11.5px; color: var(--ink-3); font-weight: 400; }
+.hits { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.hits a { display: grid; grid-template-columns: 4.2em minmax(0, 1fr); gap: 4px 12px; padding: 8px 2px; border-bottom: 1px solid var(--line-2); text-decoration: none; color: var(--ink); line-height: 1.55; }
+.hits a:hover { background: var(--surface-2); }
+.hits .p { font-family: var(--f-mono); font-size: 13px; color: var(--ac); font-weight: 500; padding-top: 1px; }
+.hits .h { font-size: 14.5px; }
+.hits .c { grid-column: 2; font-size: 12px; color: var(--ink-3); }
+.hits mark { background: #F7E7A8; color: inherit; padding: 0 1px; }
+.more { font: inherit; font-size: 13px; margin-top: 8px; padding: 6px 12px; border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); color: var(--ink-2); cursor: pointer; }
+
+/* ── 資料一覧（scripts/linkbook.py が組み立てる） ───────────────────────── */
+.lk-find { position: relative; display: block; margin: 18px 0 4px; max-width: 32em; }
+.lk-find input { width: 100%; font: inherit; font-size: 15px; padding: 11px 14px 11px 40px; border: 1.5px solid var(--line); border-radius: var(--r); background: var(--surface); color: var(--ink); }
+.lk-find input:focus { border-color: var(--ac); outline: none; }
+.lk-find svg { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--ink-3); }
+.lk-g { margin-top: 28px; }
+.lk-h { font-family: var(--f-display); font-size: 15.5px; font-weight: 700; margin: 0 0 8px; padding-left: 10px; border-left: 3px solid var(--ac); line-height: 1.45; }
+.lk-l { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.lk-i { display: grid; grid-template-columns: minmax(0, 1fr); padding: 10px 0; border-bottom: 1px solid var(--line-2); font-size: 14.5px; line-height: 1.6; }
+.lk-d:empty { display: none; }
+.lk-b { min-width: 0; }
+.lk-b a { overflow-wrap: anywhere; }
+.lk-ty { display: inline-block; margin-left: 8px; font-family: var(--f-mono); font-size: 10.5px; color: var(--ink-3); border: 1px solid var(--line); border-radius: 3px; padding: 0 5px; line-height: 1.55; vertical-align: 1px; white-space: nowrap; }
+.lk-n { display: block; font-size: 12.5px; color: var(--ink-3); margin-top: 1px; }
+.lk-none { color: var(--ink-3); font-size: 14px; margin: 22px 0; }
+
+.foot { margin-top: 56px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--ink-3); line-height: 1.8; }
+.foot p { margin: 0; }
+
+/* ── 幅に応じた組み替え ───────────────────────── */
+@media (max-width: 1100px) {
+  .gnav { margin-right: 0; }
+  .shell { grid-template-columns: 200px minmax(0, 1fr); gap: 32px; }
+}
+@media (max-width: 960px) {
+  html { scroll-padding-top: 66px; }
+  .crumb-back { min-height: 44px; }
+  .gnav { display: none; }
+  .topbar-in { height: 52px; }
+  .shell, .shell.no-sub { grid-template-columns: minmax(0, 1fr); gap: 0; padding-block: 0 calc(96px + env(safe-area-inset-bottom, 0px)); }
+  main { padding-block: 18px 0; }
+  .subnav { position: static; max-height: none; overflow: visible; padding-block: 14px 0; }
+  .subnav ol { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 6px; margin-right: calc(-1 * max(16px, env(safe-area-inset-right, 0px))); padding-right: 16px; scrollbar-width: none; }
+  .subnav ol::-webkit-scrollbar { display: none; }
+  .subnav li { flex: none; }
+  .subnav a { display: inline-flex; gap: 6px; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; font-size: 13.5px; white-space: nowrap; }
+  .subnav a.is-active { border-color: var(--ac); }
+  .tabbar {
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+    position: fixed; z-index: 40; left: 0; right: 0; bottom: 0;
+    background: var(--surface); border-top: 1px solid var(--line);
+    padding: 4px max(4px, env(safe-area-inset-right, 0px)) calc(4px + env(safe-area-inset-bottom, 0px)) max(4px, env(safe-area-inset-left, 0px));
+  }
+  .tabbar a { display: grid; justify-items: center; gap: 2px; padding: 6px 2px 4px; color: var(--ink-3); text-decoration: none; font-size: 11px; line-height: 1.3; border-radius: 6px; min-height: 48px; }
+  .tabbar svg { width: 22px; height: 22px; }
+  .tabbar a.is-active { color: var(--ac); font-weight: 700; }
+  .home-head { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .home h1 { font-size: 30px; margin-bottom: 14px; }
+  .dateplate { padding: 14px 16px 16px; }
+  .hb-h { padding: 10px 14px; }
+  .hb > :not(.hb-h) { margin-left: 14px; margin-right: 14px; }
+  .svc-grid { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .svc-card { min-height: 0; }
+  .chap-quick { grid-template-columns: minmax(0, 1fr); }
+  .find button { padding: 0 14px; }
+  .scope { flex-wrap: nowrap; overflow-x: auto; margin-right: calc(-1 * max(16px, env(safe-area-inset-right, 0px))); padding: 0 16px 4px 0; scrollbar-width: none; }
+  .scope::-webkit-scrollbar { display: none; }
+  .scope button { flex: none; }
+  .doc-h .open { margin-left: 0; }
+  .ch > summary { grid-template-columns: minmax(0, 1fr) auto; }
+  .ch > summary .n:last-of-type { display: none; }
+}
+@media print {
+  .crumb, .topbar, .tabbar, .subnav, .find, .scope { display: none !important; }
+  .view { display: none !important; }
+  .view.is-active { display: block !important; }
+  .ch > .subs { display: block !important; }
+}
+
+</style>
+</head>
+<body>
+<div class="crumb" lang="ja">
+  <div class="crumb-in">
+    <a class="crumb-back" href="../"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>福祉情報ウォッチに戻る</span></a>
+  </div>
+</div>
+<header class="topbar" lang="ja">
+  <div class="topbar-in">
+    <a class="brand" href="#home">集団指導 特設ページ<span>福岡県・令和8年度</span></a>
+    <nav class="gnav" aria-label="メインメニュー">
+      <a href="#home" data-g="home">ホーム</a>
+      <a href="#svc" data-g="svc">サービス別</a>
+      <a href="#search" data-g="search">資料の中を探す</a>
+      <a href="#sources" data-g="sources">資料一覧</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="tabbar" aria-label="ページの切り替え" lang="ja">
+  <a href="#home" data-g="home"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 9.5 10 4l7 5.5V16a1 1 0 0 1-1 1h-3.5v-4.5h-5V17H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span>ホーム</span></a>
+  <a href="#svc" data-g="svc"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="3" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="11" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="11" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>サービス別</span></a>
+  <a href="#search" data-g="search"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="4.8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m12.2 12.2 4.3 4.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>探す</span></a>
+  <a href="#sources" data-g="sources"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 3.5h8.5v13H6a1.5 1.5 0 0 1-1.5-1.5V5A1.5 1.5 0 0 1 6 3.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 7.5h4.5M8 10.5h4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>資料一覧</span></a>
+</nav>
+
+<div class="shell no-sub" id="shell" lang="ja">
+<aside class="subnav" id="subnav" aria-label="サービス"></aside>
+<main id="main">
+
+<section class="view home" id="home" data-g="home">
+  <div class="home-head">
+    <div class="home-title">
+      <div class="eyebrow"><span>福岡県</span><span id="year">令和8年度</span><span id="extracted"></span></div>
+      <h1>集団指導 <span class="nw">特設ページ</span></h1>
+      <form class="find big" id="find-home" role="search">
+        <label class="sr" for="q-home">資料の中を探す</label>
+        <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m12.6 12.6 4.4 4.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <input type="search" id="q-home" placeholder="例：身体拘束　常勤換算　業務継続計画" autocomplete="off" enterkeyhint="search">
+        <button type="submit">探す</button>
+      </form>
+    </div>
+    <div class="dateplate" id="dateplate">
+      <span class="k">受講登録の期限</span>
+      <span class="d" id="reg-date"></span>
+      <span class="left" id="reg-left"></span>
+      <a class="reg-go" id="reg-go" href="#" target="_blank" rel="noopener">受講登録のフォーム<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 6 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+
+  <section class="hb" aria-labelledby="h-svc">
+    <div class="hb-h"><h2 id="h-svc">サービスから見る</h2></div>
+    <div class="svc-grid" id="svc-home"></div>
+  </section>
+
+  <section class="hb" aria-labelledby="h-common">
+    <div class="hb-h"><h2 id="h-common">全事業所共通編の章</h2><a href="#svc-common">見出しまで見る</a></div>
+    <ol class="chap-quick" id="common-quick"></ol>
+  </section>
+
+  <section class="hb hb-links" aria-labelledby="h-pref">
+    <div class="hb-h"><h2 id="h-pref">福岡県の集団指導</h2></div>
+    <ul class="plain" id="pref-links"></ul>
+  </section>
+</section>
+
+<section class="view" id="svc" data-g="svc">
+  <h1 class="vh">サービス別</h1>
+  <div class="svc-grid" id="svc-index"></div>
+</section>
+
+<section class="view" id="svcview" data-g="svc">
+  <div id="svc-body"></div>
+</section>
+
+<section class="view" id="search" data-g="search">
+  <h1 class="vh">資料の中を探す</h1>
+  <form class="find" id="find-main" role="search">
+    <label class="sr" for="q-main">資料の中を探す</label>
+    <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m12.6 12.6 4.4 4.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+    <input type="search" id="q-main" placeholder="例：身体拘束　常勤換算　業務継続計画" autocomplete="off" enterkeyhint="search">
+    <button type="submit">探す</button>
+  </form>
+  <div class="scope" id="scope" role="group" aria-label="探す資料"></div>
+  <p class="s-sum" id="s-sum" aria-live="polite"></p>
+  <div id="s-res"></div>
+</section>
+
+<section class="view" id="sources" data-g="sources">
+  <h1 class="vh">資料一覧</h1>
+  <label class="lk-find" for="lk-q"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><input type="search" id="lk-q" placeholder="資料名で探す（例：虐待）" aria-label="資料名で探す" autocomplete="off" enterkeyhint="search"></label>
+<div class="lk" id="lk">
+<div class="lk-g"><h3 class="lk-h">福岡県のページ</h3><ul class="lk-l"><li class="lk-i" data-q="令和８年度集団指導について"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/contents/-contents-yudanr8.html" target="_blank" rel="noopener">令和８年度集団指導について</a></span></li><li class="lk-i" data-q="日程表 PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/297103.pdf" target="_blank" rel="noopener">日程表</a><span class="lk-ty">PDF</span></span></li><li class="lk-i" data-q="受講登録のフォーム（受講後に登録）"><span class="lk-d"></span><span class="lk-b"><a href="https://shinsei.pref.fukuoka.lg.jp/SksJuminWeb/EntryForm?id=wLX6i6y2" target="_blank" rel="noopener">受講登録のフォーム（受講後に登録）</a></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">説明資料　（１）全事業所共通</h3><ul class="lk-l"><li class="lk-i" data-q="全事業所共通編 説明資料 12.25MB　※28ページ、29ページ追加 PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/297176.pdf" target="_blank" rel="noopener">全事業所共通編 説明資料</a><span class="lk-ty">PDF</span><span class="lk-n">12.25MB　※28ページ、29ページ追加</span></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">説明資料　（２）居宅介護・重度訪問介護・同行援護・行動援護</h3><ul class="lk-l"><li class="lk-i" data-q="居宅訪問系 説明資料 649KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/297294.pdf" target="_blank" rel="noopener">居宅訪問系 説明資料</a><span class="lk-ty">PDF</span><span class="lk-n">649KB</span></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">説明資料　（３）療養介護・生活介護・短期入所・自立訓練（機能・生活）・就労移行支援・就労継続支援（Ａ型・Ｂ型）・就労定着支援・自立生活援助・障がい者支援施設</h3><ul class="lk-l"><li class="lk-i" data-q="通所（日中活動）系・入所系 説明資料 1.11MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/297178.pdf" target="_blank" rel="noopener">通所（日中活動）系・入所系 説明資料</a><span class="lk-ty">PDF</span><span class="lk-n">1.11MB</span></span></li><li class="lk-i" data-q="福岡県よろず支援拠点 生産性向上支援センターについて 1.27MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/296737.pdf" target="_blank" rel="noopener">福岡県よろず支援拠点 生産性向上支援センターについて</a><span class="lk-ty">PDF</span><span class="lk-n">1.27MB</span></span></li><li class="lk-i" data-q="分身ロボットを活用した障がい者社会参加実証事業について 352KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/264603.pdf" target="_blank" rel="noopener">分身ロボットを活用した障がい者社会参加実証事業について</a><span class="lk-ty">PDF</span><span class="lk-n">352KB</span></span></li><li class="lk-i" data-q="県の工賃向上支援施策について 555KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/296736.pdf" target="_blank" rel="noopener">県の工賃向上支援施策について</a><span class="lk-ty">PDF</span><span class="lk-n">555KB</span></span></li><li class="lk-i" data-q="「優生手術などを受けた方やそのご家族へ」 リーフレット 6.2MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/297059.pdf" target="_blank" rel="noopener">「優生手術などを受けた方やそのご家族へ」 リーフレット</a><span class="lk-ty">PDF</span><span class="lk-n">6.2MB</span></span></li><li class="lk-i" data-q="リーフレットを活用した旧優生保護法補償金等支給制度周知のお願い 117KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/297057.pdf" target="_blank" rel="noopener">リーフレットを活用した旧優生保護法補償金等支給制度周知のお願い</a><span class="lk-ty">PDF</span><span class="lk-n">117KB</span></span></li><li class="lk-i" data-q="施設における取組のご紹介 60KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/297058.pdf" target="_blank" rel="noopener">施設における取組のご紹介</a><span class="lk-ty">PDF</span><span class="lk-n">60KB</span></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">説明資料　（４）共同生活援助</h3><ul class="lk-l"><li class="lk-i" data-q="共同生活援助 説明資料 883KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/297179.pdf" target="_blank" rel="noopener">共同生活援助 説明資料</a><span class="lk-ty">PDF</span><span class="lk-n">883KB</span></span></li><li class="lk-i" data-q="地域連携推進会議の手引き 867KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/231048.pdf" target="_blank" rel="noopener">地域連携推進会議の手引き</a><span class="lk-ty">PDF</span><span class="lk-n">867KB</span></span></li><li class="lk-i" data-q="共同生活援助における運営や支援に関するガイドライン （第１版） 1.68MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/296505.pdf" target="_blank" rel="noopener">共同生活援助における運営や支援に関するガイドライン （第１版）</a><span class="lk-ty">PDF</span><span class="lk-n">1.68MB</span></span></li><li class="lk-i" data-q="自己チェックシート 25KB"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/296506.xlsx" target="_blank" rel="noopener">自己チェックシート</a><span class="lk-n">25KB</span></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">説明資料　（５）児童発達支援・児童発達支援センター・放課後等デイサービス・居宅訪問型児童発達支援・保育所等訪問支援・障がい児入所施設</h3><ul class="lk-l"><li class="lk-i" data-q="障がい児（通所・入所）系 説明資料 2.1MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/297180.pdf" target="_blank" rel="noopener">障がい児（通所・入所）系 説明資料</a><span class="lk-ty">PDF</span><span class="lk-n">2.1MB</span></span></li><li class="lk-i" data-q="こども性暴力防止法について 1.05MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/296739.pdf" target="_blank" rel="noopener">こども性暴力防止法について</a><span class="lk-ty">PDF</span><span class="lk-n">1.05MB</span></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">説明資料　（６）地域相談支援・計画相談支援・障がい児相談支援・一般相談支援</h3><ul class="lk-l"><li class="lk-i" data-q="相談支援系 説明資料 1.6MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/297113.pdf" target="_blank" rel="noopener">相談支援系 説明資料</a><span class="lk-ty">PDF</span><span class="lk-n">1.6MB</span></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">参考資料　全般</h3><ul class="lk-l"><li class="lk-i" data-q="令和8年度報酬改定について 1.47MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/297119.pdf" target="_blank" rel="noopener">令和8年度報酬改定について</a><span class="lk-ty">PDF</span><span class="lk-n">1.47MB</span></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">参考資料　（１）生活介護事業所関連</h3><ul class="lk-l"><li class="lk-i" data-q="指定生活介護事業所等における医師の取扱いについて 145KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/206806.pdf" target="_blank" rel="noopener">指定生活介護事業所等における医師の取扱いについて</a><span class="lk-ty">PDF</span><span class="lk-n">145KB</span></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">参考資料　（２）就労系事業所関連</h3><ul class="lk-l"><li class="lk-i" data-q="就労移行支援事業、就労継続支援事業（A型、B型）における留意事項について 424KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/231262.pdf" target="_blank" rel="noopener">就労移行支援事業、就労継続支援事業（A型、B型）における留意事項について</a><span class="lk-ty">PDF</span><span class="lk-n">424KB</span></span></li><li class="lk-i" data-q="就労支援事業会計の運用ガイドライン 1.06MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/296589.pdf" target="_blank" rel="noopener">就労支援事業会計の運用ガイドライン</a><span class="lk-ty">PDF</span><span class="lk-n">1.06MB</span></span></li><li class="lk-i" data-q="就労支援の事業の会計処理の基準 ※厚生労働省ホームページリンク"><span class="lk-d"></span><span class="lk-b"><a href="https://www.mhlw.go.jp/topics/2006/10/tp1002-1.html" target="_blank" rel="noopener">就労支援の事業の会計処理の基準</a><span class="lk-n">※厚生労働省ホームページリンク</span></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">参考資料　（３）障がい児支援事業所等関連</h3><ul class="lk-l"><li class="lk-i" data-q="各種ガイドラインについて ※こども家庭庁ホームページへのリンク"><span class="lk-d"></span><span class="lk-b"><a href="https://www.cfa.go.jp/policies/shougaijishien/shisaku/guideline_tebiki" target="_blank" rel="noopener">各種ガイドラインについて</a><span class="lk-n">※こども家庭庁ホームページへのリンク</span></span></li><li class="lk-i" data-q="各障がい児通所支援事業所における車両送迎時の安全管理の徹底について 2.38MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/173904.pdf" target="_blank" rel="noopener">各障がい児通所支援事業所における車両送迎時の安全管理の徹底について</a><span class="lk-ty">PDF</span><span class="lk-n">2.38MB</span></span></li><li class="lk-i" data-q="障がい児通所支援事業所等における安全計画の策定について（県通知） 93KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/206658.pdf" target="_blank" rel="noopener">障がい児通所支援事業所等における安全計画の策定について（県通知）</a><span class="lk-ty">PDF</span><span class="lk-n">93KB</span></span></li><li class="lk-i" data-q="障がい児通所支援事業所安全計画（様式例） 22KB"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/206660.docx" target="_blank" rel="noopener">障がい児通所支援事業所安全計画（様式例）</a><span class="lk-n">22KB</span></span></li><li class="lk-i" data-q="（参考資料）障害児通所支援事業所等における安全計画の策定について（こども家庭庁通知） 2.22MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/206662.pdf" target="_blank" rel="noopener">（参考資料）障害児通所支援事業所等における安全計画の策定について（こども家庭庁通知）</a><span class="lk-ty">PDF</span><span class="lk-n">2.22MB</span></span></li><li class="lk-i" data-q="障害児通所支援における定員超過利用減算の取扱いについて（厚生労働省通知） 296KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/173907.pdf" target="_blank" rel="noopener">障害児通所支援における定員超過利用減算の取扱いについて（厚生労働省通知）</a><span class="lk-ty">PDF</span><span class="lk-n">296KB</span></span></li><li class="lk-i" data-q="（別添）障害児通所支援事業所における定員超過利用減算対象確認シート 26KB"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/173908.xlsx" target="_blank" rel="noopener">（別添）障害児通所支援事業所における定員超過利用減算対象確認シート</a><span class="lk-n">26KB</span></span></li><li class="lk-i" data-q="福岡県医療的ケア児支援センターリーフレット 1.73MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/231001.pdf" target="_blank" rel="noopener">福岡県医療的ケア児支援センターリーフレット</a><span class="lk-ty">PDF</span><span class="lk-n">1.73MB</span></span></li><li class="lk-i" data-q="児童発達支援等における支援プログラムの作成・公表及び 公表内容等の届出について 121KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/231123.pdf" target="_blank" rel="noopener">児童発達支援等における支援プログラムの作成・公表及び 公表内容等の届出について</a><span class="lk-ty">PDF</span><span class="lk-n">121KB</span></span></li><li class="lk-i" data-q="支援プログラムの公表状況に関する届出書 25KB"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/231124.xlsx" target="_blank" rel="noopener">支援プログラムの公表状況に関する届出書</a><span class="lk-n">25KB</span></span></li><li class="lk-i" data-q="ドッグセラピーについて 312KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/296738.pdf" target="_blank" rel="noopener">ドッグセラピーについて</a><span class="lk-ty">PDF</span><span class="lk-n">312KB</span></span></li><li class="lk-i" data-q="こども性暴力防止法について ※こども家庭庁ホームページへのリンクです。"><span class="lk-d"></span><span class="lk-b"><a href="https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou" target="_blank" rel="noopener">こども性暴力防止法について</a><span class="lk-n">※こども家庭庁ホームページへのリンクです。</span></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">参考資料　（５）虐待防止関連</h3><ul class="lk-l"><li class="lk-i" data-q="障害者福祉施設等における障害者虐待の防止と対応の手引き 1.5MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/231005.pdf" target="_blank" rel="noopener">障害者福祉施設等における障害者虐待の防止と対応の手引き</a><span class="lk-ty">PDF</span><span class="lk-n">1.5MB</span></span></li><li class="lk-i" data-q="職場内虐待防止研修用冊子 2.29MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/207111.pdf" target="_blank" rel="noopener">職場内虐待防止研修用冊子</a><span class="lk-ty">PDF</span><span class="lk-n">2.29MB</span></span></li><li class="lk-i" data-q="障がい者虐待防止及び身体拘束等の適正化に向けた体制等の取組事例集 5.45MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/207112.pdf" target="_blank" rel="noopener">障がい者虐待防止及び身体拘束等の適正化に向けた体制等の取組事例集</a><span class="lk-ty">PDF</span><span class="lk-n">5.45MB</span></span></li><li class="lk-i" data-q="令和８年度福岡県障がい福祉サービス事業所等支援員研修 113KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/297062.pdf" target="_blank" rel="noopener">令和８年度福岡県障がい福祉サービス事業所等支援員研修</a><span class="lk-ty">PDF</span><span class="lk-n">113KB</span></span></li><li class="lk-i" data-q="障がい者福祉施設従事者等による障がい者虐待の防止と対応について"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/contents/kennriyougogyakutaibousi.html" target="_blank" rel="noopener">障がい者福祉施設従事者等による障がい者虐待の防止と対応について</a></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">参考資料　（６）業務継続計画関連</h3><ul class="lk-l"><li class="lk-i" data-q="自然災害発生時の業務継続ガイドライン等"><span class="lk-d"></span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/newpage_17517.html" target="_blank" rel="noopener">自然災害発生時の業務継続ガイドライン等</a></span></li><li class="lk-i" data-q="新型コロナウイルス感染症発生時の業務継続ガイドライン等"><span class="lk-d"></span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/newpage_15758.html" target="_blank" rel="noopener">新型コロナウイルス感染症発生時の業務継続ガイドライン等</a></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">参考資料　（７）サービス管理責任者・児童発達支援管理責任者関連</h3><ul class="lk-l"><li class="lk-i" data-q="サービス管理責任者及び児童発達管理責任者の実務経験 444KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/296740.pdf" target="_blank" rel="noopener">サービス管理責任者及び児童発達管理責任者の実務経験</a><span class="lk-ty">PDF</span><span class="lk-n">444KB</span></span></li><li class="lk-i" data-q="サービス管理責任者・児童発達支援管理責任者の要件について"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/contents/sabijikan-youken.html" target="_blank" rel="noopener">サービス管理責任者・児童発達支援管理責任者の要件について</a></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">参考資料　（８）事例集</h3><ul class="lk-l"><li class="lk-i" data-q="放課後等デイサービスにおける事故の防止について 144KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/231004.pdf" target="_blank" rel="noopener">放課後等デイサービスにおける事故の防止について</a><span class="lk-ty">PDF</span><span class="lk-n">144KB</span></span></li><li class="lk-i" data-q="強度行動障がいがある方への支援事例集 1.9MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/231096.pdf" target="_blank" rel="noopener">強度行動障がいがある方への支援事例集</a><span class="lk-ty">PDF</span><span class="lk-n">1.9MB</span></span></li><li class="lk-i" data-q="腰痛を防ぐ 職場の事例集（厚生労働省） 18.39MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/231165.pdf" target="_blank" rel="noopener">腰痛を防ぐ 職場の事例集（厚生労働省）</a><span class="lk-ty">PDF</span><span class="lk-n">18.39MB</span></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">参考資料　（９）摂食嚥下関係</h3><ul class="lk-l"><li class="lk-i" data-q="施設入所支援に係る報酬・基準について 1.61MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/230998.pdf" target="_blank" rel="noopener">施設入所支援に係る報酬・基準について</a><span class="lk-ty">PDF</span><span class="lk-n">1.61MB</span></span></li><li class="lk-i" data-q="障害特性を踏まえた栄養ケア・マネージメントの実務のあり方に関する調査研究 報告書 3.65MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/230999.pdf" target="_blank" rel="noopener">障害特性を踏まえた栄養ケア・マネージメントの実務のあり方に関する調査研究 報告書</a><span class="lk-ty">PDF</span><span class="lk-n">3.65MB</span></span></li><li class="lk-i" data-q="NPO法人口から食べる幸せを守る会（リンク）"><span class="lk-d"></span><span class="lk-b"><a href="https://ktsm.jimdofree.com/" target="_blank" rel="noopener">NPO法人口から食べる幸せを守る会（リンク）</a></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">参考資料　（10）労働関係</h3><ul class="lk-l"><li class="lk-i" data-q="介護労働者の労働条件の確保・改善のポイント 16.57MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/297055.pdf" target="_blank" rel="noopener">介護労働者の労働条件の確保・改善のポイント</a><span class="lk-ty">PDF</span><span class="lk-n">16.57MB</span></span></li><li class="lk-i" data-q="第3次産業における労働災害防止"><span class="lk-d"></span><span class="lk-b"><a href="https://jsite.mhlw.go.jp/fukuoka-roudoukyoku/_00381.html#%E7%AC%AC%E4%B8%89%E6%AC%A1%E7%94%A3%E6%A5%AD" target="_blank" rel="noopener">第3次産業における労働災害防止</a></span></li><li class="lk-i" data-q="はしご・脚立・踏み台からの墜落災害防止のために​"><span class="lk-d"></span><span class="lk-b"><a href="https://jsite.mhlw.go.jp/fukuoka-roudoukyoku/_00381.html#%E3%81%AF%E3%81%97%E3%81%94%E3%83%BB%E8%84%9A%E7%AB%8B" target="_blank" rel="noopener">はしご・脚立・踏み台からの墜落災害防止のために​</a></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">参考資料　（11）防災関係</h3><ul class="lk-l"><li class="lk-i" data-q="避難確保計画 案内チラシ 387KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/297072.pdf" target="_blank" rel="noopener">避難確保計画 案内チラシ</a><span class="lk-ty">PDF</span><span class="lk-n">387KB</span></span></li><li class="lk-i" data-q="新しい防災気象情報について 1.57MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/297073.pdf" target="_blank" rel="noopener">新しい防災気象情報について</a><span class="lk-ty">PDF</span><span class="lk-n">1.57MB</span></span></li><li class="lk-i" data-q="要配慮利用者施設の浸水対策（国土交通省ホームページ）"><span class="lk-d"></span><span class="lk-b"><a href="https://www.mlit.go.jp/river/bousai/main/saigai/jouhou/jieisuibou/bousai-gensai-suibou02.html" target="_blank" rel="noopener">要配慮利用者施設の浸水対策（国土交通省ホームページ）</a></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">参考資料　（12）その他</h3><ul class="lk-l"><li class="lk-i" data-q="部落差別解消推進条例パンフレット 2.38MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/207120.pdf" target="_blank" rel="noopener">部落差別解消推進条例パンフレット</a><span class="lk-ty">PDF</span><span class="lk-n">2.38MB</span></span></li><li class="lk-i" data-q="部落差別解消推進法チラシ 1.26MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/207121.pdf" target="_blank" rel="noopener">部落差別解消推進法チラシ</a><span class="lk-ty">PDF</span><span class="lk-n">1.26MB</span></span></li><li class="lk-i" data-q="性暴力被害者支援センター・ふくおかチラシ 3.44MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/207123.pdf" target="_blank" rel="noopener">性暴力被害者支援センター・ふくおかチラシ</a><span class="lk-ty">PDF</span><span class="lk-n">3.44MB</span></span></li><li class="lk-i" data-q="障がいのある人への合理的配慮ガイドブック 5.26MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/114509.pdf" target="_blank" rel="noopener">障がいのある人への合理的配慮ガイドブック</a><span class="lk-ty">PDF</span><span class="lk-n">5.26MB</span></span></li><li class="lk-i" data-q="障がいのある人への合理的配慮（福祉サービスの分野編） 2.34MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/114510.pdf" target="_blank" rel="noopener">障がいのある人への合理的配慮（福祉サービスの分野編）</a><span class="lk-ty">PDF</span><span class="lk-n">2.34MB</span></span></li><li class="lk-i" data-q="障がいのある人への合理的配慮に関する動画をこちらからご覧いただけます"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/contents/hairyo-douga.html" target="_blank" rel="noopener">障がいのある人への合理的配慮に関する動画をこちらからご覧いただけます</a></span></li><li class="lk-i" data-q="ご存知ですか？ヘルプカード （福岡県） 1.66MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/207125.pdf" target="_blank" rel="noopener">ご存知ですか？ヘルプカード （福岡県）</a><span class="lk-ty">PDF</span><span class="lk-n">1.66MB</span></span></li><li class="lk-i" data-q="福岡県福祉のまちづくり条例啓発パンフレット 440KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/114516.pdf" target="_blank" rel="noopener">福岡県福祉のまちづくり条例啓発パンフレット</a><span class="lk-ty">PDF</span><span class="lk-n">440KB</span></span></li><li class="lk-i" data-q="障害者差別解消法福祉事業者向けガイドライン 991KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/264611.pdf" target="_blank" rel="noopener">障害者差別解消法福祉事業者向けガイドライン</a><span class="lk-ty">PDF</span><span class="lk-n">991KB</span></span></li><li class="lk-i" data-q="高次脳機能障がい支援ガイド 3.6MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/207254.pdf" target="_blank" rel="noopener">高次脳機能障がい支援ガイド</a><span class="lk-ty">PDF</span><span class="lk-n">3.6MB</span></span></li><li class="lk-i" data-q="高次脳機能障がい支援事業リーフレット 2.11MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/207255.pdf" target="_blank" rel="noopener">高次脳機能障がい支援事業リーフレット</a><span class="lk-ty">PDF</span><span class="lk-n">2.11MB</span></span></li><li class="lk-i" data-q="高次脳機能障がい支援事業のご案内（健康増進課こころの健康づくり推進室）"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/contents/koujinou-shienjigyou.html" target="_blank" rel="noopener">高次脳機能障がい支援事業のご案内（健康増進課こころの健康づくり推進室）</a></span></li><li class="lk-i" data-q="手話に関する施策の推進に関する法律（内閣府ホームページ）"><span class="lk-d"></span><span class="lk-b"><a href="https://www8.cao.go.jp/shougai/suishin/jsl.html" target="_blank" rel="noopener">手話に関する施策の推進に関する法律（内閣府ホームページ）</a></span></li><li class="lk-i" data-q="熱中症関連情報​（厚生労働省ホームページ）"><span class="lk-d"></span><span class="lk-b"><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/nettyuu/index.html" target="_blank" rel="noopener">熱中症関連情報​（厚生労働省ホームページ）</a></span></li><li class="lk-i" data-q="「優生手術などを受けた方やそのご家族へ」リーフレット 6.2MB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/297056.pdf" target="_blank" rel="noopener">「優生手術などを受けた方やそのご家族へ」リーフレット</a><span class="lk-ty">PDF</span><span class="lk-n">6.2MB</span></span></li><li class="lk-i" data-q="リーフレットを活用した旧優生保護法補償金等支給制度周知のお願い 117KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/297060.pdf" target="_blank" rel="noopener">リーフレットを活用した旧優生保護法補償金等支給制度周知のお願い</a><span class="lk-ty">PDF</span><span class="lk-n">117KB</span></span></li><li class="lk-i" data-q="施設における取組のご紹介 60KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/attachment/297061.pdf" target="_blank" rel="noopener">施設における取組のご紹介</a><span class="lk-ty">PDF</span><span class="lk-n">60KB</span></span></li></ul></div>
+<p class="lk-none" hidden>該当する資料はありません。</p></div>
+</section>
+
+<footer class="foot">
+  <p>出典：福岡県「<a id="foot-page" href="#" target="_blank" rel="noopener">令和８年度集団指導について</a>」とその掲載資料。このページには資料の見出しと頁番号だけを載せています。内容は県の資料（PDF）でご確認ください。</p>
+</footer>
+</main>
+</div>
+
+<script type="application/json" id="data">
+{"docs":{"year":"令和8年度","page":"https://www.pref.fukuoka.lg.jp/contents/-contents-yudanr8.html","pageTitle":"令和８年度集団指導について","schedule":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297103.pdf","register":"https://shinsei.pref.fukuoka.lg.jp/SksJuminWeb/EntryForm?id=wLX6i6y2","registerDeadline":"2026-11-30","services":[{"id":"kyotaku","t":"居宅訪問系","names":"居宅介護・重度訪問介護・同行援護・行動援護"},{"id":"nicchu","t":"通所（日中活動）系・入所系","names":"療養介護・生活介護・短期入所・自立訓練（機能・生活）・就労移行支援・就労継続支援（Ａ型・Ｂ型）・就労定着支援・自立生活援助・障がい者支援施設"},{"id":"gh","t":"共同生活援助","names":"共同生活援助"},{"id":"ji","t":"障がい児（通所・入所）系","names":"児童発達支援・児童発達支援センター・放課後等デイサービス・居宅訪問型児童発達支援・保育所等訪問支援・障がい児入所施設"},{"id":"soudan","t":"相談支援系","names":"地域相談支援・計画相談支援・障がい児相談支援・一般相談支援"}],"groups":[{"g":"（１）全事業所共通","part":"説明資料","label":"（１）全事業所共通"},{"g":"（２）居宅介護","part":"説明資料","label":"（２）居宅介護・重度訪問介護・同行援護・行動援護"},{"g":"（３）療養介護","part":"説明資料","label":"（３）療養介護・生活介護・短期入所・自立訓練（機能・生活）・就労移行支援・就労継続支援（Ａ型・Ｂ型）・就労定着支援・自立生活援助・障がい者支援施設"},{"g":"（４）共同生活援助","part":"説明資料","label":"（４）共同生活援助"},{"g":"（５）児童発達支援","part":"説明資料","label":"（５）児童発達支援・児童発達支援センター・放課後等デイサービス・居宅訪問型児童発達支援・保育所等訪問支援・障がい児入所施設"},{"g":"（６）地域相談支援","part":"説明資料","label":"（６）地域相談支援・計画相談支援・障がい児相談支援・一般相談支援"},{"g":"参考：全般","part":"参考資料","label":"全般"},{"g":"（１）生活介護事業所関連","part":"参考資料","label":"（１）生活介護事業所関連"},{"g":"（２）就労系事業所関連","part":"参考資料","label":"（２）就労系事業所関連"},{"g":"（３）障がい児支援事業所等関連","part":"参考資料","label":"（３）障がい児支援事業所等関連"},{"g":"（５）虐待防止関連","part":"参考資料","label":"（５）虐待防止関連"},{"g":"（６）業務継続計画関連","part":"参考資料","label":"（６）業務継続計画関連"},{"g":"（７）サービス管理責任者","part":"参考資料","label":"（７）サービス管理責任者・児童発達支援管理責任者関連"},{"g":"（８）事例集","part":"参考資料","label":"（８）事例集"},{"g":"（９）摂食嚥下関係","part":"参考資料","label":"（９）摂食嚥下関係"},{"g":"（10）労働関係","part":"参考資料","label":"（10）労働関係"},{"g":"（11）防災関係","part":"参考資料","label":"（11）防災関係"},{"g":"（12）その他","part":"参考資料","label":"（12）その他"}],"items":[{"part":"説明資料","g":"（１）全事業所共通","t":"全事業所共通編 説明資料","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297176.pdf","kind":"PDF","size":"12.25MB","note":"28ページ、29ページ追加","svc":["*"],"id":"common"},{"part":"説明資料","g":"（２）居宅介護","t":"居宅訪問系 説明資料","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297294.pdf","kind":"PDF","size":"649KB","note":"","svc":["kyotaku"],"id":"kyotaku"},{"part":"説明資料","g":"（３）療養介護","t":"通所（日中活動）系・入所系 説明資料","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297178.pdf","kind":"PDF","size":"1.11MB","note":"","svc":["nicchu"],"id":"nicchu"},{"part":"説明資料","g":"（３）療養介護","t":"福岡県よろず支援拠点 生産性向上支援センターについて","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/296737.pdf","kind":"PDF","size":"1.27MB","note":"","svc":["nicchu"]},{"part":"説明資料","g":"（３）療養介護","t":"分身ロボットを活用した障がい者社会参加実証事業について","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/264603.pdf","kind":"PDF","size":"352KB","note":"","svc":["nicchu"]},{"part":"説明資料","g":"（３）療養介護","t":"県の工賃向上支援施策について","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/296736.pdf","kind":"PDF","size":"555KB","note":"","svc":["nicchu"]},{"part":"説明資料","g":"（３）療養介護","t":"「優生手術などを受けた方やそのご家族へ」 リーフレット","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297059.pdf","kind":"PDF","size":"6.2MB","note":"","svc":["nicchu"]},{"part":"説明資料","g":"（３）療養介護","t":"リーフレットを活用した旧優生保護法補償金等支給制度周知のお願い","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297057.pdf","kind":"PDF","size":"117KB","note":"","svc":["nicchu"]},{"part":"説明資料","g":"（３）療養介護","t":"施設における取組のご紹介","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297058.pdf","kind":"PDF","size":"60KB","note":"","svc":["nicchu"]},{"part":"説明資料","g":"（４）共同生活援助","t":"共同生活援助 説明資料","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297179.pdf","kind":"PDF","size":"883KB","note":"","svc":["gh"],"id":"gh"},{"part":"説明資料","g":"（５）児童発達支援","t":"障がい児（通所・入所）系 説明資料","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297180.pdf","kind":"PDF","size":"2.1MB","note":"","svc":["ji"],"id":"ji"},{"part":"説明資料","g":"（５）児童発達支援","t":"こども性暴力防止法について","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/296739.pdf","kind":"PDF","size":"1.05MB","note":"","svc":["ji"],"id":"dbs"},{"part":"説明資料","g":"（６）地域相談支援","t":"相談支援系 説明資料","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297113.pdf","kind":"PDF","size":"1.6MB","note":"","svc":["soudan"],"id":"soudan"},{"part":"参考資料","g":"参考：全般","t":"令和8年度報酬改定について","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297119.pdf","kind":"PDF","size":"1.47MB","note":"","svc":["*"],"id":"kaitei"},{"part":"参考資料","g":"（１）生活介護事業所関連","t":"指定生活介護事業所等における医師の取扱いについて","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/206806.pdf","kind":"PDF","size":"145KB","note":"","svc":["nicchu"]},{"part":"参考資料","g":"（２）就労系事業所関連","t":"就労移行支援事業、就労継続支援事業（A型、B型）における留意事項について","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/231262.pdf","kind":"PDF","size":"424KB","note":"","svc":["nicchu"]},{"part":"参考資料","g":"（２）就労系事業所関連","t":"就労支援事業会計の運用ガイドライン","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/296589.pdf","kind":"PDF","size":"1.06MB","note":"","svc":["nicchu"]},{"part":"参考資料","g":"（２）就労系事業所関連","t":"就労支援の事業の会計処理の基準","u":"https://www.mhlw.go.jp/topics/2006/10/tp1002-1.html","kind":"HTML","size":"","note":"厚生労働省ホームページリンク","svc":["nicchu"]},{"part":"参考資料","g":"（３）障がい児支援事業所等関連","t":"各種ガイドラインについて","u":"https://www.cfa.go.jp/policies/shougaijishien/shisaku/guideline_tebiki","kind":"HTML","size":"","note":"こども家庭庁ホームページへのリンク","svc":["ji"]},{"part":"参考資料","g":"（３）障がい児支援事業所等関連","t":"各障がい児通所支援事業所における車両送迎時の安全管理の徹底について","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/173904.pdf","kind":"PDF","size":"2.38MB","note":"","svc":["ji"]},{"part":"参考資料","g":"（３）障がい児支援事業所等関連","t":"障がい児通所支援事業所等における安全計画の策定について（県通知）","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/206658.pdf","kind":"PDF","size":"93KB","note":"","svc":["ji"]},{"part":"参考資料","g":"（３）障がい児支援事業所等関連","t":"障がい児通所支援事業所安全計画（様式例）","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/206660.docx","kind":"Word","size":"22KB","note":"","svc":["ji"]},{"part":"参考資料","g":"（３）障がい児支援事業所等関連","t":"（参考資料）障害児通所支援事業所等における安全計画の策定について（こども家庭庁通知）","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/206662.pdf","kind":"PDF","size":"2.22MB","note":"","svc":["ji"]},{"part":"参考資料","g":"（３）障がい児支援事業所等関連","t":"障害児通所支援における定員超過利用減算の取扱いについて（厚生労働省通知）","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/173907.pdf","kind":"PDF","size":"296KB","note":"","svc":["ji"]},{"part":"参考資料","g":"（３）障がい児支援事業所等関連","t":"（別添）障害児通所支援事業所における定員超過利用減算対象確認シート","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/173908.xlsx","kind":"Excel","size":"26KB","note":"","svc":["ji"]},{"part":"参考資料","g":"（３）障がい児支援事業所等関連","t":"福岡県医療的ケア児支援センターリーフレット","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/231001.pdf","kind":"PDF","size":"1.73MB","note":"","svc":["ji"]},{"part":"参考資料","g":"（３）障がい児支援事業所等関連","t":"児童発達支援等における支援プログラムの作成・公表及び 公表内容等の届出について","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/231123.pdf","kind":"PDF","size":"121KB","note":"","svc":["ji"]},{"part":"参考資料","g":"（３）障がい児支援事業所等関連","t":"支援プログラムの公表状況に関する届出書","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/231124.xlsx","kind":"Excel","size":"25KB","note":"","svc":["ji"]},{"part":"参考資料","g":"（３）障がい児支援事業所等関連","t":"ドッグセラピーについて","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/296738.pdf","kind":"PDF","size":"312KB","note":"","svc":["ji"]},{"part":"参考資料","g":"（３）障がい児支援事業所等関連","t":"こども性暴力防止法について","u":"https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou","kind":"HTML","size":"","note":"こども家庭庁ホームページへのリンクです。","svc":["ji"]},{"part":"参考資料","g":"（４）共同生活援助","t":"地域連携推進会議の手引き","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/231048.pdf","kind":"PDF","size":"867KB","note":"","svc":["gh"]},{"part":"参考資料","g":"（４）共同生活援助","t":"共同生活援助における運営や支援に関するガイドライン （第１版）","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/296505.pdf","kind":"PDF","size":"1.68MB","note":"","svc":["gh"]},{"part":"参考資料","g":"（４）共同生活援助","t":"自己チェックシート","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/296506.xlsx","kind":"Excel","size":"25KB","note":"","svc":["gh"]},{"part":"参考資料","g":"（５）虐待防止関連","t":"障害者福祉施設等における障害者虐待の防止と対応の手引き","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/231005.pdf","kind":"PDF","size":"1.5MB","note":"","svc":["*"]},{"part":"参考資料","g":"（５）虐待防止関連","t":"職場内虐待防止研修用冊子","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/207111.pdf","kind":"PDF","size":"2.29MB","note":"","svc":["*"]},{"part":"参考資料","g":"（５）虐待防止関連","t":"障がい者虐待防止及び身体拘束等の適正化に向けた体制等の取組事例集","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/207112.pdf","kind":"PDF","size":"5.45MB","note":"","svc":["*"]},{"part":"参考資料","g":"（５）虐待防止関連","t":"令和８年度福岡県障がい福祉サービス事業所等支援員研修","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297062.pdf","kind":"PDF","size":"113KB","note":"","svc":["*"]},{"part":"参考資料","g":"（５）虐待防止関連","t":"障がい者福祉施設従事者等による障がい者虐待の防止と対応について","u":"https://www.pref.fukuoka.lg.jp/contents/kennriyougogyakutaibousi.html","kind":"HTML","size":"","note":"","svc":["*"]},{"part":"参考資料","g":"（６）業務継続計画関連","t":"自然災害発生時の業務継続ガイドライン等","u":"https://www.mhlw.go.jp/stf/newpage_17517.html","kind":"HTML","size":"","note":"","svc":["*"]},{"part":"参考資料","g":"（６）業務継続計画関連","t":"新型コロナウイルス感染症発生時の業務継続ガイドライン等","u":"https://www.mhlw.go.jp/stf/newpage_15758.html","kind":"HTML","size":"","note":"","svc":["*"]},{"part":"参考資料","g":"（７）サービス管理責任者","t":"サービス管理責任者及び児童発達管理責任者の実務経験","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/296740.pdf","kind":"PDF","size":"444KB","note":"","svc":["*"]},{"part":"参考資料","g":"（７）サービス管理責任者","t":"サービス管理責任者・児童発達支援管理責任者の要件について","u":"https://www.pref.fukuoka.lg.jp/contents/sabijikan-youken.html","kind":"HTML","size":"","note":"","svc":["*"]},{"part":"参考資料","g":"（８）事例集","t":"放課後等デイサービスにおける事故の防止について","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/231004.pdf","kind":"PDF","size":"144KB","note":"","svc":["*"]},{"part":"参考資料","g":"（８）事例集","t":"強度行動障がいがある方への支援事例集","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/231096.pdf","kind":"PDF","size":"1.9MB","note":"","svc":["*"]},{"part":"参考資料","g":"（８）事例集","t":"腰痛を防ぐ 職場の事例集（厚生労働省）","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/231165.pdf","kind":"PDF","size":"18.39MB","note":"","svc":["*"]},{"part":"参考資料","g":"（９）摂食嚥下関係","t":"施設入所支援に係る報酬・基準について","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/230998.pdf","kind":"PDF","size":"1.61MB","note":"","svc":["nicchu"]},{"part":"参考資料","g":"（９）摂食嚥下関係","t":"障害特性を踏まえた栄養ケア・マネージメントの実務のあり方に関する調査研究 報告書","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/230999.pdf","kind":"PDF","size":"3.65MB","note":"","svc":["nicchu"]},{"part":"参考資料","g":"（９）摂食嚥下関係","t":"NPO法人口から食べる幸せを守る会（リンク）","u":"https://ktsm.jimdofree.com/","kind":"HTML","size":"","note":"","svc":["nicchu"]},{"part":"参考資料","g":"（10）労働関係","t":"介護労働者の労働条件の確保・改善のポイント","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297055.pdf","kind":"PDF","size":"16.57MB","note":"","svc":["*"]},{"part":"参考資料","g":"（10）労働関係","t":"第3次産業における労働災害防止","u":"https://jsite.mhlw.go.jp/fukuoka-roudoukyoku/_00381.html#%E7%AC%AC%E4%B8%89%E6%AC%A1%E7%94%A3%E6%A5%AD","kind":"HTML","size":"","note":"","svc":["*"]},{"part":"参考資料","g":"（10）労働関係","t":"はしご・脚立・踏み台からの墜落災害防止のために​","u":"https://jsite.mhlw.go.jp/fukuoka-roudoukyoku/_00381.html#%E3%81%AF%E3%81%97%E3%81%94%E3%83%BB%E8%84%9A%E7%AB%8B","kind":"HTML","size":"","note":"","svc":["*"]},{"part":"参考資料","g":"（11）防災関係","t":"避難確保計画 案内チラシ","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297072.pdf","kind":"PDF","size":"387KB","note":"","svc":["*"]},{"part":"参考資料","g":"（11）防災関係","t":"新しい防災気象情報について","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297073.pdf","kind":"PDF","size":"1.57MB","note":"","svc":["*"]},{"part":"参考資料","g":"（11）防災関係","t":"要配慮利用者施設の浸水対策（国土交通省ホームページ）","u":"https://www.mlit.go.jp/river/bousai/main/saigai/jouhou/jieisuibou/bousai-gensai-suibou02.html","kind":"HTML","size":"","note":"","svc":["*"]},{"part":"参考資料","g":"（12）その他","t":"部落差別解消推進条例パンフレット","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/207120.pdf","kind":"PDF","size":"2.38MB","note":"","svc":["*"]},{"part":"参考資料","g":"（12）その他","t":"部落差別解消推進法チラシ","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/207121.pdf","kind":"PDF","size":"1.26MB","note":"","svc":["*"]},{"part":"参考資料","g":"（12）その他","t":"性暴力被害者支援センター・ふくおかチラシ","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/207123.pdf","kind":"PDF","size":"3.44MB","note":"","svc":["*"]},{"part":"参考資料","g":"（12）その他","t":"障がいのある人への合理的配慮ガイドブック","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/114509.pdf","kind":"PDF","size":"5.26MB","note":"","svc":["*"]},{"part":"参考資料","g":"（12）その他","t":"障がいのある人への合理的配慮（福祉サービスの分野編）","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/114510.pdf","kind":"PDF","size":"2.34MB","note":"","svc":["*"]},{"part":"参考資料","g":"（12）その他","t":"障がいのある人への合理的配慮に関する動画をこちらからご覧いただけます","u":"https://www.pref.fukuoka.lg.jp/contents/hairyo-douga.html","kind":"HTML","size":"","note":"","svc":["*"]},{"part":"参考資料","g":"（12）その他","t":"ご存知ですか？ヘルプカード （福岡県）","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/207125.pdf","kind":"PDF","size":"1.66MB","note":"","svc":["*"]},{"part":"参考資料","g":"（12）その他","t":"福岡県福祉のまちづくり条例啓発パンフレット","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/114516.pdf","kind":"PDF","size":"440KB","note":"","svc":["*"]},{"part":"参考資料","g":"（12）その他","t":"障害者差別解消法福祉事業者向けガイドライン","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/264611.pdf","kind":"PDF","size":"991KB","note":"","svc":["*"]},{"part":"参考資料","g":"（12）その他","t":"高次脳機能障がい支援ガイド","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/207254.pdf","kind":"PDF","size":"3.6MB","note":"","svc":["*"]},{"part":"参考資料","g":"（12）その他","t":"高次脳機能障がい支援事業リーフレット","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/207255.pdf","kind":"PDF","size":"2.11MB","note":"","svc":["*"]},{"part":"参考資料","g":"（12）その他","t":"高次脳機能障がい支援事業のご案内（健康増進課こころの健康づくり推進室）","u":"https://www.pref.fukuoka.lg.jp/contents/koujinou-shienjigyou.html","kind":"HTML","size":"","note":"","svc":["*"]},{"part":"参考資料","g":"（12）その他","t":"手話に関する施策の推進に関する法律（内閣府ホームページ）","u":"https://www8.cao.go.jp/shougai/suishin/jsl.html","kind":"HTML","size":"","note":"","svc":["*"]},{"part":"参考資料","g":"（12）その他","t":"熱中症関連情報​（厚生労働省ホームページ）","u":"https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/nettyuu/index.html","kind":"HTML","size":"","note":"","svc":["*"]},{"part":"参考資料","g":"（12）その他","t":"「優生手術などを受けた方やそのご家族へ」リーフレット","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297056.pdf","kind":"PDF","size":"6.2MB","note":"","svc":["*"]},{"part":"参考資料","g":"（12）その他","t":"リーフレットを活用した旧優生保護法補償金等支給制度周知のお願い","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297060.pdf","kind":"PDF","size":"117KB","note":"","svc":["*"]},{"part":"参考資料","g":"（12）その他","t":"施設における取組のご紹介","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297061.pdf","kind":"PDF","size":"60KB","note":"","svc":["*"]}],"extractedAt":"2026-10-29"},"toc":[{"id":"common","t":"全事業所共通編 説明資料","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297176.pdf","pages":114,"secs":[{"t":"1．令和8年度福岡県障がい福祉サービス事業者等指導監督実施方針","p":3,"sub":[{"t":"（1）指定障がい福祉サービス事業者等","p":3},{"t":"（2）指定障がい児通所支援事業者等","p":3},{"t":"（3）指定障がい児入所支援施設の開設者等","p":3},{"t":"（1）指導の目的","p":3},{"t":"（2）監査の目的","p":3},{"t":"（3）業務管理体制確認検査の目的","p":4},{"t":"（1）集団指導","p":4},{"t":"（2）運営指導","p":4},{"t":"（1）一般検査","p":6},{"t":"（2）特別検査","p":6},{"t":"（1）利用者等の安全の確保について","p":6},{"t":"（2）サービスの質の向上への取組について","p":7},{"t":"（3）給付費等の適正な算定について","p":8}]},{"t":"2．障がい福祉サービス事業所等に対する行政処分の事例について","p":9,"sub":[{"t":"（2）不正請求（法第50条第1項第6号）","p":9},{"t":"（3）その他福祉に関する法律違反（法第50条第1項第10号）","p":9},{"t":"（2）不正又は著しく不当な行為（法第21条の5の24第1項第10号）","p":10},{"t":"（2）不正の手段による指定（法第21条の5の24第1項第8号）","p":10},{"t":"（3）不正又は著しく不当な行為（法第21条の5の24第1項第10号）","p":10},{"t":"（2）不正又は著しく不当な行為（法第50条の第1項第10号）","p":11}]},{"t":"3．感染症対策等について","p":12,"sub":[{"t":"（1）ノロウイルス","p":12},{"t":"（2）インフルエンザ","p":12},{"t":"（4）食中毒","p":12}]},{"t":"4．虐待防止について","p":13,"sub":[]},{"t":"5．人権啓発について","p":20,"sub":[]},{"t":"6．事故発生時の対応について","p":32,"sub":[]},{"t":"7．被災状況報告について","p":35,"sub":[]},{"t":"8．障がい福祉サービス等情報公表制度に係る手続きのご案内","p":38,"sub":[]},{"t":"9．指定業務に関する各種届出について","p":41,"sub":[]},{"t":"10．指定更新について","p":43,"sub":[]},{"t":"11．業務管理体制の整備について","p":44,"sub":[{"t":"（1）法第51条の2第2項、第51条の31第2項関係（整備）","p":46},{"t":"（2）法第51条の2第4項、第51条の31第4項関係（区分の変更）","p":46},{"t":"（1）児童福祉法第21条の5の26第2項、第24条の19の2、第24条の38第2項関係（整備）","p":48},{"t":"（2）児童福祉法第21条の5の26第4項、第24条の19の2、第24条の38第4項関係（区分の変更）","p":48}]},{"t":"12．障がい福祉課の許可申請・届出関係資料のダウンロードについて","p":50,"sub":[]},{"t":"13．障がい福祉サービスに係る質問受付について","p":51,"sub":[{"t":"（1）対象事務","p":51},{"t":"（2）県への照会方法","p":52}]},{"t":"14．「強度行動障がいがある方への支援事例集」の作成について","p":53,"sub":[]},{"t":"15．介護職員等による喀痰吸引等（特定行為）の実施について","p":54,"sub":[{"t":"（1）認定特定行為業務従事者の認定証交付申請に関する手続きについて","p":54},{"t":"（2）登録特定行為事業者の登録申請に関する手続きについて","p":54},{"t":"（3）登録研修機関の登録申請に関する手続きについて","p":54}]},{"t":"16．福祉・介護職員の処遇改善について","p":69,"sub":[{"t":"（1）処遇改善加算の単位数","p":71},{"t":"（2）賃金改善の実施に係る基本的な考え方","p":71},{"t":"（1）別紙1表1-1及び表1-2に掲げる障害福祉サービス等事業所","p":72},{"t":"（2）別紙1表1-4に掲げる障害福祉サービス等事業所","p":76},{"t":"（1）体制等状況一覧表等の届出（体制届出）","p":78},{"t":"（2）処遇改善計画書等の作成・提出","p":79},{"t":"（3）実績報告書等の作成・提出","p":79},{"t":"（1）変更の届出","p":80},{"t":"（2）特別事情届出書","p":81},{"t":"（2）虚偽又は不正の手段により加算を受けた場合","p":82},{"t":"（1）賃金改善方法の周知について","p":82},{"t":"（2）労働法規の遵守について","p":82},{"t":"（1）障害福祉分野の文書に係る負担軽減に関する取組について","p":82},{"t":"（2）処遇改善加算の取得促進について","p":82},{"t":"（1）月額賃金改善要件（処遇改善加算IVの1/2以上の月額賃金改善）","p":88},{"t":"（3）キャリアパス要件III（昇給の仕組みの整備等）","p":88},{"t":"（4）キャリアパス要件IV（改善後の賃金要件）","p":88},{"t":"（5）キャリアパス要件V（配置等要件）","p":88},{"t":"（6）職場環境等要件","p":89},{"t":"（2）キャリアパス要件I・II","p":91},{"t":"（3）キャリアパス要件III","p":91},{"t":"（4）キャリアパス要件IV","p":91},{"t":"（1）加算額以上の賃金改善について（全体）","p":96},{"t":"（2）加算以外の部分で賃金水準を下げないことについて","p":96},{"t":"（4）キャリアパス要件IV（改善後の賃金要件） 【処遇改善加算I・II】","p":98},{"t":"（5）職場環境等要件","p":98}]},{"t":"17．サービス管理責任者・児童発達支援管理責任者研修について","p":109,"sub":[]},{"t":"18．生産性向上及び人材確保について","p":110,"sub":[]}]},{"id":"kyotaku","t":"居宅訪問系 説明資料","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297294.pdf","pages":27,"secs":[{"t":"1．人員基準について","p":3,"sub":[{"t":"（1）用語の定義","p":3},{"t":"（2）居宅介護（重度訪問介護、同行援護、行動援護）の員数（基準省令第5条〜第7条）","p":4},{"t":"（3）従業者の資格要件（基準省令第5条第1項）","p":4},{"t":"（4）サービス提供責任者の配置の基準","p":4},{"t":"（5）サービス提供責任者の資格要件","p":5},{"t":"（6）介護保険との関係","p":6}]},{"t":"2．運営基準について","p":7,"sub":[{"t":"（1）内容及び手続きの説明及び同意（基準省令第9条）","p":7},{"t":"（2）契約支給量の報告等（基準省令第10条）","p":9},{"t":"（3）提供拒否の禁止（基準省令第11条）","p":9},{"t":"（4）連絡調整に対する協力（基準省令第12条）","p":9},{"t":"（5）サービス提供困難時の対応（基準省令第13条）","p":9},{"t":"（6）受給資格の確認（基準省令第14条）","p":9},{"t":"（7）介護給付費の支給の申請に係る援助（基準省令第15条）","p":10},{"t":"（8）心身の状況等の把握（基準省令第16条）","p":10},{"t":"（9）指定障がい福祉サービス事業者等との連携等（基準省令第17条）","p":10},{"t":"（10）身分を証する書類の携行（基準省令第18条）","p":10},{"t":"（11）サービスの提供の記録（基準省令第19条）","p":11},{"t":"（12）事業者が支給決定障がい者等に求めることができる金銭の支払いの範囲等（基準省令第20条）","p":11},{"t":"（13）利用者負担額等の受領（基準省令第21条）","p":11},{"t":"（14）利用者負担額に係る管理（基準省令第22条）","p":12},{"t":"（15）介護給付費の額に係る通知等（基準省令第23条）","p":12},{"t":"（16）指定居宅介護等の基本取扱方針（基準省令第24条）","p":12},{"t":"（17）指定居宅介護等の具体的取扱方針（基準省令第25条）","p":13},{"t":"（18）居宅介護計画等の作成（基準省令第26条）","p":13},{"t":"（19）同居家族に対するサービス提供の禁止（基準省令第27条）","p":13},{"t":"（20）緊急時等の対応（基準省令第28条）","p":14},{"t":"（21）支給決定障がい者等に関する市町村への通知（基準省令第29条）","p":14},{"t":"（22）管理者及びサービス提供責任者の責務（基準省令第30条）","p":14},{"t":"（23）運営規程（基準省令第31条）","p":14},{"t":"（24）介護等の総合的な提供（基準省令第32条）","p":15},{"t":"（25）勤務体制の確保等（基準省令第33条）","p":15},{"t":"（26）業務継続計画の策定等（基準省令第33条の2）","p":15},{"t":"（27）衛生管理等（基準省令第34条）","p":15},{"t":"（28）掲示（基準省令第35条）","p":16},{"t":"（29）秘密保持等（基準省令第36条）","p":16},{"t":"（30）情報の提供等（基準省令第37条）","p":17},{"t":"（31）利益供与等の禁止（基準省令第38条）","p":17},{"t":"（32）苦情解決（基準省令第39条）","p":17},{"t":"（33）事故発生時の対応（基準省令第40条）","p":18},{"t":"（34）身体拘束等の禁止（基準省令第35条の2）","p":18},{"t":"（35）虐待の防止（基準省令第40条の2）","p":19},{"t":"（36）会計の区分（基準省令第41条）","p":19},{"t":"（37）記録の整備（基準省令第42条）","p":20},{"t":"（38）電磁的記録等（基準省令第224条）","p":20}]},{"t":"3．同行援護の従事者等の資格要件について","p":21,"sub":[{"t":"（1）サービス提供責任者の資格要件","p":21},{"t":"（2）同行援護従業者の資格要件","p":21},{"t":"（3）同行援護従業者養成研修一般課程に相当すると福岡県知事が認める研修","p":21},{"t":"（4）同行援護従業者養成研修応用課程に相当すると福岡県知事が認める研修","p":21}]},{"t":"4．報酬等に係る留意点について","p":22,"sub":[{"t":"（1）初回加算","p":22},{"t":"（2）特定事業所加算","p":22},{"t":"（3）緊急時対応加算","p":23},{"t":"（4）身体拘束廃止未実施減算","p":23},{"t":"（5）虐待防止措置未実施減算","p":23},{"t":"（6）業務継続計画未策定減算","p":24},{"t":"（7）情報公表未報告減算","p":24},{"t":"（8）通院等介助及び通院等乗降介助","p":24},{"t":"（9）2人の居宅介護従業者による居宅介護の取扱い等","p":25},{"t":"（10）重度訪問介護についての留意事項","p":26},{"t":"（11）同行援護についての留意事項","p":26},{"t":"（12）行動援護についての留意事項","p":26}]}]},{"id":"nicchu","t":"通所（日中活動）系・入所系 説明資料","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297178.pdf","pages":52,"secs":[{"t":"1．人員基準について","p":3,"sub":[{"t":"（1）用語の定義","p":3},{"t":"（2）療養介護の員数（基準省令第50条、第51条）","p":5},{"t":"（3）生活介護の員数（基準省令第78条〜第80条）","p":5},{"t":"（4）短期入所の員数（基準省令第115条、第116条）","p":6},{"t":"（5）自立訓練（機能訓練）の員数（基準省令第156条、第157条）","p":7},{"t":"（6）自立訓練（生活訓練）の員数（基準省令第166条、第167条）","p":7},{"t":"（7）就労移行支援の員数（基準省令第175条〜第177条）","p":8},{"t":"（8）就労継続支援A型・B型の員数（基準省令第186条、第187条、第199条）","p":9},{"t":"（9）就労定着支援の員数（基準省令第206条の3、第206条の4）","p":9},{"t":"（10）自立生活援助の員数（基準省令第206条の14、第206条の15）","p":10},{"t":"（11）施設入所支援の員数（施設省令第4条）","p":10},{"t":"（12）就労選択支援の員数（基準省令第173条の3、基準省令第173条の4）","p":10},{"t":"（13）サービス管理責任者の兼務について（基準省令第50条第1項第4号等）＜短期・自生・就選を除く＞","p":11},{"t":"（14）多機能型に関する特例（基準省令第215条）＜生介・自（機・生）・就移・就A・就B＞","p":11},{"t":"（15）人員等に係る指摘及び指導について","p":12}]},{"t":"2．運営基準について","p":13,"sub":[{"t":"（1）内容及び手続きの説明及び同意（基準省令第9条）（施設基準第7条）＜全事業共通＞","p":13},{"t":"（2）契約支給量の報告等（基準省令第10条・第53条）","p":15},{"t":"（3）提供拒否の禁止（基準省令第11条）（施設省令第9条）＜全事業共通＞","p":15},{"t":"（4）指定短期入所の開始及び終了（基準省令第118条）＜短期＞","p":15},{"t":"（5）入退所の記録の記載等（基準省令第119条）＜短期＞","p":15},{"t":"（6）連絡調整に対する協力（基準省令第12条）","p":16},{"t":"（7）サービス提供困難時の対応（基準省令第13条）（施設省令第11条）＜療養を除く＞","p":16},{"t":"（8）受給資格の確認（基準省令第14条）（施設省令第12条）＜全事業共通＞","p":16},{"t":"（9）介護給付費の支給の申請に係る援助（基準省令第15条）（施設省令13条）＜全事業共通＞","p":16},{"t":"（10）心身の状況等の把握（基準省令第16条）","p":16},{"t":"（11）指定障がい福祉サービス事業者等との連携等（基準省令第17条）","p":17},{"t":"（12）身分を証する書類の携行（基準省令第18条）","p":17},{"t":"（13）サービスの提供の記録（基準省令第19条・第53条の2・第169条の2）","p":17},{"t":"（14）事業者が支給決定障がい者等に求めることができる金銭の支払いの範囲等（基準省令第20条）","p":18},{"t":"（15）利用者負担額等の受領（基準省令第21条・第54条・第82条・第120条・第159条・第170条）（施設省令第19条）＜全事業共通＞","p":18},{"t":"（16）利用者負担額に係る管理（基準省令第22条・第55条・第170条の2）（施設省令第20条）","p":19},{"t":"（17）給付費の額に係る通知等（基準省令第23条・第56条）（施設省令第21条）＜全事業共通＞","p":19},{"t":"（18）取扱方針（基準省令第57条・第133条）","p":20},{"t":"（19）指定短期入所の取扱方針（基準省令第121条）＜短期＞","p":20},{"t":"（20）個別支援計画の作成等（基準省令第58条）","p":20},{"t":"（21）サービス管理責任者の責務（基準省令第59条・第206条の6）（施設省令第24条）＜短期・就選を除く＞","p":22},{"t":"（22）地域との連携等（基準省令第74条）（施設省令第24条の2）＜就定・自生を除く＞","p":22},{"t":"（23）地域移行等意向確認担当者の選任等（施設省令第24条の3）＜施設＞","p":22},{"t":"（24）相談及び援助（基準省令第60条）","p":23},{"t":"（25）機能訓練（基準省令第61条）＜療養＞","p":23},{"t":"（26）看護及び医学的管理の下における介護（基準省令第62条）＜療養＞","p":23},{"t":"（27）その他のサービスの提供（基準省令第63条）＜療養＞","p":23},{"t":"（28）介護（基準省令第83条）","p":24},{"t":"（29）生産活動（基準省令第84条）（施設省令第28条）＜生介・就移・就B・施設＞","p":24},{"t":"（31）食事（基準省令第86条）","p":25},{"t":"（32）健康管理（基準省令第87条）（施設省令第36条）＜療養・就定・自生を除く＞","p":25},{"t":"（33）サービスの提供（基準省令第122条）＜短期＞","p":26},{"t":"（34）訓練（基準省令第160条）","p":26},{"t":"（35）地域生活への移行のための支援（基準省令第161条）＜自（機・生）＞","p":26},{"t":"（36）雇用契約の締結等（基準省令第190条）＜就A＞","p":27},{"t":"（37）就労（基準省令第191条）＜就A＞","p":27},{"t":"（38）施設外支援、施設外就労、在宅支援（基準省令第191条）＜就移・就A・就B＞","p":27},{"t":"（39）賃金及び工賃（基準省令第192条）＜就A＞","p":28},{"t":"（40）通勤のための訓練の実施（基準省令第179条の2）＜就移＞","p":30},{"t":"（41）実習の実施（基準省令第180条・第193条）（施設省令第30条）＜就移・就A・就B・施設＞","p":30},{"t":"（42）求職活動支援等の実施（基準省令第181条・第194条）","p":30},{"t":"（43）職場への定着のための支援等の実施（基準省令第85条の2・第182条・第195条・第206条の8）（施設省令第32条）＜療養・短期・自生・就選を除く＞","p":30},{"t":"（44）サービス利用中に離職する者への支援（基準省令第206条の9）＜就定＞","p":31},{"t":"（45）定期的な訪問による支援（基準省令第206条の18）＜自生＞","p":31},{"t":"（46）随時の通報による支援等（基準省令第206条の19）＜自生＞","p":31},{"t":"（47）就職状況の報告（基準省令第183条）（施設省令第33条）＜就移・施設＞","p":31},{"t":"（48）利用者及び従業者以外の者の雇用（基準省令第196条）＜就A＞","p":31},{"t":"（49）厚生労働大臣が定める事項の評価等（基準省令第196条の3）＜就A＞","p":32},{"t":"（50）社会生活上の便宜の供与等（施設省令第35条）＜施設＞","p":32},{"t":"（51）緊急時等の対応（基準省令第28条・第64条）（施設省令第37条）＜就定・自生を除く＞","p":32},{"t":"（52）施設入所支援利用者の入所期間中の取扱い（施設省令第38条）＜施設＞","p":32},{"t":"（53）給付金として支払を受けた金銭の管理（施設省令第38条の2）＜施設＞","p":33},{"t":"（54）支給決定障がい者等に関する市町村への通知（基準省令第29条・第65条・第88条）（施設省令第39条）＜全事業共通＞","p":33},{"t":"（55）管理者の責務（基準省令第66条）","p":33},{"t":"（56）運営規程（基準省令第67条・第89条・第123条・第196条の2・第204条・第206条の10）","p":33},{"t":"（57）勤務体制の確保等（基準省令第33条・第68条）（施設省令第42条）＜全事業共通＞","p":35},{"t":"（58）定員の遵守（基準省令第69条・第124条）","p":35},{"t":"（59）業務継続計画の策定等について（基準省令第33条の2）（施設省令第42条の2）＜全事業共通＞","p":35},{"t":"（60）非常災害対策（基準省令第70条）","p":36},{"t":"（61）衛生管理等（基準省令第34条・第71条・第90条）","p":36},{"t":"（62）協力医療機関（基準省令第91条）","p":37},{"t":"（63）掲示（基準省令第35条・第72条・第92条）（施設省令第47条）＜全事業共通＞","p":38},{"t":"（64）秘密保持等（基準省令第36条）（施設省令第49条）＜全事業共通＞","p":38},{"t":"（65）情報の提供等（基準省令第37条）","p":38},{"t":"（66）利益供与等の禁止（基準省令第38条）（施設省令第51条）＜全事業共通＞","p":39},{"t":"（67）苦情解決（基準省令第39条）（施設省令第52条）＜全事業共通＞","p":39},{"t":"（68）事故発生時の対応（基準省令第40条）（施設省令第54条）＜全事業共通＞","p":39},{"t":"（69）身体拘束等の禁止（基準省令第35条の2）","p":40},{"t":"（70）虐待の防止（基準省令第40条の2）（施設省令第54条の2）＜全事業共通＞","p":41},{"t":"（71）会計の区分（基準省令第41条）（施設省令第55条）＜療養を除く＞","p":41},{"t":"（72）記録の整備（基準省令第42条・第75条・第170条の3・第206条の11）","p":42},{"t":"（73）評価及び整理の実施（基準省令第173条の7）〈就選〉","p":42},{"t":"（74）関係機関との連絡調整等の実施（基準省令第173条の8）〈就選〉","p":42},{"t":"（75）防犯対策について","p":43},{"t":"（76）電磁的記録等（基準省令第224条）","p":43}]},{"t":"3．報酬等に係る留意点について","p":44,"sub":[{"t":"（1）定員超過利用減算 ＜就定・自生を除く＞","p":44},{"t":"（2）人員欠如減算 ＜全事業共通＞","p":45},{"t":"（3）個別支援計画未作成減算 ＜就定・自生・就選を除く＞","p":46},{"t":"（4）情報公表未報告減算 ＜全事業共通＞","p":47},{"t":"（5）業務継続計画未策定減算 ＜全事業共通＞","p":47},{"t":"（6）身体拘束廃止未実施減算 ＜就定・自生を除く＞","p":47},{"t":"（7）虐待防止措置未実施減算 ＜全事業共通＞","p":47},{"t":"（8）特定事業所集中減算 ＜就選＞","p":48},{"t":"（9）福祉専門職員配置等加算 ＜療養・生介・自（機・生）・就移・就A・就B・自生・就選＞","p":48},{"t":"（10）欠席時対応加算 ＜生介・自（機・生）・就移・就A・就B・自生・就選＞","p":49},{"t":"（11）送迎加算（I）（II） ＜生介・短期・自（機・生）・就移・就A・就B・就選＞","p":49},{"t":"（12）食事提供体制加算 ＜生介・短期・自（機・生）・就移・就A・就B・就選＞","p":49},{"t":"（13）就労移行支援体制加算 ＜生介・自（機・生）・就A・就B＞、就労移行支援サービス費 ＜就移","p":50},{"t":"（14）医療連携体制加算 ＜短期・自（生）・就移・就A・就B＞","p":51},{"t":"（15）目標工賃達成指導員配置加算 ＜就B＞","p":51}]},{"t":"4．令和8年度報酬改定について","p":52,"sub":[{"t":"（1）主な改定内容（福祉・介護職員等処遇改善加算に関する改正を除く）","p":52}]}]},{"id":"gh","t":"共同生活援助 説明資料","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297179.pdf","pages":33,"secs":[{"t":"1．人員基準について","p":3,"sub":[{"t":"（1）用語の定義","p":3},{"t":"（2）共同生活援助の員数（基準省令第208条）","p":5},{"t":"（3）人員等に係る指摘及び指導について","p":6}]},{"t":"2．運営基準について","p":7,"sub":[{"t":"（1）内容及び手続きの説明及び同意（基準省令第9条、基準省令213条の17）","p":7},{"t":"（2）提供拒否の禁止（基準省令第11条）","p":9},{"t":"（3）連絡調整に対する協力（基準省令第12条）","p":9},{"t":"（4）受給者資格の確認（基準省令第14条）","p":9},{"t":"（5）介護給付費の支給の申請に係る援助（基準省令第15条）","p":9},{"t":"（6）心身の状況等の把握（基準省令第16条）","p":9},{"t":"（7）指定障がい福祉サービス事業者等との連携等（基準省令第17条）","p":10},{"t":"（8）入退居（基準省令第210条の2）","p":10},{"t":"（9）入退居の記録の記載等（基準省令第210条の3）","p":10},{"t":"（10）サービスの提供の記録（基準省令第53条の2）","p":11},{"t":"（11）事業者が支給決定障がい者等に求めることができる金銭の支払いの範囲等（基準省令第20条）","p":11},{"t":"（12）利用者負担額等の受領（基準省令第210条の4）","p":11},{"t":"（13）利用者負担額に係る管理（基準省令第170条の2）","p":12},{"t":"（14）給付費の額に係る通知等（基準省令第23条）","p":12},{"t":"（15）指定共同生活援助の取扱方針（基準省令第210条の5）","p":13},{"t":"（16）共同生活援助計画の作成等（基準省令第58条）","p":13},{"t":"（17）サービス管理責任者の責務（基準省令第210条の6）","p":14},{"t":"（18）相談及び援助（基準省令第60条）","p":15},{"t":"（19）介護及び家事等（基準省令第211条、第213条の8）","p":15},{"t":"（20）社会生活上の便宜の供与等（基準省令第211条の2、第213条の9）","p":15},{"t":"（21）緊急時等の対応（基準省令第28条）","p":16},{"t":"（22）支給決定障がい者等に関する市町村への通知（基準省令第88条）","p":16},{"t":"（23）管理者の責務（基準省令第66条）","p":16},{"t":"（24）運営規程（基準省令第211条の3、基準省令213条の19）","p":16},{"t":"（25）勤務体制の確保等（基準省令第212条、第213条の21）","p":17},{"t":"（26）支援体制の確保（基準省令第212条の2）","p":18},{"t":"（27）定員の遵守（基準省令第212条の3）","p":18},{"t":"（28）非常災害対策（基準省令第70条）","p":18},{"t":"（29）業務継続計画の策定等（基準省令第33条の2）","p":18},{"t":"（30）衛生管理等（基準省令第90条）","p":19},{"t":"（31）協力医療機関等（基準省令第212条の4）","p":19},{"t":"（32）掲示（基準省令第92条）","p":20},{"t":"（33）秘密保持等（基準省令第36条）","p":20},{"t":"（34）情報の提供等（基準省令第37条）","p":21},{"t":"（35）利益供与等の禁止（基準省令第38条）","p":21},{"t":"（36）苦情解決（基準省令第39条）","p":21},{"t":"（37）事故発生時の対応（基準省令第40条）","p":21},{"t":"（38）身体拘束等の禁止（基準省令第35条の2）","p":22},{"t":"（39）虐待の防止について（基準省令第40条の2）","p":23},{"t":"（40）地域との連携等（基準省令第210条の7）","p":24},{"t":"（41）会計の区分（基準省令第41条）","p":24},{"t":"（42）記録の整備（基準省令第75条）","p":24},{"t":"（43）防犯対策について","p":25},{"t":"（44）電磁的記録等（基準省令第224条）","p":25},{"t":"（45）地域との連携等（基準省令第213条の10）","p":26},{"t":"（46）受託居宅介護サービスの提供（基準省令213条の18）","p":26},{"t":"（47）受託居宅介護サービス事業者への委託（基準省令213条の20）","p":26}]},{"t":"3．報酬等に係る留意点について","p":27,"sub":[{"t":"（1）基本報酬区分","p":27},{"t":"（2）人員配置体制加算","p":27},{"t":"（3）自立生活支援加算","p":28},{"t":"（5）大規模住居等減算","p":28},{"t":"（6）人員欠如減算","p":29},{"t":"（7）個別支援計画未作成減算について","p":31},{"t":"（8）身体拘束廃止未実施減算","p":32},{"t":"（9）虐待防止措置未実施減算","p":32},{"t":"（10）業務継続計画未策定減算","p":32},{"t":"（11）情報公表未報告減算","p":32}]},{"t":"4．令和8年度報酬改定について","p":33,"sub":[]}]},{"id":"ji","t":"障がい児（通所・入所）系 説明資料","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297180.pdf","pages":45,"secs":[{"t":"1．人員基準について","p":3,"sub":[{"t":"（1）用語の定義","p":3},{"t":"（2）児童発達支援（センターを除く）、放課後等デイサービスの員数","p":4},{"t":"（3）児童発達支援（センターを除く）、放課後等デイサービスの員数","p":5},{"t":"（4）児童発達支援センターの員数（基準省令第6条）","p":5},{"t":"（5）居宅訪問型児童発達支援の員数（基準省令第71条の8・9）","p":6},{"t":"（6）福祉型障がい児入所施設の員数（入所基準第4条）","p":6},{"t":"（7）医療型障がい児入所施設の員数（入所基準第52条）","p":7},{"t":"（8）人員等に係る指摘及び指導について","p":7}]},{"t":"2．運営基準について","p":9,"sub":[{"t":"（1）利用定員（基準省令第11条・第69条）＜児発・放デイ＞","p":9},{"t":"（2）内容及び手続きの説明及び同意（基準省令第12条）","p":9},{"t":"（3）契約支給量の報告等（基準省令第13条）＜入所を除く＞","p":11},{"t":"（4）提供拒否の禁止（基準省令第14条）（入所基準第7条）＜全事業共通＞","p":11},{"t":"（5）連絡調整に対する協力（基準省令第15条）＜入所を除く＞","p":11},{"t":"（6）あっせん、調整及び要請に対する協力（入所基準第8条）＜入所のみ＞","p":11},{"t":"（7）サービス提供困難時の対応（基準省令第16条）（入所基準第9条）＜全事業共通＞","p":11},{"t":"（8）受給者資格の確認（基準省令第17条）（入所基準第10条）＜全事業共通＞","p":12},{"t":"（9）給付費の支給の申請に係る援助（基準省令第18条）（入所基準第11条）＜全事業共通＞","p":12},{"t":"（10）心身の状況等の把握（基準省令第19条）","p":12},{"t":"（11）事業者等との連携等（基準省令第20条）＜入所を除く＞","p":12},{"t":"（12）居住地の変更が見込まれる者への対応（入所基準第13条）＜入所のみ＞","p":12},{"t":"（13）入退所の記録の記載等（入所基準第14条）＜入所のみ＞","p":13},{"t":"（14）サービスの提供の記録（基準省令第21条）","p":13},{"t":"（15）事業者が給付決定保護者に求めることができる金銭の支払いの範囲等（基準省令第22条）","p":13},{"t":"（16）利用者負担額等の受領（基準省令第23条・第70条・第71条の12）","p":14},{"t":"（17）利用者負担額に係る管理（基準省令第24条）（入所基準第18条）＜全事業共通＞","p":14},{"t":"（18）給付費の額に係る通知等（基準省令第25条）（入所基準第19条・第55条）＜全事業共通＞","p":15},{"t":"（19）通所支援の取扱方針（基準省令第26条）＜児発・放デイ＞＜居訪発は6〜7、保訪は4を除く＞","p":15},{"t":"（20）支援プログラムの作成・公表（基準省令第26条の2）＜児発・放デイ・居児発＞","p":16},{"t":"（21）障がい児の地域社会への参加及び包摂の推進（基準省令第26条の3）＜入所を除く＞","p":16},{"t":"（22）入所支援の取扱方針（入所基準第20条）＜入所のみ＞","p":16},{"t":"（23）個別支援計画の作成等（基準省令第27条）","p":17},{"t":"（24）児童発達支援管理責任者の責務（基準省令第28条）","p":18},{"t":"（25）検討等（入所基準第23条）＜入所のみ＞","p":18},{"t":"（26）相談及び援助（基準省令第29条）","p":19},{"t":"（27）支援（基準省令第30条）","p":19},{"t":"（28）食事（基準省令第31条）","p":19},{"t":"（29）社会生活上の便宜の供与等（基準省令第32条）（入所基準第27条）＜全事業共通＞","p":19},{"t":"（30）健康管理（基準省令第33条）（入所基準第28条）＜児童発達支援センター・入所＞","p":19},{"t":"（31）緊急時等の対応（基準省令第34条）（入所基準第29条）＜全事業共通＞","p":20},{"t":"（32）障がい児の入院期間中の取扱い（入所基準第30条）＜入所のみ＞","p":20},{"t":"（33）給付金として支払を受けた金銭の管理（入所基準第31条）＜入所のみ＞","p":20},{"t":"（34）給付決定保護者に関する市町村（入所は都道府県）への通知（基準省令第35条）","p":21},{"t":"（35）管理者の責務（基準省令第36条）","p":21},{"t":"（36）運営規程（基準省令第37条・第71条の13）（入所基準第34条）＜全事業共通＞","p":21},{"t":"（37）勤務体制の確保等（基準省令第38条）（入所基準第35条）＜全事業共通＞","p":22},{"t":"（38）業務継続計画の策定等（基準省令第38条の2）（入所基準第35条の2）＜全事業共通＞","p":22},{"t":"（39）定員の遵守（基準省令第39条）（入所基準第36条）＜居訪発・保訪を除く＞","p":23},{"t":"（40）非常災害対策（基準省令第40条）","p":23},{"t":"（41）安全計画等の策定等（基準省令第40条の2）（入所基準第37条の2）＜全事業共通＞","p":24},{"t":"（42）自動車を運行する場合の所在の確認（基準省令第40条の3）","p":24},{"t":"（43）衛生管理等（基準省令第41条）（入所基準第38条）＜全事業共通＞","p":25},{"t":"（44）協力医療機関（基準省令第42条）","p":25},{"t":"（45）掲示（基準省令第43条）","p":26},{"t":"（46）身体拘束等の禁止（基準省令第44条）（入所基準第41条）＜全事業共通＞","p":26},{"t":"（47）虐待等の禁止（基準省令第45条）","p":27},{"t":"（48）秘密保持等（基準省令第47条）（入所基準第44条）＜全事業共通＞","p":28},{"t":"（49）情報の提供等（基準省令第48条）","p":28},{"t":"（50）利益供与等の禁止（基準省令第49条）（入所基準第46条）＜全事業共通＞","p":28},{"t":"（51）苦情解決（基準省令第50条）（入所基準第47条）＜全事業共通＞","p":29},{"t":"（52）地域との連携等（基準省令第51条）（入所基準第48条）＜全事業共通＞","p":29},{"t":"（53）事故発生時の対応（基準省令第52条）（入所基準第49条）＜全事業共通＞","p":29},{"t":"（54）会計の区分（基準省令第53条）（入所基準第50条）＜入所（医）を除く＞","p":30},{"t":"（55）記録の整備（基準省令第54条）（入所基準第51条）＜全事業共通＞","p":30},{"t":"（56）身分を証する書類の携行（基準省令第71条の11）＜居児発・保訪＞","p":30},{"t":"（57）防犯対策について","p":31},{"t":"（58）電磁的記録等（基準省令第83条）","p":31}]},{"t":"3．報酬等に係る留意点について","p":32,"sub":[{"t":"（1）定員超過利用減算","p":32},{"t":"（2）人員欠如減算","p":33},{"t":"（3）個別支援計画未作成減算","p":34},{"t":"（4）自己評価結果等未公表減算","p":35},{"t":"（5）身体拘束廃止未実施減算","p":35},{"t":"（6）支援プログラム未公表減算","p":36},{"t":"（7）虐待防止措置未実施減算","p":36},{"t":"（8）情報公表未報告減算","p":36},{"t":"（9）業務継続計画未策定減算","p":36},{"t":"（10）児童指導員等加配加算","p":37},{"t":"（11）専門的支援体制加算","p":37},{"t":"（12）専門的支援実施加算","p":37},{"t":"（13）福祉専門職員配置等加算","p":38},{"t":"（14）欠席時対応加算","p":39},{"t":"（15）延長支援加算","p":39},{"t":"（16）送迎加算","p":40},{"t":"（18）栄養マネジメント加算","p":41},{"t":"（19）入浴加算","p":42},{"t":"（20）個別サポート加算（III）","p":42}]},{"t":"4．令和8年度報酬改定について","p":43,"sub":[{"t":"（1）主な改定内容（福祉・介護職員等処遇改善加算に関する改正を除く）","p":43}]},{"t":"5．こども性暴力防止法について","p":44,"sub":[]}]},{"id":"dbs","t":"こども性暴力防止法について","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/296739.pdf","pages":2,"secs":[]},{"id":"soudan","t":"相談支援系 説明資料","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297113.pdf","pages":33,"secs":[{"t":"障がいのある人に対する相談支援について","p":3,"sub":[]},{"t":"地域相談支援（地域移行支援・地域定着支援）","p":4,"sub":[{"t":"（1）内容及び手続の説明及び同意（基準省令第5条）","p":5},{"t":"（2）契約内容の報告等（基準省令第6条）","p":5},{"t":"（3）提供拒否の禁止（基準省令第7条）","p":5},{"t":"（4）連絡調整に対する協力（基準省令第8条）","p":5},{"t":"（5）サービス提供困難時の対応（基準省令第9条）","p":6},{"t":"（6）受給資格の確認（基準省令第10条）","p":6},{"t":"（7）地域相談支援給付決定の申請に係る援助（基準省令第11条）","p":6},{"t":"（8）心身の状況等の把握（基準省令第12条）","p":6},{"t":"（9）指定障害福祉サービス事業者等との連携等（基準省令第13条）","p":6},{"t":"（10）身分を証する書類の携行（基準省令第14条）","p":6},{"t":"（11）サービスの提供の記録（基準省令第15条）","p":7},{"t":"（12）指定地域移行支援事業者が地域相談支援給付決定障害者に求めることのできる金銭の支払の範囲等（基準省令第16条）","p":7},{"t":"（13）地域相談支援給付費の額等の受領（基準省令第17条）","p":7},{"t":"（14）地域相談支援給付費の額に係る通知等（基準省令第18条）","p":7},{"t":"（15）指定地域移行支援の具体的取扱方針（基準省令第19条）","p":8},{"t":"（16）地域移行支援計画の作成等（基準省令第20条）","p":8},{"t":"（17）地域における生活に移行するための活動に関する支援（基準省令第21条）","p":9},{"t":"（18）障害福祉サービスの体験的な利用支援（基準省令第22条）","p":9},{"t":"（19）体験的な宿泊支援（基準省令第23条）","p":9},{"t":"（20）関係機関との連絡調整等（基準省令第24条）","p":10},{"t":"（21）地域相談支援給付決定障害者に関する市町村への通知（基準省令第25条）","p":10},{"t":"（22）管理者の責務（基準省令第26条）","p":10},{"t":"（23）運営規程（基準省令第27条）","p":10},{"t":"（24）勤務体制の確保等（基準省令第28条）","p":10},{"t":"（25）業務継続計画の策定等（基準省令第28条の2）（令和6年3月31日までは努力義務）","p":11},{"t":"（26）設備及び備品等（基準省令第29条）","p":11},{"t":"（27）衛生管理等（基準省令第30条）","p":11},{"t":"（28）掲示等（基準省令第31条）","p":12},{"t":"（29）秘密保持等（基準省令第32条）","p":12},{"t":"（30）情報の提供等（基準省令第33条）","p":13},{"t":"（31）利益供与等の禁止（基準省令第34条）","p":13},{"t":"（32）苦情解決（基準省令第35条）","p":13},{"t":"（33）事故発生時の対応（基準省令第36条）","p":14},{"t":"（34）虐待の防止（基準省令第36条の2）","p":14},{"t":"（35）会計の区分（基準省令第37条）","p":14},{"t":"（36）記録の整備（基準省令第38条）","p":14},{"t":"（1）指定地域定着支援の具体的取扱方針（基準省令第41条）","p":15},{"t":"（2）地域定着支援台帳の作成等（基準省令第42条）","p":15},{"t":"（3）常時の連絡体制の確保等（基準省令第43条）","p":15},{"t":"（4）緊急の事態における支援等（基準省令第44条）","p":16},{"t":"（5）準用（基準省令第45条）","p":16}]},{"t":"計画相談支援・障がい児相談支援","p":17,"sub":[]},{"t":"その他の相談支援事業","p":18,"sub":[]},{"t":"相談支援事業の指定に関する各種届出について","p":19,"sub":[]},{"t":"福岡県相談支援従事者現任研修について","p":20,"sub":[{"t":"（1）初回の受講","p":21},{"t":"（2）2回目以降の受講","p":21}]},{"t":"福岡県相談支援従事者人材育成ビジョンについて","p":23,"sub":[]},{"t":"福岡県相談支援従事者研修における講師及びファシリテーター登録に関する要綱","p":30,"sub":[{"t":"（1）登録者の氏名","p":31},{"t":"（2）登録者が所属する機関の名称","p":31},{"t":"（3）登録者が所属する機関の住所","p":31},{"t":"（4）登録者が所属する機関の連絡先（電話番号、FAX番号）","p":31}]}]},{"id":"kaitei","t":"令和8年度報酬改定について","u":"https://www.pref.fukuoka.lg.jp/uploaded/attachment/297119.pdf","pages":27,"secs":[{"t":"1．福祉・介護職員等処遇改善加算の拡充等","p":3,"sub":[{"t":"1（1）処遇改善加算の拡充1","p":3},{"t":"1（1）処遇改善加算の拡充2","p":4},{"t":"1（1）処遇改善加算の拡充3","p":5},{"t":"（参考）職場環境等要件（令和8年度）","p":6},{"t":"1（2）国庫負担基準の見直し","p":7}]},{"t":"2．令和8年度における臨時応急的な見直し","p":8,"sub":[{"t":"2（1）就労移行支援体制加算の見直し","p":8},{"t":"2（2）就労継続支援B型の基本報酬区分の基準の見直し","p":9},{"t":"（参考）就労継続支援B型の基本報酬区分の基準の見直しについて（イメージ）","p":19},{"t":"2（3）応急的な報酬単価の特例","p":20},{"t":"2（3）応急的な報酬単価の特例（就労継続支援B型）","p":21},{"t":"2（3）応急的な報酬単価の特例（共同生活援助（介護サービス包括型・日中サービス支援型））","p":22},{"t":"2（3）応急的な報酬単価の特例（児童発達支援）","p":23},{"t":"2（3）応急的な報酬単価の特例（放課後等デイサービス）","p":24},{"t":"（参考1）配慮措置の対象","p":25},{"t":"（参考2）配慮措置の対象","p":26},{"t":"（参考3）配慮措置の対象","p":27}]}]}]}
+</script>
+<script>
+/* 集団指導 特設ページの画面。データは build.py が埋め込む #data（資料の一覧と見出し）と、
+   探すときに読む kw.json（頁ごとの語の索引。文は持たない）。
+   画面の切り替えは URL の # で行う: #home / #svc / #svc-<id> / #search?q=…&d=… / #sources */
+(() => {
+  "use strict";
+  const $ = (id) => document.getElementById(id);
+  const D = JSON.parse($("data").textContent);
+  const DOCS = D.docs, TOC = D.toc;
+  const BY = Object.fromEntries(TOC.map((d) => [d.id, d]));
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const EXT = '<svg class="ext" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 6 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const pdf = (u, p) => u + (p ? "#page=" + p : "");
+  const A = (u, inner, cls) => `<a${cls ? ` class="${cls}"` : ""} href="${esc(u)}" target="_blank" rel="noopener">${inner}</a>`;
+
+  /* サービスの区分（県の資料の区分）。common＝全事業所共通編。docs＝見出しを持つ資料（toc の id） */
+  const SVC = [{ id: "common", t: "全事業所共通", names: "すべての事業所", docs: ["common", "kaitei"] }]
+    .concat(DOCS.services.map((s) => Object.assign({}, s, { docs: s.id === "ji" ? ["ji", "dbs"] : [s.id] })));
+  const SV = Object.fromEntries(SVC.map((s) => [s.id, s]));
+  /* 「探す」の絞り込みの短い呼び名 */
+  const SHORT = { common: "全事業所共通編", kyotaku: "居宅訪問系", nicchu: "通所・入所系", gh: "共同生活援助", ji: "障がい児系", dbs: "こども性暴力防止法", soudan: "相談支援系", kaitei: "令和8年度報酬改定（国）" };
+  const itemOf = (docId) => DOCS.items.find((i) => i.id === docId);
+
+  /* ── 見出しの組み立て ── */
+  function chapterRange(doc, i) {
+    const s = doc.secs[i], nx = doc.secs[i + 1];
+    const end = nx ? Math.max(s.p, nx.p - 1) : doc.pages;
+    return s.p === end ? "p." + s.p : "p." + s.p + "–" + end;
+  }
+  function docBlock(doc, opts) {
+    const it = itemOf(doc.id) || {};
+    const meta = [doc.pages + "ページ", it.size].filter(Boolean).join("・");
+    let h = `<div class="doc" id="doc-${doc.id}"><div class="doc-h"><h2>${esc(doc.t)}</h2><span class="meta">${esc(meta)}</span>`
+      + A(pdf(doc.u), "PDFを開く" + EXT, "open") + "</div>";
+    if (it.note) h += `<p class="vsub" style="margin:4px 0 0">${esc("※" + it.note)}</p>`;
+    h += '<div class="chs">';
+    doc.secs.forEach((s, i) => {
+      const range = chapterRange(doc, i);
+      if (!s.sub.length) {
+        h += `<div class="ch"><div class="ch-row">${A(pdf(doc.u, s.p), esc(s.t))}<span class="n">${range}</span></div></div>`;
+        return;
+      }
+      h += `<details class="ch"${opts && opts.open ? " open" : ""}><summary><span>${esc(s.t)}</span><span class="n">${range}</span><span class="n">${s.sub.length}項目</span></summary><ul class="subs">`
+        + `<li>${A(pdf(doc.u, s.p), `<span>章のはじめ</span><span class="pg">p.${s.p}</span>`, "ch-top")}</li>`
+        + s.sub.map((x) => `<li>${A(pdf(doc.u, x.p), `<span>${esc(x.t)}</span><span class="pg">p.${x.p}</span>`)}</li>`).join("")
+        + "</ul></details>";
+    });
+    if (!doc.secs.length) h += `<div class="ch"><div class="ch-row">${A(pdf(doc.u, 1), "1ページ目から開く")}<span class="n">全${doc.pages}ページ</span></div></div>`;
+    return h + "</div></div>";
+  }
+  function itemRow(it) {
+    const ty = it.kind && it.kind !== "HTML" ? it.kind : (it.kind === "HTML" ? "ページ" : "");
+    const note = [it.size, it.note].filter(Boolean).join("・");
+    return `<li>${A(it.u, esc(it.t))}${ty ? `<span class="ty">${esc(ty)}</span>` : ""}${note ? `<span class="note">${esc(note)}</span>` : ""}</li>`;
+  }
+  function groupLabel(g) {
+    const x = DOCS.groups.find((y) => y.g === g);
+    return x ? x.label : g;
+  }
+
+  /* ── 各画面 ── */
+  function svcCard(s) {
+    const pages = s.docs.reduce((n, id) => n + (BY[id] ? BY[id].pages : 0), 0);
+    const heads = s.docs.reduce((n, id) => n + (BY[id] ? BY[id].secs.reduce((m, x) => m + 1 + x.sub.length, 0) : 0), 0);
+    return `<a class="svc-card" href="#svc-${s.id}"><b>${esc(s.t)}</b><span>${esc(s.names)}</span><span class="m">${pages}ページ・見出し${heads}</span></a>`;
+  }
+  function renderHome() {
+    $("svc-home").innerHTML = SVC.map(svcCard).join("");
+    const c = BY.common;
+    $("common-quick").innerHTML = c.secs.map((s, i) =>
+      `<li>${A(pdf(c.u, s.p), `<span class="t">${esc(s.t)}</span><span class="pg">${chapterRange(c, i)}${EXT}</span>`)}</li>`).join("");
+    const links = [[DOCS.page, DOCS.pageTitle || "県の集団指導のページ"], [DOCS.schedule, "日程表"], [DOCS.register, "受講登録のフォーム"]].filter((x) => x[0]);
+    $("pref-links").innerHTML = links.map((x) => `<li>${A(x[0], esc(x[1]) + EXT)}</li>`).join("")
+      + `<li><a href="#sources">資料一覧（${DOCS.items.length}点）</a></li>`;
+    if (DOCS.extractedAt) {
+      const [y, m, d] = DOCS.extractedAt.split("-").map(Number);
+      $("extracted").textContent = `資料の取得 ${y}年${m}月${d}日`;
+    }
+    $("year").textContent = DOCS.year || "";
+    // 受講登録の期限
+    const dl = DOCS.registerDeadline;
+    if (dl) {
+      const [y, m, d] = dl.split("-").map(Number);
+      $("reg-date").textContent = `${y}.${m}.${d}`;
+      const DAY = 864e5, JST = 9 * 36e5;
+      const today = Math.floor((Date.now() + JST) / DAY) * DAY - JST;
+      const left = Math.round((Date.parse(dl + "T00:00:00+09:00") - today) / DAY);
+      $("reg-left").innerHTML = left > 0 ? `${m}月${d}日まで あと<b>${left}</b>日` : (left === 0 ? `本日（${m}月${d}日）が期限` : `${m}月${d}日で期限を過ぎました`);
+      $("reg-go").href = DOCS.register;
+      if (left < 0) $("reg-go").hidden = true;
+    } else {
+      $("dateplate").hidden = true;
+    }
+    $("foot-page").href = DOCS.page;
+  }
+  function renderSvcIndex() {
+    $("svc-index").innerHTML = SVC.map(svcCard).join("");
+  }
+  function renderSvc(id) {
+    const s = SV[id];
+    let h = `<div class="svc-head"><h1 class="vh">${esc(s.t)}</h1>`;
+    if (s.names !== s.t) h += `<p class="svc-names">${esc(s.names)}</p>`;
+    h += `<form class="find inline" data-scope="${s.docs.join(",")}" role="search"><label class="sr" for="q-svc">${esc(s.t)}の資料の中を探す</label>`
+      + '<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m12.6 12.6 4.4 4.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>'
+      + `<input type="search" id="q-svc" placeholder="この資料の中を探す" autocomplete="off" enterkeyhint="search"><button type="submit">探す</button></form></div>`;
+    h += s.docs.filter((d) => BY[d]).map((d) => docBlock(BY[d])).join("");
+    // 説明資料と一緒に掲載された資料（同じ区分の、見出しを持たない資料）
+    const extra = DOCS.items.filter((it) => it.part === "説明資料" && !it.id && it.svc.includes(id) && it.kind !== "HTML");
+    if (extra.length) h += `<section class="also"><h2>説明資料と一緒に掲載された資料</h2><ul class="rows">${extra.map(itemRow).join("")}</ul></section>`;
+    if (id !== "common") {
+      h += `<section class="also"><h2>あわせて見る</h2><ul class="rows"><li><a href="#svc-common">全事業所共通編の説明資料</a><span class="note">指導監督の方針・行政処分の事例・虐待防止・事故・処遇改善など</span></li>`
+        + `<li>${A(BY.kaitei.u, esc(BY.kaitei.t))}<span class="ty">PDF</span><span class="note">国の資料（${BY.kaitei.pages}ページ）。見出しは「全事業所共通」に載せています</span></li></ul></section>`;
+    }
+    // 参考資料（このサービス向けの区分。全事業所共通では「全般」などの区分）
+    const refs = DOCS.items.filter((it) => it.part === "参考資料" && !it.id && (id === "common" ? it.svc.includes("*") : it.svc.includes(id)));
+    if (refs.length) {
+      const groups = [...new Set(refs.map((r) => r.g))];
+      h += `<section class="refs"><h2>参考資料</h2>` + groups.map((g) =>
+        `<h3>${esc(groupLabel(g))}</h3><ul class="rows">${refs.filter((r) => r.g === g).map(itemRow).join("")}</ul>`).join("") + "</section>";
+    }
+    $("svc-body").innerHTML = h;
+    // サブメニュー（PCは左の列、スマホは横に流れる札）
+    $("subnav").innerHTML = "<ol>" + SVC.map((x) => {
+      const pages = x.docs.reduce((n, d) => n + (BY[d] ? BY[d].pages : 0), 0);
+      return `<li><a href="#svc-${x.id}"${x.id === id ? ' class="is-active" aria-current="page"' : ""}><span>${esc(x.t)}</span><span class="c">${pages}p</span></a></li>`;
+    }).join("") + "</ol>";
+    document.title = s.t + "｜集団指導 特設ページ";
+  }
+
+  /* ── 探す（語の索引で頁を引く。文は持たないので、見出しと頁番号を出してPDFの該当頁を開く） ── */
+  let KW = null, kwLoading = null;
+  /* 章とその節を出てきた順に並べたもの（extract.py の index_segments と同じ並び） */
+  const FLAT = Object.fromEntries(TOC.map((d) => {
+    const f = [];
+    d.secs.forEach((s) => { f.push({ t: s.t, sec: null }); s.sub.forEach((x) => f.push({ t: x.t, sec: s.t })); });
+    return [d.id, f];
+  }));
+  function loadKW() {
+    if (KW) return Promise.resolve(KW);
+    if (!kwLoading) {
+      kwLoading = fetch("kw.json", { cache: "no-cache" }).then((r) => r.json()).then((j) => {
+        // 索引のキーは「資料:頁:見出しの番号」。頁を見出しの位置で区切った単位ごとに語の集合を持つ
+        const segs = {};
+        j.docs.forEach((id) => { segs[id] = []; });
+        Object.entries(j.pages).forEach(([k, v]) => {
+          const [di, p, h] = k.split(":").map(Number);
+          segs[j.docs[di]].push({ p, h, w: "|" + v + "|" });
+        });
+        Object.values(segs).forEach((a) => a.sort((x, y) => x.p - y.p || x.h - y.h));
+        KW = segs;
+        return KW;
+      }).catch((e) => { kwLoading = null; throw e; });
+    }
+    return kwLoading;
+  }
+  const RUN = /[一-龥々〆ヵヶ]+|[ァ-ヴー]+|[A-Za-z0-9]+/g;   // extract.py の WORD と同じ区切り
+  const JOIN = /[A-Za-z0-9]+[一-龥々〆ヵヶ]/g;               // extract.py の JOIN と同じ
+  function terms(q) {
+    q = (q || "").normalize("NFKC").trim();
+    // ひらがなだけの語はカタカナに直して探す（例: ひやりはっと → ヒヤリハット）
+    const parts = q.split(/\s+/).filter(Boolean).map((w) => /^[ぁ-ゖー]+$/.test(w) ? w.replace(/[ぁ-ゖ]/g, (c) => String.fromCharCode(c.charCodeAt(0) + 0x60)) : w);
+    const out = [];
+    const add = (r) => { if (!out.includes(r)) out.push(r); };
+    parts.forEach((w) => {
+      // 「A型」「33条」のような英数字＋漢字1字は、つながりのまま探す（extract.py の JOIN）。残りは連なりごとに
+      (w.match(JOIN) || []).forEach(add);
+      (w.replace(JOIN, " ").match(RUN) || []).forEach(add);
+    });
+    return out;
+  }
+  function mark(text, ts) {
+    let h = esc(text);
+    ts.forEach((t) => { h = h.split(esc(t)).join("<mark>" + esc(t) + "</mark>"); });
+    return h;
+  }
+  let scope = "";   // 絞り込む資料（toc の id を「,」で）。空ならすべて
+  function renderScope() {
+    const opts = [["", "すべて"]].concat(TOC.map((d) => [d.id, SHORT[d.id] || d.t]));
+    const custom = scope && !opts.some((o) => o[0] === scope);
+    if (custom) opts.splice(1, 0, [scope, scope.split(",").map((x) => SHORT[x] || x).join("＋")]);
+    $("scope").innerHTML = opts.map(([v, t]) => `<button type="button" data-v="${v}" aria-pressed="${v === scope}">${esc(t)}</button>`).join("");
+  }
+  async function runSearch(q) {
+    const ts = terms(q);
+    $("q-main").value = q || "";
+    renderScope();
+    if (!ts.length) {
+      $("s-sum").textContent = q ? "漢字・カタカナ・英数字を含む語で探してください" : "";
+      $("s-res").innerHTML = "";
+      return;
+    }
+    $("s-sum").textContent = "索引を読み込んでいます…";
+    let kw;
+    try { kw = await loadKW(); } catch (e) { $("s-sum").textContent = "索引を読み込めませんでした。時間をおいて開き直してください"; return; }
+    const want = scope ? scope.split(",") : TOC.map((d) => d.id);
+    let total = 0, ndoc = 0, h = "";
+    TOC.filter((d) => want.includes(d.id)).forEach((doc) => {
+      const hits = (kw[doc.id] || []).filter((sg) => ts.every((t) => sg.w.includes(t)));
+      if (!hits.length) return;
+      const pagesHit = new Set(hits.map((x) => x.p)).size;
+      total += pagesHit; ndoc++;
+      const rows = hits.map((sg) => {
+        const f = FLAT[doc.id][sg.h];
+        const head = f ? f.t : (doc.secs.length ? "表紙・目次" : "");
+        return `<li>${A(pdf(doc.u, sg.p), `<span class="p">p.${sg.p}</span><span class="h">${mark(head, ts)}</span>${f && f.sec ? `<span class="c">${esc(f.sec)}</span>` : ""}`)}</li>`;
+      });
+      const LIM = 30;
+      h += `<section class="s-doc"><h2>${esc(doc.t)}<small>${pagesHit}ページ</small></h2><ul class="hits">${rows.slice(0, LIM).join("")}</ul>`
+        + (rows.length > LIM ? `<ul class="hits" hidden>${rows.slice(LIM).join("")}</ul><button type="button" class="more">残り${rows.length - LIM}件を表示</button>` : "")
+        + "</section>";
+    });
+    const tl = ts.map((t) => "「" + t + "」").join("");
+    const long = ts.some((t) => t.length >= 4 && /^[一-龥々〆ヵヶ]+$/.test(t));
+    $("s-sum").innerHTML = total ? `${esc(tl)}を含むページ <b>${total}</b>（${ndoc}編）`
+      : `${esc(tl)}を含むページは見つかりませんでした` + (long ? "。語を空白で区切ると見つかることがあります（例：虐待防止 委員会）" : "");
+    $("s-res").innerHTML = h;
+  }
+  $("s-res").addEventListener("click", (e) => {
+    const b = e.target.closest(".more");
+    if (!b) return;
+    b.previousElementSibling.hidden = false;
+    b.remove();
+  });
+  $("scope").addEventListener("click", (e) => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    scope = b.dataset.v;
+    go("#search?" + qs($("q-main").value, scope), true);
+  });
+  const qs = (q, s) => new URLSearchParams(Object.assign({ q: q || "" }, s ? { d: s } : {})).toString();
+  document.addEventListener("submit", (e) => {
+    const f = e.target.closest(".find");
+    if (!f) return;
+    e.preventDefault();
+    const q = f.querySelector("input").value;
+    if (f.dataset.scope !== undefined) scope = f.dataset.scope;
+    else if (f.id === "find-home") scope = "";
+    go("#search?" + qs(q, scope));
+  });
+
+  /* ── 画面の切り替え ── */
+  function go(hash, replace) {
+    if (replace) { history.replaceState(null, "", hash); route(); }
+    else location.hash = hash;
+  }
+  function route() {
+    const raw = location.hash.slice(1) || "home";
+    const [name, query] = raw.split("?");
+    let view = "home", g = "home";
+    if (name === "svc") { view = "svc"; g = "svc"; renderSvcIndex(); document.title = "サービス別｜集団指導 特設ページ"; }
+    else if (name.startsWith("svc-") && SV[name.slice(4)]) { view = "svcview"; g = "svc"; renderSvc(name.slice(4)); }
+    else if (name === "search") {
+      view = "search"; g = "search";
+      const p = new URLSearchParams(query || "");
+      scope = p.get("d") || "";
+      runSearch(p.get("q") || "");
+      document.title = "資料の中を探す｜集団指導 特設ページ";
+    } else if (name === "sources") { view = "sources"; g = "sources"; document.title = "資料一覧｜集団指導 特設ページ"; }
+    else document.title = "令和8年度 福岡県 集団指導 特設ページ";
+    document.querySelectorAll(".view").forEach((v) => v.classList.toggle("is-active", v.id === view));
+    document.querySelectorAll("[data-g]").forEach((a) => {
+      if (a.tagName !== "A") return;
+      const on = a.dataset.g === g;
+      a.classList.toggle("is-active", on);
+      if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+    const shell = $("shell");
+    shell.classList.toggle("no-sub", view !== "svcview");
+    shell.classList.toggle("is-home", view === "home");
+    window.scrollTo(0, 0);
+    if (view === "search" && !$("q-main").value && matchMedia("(hover: hover)").matches) $("q-main").focus();
+  }
+  window.addEventListener("hashchange", route);
+  renderHome();
+  route();
+
+  /* 資料一覧の絞り込み（scripts/linkbook.py の部品） */
+  const lq = $("lk-q");
+  if (lq) lq.addEventListener("input", () => {
+    const ws = lq.value.normalize("NFKC").toLowerCase().split(/\s+/).filter(Boolean);
+    let n = 0;
+    document.querySelectorAll("#lk .lk-g").forEach((g) => {
+      let shown = 0;
+      g.querySelectorAll(".lk-i").forEach((li) => {
+        const t = (li.dataset.q || "").normalize("NFKC").toLowerCase();
+        const ok = ws.every((w) => t.includes(w));
+        li.hidden = !ok;
+        if (ok) shown++;
+      });
+      g.hidden = !shown;
+      n += shown;
+    });
+    document.querySelector("#lk .lk-none").hidden = n > 0;
+  });
+})();
+
+</script>
+</body>
+</html>

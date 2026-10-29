@@ -1,0 +1,990 @@
+{
+ "year": "令和8年度",
+ "page": "https://www.pref.fukuoka.lg.jp/contents/-contents-yudanr8.html",
+ "pageTitle": "令和８年度集団指導について",
+ "schedule": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/297103.pdf",
+ "register": "https://shinsei.pref.fukuoka.lg.jp/SksJuminWeb/EntryForm?id=wLX6i6y2",
+ "registerDeadline": "2026-11-30",
+ "services": [
+  {
+   "id": "kyotaku",
+   "t": "居宅訪問系",
+   "names": "居宅介護・重度訪問介護・同行援護・行動援護"
+  },
+  {
+   "id": "nicchu",
+   "t": "通所（日中活動）系・入所系",
+   "names": "療養介護・生活介護・短期入所・自立訓練（機能・生活）・就労移行支援・就労継続支援（Ａ型・Ｂ型）・就労定着支援・自立生活援助・障がい者支援施設"
+  },
+  {
+   "id": "gh",
+   "t": "共同生活援助",
+   "names": "共同生活援助"
+  },
+  {
+   "id": "ji",
+   "t": "障がい児（通所・入所）系",
+   "names": "児童発達支援・児童発達支援センター・放課後等デイサービス・居宅訪問型児童発達支援・保育所等訪問支援・障がい児入所施設"
+  },
+  {
+   "id": "soudan",
+   "t": "相談支援系",
+   "names": "地域相談支援・計画相談支援・障がい児相談支援・一般相談支援"
+  }
+ ],
+ "groups": [
+  {
+   "g": "（１）全事業所共通",
+   "part": "説明資料",
+   "label": "（１）全事業所共通"
+  },
+  {
+   "g": "（２）居宅介護",
+   "part": "説明資料",
+   "label": "（２）居宅介護・重度訪問介護・同行援護・行動援護"
+  },
+  {
+   "g": "（３）療養介護",
+   "part": "説明資料",
+   "label": "（３）療養介護・生活介護・短期入所・自立訓練（機能・生活）・就労移行支援・就労継続支援（Ａ型・Ｂ型）・就労定着支援・自立生活援助・障がい者支援施設"
+  },
+  {
+   "g": "（４）共同生活援助",
+   "part": "説明資料",
+   "label": "（４）共同生活援助"
+  },
+  {
+   "g": "（５）児童発達支援",
+   "part": "説明資料",
+   "label": "（５）児童発達支援・児童発達支援センター・放課後等デイサービス・居宅訪問型児童発達支援・保育所等訪問支援・障がい児入所施設"
+  },
+  {
+   "g": "（６）地域相談支援",
+   "part": "説明資料",
+   "label": "（６）地域相談支援・計画相談支援・障がい児相談支援・一般相談支援"
+  },
+  {
+   "g": "参考：全般",
+   "part": "参考資料",
+   "label": "全般"
+  },
+  {
+   "g": "（１）生活介護事業所関連",
+   "part": "参考資料",
+   "label": "（１）生活介護事業所関連"
+  },
+  {
+   "g": "（２）就労系事業所関連",
+   "part": "参考資料",
+   "label": "（２）就労系事業所関連"
+  },
+  {
+   "g": "（３）障がい児支援事業所等関連",
+   "part": "参考資料",
+   "label": "（３）障がい児支援事業所等関連"
+  },
+  {
+   "g": "（５）虐待防止関連",
+   "part": "参考資料",
+   "label": "（５）虐待防止関連"
+  },
+  {
+   "g": "（６）業務継続計画関連",
+   "part": "参考資料",
+   "label": "（６）業務継続計画関連"
+  },
+  {
+   "g": "（７）サービス管理責任者",
+   "part": "参考資料",
+   "label": "（７）サービス管理責任者・児童発達支援管理責任者関連"
+  },
+  {
+   "g": "（８）事例集",
+   "part": "参考資料",
+   "label": "（８）事例集"
+  },
+  {
+   "g": "（９）摂食嚥下関係",
+   "part": "参考資料",
+   "label": "（９）摂食嚥下関係"
+  },
+  {
+   "g": "（10）労働関係",
+   "part": "参考資料",
+   "label": "（10）労働関係"
+  },
+  {
+   "g": "（11）防災関係",
+   "part": "参考資料",
+   "label": "（11）防災関係"
+  },
+  {
+   "g": "（12）その他",
+   "part": "参考資料",
+   "label": "（12）その他"
+  }
+ ],
+ "items": [
+  {
+   "part": "説明資料",
+   "g": "（１）全事業所共通",
+   "t": "全事業所共通編 説明資料",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/297176.pdf",
+   "kind": "PDF",
+   "size": "12.25MB",
+   "note": "28ページ、29ページ追加",
+   "svc": [
+    "*"
+   ],
+   "id": "common"
+  },
+  {
+   "part": "説明資料",
+   "g": "（２）居宅介護",
+   "t": "居宅訪問系 説明資料",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/297294.pdf",
+   "kind": "PDF",
+   "size": "649KB",
+   "note": "",
+   "svc": [
+    "kyotaku"
+   ],
+   "id": "kyotaku"
+  },
+  {
+   "part": "説明資料",
+   "g": "（３）療養介護",
+   "t": "通所（日中活動）系・入所系 説明資料",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/297178.pdf",
+   "kind": "PDF",
+   "size": "1.11MB",
+   "note": "",
+   "svc": [
+    "nicchu"
+   ],
+   "id": "nicchu"
+  },
+  {
+   "part": "説明資料",
+   "g": "（３）療養介護",
+   "t": "福岡県よろず支援拠点 生産性向上支援センターについて",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/296737.pdf",
+   "kind": "PDF",
+   "size": "1.27MB",
+   "note": "",
+   "svc": [
+    "nicchu"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "（３）療養介護",
+   "t": "分身ロボットを活用した障がい者社会参加実証事業について",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/264603.pdf",
+   "kind": "PDF",
+   "size": "352KB",
+   "note": "",
+   "svc": [
+    "nicchu"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "（３）療養介護",
+   "t": "県の工賃向上支援施策について",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/296736.pdf",
+   "kind": "PDF",
+   "size": "555KB",
+   "note": "",
+   "svc": [
+    "nicchu"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "（３）療養介護",
+   "t": "「優生手術などを受けた方やそのご家族へ」 リーフレット",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/297059.pdf",
+   "kind": "PDF",
+   "size": "6.2MB",
+   "note": "",
+   "svc": [
+    "nicchu"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "（３）療養介護",
+   "t": "リーフレットを活用した旧優生保護法補償金等支給制度周知のお願い",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/297057.pdf",
+   "kind": "PDF",
+   "size": "117KB",
+   "note": "",
+   "svc": [
+    "nicchu"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "（３）療養介護",
+   "t": "施設における取組のご紹介",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/297058.pdf",
+   "kind": "PDF",
+   "size": "60KB",
+   "note": "",
+   "svc": [
+    "nicchu"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "（４）共同生活援助",
+   "t": "共同生活援助 説明資料",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/297179.pdf",
+   "kind": "PDF",
+   "size": "883KB",
+   "note": "",
+   "svc": [
+    "gh"
+   ],
+   "id": "gh"
+  },
+  {
+   "part": "説明資料",
+   "g": "（５）児童発達支援",
+   "t": "障がい児（通所・入所）系 説明資料",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/297180.pdf",
+   "kind": "PDF",
+   "size": "2.1MB",
+   "note": "",
+   "svc": [
+    "ji"
+   ],
+   "id": "ji"
+  },
+  {
+   "part": "説明資料",
+   "g": "（５）児童発達支援",
+   "t": "こども性暴力防止法について",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/296739.pdf",
+   "kind": "PDF",
+   "size": "1.05MB",
+   "note": "",
+   "svc": [
+    "ji"
+   ],
+   "id": "dbs"
+  },
+  {
+   "part": "説明資料",
+   "g": "（６）地域相談支援",
+   "t": "相談支援系 説明資料",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/297113.pdf",
+   "kind": "PDF",
+   "size": "1.6MB",
+   "note": "",
+   "svc": [
+    "soudan"
+   ],
+   "id": "soudan"
+  },
+  {
+   "part": "参考資料",
+   "g": "参考：全般",
+   "t": "令和8年度報酬改定について",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/297119.pdf",
+   "kind": "PDF",
+   "size": "1.47MB",
+   "note": "",
+   "svc": [
+    "*"
+   ],
+   "id": "kaitei"
+  },
+  {
+   "part": "参考資料",
+   "g": "（１）生活介護事業所関連",
+   "t": "指定生活介護事業所等における医師の取扱いについて",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/206806.pdf",
+   "kind": "PDF",
+   "size": "145KB",
+   "note": "",
+   "svc": [
+    "nicchu"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（２）就労系事業所関連",
+   "t": "就労移行支援事業、就労継続支援事業（A型、B型）における留意事項について",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/231262.pdf",
+   "kind": "PDF",
+   "size": "424KB",
+   "note": "",
+   "svc": [
+    "nicchu"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（２）就労系事業所関連",
+   "t": "就労支援事業会計の運用ガイドライン",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/296589.pdf",
+   "kind": "PDF",
+   "size": "1.06MB",
+   "note": "",
+   "svc": [
+    "nicchu"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（２）就労系事業所関連",
+   "t": "就労支援の事業の会計処理の基準",
+   "u": "https://www.mhlw.go.jp/topics/2006/10/tp1002-1.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "厚生労働省ホームページリンク",
+   "svc": [
+    "nicchu"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（３）障がい児支援事業所等関連",
+   "t": "各種ガイドラインについて",
+   "u": "https://www.cfa.go.jp/policies/shougaijishien/shisaku/guideline_tebiki",
+   "kind": "HTML",
+   "size": "",
+   "note": "こども家庭庁ホームページへのリンク",
+   "svc": [
+    "ji"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（３）障がい児支援事業所等関連",
+   "t": "各障がい児通所支援事業所における車両送迎時の安全管理の徹底について",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/173904.pdf",
+   "kind": "PDF",
+   "size": "2.38MB",
+   "note": "",
+   "svc": [
+    "ji"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（３）障がい児支援事業所等関連",
+   "t": "障がい児通所支援事業所等における安全計画の策定について（県通知）",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/206658.pdf",
+   "kind": "PDF",
+   "size": "93KB",
+   "note": "",
+   "svc": [
+    "ji"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（３）障がい児支援事業所等関連",
+   "t": "障がい児通所支援事業所安全計画（様式例）",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/206660.docx",
+   "kind": "Word",
+   "size": "22KB",
+   "note": "",
+   "svc": [
+    "ji"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（３）障がい児支援事業所等関連",
+   "t": "（参考資料）障害児通所支援事業所等における安全計画の策定について（こども家庭庁通知）",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/206662.pdf",
+   "kind": "PDF",
+   "size": "2.22MB",
+   "note": "",
+   "svc": [
+    "ji"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（３）障がい児支援事業所等関連",
+   "t": "障害児通所支援における定員超過利用減算の取扱いについて（厚生労働省通知）",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/173907.pdf",
+   "kind": "PDF",
+   "size": "296KB",
+   "note": "",
+   "svc": [
+    "ji"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（３）障がい児支援事業所等関連",
+   "t": "（別添）障害児通所支援事業所における定員超過利用減算対象確認シート",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/173908.xlsx",
+   "kind": "Excel",
+   "size": "26KB",
+   "note": "",
+   "svc": [
+    "ji"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（３）障がい児支援事業所等関連",
+   "t": "福岡県医療的ケア児支援センターリーフレット",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/231001.pdf",
+   "kind": "PDF",
+   "size": "1.73MB",
+   "note": "",
+   "svc": [
+    "ji"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（３）障がい児支援事業所等関連",
+   "t": "児童発達支援等における支援プログラムの作成・公表及び 公表内容等の届出について",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/231123.pdf",
+   "kind": "PDF",
+   "size": "121KB",
+   "note": "",
+   "svc": [
+    "ji"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（３）障がい児支援事業所等関連",
+   "t": "支援プログラムの公表状況に関する届出書",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/231124.xlsx",
+   "kind": "Excel",
+   "size": "25KB",
+   "note": "",
+   "svc": [
+    "ji"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（３）障がい児支援事業所等関連",
+   "t": "ドッグセラピーについて",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/296738.pdf",
+   "kind": "PDF",
+   "size": "312KB",
+   "note": "",
+   "svc": [
+    "ji"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（３）障がい児支援事業所等関連",
+   "t": "こども性暴力防止法について",
+   "u": "https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou",
+   "kind": "HTML",
+   "size": "",
+   "note": "こども家庭庁ホームページへのリンクです。",
+   "svc": [
+    "ji"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（４）共同生活援助",
+   "t": "地域連携推進会議の手引き",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/231048.pdf",
+   "kind": "PDF",
+   "size": "867KB",
+   "note": "",
+   "svc": [
+    "gh"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（４）共同生活援助",
+   "t": "共同生活援助における運営や支援に関するガイドライン （第１版）",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/296505.pdf",
+   "kind": "PDF",
+   "size": "1.68MB",
+   "note": "",
+   "svc": [
+    "gh"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（４）共同生活援助",
+   "t": "自己チェックシート",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/296506.xlsx",
+   "kind": "Excel",
+   "size": "25KB",
+   "note": "",
+   "svc": [
+    "gh"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（５）虐待防止関連",
+   "t": "障害者福祉施設等における障害者虐待の防止と対応の手引き",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/231005.pdf",
+   "kind": "PDF",
+   "size": "1.5MB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（５）虐待防止関連",
+   "t": "職場内虐待防止研修用冊子",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/207111.pdf",
+   "kind": "PDF",
+   "size": "2.29MB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（５）虐待防止関連",
+   "t": "障がい者虐待防止及び身体拘束等の適正化に向けた体制等の取組事例集",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/207112.pdf",
+   "kind": "PDF",
+   "size": "5.45MB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（５）虐待防止関連",
+   "t": "令和８年度福岡県障がい福祉サービス事業所等支援員研修",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/297062.pdf",
+   "kind": "PDF",
+   "size": "113KB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（５）虐待防止関連",
+   "t": "障がい者福祉施設従事者等による障がい者虐待の防止と対応について",
+   "u": "https://www.pref.fukuoka.lg.jp/contents/kennriyougogyakutaibousi.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（６）業務継続計画関連",
+   "t": "自然災害発生時の業務継続ガイドライン等",
+   "u": "https://www.mhlw.go.jp/stf/newpage_17517.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（６）業務継続計画関連",
+   "t": "新型コロナウイルス感染症発生時の業務継続ガイドライン等",
+   "u": "https://www.mhlw.go.jp/stf/newpage_15758.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（７）サービス管理責任者",
+   "t": "サービス管理責任者及び児童発達管理責任者の実務経験",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/296740.pdf",
+   "kind": "PDF",
+   "size": "444KB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（７）サービス管理責任者",
+   "t": "サービス管理責任者・児童発達支援管理責任者の要件について",
+   "u": "https://www.pref.fukuoka.lg.jp/contents/sabijikan-youken.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（８）事例集",
+   "t": "放課後等デイサービスにおける事故の防止について",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/231004.pdf",
+   "kind": "PDF",
+   "size": "144KB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（８）事例集",
+   "t": "強度行動障がいがある方への支援事例集",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/231096.pdf",
+   "kind": "PDF",
+   "size": "1.9MB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（８）事例集",
+   "t": "腰痛を防ぐ 職場の事例集（厚生労働省）",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/231165.pdf",
+   "kind": "PDF",
+   "size": "18.39MB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（９）摂食嚥下関係",
+   "t": "施設入所支援に係る報酬・基準について",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/230998.pdf",
+   "kind": "PDF",
+   "size": "1.61MB",
+   "note": "",
+   "svc": [
+    "nicchu"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（９）摂食嚥下関係",
+   "t": "障害特性を踏まえた栄養ケア・マネージメントの実務のあり方に関する調査研究 報告書",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/230999.pdf",
+   "kind": "PDF",
+   "size": "3.65MB",
+   "note": "",
+   "svc": [
+    "nicchu"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（９）摂食嚥下関係",
+   "t": "NPO法人口から食べる幸せを守る会（リンク）",
+   "u": "https://ktsm.jimdofree.com/",
+   "kind": "HTML",
+   "size": "",
+   "note": "",
+   "svc": [
+    "nicchu"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（10）労働関係",
+   "t": "介護労働者の労働条件の確保・改善のポイント",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/297055.pdf",
+   "kind": "PDF",
+   "size": "16.57MB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（10）労働関係",
+   "t": "第3次産業における労働災害防止",
+   "u": "https://jsite.mhlw.go.jp/fukuoka-roudoukyoku/_00381.html#%E7%AC%AC%E4%B8%89%E6%AC%A1%E7%94%A3%E6%A5%AD",
+   "kind": "HTML",
+   "size": "",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（10）労働関係",
+   "t": "はしご・脚立・踏み台からの墜落災害防止のために​",
+   "u": "https://jsite.mhlw.go.jp/fukuoka-roudoukyoku/_00381.html#%E3%81%AF%E3%81%97%E3%81%94%E3%83%BB%E8%84%9A%E7%AB%8B",
+   "kind": "HTML",
+   "size": "",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（11）防災関係",
+   "t": "避難確保計画 案内チラシ",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/297072.pdf",
+   "kind": "PDF",
+   "size": "387KB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（11）防災関係",
+   "t": "新しい防災気象情報について",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/297073.pdf",
+   "kind": "PDF",
+   "size": "1.57MB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（11）防災関係",
+   "t": "要配慮利用者施設の浸水対策（国土交通省ホームページ）",
+   "u": "https://www.mlit.go.jp/river/bousai/main/saigai/jouhou/jieisuibou/bousai-gensai-suibou02.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（12）その他",
+   "t": "部落差別解消推進条例パンフレット",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/207120.pdf",
+   "kind": "PDF",
+   "size": "2.38MB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（12）その他",
+   "t": "部落差別解消推進法チラシ",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/207121.pdf",
+   "kind": "PDF",
+   "size": "1.26MB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（12）その他",
+   "t": "性暴力被害者支援センター・ふくおかチラシ",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/207123.pdf",
+   "kind": "PDF",
+   "size": "3.44MB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（12）その他",
+   "t": "障がいのある人への合理的配慮ガイドブック",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/114509.pdf",
+   "kind": "PDF",
+   "size": "5.26MB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（12）その他",
+   "t": "障がいのある人への合理的配慮（福祉サービスの分野編）",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/114510.pdf",
+   "kind": "PDF",
+   "size": "2.34MB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（12）その他",
+   "t": "障がいのある人への合理的配慮に関する動画をこちらからご覧いただけます",
+   "u": "https://www.pref.fukuoka.lg.jp/contents/hairyo-douga.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（12）その他",
+   "t": "ご存知ですか？ヘルプカード （福岡県）",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/207125.pdf",
+   "kind": "PDF",
+   "size": "1.66MB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（12）その他",
+   "t": "福岡県福祉のまちづくり条例啓発パンフレット",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/114516.pdf",
+   "kind": "PDF",
+   "size": "440KB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（12）その他",
+   "t": "障害者差別解消法福祉事業者向けガイドライン",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/264611.pdf",
+   "kind": "PDF",
+   "size": "991KB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（12）その他",
+   "t": "高次脳機能障がい支援ガイド",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/207254.pdf",
+   "kind": "PDF",
+   "size": "3.6MB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（12）その他",
+   "t": "高次脳機能障がい支援事業リーフレット",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/207255.pdf",
+   "kind": "PDF",
+   "size": "2.11MB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（12）その他",
+   "t": "高次脳機能障がい支援事業のご案内（健康増進課こころの健康づくり推進室）",
+   "u": "https://www.pref.fukuoka.lg.jp/contents/koujinou-shienjigyou.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（12）その他",
+   "t": "手話に関する施策の推進に関する法律（内閣府ホームページ）",
+   "u": "https://www8.cao.go.jp/shougai/suishin/jsl.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（12）その他",
+   "t": "熱中症関連情報​（厚生労働省ホームページ）",
+   "u": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/nettyuu/index.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（12）その他",
+   "t": "「優生手術などを受けた方やそのご家族へ」リーフレット",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/297056.pdf",
+   "kind": "PDF",
+   "size": "6.2MB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（12）その他",
+   "t": "リーフレットを活用した旧優生保護法補償金等支給制度周知のお願い",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/297060.pdf",
+   "kind": "PDF",
+   "size": "117KB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "（12）その他",
+   "t": "施設における取組のご紹介",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/297061.pdf",
+   "kind": "PDF",
+   "size": "60KB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  }
+ ],
+ "extractedAt": "2026-10-29"
+}
