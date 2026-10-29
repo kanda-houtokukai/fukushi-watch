@@ -25,6 +25,8 @@
   /* 「探す」の絞り込みの短い呼び名 */
   const SHORT = { common: "全事業所共通編", kyotaku: "居宅訪問系", nicchu: "通所・入所系", gh: "共同生活援助", ji: "障がい児系", dbs: "こども性暴力防止法", soudan: "相談支援系", kaitei: "令和8年度報酬改定（国）" };
   const itemOf = (docId) => DOCS.items.find((i) => i.id === docId);
+  /* 点検・減算・年間（tenken.js）が足す画面と部品の差し込み口 */
+  const EXT_ROUTES = [], ON_ROUTE = [], CH_EXTRA = [], SVC_EXTRA = [];
 
   /* 章とその節を出てきた順に並べたもの（extract.py の index_segments と同じ並び）。
      f[h] = { t: 見出し, p: 頁, c: 章の番号（1から）, sec: 章の見出し（節のとき）} */
@@ -137,6 +139,7 @@
     if (s.names !== s.t) h += `<p class="svc-names">${esc(s.names)}</p>`;
     h += findForm(s.docs.join(","), "q-svc", s.t + "の資料の中を探す", "この資料の中を探す") + "</div>";
     h += s.docs.filter((d) => BY[d]).map((d) => docBlock(BY[d])).join("");
+    h += SVC_EXTRA.map((fn) => fn(id)).join("");
     const extra = DOCS.items.filter((it) => it.part === "説明資料" && !it.id && it.svc.includes(id) && it.kind !== "HTML");
     if (extra.length) h += `<section class="also"><h2>説明資料と一緒に掲載された資料</h2><ul class="rows">${extra.map(itemRow).join("")}</ul></section>`;
     if (id !== "common") {
@@ -176,6 +179,7 @@
         const hi = h0 + 1 + k, n = note(docId, hi);
         h += `<details class="it" data-h="${hi}"${hi === openH ? " open" : ""}><summary><span class="t">${esc(x.t)}</span><span class="pg">p.${x.p}</span></summary>`
           + `<div class="it-b">${noteBody(n)}`
+          + CH_EXTRA.map((fn) => fn(docId, hi)).join("")
           + A(pdf(doc.u, x.p), `PDFの${x.p}ページを開く` + EXT, "pdf-go")
           + "</div></details>";
       });
@@ -358,8 +362,10 @@
     const [name, query] = raw.split("?");
     const params = new URLSearchParams(query || "");
     let view = "home", g = "home", openH = null;
-    let m;
-    if (name === "svc") { view = "svc"; g = "svc"; renderSvcIndex(); setSubnav(""); document.title = "サービス別｜集団指導 特設ページ"; }
+    let m, ext = null;
+    for (const fn of EXT_ROUTES) { ext = fn(name, params); if (ext) break; }
+    if (ext) { view = ext.view; g = ext.g; }
+    else if (name === "svc") { view = "svc"; g = "svc"; renderSvcIndex(); setSubnav(""); document.title = "サービス別｜集団指導 特設ページ"; }
     else if (name.startsWith("svc-") && SV[name.slice(4)]) { view = "svcview"; g = "svc"; renderSvc(name.slice(4)); }
     else if ((m = name.match(/^ch-([a-z]+)-(\d+)$/)) && BY[m[1]] && BY[m[1]].secs[Number(m[2]) - 1]) {
       view = "chview"; g = "svc";
@@ -379,7 +385,7 @@
       if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
     });
     const shell = $("shell");
-    shell.classList.toggle("no-sub", view !== "svcview" && view !== "chview");
+    shell.classList.toggle("no-sub", view !== "svcview" && view !== "chview" && !(ext && ext.sub));
     shell.classList.toggle("is-home", view === "home");
     // 位置: 押して移ったときは先頭から（開く見出しの指定があればその見出し）、戻る・進むの操作では離れたときの位置
     lastKey = raw;
@@ -391,6 +397,7 @@
         if (o && view === "chview") o.split(",").forEach((h) => { const d = document.querySelector(`#ch-body details.it[data-h="${h}"]`); if (d) d.open = true; });
       } catch (e) { /* なし */ }
     }
+    ON_ROUTE.forEach((fn) => fn(view, name, params));
     clicked = false;
     if (y != null) window.scrollTo(0, y);
     else if (openH != null) {
@@ -406,6 +413,7 @@
     const a = e.target.closest('a[href^="#"]');
     if (a && a.getAttribute("href") !== location.hash) clicked = true;
   }, true);
+  /*@TENKEN@*/
   window.addEventListener("hashchange", route);
   renderHome();
   route();

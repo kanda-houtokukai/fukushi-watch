@@ -9,6 +9,9 @@
     <nav class="gnav" aria-label="メインメニュー">
       <a href="#home" data-g="home">ホーム</a>
       <a href="#svc" data-g="svc">サービス別</a>
+      <a href="#tenken" data-g="tenken">点検</a>
+      <a href="#gensan" data-g="gensan">減算</a>
+      <a href="#nenkan" data-g="nenkan">年間</a>
       <a href="#search" data-g="search">資料の中を探す</a>
       <a href="#sources" data-g="sources">資料一覧</a>
     </nav>
@@ -18,8 +21,9 @@
 <nav class="tabbar" aria-label="ページの切り替え" lang="ja">
   <a href="#home" data-g="home"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 9.5 10 4l7 5.5V16a1 1 0 0 1-1 1h-3.5v-4.5h-5V17H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span>ホーム</span></a>
   <a href="#svc" data-g="svc"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="3" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="11" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="11" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>サービス別</span></a>
+  <a href="#tenken" data-g="tenken"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3.5" y="3" width="13" height="14.5" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m6.3 7.6 1.4 1.4 2.6-2.8M6.3 12.6l1.4 1.4 2.6-2.8M12 8h2M12 13h2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>点検</span></a>
+  <a href="#nenkan" data-g="nenkan"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="4.5" width="14" height="12.5" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 8.5h14M7 2.8v3.4M13 2.8v3.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="7" cy="12.2" r="1" fill="currentColor"/><circle cx="10" cy="12.2" r="1" fill="currentColor"/><circle cx="13" cy="12.2" r="1" fill="currentColor"/></svg><span>年間</span></a>
   <a href="#search" data-g="search"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="4.8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m12.2 12.2 4.3 4.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>探す</span></a>
-  <a href="#sources" data-g="sources"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 3.5h8.5v13H6a1.5 1.5 0 0 1-1.5-1.5V5A1.5 1.5 0 0 1 6 3.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 7.5h4.5M8 10.5h4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>資料一覧</span></a>
 </nav>
 
 <div class="shell no-sub" id="shell" lang="ja">
@@ -45,6 +49,11 @@
       <a class="reg-go" id="reg-go" href="#" target="_blank" rel="noopener">受講登録のフォーム<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 6 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
+
+  <section class="hb hb-prep" aria-labelledby="h-prep">
+    <div class="hb-h"><h2 id="h-prep">運営指導に備える</h2></div>
+    <div id="tk-home"></div>
+  </section>
 
   <section class="hb" aria-labelledby="h-svc">
     <div class="hb-h"><h2 id="h-svc">サービスから見る</h2></div>
@@ -88,13 +97,17 @@
   <div id="s-res"></div>
 </section>
 
+<section class="view" id="tkview">
+  <div id="tk-body"></div>
+</section>
+
 <section class="view" id="sources" data-g="sources">
   <h1 class="vh">資料一覧</h1>
   <!--LINKBOOK-->
 </section>
 
 <footer class="foot">
-  <p>出典：福岡県「<a id="foot-page" href="#" target="_blank" rel="noopener">令和８年度集団指導について</a>」とその掲載資料。見出しごとの概要・要点は、県の資料をもとにこのページでまとめたものです（県の資料の文そのものではありません）。届出や算定の判断は、県の資料（PDF）の該当ページでご確認ください。</p>
+  <p>出典：福岡県「<a id="foot-page" href="#" target="_blank" rel="noopener">令和８年度集団指導について</a>」とその掲載資料。見出しごとの概要・要点は、県の資料をもとにこのページでまとめたものです（県の資料の文そのものではありません）。届出や算定の判断は、県の資料（PDF）の該当ページでご確認ください。点検の確認項目は、厚生労働省「指定障害福祉サービス事業者等の指導監査について」（令和8年6月）の「確認項目及び確認文書」と、こども家庭庁・厚生労働省「指定障害児通所支援事業者等の指導監査について」（令和8年10月改正）の別紙「主眼事項及び着眼点等」を、文を変えずに載せています。</p>
 </footer>
 </main>
 </div>

@@ -17,6 +17,9 @@ OUT = SRC.parent / "index.html"
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(SRC.parent.parent / "scripts"))
 import linkbook  # noqa: E402  資料リンク集（scripts/linkbook.py）
+sys.path.insert(0, str(SRC))
+import tenken_build  # noqa: E402  点検・減算・年間（syudan/_src/tenken_build.py）
+import tempfile  # noqa: E402
 
 HEAD = """<!doctype html>
 <html lang="ja">
@@ -24,7 +27,7 @@ HEAD = """<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>令和8年度 福岡県 集団指導 特設ページ</title>
-<meta name="description" content="福岡県の令和8年度 障がい福祉サービス事業所等集団指導の説明資料と参考資料を、サービス別の見出しと資料の中の検索で引けるようにしたページ。見出しからPDFの該当ページを開きます。">
+<meta name="description" content="福岡県の令和8年度 障がい福祉サービス事業所等集団指導の説明資料と参考資料を、サービス別の見出しと資料の中の検索で引けるようにしたページ。国の確認項目による点検表、減算になる場面、年間でやることもまとめています。">
 <meta name="theme-color" content="#ffffff">
 <meta property="og:type" content="website">
 <meta property="og:title" content="令和8年度 福岡県 集団指導 特設ページ">
@@ -102,7 +105,7 @@ def load_notes(toc):
     return out, unmatched, missing
 
 
-def link_groups_items(docs):
+def link_groups_items(docs, tk):
     """資料リンク集: 県のページの区分どおりに並べる（説明資料 → 参考資料）"""
     groups = [{"id": "pref", "t": "福岡県のページ"}]
     gid = {}
@@ -117,6 +120,13 @@ def link_groups_items(docs):
     for it in docs["items"]:
         n = "　".join(x for x in [it.get("size", ""), ("※" + it["note"]) if it.get("note") else ""] if x)
         items.append({"g": gid[it["g"]], "t": it["t"], "u": it["u"], "d": "", "n": n})
+    # 点検表の確認項目の出典（国の通知）
+    groups.append({"id": "kuni", "t": "国の通知（点検表の確認項目）"})
+    for k in ("sogo", "ji"):
+        s = tk["src"][k]
+        items.append({"g": "kuni", "t": s["of"] + ("　確認項目及び確認文書（Excel）" if k == "sogo" else ""), "u": s["u"], "d": "", "n": s["by"]})
+        if s.get("page"):
+            items.append({"g": "kuni", "t": "障害福祉分野における指導監督（厚生労働省のページ）", "u": s["page"], "d": "", "n": "確認項目及び確認文書のPDF版・集団指導・運営指導マニュアルなど"})
     return groups, items
 
 
@@ -131,11 +141,16 @@ def main():
         print("データに問題があります。書き出しを止めました:", *errs, sep="\n  ")
         sys.exit(1)
     notes, unmatched, missing = load_notes(toc)
-    data = {"docs": docs, "toc": toc, "notes": notes}
+    tk, tk_files, tk_errs = tenken_build.build(toc, notes, docs)
+    if tk_errs:
+        print("点検のデータに問題があります。書き出しを止めました:", *tk_errs, sep="\n  ")
+        sys.exit(1)
+    app = app.replace("/*@TENKEN@*/", (SRC / "tenken.js").read_text(encoding="utf-8"))
+    data = {"docs": docs, "toc": toc, "notes": notes, "tk": tk}
     html = (HEAD + "<style>\n" + RESET + css + "\n</style>\n</head>\n<body>\n" + shell
             + '\n<script type="application/json" id="data">\n' + embed(data) + "\n</script>\n"
             + "<script>\n" + app + "\n</script>\n</body>\n</html>\n")
-    groups, items = link_groups_items(docs)
+    groups, items = link_groups_items(docs, tk)
     html, added, lost, n_links = linkbook.build(html, groups, items, {}, lambda u: "pref", "虐待")
     html = html.replace("資料名・日付で探す", "資料名で探す")   # この一覧の資料には日付がない
     body = re.sub(r"<script[\s\S]*?</script>", "", html)
@@ -154,18 +169,30 @@ def main():
     if m:
         bad.append("画面の文に「いま〇〇」の言い方が含まれています: …" + html[max(0, m.start() - 15):m.end() + 15].replace("\n", " ") + "…")
     if shutil.which("node"):
-        r = subprocess.run(["node", "--check", str(SRC / "app.js")], capture_output=True, text=True)
+        with tempfile.NamedTemporaryFile("w", suffix=".js", delete=False, encoding="utf-8") as tf:
+            tf.write(app)
+        r = subprocess.run(["node", "--check", tf.name], capture_output=True, text=True)
+        pathlib.Path(tf.name).unlink()
         if r.returncode:
-            bad.append("app.js に書き間違いがあります: " + (r.stderr.strip().splitlines() or [""])[0])
+            bad.append("app.js・tenken.js に書き間違いがあります: " + " ".join(r.stderr.strip().splitlines()[:3]))
     if not (SRC.parent / "kw.json").exists():
         bad.append("syudan/kw.json（検索の索引）がありません。extract.py を実行してください")
     if bad:
         print("書き出しを止めました:", *bad, sep="\n  ")
         sys.exit(1)
     OUT.write_text(html, encoding="utf-8")
+    tdir = SRC.parent / "tenken"   # サービスごとの点検表（開いたときに読む）
+    tdir.mkdir(exist_ok=True)
+    for f in tdir.glob("*.json"):
+        if f.stem not in tk_files:
+            f.unlink()
+    for sid, obj in tk_files.items():
+        (tdir / (sid + ".json")).write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     n_notes = sum(len(v) for v in notes.values())
     print(OUT, len(html.encode("utf-8")) // 1024, "KB", "資料", len(docs["items"]), "点", "見出しのある資料", len(toc), "編",
           "要点", n_notes, "見出し", "資料一覧", n_links, "件")
+    print("  点検表", len(tk_files), "サービス", "確認項目", sum(x["n"] for x in tk["index"]), "（標準以外を含め", sum(x["na"] for x in tk["index"]), "）",
+          "県の資料から", sum(x["nk"] for x in tk["index"]), "減算", len(tk["gensan"]), "年間", len(tk["nenkan"]["items"]))
     if missing:
         print(f"  要点のない見出し {len(missing)} 件（資料の差し替えで見出しが変わったときは、要点を作り直す）", *missing[:8], sep="\n    ")
     if unmatched:
