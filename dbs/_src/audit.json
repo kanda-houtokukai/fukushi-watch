@@ -437,8 +437,7 @@
    "result": "fixed"
   },
   "章:checklist": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-10-30",
    "result": "ok"
   },
   "章:docs": {
@@ -484,9 +483,8 @@
    "result": "ok"
   },
   "章:persons": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 根拠のずれ",
-   "result": "fixed"
+   "checked": "2026-10-30",
+   "result": "ok"
   },
   "章:qa": {
    "checked": "2026-10-28",
@@ -504,7 +502,7 @@
    "result": "fixed"
   },
   "章:scope": {
-   "checked": "2026-10-28",
+   "checked": "2026-10-30",
    "result": "ok"
   },
   "章:sectors": {
@@ -528,8 +526,7 @@
    "result": "ok"
   },
   "章:tools": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-10-30",
    "result": "ok"
   }
  }
