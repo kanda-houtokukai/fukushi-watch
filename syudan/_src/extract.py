@@ -203,8 +203,17 @@ def doc_toc(pages):
     if ents:
         first = find_head(L, ents[0][0], 2, 2)
         off = first[0] - ents[0][1]
-        for t, pp in ents:
-            heads.append((t, find_head(L, t, 2, pp + off)))
+        # 全事業所共通編のように、各資料の頭に「資料N」と刷ってある資料は、その頁を章のはじめにする
+        # （目次の題と本文の題が違う章で、題の文字で探すと別の頁に当たるため。例: 資料17 は p.103 から）
+        marks = {}
+        for i, lines in enumerate(L):
+            for ln in lines:
+                m = re.match(r"^\s*資料\s*(\d+)\s*$", ln) or re.search(r"\s資料\s*(\d+)\s*$", ln)
+                if m:
+                    marks.setdefault(int(m.group(1)), i)
+        use_marks = len(marks) >= len(ents) // 2
+        for n, (t, pp) in enumerate(ents, start=1):
+            heads.append((t, (marks[n], 0) if use_marks and n in marks else find_head(L, t, 2, pp + off)))
         heads.sort(key=lambda h: h[1])
         secs = []
         for i, (t, pos) in enumerate(heads):
