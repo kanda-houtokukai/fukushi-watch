@@ -346,7 +346,14 @@
   let lastKey = null;
   function route() {
     // 離れるページの位置を覚えておく（戻る操作で同じ位置に出すため）
-    if (lastKey) { try { sessionStorage.setItem("y:" + lastKey, String(window.scrollY)); } catch (e) { /* 保存できない環境 */ } }
+    if (lastKey) {
+      try {
+        sessionStorage.setItem("y:" + lastKey, String(window.scrollY));
+        // 章のページは、開いていた見出しも覚える（戻ったときに同じ見え方にするため）
+        const open = [...document.querySelectorAll("#ch-body details.it[open]")].map((d) => d.dataset.h);
+        sessionStorage.setItem("o:" + lastKey, open.join(","));
+      } catch (e) { /* 保存できない環境 */ }
+    }
     const raw = location.hash.slice(1) || "home";
     const [name, query] = raw.split("?");
     const params = new URLSearchParams(query || "");
@@ -377,7 +384,13 @@
     // 位置: 押して移ったときは先頭から（開く見出しの指定があればその見出し）、戻る・進むの操作では離れたときの位置
     lastKey = raw;
     let y = null;
-    if (!clicked) { try { const v = sessionStorage.getItem("y:" + raw); if (v != null) y = Number(v); } catch (e) { /* なし */ } }
+    if (!clicked) {
+      try {
+        const v = sessionStorage.getItem("y:" + raw); if (v != null) y = Number(v);
+        const o = sessionStorage.getItem("o:" + raw);
+        if (o && view === "chview") o.split(",").forEach((h) => { const d = document.querySelector(`#ch-body details.it[data-h="${h}"]`); if (d) d.open = true; });
+      } catch (e) { /* なし */ }
+    }
     clicked = false;
     if (y != null) window.scrollTo(0, y);
     else if (openH != null) {
