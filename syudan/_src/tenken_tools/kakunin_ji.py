@@ -34,6 +34,13 @@ L1 = re.compile(r"^第[０-９0-9]+")
 L2 = re.compile(r"^[０-９0-9]+(の[０-９0-9]+)?[ 　]")
 
 
+def seq_next(prev, line):
+    z = str.maketrans("０１２３４５６７８９", "0123456789")
+    a = re.match(r"^([0-9]+)", prev.translate(z))
+    b = re.match(r"^([0-9]+)(?![0-9の])", line.translate(z))
+    return bool(a and b and int(b.group(1)) == int(a.group(1)) + 1)
+
+
 def key(*parts):
     return hashlib.sha1("|".join(parts).encode("utf-8")).hexdigest()[:10]
 
@@ -136,6 +143,11 @@ def main(path):
             elif s.startswith("（") and heads:
                 last = {"q": s, "at": pos(l), "lv": 3, "h": heads[-1]}
                 quals.append(last)
+            elif last is not None and last["lv"] == 2 and seq_next(last["l2"], s):
+                # 「31 掲示」の次の行が「32身体拘束等の禁止」のように空白なしで始まる見出し（番号が続いていれば新しい見出し）
+                l2 = re.sub(r"^([0-9０-９]+)", r"\1 ", s)
+                last = {"l1": l1, "l2": l2, "at": pos(l), "lv": 2}
+                heads.append(last)
             elif last is not None:
                 if last["lv"] == 1:
                     last["l1"] += s; l1 = last["l1"]

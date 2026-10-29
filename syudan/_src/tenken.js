@@ -479,6 +479,7 @@
     return gs.map((g) => GT[g]).concat(rest.map(svcName)).join("・");
   }
   function evHtml(x) {
+    if (x.src && (!x.ev || !x.ev.length)) return `<details class="ev"><summary>根拠</summary><ul><li>${A(x.src.u, esc(x.src.t) + EXT)}</li></ul></details>`;
     if (!x.ev || !x.ev.length) return "";
     return `<details class="ev"><summary>根拠</summary><ul>${x.ev.map((e) => `<li><p>${esc(e.x)}</p><a href="${chHref(e.d, e.c, e.h)}"><span class="gk">${esc(SHORT[e.d] || e.d)}</span>${esc(e.t)}</a></li>`).join("")}</ul></details>`;
   }
@@ -530,7 +531,7 @@
     }).join("") + "</ul></section>";
     if (user.length) {
       h += '<section class="nk-sec"><h2 class="tk-h2">利用者ごと・そのつど</h2><ul class="nk-f">' + user.map((x) =>
-        `<li><div class="nk-row"><span class="t">${esc(x.t)}</span><span class="fq">${esc(x.fqText || x.every)}</span></div>${evHtml(x)}</li>`).join("") + "</ul></section>";
+        `<li><div class="nk-row"><span class="t">${esc(x.t)}</span><span class="fq">${esc(x.fqText || x.every)}${x.note ? `<small>${esc(x.note)}</small>` : ""}</span></div>${evHtml(x)}</li>`).join("") + "</ul></section>";
     }
     if (long.length) {
       h += '<section class="nk-sec"><h2 class="tk-h2">数年ごと</h2><ul class="nk-f">' + long.map((x) => {

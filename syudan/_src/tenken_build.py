@@ -40,6 +40,13 @@ GENSAN_REL = {
     "人員欠如減算": ["従業者の員数"], "個別支援計画未作成減算": ["計画の作成等"],
     "自己評価結果等未公表減算": ["取扱方針"], "支援プログラム未公表減算": ["支援プログラム"],
 }
+# 減算の対象を、県の資料の要点の文が絞っているもの（見出しに印がないため。根拠は各減算の見出しの要点）
+GENSAN_SVCS = {
+    ("ji", "人員欠如減算"): ["jihatsu", "hodei", "kyotaku-ji", "hoikusho"],          # 「児発…、放デイ…、居訪発、保訪が対象」
+    ("ji", "個別支援計画未作成減算"): ["jihatsu", "hodei", "kyotaku-ji", "hoikusho", "fukushi-nyusho", "iryo-nyusho"],  # 「児発・放デイ・居訪発・保訪・障がい児入所支援…が対象」
+    ("ji", "自己評価結果等未公表減算"): ["jihatsu", "hodei", "hoikusho"],             # 「＜児発・放デイ・保訪＞」
+    ("ji", "支援プログラム未公表減算"): ["jihatsu", "hodei", "kyotaku-ji"],           # 「＜児発・放デイ・居訪発＞」
+}
 SYN = [("手続き", "手続"), ("受給者資格", "受給資格"), ("障がい", "障害"), ("支払い", "支払"), ("取扱い", "取扱"),
        ("について", ""), ("通所利用者負担額", "利用者負担額"), ("障害児通所給付費", "給付費"), ("サービス提供の記録", "サービスの提供の記録"),
        ("指定障害児通所支援事業者等との連携等", "事業者等との連携等"), ("指定障害福祉サービス事業者等との連携等", "事業者等との連携等")]
@@ -272,7 +279,7 @@ def build(toc, notes, docs):
             name = m.group(1)
             n = note(g, h)
             e = gmap.setdefault(name, {"t": name, "docs": [], "nat": [], "rel": []})
-            e["docs"].append({"d": g, "h": h, "t": f["t"], "c": f["c"], "svcs": sorted(APPLY[g][h]),
+            e["docs"].append({"d": g, "h": h, "t": f["t"], "c": f["c"], "svcs": sorted(GENSAN_SVCS.get((g, name), APPLY[g][h])),
                               **{k: n[k] for k in ("gist", "points", "shiteki") if n.get(k)}})
     for s in ji["services"]:
         for r in s["rows"]:
@@ -282,13 +289,6 @@ def build(toc, notes, docs):
                     e = gmap.setdefault(q, {"t": q, "docs": [], "nat": [], "rel": []})
                     e["nat"].append({"s": s["id"], "r": r["k"], "rt": r["t"], "k": it["k"], "x": it["x"], **({"u": it["u"]} if it.get("u") else {}),
                                      **({"law": it["law"]} if it.get("law") else {})})
-    for name, e in gmap.items():
-        words = GENSAN_REL.get(name, [])
-        for s in services:
-            for r in s["rows"]:
-                rt = norm(r["t"])
-                if any(w in rt for w in words):
-                    e["rel"].append([s["id"], r["k"], r["t"]])
     order = sorted(gmap.values(), key=lambda e: (-len(e["docs"]), -len(e["nat"]), e["t"]))
     for i, e in enumerate(order):
         e["id"] = "g" + key(e["t"])[:6]
@@ -298,6 +298,14 @@ def build(toc, notes, docs):
         for x in e["nat"]:
             svcs.add(x["s"])
         e["svcs"] = sorted(svcs)
+        # 関係する国の確認項目は、この減算の対象サービスのものだけ
+        words = GENSAN_REL.get(e["t"], [])
+        for s in services:
+            if s["id"] not in svcs:
+                continue
+            for r in s["rows"]:
+                if any(w in norm(r["t"]) for w in words):
+                    e["rel"].append([s["id"], r["k"], r["t"]])
 
     # 年間
     def find_ev(ev):
@@ -316,6 +324,8 @@ def build(toc, notes, docs):
             o["due"] = docs.get("registerDeadline")
         if o.get("link") == "@register":
             o["link"] = docs.get("register")
+        if o.get("src") and o["src"].get("u") == "@page":
+            o["src"] = {"t": o["src"]["t"], "u": docs.get("page")}
         o["ev"] = [e for e in (find_ev(x) for x in it["ev"]) if e]
         gs = it.get("g", [])
         svcs = set(it.get("s", []))
