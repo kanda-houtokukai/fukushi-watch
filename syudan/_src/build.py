@@ -2,10 +2,11 @@
 """令和8年度 福岡県 集団指導 特設ページ（福祉情報ウォッチの特設ページ）を1枚のHTMLに組み立てる。
 
 使い方: python3 syudan/_src/build.py
-  - 入力: syudan/_src/ の部品（style.css・shell.html・app.js）と、extract.py が作る docs.json・toc.json
+  - 入力: syudan/_src/ の部品（style.css・shell.html・app.js）と、extract.py が作る docs.json・toc.json、
+    見出しごとの要点 syudan/_src/notes/<資料>.json（県の資料を自分の言葉でまとめ、照合係2人の合格を通したもの）
   - 出力: syudan/index.html（GitHub Pages が配信する）。syudan/kw.json（検索の索引）は extract.py が直接書く
-  - 県の資料の本文は持たない（見出し・頁番号・語の索引だけ）。県のサイトの著作権の表示と、
-    台帳の「監視先の全文をコピーして保存しない」に合わせるため。
+  - 県の資料の本文（原文）は持たない。持つのは見出し・頁番号・語の索引と、自分の言葉でまとめた要点だけ。
+    県のサイトの著作権の表示と、台帳の「監視先の全文をコピーして保存しない」に合わせるため。
   - syudan/index.html を直接書き換えない。
 依存は Python 標準ライブラリだけ。
 """
@@ -70,6 +71,37 @@ def check(docs, toc):
     return errs
 
 
+def load_notes(toc):
+    """見出しごとの要点（syudan/_src/notes/<資料>.json）を、見出しの並び（章・節の順＝app.js の FLAT）に合わせる。
+    要点は見出しの文字で結びつける（資料が差し替わって見出しの番号がずれても、同じ見出しには同じ要点が付く）。
+    戻り値: ({資料: {見出しの番号: 要点}}, 結びつかなかった要点, 要点のない見出し)"""
+    out, unmatched, missing = {}, [], []
+    for d in toc:
+        f = SRC / "notes" / (d["id"] + ".json")
+        entries = json.loads(f.read_text(encoding="utf-8")) if f.exists() else []
+        flat = []
+        for s in d["secs"]:
+            flat.append(s["t"])
+            flat.extend(x["t"] for x in s["sub"])
+        if not flat:
+            flat = [None]   # 見出しのない資料は -1 に1つだけ
+        pool = {}
+        for e in entries:
+            pool.setdefault(e.get("t"), []).append(e)
+        m = {}
+        for h, t in enumerate(flat):
+            key = -1 if t is None else h
+            cand = pool.get(t if t is not None else d["t"]) or pool.get(None)
+            if cand:
+                e = cand.pop(0)
+                m[key] = {k: e[k] for k in ("gist", "points", "shiteki") if e.get(k)}
+            else:
+                missing.append(f'{d["id"]}: {t or d["t"]}')
+        unmatched += [f'{d["id"]}: {e.get("t")}' for v in pool.values() for e in v]
+        out[d["id"]] = m
+    return out, unmatched, missing
+
+
 def link_groups_items(docs):
     """資料リンク集: 県のページの区分どおりに並べる（説明資料 → 参考資料）"""
     groups = [{"id": "pref", "t": "福岡県のページ"}]
@@ -98,7 +130,8 @@ def main():
     if errs:
         print("データに問題があります。書き出しを止めました:", *errs, sep="\n  ")
         sys.exit(1)
-    data = {"docs": docs, "toc": toc}
+    notes, unmatched, missing = load_notes(toc)
+    data = {"docs": docs, "toc": toc, "notes": notes}
     html = (HEAD + "<style>\n" + RESET + css + "\n</style>\n</head>\n<body>\n" + shell
             + '\n<script type="application/json" id="data">\n' + embed(data) + "\n</script>\n"
             + "<script>\n" + app + "\n</script>\n</body>\n</html>\n")
@@ -130,7 +163,13 @@ def main():
         print("書き出しを止めました:", *bad, sep="\n  ")
         sys.exit(1)
     OUT.write_text(html, encoding="utf-8")
-    print(OUT, len(html.encode("utf-8")) // 1024, "KB", "資料", len(docs["items"]), "点", "見出しのある資料", len(toc), "編", "資料一覧", n_links, "件")
+    n_notes = sum(len(v) for v in notes.values())
+    print(OUT, len(html.encode("utf-8")) // 1024, "KB", "資料", len(docs["items"]), "点", "見出しのある資料", len(toc), "編",
+          "要点", n_notes, "見出し", "資料一覧", n_links, "件")
+    if missing:
+        print(f"  要点のない見出し {len(missing)} 件（資料の差し替えで見出しが変わったときは、要点を作り直す）", *missing[:8], sep="\n    ")
+    if unmatched:
+        print(f"  見出しと結びつかなかった要点 {len(unmatched)} 件", *unmatched[:8], sep="\n    ")
 
 
 if __name__ == "__main__":

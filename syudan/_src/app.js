@@ -1,14 +1,18 @@
-/* 集団指導 特設ページの画面。データは build.py が埋め込む #data（資料の一覧と見出し）と、
-   探すときに読む kw.json（頁ごとの語の索引。文は持たない）。
-   画面の切り替えは URL の # で行う: #home / #svc / #svc-<id> / #search?q=…&d=… / #sources */
+/* 集団指導 特設ページの画面。データは build.py が埋め込む #data（資料の一覧・見出し・見出しごとの要点）と、
+   探すときに読む kw.json（見出しで区切った単位ごとの語の索引。文は持たない）。
+   画面の切り替えは URL の # で行う:
+     #home / #svc / #svc-<id> / #ch-<資料>-<章の番号>（?i=<見出しの番号> でその見出しを開く）/ #search?q=…&d=… / #sources
+   要点（notes）は県の資料を自分の言葉でまとめたもの。原文は持たず、どの見出しにもPDFの該当ページへのリンクを付ける。 */
 (() => {
   "use strict";
   const $ = (id) => document.getElementById(id);
   const D = JSON.parse($("data").textContent);
-  const DOCS = D.docs, TOC = D.toc;
+  const DOCS = D.docs, TOC = D.toc, NOTES = D.notes || {};
   const BY = Object.fromEntries(TOC.map((d) => [d.id, d]));
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const EXT = '<svg class="ext" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 6 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const ARR = '<svg class="pa" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const ARL = '<svg class="pa" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   const pdf = (u, p) => u + (p ? "#page=" + p : "");
   const A = (u, inner, cls) => `<a${cls ? ` class="${cls}"` : ""} href="${esc(u)}" target="_blank" rel="noopener">${inner}</a>`;
 
@@ -16,58 +20,67 @@
   const SVC = [{ id: "common", t: "全事業所共通", names: "すべての事業所", docs: ["common", "kaitei"] }]
     .concat(DOCS.services.map((s) => Object.assign({}, s, { docs: s.id === "ji" ? ["ji", "dbs"] : [s.id] })));
   const SV = Object.fromEntries(SVC.map((s) => [s.id, s]));
+  const SVC_OF = {};
+  SVC.forEach((s) => s.docs.forEach((d) => { SVC_OF[d] = s.id; }));
   /* 「探す」の絞り込みの短い呼び名 */
   const SHORT = { common: "全事業所共通編", kyotaku: "居宅訪問系", nicchu: "通所・入所系", gh: "共同生活援助", ji: "障がい児系", dbs: "こども性暴力防止法", soudan: "相談支援系", kaitei: "令和8年度報酬改定（国）" };
   const itemOf = (docId) => DOCS.items.find((i) => i.id === docId);
 
-  /* ── 見出しの組み立て ── */
+  /* 章とその節を出てきた順に並べたもの（extract.py の index_segments と同じ並び）。
+     f[h] = { t: 見出し, p: 頁, c: 章の番号（1から）, sec: 章の見出し（節のとき）} */
+  const FLAT = Object.fromEntries(TOC.map((d) => {
+    const f = [];
+    d.secs.forEach((s, ci) => {
+      f.push({ t: s.t, p: s.p, c: ci + 1, sec: null });
+      s.sub.forEach((x) => f.push({ t: x.t, p: x.p, c: ci + 1, sec: s.t }));
+    });
+    return [d.id, f];
+  }));
+  const chapStart = (docId, c) => FLAT[docId].findIndex((x) => x.c === c && !x.sec);
+  const note = (docId, h) => (NOTES[docId] || {})[h];
+  const chHref = (docId, c, h) => `#ch-${docId}-${c}` + (h != null && h !== chapStart(docId, c) ? `?i=${h}` : "");
+
   function chapterRange(doc, i) {
     const s = doc.secs[i], nx = doc.secs[i + 1];
     const end = nx ? Math.max(s.p, nx.p - 1) : doc.pages;
     return s.p === end ? "p." + s.p : "p." + s.p + "–" + end;
   }
-  function docBlock(doc, opts) {
-    const it = itemOf(doc.id) || {};
-    const meta = [doc.pages + "ページ", it.size].filter(Boolean).join("・");
-    let h = `<div class="doc" id="doc-${doc.id}"><div class="doc-h"><h2>${esc(doc.t)}</h2><span class="meta">${esc(meta)}</span>`
-      + A(pdf(doc.u), "PDFを開く" + EXT, "open") + "</div>";
-    if (it.note) h += `<p class="vsub" style="margin:4px 0 0">${esc("※" + it.note)}</p>`;
-    h += '<div class="chs">';
-    doc.secs.forEach((s, i) => {
-      const range = chapterRange(doc, i);
-      if (!s.sub.length) {
-        h += `<div class="ch"><div class="ch-row">${A(pdf(doc.u, s.p), esc(s.t))}<span class="n">${range}</span></div></div>`;
-        return;
-      }
-      h += `<details class="ch"${opts && opts.open ? " open" : ""}><summary><span>${esc(s.t)}</span><span class="n">${range}</span><span class="n">${s.sub.length}項目</span></summary><ul class="subs">`
-        + `<li>${A(pdf(doc.u, s.p), `<span>章のはじめ</span><span class="pg">p.${s.p}</span>`, "ch-top")}</li>`
-        + s.sub.map((x) => `<li>${A(pdf(doc.u, x.p), `<span>${esc(x.t)}</span><span class="pg">p.${x.p}</span>`)}</li>`).join("")
-        + "</ul></details>";
-    });
-    if (!doc.secs.length) h += `<div class="ch"><div class="ch-row">${A(pdf(doc.u, 1), "1ページ目から開く")}<span class="n">全${doc.pages}ページ</span></div></div>`;
-    return h + "</div></div>";
+
+  /* 要点の中身（概要・要点・運営指導での主な指摘）。章のページの見出しの中と、見出しのない資料で使う */
+  function noteBody(n, cls) {
+    if (!n) return "";
+    let h = n.gist ? `<p class="${cls || "gist"}">${esc(n.gist)}</p>` : "";
+    if (n.points && n.points.length) h += `<ul class="pts">${n.points.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>`;
+    if (n.shiteki && n.shiteki.length) h += `<div class="sh"><span class="sh-h">運営指導での主な指摘</span><ul>${n.shiteki.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>`;
+    return h;
   }
   function itemRow(it) {
     const ty = it.kind && it.kind !== "HTML" ? it.kind : (it.kind === "HTML" ? "ページ" : "");
-    const note = [it.size, it.note].filter(Boolean).join("・");
-    return `<li>${A(it.u, esc(it.t))}${ty ? `<span class="ty">${esc(ty)}</span>` : ""}${note ? `<span class="note">${esc(note)}</span>` : ""}</li>`;
+    const nt = [it.size, it.note ? "※" + it.note : ""].filter(Boolean).join("　");
+    return `<li>${A(it.u, esc(it.t))}${ty ? `<span class="ty">${esc(ty)}</span>` : ""}${nt ? `<span class="note">${esc(nt)}</span>` : ""}</li>`;
   }
   function groupLabel(g) {
     const x = DOCS.groups.find((y) => y.g === g);
     return x ? x.label : g;
   }
+  function setSubnav(html) {
+    $("subnav").innerHTML = html;
+    // スマホの横に流れる札は、選んでいる札が見えるところまで横にだけ寄せる（縦には動かさない）
+    const ol = $("subnav").querySelector("ol"), on = $("subnav").querySelector("a.is-active");
+    if (ol && on && ol.scrollWidth > ol.clientWidth) ol.scrollLeft = Math.max(0, on.parentElement.offsetLeft - 16);
+  }
 
-  /* ── 各画面 ── */
+  /* ── ホーム・サービス ── */
   function svcCard(s) {
     const pages = s.docs.reduce((n, id) => n + (BY[id] ? BY[id].pages : 0), 0);
-    const heads = s.docs.reduce((n, id) => n + (BY[id] ? BY[id].secs.reduce((m, x) => m + 1 + x.sub.length, 0) : 0), 0);
+    const heads = s.docs.reduce((n, id) => n + (BY[id] ? FLAT[id].length : 0), 0);
     return `<a class="svc-card" href="#svc-${s.id}"><b>${esc(s.t)}</b><span>${esc(s.names)}</span><span class="m">${pages}ページ・見出し${heads}</span></a>`;
   }
   function renderHome() {
     $("svc-home").innerHTML = SVC.map(svcCard).join("");
     const c = BY.common;
     $("common-quick").innerHTML = c.secs.map((s, i) =>
-      `<li>${A(pdf(c.u, s.p), `<span class="t">${esc(s.t)}</span><span class="pg">${chapterRange(c, i)}${EXT}</span>`)}</li>`).join("");
+      `<li><a href="#ch-common-${i + 1}"><span class="t">${esc(s.t)}</span><span class="pg">${chapterRange(c, i)}</span></a></li>`).join("");
     const links = [[DOCS.page, DOCS.pageTitle || "県の集団指導のページ"], [DOCS.schedule, "日程表"], [DOCS.register, "受講登録のフォーム"]].filter((x) => x[0]);
     $("pref-links").innerHTML = links.map((x) => `<li>${A(x[0], esc(x[1]) + EXT)}</li>`).join("")
       + `<li><a href="#sources">資料一覧（${DOCS.items.length}点）</a></li>`;
@@ -76,7 +89,6 @@
       $("extracted").textContent = `資料の取得 ${y}年${m}月${d}日`;
     }
     $("year").textContent = DOCS.year || "";
-    // 受講登録の期限
     const dl = DOCS.registerDeadline;
     if (dl) {
       const [y, m, d] = dl.split("-").map(Number);
@@ -92,6 +104,30 @@
     }
     $("foot-page").href = DOCS.page;
   }
+  function svcNav(active) {
+    return "<ol>" + SVC.map((x) => {
+      const pages = x.docs.reduce((n, d) => n + (BY[d] ? BY[d].pages : 0), 0);
+      return `<li><a href="#svc-${x.id}"${x.id === active ? ' class="is-active" aria-current="page"' : ""}><span>${esc(x.t)}</span><span class="c">${pages}p</span></a></li>`;
+    }).join("") + "</ol>";
+  }
+  function docBlock(doc) {
+    const it = itemOf(doc.id) || {};
+    const meta = [doc.pages + "ページ", it.size].filter(Boolean).join("・");
+    let h = `<div class="doc"><div class="doc-h"><h2>${esc(doc.t)}</h2><span class="meta">${esc(meta)}</span>`
+      + A(pdf(doc.u), "PDFを開く" + EXT, "open") + "</div>";
+    if (it.note) h += `<p class="vsub doc-note">${esc("※" + it.note)}</p>`;
+    if (!doc.secs.length) {   // 見出しのない短い資料は、要点をその場に出す
+      return h + `<div class="doc-solo">${noteBody(note(doc.id, -1))}</div></div>`;
+    }
+    h += '<ol class="chl">';
+    doc.secs.forEach((s, i) => {
+      const n = note(doc.id, chapStart(doc.id, i + 1));
+      h += `<li><a href="#ch-${doc.id}-${i + 1}"><span class="t">${esc(s.t)}</span>`
+        + (n && n.gist ? `<span class="g">${esc(n.gist)}</span>` : "")
+        + `<span class="n">${chapterRange(doc, i)}${s.sub.length ? "・" + s.sub.length + "項目" : ""}</span>${ARR}</a></li>`;
+    });
+    return h + "</ol></div>";
+  }
   function renderSvcIndex() {
     $("svc-index").innerHTML = SVC.map(svcCard).join("");
   }
@@ -99,18 +135,14 @@
     const s = SV[id];
     let h = `<div class="svc-head"><h1 class="vh">${esc(s.t)}</h1>`;
     if (s.names !== s.t) h += `<p class="svc-names">${esc(s.names)}</p>`;
-    h += `<form class="find inline" data-scope="${s.docs.join(",")}" role="search"><label class="sr" for="q-svc">${esc(s.t)}の資料の中を探す</label>`
-      + '<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m12.6 12.6 4.4 4.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>'
-      + `<input type="search" id="q-svc" placeholder="この資料の中を探す" autocomplete="off" enterkeyhint="search"><button type="submit">探す</button></form></div>`;
+    h += findForm(s.docs.join(","), "q-svc", s.t + "の資料の中を探す", "この資料の中を探す") + "</div>";
     h += s.docs.filter((d) => BY[d]).map((d) => docBlock(BY[d])).join("");
-    // 説明資料と一緒に掲載された資料（同じ区分の、見出しを持たない資料）
     const extra = DOCS.items.filter((it) => it.part === "説明資料" && !it.id && it.svc.includes(id) && it.kind !== "HTML");
     if (extra.length) h += `<section class="also"><h2>説明資料と一緒に掲載された資料</h2><ul class="rows">${extra.map(itemRow).join("")}</ul></section>`;
     if (id !== "common") {
       h += `<section class="also"><h2>あわせて見る</h2><ul class="rows"><li><a href="#svc-common">全事業所共通編の説明資料</a><span class="note">指導監督の方針・行政処分の事例・虐待防止・事故・処遇改善など</span></li>`
-        + `<li>${A(BY.kaitei.u, esc(BY.kaitei.t))}<span class="ty">PDF</span><span class="note">国の資料（${BY.kaitei.pages}ページ）。見出しは「全事業所共通」に載せています</span></li></ul></section>`;
+        + `<li><a href="#ch-kaitei-1">令和8年度報酬改定について</a><span class="note">国の資料（${BY.kaitei.pages}ページ）。処遇改善加算の拡充と、臨時応急的な見直し</span></li></ul></section>`;
     }
-    // 参考資料（このサービス向けの区分。全事業所共通では「全般」などの区分）
     const refs = DOCS.items.filter((it) => it.part === "参考資料" && !it.id && (id === "common" ? it.svc.includes("*") : it.svc.includes(id)));
     if (refs.length) {
       const groups = [...new Set(refs.map((r) => r.g))];
@@ -118,22 +150,62 @@
         `<h3>${esc(groupLabel(g))}</h3><ul class="rows">${refs.filter((r) => r.g === g).map(itemRow).join("")}</ul>`).join("") + "</section>";
     }
     $("svc-body").innerHTML = h;
-    // サブメニュー（PCは左の列、スマホは横に流れる札）
-    $("subnav").innerHTML = "<ol>" + SVC.map((x) => {
-      const pages = x.docs.reduce((n, d) => n + (BY[d] ? BY[d].pages : 0), 0);
-      return `<li><a href="#svc-${x.id}"${x.id === id ? ' class="is-active" aria-current="page"' : ""}><span>${esc(x.t)}</span><span class="c">${pages}p</span></a></li>`;
-    }).join("") + "</ol>";
+    setSubnav(svcNav(id));
     document.title = s.t + "｜集団指導 特設ページ";
   }
+  function findForm(scope, id, label, ph) {
+    return `<form class="find inline" data-scope="${scope}" role="search"><label class="sr" for="${id}">${esc(label)}</label>`
+      + '<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m12.6 12.6 4.4 4.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>'
+      + `<input type="search" id="${id}" placeholder="${esc(ph)}" autocomplete="off" enterkeyhint="search"><button type="submit">探す</button></form>`;
+  }
 
-  /* ── 探す（語の索引で頁を引く。文は持たないので、見出しと頁番号を出してPDFの該当頁を開く） ── */
+  /* ── 章のページ（見出しを押すと、その場で概要・要点・指摘が開く） ── */
+  function renderChapter(docId, c, openH) {
+    const doc = BY[docId], s = doc.secs[c - 1], svc = SV[SVC_OF[docId]];
+    const h0 = chapStart(docId, c), cn = note(docId, h0);
+    let h = `<p class="crumbs"><a href="#svc-${svc.id}">${esc(svc.t)}</a><span aria-hidden="true">›</span><span>${esc(doc.t)}</span></p>`
+      + `<h1 class="vh">${esc(s.t)}</h1>`
+      + `<div class="ch-meta"><span>${chapterRange(doc, c - 1)}</span>${s.sub.length ? `<span>${s.sub.length}項目</span>` : ""}`
+      + A(pdf(doc.u, s.p), `PDFの${s.p}ページを開く` + EXT, "pdf-go") + "</div>";
+    if (cn) {
+      h += `<div class="ch-note">${noteBody(cn, "lead")}</div>`;
+    }
+    if (s.sub.length) {
+      h += `<div class="it-bar"><button type="button" class="openall" aria-pressed="false">すべて開く</button></div><div class="its">`;
+      s.sub.forEach((x, k) => {
+        const hi = h0 + 1 + k, n = note(docId, hi);
+        h += `<details class="it" data-h="${hi}"${hi === openH ? " open" : ""}><summary><span class="t">${esc(x.t)}</span><span class="pg">p.${x.p}</span></summary>`
+          + `<div class="it-b">${noteBody(n)}`
+          + A(pdf(doc.u, x.p), `PDFの${x.p}ページを開く` + EXT, "pdf-go")
+          + "</div></details>";
+      });
+      h += "</div>";
+    }
+    // 前後の章（同じ資料の中）
+    const prev = c > 1 ? doc.secs[c - 2] : null, next = c < doc.secs.length ? doc.secs[c] : null;
+    if (prev || next) {
+      h += `<nav class="pager two" aria-label="前後の章">`
+        + (prev ? `<a class="prev" href="#ch-${docId}-${c - 1}">${ARL}<span class="pk">前へ</span><span class="pt">${esc(prev.t)}</span><span class="ps">前へ</span></a>` : "<span></span>")
+        + (next ? `<a class="next" href="#ch-${docId}-${c + 1}"><span class="pk">次へ</span><span class="pt">${esc(next.t)}</span>${ARR}</a>` : "")
+        + "</nav>";
+    }
+    $("ch-body").innerHTML = h;
+    // 左の列（PC）／横に流れる札（スマホ）は、この資料の章
+    setSubnav(`<a class="sn-back" href="#svc-${svc.id}">${ARL}<span>${esc(svc.t)}</span></a><ol>` + doc.secs.map((x, i) =>
+      `<li><a href="#ch-${docId}-${i + 1}"${i + 1 === c ? ' class="is-active" aria-current="page"' : ""}><span>${esc(x.t)}</span><span class="c">${x.sub.length || ""}</span></a></li>`).join("") + "</ol>");
+    document.title = s.t + "｜" + doc.t;
+  }
+  $("ch-body").addEventListener("click", (e) => {
+    const b = e.target.closest(".openall");
+    if (!b) return;
+    const open = b.getAttribute("aria-pressed") !== "true";
+    document.querySelectorAll("#ch-body details.it").forEach((d) => { d.open = open; });
+    b.setAttribute("aria-pressed", String(open));
+    b.textContent = open ? "すべて閉じる" : "すべて開く";
+  });
+
+  /* ── 探す（語の索引と要点の文で、見出しを引く） ── */
   let KW = null, kwLoading = null;
-  /* 章とその節を出てきた順に並べたもの（extract.py の index_segments と同じ並び） */
-  const FLAT = Object.fromEntries(TOC.map((d) => {
-    const f = [];
-    d.secs.forEach((s) => { f.push({ t: s.t, sec: null }); s.sub.forEach((x) => f.push({ t: x.t, sec: s.t })); });
-    return [d.id, f];
-  }));
   function loadKW() {
     if (KW) return Promise.resolve(KW);
     if (!kwLoading) {
@@ -145,7 +217,6 @@
           const [di, p, h] = k.split(":").map(Number);
           segs[j.docs[di]].push({ p, h, w: "|" + v + "|" });
         });
-        Object.values(segs).forEach((a) => a.sort((x, y) => x.p - y.p || x.h - y.h));
         KW = segs;
         return KW;
       }).catch((e) => { kwLoading = null; throw e; });
@@ -167,6 +238,16 @@
     });
     return out;
   }
+  // 要点の文（見出し＋概要＋要点＋指摘）を、探すために空白を除いた形で持つ
+  const NOTE_TEXT = {};
+  TOC.forEach((d) => {
+    NOTE_TEXT[d.id] = {};
+    const ids = FLAT[d.id].length ? FLAT[d.id].map((_, h) => h) : [-1];
+    ids.forEach((h) => {
+      const n = note(d.id, h) || {}, f = FLAT[d.id][h];
+      NOTE_TEXT[d.id][h] = [f ? f.t : d.t, n.gist, ...(n.points || []), ...(n.shiteki || [])].join(" ").normalize("NFKC").replace(/\s+/g, "");
+    });
+  });
   function mark(text, ts) {
     let h = esc(text);
     ts.forEach((t) => { h = h.split(esc(t)).join("<mark>" + esc(t) + "</mark>"); });
@@ -194,24 +275,42 @@
     const want = scope ? scope.split(",") : TOC.map((d) => d.id);
     let total = 0, ndoc = 0, h = "";
     TOC.filter((d) => want.includes(d.id)).forEach((doc) => {
-      const hits = (kw[doc.id] || []).filter((sg) => ts.every((t) => sg.w.includes(t)));
-      if (!hits.length) return;
-      const pagesHit = new Set(hits.map((x) => x.p)).size;
-      total += pagesHit; ndoc++;
-      const rows = hits.map((sg) => {
-        const f = FLAT[doc.id][sg.h];
-        const head = f ? f.t : (doc.secs.length ? "表紙・目次" : "");
-        return `<li>${A(pdf(doc.u, sg.p), `<span class="p">p.${sg.p}</span><span class="h">${mark(head, ts)}</span>${f && f.sec ? `<span class="c">${esc(f.sec)}</span>` : ""}`)}</li>`;
+      // 見出しごとに、見つかったPDFのページを集める（資料の本文の語の索引）＋要点の文に含むもの
+      const byH = new Map();
+      (kw[doc.id] || []).forEach((sg) => {
+        if (!ts.every((t) => sg.w.includes(t))) return;
+        if (!byH.has(sg.h)) byH.set(sg.h, new Set());
+        byH.get(sg.h).add(sg.p);
+      });
+      Object.entries(NOTE_TEXT[doc.id]).forEach(([hh, txt]) => {
+        const k = Number(hh);
+        if (ts.every((t) => txt.includes(t)) && !byH.has(k)) byH.set(k, new Set());
+      });
+      if (!byH.size) return;
+      const hs = [...byH.keys()].sort((a, b) => a - b);
+      total += hs.length; ndoc++;
+      const rows = hs.map((k) => {
+        const f = FLAT[doc.id][k], n = note(doc.id, k);
+        const pages = [...byH.get(k)].sort((a, b) => a - b);
+        const p0 = pages[0] || (f ? f.p : 1);
+        const head = f ? f.t : (doc.secs.length ? "表紙・目次" : doc.t);
+        const href = f ? chHref(doc.id, f.c, k) : (doc.secs.length ? null : `#svc-${SVC_OF[doc.id]}`);
+        const inner = `<span class="h">${mark(head, ts)}</span>`
+          + (f && f.sec ? `<span class="c">${esc(f.sec)}</span>` : "")
+          + (n && n.gist ? `<span class="g">${mark(n.gist, ts)}</span>` : "");
+        const main = href ? `<a class="hit" href="${href}">${inner}</a>` : `<span class="hit">${inner}</span>`;
+        const pl = pages.length ? pages.slice(0, 4).map((p) => "p." + p).join("・") + (pages.length > 4 ? "ほか" : "") : "p." + p0;
+        return `<li>${main}${A(pdf(doc.u, p0), `<span>PDF</span><span>${pl}</span>`, "hit-pdf")}</li>`;
       });
       const LIM = 30;
-      h += `<section class="s-doc"><h2>${esc(doc.t)}<small>${pagesHit}ページ</small></h2><ul class="hits">${rows.slice(0, LIM).join("")}</ul>`
+      h += `<section class="s-doc"><h2>${esc(doc.t)}<small>${hs.length}件</small></h2><ul class="hits">${rows.slice(0, LIM).join("")}</ul>`
         + (rows.length > LIM ? `<ul class="hits" hidden>${rows.slice(LIM).join("")}</ul><button type="button" class="more">残り${rows.length - LIM}件を表示</button>` : "")
         + "</section>";
     });
     const tl = ts.map((t) => "「" + t + "」").join("");
     const long = ts.some((t) => t.length >= 4 && /^[一-龥々〆ヵヶ]+$/.test(t));
-    $("s-sum").innerHTML = total ? `${esc(tl)}を含むページ <b>${total}</b>（${ndoc}編）`
-      : `${esc(tl)}を含むページは見つかりませんでした` + (long ? "。語を空白で区切ると見つかることがあります（例：虐待防止 委員会）" : "");
+    $("s-sum").innerHTML = total ? `${esc(tl)}が出てくる見出し <b>${total}</b>（${ndoc}編）`
+      : `${esc(tl)}が出てくる見出しは見つかりませんでした` + (long ? "。語を空白で区切ると見つかることがあります（例：虐待防止 委員会）" : "");
     $("s-res").innerHTML = h;
   }
   $("s-res").addEventListener("click", (e) => {
@@ -239,36 +338,61 @@
 
   /* ── 画面の切り替え ── */
   function go(hash, replace) {
-    if (replace) { history.replaceState(null, "", hash); route(); }
+    clicked = true;
+    if (replace) { history.replaceState(history.state, "", hash); route(); }
     else location.hash = hash;
   }
+  try { history.scrollRestoration = "manual"; } catch (e) { /* 古いブラウザ */ }
+  let lastKey = null;
   function route() {
+    // 離れるページの位置を覚えておく（戻る操作で同じ位置に出すため）
+    if (lastKey) { try { sessionStorage.setItem("y:" + lastKey, String(window.scrollY)); } catch (e) { /* 保存できない環境 */ } }
     const raw = location.hash.slice(1) || "home";
     const [name, query] = raw.split("?");
-    let view = "home", g = "home";
-    if (name === "svc") { view = "svc"; g = "svc"; renderSvcIndex(); document.title = "サービス別｜集団指導 特設ページ"; }
+    const params = new URLSearchParams(query || "");
+    let view = "home", g = "home", openH = null;
+    let m;
+    if (name === "svc") { view = "svc"; g = "svc"; renderSvcIndex(); setSubnav(""); document.title = "サービス別｜集団指導 特設ページ"; }
     else if (name.startsWith("svc-") && SV[name.slice(4)]) { view = "svcview"; g = "svc"; renderSvc(name.slice(4)); }
-    else if (name === "search") {
+    else if ((m = name.match(/^ch-([a-z]+)-(\d+)$/)) && BY[m[1]] && BY[m[1]].secs[Number(m[2]) - 1]) {
+      view = "chview"; g = "svc";
+      openH = params.has("i") ? Number(params.get("i")) : null;
+      renderChapter(m[1], Number(m[2]), openH);
+    } else if (name === "search") {
       view = "search"; g = "search";
-      const p = new URLSearchParams(query || "");
-      scope = p.get("d") || "";
-      runSearch(p.get("q") || "");
+      scope = params.get("d") || "";
+      runSearch(params.get("q") || "");
       document.title = "資料の中を探す｜集団指導 特設ページ";
     } else if (name === "sources") { view = "sources"; g = "sources"; document.title = "資料一覧｜集団指導 特設ページ"; }
     else document.title = "令和8年度 福岡県 集団指導 特設ページ";
     document.querySelectorAll(".view").forEach((v) => v.classList.toggle("is-active", v.id === view));
-    document.querySelectorAll("[data-g]").forEach((a) => {
-      if (a.tagName !== "A") return;
+    document.querySelectorAll("a[data-g]").forEach((a) => {
       const on = a.dataset.g === g;
       a.classList.toggle("is-active", on);
       if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
     });
     const shell = $("shell");
-    shell.classList.toggle("no-sub", view !== "svcview");
+    shell.classList.toggle("no-sub", view !== "svcview" && view !== "chview");
     shell.classList.toggle("is-home", view === "home");
-    window.scrollTo(0, 0);
+    // 位置: 押して移ったときは先頭から（開く見出しの指定があればその見出し）、戻る・進むの操作では離れたときの位置
+    lastKey = raw;
+    let y = null;
+    if (!clicked) { try { const v = sessionStorage.getItem("y:" + raw); if (v != null) y = Number(v); } catch (e) { /* なし */ } }
+    clicked = false;
+    if (y != null) window.scrollTo(0, y);
+    else if (openH != null) {
+      const el = document.querySelector(`#ch-body details.it[data-h="${openH}"]`);
+      if (el) { window.scrollTo(0, 0); el.scrollIntoView({ block: "start" }); } else window.scrollTo(0, 0);
+    } else window.scrollTo(0, 0);
     if (view === "search" && !$("q-main").value && matchMedia("(hover: hover)").matches) $("q-main").focus();
   }
+  // リンクを押して移ったか（先頭から）、戻る・進むの操作か（離れた位置）を、押したときの印で見分ける
+  // （popstate は # のリンクを押したときにも起きるので当てにしない）
+  let clicked = true;
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (a && a.getAttribute("href") !== location.hash) clicked = true;
+  }, true);
   window.addEventListener("hashchange", route);
   renderHome();
   route();
@@ -278,15 +402,15 @@
   if (lq) lq.addEventListener("input", () => {
     const ws = lq.value.normalize("NFKC").toLowerCase().split(/\s+/).filter(Boolean);
     let n = 0;
-    document.querySelectorAll("#lk .lk-g").forEach((g) => {
+    document.querySelectorAll("#lk .lk-g").forEach((gr) => {
       let shown = 0;
-      g.querySelectorAll(".lk-i").forEach((li) => {
+      gr.querySelectorAll(".lk-i").forEach((li) => {
         const t = (li.dataset.q || "").normalize("NFKC").toLowerCase();
         const ok = ws.every((w) => t.includes(w));
         li.hidden = !ok;
         if (ok) shown++;
       });
-      g.hidden = !shown;
+      gr.hidden = !shown;
       n += shown;
     });
     document.querySelector("#lk .lk-none").hidden = n > 0;
