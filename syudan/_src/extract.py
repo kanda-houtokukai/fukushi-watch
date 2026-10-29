@@ -155,7 +155,7 @@ def find_head(L, title, lo, hint):
     return min(max(hint, lo), len(L) - 1), 0
 
 
-SUB = re.compile(r"^\s*\((\d{1,2})\)\s*(\S.*?)\s*$")
+SUB = re.compile(r"^\s*\((\d{1,2}(?:-\d)?)\)\s*(\S.*?)\s*$")  # （30-1）のような枝番も見出しにする
 MARK = re.compile(r"^[\s]*($|[(（①-⑳ア-ンｱ-ﾝ・○〇●◆■□◎※【<＜\d])")
 PART = tuple("のにをはがとでへやもより") + ("において",)
 
@@ -179,7 +179,9 @@ def subs_in(L, start, end):
             if (t.count("(") > t.count(")") or t.count("<") > t.count(">")) and nxt and len(nxt) < 40:
                 t = t + nxt
                 nxt = ""
-            wrapped = len(t) >= 34 and nxt and lines[li + 1].strip() and not MARK.match(lines[li + 1])
+            # 文の途中で折り返した行か（長く、次の行が記号で始まらない本文の続き）。括弧で閉じて終わる行は見出しとして完結している
+            wrapped = (len(re.sub(r"\s+", "", t)) >= 34 and nxt and lines[li + 1].strip() and not MARK.match(lines[li + 1])
+                       and not re.search(r"[)）>＞]$", t))
             if wrapped and not re.search(r"省令第|基準第|<", t):
                 if len(nxt) <= 20:  # 見出しが短い尾を残して折り返したもの（「…の特」「例について」）はつなぐ
                     t = t + nxt
