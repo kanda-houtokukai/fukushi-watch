@@ -479,9 +479,10 @@
     return gs.map((g) => GT[g]).concat(rest.map(svcName)).join("・");
   }
   function evHtml(x) {
+    const need = x.needLabel ? `<li><p>対象のサービス：県の資料に定めがある区分（${esc((x.needGroups || []).join("・"))}）のうち、国の確認項目に「${esc(x.needLabel)}」の項目があるサービス</p></li>` : "";
     if (x.src && (!x.ev || !x.ev.length)) return `<details class="ev"><summary>根拠</summary><ul><li>${A(x.src.u, esc(x.src.t) + EXT)}</li></ul></details>`;
     if (!x.ev || !x.ev.length) return "";
-    return `<details class="ev"><summary>根拠</summary><ul>${x.ev.map((e) => `<li><p>${esc(e.x)}</p><a href="${chHref(e.d, e.c, e.h)}"><span class="gk">${esc(SHORT[e.d] || e.d)}</span>${esc(e.t)}</a></li>`).join("")}</ul></details>`;
+    return `<details class="ev"><summary>根拠</summary><ul>${need}${x.ev.map((e) => `<li><p>${esc(e.x)}</p><a href="${chHref(e.d, e.c, e.h)}"><span class="gk">${esc(SHORT[e.d] || e.d)}</span>${esc(e.t)}</a></li>`).join("")}</ul></details>`;
   }
   function viewNenkan(params) {
     const os = offices();
@@ -536,8 +537,16 @@
     if (long.length) {
       h += '<section class="nk-sec"><h2 class="tk-h2">数年ごと</h2><ul class="nk-f">' + long.map((x) => {
         let r = "";
-        if (x.useExp && o) r = o.exp ? `<p class="exp-line"><span class="k">満了日</span>${jdate(o.exp, true)}${leftText(o.exp)}</p>` : `<p class="exp-line"><a href="#office-${o.id}-edit">満了日を登録する</a></p>`;
-        return `<li><div class="nk-row"><span class="t">${esc(x.t)}</span><span class="fq">${esc(x.every)}</span></div>${r}${evHtml(x)}</li>`;
+        if (x.useExp && o) {
+          if (!o.exp) r = `<p class="exp-line"><a href="#office-${o.id}-edit">満了日を登録する</a></p>`;
+          else if (x.expRule === "prevMonth15") {
+            const [y, m] = o.exp.split("-").map(Number);
+            const py = m === 1 ? y - 1 : y, pm = m === 1 ? 12 : m - 1;
+            const due = `${py}-${String(pm).padStart(2, "0")}-15`;
+            r = `<p class="exp-line"><span class="k">申請の期限</span>${jdate(due, true)}${leftText(due)}<span class="k">（満了日 ${jdate(o.exp, true)}）</span></p>`;
+          } else r = `<p class="exp-line"><span class="k">満了日</span>${jdate(o.exp, true)}${leftText(o.exp)}</p>`;
+        }
+        return `<li><div class="nk-row"><span class="t">${esc(x.t)}${x.cond ? `<span class="cond">${esc(x.cond)}</span>` : ""}</span><span class="fq">${esc(x.every)}</span></div>${r}${evHtml(x)}</li>`;
       }).join("") + "</ul></section>";
     }
     body().innerHTML = h;

@@ -47,6 +47,8 @@ GENSAN_SVCS = {
     ("ji", "自己評価結果等未公表減算"): ["jihatsu", "hodei", "hoikusho"],             # 「＜児発・放デイ・保訪＞」
     ("ji", "支援プログラム未公表減算"): ["jihatsu", "hodei", "kyotaku-ji"],           # 「＜児発・放デイ・居訪発＞」
 }
+# 減算の対象を、国の確認項目にその項目があるサービスに絞るもの（県の要点が「計画作成の一連の業務」を前提にしているため）
+GENSAN_NEED = {"個別支援計画未作成減算": "計画の作成等$"}
 SYN = [("手続き", "手続"), ("受給者資格", "受給資格"), ("障がい", "障害"), ("支払い", "支払"), ("取扱い", "取扱"),
        ("について", ""), ("通所利用者負担額", "利用者負担額"), ("障害児通所給付費", "給付費"), ("サービス提供の記録", "サービスの提供の記録"),
        ("指定障害児通所支援事業者等との連携等", "事業者等との連携等"), ("指定障害福祉サービス事業者等との連携等", "事業者等との連携等")]
@@ -293,7 +295,10 @@ def build(toc, notes, docs):
     for i, e in enumerate(order):
         e["id"] = "g" + key(e["t"])[:6]
         svcs = set()
+        nd = GENSAN_NEED.get(e["t"])
         for d in e["docs"]:
+            if nd:
+                d["svcs"] = [x for x in d["svcs"] if any(re.search(nd, norm(r["t"])) and "業務継続" not in r["t"] and "安全" not in r["t"] for r in SID[x]["rows"])]
             svcs |= set(d["svcs"])
         for x in e["nat"]:
             svcs.add(x["s"])
@@ -332,6 +337,15 @@ def build(toc, notes, docs):
         for g in gs:
             svcs |= set(SID) if g == "*" else set(ids_of.get(g, []))
         svcs -= set(it.get("xs", []))
+        need = it.get("need")
+        if need:   # 国の確認項目に、その項目（例: 非常災害対策）があるサービスだけ
+            def has(sid):
+                return any(re.search(need["re"], norm(r["t"])) and not (need.get("not") and re.search(need["not"], norm(r["t"])))
+                           for r in SID[sid]["rows"])
+            svcs = {x for x in svcs if has(x)}
+            o["needLabel"] = need["label"]
+            o["needGroups"] = [GROUP_T[g] for g in GROUP_T if g in gs or any(SID[x]["g"] == g for x in it.get("s", []))]
+            o.pop("need", None)
         o["svcs"] = sorted(svcs)
         o.pop("g", None); o.pop("s", None); o.pop("xs", None)
         nk.append(o)
