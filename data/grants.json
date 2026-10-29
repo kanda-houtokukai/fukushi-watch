@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-28T23:05:35.302Z",
+ "updatedAt": "2026-10-29T21:56:34.827Z",
  "items": [
   {
    "hash": "98f7c0a098770628",
@@ -738,7 +738,7 @@
    "funder": "",
    "title": "デザイン助成プログラム",
    "url": "https://www.jfc.or.jp/news_subsidy/%e3%83%87%e3%82%b6%e3%82%a4%e3%83%b3%e5%8a%a9%e6%88%90%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%a0-3/",
-   "postedAt": "2026-10-21",
+   "postedAt": "2026-10-29",
    "deadline": "2027-01-12",
    "deadlineType": "date",
    "deadlineRaw": "2027/01/12 午前8時まで 募集要項 https://www.jidp.or.jp/ja/",
@@ -897,5 +897,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-10-29"
+ "lastFetchDate": "2026-10-30"
 }

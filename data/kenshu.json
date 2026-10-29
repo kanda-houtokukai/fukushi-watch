@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-28T23:07:15.185Z",
+ "updatedAt": "2026-10-29T21:58:18.888Z",
  "items": [
   {
    "hash": "5ea4d1e878896605",
@@ -251,28 +251,6 @@
    ],
    "kind": "テーマ別",
    "expireOn": "2027-07-01"
-  },
-  {
-   "hash": "e660bbd715ad27ea",
-   "source": "福祉・介護研修センター 新着",
-   "sourceKind": "org",
-   "via": "info",
-   "title": "福岡県高齢者権利擁護等推進研修看護実務者研修",
-   "url": "https://fuku-shakyo-kenshu.jp/info/%e7%a6%8f%e5%b2%a1%e7%9c%8c%e9%ab%98%e9%bd%a2%e8%80%85%e6%a8%a9%e5%88%a9%e6%93%81%e8%ad%b7%e7%ad%89%e6%8e%a8%e9%80%b2%e7%a0%94%e4%bf%ae%e7%9c%8b%e8%ad%b7%e5%ae%9f%e5%8b%99%e8%80%85%e7%a0%94%e4%bf%ae/",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "締切の記載なし",
-   "expireOn": "2026-12-15",
-   "heldDates": [
-    "2026-10-29",
-    "2026-11-10",
-    "2026-12-15"
-   ],
-   "openFrom": null,
-   "fields": [
-    "高齢"
-   ],
-   "kind": "法令対応"
   },
   {
    "hash": "36795a90718f7137",
@@ -537,6 +515,28 @@
     }
    ],
    "outlineUrl": "https://www.f-kaigo.jp/upimg/c6a69855ded6ca.pdf"
+  },
+  {
+   "hash": "e660bbd715ad27ea",
+   "source": "福祉・介護研修センター 新着",
+   "sourceKind": "org",
+   "via": "info",
+   "title": "福岡県高齢者権利擁護等推進研修看護実務者研修",
+   "url": "https://fuku-shakyo-kenshu.jp/info/%e7%a6%8f%e5%b2%a1%e7%9c%8c%e9%ab%98%e9%bd%a2%e8%80%85%e6%a8%a9%e5%88%a9%e6%93%81%e8%ad%b7%e7%ad%89%e6%8e%a8%e9%80%b2%e7%a0%94%e4%bf%ae%e7%9c%8b%e8%ad%b7%e5%ae%9f%e5%8b%99%e8%80%85%e7%a0%94%e4%bf%ae/",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "expireOn": "2026-12-15",
+   "heldDates": [
+    "2026-10-29",
+    "2026-11-10",
+    "2026-12-15"
+   ],
+   "openFrom": null,
+   "fields": [
+    "高齢"
+   ],
+   "kind": "法令対応"
   },
   {
    "hash": "a8257c06b7fabf79",
@@ -1037,5 +1037,5 @@
    "expireOn": "2026-10-31"
   }
  ],
- "lastFetchDate": "2026-10-29"
+ "lastFetchDate": "2026-10-30"
 }

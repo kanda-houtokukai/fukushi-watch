@@ -1,6 +1,98 @@
 {
-  "generatedAt": "2026-10-29T02:32:17.072Z",
-  "newItems": [],
-  "newPress": [],
+  "generatedAt": "2026-10-29T21:52:38.449Z",
+  "newItems": [
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "1da251fbf92394c1",
+      "title": "保育士養成課程等検討会（第6回）について掲載しました",
+      "url": "https://www.cfa.go.jp/press/995f00fa-de6e-4d25-bf16-2449e3c6c6c3",
+      "date": "2026-10-29",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "5a36aafb32388c6d",
+      "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77072.html",
+      "date": "2026-10-29",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "1ee19da486a9896d",
+      "title": "公益事業に関する争議行為の予告公表ページについて更新されました",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudouseisaku/sougikoui/index.html",
+      "date": "2026-10-29",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "345a993ca776a499",
+      "title": "第16回医師養成過程を通じた医師の偏在対策等に関する検討会",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76989.html",
+      "date": "2026-10-27",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "1b97397048b99877",
+      "title": "先進医療会議の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76926.html",
+      "date": "2026-10-23",
+      "category": "審議会等"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "5b254e5108fc587d",
+      "title": "第272回 社会保障審議会 介護給付費分科会（令和8年10月28日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22997&ct=010010020&from=rss",
+      "date": "2026-10-29",
+      "category": "行政資料"
+    }
+  ],
+  "newPress": [
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "6a8d94558d720367",
+      "title": "【超実践】介護現場のリーダーに必要な知識やスキルを学ぶ！ 動画研修の配信開始＝介護労働安定センター",
+      "url": "https://www.joint-kaigo.com/articles/49982/",
+      "date": "2026-10-29",
+      "category": "介護福祉士"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "87aa1f370e01f939",
+      "title": "今は制度改革期！ ケアマネに求められる役割は 近畿ブロック研究大会、来年2月に大阪で開催",
+      "url": "https://www.joint-kaigo.com/articles/49972/",
+      "date": "2026-10-29",
+      "category": "共生社会"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "54a18114349b8a0c",
+      "title": "登録施設介護支援、地域活動への参加など後押し 厚労省が業務案 ホーム外とのつながりを確保｜介護報酬改定",
+      "url": "https://www.joint-kaigo.com/articles/49962/",
+      "date": "2026-10-29",
+      "category": "超高齢化"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "372872d89f57af1b",
+      "title": "登録施設介護支援、ケアマネと地域生活相談員の兼務も可 管理者の主任ケアマネ要件は設けず 厚労省提案",
+      "url": "https://www.joint-kaigo.com/articles/49955/",
+      "date": "2026-10-29",
+      "category": "超高齢化"
+    }
+  ],
   "crawlErrors": []
 }
