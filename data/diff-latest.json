@@ -1,6 +1,507 @@
 {
-  "generatedAt": "2026-10-30T02:42:11.923Z",
-  "newItems": [],
+  "generatedAt": "2026-10-30T21:37:15.472Z",
+  "newItems": [
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "7e06f729e98df08e",
+      "title": "中司大臣記者会見（令和8年10月30日）を掲載しました",
+      "url": "https://www.cfa.go.jp/speech/68cfc922",
+      "date": "2026-10-30",
+      "category": "会見"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "099e3bcbf2a6c976",
+      "title": "第9回 社会的養育・家庭支援部会の開催について掲載しました",
+      "url": "https://www.cfa.go.jp/press/9531350c-b313-4403-98d1-bac77d7677ca",
+      "date": "2026-10-30",
+      "category": "報道発表"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "eef927148e4780ec",
+      "title": "採用情報：期間業務職員の募集情報を掲載しました",
+      "url": "https://www.cfa.go.jp/recruitment/kikan",
+      "date": "2026-10-30",
+      "category": "採用"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "8761ff1679ca5982",
+      "title": "不正アクセスによる情報漏えい等の事案を踏まえたセキュリティ対策の徹底について（注意喚起）",
+      "url": "https://www.mhlw.go.jp/stf/kinkyu/20261030.html",
+      "date": "2026-10-30",
+      "category": "重要情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "dacaee1556acd311",
+      "title": "令和８年１０月３０日付大臣会見概要",
+      "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00984.html",
+      "date": "2026-10-30",
+      "category": "大臣会見等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "47867f1d28e3bde5",
+      "title": "中央最低賃金審議会 (目安に関する小委員会)",
+      "url": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127941.html",
+      "date": "2026-10-30",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "f79a484755af86d5",
+      "title": "中央最低賃金審議会 (中央最低賃金審議会)",
+      "url": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127939.html",
+      "date": "2026-10-30",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "15d430dc0c2543d4",
+      "title": "平成２５年生活扶助基準改定に関する最高裁判決への対応について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77119.html",
+      "date": "2026-10-30",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "9d5c760804d10ffc",
+      "title": "平成２５年生活扶助基準改定に関する最高裁判決への対応について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77114.html",
+      "date": "2026-10-30",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "a6ce131f210f0e46",
+      "title": "輸入食品に対する検査命令の実施 （中国産おくら、その加工品）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77091.html",
+      "date": "2026-10-30",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "1973a5fe4e05be6a",
+      "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77107.html",
+      "date": "2026-10-30",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "ce2ff7c970470afa",
+      "title": "労働基準関係法令違反に係る公表事案",
+      "url": "https://www.mhlw.go.jp/kinkyu/151106.html",
+      "date": "2026-10-30",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "755592b3e32b80ed",
+      "title": "労災レセプト電算処理システム 「四肢加算に対するコメント記録がない場合、令和8年11月請求分から【受付不能エラー】となります。」",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/rousai/rezeptsystem/index.html",
+      "date": "2026-10-30",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "601f9162b4003a27",
+      "title": "11月は「『しわ寄せ』防止キャンペーン月間」です",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76722.html",
+      "date": "2026-10-30",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "2557dc9ec2a2f060",
+      "title": "「グッドキャリア企業アワード2026」表彰式の参加申込開始",
+      "url": "https://www.mhlw.go.jp/career-award/",
+      "date": "2026-10-30",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "4d855a04154c2ff0",
+      "title": "令和８年度生涯現役地域づくり環境整備事業情報交換会を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77054.html",
+      "date": "2026-10-30",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "e7840eb98edbc081",
+      "title": "11月は｢人材開発促進月間｣です",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77005.html",
+      "date": "2026-10-30",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "28e2db89a5aa0c45",
+      "title": "最近の調剤医療費（電算処理分）の動向 令和8年度6月号",
+      "url": "https://www.mhlw.go.jp/topics/medias/c-med/2026/06/",
+      "date": "2026-10-30",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "6633b73b995db186",
+      "title": "最近の歯科医療費（電算処理分）の動向 令和8年度6月号",
+      "url": "https://www.mhlw.go.jp/topics/medias/shika_iryou/2026/06/",
+      "date": "2026-10-30",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "72776a84911bfc74",
+      "title": "最近の医科医療費（電算処理分）の動向 令和8年度6月号",
+      "url": "https://www.mhlw.go.jp/topics/medias/ika_iryou/2026/06/",
+      "date": "2026-10-30",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "7f9ab129da45250a",
+      "title": "最近の医療費の動向-MEDIAS-令和8年度6月号",
+      "url": "https://www.mhlw.go.jp/topics/medias/month/26/06.html",
+      "date": "2026-10-30",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "465f4ebf7337ab54",
+      "title": "「グッドキャリア企業アワード2026」の受賞企業を決定しました",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76976.html",
+      "date": "2026-10-30",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "e181bb910a44781c",
+      "title": "介護給付費等実態統計月報（令和８（2026）年７月審査分）",
+      "url": "https://www.mhlw.go.jp/toukei/saikin/hw/kaigo/kyufu/2026/07.html",
+      "date": "2026-10-30",
+      "category": "統計情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "14d0ef9e1ce7c6b4",
+      "title": "令和８年度地域介護・福祉空間整備等施設整備交付金（一次協議分）の内示について（追加内示）",
+      "url": "https://www.mhlw.go.jp/stf/hard2026-10_00001.html",
+      "date": "2026-10-30",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "cb89725eb2b09fc6",
+      "title": "「遺族年金受給者実態調査」にご協力ください",
+      "url": "https://www.mhlw.go.jp/toukei/list/95-1.html",
+      "date": "2026-10-30",
+      "category": "統計情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "f96710bf6967ce53",
+      "title": "医療施設動態調査（令和8(2026)年8月末概数）",
+      "url": "https://www.mhlw.go.jp/toukei/saikin/hw/iryosd/m26/is2608.html",
+      "date": "2026-10-30",
+      "category": "統計情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "e0c01b53f95e868b",
+      "title": "第273回社会保障審議会介護給付費分科会（Web会議）を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76901.html",
+      "date": "2026-10-30",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "fb1209f3e8416fa0",
+      "title": "令和８年度「認定生活困窮者就労訓練事業所厚生労働大臣表彰」の被表彰事業所の決定について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76872.html",
+      "date": "2026-10-30",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "cec70dd96510bc6a",
+      "title": "令和６（2024）年度 国民医療費",
+      "url": "https://www.mhlw.go.jp/toukei/saikin/hw/k-iryohi/24/index.html",
+      "date": "2026-10-30",
+      "category": "統計情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "9a0c576009ecc592",
+      "title": "第１回「令和８年度管理栄養士国家試験出題基準（ガイドライン）改定検討会」開催案内",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76777.html",
+      "date": "2026-10-30",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "33f5ee7ff6339aee",
+      "title": "「第14回厚生科学審議会食品衛生監視部会」の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76613.html",
+      "date": "2026-10-30",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "cd042e90fbbada37",
+      "title": "インフルエンザに関する報道発表資料を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou_00025.html",
+      "date": "2026-10-30",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "1bbb876a48c5ef80",
+      "title": "新型コロナウイルス感染症に関する報道発表資料を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00485.html",
+      "date": "2026-10-30",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "624b9f4e4a691df4",
+      "title": "インフルエンザ・新型コロナウイルス感染症の定点当たり報告数の推移を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/houkokusuunosuii_00007.html",
+      "date": "2026-10-30",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "2e7ade39e4a91c28",
+      "title": "インフルエンザの発生状況を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
+      "date": "2026-10-30",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "e64d6814b9e8db02",
+      "title": "年金業務システム（フェーズ２）に係る設計・開発等（記録照会サブシステムに係る設計・開発業務 一式（その３））",
+      "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-siryo/newpage_10532.html",
+      "date": "2026-10-30",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "8e963057bfebe37e",
+      "title": "年金業務システム（フェーズ２）に係る設計・開発等（年金記録管理サブシステムに係る設計・開発業務 一式（その５）、保険料債権管理サブシステムに係る設計・開発業務 一式（その５）、データベース構築及びデータ移行業務 一式（その４）、基盤サブシ…",
+      "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-siryo/newpage_10531.html",
+      "date": "2026-10-30",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "dbfd8201c7371f58",
+      "title": "落札者等の公示（「医薬品安定供給・流通確認システムの機能追加に係る設計・開発等業務一式」他１０件）",
+      "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/e-wto-rakusatu/newpage_10527.html",
+      "date": "2026-10-30",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "9e593ca14f29a6d2",
+      "title": "キャリアコンサルタント更新講習について、技能講習一覧を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koushin.html",
+      "date": "2026-10-30",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "3219e8cd8645d846",
+      "title": "キャリアコンサルタントになりたい方へ（キャリアコンサルタント養成講習一覧を更新しました）",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/career_consultant01.html",
+      "date": "2026-10-30",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "04e4562ab4bdbbab",
+      "title": "採用情報（任期付職員（企画開発係長）募集情報）",
+      "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/ninkituki/ninki-igyoukeieisenmonkanorsyusa_00001.html",
+      "date": "2026-10-30",
+      "category": "採用情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "4fcf76cfd70deb22",
+      "title": "毎月勤労統計調査地方調査令和７年６月結果の一部訂正について（令和８年10月30日）",
+      "url": "https://www.mhlw.go.jp/toukei/list/30-1b.html",
+      "date": "2026-10-30",
+      "category": "統計情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "e9201b72e8da162b",
+      "title": "総合職人間科学区分（課長補佐級／係長級）の経験者選考採用について",
+      "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/index_00014.html",
+      "date": "2026-10-30",
+      "category": "採用情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "fd8291f651c52b9b",
+      "title": "「年収の壁」への対応",
+      "url": "https://www.mhlw.go.jp/stf/taiou_001_00002.html",
+      "date": "2026-10-30",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "b96551f109022549",
+      "title": "令和９年 医政局所管国家試験会場（予定）一覧",
+      "url": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/index.html",
+      "date": "2026-10-30",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "2593a9b50f96eaee",
+      "title": "第214回労働政策審議会労働条件分科会（資料）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77050.html",
+      "date": "2026-10-30",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "3826c1cbe87e5670",
+      "title": "一般職業紹介状況(令和8年9月分)について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76960.html",
+      "date": "2026-10-30",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "0177802754d49bb7",
+      "title": "第２回創薬力向上のための官民協議会 施策検討・推進部会 資料",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77073.html",
+      "date": "2026-10-29",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "082f62e7b795c51b",
+      "title": "平成２５年生活扶助基準改定に関する最高裁判決への対応について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77069.html",
+      "date": "2026-10-29",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "244ecd3feb5f575f",
+      "title": "実施中の調査",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000149274_00001.html",
+      "date": "2026-10-28",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "adb2f64afc77bbf9",
+      "title": "中東情勢関連対策ワンストップポータル",
+      "url": "https://www.mhlw.go.jp/stf/chuto-josei.html",
+      "date": "2026-10-25",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "ba14593d0485471e",
+      "title": "無料の電話相談「過重労働解消相談ダイヤル」等を実施します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76870.html",
+      "date": "2026-10-21",
+      "category": "報道発表"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "82a672754ae1202a",
+      "title": "第159回 先進医療会議（令和8年11月5日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22998&ct=070010030&from=rss",
+      "date": "2026-10-30",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "6f4106dfa1ebce47",
+      "title": "第63回 社会保障審議会 生活保護基準部会（令和8年11月5日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22999&ct=070010070&from=rss",
+      "date": "2026-10-30",
+      "category": "行政資料"
+    },
+    {
+      "source": "福岡県（子ども・青少年）",
+      "kind": "gov",
+      "hash": "d5bcf7cd5ad46c73",
+      "title": "「福岡県こども審議会」について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/kodomosingikai.html",
+      "date": "2026年10月29日更新",
+      "category": ""
+    }
+  ],
   "newPress": [],
-  "crawlErrors": []
+  "crawlErrors": [
+    {
+      "source": "介護ニュースJoint",
+      "error": "fetch failed"
+    }
+  ]
 }
