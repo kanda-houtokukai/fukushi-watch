@@ -236,6 +236,31 @@
    "note": "全件照合（10/28）で直した: 根拠のずれ・誤り",
    "result": "fixed"
   },
+  "論点:chiiki-seikatsu-01": {
+   "checked": "2026-10-31",
+   "note": "10/31 第67回の資料で新規",
+   "result": "fixed"
+  },
+  "論点:chiiki-seikatsu-02": {
+   "checked": "2026-10-31",
+   "note": "10/31 第67回の資料で新規",
+   "result": "fixed"
+  },
+  "論点:chiiki-seikatsu-03": {
+   "checked": "2026-10-31",
+   "note": "10/31 第67回の資料で新規",
+   "result": "fixed"
+  },
+  "論点:gh-01": {
+   "checked": "2026-10-31",
+   "note": "10/31 第67回の資料で新規",
+   "result": "fixed"
+  },
+  "論点:gh-02": {
+   "checked": "2026-10-31",
+   "note": "10/31 第67回の資料で新規",
+   "result": "fixed"
+  },
   "論点:houmon-douko-01": {
    "checked": "2026-10-30",
    "result": "ok"
@@ -267,6 +292,36 @@
   "論点:houmon-oudan-02": {
    "checked": "2026-10-29",
    "result": "ok"
+  },
+  "論点:jiritsu-kunren-01": {
+   "checked": "2026-10-31",
+   "note": "10/31 第67回の資料で新規",
+   "result": "fixed"
+  },
+  "論点:jiritsu-kunren-02": {
+   "checked": "2026-10-31",
+   "note": "10/31 第67回の資料で新規",
+   "result": "fixed"
+  },
+  "論点:jiritsu-kunren-04": {
+   "checked": "2026-10-31",
+   "note": "10/31 第67回の資料で新規",
+   "result": "fixed"
+  },
+  "論点:kyodo-01": {
+   "checked": "2026-10-31",
+   "note": "10/31 第67回の資料で新規",
+   "result": "fixed"
+  },
+  "論点:kyodo-02": {
+   "checked": "2026-10-31",
+   "note": "10/31 第67回の資料で新規",
+   "result": "fixed"
+  },
+  "論点:kyodo-03": {
+   "checked": "2026-10-31",
+   "note": "10/31 第67回の資料で新規",
+   "result": "fixed"
   },
   "論点:oudan-1": {
    "checked": "2026-10-28",
