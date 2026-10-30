@@ -1,24 +1,8 @@
 {
  "01_now": [
   {
-   "doc": "gl",
-   "k": "gl:92-3"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:93"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:152"
-  },
-  {
-   "doc": "kenshu",
-   "k": "kenshu02:4"
-  },
-  {
-   "doc": "test-k",
-   "k": "kenshu05:5"
+   "doc": "kijitsu",
+   "k": "law01:8"
   },
   {
    "doc": "gaiyo",
@@ -27,14 +11,6 @@
   {
    "doc": "gaiyo",
    "k": "kaisetsu06:10"
-  },
-  {
-   "doc": "gaiyo",
-   "k": "kaisetsu06:27"
-  },
-  {
-   "doc": "setsumei",
-   "k": "kaisetsu05:11"
   },
   {
    "doc": "junbi",
@@ -47,6 +23,30 @@
   {
    "doc": "roudou",
    "k": "ouyou04:7"
+  },
+  {
+   "doc": "matome",
+   "k": "tetsuzuki01:5"
+  },
+  {
+   "doc": "matome",
+   "k": "tetsuzuki01:23"
+  },
+  {
+   "doc": "matome-irai",
+   "k": "tetsuzuki03:17"
+  },
+  {
+   "doc": "matome-kakunin",
+   "k": "tetsuzuki03:21"
+  },
+  {
+   "doc": "matome-kakunin",
+   "k": "tetsuzuki03:22"
+  },
+  {
+   "doc": "t-shuchi-r7",
+   "k": "tsuchi03:4"
   }
  ],
  "02_overview": [
@@ -101,12 +101,8 @@
  ],
  "03_schedule": [
   {
-   "doc": "gl",
-   "k": "gl:1"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:34"
+   "doc": "kijitsu",
+   "k": "law01:8"
   },
   {
    "doc": "gl",
@@ -117,14 +113,6 @@
    "k": "gl:151"
   },
   {
-   "doc": "gl",
-   "k": "gl:152"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:155"
-  },
-  {
    "doc": "kaisetsu",
    "k": "kaisetsu01:1"
   },
@@ -133,20 +121,32 @@
    "k": "kaisetsu06:10"
   },
   {
-   "doc": "gaiyo",
-   "k": "kaisetsu06:28"
-  },
-  {
-   "doc": "setsumei",
-   "k": "kaisetsu05:14"
-  },
-  {
-   "doc": "junbi",
-   "k": "kaisetsu08:17"
-  },
-  {
    "doc": "poster",
    "k": "kaisetsu08:29"
+  },
+  {
+   "doc": "matome-irai",
+   "k": "tetsuzuki03:16"
+  },
+  {
+   "doc": "matome-enchou",
+   "k": "tetsuzuki03:26"
+  },
+  {
+   "doc": "matome-enchou",
+   "k": "tetsuzuki03:27"
+  },
+  {
+   "doc": "matome-kakunin",
+   "k": "tetsuzuki03:23"
+  },
+  {
+   "doc": "t-seirei",
+   "k": "tsuchi01:1"
+  },
+  {
+   "doc": "t-seirei",
+   "k": "tsuchi01:17"
   }
  ],
  "04_checklist": [
@@ -157,44 +157,44 @@
   {
    "doc": "junbi",
    "k": "kaisetsu08:14"
+  },
+  {
+   "doc": "bengo-cfa",
+   "k": "senmon02:13"
+  },
+  {
+   "doc": "bengo-cfa",
+   "k": "senmon02:14"
+  },
+  {
+   "doc": "t-kyozai",
+   "k": "tsuchi05:17"
+  },
+  {
+   "doc": "t-junbi1",
+   "k": "tsuchi06:16"
+  },
+  {
+   "doc": "t-junbi2",
+   "k": "tsuchi06:9"
+  },
+  {
+   "doc": "t-junbi3",
+   "k": "tsuchi06:6"
   }
  ],
  "05_scope": [
+  {
+   "doc": "kokuji-hyoji",
+   "k": "law01:7"
+  },
   {
    "doc": "gl",
    "k": "gl:12"
   },
   {
    "doc": "gl",
-   "k": "gl:14"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:15"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:16"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:16-3"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:17-1"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:23"
-  },
-  {
-   "doc": "gl",
    "k": "gl:29"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:30"
   },
   {
    "doc": "gl",
@@ -207,6 +207,30 @@
   {
    "doc": "gaiyo",
    "k": "kaisetsu06:14"
+  },
+  {
+   "doc": "matome-y1",
+   "k": "tetsuzuki04:4"
+  },
+  {
+   "doc": "matome-kaitei",
+   "k": "tetsuzuki03:5"
+  },
+  {
+   "doc": "matome-kaitei",
+   "k": "tetsuzuki03:7"
+  },
+  {
+   "doc": "matome-kakunin",
+   "k": "tetsuzuki03:24"
+  },
+  {
+   "doc": "bunsan",
+   "k": "tetsuzuki02:26"
+  },
+  {
+   "doc": "bengo-cfa",
+   "k": "senmon01:2"
   }
  ],
  "06_persons": [
@@ -231,14 +255,6 @@
    "k": "gl:17-2"
   },
   {
-   "doc": "gl",
-   "k": "gl:17-5"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:21"
-  },
-  {
    "doc": "gaiyo",
    "k": "kaisetsu06:21"
   },
@@ -257,6 +273,14 @@
   {
    "doc": "junbi-ref",
    "k": "kaisetsu07:2"
+  },
+  {
+   "doc": "bengo-cfa",
+   "k": "senmon02:5"
+  },
+  {
+   "doc": "t-gakusei",
+   "k": "tsuchi05:24"
   }
  ],
  "07_check": [
@@ -278,14 +302,6 @@
   },
   {
    "doc": "gl",
-   "k": "gl:72"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:72-1"
-  },
-  {
-   "doc": "gl",
    "k": "gl:76"
   },
   {
@@ -297,16 +313,24 @@
    "k": "kenshu02:21"
   },
   {
+   "doc": "h-boshu",
+   "k": "hinagata01:26"
+  },
+  {
+   "doc": "h-seiyaku",
+   "k": "hinagata02:30"
+  },
+  {
    "doc": "kaisetsu",
    "k": "kaisetsu02:22"
   },
   {
-   "doc": "setsumei",
-   "k": "kaisetsu04:16"
+   "doc": "koseki",
+   "k": "tetsuzuki04:9"
   },
   {
-   "doc": "setsumei",
-   "k": "kaisetsu05:6"
+   "doc": "t-jisshu",
+   "k": "tsuchi05:7"
   }
  ],
  "08_timing": [
@@ -355,58 +379,58 @@
    "k": "kaisetsu06:28"
   },
   {
-   "doc": "setsumei",
-   "k": "kaisetsu05:14"
+   "doc": "bunsan",
+   "k": "tetsuzuki02:18"
   }
  ],
  "09_system": [
   {
    "doc": "gl",
-   "k": "gl:72"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:72-1"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:72-2"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:72-3"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:106"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:147"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:149"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:151"
-  },
-  {
-   "doc": "gl",
    "k": "gl:153"
+  },
+  {
+   "doc": "h-kengen",
+   "k": "hinagata02:17"
   },
   {
    "doc": "junbi",
    "k": "kaisetsu08:16"
   },
   {
-   "doc": "junbi",
-   "k": "kaisetsu08:17"
+   "doc": "matome",
+   "k": "tetsuzuki01:6"
   },
   {
-   "doc": "junbi-ref",
-   "k": "kaisetsu07:9"
+   "doc": "matome",
+   "k": "tetsuzuki01:7"
+  },
+  {
+   "doc": "matome",
+   "k": "tetsuzuki01:10"
+  },
+  {
+   "doc": "matome",
+   "k": "tetsuzuki01:22"
+  },
+  {
+   "doc": "matome-kakunin",
+   "k": "tetsuzuki03:20"
+  },
+  {
+   "doc": "gbiz",
+   "k": "tetsuzuki02:2"
+  },
+  {
+   "doc": "gbiz-2",
+   "k": "tetsuzuki03:9"
+  },
+  {
+   "doc": "gbiz-faq",
+   "k": "tetsuzuki04:12"
+  },
+  {
+   "doc": "gbiz-faq",
+   "k": "tetsuzuki04:13"
   }
  ],
  "10_safety": [
@@ -524,27 +548,7 @@
   },
   {
    "doc": "gl",
-   "k": "gl:61"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:62-1"
-  },
-  {
-   "doc": "gl",
    "k": "gl:63-4"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:64-2"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:89"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:90"
   },
   {
    "doc": "gl",
@@ -555,8 +559,28 @@
    "k": "gl:92-7"
   },
   {
+   "doc": "h-taiou",
+   "k": "hinagata02:2"
+  },
+  {
    "doc": "roudou",
    "k": "ouyou04:13"
+  },
+  {
+   "doc": "odan",
+   "k": "odan03:30"
+  },
+  {
+   "doc": "bengo-kamitani",
+   "k": "senmon04:11"
+  },
+  {
+   "doc": "bengo-masuhara",
+   "k": "senmon05:9"
+  },
+  {
+   "doc": "t-keisatsu",
+   "k": "tsuchi04:29"
   }
  ],
  "13_employment": [
@@ -566,31 +590,23 @@
   },
   {
    "doc": "gl",
-   "k": "gl:89"
-  },
-  {
-   "doc": "gl",
    "k": "gl:92-1"
   },
   {
-   "doc": "gl",
-   "k": "gl:92"
+   "doc": "h-seiyaku",
+   "k": "hinagata02:29"
   },
   {
-   "doc": "gl",
-   "k": "gl:92-2"
+   "doc": "h-shugyo",
+   "k": "hinagata01:19"
   },
   {
-   "doc": "gl",
-   "k": "gl:92-4"
+   "doc": "h-shugyo",
+   "k": "hinagata01:20"
   },
   {
-   "doc": "kenshu",
-   "k": "kenshu01:9"
-  },
-  {
-   "doc": "kaisetsu",
-   "k": "kaisetsu03:3"
+   "doc": "h-shugyo",
+   "k": "hinagata01:21"
   },
   {
    "doc": "junbi-ref",
@@ -598,41 +614,33 @@
   },
   {
    "doc": "roudou",
-   "k": "ouyou04:8"
-  },
-  {
-   "doc": "roudou",
-   "k": "ouyou04:11"
-  },
-  {
-   "doc": "roudou",
    "k": "ouyou04:15"
+  },
+  {
+   "doc": "bengo-cfa",
+   "k": "senmon02:10"
+  },
+  {
+   "doc": "bengo-masuhara",
+   "k": "senmon05:3"
+  },
+  {
+   "doc": "bengo-masuhara",
+   "k": "senmon05:8"
+  },
+  {
+   "doc": "t-shuchi-r7",
+   "k": "tsuchi03:8"
   }
  ],
  "14_info": [
   {
-   "doc": "gl",
-   "k": "gl:26-6"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:35"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:36"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:83"
+   "doc": "kokuji-joho",
+   "k": "law01:6"
   },
   {
    "doc": "gl",
    "k": "gl:105"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:106-4"
   },
   {
    "doc": "gl",
@@ -655,11 +663,35 @@
    "k": "gl:125"
   },
   {
+   "doc": "h-joho1",
+   "k": "hinagata02:24"
+  },
+  {
+   "doc": "h-joho3",
+   "k": "hinagata01:12"
+  },
+  {
    "doc": "joho-tebiki",
    "k": "ouyou05:25"
+  },
+  {
+   "doc": "t-seirei",
+   "k": "tsuchi01:15"
+  },
+  {
+   "doc": "t-seirei",
+   "k": "tsuchi02:7"
   }
  ],
  "15_docs": [
+  {
+   "doc": "law-shinkyu",
+   "k": "law01:2"
+  },
+  {
+   "doc": "law-shinkyu",
+   "k": "law01:3"
+  },
   {
    "doc": "gl",
    "k": "gl:7-3"
@@ -670,43 +702,35 @@
   },
   {
    "doc": "gl",
-   "k": "gl:56"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:71"
-  },
-  {
-   "doc": "gl",
    "k": "gl:106-2"
   },
   {
-   "doc": "ensyu-k",
-   "k": "kenshu06:3"
+   "doc": "h-taisho",
+   "k": "hinagata01:4"
   },
   {
-   "doc": "kaisetsu",
-   "k": "kaisetsu02:5"
+   "doc": "t-seirei",
+   "k": "tsuchi01:12"
   },
   {
-   "doc": "setsumei",
-   "k": "kaisetsu04:8"
+   "doc": "t-seirei",
+   "k": "tsuchi01:13"
   },
   {
-   "doc": "setsumei",
-   "k": "kaisetsu04:11"
+   "doc": "t-seirei",
+   "k": "tsuchi01:14"
   },
   {
-   "doc": "setsumei",
-   "k": "kaisetsu05:8"
+   "doc": "t-seirei",
+   "k": "tsuchi02:5"
   },
   {
-   "doc": "junbi",
-   "k": "kaisetsu08:6"
+   "doc": "t-seirei",
+   "k": "tsuchi02:6"
   },
   {
-   "doc": "junbi-ref",
-   "k": "kaisetsu07:5"
+   "doc": "t-kyozai",
+   "k": "tsuchi05:19"
   }
  ],
  "16_supervision": [
@@ -743,20 +767,20 @@
    "k": "gl:141"
   },
   {
-   "doc": "gl",
-   "k": "gl:142"
-  },
-  {
-   "doc": "gl",
-   "k": "gl:144"
-  },
-  {
-   "doc": "kenshu",
-   "k": "kenshu02:29"
-  },
-  {
    "doc": "kaisetsu",
    "k": "kaisetsu03:18"
+  },
+  {
+   "doc": "matome-kaitei",
+   "k": "tetsuzuki03:6"
+  },
+  {
+   "doc": "kantoku-1",
+   "k": "kantoku01:22"
+  },
+  {
+   "doc": "kantoku-1",
+   "k": "kantoku01:24"
   }
  ],
  "17_sectors": [
@@ -809,28 +833,54 @@
    "k": "kaisetsu06:16"
   }
  ],
- "18_qa": [
-  {
-   "doc": "gaiyo",
-   "k": "kaisetsu06:12"
-  }
- ],
  "19_events": [
-  {
-   "doc": "gaiyo",
-   "k": "kaisetsu06:18"
-  },
-  {
-   "doc": "setsumei",
-   "k": "kaisetsu05:17"
-  },
   {
    "doc": "junbi-ref",
    "k": "kaisetsu07:9"
   },
   {
-   "doc": "roudou",
-   "k": "ouyou04:18"
+   "doc": "matome",
+   "k": "tetsuzuki01:24"
+  },
+  {
+   "doc": "matome-kaitei",
+   "k": "tetsuzuki03:4"
+  },
+  {
+   "doc": "gbiz",
+   "k": "tetsuzuki02:12"
+  },
+  {
+   "doc": "gbiz-2",
+   "k": "tetsuzuki03:11"
+  },
+  {
+   "doc": "gbiz-2",
+   "k": "tetsuzuki03:12"
+  },
+  {
+   "doc": "gbiz-leaf",
+   "k": "tetsuzuki04:14"
+  },
+  {
+   "doc": "bengo-cfa",
+   "k": "senmon02:16"
+  },
+  {
+   "doc": "bengo-shien",
+   "k": "senmon03:1"
+  },
+  {
+   "doc": "bengo-kamitani",
+   "k": "senmon04:12"
+  },
+  {
+   "doc": "sec-leaf",
+   "k": "senmon07:1"
+  },
+  {
+   "doc": "sec-leaf2",
+   "k": "senmon07:2"
   }
  ],
  "19a_kenshu": [
@@ -845,18 +895,6 @@
   {
    "doc": "ensyu-j",
    "k": "kenshu03:2"
-  },
-  {
-   "doc": "ensyu-j",
-   "k": "kenshu03:4"
-  },
-  {
-   "doc": "ensyu-k",
-   "k": "kenshu06:15"
-  },
-  {
-   "doc": "tebiki",
-   "k": "kenshu06:19"
   },
   {
    "doc": "tebiki",
@@ -881,6 +919,18 @@
   {
    "doc": "test-k",
    "k": "kenshu05:1"
+  },
+  {
+   "doc": "odan-jirei",
+   "k": "odan04:11"
+  },
+  {
+   "doc": "t-jisshu",
+   "k": "tsuchi05:5"
+  },
+  {
+   "doc": "t-kyozai",
+   "k": "tsuchi05:13"
   }
  ],
  "20_open": [
@@ -895,12 +945,22 @@
   {
    "doc": "roudou",
    "k": "ouyou04:18"
-  }
- ],
- "21_sources": [
+  },
   {
-   "doc": "kaisetsu",
-   "k": "kaisetsu03:22"
+   "doc": "bunsan",
+   "k": "tetsuzuki02:20"
+  },
+  {
+   "doc": "bengo-shien",
+   "k": "senmon03:1"
+  },
+  {
+   "doc": "bengo-kamitani",
+   "k": "senmon04:12"
+  },
+  {
+   "doc": "sec-tsuchi",
+   "k": "senmon04:13"
   }
  ]
 }
