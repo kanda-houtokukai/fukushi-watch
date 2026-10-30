@@ -289,9 +289,15 @@
     var loaded = false;
     function loadOfficial(cb) {
       if (loaded) { if (cb) cb(); return; }
+      getJSON("qa_mat.json", function (mj) {
       getJSON("qa_official.json", function (j) {
         if (!loaded && j) {
           loaded = true;
+          (mj || []).forEach(function (q) {
+            var c = q.cat.slice();
+            if (/研修/.test(q.q) && c.indexOf("研修") < 0) c.push("研修");
+            addNode({ kind: "guide", id: q.id, q: q.q, a: q.a, more: q.more, cat: c }, 0);
+          });
           j.forEach(function (o) {
             var cat = [];
             if (o.doc === "qa-matome") cat.push("システム");
@@ -303,6 +309,7 @@
           drawChips(); draw();
         }
         if (cb) cb();
+      });
       });
     }
     QA_LOAD = loadOfficial;
@@ -321,7 +328,7 @@
         if (words.length) words.forEach(function (w) { var re = new RegExp("(" + esc(w).replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi"); t = t.replace(re, "<mark>$1</mark>"); });
         x.qt.innerHTML = t;
       });
-      meta.textContent = n + " 件を表示（資料から回答 " + nMat + "・公式Q&A " + nOff + "）" + (loaded ? "" : "・公式Q&Aを読み込み中");
+      meta.textContent = n + " 件を表示（資料から回答 " + nMat + "・公式Q&A " + nOff + "）" + (loaded ? "" : "・資料から回答と公式Q&Aを読み込み中");
       empty.hidden = n !== 0 || !loaded;
     }
     input.addEventListener("input", draw);

@@ -8,7 +8,7 @@
 - 進めてよいのは、ページの確認（読む・検索する・資料を作業用のフォルダに保存して読む）と、`dbs/_src/live.json`（更新データ）の書き換え、`dbs/index.html` の組み立て、照合に合格した本文の事実の直し（`dbs/_src/sections/` の章・`dbs/_src/data.js` の Q&A・判定ツール・チェックリスト）、資料リンク集の台帳 `dbs/_src/links.json` への資料の追加、照合の記録 `dbs/_src/audit.json` の更新、それらの commit と push です。
 - それ以外のファイルには触りません。とくに福祉情報ウォッチ本体（index.html・scripts/・data/・docs/・台帳・CLAUDE.md）と、ガイドの部品（`dbs/_src/style.css`・`app.js`・`build.py`・`shell_*.html`・`svg/`）は書き換えません。force push はしません。
 - 「資料を読む」「法令の条文」「研修の進め方」「資料から回答」の材料（`dbs/_src/docs.json`・`notes/`・`law.json`・`qa_official.json`・`kenshu.json`・`qa_mat.json`・`docs_build.py`・`docs.js`）は、照合係2人の照合を通して作ったものなので書き換えません。
-  `dbs/notes/`・`dbs/law.json`・`dbs/qa_official.json` は build.py の出力です（材料が変わらなければ中身は変わりません）。
+  `dbs/notes/`・`dbs/law.json`・`dbs/qa_official.json`・`dbs/qa_mat.json` は build.py の出力です（材料が変わらなければ中身は変わりません）。
   こども家庭庁が docs.json にある資料の新しい版（ガイドラインの改訂・Q&Aの改訂・研修資料の差し替えなど）や、docs.json にない新しい資料を出したときは、
   live.json の updates に impact "todo" で記録し、最後の報告に「資料を読む の作り直し候補（資料名・公表日・URL）」として挙げます（要点や公式Q&Aの原文は書き換えません）。
 - 本文の直しは、事実（日付・数字・名称・手続・対象・根拠の表記）の部分だけを最小限に書き換えます。章の構成（見出し・章の並び・新しい章や Q&A の追加・削除）と言い回しは変えません。構成を変えないと直せないものは、live.json の updates に impact "todo" で記録し、最後の報告に「本文の書き換え候補」として挙げます。ウォッチの特設の帯（index.html の #featureConf）の期限を直す必要がある場合も、書き換えずに候補として挙げます。
@@ -69,7 +69,7 @@ JSON の形を保ったまま、次のとおり書き換えます。日付は日
 
 ### 7. 組み立てて push する
 1. `python3 dbs/_src/build.py` を実行します（dbs/index.html が組み立て直されます）。止まったときは表示に直し方が出るので、それに従って直し、組み立て直します（例：画面の文に「まだ」「いま〇〇」があれば事実の言い方に直す。根拠の表記が資料に結びつかなければ links.json の cite を足すか表記を直す）。直せないときは push せず、理由を報告します。
-2. `git status --short` で、変わったのが `dbs/_src/live.json`・`dbs/index.html`・`dbs/_src/audit.json`・`dbs/_src/links.json`・`dbs/_src/sections/`・`dbs/_src/data.js`・`dbs/notes/`・`dbs/law.json`・`dbs/qa_official.json` の中だけであることを確かめます。ほかのファイルが変わっていたら push せずに止めます。
+2. `git status --short` で、変わったのが `dbs/_src/live.json`・`dbs/index.html`・`dbs/_src/audit.json`・`dbs/_src/links.json`・`dbs/_src/sections/`・`dbs/_src/data.js`・`dbs/notes/`・`dbs/law.json`・`dbs/qa_official.json`・`dbs/qa_mat.json` の中だけであることを確かめます。ほかのファイルが変わっていたら push せずに止めます。
 3. commit します。メッセージは「ガイド: 毎朝の更新 MM/DD（新しい発表◯件・研修◯件・本文の直し◯件・照合◯件）」。
 4. `git fetch origin main` → `git rebase origin/main` → `git push origin HEAD:main`。`dbs/index.html` でぶつかったら、そのファイルを origin/main の版にしてから `python3 dbs/_src/build.py` を走らせ直し、`git add dbs/index.html` して `git rebase --continue` します（組み立ての出力なので、手で混ぜない）。拒否されたら同じ手順をもう1回だけ行い、それでも駄目なら止めて報告します。変化がなかった日も、最終確認の日時を更新するために push します。
 5. 公開URLの HTML に今日の checkedAt が入るまで、最長10分ほど確かめます（GitHub Pages の反映待ち）。

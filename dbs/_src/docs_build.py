@@ -173,6 +173,8 @@ def build(strict=True):
                 if s["k"] in its:
                     see.append(f'<a href="#doc-{s["doc"]}~{H.escape(s["k"])}">{H.escape(SHORT.get(s["doc"], s["doc"]))}「{H.escape(its[s["k"]]["t"])}」</a>')
             out.append({"id": it["id"], "q": it["q"], "a": a, "cat": it["cat"], "more": "資料で詳しく：" + "・".join(see) if see else ""})
-        qm_js = "GUIDE_DATA.qa = GUIDE_DATA.qa.concat(" + json.dumps(out, ensure_ascii=False) + ");\n"
+        # 量が多いので、Q&Aの画面を開いたときに読む（公式Q&Aと同じ）
+        (OUT / "qa_mat.json").write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        qm_js = "GUIDE_DATA.qaMatN = " + str(len(out)) + ";\n"
     js = see_js + qm_js + "GUIDE_DATA.docs = " + json.dumps({"groups": book["groups"], "docs": docs, "credit": CREDIT}, ensure_ascii=False) + ";\n"
     return js, bad, {"docs": len(docs), "notes": len(keep) - 1, "headings": len(search), "qa": len(qa)}, ctx

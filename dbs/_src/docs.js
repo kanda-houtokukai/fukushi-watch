@@ -84,6 +84,12 @@
     $("dc-credit").innerHTML = d.third
       ? "要点は、このガイドが資料をもとに自分の言葉でまとめたものです。資料の著作権は作成者にあります。"
       : "要点は、このガイドが資料をもとに作成したものです（出典：「" + esc(d.t) + "」（こども家庭庁）を加工して作成）。";
+    if (d.mode !== "notes") {
+      docCur = slug;
+      $("dc-credit").innerHTML = "";
+      body.innerHTML = '<p class="dc-wait">' + esc(d.memo || "") + ' <a href="' + esc(d.u) + '" target="_blank" rel="noopener">原本を開く</a></p>';
+      done(true); return;
+    }
     if (docCur === slug && body.childElementCount) { open(key); done(true); return; }
     docCur = slug;
     body.innerHTML = '<p class="dc-wait">読み込み中…</p>';
@@ -183,7 +189,7 @@
 
   EXT.push(function (id, intent, st) {
     if (id === "qa" && QA_LOAD) { QA_LOAD(); return false; }
-    var q = /^qo-[a-z0-9-]+$/.exec(id);
+    var q = /^q[om]-[a-z0-9-]+$/.exec(id);
     if (q && QA_LOAD && VIEWS.qa) {
       show(VIEWS.qa);
       QA_LOAD(function () {
