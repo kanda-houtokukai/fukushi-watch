@@ -16,6 +16,8 @@ OUT = SRC.parent / "index.html"
 sys.dont_write_bytecode = True   # scripts/__pycache__ を作らない（毎朝のタスクは変わったファイルを確かめて止まるため）
 sys.path.insert(0, str(SRC.parent.parent / "scripts"))
 import linkbook  # noqa: E402  資料リンク集（scripts/linkbook.py）
+sys.path.insert(0, str(SRC))
+import docs_build  # noqa: E402  資料を読む・法令・公式Q&A（dbs/_src/docs_build.py）
 
 HEAD = """<!doctype html>
 <html lang="ja">
@@ -76,6 +78,15 @@ def link_hints(live, sections):
         put(x.get("url"), t, (x.get("start") or "")[:10], "seminar")
     for m in re.finditer(r'<a[^>]+href="(https?://[^"]+)"[^>]*>([\s\S]*?)</a>', sections):
         put(H.unescape(m.group(1)), re.sub(r"<[^>]+>|\s+", "", H.unescape(m.group(2))))
+    # 資料を読む（docs.json）の資料: 題名・公表日・グループ
+    DG = {"law": "law", "gl": "law", "qa": "law", "kenshu": "kit", "hinagata": "kit", "kaisetsu": "notice", "ouyou": "kit",
+          "tetsuzuki": "system", "kantoku": "notice", "odan": "notice", "senmon": "kit", "tsuchi": "notice"}
+    try:
+        for d in json.loads((SRC / "docs.json").read_text(encoding="utf-8"))["docs"]:
+            dd = d.get("d", "")
+            put(d["u"], d["t"], (dd[:4] + "-" + dd[4:6] + "-" + dd[6:8]) if len(dd) == 8 else "", "session" if d["slug"].startswith(("kaisai-", "setsumei")) else DG.get(d["g"], "notice"))
+    except FileNotFoundError:
+        pass
     for x in live.get("updates", []):
         u = x.get("url", "")
         put(u, x.get("title", ""), x.get("date", ""), link_group(u) if x.get("src") == "自治体" else ("seminar" if x.get("src") == "研修" else "notice"))
@@ -108,7 +119,19 @@ def main():
         t = re.sub(r"\{\{([A-Z0-9_]+)\}\}", lambda m: (SRC / "svg" / (m.group(1) + ".svg")).read_text(encoding="utf-8"), t)
         parts.append(t)
     data = (SRC / "data.js").read_text(encoding="utf-8")
+    docs_js, docs_bad, docs_n, docs_ctx = docs_build.build(strict="--draft" not in sys.argv)
+    # 研修の進め方（照合済みの章 kenshu.json）
+    kj = SRC / "kenshu.json"
+    if kj.exists():
+        k_lead, k_body = docs_build.chapter_html(kj, docs_ctx)
+    else:
+        if "--draft" not in sys.argv:
+            sys.exit("kenshu.json がありません")
+        k_lead, k_body = '<p class="ch-lead">（作成中）</p>', ""
+    parts = [x.replace("<!--KENSHU-LEAD-->", k_lead).replace("<!--KENSHU-BODY-->", k_body) for x in parts]
+    data += "\n" + docs_js
     app = (SRC / "app.js").read_text(encoding="utf-8")
+    app = app.replace("/*@DOCS@*/", (SRC / "docs.js").read_text(encoding="utf-8"))
     live = json.loads((SRC / "live.json").read_text(encoding="utf-8"))   # 読めなければここで止まる
     live_txt = json.dumps(live, ensure_ascii=False, indent=1).replace("</", "<\\/")
     live_block = ('<!--LIVE-DATA-START-->\n<script type="application/json" id="live-data">\n'
@@ -119,7 +142,7 @@ def main():
     book = json.loads((SRC / "links.json").read_text(encoding="utf-8"))
     html, added, lost, n_links = linkbook.build(html, book["groups"], links_with_dates(book, live),
                                                 link_hints(live, "\n".join(parts)), link_group, "説明会　10/15")
-    bad = []
+    bad = list(docs_bad)
     # 根拠の表記（Q&A・判定ツールの src、章の ref）は、資料リンク集の資料に必ず結びつける（どの資料のどこかを辿れるように）
     cites = [m.group(1) for m in re.finditer(r'\bsrc:\s*"([^"]+)"', data)]
     cites += [re.sub(r"<[^>]+>", "", H.unescape(m.group(1))) for m in re.finditer(r'<span class="ref">([\s\S]*?)</span>', "\n".join(parts))]
@@ -142,14 +165,18 @@ def main():
             bad.append(f"<{tag}> open={o} close={c}")
     # 画面を動かすスクリプトの書き間違い（node があるときだけ確かめる）
     if shutil.which("node"):
-        r = subprocess.run(["node", "--check", str(SRC / "app.js")], capture_output=True, text=True)
+        import tempfile
+        with tempfile.NamedTemporaryFile("w", suffix=".js", delete=False, encoding="utf-8") as tf:
+            tf.write(data + "\n" + app)
+        r = subprocess.run(["node", "--check", tf.name], capture_output=True, text=True)
+        pathlib.Path(tf.name).unlink()
         if r.returncode:
-            bad.append("app.js に書き間違いがあります: " + (r.stderr.strip().splitlines() or [""])[0])
+            bad.append("app.js・docs.js・data.js に書き間違いがあります: " + " ".join(r.stderr.strip().splitlines()[:3]))
     if bad:
         print("書き出しを止めました:", *bad, sep="\n  ")
         sys.exit(1)
     OUT.write_text(html, encoding="utf-8")
-    print(OUT, len(html.encode("utf-8")) // 1024, "KB", "資料リンク集", n_links, "件")
+    print(OUT, len(html.encode("utf-8")) // 1024, "KB", "資料リンク集", n_links, "件", "資料", docs_n)
     if added:
         print("  うち、links.json になく自動で足したもの", len(added), "件（研修の告知など）")
     for a in added:

@@ -19,6 +19,15 @@
   }
   function $(id) { return document.getElementById(id); }
   function each(list, fn) { Array.prototype.forEach.call(list, fn); }
+  var QA_LOAD = null, QA_DRAW = null;
+  var CACHE = {};
+  function getJSON(path, cb) {
+    if (CACHE[path]) { if (CACHE[path].data) cb(CACHE[path].data); else CACHE[path].wait.push(cb); return; }
+    CACHE[path] = { wait: [cb] };
+    fetch(path, { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (j) {
+      CACHE[path].data = j; var w = CACHE[path].wait; CACHE[path].wait = []; w.forEach(function (f) { f(j); });
+    }).catch(function () { var w = CACHE[path].wait; delete CACHE[path]; w.forEach(function (f) { f(null); }); });
+  }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
 
   /* ── 日付（日本時間で数える） ─────────── */
@@ -226,52 +235,100 @@
     var list = $("qa-list");
     var items = DATA.qa;
     if (!list || !items) return;
-    var input = $("qa-q"), chipsHost = $("qa-chips"), meta = $("qa-count");
-    var cats = [];
-    items.forEach(function (q) { q.cat.forEach(function (c) { if (cats.indexOf(c) < 0) cats.push(c); }); });
-    var active = "すべて";
-    ["すべて"].concat(cats).forEach(function (c) {
-      var b = el("button", { class: "chip", type: "button", "aria-pressed": c === active ? "true" : "false" }, c);
-      b.addEventListener("click", function () {
-        active = c;
-        each(chipsHost.children, function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
-        draw();
-      });
-      chipsHost.appendChild(b);
-    });
-    var nodes = items.map(function (q, i) {
-      var d = el("details", { class: "qa", id: "qa-" + (i + 1) });
+    var input = $("qa-q"), chipsHost = $("qa-chips"), kindHost = $("qa-kind"), meta = $("qa-count");
+    // 分類（公式Q&Aは章から決める。「研修」は問と答に研修を含むものにも付ける）
+    var CAT_ORDER = ["制度全般", "定義", "対象事業", "対象者", "障害福祉", "確認の手続", "時期・期限", "安全確保措置", "研修", "事案対応", "防止措置", "採用・労務", "情報管理", "システム", "認定", "監督・報告", "費用・支援", "その他"];
+    var CHAP = [[/総論/, "制度全般"], [/定義/, "定義"], [/対象事業/, "対象事業"], [/認定/, "認定"], [/犯罪事実確認/, "確認の手続"], [/防止措置/, "防止措置"],
+      [/安全確保措置/, "安全確保措置"], [/情報管理/, "情報管理"], [/監督/, "監督・報告"], [/その他/, "その他"]];
+    var PART = { "基礎編": "k", "応用編": "o", "まとめ登録": "m" };
+    var SRCT = { qa: "こども性暴力防止法に関するQ&A（令和8年9月29日改訂）", "qa-matome": "事業者アカウントまとめ登録に関するQ&A（令和8年6月）" };
+    var DOCU = {}; (DATA.docs && DATA.docs.docs || []).forEach(function (d) { DOCU[d.slug] = d.u; });
+    var nodes = [], active = "すべて", kind = "all";
+    function addNode(q, i) {
+      var off = q.kind === "official";
+      var d = el("details", { class: "qa" + (off ? " is-off" : ""), id: off ? "qo-" + q.key : q.id ? "qm-" + q.id : "qa-" + (i + 1) });
       var s = el("summary");
-      s.innerHTML = '<span class="qt"></span><span class="tags">' + q.cat.map(function (c) { return "<span>" + c + "</span>"; }).join("") + "</span>";
+      var badge = off ? '<span class="qk off">公式Q&amp;A ' + esc(q.label) + "</span>" : '<span class="qk mat">資料から回答</span>';
+      s.innerHTML = '<span class="qt"></span><span class="tags">' + badge + q.cat.map(function (c) { return "<span>" + c + "</span>"; }).join("") + "</span>";
       d.appendChild(s);
-      var a = el("div", { class: "a" }, q.a + (q.src ? '<div class="src">根拠・出典：' + q.src + "</div>" : ""));
+      var body = off ? q.a.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") : q.a;
+      var src = off
+        ? '<div class="src">出典：こども家庭庁「' + esc(SRCT[q.doc] || "") + "」" + esc(q.label) + '（<a href="' + esc(DOCU[q.doc] || "") + "#page=" + q.p + '" target="_blank" rel="noopener">p.' + q.p + "</a>）</div>"
+        : (q.src ? '<div class="src">根拠・出典：' + q.src + "</div>" : "") + (q.more ? '<div class="src">' + q.more + "</div>" : "");
+      var a = el("div", { class: "a" }, body + src);
       d.appendChild(a);
-      list.appendChild(d);
-      return { d: d, qt: s.querySelector(".qt"), q: q, text: (q.q + " " + a.textContent).toLowerCase() };
-    });
+      list.insertBefore(d, empty);
+      var x = { d: d, qt: s.querySelector(".qt"), q: q, off: off, text: (q.q + " " + (off ? q.label + " " + q.a.join(" ") : a.textContent) + " " + q.cat.join(" ")).normalize("NFKC").toLowerCase() };
+      nodes.push(x);
+      return x;
+    }
     var empty = el("div", { class: "qa-empty", hidden: "" }, "該当する質問が見つかりませんでした。言葉を変えるか、分類を「すべて」に戻してください。");
     list.appendChild(empty);
+    items.forEach(function (q, i) {
+      var c = q.cat.slice();
+      if (/研修/.test(q.q) && c.indexOf("研修") < 0) c.push("研修");
+      addNode({ kind: "guide", id: q.id, q: q.q, a: q.a, src: q.src, more: q.more, cat: c }, i);
+    });
+    var cats = [];
+    function drawChips() {
+      var have = {};
+      nodes.forEach(function (x) { x.q.cat.forEach(function (c) { have[c] = 1; }); });
+      cats = CAT_ORDER.filter(function (c) { return have[c]; }).concat(Object.keys(have).filter(function (c) { return CAT_ORDER.indexOf(c) < 0; }));
+      chipsHost.innerHTML = "";
+      ["すべて"].concat(cats).forEach(function (c) {
+        var b = el("button", { class: "chip", type: "button", "aria-pressed": c === active ? "true" : "false" }, c);
+        b.addEventListener("click", function () { active = c; each(chipsHost.children, function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); }); draw(); });
+        chipsHost.appendChild(b);
+      });
+    }
+    if (kindHost) [["all", "すべて"], ["guide", "資料から回答"], ["official", "公式Q&A"]].forEach(function (k) {
+      var b = el("button", { type: "button", "aria-pressed": k[0] === kind ? "true" : "false" }, k[1]);
+      b.addEventListener("click", function () { kind = k[0]; each(kindHost.children, function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); }); draw(); });
+      kindHost.appendChild(b);
+    });
+    var loaded = false;
+    function loadOfficial(cb) {
+      if (loaded) { if (cb) cb(); return; }
+      getJSON("qa_official.json", function (j) {
+        if (!loaded && j) {
+          loaded = true;
+          j.forEach(function (o) {
+            var cat = [];
+            if (o.doc === "qa-matome") cat.push("システム");
+            else CHAP.some(function (m) { if (m[0].test(o.chap || "")) { cat.push(m[1]); return true; } return false; });
+            if (/研修/.test(o.q + o.a.join("")) && cat.indexOf("研修") < 0) cat.push("研修");
+            var key = (PART[o.part] || "x") + o.no;
+            addNode({ kind: "official", key: key, label: (o.part === "まとめ登録" ? "まとめ登録" : o.part) + o.no, q: o.q, a: o.a, cat: cat, doc: o.doc, p: o.p });
+          });
+          drawChips(); draw();
+        }
+        if (cb) cb();
+      });
+    }
+    QA_LOAD = loadOfficial;
     function draw() {
-      var term = (input.value || "").trim().toLowerCase();
+      var term = (input.value || "").trim().normalize("NFKC").toLowerCase();
       var words = term.split(/\s+/).filter(Boolean);
-      var n = 0;
+      var n = 0, nOff = 0, nMat = 0;
       nodes.forEach(function (x) {
+        var okKind = kind === "all" || (kind === "official") === x.off;
         var okCat = active === "すべて" || x.q.cat.indexOf(active) >= 0;
         var okTerm = words.every(function (w) { return x.text.indexOf(w) >= 0; });
-        var show = okCat && okTerm;
+        var show = okKind && okCat && okTerm;
         x.d.hidden = !show;
-        if (show) n++;
+        if (show) { n++; if (x.off) nOff++; else nMat++; }
         var t = esc(x.q.q);
         if (words.length) words.forEach(function (w) { var re = new RegExp("(" + esc(w).replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi"); t = t.replace(re, "<mark>$1</mark>"); });
         x.qt.innerHTML = t;
       });
-      meta.textContent = n + " 件を表示（全 " + nodes.length + " 件）";
-      empty.hidden = n !== 0;
+      meta.textContent = n + " 件を表示（資料から回答 " + nMat + "・公式Q&A " + nOff + "）" + (loaded ? "" : "・公式Q&Aを読み込み中");
+      empty.hidden = n !== 0 || !loaded;
     }
     input.addEventListener("input", draw);
     if ($("qa-open")) $("qa-open").addEventListener("click", function () { nodes.forEach(function (x) { if (!x.d.hidden) x.d.open = true; }); });
     if ($("qa-close")) $("qa-close").addEventListener("click", function () { nodes.forEach(function (x) { x.d.open = false; }); });
-    draw();
+    drawChips(); draw();
+    QA_DRAW = draw;
   })();
 
   /* ── 研修・説明会 ─────────────────────── */
@@ -367,7 +424,7 @@
   var GROUPS = [
     { k: "home", t: "ホーム" }, { k: "todo", t: "やること" }, { k: "tools", t: "判定ツール" },
     { k: "basics", t: "しくみ" }, { k: "ops", t: "運用" }, { k: "sectors", t: "事業別" },
-    { k: "qa", t: "Q&A" }, { k: "events", t: "研修・窓口" }, { k: "updates", t: "更新情報" }
+    { k: "qa", t: "Q&A" }, { k: "events", t: "研修・窓口" }, { k: "docs", t: "資料" }, { k: "updates", t: "更新情報" }
   ];
   var VIEWS = {}, SEQ = [];
   GROUPS.forEach(function (g) { g.views = []; });
@@ -375,7 +432,8 @@
     var g = GROUPS.filter(function (x) { return x.k === v.getAttribute("data-group"); })[0];
     if (!g) return;
     var info = { id: v.id, el: v, g: g, t: v.getAttribute("data-title") };
-    VIEWS[v.id] = info; g.views.push(info);
+    VIEWS[v.id] = info;
+    if (!v.hasAttribute("data-hidden")) g.views.push(info);   // 資料のページ（#doc-…）は一覧・前後のページに出さない
   });
   // 並び順は ORDER と GROUPS に従う（同じグループ内は文書順）
   GROUPS.forEach(function (g) { g.views.forEach(function (v) { if (g.k !== "home") SEQ.push(v); }); });
@@ -572,6 +630,7 @@
   // 前のページを離れたときと同じ位置で出す。再読み込みは先頭から（報酬改定ガイドと同じ・ユーザー指示 2026-10-27）
   var shell = document.querySelector(".shell"), subnav = $("subnav");
   var current = null;
+  var EXT = [];   // 中身を読み込んで作るページ（資料・法令）の行き先。docs.js が足す
   var MQ = window.matchMedia ? window.matchMedia("(max-width: 960px)") : { matches: false };
   try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
   function getState() { var s = null; try { s = history.state; } catch (e) {} return s && typeof s === "object" ? s : {}; }
@@ -630,6 +689,7 @@
     firstRoute = false;
     try { id = decodeURIComponent((location.hash || "").slice(1)); } catch (e) { id = ""; }
     if (!id || id === "top") { show(VIEWS.home); place(intent, st); return; }
+    for (var xi = 0; xi < EXT.length; xi++) { if (EXT[xi](id, intent, st)) return; }
     if (VIEWS[id]) { show(VIEWS[id]); place(intent, st); return; }
     var t = $(id);
     var vEl = t && t.closest(".view");
@@ -676,6 +736,7 @@
   function reqCx() { if (!cxTick) { cxTick = true; requestAnimationFrame(updCx); } }
   window.addEventListener("scroll", reqCx, { passive: true });
   window.addEventListener("resize", reqCx);
+/*@DOCS@*/
   route();
 
   /* ── 資料リンク集：資料名・日付で絞り込む ────────── */

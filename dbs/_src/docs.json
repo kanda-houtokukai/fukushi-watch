@@ -1,0 +1,1499 @@
+{
+ "groups": [
+  {
+   "k": "law",
+   "t": "法令"
+  },
+  {
+   "k": "gl",
+   "t": "ガイドライン"
+  },
+  {
+   "k": "qa",
+   "t": "Q&A"
+  },
+  {
+   "k": "kenshu",
+   "t": "研修"
+  },
+  {
+   "k": "hinagata",
+   "t": "ひな型・様式"
+  },
+  {
+   "k": "kaisetsu",
+   "t": "解説・説明会・準備"
+  },
+  {
+   "k": "ouyou",
+   "t": "応用編（事案対応・労務・情報管理）"
+  },
+  {
+   "k": "tetsuzuki",
+   "t": "手続・システム"
+  },
+  {
+   "k": "kantoku",
+   "t": "監督"
+  },
+  {
+   "k": "odan",
+   "t": "横断指針"
+  },
+  {
+   "k": "senmon",
+   "t": "専門家向け・相談支援"
+  },
+  {
+   "k": "tsuchi",
+   "t": "通知"
+  }
+ ],
+ "docs": [
+  {
+   "slug": "law-shinkyu",
+   "t": "法律案 新旧対照条文（附則で改正する他の法律）",
+   "g": "law",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/35cb9fc3/20251006_policies_child-safety_efforts_koseibouhou_10.pdf",
+   "d": "20251006",
+   "np": 15,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "kijitsu",
+   "t": "施行期日を定める政令",
+   "g": "law",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/a0721197/20251225_policies_child-safety_efforts_koseibouhou_16.pdf",
+   "d": "20251225",
+   "np": 1,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "kokuji-joho",
+   "t": "こども家庭庁告示（規則に基づく告示）",
+   "g": "law",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/8e825407/20251225_policies_child-safety_efforts_koseibouhou_19.pdf",
+   "d": "20251225",
+   "np": 4,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "kokuji-hyoji",
+   "t": "法第23条第1項のこども家庭庁長官が定める表示を定める件（告示）",
+   "g": "law",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/fb716b16/20251225_policies_child-safety_efforts_koseibouhou_20.pdf",
+   "d": "20251225",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "law-pdf",
+   "t": "法律 条文（PDF）",
+   "g": "law",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/1f59df44/20251006_policies_child-safety_efforts_koseibouhou_09.pdf",
+   "d": "20251006",
+   "np": 71,
+   "ext": "pdf",
+   "mode": "skip",
+   "memo": "e-Gov の条文（令和8年12月25日施行の版）をそのまま載せる"
+  },
+  {
+   "slug": "rei-pdf",
+   "t": "施行令 条文（PDF）",
+   "g": "law",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/f173001c/20251225_policies_child-safety_efforts_koseibouhou_17.pdf",
+   "d": "20251225",
+   "np": 13,
+   "ext": "pdf",
+   "mode": "skip",
+   "memo": "e-Gov の条文をそのまま載せる"
+  },
+  {
+   "slug": "kisoku-pdf",
+   "t": "施行規則 条文（PDF）",
+   "g": "law",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/2939f90e/20260731_policies_child-safety_efforts_koseibouhou_69.pdf",
+   "d": "20260731",
+   "np": 76,
+   "ext": "pdf",
+   "mode": "skip",
+   "memo": "e-Gov の条文をそのまま載せる"
+  },
+  {
+   "slug": "gl",
+   "t": "こども性暴力防止法施行ガイドライン（令和8年9月改訂）",
+   "g": "gl",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/abc50df0/20260901_policies_child-safety_efforts_koseibouhou_72.pdf",
+   "d": "20260901",
+   "np": 345,
+   "ext": "pdf",
+   "mode": "notes",
+   "poff": -1
+  },
+  {
+   "slug": "gl-kaitei",
+   "t": "ガイドライン改訂（令和8年9月）の概要",
+   "g": "gl",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/db530b67/20260908_policies_child-safety_efforts_koseibouhou_86.pdf",
+   "d": "20260908",
+   "np": 8,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "gl-sho",
+   "t": "こども性暴力防止法施行ガイドライン（抄）（戸籍関係事務の通知の参考資料2）",
+   "g": "gl",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/d82c5999/20260929_policies_child-safety_efforts_koseibouhou_94.pdf",
+   "d": "20260929",
+   "np": 21,
+   "ext": "pdf",
+   "mode": "skip",
+   "memo": "ガイドライン本体の抜粋。本体の要点で網羅"
+  },
+  {
+   "slug": "gl-kaitei2",
+   "t": "（別添）こども性暴力防止法施行ガイドラインの改訂について",
+   "g": "gl",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/a0f1b1c4/20260903_policies_child-safety_efforts_koseibouhou_81.pdf",
+   "d": "20260903",
+   "np": 8,
+   "ext": "pdf",
+   "mode": "skip",
+   "memo": "「ガイドライン改訂の概要」と同じ内容（8頁）"
+  },
+  {
+   "slug": "qa",
+   "t": "こども性暴力防止法に関するQ&A（令和8年9月29日改訂）",
+   "g": "qa",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/379c2e9b/20260929_policies_child-safety_efforts_koseibouhou_100.pdf",
+   "d": "20260929",
+   "np": 123,
+   "ext": "pdf",
+   "mode": "qa"
+  },
+  {
+   "slug": "qa-matome",
+   "t": "事業者アカウントまとめ登録に関するQ&A",
+   "g": "qa",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1793a109-87b3-479f-8c60-46949bd0da3a/5f748f7f/20260616_policies_child-safety_efforts_koseibouhou_matometouroku_23.pdf",
+   "d": "20260616",
+   "np": 26,
+   "ext": "pdf",
+   "mode": "qa"
+  },
+  {
+   "slug": "qa-bunsan",
+   "t": "（参考）施行時現職者の分散申請に関するQ＆A",
+   "g": "qa",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/471ac2c5/20260708_policies_child-safety_efforts_koseibouhou_57.pdf",
+   "d": "20260708",
+   "np": 3,
+   "ext": "pdf",
+   "mode": "qa"
+  },
+  {
+   "slug": "kenshu",
+   "t": "こども性暴力防止法に関する研修資料（従事者向け）",
+   "g": "kenshu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/cdf17aee-39d7-4257-8963-9b1daae56009/e1f84738/20261028_policies_child-safety_efforts_koseibouhou_jujisya_16.pdf",
+   "d": "20261028",
+   "np": 115,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "ensyu-j",
+   "t": "こども性暴力防止法に関する演習資料（従事者向け）",
+   "g": "kenshu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/cdf17aee-39d7-4257-8963-9b1daae56009/633fbdcb/20260914_policies_child-safety_efforts_koseibouhou_jujisya_13.pptx",
+   "d": "20260914",
+   "np": 104,
+   "ext": "pptx",
+   "mode": "notes"
+  },
+  {
+   "slug": "ensyu-k",
+   "t": "こども性暴力防止法に関する演習資料（事業者向け）",
+   "g": "kenshu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/fa291380-2996-450c-a3dd-6acf7f58fd3b/4976520e/20260909_policies_child-safety_efforts_koseibouhou_jigyousya_19.pptx",
+   "d": "20260909",
+   "np": 47,
+   "ext": "pptx",
+   "mode": "notes"
+  },
+  {
+   "slug": "tebiki",
+   "t": "こども性暴力防止法に関する研修の手引き",
+   "g": "kenshu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/fa291380-2996-450c-a3dd-6acf7f58fd3b/2b64a4d9/20260415_policies_child-safety_efforts_koseibouhou_jigyousya_08.pdf",
+   "d": "20260415",
+   "np": 23,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "tebiki-keikaku",
+   "t": "研修の手引き 別添様式1 研修実施計画書",
+   "g": "kenshu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/fa291380-2996-450c-a3dd-6acf7f58fd3b/101fe542/20260415_policies_child-safety_efforts_koseibouhou_jigyousya_05.xlsx",
+   "d": "20260415",
+   "np": 3,
+   "ext": "xlsx",
+   "mode": "notes"
+  },
+  {
+   "slug": "tebiki-kiroku",
+   "t": "研修の手引き 別添様式1 研修受講記録",
+   "g": "kenshu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/fa291380-2996-450c-a3dd-6acf7f58fd3b/cbe658ae/20260415_policies_child-safety_efforts_koseibouhou_jigyousya_06.xlsx",
+   "d": "20260415",
+   "np": 2,
+   "ext": "xlsx",
+   "mode": "notes"
+  },
+  {
+   "slug": "test-j",
+   "t": "こども性暴力防止法に関する研修 確認テスト（従事者向け）",
+   "g": "kenshu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/cdf17aee-39d7-4257-8963-9b1daae56009/a3f413ff/20260420_policies_child-safety_efforts_koseibouhou_jigyousya_07.xlsx",
+   "d": "20260420",
+   "np": 2,
+   "ext": "xlsx",
+   "mode": "notes"
+  },
+  {
+   "slug": "test-k",
+   "t": "こども性暴力防止法の解説動画・資料 確認テスト（事業者向け）",
+   "g": "kenshu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/fa291380-2996-450c-a3dd-6acf7f58fd3b/1269b08d/20260420_policies_child-safety_efforts_koseibouhou_jigyousya_09.xlsx",
+   "d": "20260420",
+   "np": 2,
+   "ext": "xlsx",
+   "mode": "notes"
+  },
+  {
+   "slug": "h-taisho",
+   "t": "児童対象性暴力等対処規程（ひな型）【別紙1】",
+   "g": "hinagata",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/56b4b7f1-04de-4f1d-bc14-34b69ea22ab0/883cfa40/20260901_policies_child-safety_efforts_koseibouhou_hinagata_20.docx",
+   "d": "20260901",
+   "np": 1,
+   "ext": "docx",
+   "mode": "notes"
+  },
+  {
+   "slug": "h-ikou",
+   "t": "意向確認書面作成例【別紙2】",
+   "g": "hinagata",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/56b4b7f1-04de-4f1d-bc14-34b69ea22ab0/1c78cd40/20260416_policies_child-safety_efforts_koseibouhou_hinagata_16.docx",
+   "d": "20260416",
+   "np": 1,
+   "ext": "docx",
+   "mode": "notes"
+  },
+  {
+   "slug": "h-boshu",
+   "t": "募集要項・求人票参考例【別紙3】",
+   "g": "hinagata",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/56b4b7f1-04de-4f1d-bc14-34b69ea22ab0/a38916c3/20260901_policies_child-safety_efforts_koseibouhou_hinagata_18.docx",
+   "d": "20260901",
+   "np": 1,
+   "ext": "docx",
+   "mode": "notes"
+  },
+  {
+   "slug": "h-seiyaku",
+   "t": "誓約書・内定通知書参考例【別紙4】",
+   "g": "hinagata",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/56b4b7f1-04de-4f1d-bc14-34b69ea22ab0/ba2301cf/20260901_policies_child-safety_efforts_koseibouhou_hinagata_19.docx",
+   "d": "20260901",
+   "np": 1,
+   "ext": "docx",
+   "mode": "notes"
+  },
+  {
+   "slug": "h-shugyo",
+   "t": "就業規則参考例【別紙5】",
+   "g": "hinagata",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/56b4b7f1-04de-4f1d-bc14-34b69ea22ab0/4fc3906a/20260416_policies_child-safety_efforts_koseibouhou_hinagata_03.docx",
+   "d": "20260416",
+   "np": 1,
+   "ext": "docx",
+   "mode": "notes"
+  },
+  {
+   "slug": "h-kiroku",
+   "t": "様式案（取扱記録）【別紙6】",
+   "g": "hinagata",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/56b4b7f1-04de-4f1d-bc14-34b69ea22ab0/6be9df2e/20260901_policies_child-safety_efforts_koseibouhou_hinagata_22.xlsx",
+   "d": "20260901",
+   "np": 3,
+   "ext": "xlsx",
+   "mode": "notes"
+  },
+  {
+   "slug": "h-kengen",
+   "t": "権限設定表【別紙7】",
+   "g": "hinagata",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/f0a968cb/20260109_policies_child-safety_efforts_koseibouhou_31.pptx",
+   "d": "20260109",
+   "np": 2,
+   "ext": "pptx",
+   "mode": "notes"
+  },
+  {
+   "slug": "h-joho1",
+   "t": "情報管理規程ひな型①（責任者1名・記録保存なし）【別紙8】",
+   "g": "hinagata",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/56b4b7f1-04de-4f1d-bc14-34b69ea22ab0/f86c6cc0/20260416_policies_child-safety_efforts_koseibouhou_hinagata_12.docx",
+   "d": "20260416",
+   "np": 1,
+   "ext": "docx",
+   "mode": "notes"
+  },
+  {
+   "slug": "h-joho2",
+   "t": "情報管理規程ひな型②（記録保存なし）【別紙9】",
+   "g": "hinagata",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/56b4b7f1-04de-4f1d-bc14-34b69ea22ab0/d509dbf0/20260416_policies_child-safety_efforts_koseibouhou_hinagata_13.docx",
+   "d": "20260416",
+   "np": 1,
+   "ext": "docx",
+   "mode": "notes"
+  },
+  {
+   "slug": "h-joho3",
+   "t": "情報管理規程ひな型③（記録保存あり）【別紙10】",
+   "g": "hinagata",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/56b4b7f1-04de-4f1d-bc14-34b69ea22ab0/fc9f41a6/20260901_policies_child-safety_efforts_koseibouhou_hinagata_21.docx",
+   "d": "20260901",
+   "np": 1,
+   "ext": "docx",
+   "mode": "notes"
+  },
+  {
+   "slug": "h-tsuchi",
+   "t": "本人通知の整理表【別紙11】",
+   "g": "hinagata",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/9f1be0ad/20260901_policies_child-safety_efforts_koseibouhou_78.docx",
+   "d": "20260901",
+   "np": 1,
+   "ext": "docx",
+   "mode": "notes"
+  },
+  {
+   "slug": "h-list",
+   "t": "（別紙）対象従事者のリストイメージ",
+   "g": "hinagata",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/3b38dcf6/20260903_policies_child-safety_efforts_koseibouhou_83.xlsx",
+   "d": "20260903",
+   "np": 1,
+   "ext": "xlsx",
+   "mode": "notes"
+  },
+  {
+   "slug": "h-houkoku",
+   "t": "報告ルールひな型",
+   "g": "hinagata",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/56b4b7f1-04de-4f1d-bc14-34b69ea22ab0/3ab64ca6/20260727_policies_child-safety_efforts_koseibouhou_hinagata_17.docx",
+   "d": "20260727",
+   "np": 1,
+   "ext": "docx",
+   "mode": "notes"
+  },
+  {
+   "slug": "h-houkoku-list",
+   "t": "【事業者内周知用】報告ルールひな型 報告先の連絡先一覧",
+   "g": "hinagata",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/56b4b7f1-04de-4f1d-bc14-34b69ea22ab0/22ac82ea/20260416_policies_child-safety_efforts_koseibouhou_hinagata_08.docx",
+   "d": "20260416",
+   "np": 1,
+   "ext": "docx",
+   "mode": "notes"
+  },
+  {
+   "slug": "h-taiou",
+   "t": "対応ルールひな型",
+   "g": "hinagata",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/56b4b7f1-04de-4f1d-bc14-34b69ea22ab0/894c4746/20261007_policies_child-safety_efforts_koseibouhou_hinagata_23.docx",
+   "d": "20261007",
+   "np": 1,
+   "ext": "docx",
+   "mode": "notes"
+  },
+  {
+   "slug": "h-flow",
+   "t": "【別紙】対応フローひな型",
+   "g": "hinagata",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/56b4b7f1-04de-4f1d-bc14-34b69ea22ab0/ba6f4c47/20260416_policies_child-safety_efforts_koseibouhou_hinagata_10.pptx",
+   "d": "20260416",
+   "np": 1,
+   "ext": "pptx",
+   "mode": "notes"
+  },
+  {
+   "slug": "h-hogosha",
+   "t": "保護者向け周知用資料ひな型",
+   "g": "hinagata",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/56b4b7f1-04de-4f1d-bc14-34b69ea22ab0/cc7352df/20260416_policies_child-safety_efforts_koseibouhou_hinagata_04.pptx",
+   "d": "20260416",
+   "np": 2,
+   "ext": "pptx",
+   "mode": "notes"
+  },
+  {
+   "slug": "h-jido-chu",
+   "t": "児童等向け周知用資料（相談後のフロー）ひな型（中高生向け）",
+   "g": "hinagata",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/56b4b7f1-04de-4f1d-bc14-34b69ea22ab0/7ea8c55a/20260416_policies_child-safety_efforts_koseibouhou_hinagata_05.pptx",
+   "d": "20260416",
+   "np": 1,
+   "ext": "pptx",
+   "mode": "notes"
+  },
+  {
+   "slug": "h-jido-ko",
+   "t": "児童等向け周知用資料（相談後のフロー）ひな型（小学生高学年向け）",
+   "g": "hinagata",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/56b4b7f1-04de-4f1d-bc14-34b69ea22ab0/00323013/20260416_policies_child-safety_efforts_koseibouhou_hinagata_06.pptx",
+   "d": "20260416",
+   "np": 1,
+   "ext": "pptx",
+   "mode": "notes"
+  },
+  {
+   "slug": "h-jido-tei",
+   "t": "児童等向け周知用資料（相談後のフロー）ひな型（小学生低学年向け）",
+   "g": "hinagata",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/56b4b7f1-04de-4f1d-bc14-34b69ea22ab0/7ec08ac7/20260416_policies_child-safety_efforts_koseibouhou_hinagata_07.pptx",
+   "d": "20260416",
+   "np": 1,
+   "ext": "pptx",
+   "mode": "notes"
+  },
+  {
+   "slug": "h-ikou-old",
+   "t": "意向確認書面作成例【別紙2】（令和8年1月版）",
+   "g": "hinagata",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/f27356e2/20260109_policies_child-safety_efforts_koseibouhou_26.docx",
+   "d": "20260109",
+   "np": 1,
+   "ext": "docx",
+   "mode": "skip",
+   "memo": "4月版と同じ図（画像のみ）"
+  },
+  {
+   "slug": "h-zip",
+   "t": "別紙一式ダウンロード（Zip）",
+   "g": "hinagata",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/52141f0c/20260901_policies_child-safety_efforts_koseibouhou_79.zip",
+   "d": "20260901",
+   "np": 1,
+   "ext": "zip",
+   "mode": "skip",
+   "memo": "別紙1〜11を1つにまとめたもの"
+  },
+  {
+   "slug": "kaisetsu",
+   "t": "こども性暴力防止法の解説資料（解説動画の資料）",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/fa291380-2996-450c-a3dd-6acf7f58fd3b/50aa1c8a/20260528_policies_child-safety_efforts_koseibouhou_jigyousya_12.pdf",
+   "d": "20260528",
+   "np": 198,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "gaiyo",
+   "t": "こども性暴力防止法について（概要）",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/f34d11b1/20260317_policies_child-safety_efforts_koseibouhou_46.pdf",
+   "d": "20260317",
+   "np": 47,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "setsumei",
+   "t": "こども性暴力防止法の施行に関する全国説明会（令和8年度）説明資料",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/60c23b17-4fa3-43ad-9438-0fe1cc64b9f9/6933a19d/20260916_policies_child-safety_efforts_koseibouhou_information-session-r8_13.pdf",
+   "d": "20260916",
+   "np": 118,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "junbi",
+   "t": "義務事業者用準備ガイド（Ver.1.2）",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/51c45b26/20261023_policies_child-safety_efforts_koseibouhou_106.pdf",
+   "d": "20261023",
+   "np": 19,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "junbi-ref",
+   "t": "義務事業者用準備ガイド（参考資料）",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/19360ccf/20261023_policies_child-safety_efforts_koseibouhou_107.pdf",
+   "d": "20261023",
+   "np": 31,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "checklist",
+   "t": "事業者向けチェックリスト（施行までに必要な対応）",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/7b0936d2/20260422_policies_child-safety_efforts_koseibouhou_50.pdf",
+   "d": "20260422",
+   "np": 9,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "gaiyo-2025",
+   "t": "こども性暴力防止法について 概要・参考資料（令和7年4月）",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/38a745ea/20250415_policies_child-safety_efforts_koseibouhou_02.pdf",
+   "d": "20250415",
+   "np": 16,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "leaf-start",
+   "t": "リーフレット「こども性暴力防止法がスタートします」",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/8ed72261/20251225_policies_child-safety_efforts_koseibouhou_12.pdf",
+   "d": "20251225",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "leaf-jigyo",
+   "t": "リーフレット「こども性暴力防止法による対応が始まります（事業者の皆さまへ）施行前版」",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/66415a92/20251225_policies_child-safety_efforts_koseibouhou_14.pdf",
+   "d": "20251225",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "leaf-juji",
+   "t": "リーフレット「こども性暴力防止法による対応が始まります（従事者の皆さまへ）」",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/3154d961/20251225_policies_child-safety_efforts_koseibouhou_15.pdf",
+   "d": "20251225",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "leaf-mamoru",
+   "t": "リーフレット「こどもたちを性暴力からまもる新しい制度が始まります」",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/0ab8291b/20260714_policies_child-safety_efforts_koseibouhou_59.pdf",
+   "d": "20260714",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "leaf-dekiru",
+   "t": "リーフレット「こどもに対する性暴力の防止についてできること考えてみませんか？」",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/53ccfba7/20260714_policies_child-safety_efforts_koseibouhou_60.pdf",
+   "d": "20260714",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "leaf-kodomo",
+   "t": "リーフレット「こどものためにできること」",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/5707f7e4/20260724_policies_child-safety_efforts_koseibouhou_68.pdf",
+   "d": "20260724",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "poster",
+   "t": "ポスター（制度の概要）",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/c1bd8be1/20260714_policies_child-safety_efforts_koseibouhou_61.pdf",
+   "d": "20260714",
+   "np": 1,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "kaisai-eb04",
+   "t": "全国説明会 開催日程（会場別）",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/60c23b17-4fa3-43ad-9438-0fe1cc64b9f9/37b27a09/20260821_policies_child-safety_efforts_koseibouhou_information-session-r8_01.pdf",
+   "d": "20260821",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "skip",
+   "memo": "全国説明会の開催日程（会場ごとの案内・2頁）。説明会の情報はガイドの説明会欄で扱う"
+  },
+  {
+   "slug": "kaisai-5acb",
+   "t": "全国説明会 開催日程（会場別）",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/60c23b17-4fa3-43ad-9438-0fe1cc64b9f9/96a7aa94/20260821_policies_child-safety_efforts_koseibouhou_information-session-r8_02.pdf",
+   "d": "20260821",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "skip",
+   "memo": "全国説明会の開催日程（会場ごとの案内・2頁）。説明会の情報はガイドの説明会欄で扱う"
+  },
+  {
+   "slug": "kaisai-f850",
+   "t": "全国説明会 開催日程（会場別）",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/60c23b17-4fa3-43ad-9438-0fe1cc64b9f9/a62fe96c/20260821_policies_child-safety_efforts_koseibouhou_information-session-r8_03.pdf",
+   "d": "20260821",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "skip",
+   "memo": "全国説明会の開催日程（会場ごとの案内・2頁）。説明会の情報はガイドの説明会欄で扱う"
+  },
+  {
+   "slug": "kaisai-f4ef",
+   "t": "全国説明会 開催日程（会場別）",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/60c23b17-4fa3-43ad-9438-0fe1cc64b9f9/1c8f7f00/20260821_policies_child-safety_efforts_koseibouhou_information-session-r8_04.pdf",
+   "d": "20260821",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "skip",
+   "memo": "全国説明会の開催日程（会場ごとの案内・2頁）。説明会の情報はガイドの説明会欄で扱う"
+  },
+  {
+   "slug": "kaisai-4e5b",
+   "t": "全国説明会 開催日程（会場別）",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/60c23b17-4fa3-43ad-9438-0fe1cc64b9f9/9213b77a/20260821_policies_child-safety_efforts_koseibouhou_information-session-r8_05.pdf",
+   "d": "20260821",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "skip",
+   "memo": "全国説明会の開催日程（会場ごとの案内・2頁）。説明会の情報はガイドの説明会欄で扱う"
+  },
+  {
+   "slug": "kaisai-73a2",
+   "t": "全国説明会 開催日程（会場別）",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/60c23b17-4fa3-43ad-9438-0fe1cc64b9f9/8e40834b/20260821_policies_child-safety_efforts_koseibouhou_information-session-r8_06.pdf",
+   "d": "20260821",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "skip",
+   "memo": "全国説明会の開催日程（会場ごとの案内・2頁）。説明会の情報はガイドの説明会欄で扱う"
+  },
+  {
+   "slug": "kaisai-12b8",
+   "t": "全国説明会 開催日程（会場別）",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/60c23b17-4fa3-43ad-9438-0fe1cc64b9f9/e2dc47b5/20260821_policies_child-safety_efforts_koseibouhou_information-session-r8_07.pdf",
+   "d": "20260821",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "skip",
+   "memo": "全国説明会の開催日程（会場ごとの案内・2頁）。説明会の情報はガイドの説明会欄で扱う"
+  },
+  {
+   "slug": "kaisai-a351",
+   "t": "全国説明会 開催日程（会場別）",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/60c23b17-4fa3-43ad-9438-0fe1cc64b9f9/1612e2e9/20260821_policies_child-safety_efforts_koseibouhou_information-session-r8_08.pdf",
+   "d": "20260821",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "skip",
+   "memo": "全国説明会の開催日程（会場ごとの案内・2頁）。説明会の情報はガイドの説明会欄で扱う"
+  },
+  {
+   "slug": "kaisai-c56a",
+   "t": "全国説明会 開催日程（会場別）",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/60c23b17-4fa3-43ad-9438-0fe1cc64b9f9/d9db3bfe/20260821_policies_child-safety_efforts_koseibouhou_information-session-r8_09.pdf",
+   "d": "20260821",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "skip",
+   "memo": "全国説明会の開催日程（会場ごとの案内・2頁）。説明会の情報はガイドの説明会欄で扱う"
+  },
+  {
+   "slug": "kaisai-7fae",
+   "t": "全国説明会 開催日程（会場別）",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/60c23b17-4fa3-43ad-9438-0fe1cc64b9f9/f8c7c7e1/20260821_policies_child-safety_efforts_koseibouhou_information-session-r8_10.pdf",
+   "d": "20260821",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "skip",
+   "memo": "全国説明会の開催日程（会場ごとの案内・2頁）。説明会の情報はガイドの説明会欄で扱う"
+  },
+  {
+   "slug": "kaisai-0c11",
+   "t": "全国説明会 開催日程（会場別）",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/60c23b17-4fa3-43ad-9438-0fe1cc64b9f9/68601c05/20260821_policies_child-safety_efforts_koseibouhou_information-session-r8_11.pdf",
+   "d": "20260821",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "skip",
+   "memo": "全国説明会の開催日程（会場ごとの案内・2頁）。説明会の情報はガイドの説明会欄で扱う"
+  },
+  {
+   "slug": "kaisai-75a2",
+   "t": "全国説明会 開催日程（会場別）",
+   "g": "kaisetsu",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/60c23b17-4fa3-43ad-9438-0fe1cc64b9f9/59fe5f56/20260821_policies_child-safety_efforts_koseibouhou_information-session-r8_12.pdf",
+   "d": "20260821",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "skip",
+   "memo": "全国説明会の開催日程（会場ごとの案内・2頁）。説明会の情報はガイドの説明会欄で扱う"
+  },
+  {
+   "slug": "roudou",
+   "t": "こども性暴力防止法に基づく防止措置と労働法制等を踏まえた留意点",
+   "g": "ouyou",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/fa291380-2996-450c-a3dd-6acf7f58fd3b/1ccf4472/20260928_policies_child-safety_efforts_koseibouhou_jigyousya_28.pdf",
+   "d": "20260928",
+   "np": 26,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "kikitori-1",
+   "t": "こどもへの聴き取りに関する留意点＜知識編＞",
+   "g": "ouyou",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/fa291380-2996-450c-a3dd-6acf7f58fd3b/099b2b99/20260924_policies_child-safety_efforts_koseibouhou_jigyousya_24.pdf",
+   "d": "20260924",
+   "np": 39,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "kikitori-2",
+   "t": "こどもへの聴き取りに関する留意点＜実践編＞",
+   "g": "ouyou",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/fa291380-2996-450c-a3dd-6acf7f58fd3b/ddc2a564/20260924_policies_child-safety_efforts_koseibouhou_jigyousya_25.pdf",
+   "d": "20260924",
+   "np": 25,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "higai",
+   "t": "性暴力を受けたこどもへの対応のポイント",
+   "g": "ouyou",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/fa291380-2996-450c-a3dd-6acf7f58fd3b/2d8738ed/20260924_policies_child-safety_efforts_koseibouhou_jigyousya_26.pdf",
+   "d": "20260924",
+   "np": 32,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "hogosya",
+   "t": "被害を受けた疑いのあるこども以外の保護者とのコミュニケーション",
+   "g": "ouyou",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/fa291380-2996-450c-a3dd-6acf7f58fd3b/269151cf/20261029_policies_child-safety_efforts_koseibouhou_jigyousya_29.pdf",
+   "d": "20261029",
+   "np": 36,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "joho-tebiki",
+   "t": "こども性暴力防止法における情報管理措置 動画視聴のための手引き",
+   "g": "ouyou",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/fa291380-2996-450c-a3dd-6acf7f58fd3b/e84cd16e/20260909_policies_child-safety_efforts_koseibouhou_jigyousya_20.pdf",
+   "d": "20260909",
+   "np": 15,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "matome",
+   "t": "事業者アカウントまとめ登録マニュアル",
+   "g": "tetsuzuki",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1793a109-87b3-479f-8c60-46949bd0da3a/caf1a23f/20260609_policies_child-safety_efforts_koseibouhou_matometouroku_18.pdf",
+   "d": "20260609",
+   "np": 51,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "matome-y1",
+   "t": "まとめ登録マニュアル 別紙1「まとめ登録様式」",
+   "g": "tetsuzuki",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1793a109-87b3-479f-8c60-46949bd0da3a/57fe919d/20260609_policies_child-safety_efforts_koseibouhou_matometouroku_19.xlsx",
+   "d": "20260609",
+   "np": 5,
+   "ext": "xlsx",
+   "mode": "notes"
+  },
+  {
+   "slug": "matome-y2",
+   "t": "まとめ登録マニュアル 別紙2「手動まとめ用ファイル」",
+   "g": "tetsuzuki",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1793a109-87b3-479f-8c60-46949bd0da3a/e0b7ecd3/20260616_policies_child-safety_efforts_koseibouhou_matometouroku_22.xlsx",
+   "d": "20260616",
+   "np": 1,
+   "ext": "xlsx",
+   "mode": "notes"
+  },
+  {
+   "slug": "matome-y3",
+   "t": "まとめ登録マニュアル 別紙3 事業者情報変更届",
+   "g": "tetsuzuki",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1793a109-87b3-479f-8c60-46949bd0da3a/7de10e1c/20260423_policies_child-safety_efforts_koseibouhou_matometouroku_11.docx",
+   "d": "20260423",
+   "np": 1,
+   "ext": "docx",
+   "mode": "notes"
+  },
+  {
+   "slug": "matome-err",
+   "t": "まとめ登録様式の項目名誤りについて",
+   "g": "tetsuzuki",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1793a109-87b3-479f-8c60-46949bd0da3a/f25a6e86/20260616_policies_child-safety_efforts_koseibouhou_matometouroku_21.pdf",
+   "d": "20260616",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "matome-irai",
+   "t": "事業者情報の一括登録（まとめ登録）について（依頼）令和8年4月10日",
+   "g": "tetsuzuki",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1793a109-87b3-479f-8c60-46949bd0da3a/a1134106/20260415_policies_child-safety_efforts_koseibouhou_matometouroku_05.pdf",
+   "d": "20260415",
+   "np": 12,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "matome-qa-tsuchi",
+   "t": "まとめ登録に関するQ&Aについて（周知依頼）令和8年4月21日",
+   "g": "tetsuzuki",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1793a109-87b3-479f-8c60-46949bd0da3a/4be2988b/20260421_policies_child-safety_efforts_koseibouhou_matometouroku_08.pdf",
+   "d": "20260421",
+   "np": 1,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "matome-kaitei",
+   "t": "まとめ登録マニュアルの改訂・Q&Aの更新・留意事項（周知依頼）令和8年6月9日",
+   "g": "tetsuzuki",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1793a109-87b3-479f-8c60-46949bd0da3a/f53bcc18/20260609_policies_child-safety_efforts_koseibouhou_matometouroku_17.pdf",
+   "d": "20260609",
+   "np": 14,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "matome-enchou",
+   "t": "まとめ登録 提出期限延長について（周知）令和8年7月29日",
+   "g": "tetsuzuki",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1793a109-87b3-479f-8c60-46949bd0da3a/bf0be2b7/20260724_policies_child-safety_efforts_koseibouhou_matometouroku_24.pdf",
+   "d": "20260724",
+   "np": 11,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "matome-kakunin",
+   "t": "事業者情報提出後の登録内容の確認・修正依頼、こまもろうシステムのテストメール配信（周知依頼）令和8年8月28日",
+   "g": "tetsuzuki",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1793a109-87b3-479f-8c60-46949bd0da3a/9aef20ed/20260830_policies_child-safety_efforts_koseibouhou_matometouroku_25.pdf",
+   "d": "20260830",
+   "np": 13,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "gbiz",
+   "t": "GビズIDの事前取得について（依頼）令和8年1月27日",
+   "g": "tetsuzuki",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1793a109-87b3-479f-8c60-46949bd0da3a/4a18ab8f/20260128_policies_child-safety_efforts_koseibouhou_matometouroku_01.pdf",
+   "d": "20260128",
+   "np": 54,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "gbiz-2",
+   "t": "GビズIDの事前取得について（再周知）令和8年5月22日",
+   "g": "tetsuzuki",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1793a109-87b3-479f-8c60-46949bd0da3a/9ccd37f1/20260520_policies_child-safety_efforts_koseibouhou_matometouroku_13.pdf",
+   "d": "20260520",
+   "np": 12,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "gbiz-leaf",
+   "t": "（参考1）GビズID取得依頼リーフレット",
+   "g": "tetsuzuki",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1793a109-87b3-479f-8c60-46949bd0da3a/8f746feb/20260520_policies_child-safety_efforts_koseibouhou_matometouroku_14.pdf",
+   "d": "20260520",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "gbiz-faq",
+   "t": "（参考2）最近多く寄せられているお問合せ",
+   "g": "tetsuzuki",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1793a109-87b3-479f-8c60-46949bd0da3a/8a406019/20260608_policies_child-safety_efforts_koseibouhou_matometouroku_16.pdf",
+   "d": "20260608",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "system-soan",
+   "t": "こまもろうシステムマニュアル（素案）について（依頼）令和8年8月28日",
+   "g": "tetsuzuki",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/2c6c92d4/20260908_policies_child-safety_efforts_koseibouhou_89.pdf",
+   "d": "20260908",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "bunsan",
+   "t": "施行時現職者の犯罪事実確認書の交付申請の分散方法について 令和8年7月8日",
+   "g": "tetsuzuki",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/e8991b29/20260708_policies_child-safety_efforts_koseibouhou_54.pdf",
+   "d": "20260708",
+   "np": 19,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "bunsan-koutei",
+   "t": "（別添1）施行時現職者の犯罪事実確認書の交付申請工程表（教育委員会用）",
+   "g": "tetsuzuki",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/63e6e081/20260708_policies_child-safety_efforts_koseibouhou_55.xlsx",
+   "d": "20260708",
+   "np": 2,
+   "ext": "xlsx",
+   "mode": "notes"
+  },
+  {
+   "slug": "bunsan-rei",
+   "t": "（別添2）教育委員会から学校への申請対象月及び施行時現職者の通知参考例",
+   "g": "tetsuzuki",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/853f4e6c/20260708_policies_child-safety_efforts_koseibouhou_56.docx",
+   "d": "20260708",
+   "np": 1,
+   "ext": "docx",
+   "mode": "notes"
+  },
+  {
+   "slug": "koseki",
+   "t": "こども性暴力防止法の施行に伴う戸籍関係事務について 令和8年9月29日",
+   "g": "tetsuzuki",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/d4ac9164/20260929_policies_child-safety_efforts_koseibouhou_92.pdf",
+   "d": "20260929",
+   "np": 4,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "koseki-ref1",
+   "t": "（参考資料1）こども性暴力防止法の概要について（戸籍関係事務の通知）",
+   "g": "tetsuzuki",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/fdc09957/20260929_policies_child-safety_efforts_koseibouhou_93.pdf",
+   "d": "20260929",
+   "np": 10,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "kantoku",
+   "t": "こども性暴力防止法に係る監督等指針の策定について（通知）令和8年10月1日",
+   "g": "kantoku",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/269ebd59/20261001_policies_child-safety_efforts_koseibouhou_101.pdf",
+   "d": "20261001",
+   "np": 6,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "kantoku-1",
+   "t": "犯罪事実確認実施者等に係る監督等の指針",
+   "g": "kantoku",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/d03e3f90/20261001_policies_child-safety_efforts_koseibouhou_102.pdf",
+   "d": "20261001",
+   "np": 18,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "kantoku-2",
+   "t": "認定事業者等に係る監督等の指針",
+   "g": "kantoku",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/6f082eb8/20261001_policies_child-safety_efforts_koseibouhou_103.pdf",
+   "d": "20261001",
+   "np": 26,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "odan",
+   "t": "教育・保育等を提供する事業者による児童対象性暴力等の防止等の取組を横断的に促進するための指針（横断指針）",
+   "g": "odan",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/0edff80e-78f3-4ce9-beb0-8940a26008cf/6d66be39/20260818_policies_child-safety_efforts_koseibouhou_odanshishin_09.pdf",
+   "d": "20260818",
+   "np": 108,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "odan-jirei",
+   "t": "横断指針 取組事例集",
+   "g": "odan",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/0edff80e-78f3-4ce9-beb0-8940a26008cf/4a4c80bc/20250707_policies_child-safety_efforts_koseibouhou_odanshishin_08.pdf",
+   "d": "20250707",
+   "np": 39,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "odan-ref",
+   "t": "横断指針 参考資料編",
+   "g": "odan",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/0edff80e-78f3-4ce9-beb0-8940a26008cf/92fdde4e/20260818_policies_child-safety_efforts_koseibouhou_odanshishin_10.pdf",
+   "d": "20260818",
+   "np": 33,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "odan-kaitei",
+   "t": "横断指針の改訂について（事務連絡）令和8年8月21日",
+   "g": "odan",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/ddb8852d/20260929_policies_child-safety_efforts_koseibouhou_99.pdf",
+   "d": "20260929",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "odan-card1",
+   "t": "相談窓口 広報カード（低年齢児童〜小学生向け）",
+   "g": "odan",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/0edff80e-78f3-4ce9-beb0-8940a26008cf/0e98067f/20260818_policies_child-safety_efforts_koseibouhou_odanshishin_11.pptx",
+   "d": "20260818",
+   "np": 2,
+   "ext": "pptx",
+   "mode": "notes"
+  },
+  {
+   "slug": "odan-card2",
+   "t": "相談窓口 広報カード（中高生向け）",
+   "g": "odan",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/0edff80e-78f3-4ce9-beb0-8940a26008cf/a3b1b808/20260818_policies_child-safety_efforts_koseibouhou_odanshishin_12.pptx",
+   "d": "20260818",
+   "np": 2,
+   "ext": "pptx",
+   "mode": "notes"
+  },
+  {
+   "slug": "odan-poster1",
+   "t": "相談窓口 ポスター（低年齢児童〜小学生向け）",
+   "g": "odan",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/0edff80e-78f3-4ce9-beb0-8940a26008cf/e1f1b840/20260818_policies_child-safety_efforts_koseibouhou_odanshishin_13.pptx",
+   "d": "20260818",
+   "np": 1,
+   "ext": "pptx",
+   "mode": "notes"
+  },
+  {
+   "slug": "odan-poster2",
+   "t": "相談窓口 ポスター（中高生向け）",
+   "g": "odan",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/0edff80e-78f3-4ce9-beb0-8940a26008cf/847590ba/20260818_policies_child-safety_efforts_koseibouhou_odanshishin_14.pptx",
+   "d": "20260818",
+   "np": 1,
+   "ext": "pptx",
+   "mode": "notes"
+  },
+  {
+   "slug": "bengo-cfa",
+   "t": "弁護士向け研修会 こども性暴力防止法について（こども家庭庁）",
+   "g": "senmon",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/9d431309-3629-4b7a-9060-2f2506a806e0/f2901ff2/20261022_policies_child-safety_efforts_koseibouhou_lawyer-archive_04.pdf",
+   "d": "20261022",
+   "np": 79,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "bengo-shien",
+   "t": "こども性暴力防止法事業者支援事業（弁護士による相談支援）について",
+   "g": "senmon",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/9d431309-3629-4b7a-9060-2f2506a806e0/b59b4f4a/20261022_policies_child-safety_efforts_koseibouhou_lawyer-archive_05.pdf",
+   "d": "20261022",
+   "np": 13,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "bengo-kamitani",
+   "t": "弁護士によるこども性暴力防止法への対応について〜初期対応、事実確認等を中心に（上谷さくら弁護士）",
+   "g": "senmon",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/9d431309-3629-4b7a-9060-2f2506a806e0/55526fe0/20261022_policies_child-safety_efforts_koseibouhou_lawyer-archive_06.pdf",
+   "d": "20261022",
+   "np": 26,
+   "ext": "pdf",
+   "mode": "notes",
+   "third": true
+  },
+  {
+   "slug": "bengo-saito",
+   "t": "こどもへの性暴力の特性と対応に当たっての留意点等について〜現場の実態を踏まえて（齋藤梓 上智大学准教授）",
+   "g": "senmon",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/9d431309-3629-4b7a-9060-2f2506a806e0/0d2e8cee/20261022_policies_child-safety_efforts_koseibouhou_lawyer-archive_17.pdf",
+   "d": "20261022",
+   "np": 29,
+   "ext": "pdf",
+   "mode": "notes",
+   "third": true
+  },
+  {
+   "slug": "bengo-masuhara",
+   "t": "こども性暴力防止法に基づく雇用管理上の措置と労働法制等を踏まえた留意点について（益原大亮弁護士）",
+   "g": "senmon",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/9d431309-3629-4b7a-9060-2f2506a806e0/2d4e4a69/20261022_policies_child-safety_efforts_koseibouhou_lawyer-archive_13.pdf",
+   "d": "20261022",
+   "np": 25,
+   "ext": "pdf",
+   "mode": "notes",
+   "third": true
+  },
+  {
+   "slug": "bengo-kida",
+   "t": "こどもへの聴き取りに関する留意点（木田秋津弁護士）",
+   "g": "senmon",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/9d431309-3629-4b7a-9060-2f2506a806e0/9aa09a7c/20261022_policies_child-safety_efforts_koseibouhou_lawyer-archive_08.pdf",
+   "d": "20261022",
+   "np": 15,
+   "ext": "pdf",
+   "mode": "notes",
+   "third": true
+  },
+  {
+   "slug": "bengo-shidai1",
+   "t": "弁護士向け研修会 第一部 次第",
+   "g": "senmon",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/9d431309-3629-4b7a-9060-2f2506a806e0/0dc26c1d/20261022_policies_child-safety_efforts_koseibouhou_lawyer-archive_03.pdf",
+   "d": "20261022",
+   "np": 1,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "bengo-shidai2",
+   "t": "弁護士向け研修会 第二部 次第",
+   "g": "senmon",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/9d431309-3629-4b7a-9060-2f2506a806e0/bd60ecba/20261022_policies_child-safety_efforts_koseibouhou_lawyer-archive_10.pdf",
+   "d": "20261022",
+   "np": 1,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "bengo-kikitori-info",
+   "t": "（参考資料）解説動画・資料「こどもへの聴き取りに関する留意点」の掲載情報",
+   "g": "senmon",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/9d431309-3629-4b7a-9060-2f2506a806e0/8c6f6b00/20261022_policies_child-safety_efforts_koseibouhou_lawyer-archive_09.pdf",
+   "d": "20261022",
+   "np": 1,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "annai-bengo",
+   "t": "【弁護士向け】こども性暴力防止法に関する解説動画・資料のご案内",
+   "g": "senmon",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/3e5497ff/20261021_policies_child-safety_efforts_koseibouhou_104.pdf",
+   "d": "20261021",
+   "np": 3,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "annai-shinri",
+   "t": "【心理職向け】こども性暴力防止法に関する解説動画・資料のご案内",
+   "g": "senmon",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/65be32e8/20261021_policies_child-safety_efforts_koseibouhou_105.pdf",
+   "d": "20261021",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "sec-tsuchi",
+   "t": "情報処理安全確保支援士への相談支援について（周知依頼）令和8年9月25日",
+   "g": "senmon",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/0a81db3a/20260929_policies_child-safety_efforts_koseibouhou_96.pdf",
+   "d": "20260929",
+   "np": 4,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "sec-joho",
+   "t": "（別添1）情報管理措置について",
+   "g": "senmon",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/f6ca33d7/20260929_policies_child-safety_efforts_koseibouhou_97.pdf",
+   "d": "20260929",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "sec-leaf",
+   "t": "（別添2）情報セキュリティの専門家（情報処理安全確保支援士）への相談について（リーフレット）",
+   "g": "senmon",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/3a45a289/20260929_policies_child-safety_efforts_koseibouhou_98.pdf",
+   "d": "20260929",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "sec-leaf2",
+   "t": "情報処理安全確保支援士への相談窓口 紹介リーフレット",
+   "g": "senmon",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/8a61ed06-da23-4a51-ad74-076d05042e81/6e81d45e/20260915_policies_child-safety_efforts_koseibouhou_security-specialist_01.pdf",
+   "d": "20260915",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "bengo-saito2",
+   "t": "同上（第二部の掲載分）",
+   "g": "senmon",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/9d431309-3629-4b7a-9060-2f2506a806e0/a18834da/20261022_policies_child-safety_efforts_koseibouhou_lawyer-archive_18.pdf",
+   "d": "20261022",
+   "np": 29,
+   "ext": "pdf",
+   "mode": "skip",
+   "memo": "第一部の掲載分と同じ資料"
+  },
+  {
+   "slug": "t-shuchi-r7",
+   "t": "法律の施行に向けた周知依頼について（令和7年9月30日）",
+   "g": "tsuchi",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/0b6b49f2/20260121_policies_child-safety_efforts_koseibouhou_41.pdf",
+   "d": "20260121",
+   "np": 27,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "t-seirei",
+   "t": "施行期日を定める政令等の公布について（通知）令和7年12月25日",
+   "g": "tsuchi",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/beb95ae3/20260731_policies_child-safety_efforts_koseibouhou_70.pdf",
+   "d": "20260731",
+   "np": 46,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "t-gakusei",
+   "t": "令和8年度以降に入学する学生への対応等に関する留意事項について（依頼）令和7年11月4日",
+   "g": "tsuchi",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/b760a779/20251225_policies_child-safety_efforts_koseibouhou_22.pdf",
+   "d": "20251225",
+   "np": 13,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "t-jisshu",
+   "t": "実習に関する大学等の対応等に関する留意事項について（依頼）令和8年3月26日",
+   "g": "tsuchi",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/3cee4f5f/20260402_policies_child-safety_efforts_koseibouhou_47.pdf",
+   "d": "20260402",
+   "np": 13,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "t-keisatsu",
+   "t": "児童対象性暴力等の未然防止、早期把握等に資する警察庁作成の資料等について（令和8年1月22日）",
+   "g": "tsuchi",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/7ef18789/20260402_policies_child-safety_efforts_koseibouhou_48.pdf",
+   "d": "20260402",
+   "np": 59,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "t-mark",
+   "t": "事業者マーク（こまもろうマーク）の策定について（令和7年12月25日）",
+   "g": "tsuchi",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/c220584c/20260121_policies_child-safety_efforts_koseibouhou_40.pdf",
+   "d": "20260121",
+   "np": 9,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "t-chara",
+   "t": "キャラクター策定・広報啓発資料の周知依頼について（令和8年7月17日）",
+   "g": "tsuchi",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/46fa4bfa/20260717_policies_child-safety_efforts_koseibouhou_66.pdf",
+   "d": "20260717",
+   "np": 9,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "t-kyozai",
+   "t": "研修教材・解説動画・資料、報告・対応ルール及び周知用資料のひな型について（周知依頼）令和8年4月21日",
+   "g": "tsuchi",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/41ca9e95/20260422_policies_child-safety_efforts_koseibouhou_51.pdf",
+   "d": "20260422",
+   "np": 15,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "t-gl",
+   "t": "施行ガイドラインについて（周知依頼）令和8年1月9日",
+   "g": "tsuchi",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/fee5f18b/20260114_policies_child-safety_efforts_koseibouhou_39.pdf",
+   "d": "20260114",
+   "np": 1,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "t-gl-kaitei",
+   "t": "施行ガイドラインの改訂について（周知依頼）令和8年9月2日",
+   "g": "tsuchi",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/00cd7440/20260903_policies_child-safety_efforts_koseibouhou_80.pdf",
+   "d": "20260903",
+   "np": 1,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "t-qa1",
+   "t": "Q&Aについて（周知依頼）令和8年4月22日",
+   "g": "tsuchi",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/ebbe6a07/20260512_policies_child-safety_efforts_koseibouhou_53.pdf",
+   "d": "20260512",
+   "np": 1,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "t-qa2",
+   "t": "Q&Aの改訂について（周知依頼）令和8年9月18日",
+   "g": "tsuchi",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/bd3ee897/20260918_policies_child-safety_efforts_koseibouhou_90.pdf",
+   "d": "20260918",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "t-qa3",
+   "t": "Q&Aの改訂（2回目）について（周知依頼）令和8年9月29日",
+   "g": "tsuchi",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/9f1f4de1/20260929_policies_child-safety_efforts_koseibouhou_95.pdf",
+   "d": "20260929",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "t-junbi1",
+   "t": "義務事業者用施行準備ガイド資料の周知及び円滑な施行に向けた対応について（依頼）令和8年7月17日",
+   "g": "tsuchi",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/49761f84/20260717_policies_child-safety_efforts_koseibouhou_64.pdf",
+   "d": "20260717",
+   "np": 1,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "t-junbi1b",
+   "t": "（別添）施行（本年12月25日）に向けたお願い（7月17日）",
+   "g": "tsuchi",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/8692d0fc/20260717_policies_child-safety_efforts_koseibouhou_65.pdf",
+   "d": "20260717",
+   "np": 1,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "t-junbi2",
+   "t": "施行準備ガイドVer.1.1の周知及び円滑な施行に向けた対応について（依頼）令和8年9月4日",
+   "g": "tsuchi",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/bf428439/20260908_policies_child-safety_efforts_koseibouhou_87.pdf",
+   "d": "20260908",
+   "np": 1,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "t-junbi2b",
+   "t": "（別添）施行（本年12月25日）に向けたお願い（9月4日）",
+   "g": "tsuchi",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/675b78ae/20260908_policies_child-safety_efforts_koseibouhou_88.pdf",
+   "d": "20260908",
+   "np": 1,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "t-junbi3",
+   "t": "施行準備ガイドVer.1.2の周知及び円滑な施行に向けた対応について（依頼）令和8年10月23日",
+   "g": "tsuchi",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/55740f81/20261023_policies_child-safety_efforts_koseibouhou_108.pdf",
+   "d": "20261023",
+   "np": 2,
+   "ext": "pdf",
+   "mode": "notes"
+  },
+  {
+   "slug": "t-junbi3b",
+   "t": "（別添）施行（本年12月25日）に向けたお願い（10月23日）",
+   "g": "tsuchi",
+   "u": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/fec451cc/20261023_policies_child-safety_efforts_koseibouhou_109.pdf",
+   "d": "20261023",
+   "np": 1,
+   "ext": "pdf",
+   "mode": "notes"
+  }
+ ]
+}

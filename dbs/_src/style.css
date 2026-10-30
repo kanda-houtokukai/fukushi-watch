@@ -302,6 +302,13 @@ figure.fig { margin: 22px 0 28px; }
 figure.fig .canvas { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 18px; overflow-x: auto; }
 figure.fig svg { display: block; max-width: 100%; height: auto; margin: 0 auto; color: var(--ink); }
 figure.fig svg.wide { min-width: 720px; }
+/* スマホ用の縦長の図があるものは、幅で切り替える（横にはみ出さない） */
+figure.fig svg.v-sp { display: none; width: 100%; max-width: 420px; }
+@media (max-width: 640px) {
+  figure.fig svg.v-pc { display: none; }
+  figure.fig svg.v-sp { display: block; }
+  figure.fig .canvas:has(svg.v-sp) { padding: 12px; }
+}
 figure.fig figcaption { font-size: 13px; color: var(--ink-2); margin-top: 8px; max-width: var(--measure); }
 figure.fig figcaption b { color: var(--ink); }
 svg text { font-family: var(--f-body); fill: var(--ink); }
@@ -688,3 +695,84 @@ html.drawer-open { overflow: hidden; }
   .lk-i { grid-template-columns: minmax(0, 1fr); gap: 0; }
   .lk-d:empty { display: none; }
 }
+
+/* ── 資料を読む・法令の条文（2026-10-30） ───────────── */
+.dc-find { margin-top: 18px; }
+.dc-g { margin-top: 26px; }
+.dc-l { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.dc-i a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 14px; padding: 11px 26px 11px 2px; border-bottom: 1px solid var(--line-2); text-decoration: none; color: var(--ink); position: relative; }
+.dc-i a::after { content: ""; position: absolute; right: 8px; top: 50%; width: 7px; height: 7px; border-top: 1.6px solid var(--ink-3); border-right: 1.6px solid var(--ink-3); transform: translateY(-50%) rotate(45deg); }
+.dc-i a:hover { background: var(--surface-2); }
+.dc-i.is-skip a::after { content: "↗"; border: 0; transform: translateY(-50%); width: auto; height: auto; font-size: 12px; color: var(--ink-3); }
+.dc-tt { font-size: 14.5px; line-height: 1.55; font-weight: 700; }
+.dc-i.is-skip .dc-tt { font-weight: 400; color: var(--ink-2); }
+.dc-m { font-family: var(--f-mono); font-size: 11.5px; color: var(--ink-3); white-space: nowrap; align-self: start; padding-top: 3px; }
+.dc-n { grid-column: 1 / -1; font-size: 12.5px; color: var(--ink-3); }
+.dc-hits { margin-top: 10px; }
+.dc-cnt { font-size: 12.5px; color: var(--ink-3); margin: 0 0 6px; }
+.dc-hl { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.dc-hl a { display: block; padding: 10px 2px; border-bottom: 1px solid var(--line-2); text-decoration: none; color: var(--ink); }
+.dc-hl a:hover { background: var(--surface-2); }
+.dc-hs { display: block; font-size: 11.5px; color: var(--ink-3); }
+.dc-hl b { display: block; font-size: 14.5px; line-height: 1.5; }
+.dc-hb { display: block; font-size: 13px; color: var(--ink-2); line-height: 1.6; margin-top: 2px; }
+.dc-hl mark, .nt mark { background: var(--kin-soft); color: inherit; border-radius: 2px; padding: 0 1px; }
+.dc-wait { color: var(--ink-3); font-size: 14px; margin: 18px 0; }
+.dc-meta { font-size: 13px; color: var(--ink-3); margin: 6px 0 0; display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; }
+.dc-pn { font-size: 12px; }
+.dc-tools { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 12.5px; color: var(--ink-3); margin: 18px 0 8px; }
+.dc-body { display: grid; gap: 6px; }
+.dc-src { font-size: 12px; color: var(--ink-3); margin-top: 26px; line-height: 1.7; }
+.nt { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); }
+.nt summary { cursor: pointer; list-style: none; padding: 11px 36px 11px 14px; position: relative; font-size: 14.5px; line-height: 1.55; }
+.nt summary::-webkit-details-marker { display: none; }
+.nt summary::after { content: ""; position: absolute; right: 15px; top: 17px; width: 7px; height: 7px; border-right: 1.6px solid var(--ink-3); border-bottom: 1.6px solid var(--ink-3); transform: rotate(45deg); transition: transform .15s; }
+.nt[open] summary::after { transform: rotate(-135deg); top: 20px; }
+.nt.lv1 { border-left: 3px solid var(--ai); }
+.nt.lv1 summary { font-weight: 700; font-family: var(--f-display); font-size: 15.5px; }
+.nt.lv2 summary { font-weight: 700; }
+.nt.lv3, .nt.lv4 { margin-left: 14px; }
+.nt.sub { margin-left: 28px; }
+.nt[open] summary { border-bottom: 1px solid var(--line-2); }
+.nt-b { padding: 10px 14px 12px; font-size: 14.5px; line-height: 1.75; }
+.nt-g { margin: 0 0 .5em; }
+.nt-p { margin: 0 0 .5em; padding-left: 1.2em; }
+.nt-p li { margin: 0 0 .25em; }
+.nt-pg { margin: 4px 0 0; font-size: 12.5px; color: var(--ink-3); }
+.pc { font-family: var(--f-mono); font-size: 12px; }
+@media (max-width: 960px) { .nt.lv3, .nt.lv4 { margin-left: 8px; } .nt.sub { margin-left: 16px; } }
+.law-tabs { display: flex; gap: 6px; margin: 16px 0 10px; flex-wrap: wrap; }
+.law-tab { font-size: 13.5px; padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; color: var(--ink-2); background: var(--surface); }
+.law-tab.is-on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.law-toc ul { list-style: none; margin: 0 0 14px; padding: 10px 14px; border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); columns: 2 18em; column-gap: 24px; font-size: 13.5px; }
+.law-toc li { break-inside: avoid; padding: 2px 0; }
+.law-toc li.lv1 { font-weight: 700; }
+.law-en { font-size: 14px; color: var(--ink-2); }
+.law-h { font-family: var(--f-display); font-size: 16px; margin: 28px 0 10px; padding-left: 10px; border-left: 3px solid var(--ai); scroll-margin-top: 70px; }
+.law-a { padding: 10px 0 12px; border-bottom: 1px solid var(--line-2); scroll-margin-top: 70px; }
+.law-at { margin: 0 0 4px; font-size: 14.5px; }
+.law-at b { font-family: var(--f-display); margin-right: 8px; }
+.law-at span { color: var(--ink-2); font-size: 13.5px; }
+.law-p { margin: 0 0 4px; font-size: 14.5px; line-height: 1.8; }
+.law-pn { font-weight: 700; margin-right: .5em; }
+.law-i { margin: 0 0 2px; font-size: 14px; line-height: 1.75; padding-left: 1.6em; text-indent: -1.6em; }
+.law-i.d2 { margin-left: 1.4em; } .law-i.d3 { margin-left: 2.8em; } .law-i.d4 { margin-left: 4.2em; }
+.law-in { font-weight: 700; margin-right: .6em; }
+/* Q&A：回答のもと（資料から回答／公式Q&A）の切り替えと札 */
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--surface); width: max-content; max-width: 100%; }
+.seg button { font: inherit; font-size: 13px; border: 0; background: none; color: var(--ink-2); padding: 6px 14px; cursor: pointer; white-space: nowrap; }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button[aria-pressed="true"] { background: var(--ai); color: var(--ai-ink); font-weight: 700; }
+.qa summary .tags .qk { font-size: 11px; border-radius: 3px; padding: 0 6px; font-weight: 700; }
+.qa summary .tags .qk.off { color: var(--ai-ink); background: var(--ai); border-color: var(--ai); }
+.qa summary .tags .qk.mat { color: var(--ai); border: 1px solid var(--ai); background: var(--surface); }
+.qa.is-off .a p { margin: 0 0 .55em; }
+.rf { font-family: var(--f-mono); font-size: 11px; font-weight: 500; color: var(--ai); border: 1px solid var(--line); border-radius: 3px; padding: 0 6px; white-space: nowrap; vertical-align: 2px; letter-spacing: .02em; background: var(--surface); text-decoration: none; }
+a.rf:hover { border-color: var(--ai); }
+.see { margin: 30px 0 8px; border-top: 1px solid var(--line); padding-top: 14px; }
+.see-h { font-family: var(--f-display); font-weight: 700; font-size: 14.5px; margin: 0 0 8px; }
+.see ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.see a { display: block; padding: 8px 12px; border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); text-decoration: none; color: var(--ink); }
+.see a:hover { border-color: var(--ai); }
+.see a span { display: block; font-size: 14px; font-weight: 700; line-height: 1.5; }
+.see a small { display: block; font-size: 12px; color: var(--ink-3); }

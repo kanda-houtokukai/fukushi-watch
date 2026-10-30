@@ -1,0 +1,906 @@
+{
+ "01_now": [
+  {
+   "doc": "gl",
+   "k": "gl:92-3"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:93"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:152"
+  },
+  {
+   "doc": "kenshu",
+   "k": "kenshu02:4"
+  },
+  {
+   "doc": "test-k",
+   "k": "kenshu05:5"
+  },
+  {
+   "doc": "gaiyo",
+   "k": "kaisetsu06:8"
+  },
+  {
+   "doc": "gaiyo",
+   "k": "kaisetsu06:10"
+  },
+  {
+   "doc": "gaiyo",
+   "k": "kaisetsu06:27"
+  },
+  {
+   "doc": "setsumei",
+   "k": "kaisetsu05:11"
+  },
+  {
+   "doc": "junbi",
+   "k": "kaisetsu08:1"
+  },
+  {
+   "doc": "junbi",
+   "k": "kaisetsu08:8"
+  },
+  {
+   "doc": "roudou",
+   "k": "ouyou04:7"
+  }
+ ],
+ "02_overview": [
+  {
+   "doc": "gl",
+   "k": "gl:2"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:8"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:10"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:46"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:47"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:57"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:66"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:129"
+  },
+  {
+   "doc": "kenshu",
+   "k": "kenshu01:6"
+  },
+  {
+   "doc": "kenshu",
+   "k": "kenshu02:1"
+  },
+  {
+   "doc": "kenshu",
+   "k": "kenshu02:16"
+  },
+  {
+   "doc": "kenshu",
+   "k": "kenshu02:30"
+  }
+ ],
+ "03_schedule": [
+  {
+   "doc": "gl",
+   "k": "gl:1"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:34"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:58"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:151"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:152"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:155"
+  },
+  {
+   "doc": "kaisetsu",
+   "k": "kaisetsu01:1"
+  },
+  {
+   "doc": "gaiyo",
+   "k": "kaisetsu06:10"
+  },
+  {
+   "doc": "gaiyo",
+   "k": "kaisetsu06:28"
+  },
+  {
+   "doc": "setsumei",
+   "k": "kaisetsu05:14"
+  },
+  {
+   "doc": "junbi",
+   "k": "kaisetsu08:17"
+  },
+  {
+   "doc": "poster",
+   "k": "kaisetsu08:29"
+  }
+ ],
+ "04_checklist": [
+  {
+   "doc": "junbi",
+   "k": "kaisetsu08:1"
+  },
+  {
+   "doc": "junbi",
+   "k": "kaisetsu08:14"
+  }
+ ],
+ "05_scope": [
+  {
+   "doc": "gl",
+   "k": "gl:12"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:14"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:15"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:16"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:16-3"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:17-1"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:23"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:29"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:30"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:34-1"
+  },
+  {
+   "doc": "gaiyo",
+   "k": "kaisetsu06:4"
+  },
+  {
+   "doc": "gaiyo",
+   "k": "kaisetsu06:14"
+  }
+ ],
+ "06_persons": [
+  {
+   "doc": "gl",
+   "k": "gl:13"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:13-3"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:13-4"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:13-7"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:17-2"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:17-5"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:21"
+  },
+  {
+   "doc": "gaiyo",
+   "k": "kaisetsu06:21"
+  },
+  {
+   "doc": "gaiyo",
+   "k": "kaisetsu06:23"
+  },
+  {
+   "doc": "gaiyo",
+   "k": "kaisetsu06:24"
+  },
+  {
+   "doc": "junbi",
+   "k": "kaisetsu08:4"
+  },
+  {
+   "doc": "junbi-ref",
+   "k": "kaisetsu07:2"
+  }
+ ],
+ "07_check": [
+  {
+   "doc": "gl",
+   "k": "gl:9"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:8"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:10"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:66"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:72"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:72-1"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:76"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:77"
+  },
+  {
+   "doc": "kenshu",
+   "k": "kenshu02:21"
+  },
+  {
+   "doc": "kaisetsu",
+   "k": "kaisetsu02:22"
+  },
+  {
+   "doc": "setsumei",
+   "k": "kaisetsu04:16"
+  },
+  {
+   "doc": "setsumei",
+   "k": "kaisetsu05:6"
+  }
+ ],
+ "08_timing": [
+  {
+   "doc": "gl",
+   "k": "gl:19"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:67"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:70"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:69"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:70-1"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:112"
+  },
+  {
+   "doc": "kenshu",
+   "k": "kenshu02:21"
+  },
+  {
+   "doc": "kaisetsu",
+   "k": "kaisetsu02:22"
+  },
+  {
+   "doc": "gaiyo",
+   "k": "kaisetsu06:13"
+  },
+  {
+   "doc": "gaiyo",
+   "k": "kaisetsu06:16"
+  },
+  {
+   "doc": "gaiyo",
+   "k": "kaisetsu06:28"
+  },
+  {
+   "doc": "setsumei",
+   "k": "kaisetsu05:14"
+  }
+ ],
+ "09_system": [
+  {
+   "doc": "gl",
+   "k": "gl:72"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:72-1"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:72-2"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:72-3"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:106"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:147"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:149"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:151"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:153"
+  },
+  {
+   "doc": "junbi",
+   "k": "kaisetsu08:16"
+  },
+  {
+   "doc": "junbi",
+   "k": "kaisetsu08:17"
+  },
+  {
+   "doc": "junbi-ref",
+   "k": "kaisetsu07:9"
+  }
+ ],
+ "10_safety": [
+  {
+   "doc": "gl",
+   "k": "gl:26-2"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:26-3"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:26-5"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:55"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:55-1"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:55-2"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:58-1"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:58-2"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:59"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:59-1"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:59-2"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:63-1"
+  }
+ ],
+ "11_inappropriate": [
+  {
+   "doc": "gl",
+   "k": "gl:7-2"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:7-4"
+  },
+  {
+   "doc": "ensyu-j",
+   "k": "kenshu03:13"
+  },
+  {
+   "doc": "ensyu-j",
+   "k": "kenshu03:14"
+  },
+  {
+   "doc": "ensyu-j",
+   "k": "kenshu04:1"
+  },
+  {
+   "doc": "ensyu-j",
+   "k": "kenshu04:2"
+  },
+  {
+   "doc": "ensyu-j",
+   "k": "kenshu04:3"
+  },
+  {
+   "doc": "ensyu-j",
+   "k": "kenshu04:4"
+  },
+  {
+   "doc": "ensyu-j",
+   "k": "kenshu04:5"
+  },
+  {
+   "doc": "ensyu-j",
+   "k": "kenshu04:6"
+  },
+  {
+   "doc": "ensyu-j",
+   "k": "kenshu04:7"
+  },
+  {
+   "doc": "ensyu-j",
+   "k": "kenshu04:8"
+  }
+ ],
+ "12_incident": [
+  {
+   "doc": "gl",
+   "k": "gl:7-1"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:50"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:51"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:61"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:62-1"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:63-4"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:64-2"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:89"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:90"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:92-6"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:92-7"
+  },
+  {
+   "doc": "roudou",
+   "k": "ouyou04:13"
+  }
+ ],
+ "13_employment": [
+  {
+   "doc": "gl",
+   "k": "gl:79"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:89"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:92-1"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:92"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:92-2"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:92-4"
+  },
+  {
+   "doc": "kenshu",
+   "k": "kenshu01:9"
+  },
+  {
+   "doc": "kaisetsu",
+   "k": "kaisetsu03:3"
+  },
+  {
+   "doc": "junbi-ref",
+   "k": "kaisetsu07:4"
+  },
+  {
+   "doc": "roudou",
+   "k": "ouyou04:8"
+  },
+  {
+   "doc": "roudou",
+   "k": "ouyou04:11"
+  },
+  {
+   "doc": "roudou",
+   "k": "ouyou04:15"
+  }
+ ],
+ "14_info": [
+  {
+   "doc": "gl",
+   "k": "gl:26-6"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:35"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:36"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:83"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:105"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:106-4"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:118"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:119"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:123"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:124"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:125"
+  },
+  {
+   "doc": "joho-tebiki",
+   "k": "ouyou05:25"
+  }
+ ],
+ "15_docs": [
+  {
+   "doc": "gl",
+   "k": "gl:7-3"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:53"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:56"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:71"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:106-2"
+  },
+  {
+   "doc": "ensyu-k",
+   "k": "kenshu06:3"
+  },
+  {
+   "doc": "kaisetsu",
+   "k": "kaisetsu02:5"
+  },
+  {
+   "doc": "setsumei",
+   "k": "kaisetsu04:8"
+  },
+  {
+   "doc": "setsumei",
+   "k": "kaisetsu04:11"
+  },
+  {
+   "doc": "setsumei",
+   "k": "kaisetsu05:8"
+  },
+  {
+   "doc": "junbi",
+   "k": "kaisetsu08:6"
+  },
+  {
+   "doc": "junbi-ref",
+   "k": "kaisetsu07:5"
+  }
+ ],
+ "16_supervision": [
+  {
+   "doc": "gl",
+   "k": "gl:34-2"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:34-5"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:85"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:131-4"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:137"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:139"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:140"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:141"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:142"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:144"
+  },
+  {
+   "doc": "kenshu",
+   "k": "kenshu02:29"
+  },
+  {
+   "doc": "kaisetsu",
+   "k": "kaisetsu03:18"
+  }
+ ],
+ "17_sectors": [
+  {
+   "doc": "gl",
+   "k": "gl:4"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:13-5"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:13-6"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:16-5"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:17-3"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:18"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:22"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:24"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:31-3"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:69"
+  },
+  {
+   "doc": "gl",
+   "k": "gl:70-1"
+  },
+  {
+   "doc": "gaiyo",
+   "k": "kaisetsu06:16"
+  }
+ ],
+ "18_qa": [
+  {
+   "doc": "gaiyo",
+   "k": "kaisetsu06:12"
+  }
+ ],
+ "19_events": [
+  {
+   "doc": "gaiyo",
+   "k": "kaisetsu06:18"
+  },
+  {
+   "doc": "setsumei",
+   "k": "kaisetsu05:17"
+  },
+  {
+   "doc": "junbi-ref",
+   "k": "kaisetsu07:9"
+  },
+  {
+   "doc": "roudou",
+   "k": "ouyou04:18"
+  }
+ ],
+ "19a_kenshu": [
+  {
+   "doc": "kenshu",
+   "k": "kenshu01:1"
+  },
+  {
+   "doc": "kenshu",
+   "k": "kenshu01:13"
+  },
+  {
+   "doc": "ensyu-j",
+   "k": "kenshu03:2"
+  },
+  {
+   "doc": "ensyu-j",
+   "k": "kenshu03:4"
+  },
+  {
+   "doc": "ensyu-k",
+   "k": "kenshu06:15"
+  },
+  {
+   "doc": "tebiki",
+   "k": "kenshu06:19"
+  },
+  {
+   "doc": "tebiki",
+   "k": "kenshu06:27"
+  },
+  {
+   "doc": "tebiki",
+   "k": "kenshu06:29"
+  },
+  {
+   "doc": "tebiki-keikaku",
+   "k": "kenshu07:11"
+  },
+  {
+   "doc": "tebiki-kiroku",
+   "k": "kenshu07:10"
+  },
+  {
+   "doc": "test-j",
+   "k": "kenshu07:1"
+  },
+  {
+   "doc": "test-k",
+   "k": "kenshu05:1"
+  }
+ ],
+ "20_open": [
+  {
+   "doc": "gl",
+   "k": "gl:135"
+  },
+  {
+   "doc": "setsumei",
+   "k": "kaisetsu05:5"
+  },
+  {
+   "doc": "roudou",
+   "k": "ouyou04:18"
+  }
+ ],
+ "21_sources": [
+  {
+   "doc": "kaisetsu",
+   "k": "kaisetsu03:22"
+  }
+ ]
+}

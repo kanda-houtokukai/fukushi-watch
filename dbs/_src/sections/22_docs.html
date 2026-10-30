@@ -1,0 +1,34 @@
+<section class="chapter view" id="docs" data-group="docs" data-title="資料を読む">
+  <header>
+    <div class="ch-no">資料</div>
+    <h2>資料を読む</h2>
+    <p class="ch-lead">こども家庭庁が公表した資料を、見出しごとの要点で読めます。法令と公式Q&amp;Aは原文のまま載せています。</p>
+  </header>
+  <label class="lk-find dc-find" for="dc-q">
+    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <input type="search" id="dc-q" placeholder="資料の中を探す（例：研修　記録　いとま特例）" aria-label="資料の中を探す" autocomplete="off" enterkeyhint="search">
+  </label>
+  <div class="dc-hits" id="dc-hits" hidden></div>
+  <div class="dc-list" id="dc-list"></div>
+  <p class="dc-src" id="dc-src"></p>
+</section>
+<section class="chapter view" id="doc" data-group="docs" data-title="資料" data-hidden="1">
+  <header>
+    <div class="ch-no" id="dc-g"></div>
+    <h2 id="dc-t"></h2>
+    <p class="dc-meta" id="dc-meta"></p>
+  </header>
+  <div class="dc-tools"><span id="dc-count"></span><span class="dt-actions"><button class="btn" id="dc-open" type="button">すべて開く</button><button class="btn" id="dc-close" type="button">すべて閉じる</button></span></div>
+  <div class="dc-body" id="dc-body"></div>
+  <p class="dc-src" id="dc-credit"></p>
+</section>
+<section class="chapter view" id="law" data-group="docs" data-title="法令の条文">
+  <header>
+    <div class="ch-no">資料</div>
+    <h2>法令の条文</h2>
+    <p class="ch-lead" id="law-lead"></p>
+  </header>
+  <div class="law-tabs" id="law-tabs" role="tablist" aria-label="法令"></div>
+  <nav class="law-toc" id="law-toc" aria-label="章"></nav>
+  <div class="law-body" id="law-body"></div>
+</section>
