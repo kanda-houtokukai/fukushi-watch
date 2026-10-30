@@ -1,0 +1,1621 @@
+{
+ "year": "令和8年度",
+ "page": "https://www.pref.fukuoka.lg.jp/contents/kaigo-syhudan-r8.html",
+ "pageTitle": "令和８年度集団指導（介護保険）について",
+ "deadline": "2026-09-28",
+ "deadlineLabel": "書類確認報告の提出期限",
+ "services": [
+  {
+   "id": "houmon",
+   "t": "訪問サービス",
+   "names": "訪問介護・訪問入浴介護・訪問看護",
+   "docs": [
+    "houmon",
+    "kango"
+   ]
+  },
+  {
+   "id": "tsusho",
+   "t": "通所サービス",
+   "names": "通所介護・地域密着型通所介護・通所リハビリテーション・訪問リハビリテーション",
+   "docs": [
+    "tsusho",
+    "tsuriha"
+   ]
+  },
+  {
+   "id": "iryo",
+   "t": "介護医療院・短期入所",
+   "names": "介護医療院・短期入所療養介護・短期入所生活介護",
+   "docs": [
+    "iryoin",
+    "tanryo",
+    "tanki"
+   ]
+  },
+  {
+   "id": "tokutei",
+   "t": "特定施設入居者生活介護",
+   "names": "特定施設入居者生活介護・地域密着型特定施設入居者生活介護",
+   "docs": [
+    "tokutei"
+   ]
+  },
+  {
+   "id": "yogu",
+   "t": "福祉用具",
+   "names": "福祉用具貸与・特定福祉用具販売",
+   "docs": [
+    "yogu"
+   ]
+  },
+  {
+   "id": "tokuyo",
+   "t": "介護老人福祉施設",
+   "names": "指定介護老人福祉施設",
+   "docs": [
+    "tokuyo"
+   ]
+  },
+  {
+   "id": "roken",
+   "t": "介護老人保健施設",
+   "names": "介護老人保健施設",
+   "docs": [
+    "roken"
+   ]
+  },
+  {
+   "id": "ryoyo",
+   "t": "居宅療養管理指導",
+   "names": "医師・歯科医師・薬剤師・管理栄養士・歯科衛生士等",
+   "docs": [
+    "ryoyo",
+    "ryoyoi",
+    "ryoyos",
+    "ryoyoy"
+   ]
+  }
+ ],
+ "groups": [
+  {
+   "g": "サービス共通資料",
+   "part": "説明資料",
+   "label": "サービス共通資料"
+  },
+  {
+   "g": "【各サービス共通資料関連資料】",
+   "part": "参考資料",
+   "label": "各サービス共通資料関連資料"
+  },
+  {
+   "g": "個別サービス（訪問サービス）",
+   "part": "説明資料",
+   "label": "個別サービス（訪問サービス）"
+  },
+  {
+   "g": "個別サービス（通所サービス）",
+   "part": "説明資料",
+   "label": "個別サービス（通所サービス）"
+  },
+  {
+   "g": "個別サービス（介護医療院、短期入所サービス）",
+   "part": "説明資料",
+   "label": "個別サービス（介護医療院、短期入所サービス）"
+  },
+  {
+   "g": "個別サービス（特定施設入居者生活介護）",
+   "part": "説明資料",
+   "label": "個別サービス（特定施設入居者生活介護）"
+  },
+  {
+   "g": "個別サービス（福祉用具）",
+   "part": "説明資料",
+   "label": "個別サービス（福祉用具）"
+  },
+  {
+   "g": "個別サービス（介護老人福祉施設）",
+   "part": "説明資料",
+   "label": "個別サービス（介護老人福祉施設）"
+  },
+  {
+   "g": "個別サービス（介護老人保健施設）",
+   "part": "説明資料",
+   "label": "個別サービス（介護老人保健施設）"
+  },
+  {
+   "g": "個別サービス（居宅療養管理指導）",
+   "part": "説明資料",
+   "label": "個別サービス（居宅療養管理指導）"
+  },
+  {
+   "g": "【関連資料】",
+   "part": "参考資料",
+   "label": "関連資料"
+  },
+  {
+   "g": "福岡県各課からのお知らせ",
+   "part": "参考資料",
+   "label": "福岡県各課からのお知らせ"
+  },
+  {
+   "g": "関連情報",
+   "part": "参考資料",
+   "label": "関連情報"
+  }
+ ],
+ "items": [
+  {
+   "part": "説明資料",
+   "g": "サービス共通資料",
+   "t": "共通資料表紙・担当部署・目次",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/294887.pdf",
+   "kind": "PDF",
+   "size": "242KB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "サービス共通資料",
+   "t": "共通資料１～２",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/291627.pdf",
+   "kind": "PDF",
+   "size": "15.85MB",
+   "note": "",
+   "svc": [
+    "*"
+   ],
+   "id": "kc"
+  },
+  {
+   "part": "説明資料",
+   "g": "サービス共通資料",
+   "t": "共通資料３",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/289762.pdf",
+   "kind": "PDF",
+   "size": "21.57MB",
+   "note": "",
+   "svc": [
+    "*"
+   ],
+   "id": "kcb"
+  },
+  {
+   "part": "説明資料",
+   "g": "サービス共通資料",
+   "t": "共通資料４～６",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/289743.pdf",
+   "kind": "PDF",
+   "size": "11.94MB",
+   "note": "",
+   "svc": [
+    "*"
+   ],
+   "id": "kcc"
+  },
+  {
+   "part": "説明資料",
+   "g": "サービス共通資料",
+   "t": "要点説明動画（共通資料）",
+   "u": "https://youtu.be/urHnuruzVgw",
+   "kind": "動画",
+   "size": "",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "サービス共通資料",
+   "t": "共通資料（人権啓発箇所抜粋）",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/289744.pdf",
+   "kind": "PDF",
+   "size": "1008KB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "サービス共通資料",
+   "t": "要点説明動画（人権啓発箇所抜粋）",
+   "u": "https://youtu.be/KOEym1Rravs",
+   "kind": "動画",
+   "size": "",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "サービス共通資料",
+   "t": "同和問題に関する研修の実施について（依頼）",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/265438.pdf",
+   "kind": "PDF",
+   "size": "102KB",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "令和８年度条例・指導監査実施方針",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/296015.pdf",
+   "kind": "PDF",
+   "size": "2.43MB",
+   "note": "福岡県介護サービス事業所等の人員、施設及び運営の基準等に関する条例について及び令和7年度福岡県介護サービス事業者等指導監査実施方針について",
+   "svc": [
+    "*"
+   ],
+   "id": "jorei"
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "介護事故防止対応マニュアル作成の手引",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/289745.pdf",
+   "kind": "PDF",
+   "size": "1.16MB",
+   "note": "介護事故防止について",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "介護保険施設等における事故予防及び事故発生時の対応時に関するガイドライン",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/289746.pdf",
+   "kind": "PDF",
+   "size": "16.66MB",
+   "note": "介護事故防止について",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "令和６年度「高齢者虐待の防止、高齢者の養護者に対する支援等に関する法律に基づく対応状況等に関する調査」の結果及び高齢者虐待の状況等を踏まえた対応の強化について（通知）",
+   "u": "https://www.mhlw.go.jp/stf/newpage_67817.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "高齢者虐待防止の推進について",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "新しい防災気象情報について",
+   "u": "https://wwwtb.mlit.go.jp/chugoku/content/000375286.pdf",
+   "kind": "PDF",
+   "size": "",
+   "note": "防災計画について",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "介護現場における感染対策の手引き",
+   "u": "https://www.mhlw.go.jp/content/12300000/001149870.pdf",
+   "kind": "PDF",
+   "size": "",
+   "note": "感染症対策の強化について",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "高齢者施設等における感染対策等について",
+   "u": "https://www.mhlw.go.jp/content/001088469.pdf",
+   "kind": "PDF",
+   "size": "",
+   "note": "感染症対策の強化について",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "その１",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/289747.pdf",
+   "kind": "PDF",
+   "size": "809KB",
+   "note": "医療行為に関する通知等",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "その２",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/289748.pdf",
+   "kind": "PDF",
+   "size": "226KB",
+   "note": "医療行為に関する通知等",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "その３",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/289749.pdf",
+   "kind": "PDF",
+   "size": "187KB",
+   "note": "医療行為に関する通知等",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "医療行為ではないことに関する通知",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/289750.pdf",
+   "kind": "PDF",
+   "size": "159KB",
+   "note": "医療行為に関する通知等",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "原則として医療行ではない行為に関するガイドライン",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/289751.pdf",
+   "kind": "PDF",
+   "size": "3.97MB",
+   "note": "医療行為に関する通知等",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "介護施設・事業所における業務継続計画（ＢＣＰ）作成支援に関する研修",
+   "u": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/kaigo_koureisha/douga_00002.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "業務継続に向けた取組の強化について",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "新型コロナウイルス感染症発生時の業務継続ガイドライン",
+   "u": "https://www.mhlw.go.jp/content/001073001.pdf",
+   "kind": "PDF",
+   "size": "",
+   "note": "介護施設・事業所における業務継続ガイドライン等について",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "自然災害発生時の業務継続ガイドライン",
+   "u": "https://www.mhlw.go.jp/content/000749543.pdf",
+   "kind": "PDF",
+   "size": "",
+   "note": "介護施設・事業所における業務継続ガイドライン等について",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "各種様式",
+   "u": "https://www.mhlw.go.jp/stf/newpage_38790.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "リハビリテーション・個別機能訓練、栄養、口腔について",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "「生産性向上推進体制加算に関する基本的考え方～」及び「人員、設備及び運営に関する基準」等における生産性向上～留意点について",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/289752.pdf",
+   "kind": "PDF",
+   "size": "2.13MB",
+   "note": "「生産性向上推進体制加算」及び「人員、設備及び運営に関する基準」に関する通知",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "科学的介護情報システム（LIFE）",
+   "u": "https://www.mhlw.go.jp/stf/shingi2/0000198094_00037.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "科学的介護情報システム（LIFE）の活用について",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "令和６年度介護報酬改定関連通知の正誤等について（抜粋）",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/289753.pdf",
+   "kind": "PDF",
+   "size": "402KB",
+   "note": "科学的介護情報システム（LIFE）の活用について",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "要点説明動画（人権啓発箇所抜粋）",
+   "u": "https://youtu.be/JKXbehh8K1w",
+   "kind": "動画",
+   "size": "",
+   "note": "人権啓発について（再掲）",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "同和問題に関する研修の実施について（依頼）",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/265437.pdf",
+   "kind": "PDF",
+   "size": "102KB",
+   "note": "人権啓発について（再掲）",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "職場におけるハラスメントの防止のために（セクシュアルハラスメント/妊娠・出産・育児休業等に関するハラスメント/パワーハラスメント）",
+   "u": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyoukintou/seisaku06/index.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "ハラスメント対策の強化について",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "在宅医療・介護現場における利用者等からの暴力・ハラスメント対策事業",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/289754.pdf",
+   "kind": "PDF",
+   "size": "4.96MB",
+   "note": "ハラスメント対策の強化について",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "厚生労働分野における個人情報の適切な取扱いのためのガイドライン",
+   "u": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000027272.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "会議や多職種連携におけるＩＣＴの活用について",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "医療情報システムの安全管理に関するガイダンス",
+   "u": "https://www.mhlw.go.jp/stf/shingi/0000516275_00002.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "会議や多職種連携におけるＩＣＴの活用について",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "令和８年度介護職員等処遇改善加算について（介護保険）",
+   "u": "https://www.pref.fukuoka.lg.jp/contents/8syogukaizen.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "介護職員等処遇改善加算について",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "駐車許可の申請手続きについて（福岡県警察のホームページ）",
+   "u": "https://www.police.pref.fukuoka.jp/kotsu/kotsukisei/kyoka/tyuusya_kyoka.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "指定・法定の駐停車禁止場所について",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "社会福祉施設等におけるレジオネラ症防止対策の徹底について(厚生労働省のホームページ)",
+   "u": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb4103&dataType=1&pageNo=1",
+   "kind": "HTML",
+   "size": "",
+   "note": "レジオネラ症について",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【各サービス共通資料関連資料】",
+   "t": "レジオネラ対策のページ(厚生労働省のホームページ)",
+   "u": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000124204.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "レジオネラ症について",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（訪問サービス）",
+   "t": "指定訪問介護事業所・指定（介護予防）訪問入浴介護事業所",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/294031.pdf",
+   "kind": "PDF",
+   "size": "6.57MB",
+   "note": "",
+   "svc": [
+    "houmon"
+   ],
+   "id": "houmon"
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（訪問サービス）",
+   "t": "要点説明動画",
+   "u": "https://youtu.be/FXQPyD8lp0Q",
+   "kind": "動画",
+   "size": "",
+   "note": "指定訪問介護事業所・指定（介護予防）訪問入浴介護事業所",
+   "svc": [
+    "houmon"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（訪問サービス）",
+   "t": "指定（介護予防）訪問看護事業所",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/294032.pdf",
+   "kind": "PDF",
+   "size": "3.19MB",
+   "note": "",
+   "svc": [
+    "houmon"
+   ],
+   "id": "kango"
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（訪問サービス）",
+   "t": "要点説明動画",
+   "u": "https://youtu.be/aXRz69PvrEY",
+   "kind": "動画",
+   "size": "",
+   "note": "指定（介護予防）訪問看護事業所",
+   "svc": [
+    "houmon"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（通所サービス）",
+   "t": "指定通所介護事業所・指定地域密着型通所介護事業所",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/294583.pdf",
+   "kind": "PDF",
+   "size": "6.54MB",
+   "note": "",
+   "svc": [
+    "tsusho"
+   ],
+   "id": "tsusho"
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（通所サービス）",
+   "t": "要点説明動画",
+   "u": "https://youtu.be/Jjrykd-PQ_8",
+   "kind": "動画",
+   "size": "",
+   "note": "指定通所介護事業所・指定地域密着型通所介護事業所",
+   "svc": [
+    "tsusho"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（通所サービス）",
+   "t": "指定（介護予防）通所リハビリテーション事業所・指定（介護予防）訪問リハビリテーション事業所",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/294034.pdf",
+   "kind": "PDF",
+   "size": "3.77MB",
+   "note": "",
+   "svc": [
+    "tsusho"
+   ],
+   "id": "tsuriha"
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（通所サービス）",
+   "t": "要点説明動画",
+   "u": "https://youtu.be/uayJ4rXpqyA",
+   "kind": "動画",
+   "size": "",
+   "note": "指定（介護予防）通所リハビリテーション事業所・指定（介護予防）訪問リハビリテーション事業所",
+   "svc": [
+    "tsusho"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（介護医療院、短期入所サービス）",
+   "t": "介護医療院",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/295764.pdf",
+   "kind": "PDF",
+   "size": "2.57MB",
+   "note": "",
+   "svc": [
+    "iryo"
+   ],
+   "id": "iryoin"
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（介護医療院、短期入所サービス）",
+   "t": "要点説明動画",
+   "u": "https://youtu.be/rMwEKIM43wI",
+   "kind": "動画",
+   "size": "",
+   "note": "介護医療院",
+   "svc": [
+    "iryo"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（介護医療院、短期入所サービス）",
+   "t": "指定（介護予防）短期入所療養介護事業所",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/295765.pdf",
+   "kind": "PDF",
+   "size": "2.05MB",
+   "note": "",
+   "svc": [
+    "iryo"
+   ],
+   "id": "tanryo"
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（介護医療院、短期入所サービス）",
+   "t": "要点説明動画",
+   "u": "https://youtu.be/aRK6-cdAvG8",
+   "kind": "動画",
+   "size": "",
+   "note": "指定（介護予防）短期入所療養介護事業所",
+   "svc": [
+    "iryo"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（介護医療院、短期入所サービス）",
+   "t": "指定（介護予防）短期入所生活介護事業所",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/295767.pdf",
+   "kind": "PDF",
+   "size": "4.53MB",
+   "note": "",
+   "svc": [
+    "iryo"
+   ],
+   "id": "tanki"
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（介護医療院、短期入所サービス）",
+   "t": "要点説明動画",
+   "u": "https://youtu.be/GhLRG56xf8k",
+   "kind": "動画",
+   "size": "",
+   "note": "指定（介護予防）短期入所生活介護事業所",
+   "svc": [
+    "iryo"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（特定施設入居者生活介護）",
+   "t": "指定（介護予防）特定施設入居者生活介護事業所・指定地域密着型特定施設入居者生活介護事業所",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/295768.pdf",
+   "kind": "PDF",
+   "size": "4.37MB",
+   "note": "",
+   "svc": [
+    "tokutei"
+   ],
+   "id": "tokutei"
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（特定施設入居者生活介護）",
+   "t": "要点説明動画",
+   "u": "https://youtu.be/z56GldSf2TA",
+   "kind": "動画",
+   "size": "",
+   "note": "指定（介護予防）特定施設入居者生活介護事業所・指定地域密着型特定施設入居者生活介護事業所",
+   "svc": [
+    "tokutei"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（福祉用具）",
+   "t": "指定（介護予防）福祉用具貸与事業所・指定特定（介護予防）福祉用具販売事業所",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/295769.pdf",
+   "kind": "PDF",
+   "size": "2.21MB",
+   "note": "",
+   "svc": [
+    "yogu"
+   ],
+   "id": "yogu"
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（福祉用具）",
+   "t": "要点説明動画",
+   "u": "https://youtu.be/fv6xHRqWl1A",
+   "kind": "動画",
+   "size": "",
+   "note": "指定（介護予防）福祉用具貸与事業所・指定特定（介護予防）福祉用具販売事業所",
+   "svc": [
+    "yogu"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（福祉用具）",
+   "t": "消費生活用製品（福祉用具）の重大製品事故に係る公表について",
+   "u": "https://www.pref.fukuoka.lg.jp/contents/fukushiyougujiko2025.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "【関連情報】",
+   "svc": [
+    "yogu"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（介護老人福祉施設）",
+   "t": "指定介護老人福祉施設",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/295770.pdf",
+   "kind": "PDF",
+   "size": "9.19MB",
+   "note": "",
+   "svc": [
+    "tokuyo"
+   ],
+   "id": "tokuyo"
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（介護老人福祉施設）",
+   "t": "要点説明動画",
+   "u": "https://youtu.be/hZjIeWDaJ3g",
+   "kind": "動画",
+   "size": "",
+   "note": "指定介護老人福祉施設",
+   "svc": [
+    "tokuyo"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（介護老人保健施設）",
+   "t": "介護老人保健施設",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/295771.pdf",
+   "kind": "PDF",
+   "size": "2.85MB",
+   "note": "",
+   "svc": [
+    "roken"
+   ],
+   "id": "roken"
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（介護老人保健施設）",
+   "t": "要点説明動画",
+   "u": "https://youtu.be/4OhUJHsZCL0",
+   "kind": "動画",
+   "size": "",
+   "note": "介護老人保健施設",
+   "svc": [
+    "roken"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（居宅療養管理指導）",
+   "t": "居宅療養管理指導集団指導資料（共通）",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/268653.pdf",
+   "kind": "PDF",
+   "size": "4.41MB",
+   "note": "居宅療養管理指導",
+   "svc": [
+    "ryoyo"
+   ],
+   "id": "ryoyo"
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（居宅療養管理指導）",
+   "t": "居宅療養管理指導（医師）",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/268650.pdf",
+   "kind": "PDF",
+   "size": "2.04MB",
+   "note": "居宅療養管理指導",
+   "svc": [
+    "ryoyo"
+   ],
+   "id": "ryoyoi"
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（居宅療養管理指導）",
+   "t": "要点説明動画（医師）",
+   "u": "https://youtu.be/k1oYBrjvaRs",
+   "kind": "動画",
+   "size": "",
+   "note": "居宅療養管理指導",
+   "svc": [
+    "ryoyo"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（居宅療養管理指導）",
+   "t": "居宅療養管理指導（歯科医師）",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/268651.pdf",
+   "kind": "PDF",
+   "size": "2MB",
+   "note": "居宅療養管理指導",
+   "svc": [
+    "ryoyo"
+   ],
+   "id": "ryoyos"
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（居宅療養管理指導）",
+   "t": "要点説明動画（歯科医師）",
+   "u": "https://youtu.be/lnli9YoUFGg",
+   "kind": "動画",
+   "size": "",
+   "note": "居宅療養管理指導",
+   "svc": [
+    "ryoyo"
+   ]
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（居宅療養管理指導）",
+   "t": "居宅療養管理指導（薬剤師）",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/268652.pdf",
+   "kind": "PDF",
+   "size": "1.58MB",
+   "note": "居宅療養管理指導",
+   "svc": [
+    "ryoyo"
+   ],
+   "id": "ryoyoy"
+  },
+  {
+   "part": "説明資料",
+   "g": "個別サービス（居宅療養管理指導）",
+   "t": "要点説明動画（薬剤師）",
+   "u": "https://youtu.be/OuZKkJrvF8c",
+   "kind": "動画",
+   "size": "",
+   "note": "居宅療養管理指導",
+   "svc": [
+    "ryoyo"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【関連資料】",
+   "t": "介護労働者の労働条件の確保・改善のポイント",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/290876.pdf",
+   "kind": "PDF",
+   "size": "22KB",
+   "note": "福岡労働局 監督課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【関連資料】",
+   "t": "第３次産業における労働災害防止",
+   "u": "https://jsite.mhlw.go.jp/fukuoka-roudoukyoku/_00381.html#%E7%AC%AC%E4%B8%89%E6%AC%A1%E7%94%A3%E6%A5%AD",
+   "kind": "HTML",
+   "size": "",
+   "note": "福岡労働局 安全課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【関連資料】",
+   "t": "はしご・脚立・踏み台からの墜落災害防止のために",
+   "u": "https://jsite.mhlw.go.jp/fukuoka-roudoukyoku/_00381.html#%E3%81%AF%E3%81%97%E3%81%94%E3%83%BB%E8%84%9A%E7%AB%8B",
+   "kind": "HTML",
+   "size": "",
+   "note": "福岡労働局 安全課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【関連資料】",
+   "t": "防火設備の維持管理について",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/164758.pdf",
+   "kind": "PDF",
+   "size": "466KB",
+   "note": "福岡労働局 安全課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【関連資料】",
+   "t": "消防法による消防用設備の設置義務",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/164760.pdf",
+   "kind": "PDF",
+   "size": "151KB",
+   "note": "福岡労働局 安全課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【関連資料】",
+   "t": "水防法・土砂災害防止法が改正されました",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/191614.pdf",
+   "kind": "PDF",
+   "size": "369KB",
+   "note": "土砂災害防止法に基づき、「市町村地域防災計画」にその名称及び所在地が定められた要配慮者利用施設は、避難確保計画の作成等が必要となります。",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【関連資料】",
+   "t": "要配慮者利用施設の浸水対策（国土交通省ホームページ）",
+   "u": "https://www.mlit.go.jp/river/bousai/main/saigai/jouhou/jieisuibou/bousai-gensai-suibou02.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "浸水が想定される地域における要配慮者利用施設では、洪水時等における円滑な避難の確保を図るため、避難確保計画等の作成など、水害に備えた対応が必要です。",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "【関連資料】",
+   "t": "市街化調整区域における社会福祉施設等の立地について（県管轄区域）",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/164787.pdf",
+   "kind": "PDF",
+   "size": "",
+   "note": "浸水が想定される地域における要配慮者利用施設では、洪水時等における円滑な避難の確保を図るため、避難確保計画等の作成など、水害に備えた対応が必要です。",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "高齢施設等看取り促進パンフレットについて",
+   "u": "https://www.pref.fukuoka.lg.jp/contents/zaitaku-mitoripamph.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "高齢者地域包括ケア推進課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "人生会議（ＡＣＰ：アドバンス・ケア・プランニング）について",
+   "u": "https://www.mhlw.go.jp/stf/newpage_02783.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "高齢者地域包括ケア推進課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "訪問看護に関するコールセンター（相談窓口）の設置",
+   "u": "https://www.pref.fukuoka.lg.jp/contents/houmonkango-callcenter.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "高齢者地域包括ケア推進課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "在宅医療・介護現場における利用者等からの暴力・ハラスメント対策について",
+   "u": "https://www.pref.fukuoka.lg.jp/contents/ztiryoukaigo-bouhara.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "高齢者地域包括ケア推進課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "福岡県働きやすい介護職場認証制度について",
+   "u": "https://www.pref.fukuoka.lg.jp/contents/kaigo-ninsyou.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "高齢者地域包括ケア推進課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "エイジフレンドリー補助金について",
+   "u": "https://www.mhlw.go.jp/stf/newpage_09940.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "高齢者地域包括ケア推進課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "福岡県介護DX支援センター",
+   "u": "https://www.pref.fukuoka.lg.jp/contents/kaigo-dx-center.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "高齢者地域包括ケア推進課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "＃7119について",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/257213.pdf",
+   "kind": "PDF",
+   "size": "421KB",
+   "note": "救急車を呼ぶかどうか迷った時の相談ダイヤルを実施しています。",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "福岡県医師会診療情報ネットワーク（とびうめネット）について",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/257214.pdf",
+   "kind": "PDF",
+   "size": "2.3MB",
+   "note": "【大牟田市・大川市・北九州市・みやま市・行橋市・苅田町・みやこ町の介護施設の方へ】",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "B型肝炎のこと、なんでもご相談ください",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/164878.pdf",
+   "kind": "PDF",
+   "size": "1.08MB",
+   "note": "がん感染症疾病対策課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "肝炎のこと、なんでもご相談ください",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/164879.pdf",
+   "kind": "PDF",
+   "size": "2.44MB",
+   "note": "がん感染症疾病対策課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "ウイルス性肝炎感染予防",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/289756.pdf",
+   "kind": "PDF",
+   "size": "602KB",
+   "note": "がん感染症疾病対策課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "ウイルス性肝炎無料検査",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/164881.pdf",
+   "kind": "PDF",
+   "size": "4.04MB",
+   "note": "がん感染症疾病対策課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "福岡県働く世代をがんから守るがん対策サポート企業",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/257205.pdf",
+   "kind": "PDF",
+   "size": "2.28MB",
+   "note": "がん感染症疾病対策課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "風しん抗体検査",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/164883.pdf",
+   "kind": "PDF",
+   "size": "316KB",
+   "note": "がん感染症疾病対策課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "医療・介護従事者の皆さん、HIV・エイズについて正しく知ってください！",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/289812.pdf",
+   "kind": "PDF",
+   "size": "426KB",
+   "note": "がん感染症疾病対策課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "正しく知ろうHIV/エイズ",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/289813.pdf",
+   "kind": "PDF",
+   "size": "873KB",
+   "note": "がん感染症疾病対策課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "原子爆弾被爆者介護保険利用等助成事業について",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/258756.pdf",
+   "kind": "PDF",
+   "size": "334KB",
+   "note": "がん感染症疾病対策課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "アレルギー相談窓口",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/257203.pdf",
+   "kind": "PDF",
+   "size": "573KB",
+   "note": "がん感染症疾病対策課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "福岡県肝疾患相談支援センター",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/164888.pdf",
+   "kind": "PDF",
+   "size": "6.07MB",
+   "note": "がん感染症疾病対策課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "福岡県難病相談支援センター",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/164889.pdf",
+   "kind": "PDF",
+   "size": "1.15MB",
+   "note": "がん感染症疾病対策課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "骨髄バンク事業にご協力をお願いします",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/121355.pdf",
+   "kind": "PDF",
+   "size": "",
+   "note": "がん感染症疾病対策課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "ダニ媒介感染症にご注意ください",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/257206.pdf",
+   "kind": "PDF",
+   "size": "3.28MB",
+   "note": "がん感染症疾病対策課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "蚊媒介感染症にご注意ください",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/257207.pdf",
+   "kind": "PDF",
+   "size": "1.5MB",
+   "note": "がん感染症疾病対策課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "動物由来感染症に注意しましょう",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/257208.pdf",
+   "kind": "PDF",
+   "size": "1MB",
+   "note": "がん感染症疾病対策課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "ふくおか健康づくり団体・事業所宣言リーフレット",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/257209.pdf",
+   "kind": "PDF",
+   "size": "950KB",
+   "note": "健康増進課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "高次脳機能障がい支援ガイド",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/192905.pdf",
+   "kind": "PDF",
+   "size": "2.84MB",
+   "note": "健康増進課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "「福岡県循環器病総合支援センターのご案内」リーフレット",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/192906.pdf",
+   "kind": "PDF",
+   "size": "204KB",
+   "note": "健康増進課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "スマートにソルトを使う減塩プロジェクト「TRY！スマソる？」",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/257210.pdf",
+   "kind": "PDF",
+   "size": "2.3MB",
+   "note": "健康増進課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "福岡県内の相談窓口のご案内",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/291055.pdf",
+   "kind": "PDF",
+   "size": "901KB",
+   "note": "健康増進課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "「ふくおか健康ポイントアプリ」チラシ",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/291057.pdf",
+   "kind": "PDF",
+   "size": "2.06MB",
+   "note": "健康増進課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "福岡県空き家活用サポートセンター「イエカツ」（チラシ）",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/289757.pdf",
+   "kind": "PDF",
+   "size": "1.09MB",
+   "note": "住宅計画課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "福岡県空き家活用サポートセンター「イエカツ」",
+   "u": "https://www.fkjc.or.jp/housing/iekatsu/",
+   "kind": "HTML",
+   "size": "",
+   "note": "住宅計画課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "生涯現役チャレンジセンターリーフレット",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/164769.pdf",
+   "kind": "PDF",
+   "size": "610KB",
+   "note": "就業支援課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "子育て応援宣言企業・介護応援宣言企業募集について",
+   "u": "https://www.pref.fukuoka.lg.jp/contents/kosodateouen-kaigoouen.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "就業支援課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "障がい者雇用開拓事業チラシ",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/289758.pdf",
+   "kind": "PDF",
+   "size": "5.96MB",
+   "note": "就業支援課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "ママと女性の就業支援センター",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/289759.pdf",
+   "kind": "PDF",
+   "size": "1.73MB",
+   "note": "女性活躍推進課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "出会いの応援団体募集チラシ",
+   "u": "https://kekkon-ouen.pref.fukuoka.lg.jp/fukuoka/bosyu/",
+   "kind": "PDF",
+   "size": "2.08MB",
+   "note": "こども未来課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "出会い応援団体申込書",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/263262.doc",
+   "kind": "Word",
+   "size": "48KB",
+   "note": "こども未来課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "犯罪や非行をした人を雇用し、立ち直りを助ける「協力雇用主」を募集しています。",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/164775.pdf",
+   "kind": "PDF",
+   "size": "2.27MB",
+   "note": "保護・援護課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "生活保護法等による指定介護機関について",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/289761.pdf",
+   "kind": "PDF",
+   "size": "131KB",
+   "note": "保護・援護課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "中国残留邦人等に支援相談員や通訳を派遣する制度",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/192916.pdf",
+   "kind": "PDF",
+   "size": "542KB",
+   "note": "保護・援護課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "旧優生保護法補償金等制度 リーフレット（こども家庭庁）",
+   "u": "https://www.cfa.go.jp/kyuyusei-hoshokin",
+   "kind": "HTML",
+   "size": "",
+   "note": "子育て支援課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "旧優生保護法補償金等制度 制度説明（福岡県）",
+   "u": "https://www.pref.fukuoka.lg.jp/contents/kyuyusei-leaflet.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "子育て支援課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "福岡県各課からのお知らせ",
+   "t": "旧優生保護法補償金等制度 リーフレット（福岡県）",
+   "u": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/282367.pdf",
+   "kind": "PDF",
+   "size": "",
+   "note": "子育て支援課",
+   "svc": [
+    "*"
+   ]
+  },
+  {
+   "part": "参考資料",
+   "g": "関連情報",
+   "t": "介護事業所等における新型コロナウイルス感染症への対応等について（厚生労働省のホームページ）",
+   "u": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00089.html",
+   "kind": "HTML",
+   "size": "",
+   "note": "",
+   "svc": [
+    "*"
+   ]
+  }
+ ],
+ "extractedAt": "2026-10-31"
+}

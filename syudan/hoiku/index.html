@@ -1,0 +1,1188 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>福岡県 保育所等の指導監査 特設ページ</title>
+<meta name="description" content="福岡県の保育所等（認可保育所・保育所型認定こども園・幼保連携型認定こども園）の指導監査の通知と「安全管理重点確認監査」の手引き、合同監査資料の様式を引けるようにしたページ。">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:title" content="福岡県 保育所等の指導監査 特設ページ">
+<meta property="og:description" content="福岡県の保育所等の指導監査の資料を、見出しと検索で引く。福祉情報ウォッチの特設ページ。">
+<meta property="og:url" content="https://fukushi-watch.fknd.jp/syudan/hoiku/">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png?v=2">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16.png?v=2">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap">
+<style>
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; }
+[hidden] { display: none !important; }
+/* 構成: こども性暴力防止法ガイド・報酬改定ガイドと同じサイト型（上のメニュー、スマホは下のタブ）。
+   中身は「県の資料の見出しと頁」。本文は持たず、見出しからPDFの該当頁を開く。色は深緑（ほかの2つのガイドと見分ける）。白基調のライトのみ */
+:root {
+  --bg: #FFFFFF;
+  --surface: #FFFFFF;
+  --surface-2: #F4F3F0;
+  --ink: #1E2421;
+  --ink-2: #474E4A;
+  --ink-3: #646B67;
+  --line: #DCD9D2;
+  --line-2: #ECEAE5;
+  --ac: #2C6650;          /* 深緑：見出し・リンク */
+  --ac-soft: #E8F1EC;
+  --ac-mid: #A9C7B8;
+  --warn: #A04A32;        /* 期限の日数だけ（福祉情報ウォッチの朱） */
+  --focus: #2C6650;
+  --f-display: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
+  --f-body: "BIZ UDPGothic", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  --f-mono: "IBM Plex Mono", "BIZ UDGothic", ui-monospace, monospace;
+  --r: 6px;
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-padding-top: 72px; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--f-body); font-size: 16px; line-height: 1.8; letter-spacing: .01em;
+  -webkit-text-size-adjust: 100%;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--surface); }
+a { color: var(--ac); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 3px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.nw { white-space: nowrap; }
+.ext { width: 12px; height: 12px; margin-left: 3px; vertical-align: -1px; flex: none; }
+
+/* ── 戻る・上部バー ───────────────────────── */
+.crumb { background: var(--surface-2); border-bottom: 1px solid var(--line-2); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.crumb-in { max-width: 1240px; margin: 0 auto; display: flex; align-items: center; }
+.crumb-back { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 12px 0 0; color: var(--ink-2); text-decoration: none; font-size: 13px; }
+.crumb-back:hover { color: var(--ac); text-decoration: underline; }
+.crumb-back svg { width: 14px; height: 14px; flex: none; }
+.topbar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40;
+  background: var(--surface); border-bottom: 1px solid var(--line);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.topbar-in { max-width: 1240px; margin: 0 auto; display: flex; align-items: center; gap: 14px; height: 58px; }
+.brand { font-family: var(--f-display); font-weight: 700; font-size: 14.5px; letter-spacing: .03em; white-space: nowrap; color: var(--ink); text-decoration: none; display: flex; align-items: baseline; gap: 6px; flex: none; }
+.brand span { font-size: 12px; color: var(--ink-3); font-weight: 500; }
+.gnav { display: flex; gap: 2px; flex: 1; min-width: 0; justify-content: flex-end; }
+/* 分野の切り替え（障がい・高齢・保育）。押すとその分野のページへ移る */
+.fsw { display: inline-flex; flex: none; padding: 2px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface-2); }
+.fsw a { font-size: 12.5px; line-height: 1.5; padding: 4px 13px; border-radius: 999px; color: var(--ink-2); text-decoration: none; white-space: nowrap; }
+.fsw a:hover { color: var(--ac); }
+.fsw a[aria-current="page"] { background: var(--ac); color: #fff; font-weight: 700; }
+.gnav a { font-size: 13.5px; color: var(--ink-2); text-decoration: none; padding: 7px 12px; border-radius: 4px; white-space: nowrap; position: relative; }
+.gnav a:hover { background: var(--surface-2); color: var(--ink); }
+.gnav a.is-active { color: var(--ac); font-weight: 700; }
+.gnav a.is-active::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: -12px; height: 3px; background: var(--ac); border-radius: 2px 2px 0 0; }
+.tabbar { display: none; }
+
+/* ── 全体レイアウト ───────────────────────── */
+.shell {
+  max-width: 1240px; margin: 0 auto;
+  display: grid; grid-template-columns: 232px minmax(0, 1fr); gap: 44px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 72px;
+}
+.shell.no-sub { grid-template-columns: minmax(0, 1fr); }
+.shell.no-sub .subnav { display: none; }
+.shell.no-sub:not(.is-home) main { max-width: 980px; width: 100%; margin-inline: auto; }
+main { padding-block: 28px 0; min-width: 0; }
+.view { display: none; }
+.view.is-active { display: block; animation: viewIn .22s ease-out; }
+@keyframes viewIn { from { opacity: .35; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .view.is-active { animation: none; } }
+
+.subnav { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 58px); align-self: start; padding-block: 28px 24px; max-height: calc(100vh - 58px - env(safe-area-inset-top, 0px)); overflow-y: auto; scrollbar-width: thin; }
+.subnav ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.subnav a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; padding: 8px 10px; border-radius: 5px; color: var(--ink-2); text-decoration: none; font-size: 14px; line-height: 1.5; align-items: baseline; }
+.subnav a .c { font-family: var(--f-mono); font-size: 11px; color: var(--ink-3); }
+.subnav a:hover { background: var(--surface-2); color: var(--ink); }
+.subnav a.is-active { background: var(--ac-soft); color: var(--ac); font-weight: 700; }
+
+.vh { font-family: var(--f-display); font-weight: 900; font-size: clamp(24px, 3.2vw, 32px); line-height: 1.3; margin: 0 0 6px; letter-spacing: .02em; }
+.vsub { color: var(--ink-3); font-size: 13.5px; margin: 0 0 18px; line-height: 1.7; }
+
+/* ── ホーム ───────────────────────── */
+.home-head { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(260px, 1fr); gap: 24px; align-items: stretch; margin-bottom: 22px; }
+.eyebrow { font-family: var(--f-mono); font-size: 12px; letter-spacing: .1em; color: var(--ink-3); display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.home h1 { font-family: var(--f-display); font-weight: 900; font-size: clamp(30px, 4.4vw, 46px); line-height: 1.22; letter-spacing: .03em; margin: 8px 0 18px; }
+.dateplate { background: var(--ac-soft); border-radius: 10px; border-top: 4px solid var(--ac); padding: 16px 20px 18px; display: flex; flex-direction: column; gap: 6px; }
+.dateplate .k { font-family: var(--f-mono); font-size: 12px; letter-spacing: .14em; color: var(--ac); }
+.dateplate .d { font-family: var(--f-display); font-weight: 900; font-size: clamp(34px, 4.6vw, 48px); line-height: 1.05; font-variant-numeric: tabular-nums; color: var(--ac); }
+.dateplate .left { font-size: 14px; color: var(--ink-2); }
+.dateplate .left b { font-size: 22px; font-family: var(--f-display); font-weight: 900; margin: 0 3px; color: var(--warn); font-variant-numeric: tabular-nums; }
+.reg-go { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 4px; font-size: 14px; font-weight: 700; padding: 8px 14px; background: var(--surface); border: 1px solid var(--ac-mid); border-radius: var(--r); text-decoration: none; }
+.reg-go svg { width: 13px; height: 13px; }
+.reg-go:hover { border-color: var(--ac); }
+
+.find { position: relative; display: flex; max-width: 40em; }
+.find svg { position: absolute; left: 13px; top: 50%; width: 18px; height: 18px; transform: translateY(-50%); color: var(--ink-3); pointer-events: none; }
+.find input { flex: 1; min-width: 0; font: inherit; font-size: 16px; padding: 11px 12px 11px 40px; border: 1.5px solid var(--line); border-right: 0; border-radius: var(--r) 0 0 var(--r); background: var(--surface); color: var(--ink); }
+.find input:focus { border-color: var(--ac); outline: none; }
+.find button { font: inherit; font-size: 15px; font-weight: 700; padding: 0 20px; border: 0; border-radius: 0 var(--r) var(--r) 0; background: var(--ac); color: #fff; cursor: pointer; }
+.find button:hover { filter: brightness(1.08); }
+.find.big input { font-size: 17px; padding-block: 14px; }
+
+.hb { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 0 0 18px; margin-bottom: 18px; min-width: 0; overflow: hidden; }
+.hb-h { display: flex; justify-content: space-between; align-items: center; gap: 6px 14px; flex-wrap: wrap; margin: 0 0 14px; padding: 11px 18px; background: var(--ac-soft); border-bottom: 1px solid #D2E2D9; }
+.hb-h h2 { font-family: var(--f-display); font-size: 17px; color: var(--ac); margin: 0; line-height: 1.4; }
+.hb-h a { font-size: 13px; }
+.hb > :not(.hb-h) { margin-left: 18px; margin-right: 18px; }
+
+.svc-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.svc-card { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; text-decoration: none; color: var(--ink); min-height: 74px; }
+.svc-card:hover { border-color: var(--ac); background: var(--ac-soft); }
+.svc-card b { font-family: var(--f-display); font-size: 16px; color: var(--ac); line-height: 1.45; }
+.svc-card span { font-size: 12.5px; color: var(--ink-3); line-height: 1.55; }
+.svc-card .m { font-family: var(--f-mono); font-size: 11.5px; margin-top: auto; padding-top: 4px; }
+#svc .svc-grid { margin-top: 18px; }
+
+.chap-quick { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; margin-top: 0; margin-bottom: 0; }
+.chap-quick li { border-bottom: 1px solid var(--line-2); }
+.chap-quick a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: baseline; padding: 8px 2px; font-size: 14.5px; line-height: 1.55; text-decoration: none; color: var(--ink); }
+.chap-quick a:hover .t { color: var(--ac); text-decoration: underline; }
+.pg { font-family: var(--f-mono); font-size: 12px; color: var(--ink-3); white-space: nowrap; display: inline-flex; align-items: center; }
+
+.plain { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 14.5px; }
+.plain a { display: inline-flex; align-items: center; min-height: 32px; }
+.site-links { flex-direction: column; gap: 6px; }
+.site-links li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 12px; }
+.site-links .note { font-size: 12.5px; color: var(--ink-3); }
+
+/* ── サービス別 ───────────────────────── */
+.svc-head { margin-bottom: 18px; }
+.svc-names { color: var(--ink-3); font-size: 13.5px; margin: 0; line-height: 1.7; }
+.find.inline { margin: 14px 0 6px; max-width: 34em; }
+.doc { border-top: 2px solid var(--ink); padding-top: 12px; margin-top: 26px; }
+.doc-h { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+.doc-h h2 { font-family: var(--f-display); font-size: 19px; margin: 0; line-height: 1.45; }
+.doc-h .meta { font-family: var(--f-mono); font-size: 12px; color: var(--ink-3); }
+.doc-h .open { margin-left: auto; font-size: 13.5px; display: inline-flex; align-items: center; white-space: nowrap; }
+.doc-note { margin: 4px 0 0; }
+.doc-solo { margin-top: 10px; }
+/* 章の一覧（押すと章のページへ） */
+.chl { list-style: none; margin: 8px 0 0; padding: 0; }
+.chl li { border-bottom: 1px solid var(--line-2); }
+.chl a { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 12px; align-items: center; padding: 12px 4px 12px 2px; color: var(--ink); text-decoration: none; border-radius: 4px; }
+.chl a:hover { background: var(--surface-2); }
+.chl a:hover .t { color: var(--ac); }
+.chl .t { grid-column: 1; font-weight: 700; font-size: 15.5px; line-height: 1.5; }
+.chl .g { grid-column: 1; font-size: 13px; color: var(--ink-2); line-height: 1.65; margin-top: 2px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.chl .n { grid-column: 1; font-family: var(--f-mono); font-size: 11.5px; color: var(--ink-3); margin-top: 3px; }
+.chl .pa { grid-column: 2; grid-row: 1 / span 3; width: 15px; height: 15px; color: var(--ink-3); }
+.also { margin-top: 30px; }
+.also h2, .refs h2 { font-family: var(--f-display); font-size: 16.5px; margin: 0 0 8px; }
+.rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.rows li { padding: 9px 2px; border-bottom: 1px solid var(--line-2); font-size: 14.5px; line-height: 1.6; }
+.rows .note { display: block; font-size: 12.5px; color: var(--ink-3); }
+.ty { display: inline-block; margin-left: 8px; font-family: var(--f-mono); font-size: 10.5px; color: var(--ink-3); border: 1px solid var(--line); border-radius: 3px; padding: 0 5px; line-height: 1.55; vertical-align: 1px; white-space: nowrap; }
+.refs { margin-top: 30px; }
+.refs h3 { font-size: 14px; color: var(--ink-2); margin: 18px 0 4px; font-weight: 700; }
+
+/* ── 章のページ（見出しを押すと、その場で概要・要点・指摘が開く） ───────────────────────── */
+.crumbs { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; margin: 0 0 8px; font-size: 13px; color: var(--ink-3); }
+.crumbs a { color: var(--ink-2); }
+.ch-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; font-family: var(--f-mono); font-size: 12px; color: var(--ink-3); margin: 2px 0 0; }
+.pdf-go { display: inline-flex; align-items: center; font-family: var(--f-body); font-size: 13px; white-space: nowrap; }
+.ch-meta .pdf-go { margin-left: auto; }
+.ch-note { margin: 16px 0 6px; padding: 14px 18px 12px; background: var(--ac-soft); border-radius: 8px; }
+.ch-note .lead { margin: 0; font-size: 15px; line-height: 1.85; }
+.ch-note .pts { margin-top: 8px; }
+.gist { margin: 0 0 6px; font-size: 14.5px; line-height: 1.85; }
+.pts { margin: 4px 0 0; padding: 0 0 0 1.2em; font-size: 14px; line-height: 1.75; }
+.pts li { margin: 3px 0; }
+.pts li::marker { color: var(--ac); }
+.sh { margin: 12px 0 2px; padding: 10px 14px; border-left: 3px solid var(--warn); background: #FBF3EF; border-radius: 0 6px 6px 0; }
+.sh-h { display: block; font-size: 12.5px; font-weight: 700; color: var(--warn); letter-spacing: .04em; }
+.sh ul { margin: 4px 0 0; padding: 0 0 0 1.2em; font-size: 14px; line-height: 1.75; }
+.it-bar { display: flex; justify-content: flex-end; margin: 18px 0 6px; }
+.openall { font: inherit; font-size: 13px; padding: 5px 12px; min-height: 34px; border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); color: var(--ink-2); cursor: pointer; }
+.openall:hover { border-color: var(--ac); color: var(--ac); }
+.its { border-top: 1px solid var(--line); }
+details.it { border-bottom: 1px solid var(--line-2); }
+details.it > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: baseline; padding: 12px 4px 12px 30px; position: relative; font-weight: 700; font-size: 15px; line-height: 1.6; }
+details.it > summary::-webkit-details-marker { display: none; }
+details.it > summary::before { content: ""; position: absolute; left: 9px; top: 19px; width: 7px; height: 7px; border-right: 1.8px solid var(--ink-3); border-bottom: 1.8px solid var(--ink-3); transform: rotate(-45deg); transition: transform .15s; }
+details.it[open] > summary::before { transform: rotate(45deg); top: 17px; }
+details.it > summary:hover { color: var(--ac); }
+details.it[open] > summary { color: var(--ac); }
+details.it > summary .pg { font-weight: 400; }
+.it-b { padding: 0 6px 16px 30px; }
+.it-b .pdf-go { margin-top: 10px; }
+.pager { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 40px 0 0; padding-top: 18px; border-top: 1px solid var(--line); }
+.pager a { display: flex; align-items: center; gap: 8px; min-width: 0; min-height: 50px; padding: 0 16px; border-radius: var(--r); text-decoration: none; font-size: 14.5px; line-height: 1.4; white-space: nowrap; transition: background-color .15s; }
+.pager a .pk { flex: none; font-size: 12.5px; font-weight: 500; }
+.pager a .pt { min-width: 0; overflow: hidden; text-overflow: ellipsis; font-weight: 700; }
+.pager a .pa { flex: none; width: 15px; height: 15px; }
+.pager a.prev { grid-column: 1; background: var(--surface-2); color: var(--ink-2); }
+.pager a.prev .pt { color: var(--ink); }
+.pager a.prev:hover { background: #EAE8E3; }
+.pager a.next { grid-column: 2; background: var(--ac-soft); color: var(--ac); }
+.pager a.next .pa { margin-left: auto; }
+.pager a.next:hover { background: #DCEAE2; }
+.pager .ps { display: none; }
+.subnav .sn-back { display: inline-flex; align-items: center; gap: 4px; margin: 0 0 10px; padding: 4px 6px; font-size: 13px; color: var(--ink-2); }
+.subnav .sn-back .pa { width: 13px; height: 13px; }
+.subnav .sn-back:hover { color: var(--ac); text-decoration: underline; background: none; }
+
+/* ── 探す ───────────────────────── */
+.scope { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 4px; }
+.scope button { font: inherit; font-size: 13px; padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink-2); cursor: pointer; min-height: 34px; }
+.scope button:hover { border-color: var(--ac); }
+.scope button[aria-pressed="true"] { background: var(--ac); border-color: var(--ac); color: #fff; font-weight: 700; }
+.s-sum { font-size: 13.5px; color: var(--ink-3); margin: 14px 0 0; min-height: 1.8em; }
+.s-sum b { color: var(--ink); }
+.s-doc { margin-top: 20px; }
+.s-doc h2 { font-family: var(--f-display); font-size: 16px; margin: 0 0 4px; display: flex; flex-wrap: wrap; gap: 2px 10px; align-items: baseline; }
+.s-doc h2 small { font-family: var(--f-mono); font-size: 11.5px; color: var(--ink-3); font-weight: 400; }
+.hits { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.hits li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 14px; align-items: start; border-bottom: 1px solid var(--line-2); }
+.hit { display: flex; flex-direction: column; gap: 1px; padding: 9px 2px; text-decoration: none; color: var(--ink); line-height: 1.55; min-width: 0; }
+a.hit:hover .h { color: var(--ac); text-decoration: underline; }
+.hits .h { font-size: 14.5px; font-weight: 700; }
+.hits .c { font-size: 12px; color: var(--ink-3); }
+.hits .g { font-size: 13px; color: var(--ink-2); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.hit-pdf { display: inline-flex; flex-direction: column; align-items: flex-end; gap: 0; padding: 10px 2px; font-family: var(--f-mono); font-size: 11.5px; text-decoration: none; white-space: nowrap; }
+.hit-pdf span:first-child { font-size: 10.5px; color: var(--ink-3); }
+.hit-pdf:hover span:last-child { text-decoration: underline; }
+.hits mark { background: #F7E7A8; color: inherit; padding: 0 1px; }
+.more { font: inherit; font-size: 13px; margin-top: 8px; padding: 6px 12px; border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); color: var(--ink-2); cursor: pointer; }
+
+/* ── 資料一覧（scripts/linkbook.py が組み立てる） ───────────────────────── */
+.lk-find { position: relative; display: block; margin: 18px 0 4px; max-width: 32em; }
+.lk-find input { width: 100%; font: inherit; font-size: 15px; padding: 11px 14px 11px 40px; border: 1.5px solid var(--line); border-radius: var(--r); background: var(--surface); color: var(--ink); }
+.lk-find input:focus { border-color: var(--ac); outline: none; }
+.lk-find svg { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--ink-3); }
+.lk-g { margin-top: 28px; }
+.lk-h { font-family: var(--f-display); font-size: 15.5px; font-weight: 700; margin: 0 0 8px; padding-left: 10px; border-left: 3px solid var(--ac); line-height: 1.45; }
+.lk-l { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.lk-i { display: grid; grid-template-columns: minmax(0, 1fr); padding: 10px 0; border-bottom: 1px solid var(--line-2); font-size: 14.5px; line-height: 1.6; }
+.lk-d:empty { display: none; }
+.lk-b { min-width: 0; }
+.lk-b a { overflow-wrap: anywhere; }
+.lk-ty { display: inline-block; margin-left: 8px; font-family: var(--f-mono); font-size: 10.5px; color: var(--ink-3); border: 1px solid var(--line); border-radius: 3px; padding: 0 5px; line-height: 1.55; vertical-align: 1px; white-space: nowrap; }
+.lk-n { display: block; font-size: 12.5px; color: var(--ink-3); margin-top: 1px; }
+.lk-none { color: var(--ink-3); font-size: 14px; margin: 22px 0; }
+
+.foot { margin-top: 56px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--ink-3); line-height: 1.8; }
+.foot p { margin: 0; }
+
+/* ── 幅に応じた組み替え ───────────────────────── */
+@media (max-width: 1100px) {
+  .gnav { margin-right: 0; }
+  .shell { grid-template-columns: 200px minmax(0, 1fr); gap: 32px; }
+}
+@media (max-width: 960px) {
+  html { scroll-padding-top: 66px; }
+  .crumb-back { min-height: 44px; }
+  .gnav { display: none; }
+  .topbar-in { height: 52px; }
+  .shell, .shell.no-sub { grid-template-columns: minmax(0, 1fr); gap: 0; padding-block: 0 calc(96px + env(safe-area-inset-bottom, 0px)); }
+  main { padding-block: 18px 0; }
+  .subnav { position: static; max-height: none; overflow: visible; padding-block: 14px 0; }
+  .subnav ol { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 6px; margin-right: calc(-1 * max(16px, env(safe-area-inset-right, 0px))); padding-right: 16px; scrollbar-width: none; }
+  .subnav ol::-webkit-scrollbar { display: none; }
+  .subnav li { flex: none; }
+  .subnav a { display: inline-flex; gap: 6px; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; font-size: 13.5px; white-space: nowrap; }
+  .subnav a.is-active { border-color: var(--ac); }
+  .subnav li a span:first-child { max-width: 15em; overflow: hidden; text-overflow: ellipsis; }
+  .subnav .sn-back { display: none; }
+  .tabbar {
+    display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr);
+    position: fixed; z-index: 40; left: 0; right: 0; bottom: 0;
+    background: var(--surface); border-top: 1px solid var(--line);
+    padding: 4px max(4px, env(safe-area-inset-right, 0px)) calc(4px + env(safe-area-inset-bottom, 0px)) max(4px, env(safe-area-inset-left, 0px));
+  }
+  .tabbar a { display: grid; justify-items: center; gap: 2px; padding: 6px 2px 4px; color: var(--ink-3); text-decoration: none; font-size: 11px; line-height: 1.3; border-radius: 6px; min-height: 48px; }
+  .tabbar svg { width: 22px; height: 22px; }
+  .tabbar a.is-active { color: var(--ac); font-weight: 700; }
+  .home-head { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 960px) {
+  .fsw { margin-left: auto; }
+}
+@media (max-width: 640px) {
+  .brand span { display: none; }
+  .fsw a { font-size: 12px; padding: 4px 11px; }
+  .home h1 { font-size: 30px; margin-bottom: 14px; }
+  .dateplate { padding: 14px 16px 16px; }
+  .hb-h { padding: 10px 14px; }
+  .hb > :not(.hb-h) { margin-left: 14px; margin-right: 14px; }
+  .svc-grid { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .svc-card { min-height: 0; }
+  .chap-quick { grid-template-columns: minmax(0, 1fr); }
+  .find button { padding: 0 14px; }
+  .scope { flex-wrap: nowrap; overflow-x: auto; margin-right: calc(-1 * max(16px, env(safe-area-inset-right, 0px))); padding: 0 16px 4px 0; scrollbar-width: none; }
+  .scope::-webkit-scrollbar { display: none; }
+  .scope button { flex: none; }
+  .doc-h .open { margin-left: 0; }
+  .ch-meta .pdf-go { margin-left: 0; }
+  .ch-note { padding: 12px 14px 10px; }
+  details.it > summary { padding-left: 26px; font-size: 14.5px; }
+  details.it > summary::before { left: 7px; }
+  .it-b { padding-left: 26px; padding-right: 2px; }
+  .pager.two { grid-template-columns: auto minmax(0, 1fr); }
+  .pager.two a.prev { padding: 0 14px 0 12px; }
+  .pager.two a.prev .pk, .pager.two a.prev .pt { display: none; }
+  .pager.two a.prev .ps { display: inline; font-weight: 700; color: var(--ink); }
+  .pager.two > span:empty { display: none; }
+  .pager.two > span:empty + a.next { grid-column: 1 / -1; }
+}
+@media print {
+  .crumb, .topbar, .tabbar, .subnav, .find, .scope { display: none !important; }
+  .view { display: none !important; }
+  .view.is-active { display: block !important; }
+  details.it > .it-b { display: block !important; }
+  .pager, .it-bar { display: none !important; }
+}
+
+/* ══ 点検・減算・年間 ═══════════════════════════════
+   色の意味: 問題なし＝深緑、要対応＝朱、該当なし＝灰。判定はせず、押した結果を記録するだけ */
+:root { --s1: #2C6650; --s2: #A04A32; --s3: #8A8F8B; --s2-soft: #FBF0EB; --s3-soft: #F1F1EF; }
+.btn-p, .btn-o, .btn-s, .btn-d { font: inherit; display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 40px; padding: 0 16px; border-radius: var(--r); text-decoration: none; cursor: pointer; white-space: nowrap; font-size: 14px; line-height: 1.3; }
+.btn-p { background: var(--ac); color: #fff; border: 1px solid var(--ac); font-weight: 700; }
+.btn-p:hover { filter: brightness(1.08); }
+.btn-o { background: var(--surface); color: var(--ink-2); border: 1px solid var(--line); }
+.btn-o:hover { border-color: var(--ac); color: var(--ac); }
+.btn-o[disabled] { opacity: .45; cursor: default; }
+.btn-o.sm { min-height: 34px; padding: 0 12px; font-size: 13px; }
+.btn-s { min-height: 34px; padding: 0 12px; font-size: 13.5px; background: var(--ac-soft); color: var(--ac); border: 1px solid var(--ac-mid); font-weight: 700; }
+.btn-s:hover { border-color: var(--ac); }
+.btn-d { background: var(--surface); color: var(--warn); border: 1px solid #E2C4B9; }
+.btn-d:hover { border-color: var(--warn); }
+.tk-wait, .tk-empty { color: var(--ink-3); font-size: 14px; margin: 14px 0; }
+.tk-sec { margin-top: 30px; }
+.tk-h2, .tk-sh2 h2 { font-family: var(--f-display); font-size: 17px; margin: 0 0 10px; line-height: 1.45; }
+.tk-sh2 { display: flex; align-items: center; justify-content: space-between; gap: 10px 14px; flex-wrap: wrap; margin-bottom: 10px; }
+.tk-sh2 h2 { margin: 0; }
+.tk-src { font-size: 12px; color: var(--ink-3); margin: 34px 0 0; line-height: 1.75; }
+
+/* 進み具合の帯 */
+.bar { display: flex; height: 6px; background: var(--line-2); border-radius: 3px; overflow: hidden; min-width: 60px; }
+.bar i { display: block; height: 100%; }
+.bar .b1, .lg .b1 { background: var(--s1); }
+.bar .b2, .lg .b2 { background: var(--s2); }
+.bar .b3, .lg .b3 { background: var(--s3); }
+.bar.big { height: 10px; border-radius: 5px; }
+.pc { font-family: var(--f-mono); font-size: 12px; color: var(--ink-3); white-space: nowrap; }
+.pc b { font-size: 14px; color: var(--ink); font-weight: 500; }
+.pc-ng { font-size: 12px; font-weight: 700; color: var(--s2); white-space: nowrap; }
+.lg { display: inline-flex; align-items: center; gap: 5px; font-size: 12.5px; color: var(--ink-2); }
+.lg i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+/* ホームの「運営指導に備える」 */
+.hb-prep #tk-home { display: grid; gap: 12px; }
+.prep { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.prep-a { display: flex; flex-direction: column; gap: 3px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; text-decoration: none; color: var(--ink); min-height: 70px; }
+.prep-a:hover { border-color: var(--ac); background: var(--ac-soft); }
+.prep-a b { font-family: var(--f-display); font-size: 16px; color: var(--ac); line-height: 1.45; }
+.prep-a span { font-size: 12.5px; color: var(--ink-3); line-height: 1.55; }
+
+/* 事業所 */
+.ofc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; }
+.ofc { display: grid; gap: 6px; padding: 12px 14px 13px; border: 1px solid var(--line); border-left: 4px solid var(--ac); border-radius: 8px; text-decoration: none; color: var(--ink); }
+.ofc:hover { background: var(--ac-soft); }
+.ofc b { font-family: var(--f-display); font-size: 16px; line-height: 1.4; }
+.ofc-s { font-size: 12.5px; color: var(--ink-3); line-height: 1.5; }
+.ofc-m { display: flex; gap: 12px; align-items: baseline; }
+.ofc-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.ofc-head .vh { margin: 0; }
+.ofc-sum { margin: 14px 0 4px; display: grid; gap: 8px; max-width: 640px; }
+.ofc-sum-m { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; }
+.svl, .secl { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.svl li, .secl li { border-bottom: 1px solid var(--line-2); }
+.svl a, .secl a { display: grid; grid-template-columns: minmax(0, 1fr) minmax(80px, 180px) auto 15px; gap: 14px; align-items: center; padding: 13px 4px 13px 2px; color: var(--ink); text-decoration: none; }
+.svl a:hover, .secl a:hover { background: var(--surface-2); }
+.svl .t, .secl .t { font-weight: 700; font-size: 15px; line-height: 1.5; }
+.svl .pa, .secl .pa { width: 15px; height: 15px; color: var(--ink-3); }
+.secl { margin-top: 18px; }
+.exp-line { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; font-size: 14px; margin: 6px 0; }
+.exp-line .k { font-size: 12.5px; color: var(--ink-3); }
+.due-mini { list-style: none; margin: 6px 0 0; padding: 0; border-top: 1px solid var(--line); }
+.due-mini li { display: grid; grid-template-columns: 9em minmax(0, 1fr) auto; gap: 10px; padding: 9px 2px; border-bottom: 1px solid var(--line-2); font-size: 14px; align-items: baseline; }
+.due-mini .d { font-family: var(--f-mono); font-size: 12.5px; color: var(--ink-2); }
+.left { font-size: 12.5px; color: var(--ink-2); white-space: nowrap; }
+.left b { font-family: var(--f-display); font-weight: 900; font-size: 16px; color: var(--warn); margin: 0 2px; }
+.left.is-today { color: var(--warn); font-weight: 700; }
+.left.is-past { color: var(--ink-3); }
+.left.is-done { color: var(--s1); font-weight: 700; }
+.io-b { display: flex; flex-wrap: wrap; gap: 8px; }
+.io-msg { font-size: 13px; color: var(--ac); min-height: 1.6em; margin: 8px 0 0; }
+.kk-groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 6px 28px; }
+.kk-g h3 { font-size: 13px; color: var(--ink-3); margin: 10px 0 4px; font-weight: 700; }
+.kk-g ul { list-style: none; margin: 0; padding: 0; }
+.kk-g a { display: flex; justify-content: space-between; gap: 10px; padding: 7px 2px; border-bottom: 1px solid var(--line-2); text-decoration: none; color: var(--ink); font-size: 14.5px; line-height: 1.5; }
+.kk-g a:hover span:first-child { color: var(--ac); text-decoration: underline; }
+.kk-g .n { font-family: var(--f-mono); font-size: 12px; color: var(--ink-3); }
+.kk-cta { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; margin: 14px 0 4px; padding: 12px 14px; background: var(--surface-2); border-radius: 8px; font-size: 13.5px; color: var(--ink-2); }
+
+/* 登録の画面 */
+.ofc-form { max-width: 760px; margin-top: 16px; display: grid; gap: 22px; }
+.fld { display: grid; gap: 6px; border: 0; padding: 0; margin: 0; min-width: 0; }
+.fld > span, .fld legend { font-weight: 700; font-size: 14px; padding: 0; }
+.fld input[type="text"], .fld input[type="date"] { font: inherit; font-size: 16px; padding: 10px 12px; border: 1.5px solid var(--line); border-radius: var(--r); max-width: 26em; background: var(--surface); color: var(--ink); }
+.fld input:focus { border-color: var(--ac); outline: none; }
+.chips-g { margin-top: 8px; }
+.cg { display: block; font-size: 12.5px; color: var(--ink-3); margin: 0 0 4px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { position: relative; }
+.chip input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.chip span { display: inline-flex; align-items: center; min-height: 36px; padding: 0 12px; border: 1px solid var(--line); border-radius: 999px; font-size: 13.5px; color: var(--ink-2); background: var(--surface); }
+.chip input:checked + span { background: var(--ac); border-color: var(--ac); color: #fff; font-weight: 700; }
+.chip input:focus-visible + span { outline: 2px solid var(--focus); outline-offset: 2px; }
+.fld-err { color: var(--warn); font-size: 13.5px; margin: 0; min-height: 1.4em; }
+.form-b { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; }
+
+/* 点検表 */
+.sec-h { font-size: clamp(22px, 2.8vw, 28px); }
+.tk-bar { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; margin: 16px 0 6px; }
+.flt { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 2px; background: var(--surface); }
+.flt button { font: inherit; font-size: 13px; padding: 4px 13px; min-height: 30px; border: 0; border-radius: 999px; background: none; color: var(--ink-2); cursor: pointer; }
+.flt button[aria-pressed="true"] { background: var(--ink); color: #fff; font-weight: 700; }
+.tgl { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-2); cursor: pointer; }
+.tgl input { width: 16px; height: 16px; accent-color: var(--ac); }
+.tk-bar .btn-o.sm:last-child { margin-left: auto; }
+.tkrs { display: grid; gap: 14px; margin-top: 14px; }
+.tkr { border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px 12px; background: var(--surface); scroll-margin-top: 80px; }
+.tkr.is-hl { border-color: var(--ac); box-shadow: 0 0 0 3px var(--ac-soft); }
+.tkr-h { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; margin-bottom: 4px; }
+.tkr-h h2 { font-family: var(--f-display); font-size: 16.5px; margin: 0; line-height: 1.5; }
+.law { font-family: var(--f-mono); font-size: 11.5px; color: var(--ink-3); }
+.src-k { font-size: 11.5px; font-weight: 700; color: var(--warn); border: 1px solid #E2C4B9; border-radius: 3px; padding: 0 6px; line-height: 1.7; }
+.tki { list-style: none; margin: 4px 0 0; padding: 0; }
+.tk-it { position: relative; padding: 10px 0 12px 14px; border-top: 1px dashed var(--line-2); }
+.tk-it:first-child { border-top: 0; }
+.tk-it::before { content: ""; position: absolute; left: 0; top: 12px; bottom: 14px; width: 3px; border-radius: 2px; background: var(--line); }
+.tk-it[data-s="1"]::before { background: var(--s1); }
+.tk-it[data-s="2"]::before { background: var(--s2); }
+.tk-it[data-s="3"]::before { background: var(--s3); }
+.tk-it.solo { padding-top: 6px; border-top: 0; }
+.tk-it.solo::before { display: none; }
+.tk-it .x { margin: 0; font-size: 14.5px; line-height: 1.85; }
+.tk-it.is-ext .x { color: var(--ink-3); }
+.tk-it .q.ext { color: var(--ink-3); background: var(--s3-soft); margin-right: 6px; }
+.tk-it .q { display: inline-block; font-size: 12px; font-weight: 700; color: var(--ac); background: var(--ac-soft); border-radius: 3px; padding: 0 6px; margin-bottom: 3px; }
+.ul { text-decoration: underline; text-decoration-color: var(--ac-mid); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.it-m { display: flex; flex-wrap: wrap; gap: 2px 12px; align-items: baseline; margin: 4px 0 0; }
+.seg { display: inline-grid; grid-template-columns: repeat(3, auto); margin-top: 8px; border: 1px solid var(--line); border-radius: 7px; overflow: hidden; }
+.seg button { font: inherit; font-size: 13.5px; min-height: 38px; padding: 0 16px; border: 0; border-left: 1px solid var(--line); background: var(--surface); color: var(--ink-2); cursor: pointer; }
+.seg button:first-child { border-left: 0; }
+.seg button:hover { background: var(--surface-2); }
+.seg button[data-v="1"][aria-checked="true"] { background: var(--s1); color: #fff; font-weight: 700; }
+.seg button[data-v="2"][aria-checked="true"] { background: var(--s2); color: #fff; font-weight: 700; }
+.seg button[data-v="3"][aria-checked="true"] { background: var(--s3); color: #fff; font-weight: 700; }
+.tk-docs { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; margin: 8px 0 0; padding-top: 10px; border-top: 1px solid var(--line-2); font-size: 13px; }
+.tk-docs .k { font-size: 12px; font-weight: 700; color: var(--ink-3); }
+.tk-docs ul { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 6px; margin: 0; padding: 0; }
+.tk-docs li { background: var(--surface-2); border-radius: 3px; padding: 1px 7px; color: var(--ink-2); line-height: 1.6; }
+.tk-docs .nt { font-size: 12px; color: var(--ink-3); }
+.tk-ken { margin-top: 8px; display: grid; gap: 4px; }
+.kr { display: flex; flex-wrap: wrap; gap: 2px 14px; align-items: baseline; }
+.kenl { display: inline-flex; align-items: baseline; gap: 6px; font-size: 13.5px; text-decoration: none; line-height: 1.55; }
+.kenl .kk { font-size: 11.5px; font-weight: 700; color: var(--ink-3); white-space: nowrap; }
+.kenl > span:nth-of-type(2) { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.kenl .pa { width: 11px; height: 11px; flex: none; align-self: center; }
+.kr-sh { font-size: 13.5px; }
+.kr-sh summary { cursor: pointer; color: var(--warn); font-weight: 700; font-size: 13px; }
+.kr-sh ul, .tkr .sh ul { margin: 6px 0 2px; padding: 8px 12px 8px 1.6em; background: var(--s2-soft); border-radius: 6px; line-height: 1.75; }
+.tkr-g { margin: 4px 0 0; font-size: 14px; line-height: 1.8; color: var(--ink-2); }
+.tkr-src { margin: 8px 0 0; }
+.tkr .sh { margin: 10px 0 2px; }
+.tkr .sh ul { background: none; padding: 0 0 0 1.2em; }
+.memo { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--line-2); }
+.memo summary { cursor: pointer; font-size: 13px; color: var(--ink-2); list-style: none; display: inline-flex; gap: 8px; align-items: baseline; }
+.memo summary::-webkit-details-marker { display: none; }
+.memo summary::before { content: "＋"; color: var(--ink-3); font-size: 12px; }
+.memo[open] summary::before { content: "－"; }
+.memo .ph { color: var(--ink-3); font-size: 12px; }
+.memo[open] .ph { display: none; }
+.memo textarea { display: block; width: 100%; margin-top: 6px; font: inherit; font-size: 14.5px; line-height: 1.7; padding: 8px 10px; border: 1.5px solid var(--line); border-radius: var(--r); resize: vertical; background: var(--surface); color: var(--ink); }
+.memo textarea:focus { border-color: var(--ac); outline: none; }
+.todo-svc { margin-top: 26px; }
+.todo-sec { font-size: 14px; margin: 16px 0 0; }
+
+/* 減算 */
+.gl { list-style: none; margin: 18px 0 0; padding: 0; border-top: 1px solid var(--line); }
+.gl li { border-bottom: 1px solid var(--line-2); }
+.gl a { display: grid; grid-template-columns: minmax(0, 1fr) 15px; column-gap: 12px; padding: 12px 4px 12px 2px; text-decoration: none; color: var(--ink); align-items: center; }
+.gl a:hover { background: var(--surface-2); }
+.gl a:hover .t { color: var(--ac); }
+.gl .t { grid-column: 1; font-weight: 700; font-size: 15.5px; line-height: 1.5; }
+.gl .s { grid-column: 1; font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+.gl .m { grid-column: 1; font-family: var(--f-mono); font-size: 11.5px; color: var(--ink-3); }
+.gl .pa { grid-column: 2; grid-row: 1 / span 3; width: 15px; height: 15px; color: var(--ink-3); }
+.gs-doc, .gs-nat, .gs-rel { margin-top: 26px; padding-top: 14px; border-top: 2px solid var(--ink); }
+.gs-doc h2, .gs-nat h2, .gs-rel h2 { font-family: var(--f-display); font-size: 17px; margin: 0 0 10px; line-height: 1.5; display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+.gk { font-family: var(--f-body); font-size: 11.5px; font-weight: 700; color: var(--ac); background: var(--ac-soft); border-radius: 3px; padding: 0 7px; line-height: 1.8; white-space: nowrap; }
+.gs-n { padding: 10px 0; border-bottom: 1px solid var(--line-2); }
+.gs-n .x { margin: 4px 0 0; font-size: 14.5px; line-height: 1.85; }
+.gs-s { margin: 0; font-size: 13px; }
+.gs-r { display: grid; grid-template-columns: 12em minmax(0, 1fr); gap: 6px 14px; padding: 8px 0; border-bottom: 1px solid var(--line-2); align-items: baseline; }
+.gs-r .t { font-weight: 700; font-size: 14px; }
+.gs-r .chips { gap: 5px; }
+.chip-a { display: inline-flex; align-items: center; min-height: 28px; padding: 0 10px; border: 1px solid var(--line); border-radius: 999px; font-size: 12.5px; color: var(--ink-2); text-decoration: none; background: var(--surface); }
+.chip-a:hover { border-color: var(--ac); color: var(--ac); }
+.chip-a.is-mine { border-color: var(--ac-mid); background: var(--ac-soft); color: var(--ac); font-weight: 700; }
+.to-kk { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed var(--line); }
+.to-kk .k { font-size: 12px; font-weight: 700; color: var(--ink-3); margin-right: 4px; }
+.to-kk .more-n { font-size: 12px; color: var(--ink-3); }
+
+/* 年間 */
+.ofc-pick { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 0; }
+.ofc-pick a { display: inline-flex; align-items: center; min-height: 34px; padding: 0 13px; border: 1px solid var(--line); border-radius: 999px; font-size: 13.5px; color: var(--ink-2); text-decoration: none; }
+.ofc-pick a.is-on { background: var(--ink); border-color: var(--ink); color: #fff; font-weight: 700; }
+.nk-sec { margin-top: 28px; }
+.nk-d, .nk-f { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.nk-d > li, .nk-f > li { padding: 12px 2px; border-bottom: 1px solid var(--line-2); }
+.nk-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 14px; align-items: baseline; }
+.nk-f .nk-row.has-r { grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; }
+.nk-f .nk-row .r .box { min-width: 92px; }
+.nk-d li.is-past .d, .nk-d li.is-past .t { color: var(--ink-3); }
+.nk-d .nk-row { grid-template-columns: 10.5em minmax(0, 1fr) auto; }
+.nk-d .d { font-family: var(--f-mono); font-size: 13px; color: var(--ink); font-weight: 500; }
+.nk-d .d small { display: block; font-size: 11.5px; color: var(--ink-3); }
+.nk-row .t { font-weight: 700; font-size: 15px; line-height: 1.55; }
+.nk-row .r { display: inline-flex; gap: 10px; align-items: center; }
+.nk-d li.is-done .t { color: var(--ink-3); }
+.cond { display: block; font-size: 12px; font-weight: 400; color: var(--ink-3); }
+.fq { font-size: 13px; color: var(--ink-2); text-align: right; line-height: 1.55; }
+.fq small { display: block; font-size: 11.5px; color: var(--ink-3); }
+.nk-l { margin: 4px 0 0; font-size: 13.5px; }
+.boxes { display: grid; gap: 4px; margin-top: 8px; }
+.boxes.n12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+.boxes.n4 { grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 520px; }
+.boxes.n2 { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 280px; }
+.boxes.n1 { grid-template-columns: minmax(0, 140px); }
+.box { font: inherit; font-size: 12.5px; min-height: 34px; padding: 0 6px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink-2); cursor: pointer; white-space: nowrap; }
+.box:hover { border-color: var(--ac); }
+.box.is-cur { border-color: var(--ink-2); }
+.box.is-over { border-color: #E2C4B9; color: var(--warn); }
+.box[aria-pressed="true"] { background: var(--s1); border-color: var(--s1); color: #fff; font-weight: 700; }
+.nk-row .box { min-width: 52px; }
+.ev { margin-top: 6px; font-size: 13px; }
+.ev summary { cursor: pointer; color: var(--ink-3); font-size: 12.5px; }
+.ev ul { list-style: none; margin: 6px 0 0; padding: 8px 12px; background: var(--surface-2); border-radius: 6px; display: grid; gap: 8px; }
+.ev p { margin: 0; line-height: 1.75; }
+.ev a { font-size: 12.5px; display: inline-flex; gap: 6px; align-items: baseline; }
+
+@media (max-width: 640px) {
+  .prep { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .prep-a { min-height: 0; }
+  .svl a, .secl a { grid-template-columns: minmax(0, 1fr) auto 15px; row-gap: 6px; }
+  .svl a .bar, .secl a .bar { grid-column: 1 / span 2; grid-row: 2; }
+  .svl a .m, .secl a .m { grid-column: 2; grid-row: 1; }
+  .svl a .pa, .secl a .pa { grid-column: 3; grid-row: 1 / span 2; }
+  .tkr { padding: 12px 12px 10px; border-radius: 8px; }
+  .seg { display: grid; width: 100%; }
+  .seg button { padding: 0 6px; min-height: 42px; }
+  .tk-bar .btn-o.sm:last-child { margin-left: 0; }
+  .due-mini li { grid-template-columns: minmax(0, 1fr) auto; }
+  .due-mini .d { grid-column: 1 / -1; }
+  .nk-d .nk-row { grid-template-columns: minmax(0, 1fr) auto; }
+  .nk-d .d { grid-column: 1 / -1; }
+  .nk-row { grid-template-columns: minmax(0, 1fr); }
+  .nk-d .nk-row, .nk-f .nk-row.has-r { grid-template-columns: minmax(0, 1fr) auto; }
+  .nk-f .nk-row.has-r .fq { grid-column: 1; grid-row: 2; }
+  .nk-f .nk-row.has-r .r { grid-column: 2; grid-row: 1 / span 2; }
+  .fq { text-align: left; }
+  .boxes.n12 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .boxes.n4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gs-r { grid-template-columns: minmax(0, 1fr); }
+  .form-b { flex-direction: column-reverse; align-items: stretch; }
+}
+@media print {
+  .tk-bar, .memo summary::before, .kk-cta, .flt, .io-b { display: none !important; }
+  .seg { border: 0; }
+  .seg button { display: none; }
+  .seg button[aria-checked="true"] { display: inline; background: none !important; color: #000 !important; border: 1px solid #000 !important; padding: 0 6px; min-height: 0; }
+  .memo { display: block; }
+  .memo textarea { border: 0; padding: 0; resize: none; }
+  .tkr { break-inside: avoid; }
+}
+
+</style>
+</head>
+<body>
+<div class="crumb" lang="ja">
+  <div class="crumb-in">
+    <a class="crumb-back" href="../../"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>福祉情報ウォッチに戻る</span></a>
+  </div>
+</div>
+<header class="topbar" lang="ja">
+  <div class="topbar-in">
+    <a class="brand" href="#home">集団指導 特設ページ<span>福岡県・令和8年度</span></a>
+    <nav class="fsw" aria-label="分野"><a href="../">障がい</a><a href="../kourei/">高齢</a><a href="./" aria-current="page">保育</a></nav>
+    <nav class="gnav" aria-label="メインメニュー">
+      <a href="#home" data-g="home">ホーム</a>
+      <a href="#svc" data-g="svc">資料</a>
+      <a href="#search" data-g="search">資料の中を探す</a>
+      <a href="#sources" data-g="sources">資料一覧</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="tabbar" aria-label="ページの切り替え" lang="ja">
+  <a href="#home" data-g="home"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 9.5 10 4l7 5.5V16a1 1 0 0 1-1 1h-3.5v-4.5h-5V17H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span>ホーム</span></a>
+  <a href="#svc" data-g="svc"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="3" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="11" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="11" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>資料</span></a>
+  <a href="#search" data-g="search"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="4.8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m12.2 12.2 4.3 4.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>探す</span></a>
+  <a href="#sources" data-g="sources"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 3.5h7.5L16 7v9.5H5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12.5 3.5V7H16M7.5 10.5h6M7.5 13.5h6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>資料一覧</span></a>
+</nav>
+
+<div class="shell no-sub" id="shell" lang="ja">
+<aside class="subnav" id="subnav" aria-label="サービス"></aside>
+<main id="main">
+
+<section class="view home" id="home" data-g="home">
+  <div class="home-head">
+    <div class="home-title">
+      <div class="eyebrow"><span>福岡県</span><span>子育て支援課</span><span id="extracted"></span></div>
+      <h1>保育所等の <span class="nw">指導監査</span></h1>
+      <form class="find big" id="find-home" role="search">
+        <label class="sr" for="q-home">資料の中を探す</label>
+        <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m12.6 12.6 4.4 4.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <input type="search" id="q-home" placeholder="例：送迎バス　午睡　プール" autocomplete="off" enterkeyhint="search">
+        <button type="submit">探す</button>
+      </form>
+    </div>
+    <div class="dateplate" id="dateplate">
+      <span class="k" id="plate-k"></span>
+      <span class="d" id="reg-date"></span>
+      <span class="left" id="reg-left"></span>
+      <a class="reg-go" id="reg-go" href="#" target="_blank" rel="noopener"><span id="reg-go-t"></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 6 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+
+  
+
+  <section class="hb" aria-labelledby="h-svc" id="hb-svc">
+    <div class="hb-h"><h2 id="h-svc">サービスから見る</h2></div>
+    <div class="svc-grid" id="svc-home"></div>
+  </section>
+
+  <section class="hb" aria-labelledby="h-common">
+    <div class="hb-h"><h2 id="h-common">手引きと通知の章</h2></div>
+    <ol class="chap-quick" id="common-quick"></ol>
+  </section>
+
+  <!--EXTRA-->
+  <section class="hb hb-links" aria-labelledby="h-pref">
+    <div class="hb-h"><h2 id="h-pref">福岡県の保育所等指導監査</h2></div>
+    <ul class="plain" id="pref-links"></ul>
+  </section>
+
+  <section class="hb hb-links" aria-labelledby="h-site" id="hb-site">
+    <div class="hb-h"><h2 id="h-site">あわせて見る</h2></div>
+    <ul class="plain site-links" id="site-links"></ul>
+  </section>
+</section>
+
+<section class="view" id="svc" data-g="svc">
+  <h1 class="vh">資料</h1>
+  <div class="svc-grid" id="svc-index"></div>
+</section>
+
+<section class="view" id="svcview" data-g="svc">
+  <div id="svc-body"></div>
+</section>
+
+<section class="view" id="chview" data-g="svc">
+  <div id="ch-body"></div>
+</section>
+
+<section class="view" id="search" data-g="search">
+  <h1 class="vh">資料の中を探す</h1>
+  <form class="find" id="find-main" role="search">
+    <label class="sr" for="q-main">資料の中を探す</label>
+    <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m12.6 12.6 4.4 4.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+    <input type="search" id="q-main" placeholder="例：送迎バス　午睡　プール" autocomplete="off" enterkeyhint="search">
+    <button type="submit">探す</button>
+  </form>
+  <div class="scope" id="scope" role="group" aria-label="探す資料"></div>
+  <p class="s-sum" id="s-sum" aria-live="polite"></p>
+  <div id="s-res"></div>
+</section>
+
+<section class="view" id="tkview">
+  <div id="tk-body"></div>
+</section>
+
+<section class="view" id="sources" data-g="sources">
+  <h1 class="vh">資料一覧</h1>
+  <label class="lk-find" for="lk-q"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><input type="search" id="lk-q" placeholder="資料名で探す（例：送迎）" aria-label="資料名で探す" autocomplete="off" enterkeyhint="search"></label>
+<div class="lk" id="lk">
+<div class="lk-g"><h3 class="lk-h">福岡県のページ</h3><ul class="lk-l"><li class="lk-i" data-q="令和４年度以降の保育所等指導監査について"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/contents/hoikusyotoukannsaminaoshi.html" target="_blank" rel="noopener">令和４年度以降の保育所等指導監査について</a></span></li><li class="lk-i" data-q="令和８年度 県・市町村合同監査資料様式"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/contents/goudoukansasiryou31.html" target="_blank" rel="noopener">令和８年度 県・市町村合同監査資料様式</a></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">保育所等の指導監査（安全管理重点確認監査）</h3><ul class="lk-l"><li class="lk-i" data-q="令和４年度以降の保育所等指導監査について 37KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/life/771051_62496585_misc.pdf" target="_blank" rel="noopener">令和４年度以降の保育所等指導監査について</a><span class="lk-ty">PDF</span><span class="lk-n">37KB</span></span></li><li class="lk-i" data-q="安全管理重点確認監査チェックシート（保育所、保育所型認定こども園用） 23KB"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/life/771051_62496586_misc.xlsx" target="_blank" rel="noopener">安全管理重点確認監査チェックシート（保育所、保育所型認定こども園用）</a><span class="lk-n">23KB</span></span></li><li class="lk-i" data-q="安全管理重点確認監査チェックシート（幼保連携型認定こども園用） 25KB"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/life/771051_62496587_misc.xlsx" target="_blank" rel="noopener">安全管理重点確認監査チェックシート（幼保連携型認定こども園用）</a><span class="lk-n">25KB</span></span></li><li class="lk-i" data-q="「安全管理重点確認監査」の手引き 279KB PDF"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/life/771051_62496588_misc.pdf" target="_blank" rel="noopener">「安全管理重点確認監査」の手引き</a><span class="lk-ty">PDF</span><span class="lk-n">279KB</span></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">保育所の合同監査資料</h3><ul class="lk-l"><li class="lk-i" data-q="１ 監査資料 表紙 62KB"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945483_misc.xls" target="_blank" rel="noopener">１ 監査資料 表紙</a><span class="lk-n">62KB</span></span></li><li class="lk-i" data-q="２ 監査資料 児童の処遇 343KB"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945484_misc.xlsx" target="_blank" rel="noopener">２ 監査資料 児童の処遇</a><span class="lk-n">343KB</span></span></li><li class="lk-i" data-q="３ 監査資料 保育所運営管理 394KB"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945485_misc.xlsx" target="_blank" rel="noopener">３ 監査資料 保育所運営管理</a><span class="lk-n">394KB</span></span></li><li class="lk-i" data-q="４ 監査資料 保育所経理（新会計基準） 258KB"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945487_misc.xlsx" target="_blank" rel="noopener">４ 監査資料 保育所経理（新会計基準）</a><span class="lk-n">258KB</span></span></li><li class="lk-i" data-q="別表６ 収支計算分析表 17KB"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945486_misc.xlsx" target="_blank" rel="noopener">別表６ 収支計算分析表</a><span class="lk-n">17KB</span></span></li></ul></div>
+<div class="lk-g"><h3 class="lk-h">幼保連携型認定こども園の合同監査資料</h3><ul class="lk-l"><li class="lk-i" data-q="１ 監査資料１ 160KB"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945489_misc.xlsx" target="_blank" rel="noopener">１ 監査資料１</a><span class="lk-n">160KB</span></span></li><li class="lk-i" data-q="２ 監査資料２[施設運営管理点検表］ 300KB"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945490_misc.xlsx" target="_blank" rel="noopener">２ 監査資料２[施設運営管理点検表］</a><span class="lk-n">300KB</span></span></li><li class="lk-i" data-q="３ 費用の額の算定に関する基準における適用状況 25KB"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945491_misc.xlsx" target="_blank" rel="noopener">３ 費用の額の算定に関する基準における適用状況</a><span class="lk-n">25KB</span></span></li><li class="lk-i" data-q="４ 法人役員及び園長名簿 18KB"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945492_misc.xlsx" target="_blank" rel="noopener">４ 法人役員及び園長名簿</a><span class="lk-n">18KB</span></span></li><li class="lk-i" data-q="５ 1ヶ月以上の欠席園児状況 16KB"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945493_misc.xlsx" target="_blank" rel="noopener">５ 1ヶ月以上の欠席園児状況</a><span class="lk-n">16KB</span></span></li><li class="lk-i" data-q="６ 提出書類一覧 22KB"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945494_misc.docx" target="_blank" rel="noopener">６ 提出書類一覧</a><span class="lk-n">22KB</span></span></li><li class="lk-i" data-q="７ 監査当日提示資料一覧 32KB"><span class="lk-d"></span><span class="lk-b"><a href="https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945495_misc.docx" target="_blank" rel="noopener">７ 監査当日提示資料一覧</a><span class="lk-n">32KB</span></span></li></ul></div>
+<p class="lk-none" hidden>該当する資料はありません。</p></div>
+</section>
+
+<footer class="foot">
+  <p>出典：福岡県「<a href="https://www.pref.fukuoka.lg.jp/contents/hoikusyotoukannsaminaoshi.html" target="_blank" rel="noopener">令和４年度以降の保育所等指導監査について</a>」「<a href="https://www.pref.fukuoka.lg.jp/contents/goudoukansasiryou31.html" target="_blank" rel="noopener">県・市町村合同監査資料様式</a>」とその掲載資料。見出しごとの概要・要点は、県の資料をもとにこのページでまとめたものです（県の資料の文そのものではありません）。監査への対応は、県の資料の該当ページでご確認ください。</p>
+</footer>
+</main>
+</div>
+
+<script type="application/json" id="data">
+{"docs":{"year":"","page":"https://www.pref.fukuoka.lg.jp/contents/hoikusyotoukannsaminaoshi.html","pageTitle":"令和４年度以降の保育所等指導監査について","page2":"https://www.pref.fukuoka.lg.jp/contents/goudoukansasiryou31.html","page2Title":"令和８年度 県・市町村合同監査資料様式","deadline":"","deadlineLabel":"","services":[],"groups":[{"g":"保育所等の指導監査（安全管理重点確認監査）","part":"説明資料","label":"保育所等の指導監査（安全管理重点確認監査）"},{"g":"保育所の合同監査資料","part":"様式","label":"保育所の合同監査資料"},{"g":"幼保連携型認定こども園の合同監査資料","part":"様式","label":"幼保連携型認定こども園の合同監査資料"}],"items":[{"part":"説明資料","g":"保育所等の指導監査（安全管理重点確認監査）","t":"令和４年度以降の保育所等指導監査について","u":"https://www.pref.fukuoka.lg.jp/uploaded/life/771051_62496585_misc.pdf","kind":"PDF","size":"37KB","note":"","svc":["*"],"id":"htsuchi"},{"part":"説明資料","g":"保育所等の指導監査（安全管理重点確認監査）","t":"安全管理重点確認監査チェックシート（保育所、保育所型認定こども園用）","u":"https://www.pref.fukuoka.lg.jp/uploaded/life/771051_62496586_misc.xlsx","kind":"Excel","size":"23KB","note":"","svc":["*"]},{"part":"説明資料","g":"保育所等の指導監査（安全管理重点確認監査）","t":"安全管理重点確認監査チェックシート（幼保連携型認定こども園用）","u":"https://www.pref.fukuoka.lg.jp/uploaded/life/771051_62496587_misc.xlsx","kind":"Excel","size":"25KB","note":"","svc":["*"]},{"part":"説明資料","g":"保育所等の指導監査（安全管理重点確認監査）","t":"「安全管理重点確認監査」の手引き","u":"https://www.pref.fukuoka.lg.jp/uploaded/life/771051_62496588_misc.pdf","kind":"PDF","size":"279KB","note":"","svc":["*"],"id":"htebiki"},{"part":"様式","g":"保育所の合同監査資料","t":"１ 監査資料 表紙","u":"https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945483_misc.xls","kind":"Excel","size":"62KB","note":"","svc":["*"]},{"part":"様式","g":"保育所の合同監査資料","t":"２ 監査資料 児童の処遇","u":"https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945484_misc.xlsx","kind":"Excel","size":"343KB","note":"","svc":["*"]},{"part":"様式","g":"保育所の合同監査資料","t":"３ 監査資料 保育所運営管理","u":"https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945485_misc.xlsx","kind":"Excel","size":"394KB","note":"","svc":["*"]},{"part":"様式","g":"保育所の合同監査資料","t":"４ 監査資料 保育所経理（新会計基準）","u":"https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945487_misc.xlsx","kind":"Excel","size":"258KB","note":"","svc":["*"]},{"part":"様式","g":"保育所の合同監査資料","t":"別表６ 収支計算分析表","u":"https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945486_misc.xlsx","kind":"Excel","size":"17KB","note":"","svc":["*"]},{"part":"様式","g":"幼保連携型認定こども園の合同監査資料","t":"１ 監査資料１","u":"https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945489_misc.xlsx","kind":"Excel","size":"160KB","note":"","svc":["*"]},{"part":"様式","g":"幼保連携型認定こども園の合同監査資料","t":"２ 監査資料２[施設運営管理点検表］","u":"https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945490_misc.xlsx","kind":"Excel","size":"300KB","note":"","svc":["*"]},{"part":"様式","g":"幼保連携型認定こども園の合同監査資料","t":"３ 費用の額の算定に関する基準における適用状況","u":"https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945491_misc.xlsx","kind":"Excel","size":"25KB","note":"","svc":["*"]},{"part":"様式","g":"幼保連携型認定こども園の合同監査資料","t":"４ 法人役員及び園長名簿","u":"https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945492_misc.xlsx","kind":"Excel","size":"18KB","note":"","svc":["*"]},{"part":"様式","g":"幼保連携型認定こども園の合同監査資料","t":"５ 1ヶ月以上の欠席園児状況","u":"https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945493_misc.xlsx","kind":"Excel","size":"16KB","note":"","svc":["*"]},{"part":"様式","g":"幼保連携型認定こども園の合同監査資料","t":"６ 提出書類一覧","u":"https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945494_misc.docx","kind":"Word","size":"22KB","note":"","svc":["*"]},{"part":"様式","g":"幼保連携型認定こども園の合同監査資料","t":"７ 監査当日提示資料一覧","u":"https://www.pref.fukuoka.lg.jp/uploaded/life/825381_62945495_misc.docx","kind":"Word","size":"32KB","note":"","svc":["*"]}],"extractedAt":"2026-10-31"},"toc":[{"id":"htsuchi","t":"令和４年度以降の保育所等指導監査について","u":"https://www.pref.fukuoka.lg.jp/uploaded/life/771051_62496585_misc.pdf","pages":1,"secs":[{"t":"令和４年度以降の保育所等指導監査について","p":1,"sub":[]}]},{"id":"htebiki","t":"「安全管理重点確認監査」の手引き","u":"https://www.pref.fukuoka.lg.jp/uploaded/life/771051_62496588_misc.pdf","pages":18,"secs":[{"t":"「安全管理重点確認監査」の手引き","p":1,"sub":[{"t":"I 趣旨","p":2},{"t":"II 安全管理重点確認監査での確認事項","p":3},{"t":"1 門扉・玄関","p":3},{"t":"2 危機管理体制","p":4},{"t":"3 最低基準の順守","p":5},{"t":"4 危険・事故防止対策","p":6},{"t":"5 虐待等の禁止","p":16},{"t":"6 登降園管理","p":17},{"t":"7 車両送迎","p":18}]}]}],"notes":{"htsuchi":{"0":{"gist":"保育所等への一般指導監査を、令和4年度から標準型のA型と安全重視型のB型・C型の3類型で行うことを知らせる県子育て支援課の通知です。各類型の確かめ方と年間の実施規模も示します。","points":["認可保育所・保育所型認定こども園・幼保連携型認定こども園に年1回行う一般指導監査に、従来の標準型（A型）に加えて安全重視型を新たに設ける","安全重視型は児童の安全を最優先とする監査で、日時を事前に通告するB型（安全重視型監査）と、監査当日に通告するC型（安全管理重点確認監査）に分かれる","どの類型の監査を受けるかは、県保健福祉（環境）事務所が無作為に選んで施設に通知する","A型は施設が事前に作った監査調書を基に、児童の処遇・保育所運営管理・保育所経理を実地で確認する、従来どおりの手法による監査である","B型は監査調書とチェックシートを基に、事故防止対策・虐待等の禁止・安全管理・車両送迎・登園管理・業務の質の評価・苦情解決体制を重点的に聞き取る","C型は事前通告なしに、チェックシートに沿って現地確認と施設長・保育士等への聞き取りを行う。チェックシート以外の監査項目は書面で審査する","C型の当日に施設長が不在のときは、主任保育士や担当保育士が対応することを想定している","年間の実施数はA型200施設程度、B型260施設程度、C型40施設程度（R4年度は20施設、10月以降実施）"]}},"htebiki":{"0":{"gist":"県が令和4年度から無通告で行う安全管理重点確認監査について、当日に確かめる項目とその理由、根拠となる規定・通知等を分野ごとにまとめた手引きです。","points":["令和4年4月に福岡県福祉労働部子育て支援課が作成した","分野ごとに確認事項と説明を表で示し、根拠として県条例や国のガイドライン・通知、保育所保育指針解説、県の安全管理標準指針等を添える"]},"1":{"gist":"安全管理重点確認監査を始めた理由と、この手引きの位置づけを述べた部分です。手引きの項目だけで足りるとせず、日々の安全管理全体に取り組むよう求める内容です。","points":["令和3年7月29日に県内の保育所で送迎バスに取り残された児童が亡くなった事案を受け、令和4年度から定期監査に加えて無通告の監査を行う","手引きの項目は、監査担当職員が当日に目視や施設長等への聞き取りで確かめられるものに絞っており、国の通知や保育所保育指針等の全部を網羅してはいない","手引きで問われない事項も、施設内の研修等で継続して注意喚起と周知を図るよう求めている","この監査は、安全管理体制が日常的に機能しているかを確かめるために行う","手引きは監査対象施設に限らず、全保育所等へ前もって配付される","子どもを保護者から預かり返すまで、全職員が「養護」の理念で安全を確保することを保育の基本と位置づけている"]},"2":{"gist":"監査当日に確かめる事項を、門扉・玄関から車両送迎までの7つの分野に分けて示す部分です。分野ごとに確認事項と説明、根拠となる規定・通知等が並びます。","points":["確認する分野は門扉・玄関、危機管理体制、最低基準の順守、危険・事故防止対策、虐待等の禁止、登降園管理、車両送迎の7つ"]},"3":{"gist":"外部の人が職員の確認なしに入れないか、子どもだけで外へ出られないかを確かめます。施設の規模や設備に合わせ、設備面か運営面で防ぐ方法を選ぶよう求める項目です。","points":["門扉の施錠などにより、職員の確認なしに外部から施設へ入れない状態になっているかを確認される","子どもだけで容易に外出できない状態かも確認される。保育中の所在不明や飛び出しの事故につながるおそれがあるため","方法の例は、オートロック、子どもの手が届かない高さでの施錠、門扉開閉時の施錠を決まりにして保護者と共有することなど","訪問者の入口・受付の明示、開場時間の制限、保護者と分かる物を身に着けてもらう、子どもにも危険な行動を注意する、といった例も挙がる","県条例第50条で、保育所は不審者等の侵入を防ぐ措置を講じ、必要な訓練を行うよう努めることとされる","国の通知（平成13年6月15日、雇児総発第420号）の点検項目にも、来訪者用の入口・受付の明示と出入りの確認がある"]},"4":{"gist":"緊急時に職員が役割どおりに動けるよう、責任者と役割分担、職員の共通理解、避難場所と連絡方法、園外活動での人数把握と記録が整っているかを確かめる項目です。","points":["安全管理の責任者を定め、緊急時の役割分担と担当の順番・順位を職員が把握しているか。責任者らが不在のとき次に誰が担うかも決めておく","国の事故防止ガイドラインは、役割分担と担当の順番・順位を決めて事務室の見やすい場所に掲示するよう示している","子どもの安全確保について職員会議等で共通理解を図り、事故防止等のマニュアルを全職員に周知して保管場所も把握させているか","消防計画で定めた避難場所と、保護者・関係機関への連絡方法を職員が把握しているか","登園時や散歩の前後など場面が切り替わるときに人数を確かめ、園外活動では人数・引率者名・目的地・ルート・出発と戻りの時間等を記録しているか","園外活動中に起きた事故等への対応手続きが定まっているか"]},"5":{"gist":"抽出した保育室の児童数と保育士数を当日の出欠簿・出勤簿と突き合わせ、その時間帯に面積と保育士数の最低基準を満たしているかを確かめる項目です。","points":["面積基準（県条例第44条第1項第2号、保育室等ごとに計算）は満0・1歳児1人につき3.3㎡以上、満2歳以上児1人につき1.98㎡以上","職員配置基準（第46条第2項）は乳児3人、満1・2歳児6人、満3歳児20人、満4歳以上児30人のそれぞれにつき1人以上。保育所1につき2人を下回れない","各組・各グループには常勤の保育士を1名以上配置する","乳児を含む組・グループで最低基準上の保育士定数が2名以上となる場合は、常勤保育士を2名以上配置する必要がある"]},"6":{"gist":"保育室や園庭の物の置き方や設備の傷み、食事・午睡・プールなど事故が起きやすい場面ごとに、危険が放置されていないかを確かめる項目です。落下物からその他まで13の観点があります。","points":["重量物の落下、家具・テレビ・ピアノの転倒、ドアや鍵盤蓋の指ばさみ、家具の角、外れそうな扉、窓際の足場になる物、子どもが触れられるコンセントを見る","マグネット・画鋲・玩具など誤飲のおそれがある物や、手の届く所の漂白剤・消毒液がないか。入り込むと所在が分からなくなる場所や死角、倉庫の施錠も確認される","食物アレルギーでは、対象児の把握、専用トレイや名札でのアレルゲン等の明示、席と配膳ワゴンの配置、喫食時の見守り、名札と顔の照合を見る","午睡では明るさ、うつぶせ寝、顔にかかる物やヒモ状の物、隣との間隔を見る。呼吸確認の目安は0歳5分・1歳10分・2歳10〜15分ごとで、乳児は票に記入","白玉風のだんごや丸のままのミニトマトなど事故例のある食材を与えていないか（与えるなら切る等）、落ち着いて食べているか、詰まらせたときの対応を理解しているか","園庭遊具の破損や隙間、外壁・ブロック塀のひびや傾き、プールで監視専任者と指導者を分けているか、ヒヤリ・ハット事例を職員間で共有しているか"]},"7":{"gist":"不適切な保育や虐待を防ぐための職員会議・研修・自己評価と、疑わしい事案が起きたときに早く把握して市町村等へつなぐ相談・連絡の体制が整っているかを確かめる項目です。","points":["職員会議で虐待防止・子どもの人権への配慮・職員倫理を取り上げ、研修を行い、全国保育士会のセルフチェックリスト等で自己評価して結果を共有しているか","虐待防止担当者の設置や、虐待が疑われるときの報告プロセスを整えているか。保護者や保育士が気軽に相談できる担当者の設置は早期発見につながる","園内で不適切な保育が疑われるときは市町村へ、家庭での虐待が疑われるときは市町村又は児童相談所へ速やかに相談・連絡する体制があるか","園内で不適切な保育が疑われる事案を把握したら、事実関係や要因の情報を迅速かつ正確に集め、市町村等に提供して今後の対応を協議する","県条例第11条は、法第33条の10各号の行為など入所者の心身に害を及ぼす行為を職員に禁じている","国の事務連絡（令和3年4月13日）は不適切な保育の例に、人格を尊重しない、強要・脅迫的、罰・乱暴、育ちや家庭環境への配慮を欠く、差別的な関わりを挙げる"]},"8":{"gist":"子どもの出欠を確実に把握するため、出席確認から未登園児の保護者への確認、出席簿の最終確認までの手順が定まり、実践されているかを確かめる項目です。監査当日の登園管理の流れも見られます。","points":["出席確認、欠席情報の共有、無断欠席児の保護者への連絡について手順を定めて実践しているか。監査当日の登園管理の流れで確かめる","登園管理の手順を職員会議等で共有しているか","出欠情報を一元管理し、各職員がいつでも確認できる状態にしているか","欠席届のない未登園児は、前もって決めた連絡担当者が園から保護者へ速やかに確認し、その情報を職員間で共有しているか","毎日の出席簿は、決めておいた確認者が確かめたうえで、最後に施設長等の責任者が確かめているか","国の事務連絡（令和3年8月25日）は、出欠情報の保護者への速やかな確認と職員間共有、場面の切り替わりでの人数確認のダブルチェック体制を求める"]},"9":{"gist":"送迎車両での取り残しや事故を防ぐため、県の安全管理標準指針に沿ったマニュアル、車両の施錠と装備、運行日誌、出発前の準備、乗降時の人数確認、事故時の対応が整っているかを確かめる項目です。","points":["「福岡県保育施設による児童の車両送迎に係る安全管理標準指針」（令和3年9月）の内容を反映したマニュアル・手順書を作成し、実践しているか","指針は、マニュアルの職員への定期的な周知、入園時と年度当初の全保護者への配付、園の入口等での閲覧、送迎方法の変更時の速やかな改訂と周知を定める","送迎車両は児童が勝手に乗り降りできないよう施錠し、国のガイドラインに準じる幼児専用車両を使うか、それ以外なら月齢に合うチャイルドシート等を備えているか","車両ごとに運行日誌を備え、運転日時・運転者・同乗者名・走行距離・燃料費・運転手の健康状態・車両の事前事後点検等を記録し、運行後に園長等へ提出しているか","出発前に車両点検、運転手の健康とアルコールのチェック、当日の利用児の確認方法、添乗職員と受入れ職員の情報共有方法などの準備をしているか","乗降時に乗せた児童と受け入れた児童の名前・人数の突合や取り残し・忘れ物の確認手順を定め、事故・災害時の対応マニュアルを施設と車両に常備しているか"]}}},"field":{"id":"hoiku","title":"福岡県 保育所等の指導監査 特設ページ","titleTail":"保育所等の指導監査","common":{"id":"common","t":"保育所等","names":"認可保育所・保育所型認定こども園・幼保連携型認定こども園","docs":["htsuchi","htebiki"]},"svcDocs":{},"svcLabel":"資料","short":{"htsuchi":"指導監査の見直し（通知）","htebiki":"安全管理重点確認監査の手引き"},"commonQuick":["htsuchi","htebiki"],"also":[],"plate":null,"prefLinks":[["https://www.pref.fukuoka.lg.jp/contents/hoikusyotoukannsaminaoshi.html","令和４年度以降の保育所等指導監査について"],["https://www.pref.fukuoka.lg.jp/contents/goudoukansasiryou31.html","令和８年度 県・市町村合同監査資料様式"]],"parts":[["様式","合同監査資料の様式"]],"site":[["../../dbs/","こども性暴力防止法 実務ガイド","施行日までの期限・対象の判定・事業別の要点"]]}}
+</script>
+<script>
+/* 集団指導 特設ページの画面。データは build.py が埋め込む #data（資料の一覧・見出し・見出しごとの要点）と、
+   探すときに読む kw.json（見出しで区切った単位ごとの語の索引。文は持たない）。
+   画面の切り替えは URL の # で行う:
+     #home / #svc / #svc-<id> / #ch-<資料>-<章の番号>（?i=<見出しの番号> でその見出しを開く）/ #search?q=…&d=… / #sources
+   要点（notes）は県の資料を自分の言葉でまとめたもの。原文は持たず、どの見出しにもPDFの該当ページへのリンクを付ける。 */
+(() => {
+  "use strict";
+  const $ = (id) => document.getElementById(id);
+  const D = JSON.parse($("data").textContent);
+  const DOCS = D.docs, TOC = D.toc, NOTES = D.notes || {};
+  /* 分野（障がい・高齢・保育）ごとの違いは build.py が D.field に入れる */
+  const F = D.field;
+  const BY = Object.fromEntries(TOC.map((d) => [d.id, d]));
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const EXT = '<svg class="ext" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 6 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const ARR = '<svg class="pa" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const ARL = '<svg class="pa" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const pdf = (u, p) => u + (p ? "#page=" + p : "");
+  const A = (u, inner, cls) => `<a${cls ? ` class="${cls}"` : ""} href="${esc(u)}" target="_blank" rel="noopener">${inner}</a>`;
+
+  /* サービスの区分（県の資料の区分）。common＝全事業所共通編。docs＝見出しを持つ資料（toc の id） */
+  const SVC = [F.common]
+    .concat(DOCS.services.map((s) => Object.assign({}, s, { docs: s.docs || (F.svcDocs || {})[s.id] || [s.id] })));
+  const SV = Object.fromEntries(SVC.map((s) => [s.id, s]));
+  const SVC_OF = {};
+  SVC.forEach((s) => s.docs.forEach((d) => { SVC_OF[d] = s.id; }));
+  /* 「探す」の絞り込みの短い呼び名 */
+  const SHORT = F.short || {};
+  const itemOf = (docId) => DOCS.items.find((i) => i.id === docId);
+  /* 点検・減算・年間（tenken.js）が足す画面と部品の差し込み口 */
+  const EXT_ROUTES = [], ON_ROUTE = [], CH_EXTRA = [], SVC_EXTRA = [];
+
+  /* 章とその節を出てきた順に並べたもの（extract.py の index_segments と同じ並び）。
+     f[h] = { t: 見出し, p: 頁, c: 章の番号（1から）, sec: 章の見出し（節のとき）} */
+  const FLAT = Object.fromEntries(TOC.map((d) => {
+    const f = [];
+    d.secs.forEach((s, ci) => {
+      f.push({ t: s.t, p: s.p, c: ci + 1, sec: null });
+      s.sub.forEach((x) => f.push({ t: x.t, p: x.p, c: ci + 1, sec: s.t }));
+    });
+    return [d.id, f];
+  }));
+  const chapStart = (docId, c) => FLAT[docId].findIndex((x) => x.c === c && !x.sec);
+  const note = (docId, h) => (NOTES[docId] || {})[h];
+  const chHref = (docId, c, h) => `#ch-${docId}-${c}` + (h != null && h !== chapStart(docId, c) ? `?i=${h}` : "");
+
+  function chapterRange(doc, i) {
+    const s = doc.secs[i], nx = doc.secs[i + 1];
+    const end = nx ? Math.max(s.p, nx.p - 1) : doc.pages;
+    return s.p === end ? "p." + s.p : "p." + s.p + "–" + end;
+  }
+
+  /* 要点の中身（概要・要点・運営指導での主な指摘）。章のページの見出しの中と、見出しのない資料で使う */
+  function noteBody(n, cls) {
+    if (!n) return "";
+    let h = n.gist ? `<p class="${cls || "gist"}">${esc(n.gist)}</p>` : "";
+    if (n.points && n.points.length) h += `<ul class="pts">${n.points.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>`;
+    if (n.shiteki && n.shiteki.length) h += `<div class="sh"><span class="sh-h">運営指導での主な指摘</span><ul>${n.shiteki.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>`;
+    return h;
+  }
+  function itemRow(it) {
+    const ty = it.kind && it.kind !== "HTML" ? it.kind : (it.kind === "HTML" ? "ページ" : "");
+    const nt = [it.size, it.note ? "※" + it.note : ""].filter(Boolean).join("　");
+    return `<li>${A(it.u, esc(it.t))}${ty ? `<span class="ty">${esc(ty)}</span>` : ""}${nt ? `<span class="note">${esc(nt)}</span>` : ""}</li>`;
+  }
+  function groupLabel(g) {
+    const x = DOCS.groups.find((y) => y.g === g);
+    return x ? x.label : g;
+  }
+  function setSubnav(html) {
+    $("subnav").innerHTML = html;
+    // スマホの横に流れる札は、選んでいる札が見えるところまで横にだけ寄せる（縦には動かさない）
+    const ol = $("subnav").querySelector("ol"), on = $("subnav").querySelector("a.is-active");
+    if (ol && on && ol.scrollWidth > ol.clientWidth) ol.scrollLeft = Math.max(0, on.parentElement.offsetLeft - 16);
+  }
+
+  /* ── ホーム・サービス ── */
+  function svcCard(s) {
+    const pages = s.docs.reduce((n, id) => n + (BY[id] ? BY[id].pages : 0), 0);
+    const heads = s.docs.reduce((n, id) => n + (BY[id] ? FLAT[id].length : 0), 0);
+    return `<a class="svc-card" href="#svc-${s.id}"><b>${esc(s.t)}</b><span>${esc(s.names)}</span><span class="m">${pages}ページ・見出し${heads}</span></a>`;
+  }
+  function renderHome() {
+    $("svc-home").innerHTML = SVC.map(svcCard).join("");
+    if (SVC.length < 2) $("hb-svc").hidden = true;   // サービスの区分がない分野（保育）は、資料の章をそのまま並べる
+    $("common-quick").innerHTML = F.commonQuick.filter((id) => BY[id]).map((id) => {
+      const c = BY[id];
+      if (!c.secs.length) return `<li><a href="#svc-${SVC_OF[id]}"><span class="t">${esc(c.t)}</span><span class="pg">${c.pages}p</span></a></li>`;
+      return c.secs.map((s, i) => `<li><a href="#ch-${id}-${i + 1}"><span class="t">${esc(s.t)}</span><span class="pg">${chapterRange(c, i)}</span></a></li>`).join("");
+    }).join("");
+    const links = F.prefLinks.filter((x) => x[0]);
+    $("pref-links").innerHTML = links.map((x) => `<li>${A(x[0], esc(x[1]) + EXT)}</li>`).join("")
+      + `<li><a href="#sources">資料一覧（${DOCS.items.length}点）</a></li>`;
+    const site = F.site || [];
+    $("site-links").innerHTML = site.map((x) => `<li><a href="${esc(x[0])}">${esc(x[1])}</a><span class="note">${esc(x[2])}</span></li>`).join("");
+    $("hb-site").hidden = !site.length;
+    if (DOCS.extractedAt) {
+      const [y, m, d] = DOCS.extractedAt.split("-").map(Number);
+      $("extracted").textContent = `資料の取得 ${y}年${m}月${d}日`;
+    }
+    const pl = F.plate || {}, dl = pl.date;
+    if (dl) {
+      const [y, m, d] = dl.split("-").map(Number);
+      $("reg-date").textContent = `${y}.${m}.${d}`;
+      const DAY = 864e5, JST = 9 * 36e5;
+      const today = Math.floor((Date.now() + JST) / DAY) * DAY - JST;
+      const left = Math.round((Date.parse(dl + "T00:00:00+09:00") - today) / DAY);
+      $("reg-left").innerHTML = left > 0 ? `${m}月${d}日まで あと<b>${left}</b>日` : (left === 0 ? `本日（${m}月${d}日）が期限` : `${m}月${d}日で期限を過ぎました`);
+      $("plate-k").textContent = pl.k;
+      if (pl.link && left >= 0) { $("reg-go").href = pl.link; $("reg-go-t").textContent = pl.linkLabel; } else $("reg-go").hidden = true;
+    } else {
+      $("dateplate").hidden = true;
+    }
+  }
+  function svcNav(active) {
+    return "<ol>" + SVC.map((x) => {
+      const pages = x.docs.reduce((n, d) => n + (BY[d] ? BY[d].pages : 0), 0);
+      return `<li><a href="#svc-${x.id}"${x.id === active ? ' class="is-active" aria-current="page"' : ""}><span>${esc(x.t)}</span><span class="c">${pages}p</span></a></li>`;
+    }).join("") + "</ol>";
+  }
+  function docBlock(doc) {
+    const it = itemOf(doc.id) || {};
+    const meta = [doc.pages + "ページ", it.size].filter(Boolean).join("・");
+    let h = `<div class="doc"><div class="doc-h"><h2>${esc(doc.t)}</h2><span class="meta">${esc(meta)}</span>`
+      + A(pdf(doc.u), "PDFを開く" + EXT, "open") + "</div>";
+    if (it.note) h += `<p class="vsub doc-note">${esc("※" + it.note)}</p>`;
+    if (!doc.secs.length) {   // 見出しのない短い資料は、要点をその場に出す
+      return h + `<div class="doc-solo">${noteBody(note(doc.id, -1))}</div></div>`;
+    }
+    h += '<ol class="chl">';
+    doc.secs.forEach((s, i) => {
+      const n = note(doc.id, chapStart(doc.id, i + 1));
+      h += `<li><a href="#ch-${doc.id}-${i + 1}"><span class="t">${esc(s.t)}</span>`
+        + (n && n.gist ? `<span class="g">${esc(n.gist)}</span>` : "")
+        + `<span class="n">${chapterRange(doc, i)}${s.sub.length ? "・" + s.sub.length + "項目" : ""}</span>${ARR}</a></li>`;
+    });
+    return h + "</ol></div>";
+  }
+  function renderSvcIndex() {
+    $("svc-index").innerHTML = SVC.map(svcCard).join("");
+  }
+  function renderSvc(id) {
+    const s = SV[id];
+    let h = `<div class="svc-head"><h1 class="vh">${esc(s.t)}</h1>`;
+    if (s.names !== s.t) h += `<p class="svc-names">${esc(s.names)}</p>`;
+    h += findForm(s.docs.join(","), "q-svc", s.t + "の資料の中を探す", "この資料の中を探す") + "</div>";
+    h += s.docs.filter((d) => BY[d]).map((d) => docBlock(BY[d])).join("");
+    h += SVC_EXTRA.map((fn) => fn(id)).join("");
+    const extra = DOCS.items.filter((it) => it.part === "説明資料" && !it.id && it.svc.includes(id) && it.kind !== "HTML");
+    if (extra.length) h += `<section class="also"><h2>説明資料と一緒に掲載された資料</h2><ul class="rows">${extra.map(itemRow).join("")}</ul></section>`;
+    if (id !== "common" && F.also && F.also.length) {
+      h += `<section class="also"><h2>あわせて見る</h2><ul class="rows">${F.also.map((x) => `<li><a href="${esc(x.href)}">${esc(x.t)}</a><span class="note">${esc(x.note)}</span></li>`).join("")}</ul></section>`;
+    }
+    (F.parts || [["参考資料", "参考資料"]]).forEach(([part, label]) => {
+      const refs = DOCS.items.filter((it) => it.part === part && !it.id && (id === "common" ? it.svc.includes("*") : it.svc.includes(id)));
+      if (!refs.length) return;
+      const groups = [...new Set(refs.map((r) => r.g))];
+      h += `<section class="refs"><h2>${esc(label)}</h2>` + groups.map((g) =>
+        `<h3>${esc(groupLabel(g))}</h3><ul class="rows">${refs.filter((r) => r.g === g).map(itemRow).join("")}</ul>`).join("") + "</section>";
+    });
+    $("svc-body").innerHTML = h;
+    setSubnav(svcNav(id));
+    document.title = s.t + "｜" + F.titleTail;
+  }
+  function findForm(scope, id, label, ph) {
+    return `<form class="find inline" data-scope="${scope}" role="search"><label class="sr" for="${id}">${esc(label)}</label>`
+      + '<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m12.6 12.6 4.4 4.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>'
+      + `<input type="search" id="${id}" placeholder="${esc(ph)}" autocomplete="off" enterkeyhint="search"><button type="submit">探す</button></form>`;
+  }
+
+  /* ── 章のページ（見出しを押すと、その場で概要・要点・指摘が開く） ── */
+  function renderChapter(docId, c, openH) {
+    const doc = BY[docId], s = doc.secs[c - 1], svc = SV[SVC_OF[docId]];
+    const h0 = chapStart(docId, c), cn = note(docId, h0);
+    let h = `<p class="crumbs"><a href="#svc-${svc.id}">${esc(svc.t)}</a><span aria-hidden="true">›</span><span>${esc(doc.t)}</span></p>`
+      + `<h1 class="vh">${esc(s.t)}</h1>`
+      + `<div class="ch-meta"><span>${chapterRange(doc, c - 1)}</span>${s.sub.length ? `<span>${s.sub.length}項目</span>` : ""}`
+      + A(pdf(doc.u, s.p), `PDFの${s.p}ページを開く` + EXT, "pdf-go") + "</div>";
+    if (cn) {
+      h += `<div class="ch-note">${noteBody(cn, "lead")}</div>`;
+    }
+    if (s.sub.length) {
+      h += `<div class="it-bar"><button type="button" class="openall" aria-pressed="false">すべて開く</button></div><div class="its">`;
+      s.sub.forEach((x, k) => {
+        const hi = h0 + 1 + k, n = note(docId, hi);
+        h += `<details class="it" data-h="${hi}"${hi === openH ? " open" : ""}><summary><span class="t">${esc(x.t)}</span><span class="pg">p.${x.p}</span></summary>`
+          + `<div class="it-b">${noteBody(n)}`
+          + CH_EXTRA.map((fn) => fn(docId, hi)).join("")
+          + A(pdf(doc.u, x.p), `PDFの${x.p}ページを開く` + EXT, "pdf-go")
+          + "</div></details>";
+      });
+      h += "</div>";
+    }
+    // 前後の章（同じ資料の中）
+    const prev = c > 1 ? doc.secs[c - 2] : null, next = c < doc.secs.length ? doc.secs[c] : null;
+    if (prev || next) {
+      h += `<nav class="pager two" aria-label="前後の章">`
+        + (prev ? `<a class="prev" href="#ch-${docId}-${c - 1}">${ARL}<span class="pk">前へ</span><span class="pt">${esc(prev.t)}</span><span class="ps">前へ</span></a>` : "<span></span>")
+        + (next ? `<a class="next" href="#ch-${docId}-${c + 1}"><span class="pk">次へ</span><span class="pt">${esc(next.t)}</span>${ARR}</a>` : "")
+        + "</nav>";
+    }
+    $("ch-body").innerHTML = h;
+    // 左の列（PC）／横に流れる札（スマホ）は、この資料の章
+    setSubnav(`<a class="sn-back" href="#svc-${svc.id}">${ARL}<span>${esc(svc.t)}</span></a><ol>` + doc.secs.map((x, i) =>
+      `<li><a href="#ch-${docId}-${i + 1}"${i + 1 === c ? ' class="is-active" aria-current="page"' : ""}><span>${esc(x.t)}</span><span class="c">${x.sub.length || ""}</span></a></li>`).join("") + "</ol>");
+    document.title = s.t + "｜" + doc.t;
+  }
+  $("ch-body").addEventListener("click", (e) => {
+    const b = e.target.closest(".openall");
+    if (!b) return;
+    const open = b.getAttribute("aria-pressed") !== "true";
+    document.querySelectorAll("#ch-body details.it").forEach((d) => { d.open = open; });
+    b.setAttribute("aria-pressed", String(open));
+    b.textContent = open ? "すべて閉じる" : "すべて開く";
+  });
+
+  /* ── 探す（語の索引と要点の文で、見出しを引く） ── */
+  let KW = null, kwLoading = null;
+  function loadKW() {
+    if (KW) return Promise.resolve(KW);
+    if (!kwLoading) {
+      kwLoading = fetch("kw.json", { cache: "no-cache" }).then((r) => r.json()).then((j) => {
+        // 索引のキーは「資料:頁:見出しの番号」。頁を見出しの位置で区切った単位ごとに語の集合を持つ
+        const segs = {};
+        j.docs.forEach((id) => { segs[id] = []; });
+        Object.entries(j.pages).forEach(([k, v]) => {
+          const [di, p, h] = k.split(":").map(Number);
+          segs[j.docs[di]].push({ p, h, w: "|" + v + "|" });
+        });
+        KW = segs;
+        return KW;
+      }).catch((e) => { kwLoading = null; throw e; });
+    }
+    return kwLoading;
+  }
+  const RUN = /[一-龥々〆ヵヶ]+|[ァ-ヴー]+|[A-Za-z0-9]+/g;   // extract.py の WORD と同じ区切り
+  const JOIN = /[A-Za-z0-9]+[一-龥々〆ヵヶ]/g;               // extract.py の JOIN と同じ
+  function terms(q) {
+    q = (q || "").normalize("NFKC").trim();
+    // ひらがなだけの語はカタカナに直して探す（例: ひやりはっと → ヒヤリハット）
+    const parts = q.split(/\s+/).filter(Boolean).map((w) => /^[ぁ-ゖー]+$/.test(w) ? w.replace(/[ぁ-ゖ]/g, (c) => String.fromCharCode(c.charCodeAt(0) + 0x60)) : w);
+    const out = [];
+    const add = (r) => { if (!out.includes(r)) out.push(r); };
+    parts.forEach((w) => {
+      // 「A型」「33条」のような英数字＋漢字1字は、つながりのまま探す（extract.py の JOIN）。残りは連なりごとに
+      (w.match(JOIN) || []).forEach(add);
+      (w.replace(JOIN, " ").match(RUN) || []).forEach(add);
+    });
+    return out;
+  }
+  // 要点の文（見出し＋概要＋要点＋指摘）を、探すために空白を除いた形で持つ
+  const NOTE_TEXT = {};
+  TOC.forEach((d) => {
+    NOTE_TEXT[d.id] = {};
+    const ids = FLAT[d.id].length ? FLAT[d.id].map((_, h) => h) : [-1];
+    ids.forEach((h) => {
+      const n = note(d.id, h) || {}, f = FLAT[d.id][h];
+      NOTE_TEXT[d.id][h] = [f ? f.t : d.t, n.gist, ...(n.points || []), ...(n.shiteki || [])].join(" ").normalize("NFKC").replace(/\s+/g, "");
+    });
+  });
+  function mark(text, ts) {
+    let h = esc(text);
+    ts.forEach((t) => { h = h.split(esc(t)).join("<mark>" + esc(t) + "</mark>"); });
+    return h;
+  }
+  let scope = "";   // 絞り込む資料（toc の id を「,」で）。空ならすべて
+  function renderScope() {
+    const opts = [["", "すべて"]].concat(TOC.map((d) => [d.id, SHORT[d.id] || d.t]));
+    const custom = scope && !opts.some((o) => o[0] === scope);
+    if (custom) opts.splice(1, 0, [scope, scope.split(",").map((x) => SHORT[x] || x).join("＋")]);
+    $("scope").innerHTML = opts.map(([v, t]) => `<button type="button" data-v="${v}" aria-pressed="${v === scope}">${esc(t)}</button>`).join("");
+  }
+  async function runSearch(q) {
+    const ts = terms(q);
+    $("q-main").value = q || "";
+    renderScope();
+    if (!ts.length) {
+      $("s-sum").textContent = q ? "漢字・カタカナ・英数字を含む語で探してください" : "";
+      $("s-res").innerHTML = "";
+      return;
+    }
+    $("s-sum").textContent = "索引を読み込んでいます…";
+    let kw;
+    try { kw = await loadKW(); } catch (e) { $("s-sum").textContent = "索引を読み込めませんでした。時間をおいて開き直してください"; return; }
+    const want = scope ? scope.split(",") : TOC.map((d) => d.id);
+    let total = 0, ndoc = 0, h = "";
+    TOC.filter((d) => want.includes(d.id)).forEach((doc) => {
+      // 見出しごとに、見つかったPDFのページを集める（資料の本文の語の索引）＋要点の文に含むもの
+      const byH = new Map();
+      (kw[doc.id] || []).forEach((sg) => {
+        if (!ts.every((t) => sg.w.includes(t))) return;
+        if (!byH.has(sg.h)) byH.set(sg.h, new Set());
+        byH.get(sg.h).add(sg.p);
+      });
+      Object.entries(NOTE_TEXT[doc.id]).forEach(([hh, txt]) => {
+        const k = Number(hh);
+        if (ts.every((t) => txt.includes(t)) && !byH.has(k)) byH.set(k, new Set());
+      });
+      if (!byH.size) return;
+      const hs = [...byH.keys()].sort((a, b) => a - b);
+      total += hs.length; ndoc++;
+      const rows = hs.map((k) => {
+        const f = FLAT[doc.id][k], n = note(doc.id, k);
+        const pages = [...byH.get(k)].sort((a, b) => a - b);
+        const p0 = pages[0] || (f ? f.p : 1);
+        const head = f ? f.t : (doc.secs.length ? "表紙・目次" : doc.t);
+        const href = f ? chHref(doc.id, f.c, k) : (doc.secs.length ? null : `#svc-${SVC_OF[doc.id]}`);
+        const inner = `<span class="h">${mark(head, ts)}</span>`
+          + (f && f.sec ? `<span class="c">${esc(f.sec)}</span>` : "")
+          + (n && n.gist ? `<span class="g">${mark(n.gist, ts)}</span>` : "");
+        const main = href ? `<a class="hit" href="${href}">${inner}</a>` : `<span class="hit">${inner}</span>`;
+        const pl = pages.length ? pages.slice(0, 4).map((p) => "p." + p).join("・") + (pages.length > 4 ? "ほか" : "") : "p." + p0;
+        return `<li>${main}${A(pdf(doc.u, p0), `<span>PDF</span><span>${pl}</span>`, "hit-pdf")}</li>`;
+      });
+      const LIM = 30;
+      h += `<section class="s-doc"><h2>${esc(doc.t)}<small>${hs.length}件</small></h2><ul class="hits">${rows.slice(0, LIM).join("")}</ul>`
+        + (rows.length > LIM ? `<ul class="hits" hidden>${rows.slice(LIM).join("")}</ul><button type="button" class="more">残り${rows.length - LIM}件を表示</button>` : "")
+        + "</section>";
+    });
+    const tl = ts.map((t) => "「" + t + "」").join("");
+    const long = ts.some((t) => t.length >= 4 && /^[一-龥々〆ヵヶ]+$/.test(t));
+    $("s-sum").innerHTML = total ? `${esc(tl)}が出てくる見出し <b>${total}</b>（${ndoc}編）`
+      : `${esc(tl)}が出てくる見出しは見つかりませんでした` + (long ? "。語を空白で区切ると見つかることがあります（例：虐待防止 委員会）" : "");
+    $("s-res").innerHTML = h;
+  }
+  $("s-res").addEventListener("click", (e) => {
+    const b = e.target.closest(".more");
+    if (!b) return;
+    b.previousElementSibling.hidden = false;
+    b.remove();
+  });
+  $("scope").addEventListener("click", (e) => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    scope = b.dataset.v;
+    go("#search?" + qs($("q-main").value, scope), true);
+  });
+  const qs = (q, s) => new URLSearchParams(Object.assign({ q: q || "" }, s ? { d: s } : {})).toString();
+  document.addEventListener("submit", (e) => {
+    const f = e.target.closest(".find");
+    if (!f) return;
+    e.preventDefault();
+    const q = f.querySelector("input").value;
+    if (f.dataset.scope !== undefined) scope = f.dataset.scope;
+    else if (f.id === "find-home") scope = "";
+    go("#search?" + qs(q, scope));
+  });
+
+  /* ── 画面の切り替え ── */
+  function go(hash, replace) {
+    clicked = true;
+    if (replace) { history.replaceState(history.state, "", hash); route(); }
+    else location.hash = hash;
+  }
+  try { history.scrollRestoration = "manual"; } catch (e) { /* 古いブラウザ */ }
+  let lastKey = null;
+  function route() {
+    // 離れるページの位置を覚えておく（戻る操作で同じ位置に出すため）
+    if (lastKey) {
+      try {
+        sessionStorage.setItem("y:" + lastKey, String(window.scrollY));
+        // 章のページは、開いていた見出しも覚える（戻ったときに同じ見え方にするため）
+        const open = [...document.querySelectorAll("#ch-body details.it[open]")].map((d) => d.dataset.h);
+        sessionStorage.setItem("o:" + lastKey, open.join(","));
+      } catch (e) { /* 保存できない環境 */ }
+    }
+    const raw = location.hash.slice(1) || "home";
+    const [name, query] = raw.split("?");
+    const params = new URLSearchParams(query || "");
+    let view = "home", g = "home", openH = null;
+    let m, ext = null;
+    for (const fn of EXT_ROUTES) { ext = fn(name, params); if (ext) break; }
+    if (ext) { view = ext.view; g = ext.g; }
+    else if (name === "svc" && SVC.length < 2) { view = "svcview"; g = "svc"; renderSvc("common"); }
+    else if (name === "svc") { view = "svc"; g = "svc"; renderSvcIndex(); setSubnav(""); document.title = F.svcLabel + "｜" + F.titleTail; }
+    else if (name.startsWith("svc-") && SV[name.slice(4)]) { view = "svcview"; g = "svc"; renderSvc(name.slice(4)); }
+    else if ((m = name.match(/^ch-([a-z]+)-(\d+)$/)) && BY[m[1]] && BY[m[1]].secs[Number(m[2]) - 1]) {
+      view = "chview"; g = "svc";
+      openH = params.has("i") ? Number(params.get("i")) : null;
+      renderChapter(m[1], Number(m[2]), openH);
+    } else if (name === "search") {
+      view = "search"; g = "search";
+      scope = params.get("d") || "";
+      runSearch(params.get("q") || "");
+      document.title = "資料の中を探す｜" + F.titleTail;
+    } else if (name === "sources") { view = "sources"; g = "sources"; document.title = "資料一覧｜" + F.titleTail; }
+    else document.title = F.title;
+    document.querySelectorAll(".view").forEach((v) => v.classList.toggle("is-active", v.id === view));
+    document.querySelectorAll("a[data-g]").forEach((a) => {
+      const on = a.dataset.g === g;
+      a.classList.toggle("is-active", on);
+      if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+    const shell = $("shell");
+    shell.classList.toggle("no-sub", view !== "svcview" && view !== "chview" && !(ext && ext.sub));
+    shell.classList.toggle("is-home", view === "home");
+    // 位置: 押して移ったときは先頭から（開く見出しの指定があればその見出し）、戻る・進むの操作では離れたときの位置
+    lastKey = raw;
+    let y = null;
+    if (!clicked) {
+      try {
+        const v = sessionStorage.getItem("y:" + raw); if (v != null) y = Number(v);
+        const o = sessionStorage.getItem("o:" + raw);
+        if (o && view === "chview") o.split(",").forEach((h) => { const d = document.querySelector(`#ch-body details.it[data-h="${h}"]`); if (d) d.open = true; });
+      } catch (e) { /* なし */ }
+    }
+    ON_ROUTE.forEach((fn) => fn(view, name, params));
+    clicked = false;
+    if (y != null) window.scrollTo(0, y);
+    else if (openH != null) {
+      const el = document.querySelector(`#ch-body details.it[data-h="${openH}"]`);
+      if (el) { window.scrollTo(0, 0); el.scrollIntoView({ block: "start" }); } else window.scrollTo(0, 0);
+    } else window.scrollTo(0, 0);
+    if (view === "search" && !$("q-main").value && matchMedia("(hover: hover)").matches) $("q-main").focus();
+  }
+  // リンクを押して移ったか（先頭から）、戻る・進むの操作か（離れた位置）を、押したときの印で見分ける
+  // （popstate は # のリンクを押したときにも起きるので当てにしない）
+  let clicked = true;
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (a && a.getAttribute("href") !== location.hash) clicked = true;
+  }, true);
+  /*@TENKEN@*/
+  window.addEventListener("hashchange", route);
+  renderHome();
+  route();
+
+  /* 資料一覧の絞り込み（scripts/linkbook.py の部品） */
+  const lq = $("lk-q");
+  if (lq) lq.addEventListener("input", () => {
+    const ws = lq.value.normalize("NFKC").toLowerCase().split(/\s+/).filter(Boolean);
+    let n = 0;
+    document.querySelectorAll("#lk .lk-g").forEach((gr) => {
+      let shown = 0;
+      gr.querySelectorAll(".lk-i").forEach((li) => {
+        const t = (li.dataset.q || "").normalize("NFKC").toLowerCase();
+        const ok = ws.every((w) => t.includes(w));
+        li.hidden = !ok;
+        if (ok) shown++;
+      });
+      gr.hidden = !shown;
+      n += shown;
+    });
+    document.querySelector("#lk .lk-none").hidden = n > 0;
+  });
+})();
+
+</script>
+</body>
+</html>

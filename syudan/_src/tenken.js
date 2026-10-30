@@ -4,7 +4,9 @@
   const TK = D.tk;
   const SIX = Object.fromEntries(TK.index.map((s) => [s.id, s]));
   const GT = TK.groups;
-  const GORDER = ["kyotaku", "nicchu", "gh", "ji", "soudan"];
+  const GORDER = TK.gorder || ["kyotaku", "nicchu", "gh", "ji", "soudan"];
+  const FLABEL = { shogai: "障がい", kourei: "高齢", hoiku: "保育" }[F.id] || "";
+  const HAS_GS = TK.gensan.length > 0, HAS_NK = TK.nenkan.items.length > 0;   // 減算・年間のない分野（高齢）は出さない
   const SEC_T = { "質": "個別サービスの質に関する事項", "体制": "個別サービスの質を確保するための体制に関する事項" };
   const ST_T = { 1: "問題なし", 2: "要対応", 3: "該当なし" };
   const svcsOfGroup = (g) => TK.index.filter((s) => s.g === g);
@@ -13,7 +15,7 @@
   const printBtn = () => (PREVIEW ? "" : '<button type="button" class="btn-o sm" data-act="print">印刷</button>');
 
   /* ── 記録（この端末） ── */
-  const STORE = "syudan-tenken-v1";
+  const STORE = TK.store || "syudan-tenken-v1";   // 分野ごとに別の記録
   let DB = null, saveTimer = null;
   function db() {
     if (DB) return DB;
@@ -96,7 +98,7 @@
     if (j.ken.length) secs.push({ t: "県の資料から", ken: true, rows: j.ken.map((r) => Object.assign({ kenOnly: true }, r)) });
     secs.forEach((s) => s.rows.forEach((r) => {
       if (r.kenOnly) { r.items = [{ k: r.k, x: r.t, c: 1 }]; return; }
-      r.items.forEach((it) => { it.c = j.src === "sogo" || it.std ? 1 : 0; });
+      r.items.forEach((it) => { it.c = j.src === "sogo" || j.src === "kaigo" || it.std ? 1 : 0; });
     }));
     j.sections = secs;
     return j;
@@ -206,7 +208,7 @@
   // 点検のはじめ
   function viewTenken() {
     const os = offices();
-    let h = `<h1 class="vh">点検</h1><p class="vsub">運営指導で確認される国の確認項目に、県の指摘事例を添えた点検表です。</p>`;
+    let h = `<h1 class="vh">点検</h1><p class="vsub">${TK.index.some((x) => x.nk) ? "運営指導で確認される国の確認項目に、県の指摘事例を添えた点検表です。" : "運営指導で確認される国の確認項目の点検表です。"}</p>`;
     h += '<section class="tk-sec"><div class="tk-sh2"><h2>事業所</h2><a class="btn-s" href="#office-new">事業所を登録する</a></div>';
     if (os.length) {
       h += '<div class="ofc-grid">' + os.map(officeCard).join("") + "</div>";
@@ -221,9 +223,9 @@
       + '<p class="vsub">記録はこの端末のブラウザに保存されます。別の端末へ移すときや、各事業所の記録を本部でまとめるときに使います。</p>'
       + (PREVIEW ? '<p class="tk-empty">書き出し・取り込みは公開ページで使えます。</p>' : '<div class="io-b"><button type="button" class="btn-o" data-act="export"' + (os.length ? "" : " disabled") + '>記録を書き出す</button>'
       + '<label class="btn-o"><input type="file" accept="application/json,.json" data-act="import" hidden>記録を取り込む</label></div><p class="io-msg" id="io-msg" aria-live="polite"></p>') + '</section>';
-    h += '<section class="tk-sec"><h2 class="tk-h2">あわせて見る</h2><ul class="rows"><li><a href="#gensan">減算になる場面</a><span class="note">' + TK.gensan.length + '種類。県の資料の見出しと国の確認項目から</span></li><li><a href="#nenkan">年間でやること</a><span class="note">委員会・研修・訓練・届出などの回数と期限</span></li></ul></section>';
+    if (HAS_GS || HAS_NK) h += '<section class="tk-sec"><h2 class="tk-h2">あわせて見る</h2><ul class="rows">' + (HAS_GS ? '<li><a href="#gensan">減算になる場面</a><span class="note">' + TK.gensan.length + '種類。県の資料の見出しと国の確認項目から</span></li>' : "") + (HAS_NK ? '<li><a href="#nenkan">年間でやること</a><span class="note">委員会・研修・訓練・届出などの回数と期限</span></li>' : "") + '</ul></section>';
     body().innerHTML = h;
-    document.title = "点検｜集団指導 特設ページ";
+    document.title = "点検｜" + F.titleTail;
   }
   function officeCard(o) {
     const p = progOffice(o);
@@ -249,7 +251,7 @@
       + (isNew ? "" : `<button type="button" class="btn-d" data-act="del" data-id="${o.id}">この事業所と記録を消す</button>`)
       + "</div></form>";
     body().innerHTML = h;
-    document.title = (isNew ? "事業所を登録" : "事業所の設定") + "｜集団指導 特設ページ";
+    document.title = (isNew ? "事業所を登録" : "事業所の設定") + "｜" + F.titleTail;
   }
 
   // 事業所のページ
@@ -265,7 +267,7 @@
     h += `<section class="tk-sec"><h2 class="tk-h2">要対応</h2>` + (p.ng ? `<p><a class="btn-s" href="#todo-${o.id}">要対応の一覧（${p.ng}件）</a></p>` : '<p class="tk-empty">要対応にした項目はありません。</p>') + "</section>";
     // 年間（期限の近いもの）
     const due = nenkanFor(o).filter((x) => x.kind === "date" && x.dueYmd && dms(x.dueYmd) >= todayMs() && !yrDone(o.id, x.id, 0)).sort((a, b) => dms(a.dueYmd) - dms(b.dueYmd)).slice(0, 3);
-    h += `<section class="tk-sec"><div class="tk-sh2"><h2>年間でやること</h2><a class="btn-s" href="#nenkan?o=${o.id}">年間を開く</a></div>`;
+    h += HAS_NK ? `<section class="tk-sec"><div class="tk-sh2"><h2>年間でやること</h2><a class="btn-s" href="#nenkan?o=${o.id}">年間を開く</a></div>` : `<section class="tk-sec">`;
     if (o.exp) h += `<p class="exp-line"><span class="k">指定の有効期間の満了日</span>${jdate(o.exp, true)}${leftText(o.exp)}</p>`;
     h += due.length ? `<ul class="due-mini">${due.map((x) => `<li><span class="d">${jdate(x.dueYmd)}</span><span class="t">${esc(x.t)}${x.cond ? `<span class="cond">${esc(x.cond)}</span>` : ""}</span>${leftText(x.dueYmd)}</li>`).join("")}</ul>` : "";
     h += "</section>";
@@ -303,7 +305,7 @@
   }
   function srcNote(sv) {
     const s = TK.src[sv.src];
-    return `<p class="tk-src">出典：${esc(s.by)}「${esc(s.of)}」の${sv.src === "ji" ? "別紙「主眼事項及び着眼点等」" : "「確認項目及び確認文書」"}（${A(s.u, "PDF・Excel" + EXT)}）。文は通知のまま載せています。${sv.src === "ji" ? "下線は通知の下線（標準確認項目）です。" : ""}</p>`;
+    return `<p class="tk-src">出典：${esc(s.by)}「${esc(s.of)}」の${sv.src === "ji" ? "別紙「主眼事項及び着眼点等」" : (sv.src === "kaigo" ? "別添「確認項目及び確認文書」" : "「確認項目及び確認文書」")}（${A(s.u, (sv.src === "kaigo" ? "PDF" : "PDF・Excel") + EXT)}）。文は通知のまま載せています。${sv.src === "ji" ? "下線は通知の下線（標準確認項目）です。" : ""}</p>`;
   }
 
   // 区分のページ（点検表の本体）
@@ -651,8 +653,8 @@
     const d = db();
     const os = oid ? d.offices.filter((o) => o.id === oid) : d.offices;
     const pick = (obj) => Object.fromEntries(os.map((o) => [o.id, obj[o.id] || {}]));
-    const out = { app: "syudan-tenken", v: 1, at: nowStamp(), offices: os, st: pick(d.st), memo: pick(d.memo), yr: pick(d.yr) };
-    download(`集団指導_点検_${oid ? officeName(os[0]) : "すべて"}_${fileStamp()}.json`, JSON.stringify(out), "application/json");
+    const out = { app: "syudan-tenken", fld: F.id, v: 1, at: nowStamp(), offices: os, st: pick(d.st), memo: pick(d.memo), yr: pick(d.yr) };
+    download(`集団指導_点検_${F.id === "shogai" ? "" : FLABEL + "_"}${oid ? officeName(os[0]) : "すべて"}_${fileStamp()}.json`, JSON.stringify(out), "application/json");
     const m = $("io-msg"); if (m) m.textContent = `${os.length}事業所の記録を書き出しました`;
   }
   function importJson(file) {
@@ -660,7 +662,7 @@
     if (!file) return;
     file.text().then((t) => {
       const j = JSON.parse(t);
-      if (j.app !== "syudan-tenken" || !Array.isArray(j.offices)) throw new Error("形式");
+      if (j.app !== "syudan-tenken" || !Array.isArray(j.offices) || (j.fld || "shogai") !== F.id) throw new Error("形式");
       const d = db();
       let add = 0, upd = 0;
       j.offices.forEach((o) => {
@@ -706,7 +708,7 @@
           });
         }));
       });
-      download(`集団指導_点検_${officeName(o)}_${fileStamp()}.csv`, "﻿" + lines.join("\r\n"), "text/csv");
+      download(`集団指導_点検_${F.id === "shogai" ? "" : FLABEL + "_"}${officeName(o)}_${fileStamp()}.csv`, "﻿" + lines.join("\r\n"), "text/csv");
       const m = $("io-msg"); if (m) m.textContent = "CSVを書き出しました";
     });
   }
@@ -745,12 +747,12 @@
       if (m[2]) { viewSec("kk", null, m[1], Number(m[2]), params); return { view: "tkview", g: "tenken", sub: true }; }
       viewSvc("kk", null, m[1]); return { view: "tkview", g: "tenken" };
     }
-    if (name === "gensan") { viewGensan(); return { view: "tkview", g: "gensan" }; }
+    if (name === "gensan" && HAS_GS) { viewGensan(); return { view: "tkview", g: "gensan" }; }
     if ((m = name.match(/^gensan-([a-z0-9]+)$/))) {
       const e = TK.gensan.find((x) => x.id === m[1]);
       if (e) { viewGensanOne(e); return { view: "tkview", g: "gensan" }; }
     }
-    if (name === "nenkan") { viewNenkan(params); return { view: "tkview", g: "nenkan" }; }
+    if (name === "nenkan" && HAS_NK) { viewNenkan(params); return { view: "tkview", g: "nenkan" }; }
     return null;
   });
 
@@ -770,8 +772,8 @@
     if (os.length) h += '<div class="ofc-grid">' + os.slice(0, 6).map(officeCard).join("") + "</div>";
     h += '<div class="prep">'
       + `<a class="prep-a" href="#tenken"><b>点検</b><span>国の確認項目 ${nItems.toLocaleString()}・${TK.index.length}サービス</span></a>`
-      + `<a class="prep-a" href="#gensan"><b>減算になる場面</b><span>${TK.gensan.length}種類</span></a>`
-      + `<a class="prep-a" href="#nenkan"><b>年間でやること</b><span>${nd ? `次の期限 ${jdate(nd.dueYmd)} ${esc(nd.t)}` : "委員会・研修・訓練・届出"}</span></a>`
+      + (HAS_GS ? `<a class="prep-a" href="#gensan"><b>減算になる場面</b><span>${TK.gensan.length}種類</span></a>` : "")
+      + (HAS_NK ? `<a class="prep-a" href="#nenkan"><b>年間でやること</b><span>${nd ? `次の期限 ${jdate(nd.dueYmd)} ${esc(nd.t)}` : "委員会・研修・訓練・届出"}</span></a>` : "")
       + "</div>";
     el.innerHTML = h;
   });

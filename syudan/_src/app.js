@@ -8,6 +8,8 @@
   const $ = (id) => document.getElementById(id);
   const D = JSON.parse($("data").textContent);
   const DOCS = D.docs, TOC = D.toc, NOTES = D.notes || {};
+  /* 分野（障がい・高齢・保育）ごとの違いは build.py が D.field に入れる */
+  const F = D.field;
   const BY = Object.fromEntries(TOC.map((d) => [d.id, d]));
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const EXT = '<svg class="ext" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 6 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
@@ -17,13 +19,13 @@
   const A = (u, inner, cls) => `<a${cls ? ` class="${cls}"` : ""} href="${esc(u)}" target="_blank" rel="noopener">${inner}</a>`;
 
   /* サービスの区分（県の資料の区分）。common＝全事業所共通編。docs＝見出しを持つ資料（toc の id） */
-  const SVC = [{ id: "common", t: "全事業所共通", names: "すべての事業所", docs: ["common", "kaitei"] }]
-    .concat(DOCS.services.map((s) => Object.assign({}, s, { docs: s.id === "ji" ? ["ji", "dbs"] : [s.id] })));
+  const SVC = [F.common]
+    .concat(DOCS.services.map((s) => Object.assign({}, s, { docs: s.docs || (F.svcDocs || {})[s.id] || [s.id] })));
   const SV = Object.fromEntries(SVC.map((s) => [s.id, s]));
   const SVC_OF = {};
   SVC.forEach((s) => s.docs.forEach((d) => { SVC_OF[d] = s.id; }));
   /* 「探す」の絞り込みの短い呼び名 */
-  const SHORT = { common: "全事業所共通編", kyotaku: "居宅訪問系", nicchu: "通所・入所系", gh: "共同生活援助", ji: "障がい児系", dbs: "こども性暴力防止法", soudan: "相談支援系", kaitei: "令和8年度報酬改定（国）" };
+  const SHORT = F.short || {};
   const itemOf = (docId) => DOCS.items.find((i) => i.id === docId);
   /* 点検・減算・年間（tenken.js）が足す画面と部品の差し込み口 */
   const EXT_ROUTES = [], ON_ROUTE = [], CH_EXTRA = [], SVC_EXTRA = [];
@@ -80,18 +82,23 @@
   }
   function renderHome() {
     $("svc-home").innerHTML = SVC.map(svcCard).join("");
-    const c = BY.common;
-    $("common-quick").innerHTML = c.secs.map((s, i) =>
-      `<li><a href="#ch-common-${i + 1}"><span class="t">${esc(s.t)}</span><span class="pg">${chapterRange(c, i)}</span></a></li>`).join("");
-    const links = [[DOCS.page, DOCS.pageTitle || "県の集団指導のページ"], [DOCS.schedule, "日程表"], [DOCS.register, "受講登録のフォーム"]].filter((x) => x[0]);
+    if (SVC.length < 2) $("hb-svc").hidden = true;   // サービスの区分がない分野（保育）は、資料の章をそのまま並べる
+    $("common-quick").innerHTML = F.commonQuick.filter((id) => BY[id]).map((id) => {
+      const c = BY[id];
+      if (!c.secs.length) return `<li><a href="#svc-${SVC_OF[id]}"><span class="t">${esc(c.t)}</span><span class="pg">${c.pages}p</span></a></li>`;
+      return c.secs.map((s, i) => `<li><a href="#ch-${id}-${i + 1}"><span class="t">${esc(s.t)}</span><span class="pg">${chapterRange(c, i)}</span></a></li>`).join("");
+    }).join("");
+    const links = F.prefLinks.filter((x) => x[0]);
     $("pref-links").innerHTML = links.map((x) => `<li>${A(x[0], esc(x[1]) + EXT)}</li>`).join("")
       + `<li><a href="#sources">資料一覧（${DOCS.items.length}点）</a></li>`;
+    const site = F.site || [];
+    $("site-links").innerHTML = site.map((x) => `<li><a href="${esc(x[0])}">${esc(x[1])}</a><span class="note">${esc(x[2])}</span></li>`).join("");
+    $("hb-site").hidden = !site.length;
     if (DOCS.extractedAt) {
       const [y, m, d] = DOCS.extractedAt.split("-").map(Number);
       $("extracted").textContent = `資料の取得 ${y}年${m}月${d}日`;
     }
-    $("year").textContent = DOCS.year || "";
-    const dl = DOCS.registerDeadline;
+    const pl = F.plate || {}, dl = pl.date;
     if (dl) {
       const [y, m, d] = dl.split("-").map(Number);
       $("reg-date").textContent = `${y}.${m}.${d}`;
@@ -99,12 +106,11 @@
       const today = Math.floor((Date.now() + JST) / DAY) * DAY - JST;
       const left = Math.round((Date.parse(dl + "T00:00:00+09:00") - today) / DAY);
       $("reg-left").innerHTML = left > 0 ? `${m}月${d}日まで あと<b>${left}</b>日` : (left === 0 ? `本日（${m}月${d}日）が期限` : `${m}月${d}日で期限を過ぎました`);
-      $("reg-go").href = DOCS.register;
-      if (left < 0) $("reg-go").hidden = true;
+      $("plate-k").textContent = pl.k;
+      if (pl.link && left >= 0) { $("reg-go").href = pl.link; $("reg-go-t").textContent = pl.linkLabel; } else $("reg-go").hidden = true;
     } else {
       $("dateplate").hidden = true;
     }
-    $("foot-page").href = DOCS.page;
   }
   function svcNav(active) {
     return "<ol>" + SVC.map((x) => {
@@ -142,19 +148,19 @@
     h += SVC_EXTRA.map((fn) => fn(id)).join("");
     const extra = DOCS.items.filter((it) => it.part === "説明資料" && !it.id && it.svc.includes(id) && it.kind !== "HTML");
     if (extra.length) h += `<section class="also"><h2>説明資料と一緒に掲載された資料</h2><ul class="rows">${extra.map(itemRow).join("")}</ul></section>`;
-    if (id !== "common") {
-      h += `<section class="also"><h2>あわせて見る</h2><ul class="rows"><li><a href="#svc-common">全事業所共通編の説明資料</a><span class="note">指導監督の方針・行政処分の事例・虐待防止・事故・処遇改善など</span></li>`
-        + `<li><a href="#ch-kaitei-1">令和8年度報酬改定について</a><span class="note">国の資料（${BY.kaitei.pages}ページ）。処遇改善加算の拡充と、臨時応急的な見直し</span></li></ul></section>`;
+    if (id !== "common" && F.also && F.also.length) {
+      h += `<section class="also"><h2>あわせて見る</h2><ul class="rows">${F.also.map((x) => `<li><a href="${esc(x.href)}">${esc(x.t)}</a><span class="note">${esc(x.note)}</span></li>`).join("")}</ul></section>`;
     }
-    const refs = DOCS.items.filter((it) => it.part === "参考資料" && !it.id && (id === "common" ? it.svc.includes("*") : it.svc.includes(id)));
-    if (refs.length) {
+    (F.parts || [["参考資料", "参考資料"]]).forEach(([part, label]) => {
+      const refs = DOCS.items.filter((it) => it.part === part && !it.id && (id === "common" ? it.svc.includes("*") : it.svc.includes(id)));
+      if (!refs.length) return;
       const groups = [...new Set(refs.map((r) => r.g))];
-      h += `<section class="refs"><h2>参考資料</h2>` + groups.map((g) =>
+      h += `<section class="refs"><h2>${esc(label)}</h2>` + groups.map((g) =>
         `<h3>${esc(groupLabel(g))}</h3><ul class="rows">${refs.filter((r) => r.g === g).map(itemRow).join("")}</ul>`).join("") + "</section>";
-    }
+    });
     $("svc-body").innerHTML = h;
     setSubnav(svcNav(id));
-    document.title = s.t + "｜集団指導 特設ページ";
+    document.title = s.t + "｜" + F.titleTail;
   }
   function findForm(scope, id, label, ph) {
     return `<form class="find inline" data-scope="${scope}" role="search"><label class="sr" for="${id}">${esc(label)}</label>`
@@ -365,7 +371,8 @@
     let m, ext = null;
     for (const fn of EXT_ROUTES) { ext = fn(name, params); if (ext) break; }
     if (ext) { view = ext.view; g = ext.g; }
-    else if (name === "svc") { view = "svc"; g = "svc"; renderSvcIndex(); setSubnav(""); document.title = "サービス別｜集団指導 特設ページ"; }
+    else if (name === "svc" && SVC.length < 2) { view = "svcview"; g = "svc"; renderSvc("common"); }
+    else if (name === "svc") { view = "svc"; g = "svc"; renderSvcIndex(); setSubnav(""); document.title = F.svcLabel + "｜" + F.titleTail; }
     else if (name.startsWith("svc-") && SV[name.slice(4)]) { view = "svcview"; g = "svc"; renderSvc(name.slice(4)); }
     else if ((m = name.match(/^ch-([a-z]+)-(\d+)$/)) && BY[m[1]] && BY[m[1]].secs[Number(m[2]) - 1]) {
       view = "chview"; g = "svc";
@@ -375,9 +382,9 @@
       view = "search"; g = "search";
       scope = params.get("d") || "";
       runSearch(params.get("q") || "");
-      document.title = "資料の中を探す｜集団指導 特設ページ";
-    } else if (name === "sources") { view = "sources"; g = "sources"; document.title = "資料一覧｜集団指導 特設ページ"; }
-    else document.title = "令和8年度 福岡県 集団指導 特設ページ";
+      document.title = "資料の中を探す｜" + F.titleTail;
+    } else if (name === "sources") { view = "sources"; g = "sources"; document.title = "資料一覧｜" + F.titleTail; }
+    else document.title = F.title;
     document.querySelectorAll(".view").forEach((v) => v.classList.toggle("is-active", v.id === view));
     document.querySelectorAll("a[data-g]").forEach((a) => {
       const on = a.dataset.g === g;

@@ -1,18 +1,19 @@
 <div class="crumb" lang="ja">
   <div class="crumb-in">
-    <a class="crumb-back" href="../"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>福祉情報ウォッチに戻る</span></a>
+    <a class="crumb-back" href="{{BACK}}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>福祉情報ウォッチに戻る</span></a>
   </div>
 </div>
 <header class="topbar" lang="ja">
   <div class="topbar-in">
     <a class="brand" href="#home">集団指導 特設ページ<span>福岡県・令和8年度</span></a>
+    <nav class="fsw" aria-label="分野">{{FSW}}</nav>
     <nav class="gnav" aria-label="メインメニュー">
       <a href="#home" data-g="home">ホーム</a>
-      <a href="#svc" data-g="svc">サービス別</a>
-      <a href="#tenken" data-g="tenken">点検</a>
-      <a href="#gensan" data-g="gensan">減算</a>
+      <a href="#svc" data-g="svc">{{SVC_LABEL}}</a>
+<!--TKNAV-->      <a href="#tenken" data-g="tenken">点検</a>
+<!--/TKNAV--><!--GSNAV-->      <a href="#gensan" data-g="gensan">減算</a>
       <a href="#nenkan" data-g="nenkan">年間</a>
-      <a href="#search" data-g="search">資料の中を探す</a>
+<!--/GSNAV-->      <a href="#search" data-g="search">資料の中を探す</a>
       <a href="#sources" data-g="sources">資料一覧</a>
     </nav>
   </div>
@@ -20,11 +21,12 @@
 
 <nav class="tabbar" aria-label="ページの切り替え" lang="ja">
   <a href="#home" data-g="home"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 9.5 10 4l7 5.5V16a1 1 0 0 1-1 1h-3.5v-4.5h-5V17H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span>ホーム</span></a>
-  <a href="#svc" data-g="svc"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="3" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="11" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="11" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>サービス別</span></a>
-  <a href="#tenken" data-g="tenken"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3.5" y="3" width="13" height="14.5" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m6.3 7.6 1.4 1.4 2.6-2.8M6.3 12.6l1.4 1.4 2.6-2.8M12 8h2M12 13h2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>点検</span></a>
-  <a href="#nenkan" data-g="nenkan"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="4.5" width="14" height="12.5" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 8.5h14M7 2.8v3.4M13 2.8v3.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="7" cy="12.2" r="1" fill="currentColor"/><circle cx="10" cy="12.2" r="1" fill="currentColor"/><circle cx="13" cy="12.2" r="1" fill="currentColor"/></svg><span>年間</span></a>
-  <a href="#search" data-g="search"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="4.8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m12.2 12.2 4.3 4.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>探す</span></a>
-</nav>
+  <a href="#svc" data-g="svc"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="3" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="11" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="11" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>{{SVC_LABEL}}</span></a>
+<!--TKTAB-->  <a href="#tenken" data-g="tenken"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3.5" y="3" width="13" height="14.5" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m6.3 7.6 1.4 1.4 2.6-2.8M6.3 12.6l1.4 1.4 2.6-2.8M12 8h2M12 13h2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>点検</span></a>
+<!--/TKTAB--><!--NKTAB-->  <a href="#nenkan" data-g="nenkan"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="4.5" width="14" height="12.5" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 8.5h14M7 2.8v3.4M13 2.8v3.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="7" cy="12.2" r="1" fill="currentColor"/><circle cx="10" cy="12.2" r="1" fill="currentColor"/><circle cx="13" cy="12.2" r="1" fill="currentColor"/></svg><span>年間</span></a>
+<!--/NKTAB-->  <a href="#search" data-g="search"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="4.8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m12.2 12.2 4.3 4.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>探す</span></a>
+<!--LKTAB-->  <a href="#sources" data-g="sources"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 3.5h7.5L16 7v9.5H5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12.5 3.5V7H16M7.5 10.5h6M7.5 13.5h6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>資料一覧</span></a>
+<!--/LKTAB--></nav>
 
 <div class="shell no-sub" id="shell" lang="ja">
 <aside class="subnav" id="subnav" aria-label="サービス"></aside>
@@ -33,46 +35,54 @@
 <section class="view home" id="home" data-g="home">
   <div class="home-head">
     <div class="home-title">
-      <div class="eyebrow"><span>福岡県</span><span id="year">令和8年度</span><span id="extracted"></span></div>
-      <h1>集団指導 <span class="nw">特設ページ</span></h1>
+      <div class="eyebrow">{{EYEBROW}}<span id="extracted"></span></div>
+      <h1>{{H1}}</h1>
       <form class="find big" id="find-home" role="search">
         <label class="sr" for="q-home">資料の中を探す</label>
         <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m12.6 12.6 4.4 4.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-        <input type="search" id="q-home" placeholder="例：身体拘束　常勤換算　業務継続計画" autocomplete="off" enterkeyhint="search">
+        <input type="search" id="q-home" placeholder="{{PH}}" autocomplete="off" enterkeyhint="search">
         <button type="submit">探す</button>
       </form>
     </div>
     <div class="dateplate" id="dateplate">
-      <span class="k">受講登録の期限</span>
+      <span class="k" id="plate-k"></span>
       <span class="d" id="reg-date"></span>
       <span class="left" id="reg-left"></span>
-      <a class="reg-go" id="reg-go" href="#" target="_blank" rel="noopener">受講登録のフォーム<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 6 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="reg-go" id="reg-go" href="#" target="_blank" rel="noopener"><span id="reg-go-t"></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 6 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
 
+  <!--TK-->
   <section class="hb hb-prep" aria-labelledby="h-prep">
     <div class="hb-h"><h2 id="h-prep">運営指導に備える</h2></div>
     <div id="tk-home"></div>
   </section>
+  <!--/TK-->
 
-  <section class="hb" aria-labelledby="h-svc">
+  <section class="hb" aria-labelledby="h-svc" id="hb-svc">
     <div class="hb-h"><h2 id="h-svc">サービスから見る</h2></div>
     <div class="svc-grid" id="svc-home"></div>
   </section>
 
   <section class="hb" aria-labelledby="h-common">
-    <div class="hb-h"><h2 id="h-common">全事業所共通編の章</h2></div>
+    <div class="hb-h"><h2 id="h-common">{{COMMON_HEAD}}</h2></div>
     <ol class="chap-quick" id="common-quick"></ol>
   </section>
 
+  <!--EXTRA-->
   <section class="hb hb-links" aria-labelledby="h-pref">
-    <div class="hb-h"><h2 id="h-pref">福岡県の集団指導</h2></div>
+    <div class="hb-h"><h2 id="h-pref">{{PREF_HEAD}}</h2></div>
     <ul class="plain" id="pref-links"></ul>
+  </section>
+
+  <section class="hb hb-links" aria-labelledby="h-site" id="hb-site">
+    <div class="hb-h"><h2 id="h-site">あわせて見る</h2></div>
+    <ul class="plain site-links" id="site-links"></ul>
   </section>
 </section>
 
 <section class="view" id="svc" data-g="svc">
-  <h1 class="vh">サービス別</h1>
+  <h1 class="vh">{{SVC_LABEL}}</h1>
   <div class="svc-grid" id="svc-index"></div>
 </section>
 
@@ -89,7 +99,7 @@
   <form class="find" id="find-main" role="search">
     <label class="sr" for="q-main">資料の中を探す</label>
     <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m12.6 12.6 4.4 4.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-    <input type="search" id="q-main" placeholder="例：身体拘束　常勤換算　業務継続計画" autocomplete="off" enterkeyhint="search">
+    <input type="search" id="q-main" placeholder="{{PH}}" autocomplete="off" enterkeyhint="search">
     <button type="submit">探す</button>
   </form>
   <div class="scope" id="scope" role="group" aria-label="探す資料"></div>
@@ -107,7 +117,7 @@
 </section>
 
 <footer class="foot">
-  <p>出典：福岡県「<a id="foot-page" href="#" target="_blank" rel="noopener">令和８年度集団指導について</a>」とその掲載資料。見出しごとの概要・要点は、県の資料をもとにこのページでまとめたものです（県の資料の文そのものではありません）。届出や算定の判断は、県の資料（PDF）の該当ページでご確認ください。点検の確認項目は、厚生労働省「指定障害福祉サービス事業者等の指導監査について」（令和8年6月）の「確認項目及び確認文書」と、こども家庭庁・厚生労働省「指定障害児通所支援事業者等の指導監査について」（令和8年10月改正）の別紙「主眼事項及び着眼点等」を、文を変えずに載せています。</p>
+  {{FOOT}}
 </footer>
 </main>
 </div>
