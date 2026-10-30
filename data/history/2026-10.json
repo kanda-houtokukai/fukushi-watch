@@ -9775,6 +9775,200 @@
      ]
     }
    ]
+  },
+  "2026-10-30": {
+   "counts": {
+    "高": 1,
+    "中": 1,
+    "低": 4
+   },
+   "items": [
+    {
+     "hash": "1da251fbf92394c1",
+     "source": "こども家庭庁",
+     "title": "保育士養成課程等検討会（第6回）について掲載しました",
+     "url": "https://www.cfa.go.jp/press/995f00fa-de6e-4d25-bf16-2449e3c6c6c3",
+     "date": "2026-10-29",
+     "category": "報道発表",
+     "summary": "保育士の養成課程やカリキュラムの見直しを議論する検討会の開催情報です。将来の保育士養成の基準変更につながるため、保育分野の事業者は動向を把握しておく必要があります。",
+     "importance": "中",
+     "fields": [
+      "保育"
+     ],
+     "reason": "保育士の養成内容に関する審議会の動向であり、将来の人材確保や研修に影響するため。"
+    },
+    {
+     "hash": "5a36aafb32388c6d",
+     "source": "厚生労働省",
+     "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+     "url": "https://www.mhlw.go.jp/stf/newpage_77072.html",
+     "date": "2026-10-29",
+     "category": "報道発表",
+     "summary": "大臣の閣議後記者会見の案内です。一般的な政府方針や発言が含まれることがありますが、特定の福祉実務に直結する個別通知ではありません。",
+     "importance": "低",
+     "fields": [],
+     "reason": "個別の福祉施策や事業者への実務的影響が不透明なため。",
+     "related": [
+      {
+       "day": "2026-10-23",
+       "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+       "url": "https://www.mhlw.go.jp/stf/newpage_76909.html"
+      },
+      {
+       "day": "2026-10-20",
+       "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+       "url": "https://www.mhlw.go.jp/stf/newpage_76821.html"
+      },
+      {
+       "day": "2026-10-16",
+       "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+       "url": "https://www.mhlw.go.jp/stf/newpage_76750.html"
+      }
+     ]
+    },
+    {
+     "hash": "1ee19da486a9896d",
+     "source": "厚生労働省",
+     "title": "公益事業に関する争議行為の予告公表ページについて更新されました",
+     "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudouseisaku/sougikoui/index.html",
+     "date": "2026-10-29",
+     "category": "政策分野",
+     "summary": "公益事業におけるストライキなどの争議行為の予告に関する公表ページです。交通や医療などの公益事業に関わる内容であり、福祉事業の実務に直接影響することは稀です。",
+     "importance": "低",
+     "fields": [],
+     "reason": "福祉事業者における労務管理や事業運営に直接関わる情報ではないため。",
+     "related": [
+      {
+       "day": "2026-10-27",
+       "title": "公益事業に関する争議行為の予告公表ページについて更新されました",
+       "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudouseisaku/sougikoui/index.html"
+      },
+      {
+       "day": "2026-10-21",
+       "title": "公益事業に関する争議行為の予告公表ページについて更新されました",
+       "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudouseisaku/sougikoui/index.html"
+      },
+      {
+       "day": "2026-10-20",
+       "title": "公益事業に関する争議行為の予告公表ページについて更新されました",
+       "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudouseisaku/sougikoui/index.html"
+      }
+     ]
+    },
+    {
+     "hash": "345a993ca776a499",
+     "source": "厚生労働省",
+     "title": "第16回医師養成過程を通じた医師の偏在対策等に関する検討会",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76989.html",
+     "date": "2026-10-27",
+     "category": "審議会等",
+     "summary": "医師の偏在対策などを議論する検討会の開催情報です。医療提供体制に関わる重要な会議ですが、福祉事業者の直接的な実務には影響が薄いため、情報として把握する位置づけです。",
+     "importance": "低",
+     "fields": [],
+     "reason": "医療政策に関する検討会であり、福祉事業所の実務に直接的な変更を強いるものではないため。"
+    },
+    {
+     "hash": "1b97397048b99877",
+     "source": "厚生労働省",
+     "title": "先進医療会議の開催について",
+     "url": "https://www.mhlw.go.jp/stf/newpage_76926.html",
+     "date": "2026-10-23",
+     "category": "審議会等",
+     "summary": "先進医療の保険適用などを審議する会議の開催案内です。医療技術の評価に関する内容であり、福祉施設の日常的な運営や制度対応には直接関係しません。",
+     "importance": "低",
+     "fields": [],
+     "reason": "医療技術の評価に関する会議であり、福祉事業者の実務への影響がないため。",
+     "related": [
+      {
+       "day": "2026-10-03",
+       "title": "先進医療会議の開催について",
+       "url": "https://www.mhlw.go.jp/stf/newpage_76321.html"
+      }
+     ]
+    },
+    {
+     "hash": "5b254e5108fc587d",
+     "source": "WAM NET",
+     "title": "第272回 社会保障審議会 介護給付費分科会（令和8年10月28日開催）",
+     "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22997&ct=010010020&from=rss",
+     "date": "2026-10-29",
+     "category": "行政資料",
+     "summary": "介護給付費分科会の開催資料であり、介護報酬の改定や基準の見直しに関する議論が行われます。高齢者福祉の報酬や運営基準に直接影響するため、事業者は内容を確認する必要があります。",
+     "importance": "高",
+     "fields": [
+      "高齢"
+     ],
+     "reason": "介護報酬や給付費に関する審議であり、事業所の経営や報酬算定に直接関わるため。",
+     "action": "一般に、こうした通知では介護報酬改定や運営基準見直しの動向に関する資料の確認や、今後の変更点に対する情報収集が必要になります。",
+     "related": [
+      {
+       "day": "2026-10-20",
+       "title": "第271回 社会保障審議会 介護給付費分科会（令和8年10月19日開催）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22960&ct=010010020&from=rss"
+      },
+      {
+       "day": "2026-10-16",
+       "title": "第270回 社会保障審議会 介護給付費分科会（令和8年10月14日開催）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22958&ct=010010020&from=rss"
+      },
+      {
+       "day": "2026-10-14",
+       "title": "第269回 社会保障審議会 介護給付費分科会（令和8年10月9日開催）",
+       "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22942&ct=010010020&from=rss"
+      }
+     ]
+    }
+   ],
+   "press": [
+    {
+     "hash": "6a8d94558d720367",
+     "source": "介護ニュースJoint",
+     "kind": "press",
+     "title": "【超実践】介護現場のリーダーに必要な知識やスキルを学ぶ！ 動画研修の配信開始＝介護労働安定センター",
+     "url": "https://www.joint-kaigo.com/articles/49982/",
+     "date": "2026-10-29",
+     "category": "介護福祉士",
+     "fields": [
+      "高齢"
+     ]
+    },
+    {
+     "hash": "87aa1f370e01f939",
+     "source": "介護ニュースJoint",
+     "kind": "press",
+     "title": "今は制度改革期！ ケアマネに求められる役割は 近畿ブロック研究大会、来年2月に大阪で開催",
+     "url": "https://www.joint-kaigo.com/articles/49972/",
+     "date": "2026-10-29",
+     "category": "共生社会",
+     "fields": [
+      "高齢"
+     ]
+    },
+    {
+     "hash": "54a18114349b8a0c",
+     "source": "介護ニュースJoint",
+     "kind": "press",
+     "title": "登録施設介護支援、地域活動への参加など後押し 厚労省が業務案 ホーム外とのつながりを確保｜介護報酬改定",
+     "url": "https://www.joint-kaigo.com/articles/49962/",
+     "date": "2026-10-29",
+     "category": "超高齢化",
+     "fields": [
+      "高齢"
+     ]
+    },
+    {
+     "hash": "372872d89f57af1b",
+     "source": "介護ニュースJoint",
+     "kind": "press",
+     "title": "登録施設介護支援、ケアマネと地域生活相談員の兼務も可 管理者の主任ケアマネ要件は設けず 厚労省提案",
+     "url": "https://www.joint-kaigo.com/articles/49955/",
+     "date": "2026-10-29",
+     "category": "超高齢化",
+     "fields": [
+      "高齢"
+     ]
+    }
+   ]
   }
  }
 }

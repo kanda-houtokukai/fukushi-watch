@@ -1,4 +1,5 @@
 {
+ "facts": [],
  "units": {
   "前提:base-b-gata-kubun-kijun": {
    "checked": "2026-10-28",
@@ -236,23 +237,19 @@
    "result": "fixed"
   },
   "論点:houmon-douko-01": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-10-30",
    "result": "ok"
   },
   "論点:houmon-houkatsu-01": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-10-30",
    "result": "ok"
   },
   "論点:houmon-juhou-01": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-10-30",
    "result": "ok"
   },
   "論点:houmon-koudou-01": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-10-30",
    "result": "ok"
   },
   "論点:houmon-kyotaku-01": {

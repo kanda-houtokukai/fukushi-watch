@@ -1,8 +1,15 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-10-28T23:03:21.648Z",
+      "lastCrawled": "2026-10-29T21:52:31.892Z",
       "items": [
+        {
+          "hash": "1da251fbf92394c1",
+          "title": "保育士養成課程等検討会（第6回）について掲載しました",
+          "url": "https://www.cfa.go.jp/press/995f00fa-de6e-4d25-bf16-2449e3c6c6c3",
+          "date": "2026-10-29",
+          "category": "報道発表"
+        },
         {
           "hash": "014906cd1b53ed5c",
           "title": "児童厚生施設及び放課後児童クラブに関する専門委員会（第8回）を掲載しました",
@@ -1196,8 +1203,22 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-10-28T23:03:22.021Z",
+      "lastCrawled": "2026-10-29T21:52:32.523Z",
       "items": [
+        {
+          "hash": "5a36aafb32388c6d",
+          "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+          "url": "https://www.mhlw.go.jp/stf/newpage_77072.html",
+          "date": "2026-10-29",
+          "category": "報道発表"
+        },
+        {
+          "hash": "1ee19da486a9896d",
+          "title": "公益事業に関する争議行為の予告公表ページについて更新されました",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudouseisaku/sougikoui/index.html",
+          "date": "2026-10-29",
+          "category": "政策分野"
+        },
         {
           "hash": "3e1562ccc8e1d9ac",
           "title": "労働災害発生状況",
@@ -1253,6 +1274,13 @@
           "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00982.html",
           "date": "2026-10-27",
           "category": "大臣会見等"
+        },
+        {
+          "hash": "345a993ca776a499",
+          "title": "第16回医師養成過程を通じた医師の偏在対策等に関する検討会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76989.html",
+          "date": "2026-10-27",
+          "category": "審議会等"
         },
         {
           "hash": "25f95a69d5cb8b24",
@@ -1365,13 +1393,6 @@
           "url": "https://www.mhlw.go.jp/stf/newpage_76958.html",
           "date": "2026-10-26",
           "category": "審議会等"
-        },
-        {
-          "hash": "d7dd6dc15bcfb166",
-          "title": "公益事業に関する争議行為の予告公表ページについて更新されました",
-          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudouseisaku/sougikoui/index.html",
-          "date": "2026-10-26",
-          "category": "政策分野"
         },
         {
           "hash": "28b992cb190d3fde",
@@ -1489,6 +1510,13 @@
           "hash": "40d621de7963590d",
           "title": "第399回労働政策審議会職業安定分科会労働力需給制度部会 資料",
           "url": "https://www.mhlw.go.jp/stf/newpage_76436.html",
+          "date": "2026-10-23",
+          "category": "審議会等"
+        },
+        {
+          "hash": "1b97397048b99877",
+          "title": "先進医療会議の開催について",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76926.html",
           "date": "2026-10-23",
           "category": "審議会等"
         },
@@ -3649,13 +3677,6 @@
           "category": "審議会等"
         },
         {
-          "hash": "34d88d0b1062476f",
-          "title": "2024年度 特定健康診査・特定保健指導の実施状況 ※掲載一時中止",
-          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/newpage_00084.html",
-          "date": "2026-09-16",
-          "category": "その他"
-        },
-        {
           "hash": "7aa416842abbdce1",
           "title": "人事労務マガジン 特集第248号 「働き方改革推進支援セミナー2026秋」を10月から開催します",
           "url": "https://www.mhlw.go.jp/stf/newpage_76162.html",
@@ -4855,8 +4876,15 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-10-28T23:03:23.238Z",
+      "lastCrawled": "2026-10-29T21:52:33.658Z",
       "items": [
+        {
+          "hash": "5b254e5108fc587d",
+          "title": "第272回 社会保障審議会 介護給付費分科会（令和8年10月28日開催）",
+          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22997&ct=010010020&from=rss",
+          "date": "2026-10-29",
+          "category": "行政資料"
+        },
         {
           "hash": "f27ba702b0e5a656",
           "title": "風しん最新情報（令和8年10月27日更新）",
@@ -6949,18 +6977,11 @@
           "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22835&ct=070010010&from=rss",
           "date": "2026-09-04",
           "category": "行政資料"
-        },
-        {
-          "hash": "5de0b1fb5ef083f7",
-          "title": "第126回 社会保障審議会 医療部会（令和8年3月26日開催）",
-          "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=22465&ct=010010040&from=rss",
-          "date": "2026-03-27",
-          "category": "行政資料"
         }
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-10-28T23:03:25.186Z",
+      "lastCrawled": "2026-10-29T21:52:35.560Z",
       "items": [
         {
           "hash": "4220347170390bfe",
@@ -7315,7 +7336,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-10-28T23:03:25.535Z",
+      "lastCrawled": "2026-10-29T21:52:36.101Z",
       "items": [
         {
           "hash": "c16f59eab0cefc3b",
@@ -8032,8 +8053,36 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-10-28T23:03:26.839Z",
+      "lastCrawled": "2026-10-29T21:52:37.453Z",
       "items": [
+        {
+          "hash": "6a8d94558d720367",
+          "title": "【超実践】介護現場のリーダーに必要な知識やスキルを学ぶ！ 動画研修の配信開始＝介護労働安定センター",
+          "url": "https://www.joint-kaigo.com/articles/49982/",
+          "date": "2026-10-29",
+          "category": "介護福祉士"
+        },
+        {
+          "hash": "87aa1f370e01f939",
+          "title": "今は制度改革期！ ケアマネに求められる役割は 近畿ブロック研究大会、来年2月に大阪で開催",
+          "url": "https://www.joint-kaigo.com/articles/49972/",
+          "date": "2026-10-29",
+          "category": "共生社会"
+        },
+        {
+          "hash": "54a18114349b8a0c",
+          "title": "登録施設介護支援、地域活動への参加など後押し 厚労省が業務案 ホーム外とのつながりを確保｜介護報酬改定",
+          "url": "https://www.joint-kaigo.com/articles/49962/",
+          "date": "2026-10-29",
+          "category": "超高齢化"
+        },
+        {
+          "hash": "372872d89f57af1b",
+          "title": "登録施設介護支援、ケアマネと地域生活相談員の兼務も可 管理者の主任ケアマネ要件は設けず 厚労省提案",
+          "url": "https://www.joint-kaigo.com/articles/49955/",
+          "date": "2026-10-29",
+          "category": "超高齢化"
+        },
         {
           "hash": "9a022061cd710740",
           "title": "登録施設介護支援の報酬、居宅と同じ枠組みで設定 逓減制も適用 厚労省提案",
@@ -8046,7 +8095,7 @@
           "title": "【壷内令子】居宅介護支援は二極化へ向かうか 管理者要件の緩和などで変わる経営戦略",
           "url": "https://www.joint-kaigo.com/articles/49924/",
           "date": "2026-10-28",
-          "category": "超高齢化"
+          "category": "コラム"
         },
         {
           "hash": "a9310151d8441055",
@@ -8060,14 +8109,14 @@
           "title": "福祉用具の給付対象を拡大 通信機能付きの車いす・介護ベッドなど 来年2月から適用 厚労省通知",
           "url": "https://www.joint-kaigo.com/articles/49905/",
           "date": "2026-10-28",
-          "category": "福祉用具"
+          "category": "介護保険"
         },
         {
           "hash": "9208b6ceca9def53",
           "title": "高齢者とAIの対話をケアに生かす NTTデータが「ボイスタ！」を刷新 本人の思いや変化を可視化 介護現場を支援",
           "url": "https://www.joint-kaigo.com/articles/49875/",
           "date": "2026-10-27",
-          "category": "超高齢化"
+          "category": "生産性向上"
         },
         {
           "hash": "51214b10ac68e9e8",
@@ -9073,7 +9122,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-10-28T23:03:25.886Z",
+      "lastCrawled": "2026-10-29T21:52:36.482Z",
       "items": [
         {
           "hash": "168fa493e6fcb94d",
@@ -9708,7 +9757,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-10-28T23:03:27.663Z",
+      "lastCrawled": "2026-10-29T21:52:38.446Z",
       "items": [
         {
           "hash": "db72875230def8fb",
@@ -10239,7 +10288,7 @@
     }
   },
   "preferredModel": "gemini-3.5-flash-lite",
-  "lastSentDate": "2026-10-29",
-  "lastRunAt": "2026-10-29T02:32:17.201Z",
-  "lastCrawlDate": "2026-10-29"
+  "lastSentDate": "2026-10-30",
+  "lastRunAt": "2026-10-30T02:42:12.044Z",
+  "lastCrawlDate": "2026-10-30"
 }
