@@ -1197,7 +1197,7 @@
   const FOUNDED = Date.UTC(2026, 7, 16); // 創刊 2026-08-16 = 第1号
   const state = {
     index: null, months: {}, day: null, filter: "all",
-    field: localStorage.getItem(FIELD_KEY) || "all",
+    field: "all",   // 読み込み直したら絞り込みは初期（すべて）に戻す（2026-10-30・ユーザー指示。分野が残って翌朝の新着が隠れた）
     deadlines: [], dlByHash: new Map(), // 期限ウォッチ(P11)
     view: "paper",                      // 面(P24): paper | grants
     grants: [], grantsLoaded: false,    // 助成(P24)。紙面の history とは別系統
@@ -1736,7 +1736,6 @@
     const b = e.target.closest(".chip");
     if (!b) return;
     state.field = b.dataset.fd;
-    try { localStorage.setItem(FIELD_KEY, state.field); } catch {}
     $("fieldChips").querySelectorAll(".chip").forEach((x) => x.classList.toggle("on", x === b));
     applyFilters();
   });
@@ -2454,7 +2453,6 @@
     const b = e.target.closest("[data-gfd]");
     if (!b) return;
     state.field = b.dataset.gfd;
-    try { localStorage.setItem(FIELD_KEY, state.field); } catch {}
     document.querySelectorAll("[data-fd]").forEach((x) =>
       x.classList.toggle("on", x.dataset.fd === state.field));
     applyFilters();  // 紙面側も追随させる（戻ったときに食い違わない）
@@ -2466,12 +2464,10 @@
     const u = b.dataset.guse;
     // 単一選択(P25)。同じチップを押したら解除する（「すべて」のチップを置かないため）
     state.use = state.use === u ? null : u;
-    try { localStorage.setItem(USES_KEY, JSON.stringify(state.use)); } catch {}
     renderGrants();
   });
   $("gAppli").addEventListener("change", (e) => {
     state.appliOnly = e.target.checked;
-    try { localStorage.setItem(APPLI_KEY, state.appliOnly ? "1" : "0"); } catch {}
     renderGrants();
   });
   // P31: スマホのselect（分野・用途）。チップと同じ state を書き、紙面側の分野にも追随させる
@@ -2483,7 +2479,6 @@
       .map(([v, l]) => `<option value="${esc(v)}">${esc(l)}</option>`).join("");
   $("gFieldSel").addEventListener("change", (e) => {
     state.field = e.target.value;
-    try { localStorage.setItem(FIELD_KEY, state.field); } catch {}
     document.querySelectorAll("[data-fd]").forEach((x) =>
       x.classList.toggle("on", x.dataset.fd === state.field));
     applyFilters();  // 紙面側も追随させる（gFieldsのチップと同じ振る舞い）
@@ -2491,7 +2486,6 @@
   });
   $("gUseSel").addEventListener("change", (e) => {
     state.use = e.target.value || null;
-    try { localStorage.setItem(USES_KEY, JSON.stringify(state.use)); } catch {}
     renderGrants();
   });
 
@@ -2500,7 +2494,6 @@
     const b = e.target.closest("[data-kfd]");
     if (!b) return;
     state.field = b.dataset.kfd;
-    try { localStorage.setItem(FIELD_KEY, state.field); } catch {}
     document.querySelectorAll("[data-fd]").forEach((x) =>
       x.classList.toggle("on", x.dataset.fd === state.field));
     applyFilters();
@@ -2520,7 +2513,6 @@
       .map(([v, l]) => `<option value="${esc(v)}">${esc(l)}</option>`).join("");
   $("kFieldSel").addEventListener("change", (e) => {
     state.field = e.target.value;
-    try { localStorage.setItem(FIELD_KEY, state.field); } catch {}
     document.querySelectorAll("[data-fd]").forEach((x) =>
       x.classList.toggle("on", x.dataset.fd === state.field));
     applyFilters();
@@ -2563,16 +2555,11 @@
       await renderDay();
 
       /* 助成(P24)。紙面の描画を待たせないよう後から読む。無くてもページは動く */
-      // P24-2は複数選択で配列を保存していた。P25で単一選択にしたので、
-      // 既に配列が入っている環境では先頭の1つを引き継ぐ（設定が消えて驚かせない）
-      try {
-        const v = JSON.parse(localStorage.getItem(USES_KEY) || "null");
-        state.use = Array.isArray(v) ? (v[0] ?? null) : (typeof v === "string" ? v : null);
-      } catch {}
-      // P31: 既定オン（使用者は基本的に社会福祉法人のため）。
-      // ⚠️保存値がある人はそれを尊重する——APPLI_KEY はトグルを実際に触ったときにしか
-      //   書かれないので、保存値＝本人の明示的な選択。無い人（初見・触ったことがない人）だけ既定オン
-      state.appliOnly = (localStorage.getItem(APPLI_KEY) ?? "1") === "1";
+      // 絞り込み（分野・用途・応募主体）は読み込み直したら初期に戻す（2026-10-30・ユーザー指示）。
+      // 以前の版が保存した値は消しておく（文字サイズは見え方の設定なので残す）
+      state.use = null;
+      state.appliOnly = true;   // P31: 既定オン（使用者は基本的に社会福祉法人のため）
+      try { [FIELD_KEY, USES_KEY, APPLI_KEY].forEach((k) => localStorage.removeItem(k)); } catch {}
       await loadGrants();
       refreshGrantCounts();
       if (params.get("v") === "grants") {
