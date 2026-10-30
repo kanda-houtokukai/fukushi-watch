@@ -40,7 +40,7 @@ def dbs_units():
         return list(dict.fromkeys(found))
     units = {}
     skip = {"updates", "sources", "events",           # 毎朝のデータで書かれる面（更新タスクが別に確かめる）
-            "kenshu", "docs", "doc", "law"}           # 照合係2人の照合を通した材料（kenshu.json・notes/・law.json）から組み立てる面（2026-10-30）
+            "kenshu", "materials", "doc", "law"}     # 照合係2人の照合を通した材料（kenshu.json・notes/・law.json）から組み立てる面（2026-10-30）。"docs" は「規程と書類」の章なので照合の対象に残す
     for f in sorted((src / "sections").glob("*.html")):
         t = f.read_text(encoding="utf-8")
         t = re.sub(r"\{\{([A-Z0-9_]+)\}\}", lambda m: (src / "svg" / (m.group(1) + ".svg")).read_text(encoding="utf-8"), t)
