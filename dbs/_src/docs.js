@@ -196,7 +196,7 @@
         var t = $(id);
         if (!t) { place(intent, st); return; }
         t.open = true;
-        requestAnimationFrame(function () { try { t.scrollIntoView({ block: "start", behavior: "instant" }); } catch (e) { t.scrollIntoView(); } reqCx(); });
+        requestAnimationFrame(function () { toTarget(t); reqCx(); });
       });
       return true;
     }

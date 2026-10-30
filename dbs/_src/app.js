@@ -648,6 +648,15 @@
   function saveY() { if (saveT) { clearTimeout(saveT); saveT = null; } setState({ y: Math.round(window.scrollY) }); }
   window.addEventListener("scroll", function () { if (saveT) clearTimeout(saveT); saveT = setTimeout(function () { saveT = null; setState({ y: Math.round(window.scrollY) }); }, 150); }, { passive: true });
   function jumpTop() { try { window.scrollTo({ top: 0, left: 0, behavior: "instant" }); } catch (e) { window.scrollTo(0, 0); } }
+  // 行き先の要素を画面の上へ。Q&A の絞り込み欄（上に貼り付く）があれば、その下に問の見出しが来るようにずらす
+  function toTarget(t) {
+    try { t.scrollIntoView({ block: "start", behavior: "instant" }); } catch (e) { t.scrollIntoView(); }
+    var v = t.closest(".view"), tools = v && v.querySelector(".qa-tools");
+    if (tools && !tools.contains(t) && getComputedStyle(tools).position === "sticky") {
+      var gap = t.getBoundingClientRect().top - tools.getBoundingClientRect().bottom - 8;
+      if (gap < 0) window.scrollBy(0, gap);
+    }
+  }
   function jumpTo(y) { try { window.scrollTo({ top: y, left: 0, behavior: "instant" }); } catch (e) { window.scrollTo(0, y); } }
   function renderSubnav(g, v) {
     if (!subnav) return;
@@ -711,7 +720,7 @@
     while (p && p !== vEl) { if (p.tagName === "DETAILS") p.open = true; p = p.parentElement; }
     if (intent !== "push" && typeof st.y === "number") { place(intent, st); return; }
     if (pane && t === pane) { jumpTop(); reqCx(); return; }
-    requestAnimationFrame(function () { try { t.scrollIntoView({ block: "start", behavior: "instant" }); } catch (e) { t.scrollIntoView(); } reqCx(); });
+    requestAnimationFrame(function () { toTarget(t); reqCx(); });
   }
   window.addEventListener("hashchange", route);
   document.addEventListener("click", function (e) {
