@@ -241,10 +241,12 @@
      二重罫は据え置き＝題字の格は保つ。⚠️固定はしない——題字は「このサイトが何か」を
      示すもので常時見える必要がなく、スクロールで流して紙面を読む面積に充てる（ユーザー指示）。
      スマホは max-width:899px の別定義（固定ヘッダー86px保証）で、この変更の影響を受けない */
-  .masthead{text-align:center;padding:16px 0 12px;border-bottom:3px double var(--ink)}
-  .masthead h1{font-size:clamp(30px,5vw,46px);font-weight:700;
+  /* 2026-11-01: 特設の帯が2本になり紙面が下がったため、題字を小さくした（46→36px・余白16/12→12/10。ユーザー指示）。
+     字送り・二重罫は据え置き */
+  .masthead{text-align:center;padding:12px 0 10px;border-bottom:3px double var(--ink)}
+  .masthead h1{font-size:clamp(26px,3vw,36px);font-weight:700;
     letter-spacing:.34em;text-indent:.34em;line-height:1.2}
-  .masthead .sub{font-size:12px;color:var(--sub);letter-spacing:.18em;margin-top:6px}
+  .masthead .sub{font-size:12px;color:var(--sub);letter-spacing:.18em;margin-top:4px}
 
   /* ==== 報道ティッカー(P20): 高さ最小・墨と朱の2色のまま ==== */
   /* P37: 下の細罫は削除（直下の日付見出しの太罫と二重）。
