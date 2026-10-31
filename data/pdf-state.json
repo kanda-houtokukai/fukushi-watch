@@ -1333,8 +1333,8 @@
   "resultsVersion": 6
  },
  "_aiBudget": {
-  "date": "2026-10-31",
-  "calls": 0
+  "date": "2026-11-01",
+  "calls": 3
  },
  "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2025/06/e9884305e5ec37f96e4c3bf628e95c9b-2.pdf": {
   "etag": null,
@@ -1458,6 +1458,343 @@
      "model": "gemini-3.7-flash"
     },
     "outline": null
+   }
+  },
+  "resultsVersion": 6
+ },
+ "https://www.f-kaigo.jp/upimg/u6ae41dc9ca7f5.pdf": {
+  "etag": "\"c1597-65f074788ea7a\"",
+  "lastModified": "Fri, 30 Oct 2026 04:32:09 GMT",
+  "contentLength": "791959",
+  "size": 791959,
+  "seenAt": "2026-11-01",
+  "results": {
+   "629cf80a86459a41": {
+    "deadline": {
+     "iso": "2026-11-03",
+     "raw": "令和8年11月3日"
+    },
+    "outline": [
+     {
+      "name": "日時",
+      "value": "令和８年１１月１５日（日）９：５０～１１：５０（受付９：２０～）"
+     },
+     {
+      "name": "会場",
+      "value": "中間ハーモニーホール２階会議室１（中間市蓮花寺３－７－１）※予定"
+     },
+     {
+      "name": "講師",
+      "value": "尾辻幸樹氏（認知症対応型共同生活介護グレース東郷管理者）"
+     },
+     {
+      "name": "参加費",
+      "value": "会員・賛助会員・学生・・・無料非会員・・・２，０００円"
+     },
+     {
+      "name": "定員",
+      "value": "２０名"
+     },
+     {
+      "name": "ポイント",
+      "value": "２ポイント"
+     }
+    ]
+   }
+  },
+  "resultsVersion": 6
+ },
+ "https://www.f-kaigo.jp/upimg/x6ae41e14e6292.pdf": {
+  "etag": "\"c1597-65f074c030c74\"",
+  "lastModified": "Fri, 30 Oct 2026 04:33:24 GMT",
+  "contentLength": "791959",
+  "size": 791959,
+  "seenAt": "2026-11-01",
+  "results": {
+   "77564d62306136e2": {
+    "deadline": {
+     "iso": "2026-11-19",
+     "raw": "令和8年11月19日"
+    },
+    "outline": [
+     {
+      "name": "日時",
+      "value": "令和８年１２月５日（土）１０：００～１２：００（受付９：３０～）"
+     },
+     {
+      "name": "会場",
+      "value": "ユメニティーのおがた 会議室１．２ （直方市山部３６４－１）"
+     },
+     {
+      "name": "講師",
+      "value": "医療法人博愛会頴田病院看護部"
+     },
+     {
+      "name": "参加費",
+      "value": "会員・賛助会員・学生・・・無料非会員・・・２，０００円"
+     },
+     {
+      "name": "定員",
+      "value": "３０名"
+     },
+     {
+      "name": "ポイント",
+      "value": "２ポイント"
+     }
+    ]
+   }
+  },
+  "resultsVersion": 6
+ },
+ "https://www.f-kaigo.jp/upimg/r6ae41e95431a1.pdf": {
+  "etag": "\"c1597-65f0753a93fcb\"",
+  "lastModified": "Fri, 30 Oct 2026 04:35:33 GMT",
+  "contentLength": "791959",
+  "size": 791959,
+  "seenAt": "2026-11-01",
+  "results": {
+   "5794f7e33d79f7b8": {
+    "deadline": {
+     "iso": "2027-01-28",
+     "raw": "令和9年1月28日"
+    },
+    "outline": [
+     {
+      "name": "日時",
+      "value": "令和９年２月１４日（日）１０：００～１２：００（受付９：３０～）"
+     },
+     {
+      "name": "会場",
+      "value": "福岡県介護福祉士会研修室（福岡市博多区博多駅東１－１－１６第２高田ビル２Ｆ）"
+     },
+     {
+      "name": "講師",
+      "value": "福岡県介護福祉士会災害対策検討委員"
+     },
+     {
+      "name": "参加費",
+      "value": "会員・賛助会員・学生…無料非会員…２，０００円"
+     },
+     {
+      "name": "定員",
+      "value": "３０名"
+     },
+     {
+      "name": "ポイント",
+      "value": "２ポイント"
+     }
+    ]
+   }
+  },
+  "resultsVersion": 6
+ },
+ "https://www.f-kaigo.jp/upimg/b6ae41f14638c1.pdf": {
+  "etag": "\"c1597-65f075b3d2393\"",
+  "lastModified": "Fri, 30 Oct 2026 04:37:40 GMT",
+  "contentLength": "791959",
+  "size": 791959,
+  "seenAt": "2026-11-01",
+  "results": {
+   "6a1740a8bfc1c6a2": {
+    "deadline": {
+     "iso": "2027-01-28",
+     "raw": "令和9年1月28日"
+    },
+    "outline": [
+     {
+      "name": "日時",
+      "value": "令和９年２月１４日（日）１４：３０～１６：３０（受付１４：００～）"
+     },
+     {
+      "name": "会場",
+      "value": "福岡県介護福祉士会研修室（福岡市博多区博多駅東１－１－１６第２高田ビル２Ｆ）"
+     },
+     {
+      "name": "講師",
+      "value": null
+     },
+     {
+      "name": "参加費",
+      "value": "正会員限定・・・無料"
+     },
+     {
+      "name": "定員",
+      "value": "25 名"
+     },
+     {
+      "name": "ポイント",
+      "value": "２ポイント"
+     }
+    ]
+   }
+  },
+  "resultsVersion": 6
+ },
+ "https://www.f-kaigo.jp/upimg/m6ae41ffeb93d2.pdf": {
+  "etag": "\"c1597-65f0769350e0e\"",
+  "lastModified": "Fri, 30 Oct 2026 04:41:34 GMT",
+  "contentLength": "791959",
+  "size": 791959,
+  "seenAt": "2026-11-01",
+  "results": {
+   "b09812e1d7786756": {
+    "deadline": {
+     "iso": "2027-02-04",
+     "raw": "令和9年2月4日"
+    },
+    "outline": [
+     {
+      "name": "日時",
+      "value": "令和９年２月２１日（日）１０：００～１２：００（受付９：３０～）"
+     },
+     {
+      "name": "会場",
+      "value": "社会福祉法人朝倉社会事業協会朝倉苑研修センター（朝倉郡筑前町原地蔵２２２６－３）"
+     },
+     {
+      "name": "講師",
+      "value": "椎葉文子氏（福岡県介護福祉士会理事）"
+     },
+     {
+      "name": "参加費",
+      "value": "会員、賛助会員、学生…無料非会員…２，０００円"
+     },
+     {
+      "name": "定員",
+      "value": "２０名"
+     },
+     {
+      "name": "ポイント",
+      "value": "２ポイント"
+     }
+    ]
+   }
+  },
+  "resultsVersion": 6
+ },
+ "https://www.f-kaigo.jp/upimg/k6ae420759483e.pdf": {
+  "etag": "\"c1597-65f07704a9035\"",
+  "lastModified": "Fri, 30 Oct 2026 04:43:33 GMT",
+  "contentLength": "791959",
+  "size": 791959,
+  "seenAt": "2026-11-01",
+  "results": {
+   "d0555ce5ca7f1a8d": {
+    "deadline": {
+     "iso": "2027-02-11",
+     "raw": "令和9年2月11日"
+    },
+    "outline": [
+     {
+      "name": "日時",
+      "value": "令和９年２月２５日（木）１４：００～１６：００（受付１３：３０～）"
+     },
+     {
+      "name": "会場",
+      "value": "福岡県介護福祉士会研修室（福岡市博多区博多駅東１－１－１６第２高田ビル２Ｆ）"
+     },
+     {
+      "name": "講師",
+      "value": "ファシリテーター小笠原靖治（福岡県介護福祉士会副会長）"
+     },
+     {
+      "name": "参加費",
+      "value": "会員・学生…無料非会員…２，０００円"
+     },
+     {
+      "name": "定員",
+      "value": "２５名"
+     },
+     {
+      "name": "ポイント",
+      "value": "２ポイント"
+     }
+    ]
+   }
+  },
+  "resultsVersion": 6
+ },
+ "https://www.f-kaigo.jp/upimg/m6ae4214156b2a.pdf": {
+  "etag": "\"7262a-65f077c6f79c7\"",
+  "lastModified": "Fri, 30 Oct 2026 04:46:57 GMT",
+  "contentLength": "468522",
+  "size": 468522,
+  "seenAt": "2026-11-01",
+  "results": {
+   "c03fd26f2be74b0d": {
+    "deadline": {
+     "iso": "2027-02-12",
+     "raw": "令和9年2月12日",
+     "model": "gemini-3.7-flash"
+    },
+    "outline": [
+     {
+      "name": "日時",
+      "value": "令和9年2月27日(土)10:00~12:00(受付9:30~)"
+     },
+     {
+      "name": "会場",
+      "value": "福岡県介護福祉士会研修室(福岡市博多区博多駅東1-1-16-2F)"
+     },
+     {
+      "name": "講師",
+      "value": "松永幸代氏(公益社団法人福岡県介護支援専門員協会常任理事)"
+     },
+     {
+      "name": "参加費",
+      "value": "会員・賛助会員・学生:無料非会員:2,000円"
+     },
+     {
+      "name": "定員",
+      "value": "30名"
+     },
+     {
+      "name": "ポイント",
+      "value": null
+     }
+    ]
+   }
+  },
+  "resultsVersion": 6
+ },
+ "https://www.f-kaigo.jp/upimg/i6ae420c2c96fd.pdf": {
+  "etag": "\"c1597-65f0774e4cc8b\"",
+  "lastModified": "Fri, 30 Oct 2026 04:44:50 GMT",
+  "contentLength": "791959",
+  "size": 791959,
+  "seenAt": "2026-11-01",
+  "results": {
+   "e867ff259cf780e9": {
+    "deadline": {
+     "iso": "2027-02-25",
+     "raw": "令和9年2月25日"
+    },
+    "outline": [
+     {
+      "name": "日時",
+      "value": "令和９年３月１３日（土）１８：３０～２０：００（受付１８：００～）"
+     },
+     {
+      "name": "会場",
+      "value": "ウェル戸畑（北九州市戸畑区汐井町１－６）"
+     },
+     {
+      "name": "講師",
+      "value": "甲斐健吾氏（福岡県介護福祉士会理事）"
+     },
+     {
+      "name": "参加費",
+      "value": "会員・賛助会員・学生…無料非会員…２，０００円"
+     },
+     {
+      "name": "定員",
+      "value": "２０名"
+     },
+     {
+      "name": "ポイント",
+      "value": "２ポイント"
+     }
+    ]
    }
   },
   "resultsVersion": 6

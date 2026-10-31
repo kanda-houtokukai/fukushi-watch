@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-10-30T21:36:44.346Z",
+      "lastCrawled": "2026-10-31T20:30:07.271Z",
       "items": [
         {
           "hash": "7e06f729e98df08e",
@@ -1224,7 +1224,7 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-10-30T21:36:44.649Z",
+      "lastCrawled": "2026-10-31T20:30:07.661Z",
       "items": [
         {
           "hash": "8761ff1679ca5982",
@@ -5177,7 +5177,7 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-10-30T21:36:46.011Z",
+      "lastCrawled": "2026-10-31T20:30:08.837Z",
       "items": [
         {
           "hash": "82a672754ae1202a",
@@ -7282,8 +7282,15 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-10-30T21:36:47.838Z",
+      "lastCrawled": "2026-10-31T20:30:10.560Z",
       "items": [
+        {
+          "hash": "d0b6b1021e2cc6dc",
+          "title": "指定自立支援医療機関名簿（精神通院医療）",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/seishintuuin2704.html",
+          "date": "2026年11月1日更新",
+          "category": ""
+        },
         {
           "hash": "4220347170390bfe",
           "title": "旧優生保護法被害者の皆さまと面談しました（福岡市）",
@@ -7310,13 +7317,6 @@
           "title": "福岡県こども療育センター新光園ホームページ（トップページ)",
           "url": "https://www.pref.fukuoka.lg.jp/contents/syo-kai.html",
           "date": "2026年10月21日更新",
-          "category": ""
-        },
-        {
-          "hash": "1bfcc2260a1b3052",
-          "title": "福岡県腎臓疾患患者福祉給付金に関する手続きについて",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/jinzou.html",
-          "date": "2026年10月15日更新",
           "category": ""
         },
         {
@@ -7355,10 +7355,10 @@
           "category": ""
         },
         {
-          "hash": "ed74897de5e3f4bf",
+          "hash": "d0b6b1021e2cc6dc",
           "title": "指定自立支援医療機関名簿（精神通院医療）",
           "url": "https://www.pref.fukuoka.lg.jp/contents/seishintuuin2704.html",
-          "date": "2026年10月1日更新",
+          "date": "2026年11月1日更新",
           "category": ""
         },
         {
@@ -7450,6 +7450,20 @@
           "title": "IT業務を発注して障がいのある方の自立を支える力に！",
           "url": "https://www.pref.fukuoka.lg.jp/contents/it-kyodozyuchu.html",
           "date": "2026年3月5日更新",
+          "category": ""
+        },
+        {
+          "hash": "1bfcc2260a1b3052",
+          "title": "福岡県腎臓疾患患者福祉給付金に関する手続きについて",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/jinzou.html",
+          "date": "2026年10月15日更新",
+          "category": ""
+        },
+        {
+          "hash": "ed74897de5e3f4bf",
+          "title": "指定自立支援医療機関名簿（精神通院医療）",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/seishintuuin2704.html",
+          "date": "2026年10月1日更新",
           "category": ""
         },
         {
@@ -7637,7 +7651,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-10-30T21:36:48.229Z",
+      "lastCrawled": "2026-10-31T20:30:10.943Z",
       "items": [
         {
           "hash": "c16f59eab0cefc3b",
@@ -7696,17 +7710,17 @@
           "category": ""
         },
         {
-          "hash": "d7fadf881c873ddf",
-          "title": "11月は「ふくおか・みんなで家族月間」！協賛事業を募集しています！",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/kazokugekkann2026.html",
-          "date": "2026年9月17日更新",
-          "category": ""
-        },
-        {
           "hash": "7bcda6c6a0d39bc7",
           "title": "届出保育施設のうち居宅訪問型保育事業所（ベビーシッター）に対する指導監督について",
           "url": "https://www.pref.fukuoka.lg.jp/contents/todokede-babysitter.html",
           "date": "2026年9月11日更新",
+          "category": ""
+        },
+        {
+          "hash": "d45f63ddbc543471",
+          "title": "令和８年度福岡県届出保育施設におけるＩＣＴ導入支援費補助金についてのお知らせ",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/ictshinsei.html",
+          "date": "2026年9月4日更新",
           "category": ""
         },
         {
@@ -7920,10 +7934,10 @@
           "category": ""
         },
         {
-          "hash": "d45f63ddbc543471",
-          "title": "令和８年度福岡県届出保育施設におけるＩＣＴ導入支援費補助金についてのお知らせ",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/ictshinsei.html",
-          "date": "2026年9月4日更新",
+          "hash": "d7fadf881c873ddf",
+          "title": "11月は「ふくおか・みんなで家族月間」！協賛事業を募集しています！",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kazokugekkann2026.html",
+          "date": "2026年9月17日更新",
           "category": ""
         },
         {
@@ -8361,14 +8375,42 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-10-29T21:52:37.453Z",
+      "lastCrawled": "2026-10-31T20:30:12.148Z",
       "items": [
+        {
+          "hash": "a6cd3938268a1db7",
+          "title": "障害福祉グループホーム、自己評価・外部評価の実施を指定基準に 厚労省提案 地域連携推進会議は年2回以上に",
+          "url": "https://www.joint-kaigo.com/articles/50040/",
+          "date": "2026-10-31",
+          "category": "共生社会"
+        },
+        {
+          "hash": "22c4ba92d6a6e4c0",
+          "title": "障害福祉グループホームの大規模減算を強化 厚労省提案 適用対象の拡大も 来年度改定",
+          "url": "https://www.joint-kaigo.com/articles/50019/",
+          "date": "2026-10-30",
+          "category": "自治体"
+        },
+        {
+          "hash": "5ee9b4219efacc20",
+          "title": "来年度改定、基本報酬の引き上げを重点に 自民議連が財務相へ要請 処遇改善加算の事務負担の軽減も",
+          "url": "https://www.joint-kaigo.com/articles/50009/",
+          "date": "2026-10-30",
+          "category": "テクノロジ"
+        },
+        {
+          "hash": "fe0d509d546f1af1",
+          "title": "介護報酬の地域区分、現行の単価も維持可能に 厚労省が経過措置を提案｜来年度改定",
+          "url": "https://www.joint-kaigo.com/articles/50005/",
+          "date": "2026-10-30",
+          "category": "福祉用具"
+        },
         {
           "hash": "6a8d94558d720367",
           "title": "【超実践】介護現場のリーダーに必要な知識やスキルを学ぶ！ 動画研修の配信開始＝介護労働安定センター",
           "url": "https://www.joint-kaigo.com/articles/49982/",
           "date": "2026-10-29",
-          "category": "介護福祉士"
+          "category": "生産性向上"
         },
         {
           "hash": "87aa1f370e01f939",
@@ -8382,14 +8424,14 @@
           "title": "登録施設介護支援、地域活動への参加など後押し 厚労省が業務案 ホーム外とのつながりを確保｜介護報酬改定",
           "url": "https://www.joint-kaigo.com/articles/49962/",
           "date": "2026-10-29",
-          "category": "超高齢化"
+          "category": "介護保険"
         },
         {
           "hash": "372872d89f57af1b",
           "title": "登録施設介護支援、ケアマネと地域生活相談員の兼務も可 管理者の主任ケアマネ要件は設けず 厚労省提案",
           "url": "https://www.joint-kaigo.com/articles/49955/",
           "date": "2026-10-29",
-          "category": "超高齢化"
+          "category": "介護保険"
         },
         {
           "hash": "9a022061cd710740",
@@ -8403,7 +8445,7 @@
           "title": "【壷内令子】居宅介護支援は二極化へ向かうか 管理者要件の緩和などで変わる経営戦略",
           "url": "https://www.joint-kaigo.com/articles/49924/",
           "date": "2026-10-28",
-          "category": "コラム"
+          "category": "超高齢化"
         },
         {
           "hash": "a9310151d8441055",
@@ -9430,8 +9472,15 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-10-30T21:36:48.653Z",
+      "lastCrawled": "2026-10-31T20:30:11.312Z",
       "items": [
+        {
+          "hash": "7977ecfb8934b1f6",
+          "title": "特別養護老人ホーム(指定介護老人福祉施設）の一覧",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/tokuyou.html",
+          "date": "2026年11月1日更新",
+          "category": ""
+        },
         {
           "hash": "168fa493e6fcb94d",
           "title": "消費生活用製品（福祉用具）の重大製品事故に係る公表について",
@@ -9458,13 +9507,6 @@
           "title": "「処遇改善加算取得のための勉強会」について",
           "url": "https://www.pref.fukuoka.lg.jp/contents/syogusokushin.html",
           "date": "2026年8月12日更新",
-          "category": ""
-        },
-        {
-          "hash": "14a4f6fdbaabe2b5",
-          "title": "令和８年熊本地震に伴う災害により被災した要介護高齢者等への対応及び災害による被災者に係る被保険者証の提示等について",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/r8-kumamotojishin.html",
-          "date": "2026年8月7日更新",
           "category": ""
         },
         {
@@ -9573,6 +9615,13 @@
           "category": ""
         },
         {
+          "hash": "1d6337dea040f917",
+          "title": "介護保険指定更新事業所（令和８年１１月更新）リスト",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kousin.html",
+          "date": "2026年11月1日更新",
+          "category": ""
+        },
+        {
           "hash": "adc66c8d58a70661",
           "title": "介護職員が喀痰吸引等を実施するためには（認定特定行為業務従事者認定証の交付申請等）",
           "url": "https://www.pref.fukuoka.lg.jp/contents/ninteisyou-youshiki.html",
@@ -9583,13 +9632,6 @@
           "hash": "a71d54d9bbe909d3",
           "title": "令和８年度福岡県外国人介護人材確保強化事業費補助金に係るご案内",
           "url": "https://www.pref.fukuoka.lg.jp/contents/kakuhokyoka.html",
-          "date": "2026年10月1日更新",
-          "category": ""
-        },
-        {
-          "hash": "8c64827511f01413",
-          "title": "介護保険指定更新事業所（令和８年１０月更新）リスト",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/kousin.html",
           "date": "2026年10月1日更新",
           "category": ""
         },
@@ -9710,6 +9752,20 @@
           "title": "令和8年度介護支援専門員実務研修受講試験",
           "url": "https://www.pref.fukuoka.lg.jp/contents/keamaneshiken.html",
           "date": "2026年10月5日更新",
+          "category": ""
+        },
+        {
+          "hash": "14a4f6fdbaabe2b5",
+          "title": "令和８年熊本地震に伴う災害により被災した要介護高齢者等への対応及び災害による被災者に係る被保険者証の提示等について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/r8-kumamotojishin.html",
+          "date": "2026年8月7日更新",
+          "category": ""
+        },
+        {
+          "hash": "8c64827511f01413",
+          "title": "介護保険指定更新事業所（令和８年１０月更新）リスト",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/kousin.html",
+          "date": "2026年10月1日更新",
           "category": ""
         },
         {
@@ -10065,7 +10121,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-10-30T21:37:15.468Z",
+      "lastCrawled": "2026-10-31T20:30:12.993Z",
       "items": [
         {
           "hash": "db72875230def8fb",
@@ -10596,7 +10652,7 @@
     }
   },
   "preferredModel": "gemini-3.5-flash-lite",
-  "lastSentDate": "2026-10-31",
-  "lastRunAt": "2026-10-31T02:31:24.292Z",
-  "lastCrawlDate": "2026-10-31"
+  "lastSentDate": "2026-11-01",
+  "lastRunAt": "2026-10-31T20:30:16.267Z",
+  "lastCrawlDate": "2026-11-01"
 }

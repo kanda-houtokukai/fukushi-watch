@@ -1,6 +1,113 @@
 {
-  "generatedAt": "2026-10-31T02:31:24.220Z",
-  "model": null,
-  "items": [],
-  "press": []
+  "generatedAt": "2026-10-31T20:30:16.204Z",
+  "model": "gemini-3.5-flash-lite",
+  "items": [
+    {
+      "hash": "d0b6b1021e2cc6dc",
+      "source": "福岡県（障がい福祉）",
+      "title": "指定自立支援医療機関名簿（精神通院医療）",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/seishintuuin2704.html",
+      "date": "2026年11月1日更新",
+      "category": "",
+      "summary": "精神通院医療に係る指定自立支援医療機関の最新の名簿です。障害福祉サービスの利用者が適切な医療支援を受けられているか確認する際に参照します。",
+      "importance": "低",
+      "fields": [
+        "障害"
+      ],
+      "reason": "既存の指定機関リストの更新であり、新規の対応や届出が必要な情報ではないため。"
+    },
+    {
+      "hash": "d0b6b1021e2cc6dc",
+      "source": "福岡県（障がい福祉）",
+      "title": "指定自立支援医療機関名簿（精神通院医療）",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/seishintuuin2704.html",
+      "date": "2026年11月1日更新",
+      "category": "",
+      "summary": "精神通院医療に係る指定自立支援医療機関の最新の名簿です。障害福祉サービスの利用者が適切な医療支援を受けられているか確認する際に参照します。",
+      "importance": "低",
+      "fields": [
+        "障害"
+      ],
+      "reason": "既存の指定機関リストの更新であり、新規の対応や届出が必要な情報ではないため。"
+    },
+    {
+      "hash": "7977ecfb8934b1f6",
+      "source": "福岡県（介護・高齢者福祉）",
+      "title": "特別養護老人ホーム(指定介護老人福祉施設）の一覧",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/tokuyou.html",
+      "date": "2026年11月1日更新",
+      "category": "",
+      "summary": "地域内の特別養護老人ホーム（指定介護老人福祉施設）の所在地や連絡先などをまとめた一覧です。高齢者福祉の利用状況や他施設との連携状況を把握する際に活用します。",
+      "importance": "低",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "事業者向けの通知や制度改正ではなく、単なる施設一覧の公開であるため。"
+    },
+    {
+      "hash": "1d6337dea040f917",
+      "source": "福岡県（介護・高齢者福祉）",
+      "title": "介護保険指定更新事業所（令和８年１１月更新）リスト",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/kousin.html",
+      "date": "2026年11月1日更新",
+      "category": "",
+      "summary": "令和8年11月に介護保険の指定更新を迎える事業所のリストです。該当する事業所は指定更新手続きの期限や実施状況を確認する必要があります。",
+      "importance": "高",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "指定更新に関するスケジュールや対象事業所の確認が直接必要になる実務上の重要情報であるため。",
+      "action": "一般に、こうした通知では自事業所が対象に含まれているかの確認や、指定更新手続きの期限・実施要領に関する確認が必要になります。"
+    }
+  ],
+  "press": [
+    {
+      "hash": "a6cd3938268a1db7",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "障害福祉グループホーム、自己評価・外部評価の実施を指定基準に 厚労省提案 地域連携推進会議は年2回以上に",
+      "url": "https://www.joint-kaigo.com/articles/50040/",
+      "date": "2026-10-31",
+      "category": "共生社会",
+      "fields": [
+        "障害"
+      ]
+    },
+    {
+      "hash": "22c4ba92d6a6e4c0",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "障害福祉グループホームの大規模減算を強化 厚労省提案 適用対象の拡大も 来年度改定",
+      "url": "https://www.joint-kaigo.com/articles/50019/",
+      "date": "2026-10-30",
+      "category": "自治体",
+      "fields": [
+        "障害"
+      ]
+    },
+    {
+      "hash": "5ee9b4219efacc20",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "来年度改定、基本報酬の引き上げを重点に 自民議連が財務相へ要請 処遇改善加算の事務負担の軽減も",
+      "url": "https://www.joint-kaigo.com/articles/50009/",
+      "date": "2026-10-30",
+      "category": "テクノロジ",
+      "fields": [
+        "高齢"
+      ]
+    },
+    {
+      "hash": "fe0d509d546f1af1",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "介護報酬の地域区分、現行の単価も維持可能に 厚労省が経過措置を提案｜来年度改定",
+      "url": "https://www.joint-kaigo.com/articles/50005/",
+      "date": "2026-10-30",
+      "category": "福祉用具",
+      "fields": [
+        "高齢"
+      ]
+    }
+  ]
 }

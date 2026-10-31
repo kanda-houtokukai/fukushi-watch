@@ -1,120 +1,6 @@
 {
- "updatedAt": "2026-10-30T21:47:25.888Z",
+ "updatedAt": "2026-10-31T20:33:27.253Z",
  "items": [
-  {
-   "hash": "719f315932a5da04",
-   "source": "全社協 福祉の助成情報",
-   "sourceKind": "org",
-   "funder": "キリン福祉財団",
-   "title": "キリン・地域のちから応援事業",
-   "url": "https://www.shakyo.or.jp/guide/sponsor/p/260925kirinC.html",
-   "postedAt": "2026-09-25",
-   "deadline": "2026-10-31",
-   "deadlineType": "date",
-   "deadlineRaw": "2026年10月31日",
-   "summary": "地域における障害児・者、高齢者、子どもなどの福祉向上に関わる幅広いボランティア活動を行う団体を支援する助成金です。4名以上のメンバーが活動する団体が応募できます。",
-   "fields": [
-    "共通"
-   ],
-   "uses": [
-    "事業・活動"
-   ],
-   "applicants": [
-    "社会福祉法人",
-    "NPO・公益法人",
-    "任意団体"
-   ],
-   "amount": "1件(団体)30万円上限",
-   "conditions": [
-    {
-     "axis": "設立・活動年数",
-     "quote": "法人格の有無、活動年数は問いません。"
-    },
-    {
-     "axis": "主体の付帯条件",
-     "quote": "4名以上のメンバーが活動し、連絡責任者は満18歳以上(2027年4月1日現在)であること。"
-    },
-    {
-     "axis": "主体の付帯条件",
-     "quote": "申込は郵送によります。"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "(1)子ども・子育て世代の福祉向上に関わるもの"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "(2)シルバー世代の福祉向上に関わるもの"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "(3)障害や困りごとのある人・支える人の福祉向上に関わるもの"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "(4)地域やコミュニティの活性化に関わるもの"
-    }
-   ],
-   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260925kirinC.html"
-  },
-  {
-   "hash": "524ce67572bc5c8a",
-   "source": "全社協 福祉の助成情報",
-   "sourceKind": "org",
-   "funder": "キリン福祉財団",
-   "title": "キリン・福祉のちから開拓事業",
-   "url": "https://www.shakyo.or.jp/guide/sponsor/p/260925kirinH.html",
-   "postedAt": "2026-09-25",
-   "deadline": "2026-10-31",
-   "deadlineType": "date",
-   "deadlineRaw": "2026年10月31日",
-   "summary": "障害者、高齢者、児童・青少年の福祉向上や地域社会の福祉に関わるボランティア活動を全国や広域で実施・計画している団体を支援する助成金です。10名以上のメンバーが活動する団体が応募できます。",
-   "fields": [
-    "共通"
-   ],
-   "uses": [
-    "人材・研修",
-    "研究・調査",
-    "行事・啓発"
-   ],
-   "applicants": [
-    "社会福祉法人",
-    "NPO・公益法人",
-    "任意団体"
-   ],
-   "amount": "1件(団体)100万円上限",
-   "conditions": [
-    {
-     "axis": "設立・活動年数",
-     "quote": "法人格の有無、活動年数は問いません。"
-    },
-    {
-     "axis": "主体の付帯条件",
-     "quote": "10名以上のメンバーが活動し、連絡責任者は満18歳以上(2027年4月1日現在)であること。"
-    },
-    {
-     "axis": "主体の付帯条件",
-     "quote": "申込は郵送によります。"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "(1)障害者の福祉向上に関わるもの"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "(2)高齢者の福祉向上に関わるもの"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "(3)児童・青少年の福祉向上に関わるもの"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "(4)地域社会の福祉向上に関わるもの"
-    }
-   ],
-   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260925kirinH.html"
-  },
   {
    "hash": "45c00d1b0f531d29",
    "source": "福岡県（子ども・青少年）",
@@ -744,5 +630,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-10-31"
+ "lastFetchDate": "2026-11-01"
 }
