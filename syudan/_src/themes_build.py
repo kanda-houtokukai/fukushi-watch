@@ -93,11 +93,16 @@ GENSAN = [
     (r"夜勤", "jin", [], None),
     (r"ユニット", "jin", [(r"ユニット.*勤務体制", None), (r"勤務体制の確保", r"ユニット"), (r"勤務体制の確保", None)], "ユニット"),
     (r"安全管理体制", "anzen", [(r"事故発生", None)], "事故"),
-    (r"栄養管理", "keikaku", [(r"^栄養管理", None)], "栄養"),
+    (r"栄養管理", "keikaku", [(r"^栄養管理", None), (r"栄養士", None), (r"人員に関する基準", None)], "栄養"),
+    (r"療養環境", "jin", [(r"施設及び設備に関する基準", None)], "廊下"),
+    (r"診療を行わなかった|診療未実施", "keikaku", [(r"リハビリテーション計画の作成", None)], "診療"),
 ]
 # 基準から外すもの（県の要点が対象を絞っているもの）。(資料, 減算の名前) → 外す見出しの語
 GENSAN_EXCL = {("ji", r"人員欠如|人員基準欠如"): r"^児童発達支援センターの員数|入所施設の員数",   # 要点「児発（センター…を除く）…が対象」
-               ("tokutei", r"人員欠如|人員基準欠如"): r"人員に関する基準"}   # この資料の「人員に関する基準」の要点は外部サービス利用型・生産性向上の特例
+               ("tokutei", r"人員欠如|人員基準欠如"): r"生産性向上",   # 生産性向上の特例の見出しは基準そのものではない
+               ("tanryo", r"療養環境"): r"."}   # 経過措置の病床の減算。照合で付け先を確かめていないので単独で出す
+# 基準から外すもの（要点の語で見分ける。題名が同じ見出しがあるため）
+GENSAN_EXCL_NOTE = {("ji", r"人員欠如|人員基準欠如"): r"主として重症心身障がい児"}   # 減算の要点「主に重心児の事業所を除く」
 
 
 def nf(s):
@@ -217,6 +222,7 @@ def build(fid, toc, notes):
                 continue   # Q&A・指摘事例の中の減算は、テーマの1項目として出す
             rule = next((r for r in GENSAN if r[0] == g["pat"]), None)
             excl = next((v for (dd, pp), v in GENSAN_EXCL.items() if dd == did and pp == g["pat"]), None)
+            exn = next((v for (dd, pp), v in GENSAN_EXCL_NOTE.items() if dd == did and pp == g["pat"]), None)
             bases = []
             for bpat, cpat in (rule[2] if rule else []):
                 cand = []
@@ -228,6 +234,8 @@ def build(fid, toc, notes):
                     if not re.search(bpat, clean(f["t"])) or (cpat and not re.search(cpat, nf(f["sec"] or ""))):
                         continue
                     if excl and re.search(excl, clean(f["t"])):
+                        continue
+                    if exn and re.search(exn, ntext(b)):
                         continue
                     if rule[3] and rule[3] not in ntext(b):
                         continue   # 基準の要点に、減算の話（拘束・事故など）が出てこないものは付けない
