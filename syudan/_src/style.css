@@ -50,7 +50,12 @@ a:hover { text-decoration-thickness: 2px; }
 .topbar-in { max-width: 1240px; margin: 0 auto; display: flex; align-items: center; gap: 14px; height: 58px; }
 .brand { font-family: var(--f-display); font-weight: 700; font-size: 14.5px; letter-spacing: .03em; white-space: nowrap; color: var(--ink); text-decoration: none; display: flex; align-items: baseline; gap: 6px; flex: none; }
 .brand span { font-size: 12px; color: var(--ink-3); font-weight: 500; }
-.gnav { display: flex; gap: 2px; flex: 1; min-width: 0; justify-content: center; margin-right: 180px; }
+.gnav { display: flex; gap: 2px; flex: 1; min-width: 0; justify-content: flex-end; }
+/* 分野の切り替え（障がい・高齢・保育）。押すとその分野のページへ移る */
+.fsw { display: inline-flex; flex: none; padding: 2px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface-2); }
+.fsw a { font-size: 12.5px; line-height: 1.5; padding: 4px 13px; border-radius: 999px; color: var(--ink-2); text-decoration: none; white-space: nowrap; }
+.fsw a:hover { color: var(--ac); }
+.fsw a[aria-current="page"] { background: var(--ac); color: #fff; font-weight: 700; }
 .gnav a { font-size: 13.5px; color: var(--ink-2); text-decoration: none; padding: 7px 12px; border-radius: 4px; white-space: nowrap; position: relative; }
 .gnav a:hover { background: var(--surface-2); color: var(--ink); }
 .gnav a.is-active { color: var(--ac); font-weight: 700; }
@@ -126,6 +131,9 @@ main { padding-block: 28px 0; min-width: 0; }
 
 .plain { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 14.5px; }
 .plain a { display: inline-flex; align-items: center; min-height: 32px; }
+.site-links { flex-direction: column; gap: 6px; }
+.site-links li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 12px; }
+.site-links .note { font-size: 12.5px; color: var(--ink-3); }
 
 /* ── サービス別 ───────────────────────── */
 .svc-head { margin-bottom: 18px; }
@@ -266,7 +274,7 @@ a.hit:hover .h { color: var(--ac); text-decoration: underline; }
   .subnav li a span:first-child { max-width: 15em; overflow: hidden; text-overflow: ellipsis; }
   .subnav .sn-back { display: none; }
   .tabbar {
-    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+    display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr);
     position: fixed; z-index: 40; left: 0; right: 0; bottom: 0;
     background: var(--surface); border-top: 1px solid var(--line);
     padding: 4px max(4px, env(safe-area-inset-right, 0px)) calc(4px + env(safe-area-inset-bottom, 0px)) max(4px, env(safe-area-inset-left, 0px));
@@ -277,7 +285,12 @@ a.hit:hover .h { color: var(--ac); text-decoration: underline; }
   .home-head { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   .svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+@media (max-width: 960px) {
+  .fsw { margin-left: auto; }
+}
 @media (max-width: 640px) {
+  .brand span { display: none; }
+  .fsw a { font-size: 12px; padding: 4px 11px; }
   .home h1 { font-size: 30px; margin-bottom: 14px; }
   .dateplate { padding: 14px 16px 16px; }
   .hb-h { padding: 10px 14px; }
@@ -539,9 +552,6 @@ a.hit:hover .h { color: var(--ac); text-decoration: underline; }
 .ev p { margin: 0; line-height: 1.75; }
 .ev a { font-size: 12.5px; display: inline-flex; gap: 6px; align-items: baseline; }
 
-@media (max-width: 960px) {
-  .tabbar { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-}
 @media (max-width: 640px) {
   .prep { grid-template-columns: minmax(0, 1fr); gap: 8px; }
   .prep-a { min-height: 0; }
