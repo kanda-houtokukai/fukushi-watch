@@ -42,6 +42,85 @@
     return out.length <= cap ? out : out.slice(0, cap).replace(/、$/, "") + "…";
   }
   function norm(s) { return String(s || "").normalize("NFKC").toLowerCase(); }
+  /* ── 探す語の扱い（探すページと Q&A の絞り込みで使う） ─────────
+     表記のゆれをそろえ（fold）、疑問の言葉や「〜さん」を外し、言い換え（SYN）を足す。
+     語ごとに「どれか1つが含まれればよい」候補の組（alts）を作り、組はすべて含むものを探す */
+  var FOLD = [[/子供|子ども/g, "こども"], [/障がい|障碍/g, "障害"], [/手続き/g, "手続"], [/取り消し|取消し/g, "取消"], [/申し込み|申込み/g, "申込"],
+    [/届け出/g, "届出"], [/取り扱い|取扱い/g, "取扱"], [/受け付け|受付け/g, "受付"], [/問い合わせ|問合わせ/g, "問合せ"], [/引き継ぎ|引継ぎ/g, "引継"],
+    [/振り込み/g, "振込"], [/噂/g, "うわさ"], [/抱っこ/g, "だっこ"], [/隠蔽/g, "隠ぺい"], [/漏洩/g, "漏えい"], [/[ヶヵカ]月/g, "か月"],
+    [/お泊まり|お泊り/g, "宿泊"], [/雛形|ひな形/g, "ひな型"], [/身体的拘束/g, "身体拘束"]];
+  function fold(s) { var t = norm(s); for (var i = 0; i < FOLD.length; i++) t = t.replace(FOLD[i][0], FOLD[i][1]); return t; }
+  // 言い換え（打ち込まれた語 → ガイドの中の言い方）。打ち込まれた語そのものでも探す
+  var SYN = { "実習生": ["実習"], "学生": ["実習", "学生"], "職員": ["従事者"], "従事者": ["職員"], "前科": ["特定性犯罪", "犯歴"], "犯歴": ["前科", "犯罪事実"],
+    "前歴": ["前科", "不起訴"], "性犯罪歴": ["特定性犯罪", "前科"], "運転手": ["送迎"], "送迎": ["運転手"], "バイト": ["アルバイト"], "パート": ["パート", "短時間"],
+    "保育園": ["保育所"], "放デイ": ["放課後等デイ"], "児発": ["児童発達支援"], "学童": ["放課後児童クラブ", "放課後児童健全育成"], "学童保育": ["放課後児童クラブ", "放課後児童健全育成"],
+    "障害児通所": ["障害児通所支援", "児童発達支援", "放課後等デイ"], "企業主導型": ["企業主導型", "認可外"], "企業主導型保育": ["企業主導型", "認可外"],
+    "塾": ["学習塾", "塾"], "個人塾": ["学習塾", "個人"], "習い事": ["民間教育", "習い事"], "スポ少": ["スポーツ"], "少年団": ["スポーツ"], "スポーツ少年団": ["スポーツ"],
+    "内定者": ["内定"], "育休": ["育児休業"], "育休明け": ["育休", "育児休業", "復帰"], "復帰": ["復帰", "育休"], "復職": ["復帰", "育休"], "産休": ["産前産後"],
+    "dbs": ["犯罪事実確認"], "マイナ": ["マイナンバー"], "ひな型": ["ひな型", "様式"], "様式": ["様式", "ひな型"], "書式": ["様式", "ひな型"], "テンプレ": ["ひな型", "様式"],
+    "スマホ": ["スマートフォン"], "シフト": ["勤務"], "外国人": ["外国籍"], "懲戒": ["懲戒"], "相談窓口": ["相談"], "マーク": ["こまもろうマーク", "マーク"],
+    "認定表示": ["マーク", "表示"], "認定マーク": ["マーク"], "ロゴ": ["マーク"], "クビ": ["解雇"], "首": ["解雇"], "解雇": ["解雇", "懲戒"],
+    "掛け持ち": ["兼務", "兼業", "副業"], "かけもち": ["兼務", "兼業", "副業"], "兼業": ["兼務", "兼業"], "副業": ["兼務", "副業"],
+    "line": ["sns", "私的", "連絡先"], "ライン": ["sns", "私的", "連絡先"], "sns": ["sns", "私的"], "連絡先": ["連絡先", "私的"],
+    "犯罪事実確認システム": ["こまもろうシステム", "こまもろう"], "確認システム": ["こまもろう"], "教員性暴力防止法": ["教員性暴力等防止法", "教育職員等"],
+    "事務員": ["事務職員", "事務"], "事務": ["事務職員", "事務"], "守秘義務": ["秘密保持", "守秘"], "うわさ": ["うわさ", "違和感"],
+    "性加害": ["性暴力", "加害"], "戸籍謄本": ["戸籍"], "戸籍抄本": ["戸籍"], "本籍": ["本籍", "戸籍"], "無犯罪証明": ["犯罪事実確認書", "無犯罪"],
+    "結果待ち": ["いとま特例", "交付"], "結果前": ["いとま特例"], "確認前": ["いとま特例"], "何日": ["標準処理期間", "日数"], "日数": ["標準処理期間", "日数"],
+    "何時間": ["時間", "分"], "いくら": ["費用", "手数料", "無料"], "手数料": ["手数料", "無料", "費用"], "払う": ["負担", "支払"], "負担": ["負担"],
+    "断る": ["拒", "応じない", "断"], "拒否": ["拒", "応じない"], "流出": ["漏えい", "漏れ"], "罰則": ["罰", "両罰"], "罰金": ["罰金", "罰"],
+    "まとめて": ["まとめ登録", "一括", "複数"], "一括": ["一括", "まとめ登録"], "転職": ["前の勤務先", "別法人", "転職"], "前職": ["前の勤務先", "別法人"],
+    "受けてない": ["受講させず", "未受講", "受講"], "未受講": ["受講させず", "未受講"], "教え方": ["教育", "啓発"], "伝え方": ["伝え", "周知"],
+    "1日だけ": ["1日だけ", "ゲスト", "単発"], "単発": ["単発", "1日だけ", "ゲスト"], "スポット": ["単発", "1日だけ"], "手伝い": ["ボランティア", "手伝"], "お手伝い": ["ボランティア", "手伝"],
+    "面接": ["面接", "面談", "採用選考"], "コピー": ["印刷", "写し", "コピー"], "スクショ": ["画面", "印刷", "写し"], "一人": ["1人", "一人", "一対一"],
+    "宿泊保育": ["宿泊", "お泊"], "宿泊": ["宿泊", "お泊"], "準備": ["準備", "最優先"], "始める": ["最初", "最優先"], "経過措置": ["経過措置", "施行時現職者"], "ログイン": ["ログイン", "ヘルプデスク", "問合せ"],
+    "業者": ["業者", "委託", "清掃", "警備"], "おむつ": ["おむつ", "排せつ", "着替え"], "保存期間": ["保存期間", "廃棄", "消去"], "わいせつ": ["わいせつ", "性暴力"],
+    "見る": ["閲覧", "見"], "見れる": ["閲覧"], "閲覧": ["閲覧"] };
+  // 外す語（疑問の言葉・助詞・「〜したら」など、探す手がかりにならないもの）
+  var STOP = ["いい", "よい", "良い", "いつ", "なに", "なん", "だれ", "どこ", "どう", "どうする", "どうなる", "どうなりますか", "どれ", "どの", "ある", "あり", "ない", "なし", "する", "できる", "できない",
+    "なる", "とは", "について", "したら", "されたら", "られたら", "ため", "もの", "こと", "の", "は", "が", "を", "に", "で", "と", "も", "や", "から", "まで", "か", "必要", "大丈夫", "教えて", "知りたい", "わからない", "分からない", "わかりません", "知らない", "ok", "ng"];
+  function stemOf(w) {
+    var t = w.replace(/(さん|くん|ちゃん|様)$/, "");
+    if (/[一-龥々〆ァ-ヴーa-z0-9]/.test(t)) t = t.replace(/[ぁ-ゖ]+$/, "");
+    return t || w;
+  }
+  var SYNK = Object.keys(SYN).sort(function (a, b) { return b.length - a.length; });
+  function altsOf(w) {
+    var a = [w], st = stemOf(w);
+    function add(x) { x = fold(x); if (x && a.indexOf(x) < 0) a.push(x); }
+    if (st !== w) add(st);
+    var syn = SYN[w] || SYN[st];
+    if (!syn) {   // 言い換えの語で始まる語（例: 転職者 → 転職）
+      var k = SYNK.find(function (x) { return x.length >= 2 && w.indexOf(x) === 0; });
+      if (k) { add(k); syn = SYN[k]; }
+    }
+    (syn || []).forEach(add);
+    return a;
+  }
+  // 打ち込まれた文字 → 語の組の並び。疑問の言葉などを外す（全部外れるときは外さない）
+  function qparse(raw) {
+    var toks = fold(raw).replace(/[?？!！、。,，「」『』()（）・/／]/g, " ").split(/\s+/).filter(Boolean);
+    var keep = toks.filter(function (w) {
+      if (SYN[w] || SYN[stemOf(w)]) return true;
+      if (STOP.indexOf(w) >= 0) return false;
+      if (/^(何|誰|どの|どれ|どう)/.test(w)) return false;
+      if (/^[ぁ-ゖー]{1,2}$/.test(w)) return false;
+      return true;
+    });
+    return (keep.length ? keep : toks).map(altsOf);
+  }
+  // つなげ書きを分ける。言い換えの語を含めばそれを切り出し（例: 受けてない職員 → 受けてない・職員）、
+  // 残りは文字の種類の切れ目で分ける（例: 保護者ボランティア → 保護者・ボランティア）。ひらがなは先頭の3字以上だけ残す
+  function splitRuns(w) {
+    var out = [], rest = w;
+    SYNK.forEach(function (k) { if (k.length >= 2 && k !== w && rest.indexOf(k) >= 0) { out.push(k); rest = rest.split(k).join(" "); } });
+    rest.split(/\s+/).forEach(function (part) {
+      (part.match(/[一-龥々〆ヵヶ]+|[ァ-ヴー]+|[a-z0-9]+|[ぁ-ゖ]+/g) || []).forEach(function (x, i) {
+        if (x === w) return;
+        if (/^[ぁ-ゖ]+$/.test(x) ? (i === 0 && x.length >= 3 && STOP.indexOf(x) < 0) : x.length >= 2) out.push(x);
+      });
+    });
+    return out;
+  }
   function markIn(text, words) {
     var t = esc(text);
     words.forEach(function (alts) {
@@ -282,7 +361,7 @@
       var a = el("div", { class: "a" }, body + src);
       d.appendChild(a);
       list.insertBefore(d, empty);
-      var x = { d: d, qt: s.querySelector(".qt"), q: q, off: off, text: (q.q + " " + (off ? q.label + " " + q.a.join(" ") : a.textContent) + " " + q.cat.join(" ")).normalize("NFKC").toLowerCase() };
+      var x = { d: d, qt: s.querySelector(".qt"), q: q, off: off, text: fold(q.q + " " + (off ? q.label + " " + q.a.join(" ") : a.textContent) + " " + q.cat.join(" ")), qn: fold(q.q) };
       nodes.push(x);
       return x;
     }
@@ -343,19 +422,16 @@
     }
     QA_LOAD = loadOfficial;
     function draw() {
-      var term = (input.value || "").trim().normalize("NFKC").toLowerCase();
-      var words = term.split(/\s+/).filter(Boolean);
+      var groups = (input.value || "").trim() ? qparse(input.value) : [];
       var n = 0, nOff = 0, nMat = 0;
       nodes.forEach(function (x) {
         var okKind = kind === "all" || (kind === "official") === x.off;
         var okCat = (active === "すべて" || x.q.cat.indexOf(active) >= 0) && (!theme || themeHas(theme, x.q));
-        var okTerm = words.every(function (w) { return x.text.indexOf(w) >= 0; });
+        var okTerm = groups.every(function (g) { return g.some(function (w) { return x.text.indexOf(w) >= 0; }); });
         var show = okKind && okCat && okTerm;
         x.d.hidden = !show;
         if (show) { n++; if (x.off) nOff++; else nMat++; }
-        var t = esc(x.q.q);
-        if (words.length) words.forEach(function (w) { var re = new RegExp("(" + esc(w).replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi"); t = t.replace(re, "<mark>$1</mark>"); });
-        x.qt.innerHTML = t;
+        x.qt.innerHTML = groups.length ? markIn(x.q.q, groups) : esc(x.q.q);
       });
       meta.textContent = n + " 件を表示（資料から回答 " + nMat + "・公式Q&A " + nOff + "）" + (loaded ? "" : "・資料から回答と公式Q&Aを読み込み中");
       empty.hidden = n !== 0 || !loaded;
@@ -785,23 +861,26 @@
   function reqCx() { if (!cxTick) { cxTick = true; requestAnimationFrame(updCx); } }
   window.addEventListener("scroll", reqCx, { passive: true });
   window.addEventListener("resize", reqCx);
-  /* ── 探す（Q&A・章・資料の要点をまとめて） ─────────
-     答えのある Q&A を先に、その下に章の中・資料の中。言い換え（実習生→実習 など）でも探す */
+  /* ── 探す（テーマ・Q&A・章・資料の要点をまとめて） ─────────
+     語の扱いは qparse（表記のゆれ・疑問の言葉・言い換え）。どこにも出てこない語はつなげ書きを分けて探す。
+     すべての語を含むものがなければ、多くの語を含むものを出す。並びは見出し（問・章の見出し・資料の項目名）に含むものが先 */
   (function search() {
     var form = $("sx-form"), q = $("sx-q");
     if (!form || !q) return;
     var res = $("sx-res"), sum = $("sx-sum"), scopeHost = $("sx-scope"), hint = $("sx-hint");
-    var SYN = { "実習生": ["実習"], "学生": ["実習", "学生"], "職員": ["従事者"], "従事者": ["職員"], "前科": ["特定性犯罪", "犯歴"], "犯歴": ["前科", "犯罪事実"],
-      "運転手": ["送迎"], "送迎": ["運転手"], "バイト": ["アルバイト"], "保育園": ["保育所"], "放デイ": ["放課後等デイ"], "児発": ["児童発達支援"],
-      "内定者": ["内定"], "育休": ["育児休業"], "産休": ["産前産後"], "dbs": ["犯罪事実確認"], "マイナ": ["マイナンバー"], "ひな形": ["ひな型"], "雛形": ["ひな型"],
-      "スマホ": ["スマートフォン"], "シフト": ["勤務"], "外国人": ["外国籍"], "懲戒": ["懲戒"], "相談窓口": ["相談"], "マーク": ["こまもろうマーク", "マーク"] };
     var WORDS = ["送迎", "実習生", "育休", "派遣", "内定", "いとま特例", "ボランティア", "防犯カメラ", "情報管理規程", "受講記録", "外国籍", "配置転換"];
-    var scope = "all", more = { qa: 6, ch: 5, dc: 5 }, data = { qa: [], ch: [], dc: [] }, CH = null, DC = null, T = null, words = [];
+    var scope = "all", more = { qa: 6, ch: 5, dc: 5 }, data = { th: [], qa: [], ch: [], dc: [] }, CH = null, DC = null, T = null, words = [];
+    var TH = (DATA.themes || []).map(function (t) { return { t: t, _h: fold(t.name + " " + (t.sub || "")), _n: fold(t.name + " " + (t.sub || "") + " " + (t.cats || []).join(" ")) }; });
     var DOCT = {}; (DATA.docs && DATA.docs.docs || []).forEach(function (d) { DOCT[d.slug] = d.t; });
-    function alts(w) { var a = [w]; (SYN[w] || []).forEach(function (x) { x = norm(x); if (a.indexOf(x) < 0) a.push(x); }); return a; }
-    function hit(text) { return words.every(function (ws) { return ws.some(function (w) { return text.indexOf(w) >= 0; }); }); }
+    function has(text, g) { for (var i = 0; i < g.length; i++) if (text.indexOf(g[i]) >= 0) return true; return false; }
+    // 語の組のうちいくつ含むか（m）と、見出しに含むものを重く数えた点（s）
+    function score(head, body, gs) {
+      var m = 0, s = 0;
+      gs.forEach(function (g) { if (has(head, g)) { m++; s += 3; } else if (has(body, g)) { m++; s += 1; } });
+      return { m: m, s: s };
+    }
     function snip(x) {
-      var n = norm(x), at = -1;
+      var n = fold(x), at = -1;
       words.some(function (ws) { return ws.some(function (w) { at = n.indexOf(w); return at >= 0; }); });
       var a = Math.max(0, at - 36), b = Math.min(x.length, (at < 0 ? 0 : at) + 84);
       return (a > 0 ? "…" : "") + x.slice(a, b) + (b < x.length ? "…" : "");
@@ -839,6 +918,14 @@
     }
     function draw() {
       res.innerHTML = "";
+      if (scope === "all" && data.th.length) {   // テーマ（名前と中身の説明に当たったもの。3つまで）
+        var tb = el("section", { class: "sx-b" }), tu = el("ul", { class: "sx-l sx-qa sx-th" });
+        tb.appendChild(el("h3", null, "テーマ"));
+        data.th.slice(0, 3).forEach(function (x) {
+          tu.appendChild(el("li", null, '<a href="#t-' + esc(x.t.id) + '"><span class="ta">' + markIn(x.t.name, words) + '</span><span class="tq">' + markIn(x.t.sub || "", words) + "</span></a>"));
+        });
+        tb.appendChild(tu); res.appendChild(tb);
+      }
       block("qa", "答え", data.qa, function (x) {
         var a = x.off ? x.q.a.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") : x.q.a;
         return el("li", null, '<a href="#' + esc(x.d.id) + '"><span class="tq">' + markIn(x.q.q, words) + '</span><span class="ta">' + esc(firstLine(a)) + '</span><span class="tk' + (x.off ? " off" : "") + '">' + (x.off ? "公式Q&amp;A " + esc(x.q.label) : "資料から回答") + "</span></a>");
@@ -851,8 +938,8 @@
       }, "か所");
     }
     function run() {
-      var term = norm(q.value).trim();
-      words = term.split(/\s+/).filter(Boolean).map(alts);
+      var raw = q.value.trim();
+      words = raw ? qparse(raw) : [];
       hint.hidden = !!words.length;
       scopeHost.hidden = !words.length;
       if (!words.length) { res.innerHTML = ""; sum.textContent = ""; return; }
@@ -860,21 +947,47 @@
       var wait = 3;
       function done() {
         if (--wait) return;
-        var nodes = QA_NODES ? QA_NODES() : [];
-        var inQ = [], inA = [];
-        nodes.forEach(function (x) { if (hit(norm(x.q.q))) inQ.push(x); else if (hit(x.text)) inA.push(x); });
-        data.qa = inQ.concat(inA);
-        data.ch = (CH || []).filter(function (x) { return x._n ? hit(x._n) : false; });
-        data.dc = (DC || []).filter(function (x) { return hit(x._n); });
+        var QN = QA_NODES ? QA_NODES() : [];
+        var pools = {
+          th: TH.map(function (x) { return { x: x, h: x._h, b: x._n }; }),
+          qa: QN.map(function (x) { return { x: x, h: x.qn || fold(x.q.q), b: x.text }; }),
+          ch: (CH || []).map(function (x) { return { x: x, h: x._h, b: x._n }; }),
+          dc: (DC || []).map(function (x) { return { x: x, h: x._h, b: x._n }; })
+        };
+        var all = pools.qa.concat(pools.ch, pools.dc);
+        // どこにも出てこない語は、つなげ書きを分けて探す（例: 保護者ボランティア）
+        var gs = [];
+        words.forEach(function (g) {
+          if (all.some(function (it) { return has(it.b, g); })) { gs.push(g); return; }
+          var parts = splitRuns(g[0]);
+          if (parts.length) parts.forEach(function (p) { gs.push(altsOf(p)); }); else gs.push(g);
+        });
+        words = gs;
+        var sc = {};
+        Object.keys(pools).forEach(function (k) {
+          sc[k] = pools[k].map(function (it, i) { var r = score(it.h, it.b, gs); r.i = i; r.x = it.x; return r; }).filter(function (r) { return r.m > 0; });
+        });
+        var best = 0;
+        ["qa", "ch", "dc"].forEach(function (k) { sc[k].forEach(function (r) { if (r.m > best) best = r.m; }); });
+        var full = best === gs.length;
+        var pick = function (k) {
+          return sc[k].filter(function (r) { return r.m === best; })
+            .sort(function (a, b) { return b.s - a.s || a.i - b.i; }).map(function (r) { return r.x; });
+        };
+        data.qa = best ? pick("qa") : []; data.ch = best ? pick("ch") : []; data.dc = best ? pick("dc") : [];
+        data.th = sc.th.filter(function (r) { return r.m === gs.length; }).sort(function (a, b) { return b.s - a.s || a.i - b.i; }).map(function (r) { return r.x; });
         var n = data.qa.length + data.ch.length + data.dc.length;
-        sum.textContent = n ? "「" + q.value.trim() + "」答え " + data.qa.length + "件・章の中 " + data.ch.length + "か所・資料の中 " + data.dc.length + "か所" : "「" + q.value.trim() + "」に当てはまるものは見つかりませんでした。言葉を短くするか、別の言い方で探してください。";
+        var cnt = "答え " + data.qa.length + "件・章の中 " + data.ch.length + "か所・資料の中 " + data.dc.length + "か所";
+        if (!n) sum.textContent = "「" + raw + "」に当てはまるものは見つかりませんでした。言葉を短くするか、別の言い方で探してください。";
+        else if (full) sum.textContent = "「" + raw + "」" + cnt;
+        else sum.textContent = "「" + raw + "」をすべて含むものはありませんでした。一部の語を含むもの：" + cnt;
         if (scope !== "all" && !data[scope].length) scope = "all";
         more = { qa: scope === "all" ? 6 : 40, ch: scope === "all" ? 5 : 40, dc: scope === "all" ? 5 : 40 };
         scopes(); draw();
       }
       if (QA_LOAD) QA_LOAD(done); else done();
-      if (CH) done(); else getJSON("notes/chapters.json", function (j) { CH = (j || []).map(function (x) { x._n = norm(x.vt + " " + x.h + " " + x.x); return x; }); done(); });
-      if (DC) done(); else getJSON("notes/search.json", function (j) { DC = (j || []).map(function (x) { x._n = norm(x.t + " " + x.x); return x; }); done(); });
+      if (CH) done(); else getJSON("notes/chapters.json", function (j) { CH = (j || []).map(function (x) { x._h = fold(x.vt + " " + x.h); x._n = fold(x.vt + " " + x.h + " " + x.x); return x; }); done(); });
+      if (DC) done(); else getJSON("notes/search.json", function (j) { DC = (j || []).map(function (x) { x._h = fold(x.t); x._n = fold(x.t + " " + x.x); return x; }); done(); });
     }
     form.addEventListener("submit", function (e) { e.preventDefault(); scope = "all"; run(); q.blur(); });
     q.addEventListener("input", function () { clearTimeout(T); T = setTimeout(function () { scope = "all"; run(); }, 260); });

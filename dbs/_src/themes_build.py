@@ -328,6 +328,6 @@ def build(parts, ctx, ref_html, kenshu_body):
                 idx.append({"v": vid, "vt": c["t"], "h": cur_h, "a": cur_a, "x": x})
     (OUT / "notes" / "chapters.json").write_text(json.dumps(idx, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
-    js = "GUIDE_DATA.themes = " + json.dumps([{"id": t["id"], "name": t["name"], "cats": t.get("cats", []), "re": t.get("re", "")} for t in themes], ensure_ascii=False) + ";\n"
+    js = "GUIDE_DATA.themes = " + json.dumps([{"id": t["id"], "name": t["name"], "sub": t.get("sub", ""), "cats": t.get("cats", []), "re": t.get("re", "")} for t in themes], ensure_ascii=False) + ";\n"
     js += "GUIDE_DATA.sectors = " + json.dumps(sectors, ensure_ascii=False) + ";\n"
     return parts, js, bad, {"themes": len(themes), "chapters_index": len(idx)}
