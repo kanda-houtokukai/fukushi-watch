@@ -89,7 +89,7 @@ def check(name):
                 last = p
                 key = head_key(h.get("t", ""))
                 ptxt = sq(pts.get(p, ""))
-                img = any(f"/p{p}.png" in x for x in s.get("images", []))
+                img = any(re.search(r"/p%d[a-z]?\.png$" % p, x) for x in s.get("images", []))
                 if s["mode"] == "free" and key and key not in ptxt and not img:
                     probs.append((s["k"], "heads", f"見出しの文字がその頁にない p.{p} {h.get('t', '')[:30]}"))
                 heads.append(h)
@@ -99,7 +99,7 @@ def check(name):
         def rng(a, b):
             return "\n".join(f"[p.{q}]\n" + pts[q] for q in pages if a <= q <= b)
         def imgs(a, b):
-            return [x for x in allimgs if a <= int(re.search(r"p(\d+)\.png", x).group(1)) <= b]
+            return [x for x in allimgs if a <= int(re.search(r"/p(\d+)[a-z]?\.png$", x).group(1)) <= b]
         chap = next((it.get("chapter") for s, it in parts if s["part"] == 1), None) or {}
         vitems.append({"k": chap_k, "t": parts[0][0]["t"], "kind": "chapter", "p": pages[0], "p_end": pages[-1],
                        "note": ("章の概要・要点は章全体（p.%d〜%d）をまとめたもの。この項目の text は章の頭から最初の見出しまで。"
