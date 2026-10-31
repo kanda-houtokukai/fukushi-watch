@@ -18,6 +18,7 @@ sys.path.insert(0, str(SRC.parent.parent / "scripts"))
 import linkbook  # noqa: E402  資料リンク集（scripts/linkbook.py）
 sys.path.insert(0, str(SRC))
 import docs_build  # noqa: E402  資料を読む・法令・公式Q&A（dbs/_src/docs_build.py）
+import themes_build  # noqa: E402  テーマのページ・横断検索の章の索引（dbs/_src/themes_build.py）
 
 HEAD = """<!doctype html>
 <html lang="ja">
@@ -129,7 +130,9 @@ def main():
             sys.exit("kenshu.json がありません")
         k_lead, k_body = '<p class="ch-lead">（作成中）</p>', ""
     parts = [x.replace("<!--KENSHU-LEAD-->", k_lead).replace("<!--KENSHU-BODY-->", k_body) for x in parts]
-    data += "\n" + docs_js
+    # テーマのページ（themes.json）・章の見出しの行き先・横断検索の章の索引（notes/chapters.json）
+    parts, themes_js, themes_bad, themes_n = themes_build.build(parts, docs_ctx, docs_build.ref_html, k_body)
+    data += "\n" + docs_js + themes_js
     app = (SRC / "app.js").read_text(encoding="utf-8")
     app = app.replace("/*@DOCS@*/", (SRC / "docs.js").read_text(encoding="utf-8"))
     live = json.loads((SRC / "live.json").read_text(encoding="utf-8"))   # 読めなければここで止まる
@@ -142,7 +145,7 @@ def main():
     book = json.loads((SRC / "links.json").read_text(encoding="utf-8"))
     html, added, lost, n_links = linkbook.build(html, book["groups"], links_with_dates(book, live),
                                                 link_hints(live, "\n".join(parts)), link_group, "説明会　10/15")
-    bad = list(docs_bad)
+    bad = list(docs_bad) + list(themes_bad)
     # 根拠の表記（Q&A・判定ツールの src、章の ref）は、資料リンク集の資料に必ず結びつける（どの資料のどこかを辿れるように）
     cites = [m.group(1) for m in re.finditer(r'\bsrc:\s*"([^"]+)"', data)]
     cites += [re.sub(r"<[^>]+>", "", H.unescape(m.group(1))) for m in re.finditer(r'<span class="ref">([\s\S]*?)</span>', "\n".join(parts))]
@@ -176,7 +179,7 @@ def main():
         print("書き出しを止めました:", *bad, sep="\n  ")
         sys.exit(1)
     OUT.write_text(html, encoding="utf-8")
-    print(OUT, len(html.encode("utf-8")) // 1024, "KB", "資料リンク集", n_links, "件", "資料", docs_n)
+    print(OUT, len(html.encode("utf-8")) // 1024, "KB", "資料リンク集", n_links, "件", "資料", docs_n, "テーマ", themes_n)
     if added:
         print("  うち、links.json になく自動で足したもの", len(added), "件（研修の告知など）")
     for a in added:

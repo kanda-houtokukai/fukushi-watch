@@ -19,7 +19,7 @@
   }
   function $(id) { return document.getElementById(id); }
   function each(list, fn) { Array.prototype.forEach.call(list, fn); }
-  var QA_LOAD = null, QA_DRAW = null;
+  var QA_LOAD = null, QA_DRAW = null, QA_THEME = null, QA_NODES = null, QA_REVEAL = null;
   var CACHE = {};
   function getJSON(path, cb) {
     if (CACHE[path]) { if (CACHE[path].data) cb(CACHE[path].data); else CACHE[path].wait.push(cb); return; }
@@ -29,6 +29,30 @@
     }).catch(function () { var w = CACHE[path].wait; delete CACHE[path]; w.forEach(function (f) { f(null); }); });
   }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  // 答えの書き出し（1文。短いときは2文）。根拠の札は除く（themes_build.py の first_line と同じ決め方）
+  function firstLine(a, cap) {
+    cap = cap || 150;
+    var d = document.createElement("div");
+    d.innerHTML = String(a || "").replace(/<a class="rf"[\s\S]*?<\/a>|<span class="ref">[\s\S]*?<\/span>/g, "").replace(/<\/p>/g, "<\/p> ");
+    var t = (d.textContent || "").replace(/\s+/g, " ").trim().replace(/([^\x00-\x7f]) (?=[^\x00-\x7f])/g, "$1");
+    var ss = t.match(/[^。]+。?/g) || [];
+    if (!ss.length) return "";
+    var out = ss[0].trim();
+    if (out.length < 45 && ss.length > 1) out += ss[1].trim();
+    return out.length <= cap ? out : out.slice(0, cap).replace(/、$/, "") + "…";
+  }
+  function norm(s) { return String(s || "").normalize("NFKC").toLowerCase(); }
+  function markIn(text, words) {
+    var t = esc(text);
+    words.forEach(function (alts) {
+      alts.forEach(function (w) { var re = new RegExp("(" + esc(w).replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi"); t = t.replace(re, "<mark>$1</mark>"); });
+    });
+    return t.replace(/<mark>(<mark>)+/g, "<mark>").replace(/(<\/mark>)+/g, "</mark>");
+  }
+  var THEMES = DATA.themes || [];
+  function themeHas(t, q) {
+    return (t.cats || []).some(function (c) { return q.cat.indexOf(c) >= 0; }) || (!!t.re && new RegExp(t.re).test(q.q));
+  }
 
   /* ── 日付（日本時間で数える） ─────────── */
   var DAY = 86400000, JST = 9 * 3600000;
@@ -243,13 +267,13 @@
     var PART = { "基礎編": "k", "応用編": "o", "まとめ登録": "m" };
     var SRCT = { qa: "こども性暴力防止法に関するQ&A（令和8年9月29日改訂）", "qa-matome": "事業者アカウントまとめ登録に関するQ&A（令和8年6月）" };
     var DOCU = {}; (DATA.docs && DATA.docs.docs || []).forEach(function (d) { DOCU[d.slug] = d.u; });
-    var nodes = [], active = "すべて", kind = "all";
+    var nodes = [], active = "すべて", kind = "all", theme = null;
     function addNode(q, i) {
       var off = q.kind === "official";
       var d = el("details", { class: "qa" + (off ? " is-off" : ""), id: off ? "qo-" + q.key : q.id ? "qm-" + q.id : "qa-" + (i + 1) });
       var s = el("summary");
       var badge = off ? '<span class="qk off">公式Q&amp;A ' + esc(q.label) + "</span>" : '<span class="qk mat">資料から回答</span>';
-      s.innerHTML = '<span class="qt"></span><span class="tags">' + badge + q.cat.map(function (c) { return "<span>" + c + "</span>"; }).join("") + "</span>";
+      s.innerHTML = '<span class="qt"></span><span class="qa1">' + esc(firstLine(off ? q.a.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") : q.a)) + '</span><span class="tags">' + badge + q.cat.map(function (c) { return "<span>" + c + "</span>"; }).join("") + "</span>";
       d.appendChild(s);
       var body = off ? q.a.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") : q.a;
       var src = off
@@ -275,6 +299,11 @@
       nodes.forEach(function (x) { x.q.cat.forEach(function (c) { have[c] = 1; }); });
       cats = CAT_ORDER.filter(function (c) { return have[c]; }).concat(Object.keys(have).filter(function (c) { return CAT_ORDER.indexOf(c) < 0; }));
       chipsHost.innerHTML = "";
+      if (theme) {
+        var tb = el("button", { class: "chip chip-th", type: "button", "aria-pressed": "true", "aria-label": "テーマ「" + theme.name + "」の絞り込みを外す" }, "テーマ：" + esc(theme.name) + '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="m3 3 6 6M9 3 3 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>');
+        tb.addEventListener("click", function () { theme = null; drawChips(); draw(); });
+        chipsHost.appendChild(tb);
+      }
       ["すべて"].concat(cats).forEach(function (c) {
         var b = el("button", { class: "chip", type: "button", "aria-pressed": c === active ? "true" : "false" }, c);
         b.addEventListener("click", function () { active = c; each(chipsHost.children, function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); }); draw(); });
@@ -319,7 +348,7 @@
       var n = 0, nOff = 0, nMat = 0;
       nodes.forEach(function (x) {
         var okKind = kind === "all" || (kind === "official") === x.off;
-        var okCat = active === "すべて" || x.q.cat.indexOf(active) >= 0;
+        var okCat = (active === "すべて" || x.q.cat.indexOf(active) >= 0) && (!theme || themeHas(theme, x.q));
         var okTerm = words.every(function (w) { return x.text.indexOf(w) >= 0; });
         var show = okKind && okCat && okTerm;
         x.d.hidden = !show;
@@ -336,6 +365,15 @@
     if ($("qa-close")) $("qa-close").addEventListener("click", function () { nodes.forEach(function (x) { x.d.open = false; }); });
     drawChips(); draw();
     QA_DRAW = draw;
+    QA_THEME = function (t) { theme = t || null; active = "すべて"; drawChips(); draw(); };
+    QA_NODES = function () { return nodes; };
+    // 特定の問へ行くとき、絞り込みで隠れていたら絞り込みを外す（別のテーマで絞ったまま、ほかのテーマの問を開いたとき）
+    QA_REVEAL = function (d) {
+      if (!d || !d.hidden) return;
+      theme = null; active = "すべて"; kind = "all"; input.value = "";
+      if (kindHost) each(kindHost.children, function (x, i) { x.setAttribute("aria-pressed", i === 0 ? "true" : "false"); });
+      drawChips(); draw();
+    };
   })();
 
   /* ── 研修・説明会 ─────────────────────── */
@@ -429,10 +467,13 @@
 
   /* ── ページ（ビュー）の一覧 ───────────── */
   var GROUPS = [
-    { k: "home", t: "ホーム" }, { k: "todo", t: "やること" }, { k: "tools", t: "判定ツール" },
+    { k: "home", t: "ホーム" }, { k: "todo", t: "やること" }, { k: "themes", t: "テーマ" }, { k: "tools", t: "判定ツール" },
     { k: "basics", t: "しくみ" }, { k: "ops", t: "運用" }, { k: "sectors", t: "事業別" },
-    { k: "qa", t: "Q&A" }, { k: "events", t: "研修・窓口" }, { k: "docs", t: "資料" }, { k: "updates", t: "更新情報" }
+    { k: "qa", t: "Q&A" }, { k: "events", t: "研修・窓口" }, { k: "docs", t: "資料" }, { k: "updates", t: "更新情報" },
+    { k: "search", t: "探す" }
   ];
+  // 章（しくみ・運用・事業別）はテーマから開くので、上のメニューと下のタブでは「テーマ」を光らせる
+  var NAVG = { basics: "themes", ops: "themes", sectors: "themes" };
   var VIEWS = {}, SEQ = [];
   GROUPS.forEach(function (g) { g.views = []; });
   each(document.querySelectorAll(".view"), function (v) {
@@ -577,15 +618,6 @@
       });
       if (!up.length) evh.appendChild(el("li", { class: "o" }, "最終確認の時点で、これからの研修・説明会は見つかっていません。"));
     }
-    // よく出る質問
-    var faq = $("faq-home");
-    if (faq && DATA.qa) {
-      ["現職の職員の確認は", "2027年4月入職予定", "送迎の運転手", "研修はいつまで", "相談窓口は法人内", "人事台帳に", "前科の確認が済んでいますか", "どこに通報しますか"].forEach(function (key) {
-        for (var i = 0; i < DATA.qa.length; i++) if (DATA.qa[i].q.indexOf(key) >= 0) {
-          var li = el("li"); li.appendChild(el("a", { href: "#qa-" + (i + 1) }, esc(DATA.qa[i].q))); faq.appendChild(li); break;
-        }
-      });
-    }
     // お知らせ
     var banner = $("banner");
     var notes = (LIVE.notices || []).filter(function (n) { return !n.until || dayOf(n.until) >= TODAY; });
@@ -684,7 +716,7 @@
     shell.classList.toggle("is-home", v.g.k === "home");
     renderSubnav(v.g, v);
     each(document.querySelectorAll(".gnav a, .tabbar a"), function (a) {
-      var on = a.getAttribute("data-g") === v.g.k;
+      var on = a.getAttribute("data-g") === (NAVG[v.g.k] || v.g.k);
       a.classList.toggle("is-active", on);
       if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
     });
@@ -714,6 +746,7 @@
     show(VIEWS[vid]);
     var pane = t.classList.contains("pane") ? t : t.closest(".pane");
     if (pane) activateTab(pane, false);
+    if (QA_REVEAL && t.classList.contains("qa")) QA_REVEAL(t);
     var det = t.tagName === "DETAILS" ? t : null;
     if (det) det.open = true;
     var p = t.parentElement;
@@ -752,6 +785,142 @@
   function reqCx() { if (!cxTick) { cxTick = true; requestAnimationFrame(updCx); } }
   window.addEventListener("scroll", reqCx, { passive: true });
   window.addEventListener("resize", reqCx);
+  /* ── 探す（Q&A・章・資料の要点をまとめて） ─────────
+     答えのある Q&A を先に、その下に章の中・資料の中。言い換え（実習生→実習 など）でも探す */
+  (function search() {
+    var form = $("sx-form"), q = $("sx-q");
+    if (!form || !q) return;
+    var res = $("sx-res"), sum = $("sx-sum"), scopeHost = $("sx-scope"), hint = $("sx-hint");
+    var SYN = { "実習生": ["実習"], "学生": ["実習", "学生"], "職員": ["従事者"], "従事者": ["職員"], "前科": ["特定性犯罪", "犯歴"], "犯歴": ["前科", "犯罪事実"],
+      "運転手": ["送迎"], "送迎": ["運転手"], "バイト": ["アルバイト"], "保育園": ["保育所"], "放デイ": ["放課後等デイ"], "児発": ["児童発達支援"],
+      "内定者": ["内定"], "育休": ["育児休業"], "産休": ["産前産後"], "dbs": ["犯罪事実確認"], "マイナ": ["マイナンバー"], "ひな形": ["ひな型"], "雛形": ["ひな型"],
+      "スマホ": ["スマートフォン"], "シフト": ["勤務"], "外国人": ["外国籍"], "懲戒": ["懲戒"], "相談窓口": ["相談"], "マーク": ["こまもろうマーク", "マーク"] };
+    var WORDS = ["送迎", "実習生", "育休", "派遣", "内定", "いとま特例", "ボランティア", "防犯カメラ", "情報管理規程", "受講記録", "外国籍", "配置転換"];
+    var scope = "all", more = { qa: 6, ch: 5, dc: 5 }, data = { qa: [], ch: [], dc: [] }, CH = null, DC = null, T = null, words = [];
+    var DOCT = {}; (DATA.docs && DATA.docs.docs || []).forEach(function (d) { DOCT[d.slug] = d.t; });
+    function alts(w) { var a = [w]; (SYN[w] || []).forEach(function (x) { x = norm(x); if (a.indexOf(x) < 0) a.push(x); }); return a; }
+    function hit(text) { return words.every(function (ws) { return ws.some(function (w) { return text.indexOf(w) >= 0; }); }); }
+    function snip(x) {
+      var n = norm(x), at = -1;
+      words.some(function (ws) { return ws.some(function (w) { at = n.indexOf(w); return at >= 0; }); });
+      var a = Math.max(0, at - 36), b = Math.min(x.length, (at < 0 ? 0 : at) + 84);
+      return (a > 0 ? "…" : "") + x.slice(a, b) + (b < x.length ? "…" : "");
+    }
+    WORDS.forEach(function (w) {
+      var b = el("button", { class: "chip", type: "button" }, esc(w));
+      b.addEventListener("click", function () { q.value = w; run(); });
+      $("sx-words").appendChild(b);
+    });
+    function scopes() {
+      scopeHost.innerHTML = "";
+      [["all", "すべて", data.qa.length + data.ch.length + data.dc.length], ["qa", "答え", data.qa.length], ["ch", "章の中", data.ch.length], ["dc", "資料の中", data.dc.length]].forEach(function (k) {
+        var b = el("button", { type: "button", "aria-pressed": k[0] === scope ? "true" : "false" }, esc(k[1]) + "<span>" + k[2] + "</span>");
+        b.addEventListener("click", function () { scope = k[0]; more = { qa: k[0] === "all" ? 6 : 40, ch: k[0] === "all" ? 5 : 40, dc: k[0] === "all" ? 5 : 40 }; scopes(); draw(); });
+        scopeHost.appendChild(b);
+      });
+    }
+    function block(key, title, list, render, unit) {
+      if (!list.length || (scope !== "all" && scope !== key)) return;
+      var box = el("section", { class: "sx-b" });
+      box.appendChild(el("h3", null, esc(title) + '<span class="sx-n">' + list.length + unit + "</span>"));
+      var ul = el("ul", { class: "sx-l sx-" + key });
+      list.slice(0, more[key]).forEach(function (x) { ul.appendChild(render(x)); });
+      box.appendChild(ul);
+      if (list.length > more[key]) {
+        var rest = list.length - more[key];
+        var b = el("button", { class: "btn sx-more", type: "button" }, scope === "all" ? esc(title) + "をすべて見る（" + list.length + unit + "）" : "さらに表示（残り" + rest + unit + "）");
+        b.addEventListener("click", function () {
+          if (scope === "all") { scope = key; more[key] = 40; scopes(); } else more[key] += 40;
+          draw();
+        });
+        box.appendChild(b);
+      }
+      res.appendChild(box);
+    }
+    function draw() {
+      res.innerHTML = "";
+      block("qa", "答え", data.qa, function (x) {
+        var a = x.off ? x.q.a.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") : x.q.a;
+        return el("li", null, '<a href="#' + esc(x.d.id) + '"><span class="tq">' + markIn(x.q.q, words) + '</span><span class="ta">' + esc(firstLine(a)) + '</span><span class="tk' + (x.off ? " off" : "") + '">' + (x.off ? "公式Q&amp;A " + esc(x.q.label) : "資料から回答") + "</span></a>");
+      }, "件");
+      block("ch", "章の中", data.ch, function (x) {
+        return el("li", null, '<a href="#' + esc(x.a) + '"><span class="sp">' + esc(x.vt) + (x.h ? " › " + esc(x.h) : "") + '</span><span class="ss">' + markIn(snip(x.x), words) + "</span></a>");
+      }, "か所");
+      block("dc", "資料の中", data.dc, function (x) {
+        return el("li", null, '<a href="#doc-' + esc(x.s) + "~" + encodeURIComponent(x.k) + '"><span class="sp">' + esc(DOCT[x.s] || "") + '</span><b class="st">' + markIn(x.t, words) + '</b><span class="ss">' + markIn(snip(x.x), words) + "</span></a>");
+      }, "か所");
+    }
+    function run() {
+      var term = norm(q.value).trim();
+      words = term.split(/\s+/).filter(Boolean).map(alts);
+      hint.hidden = !!words.length;
+      scopeHost.hidden = !words.length;
+      if (!words.length) { res.innerHTML = ""; sum.textContent = ""; return; }
+      sum.textContent = "探しています…";
+      var wait = 3;
+      function done() {
+        if (--wait) return;
+        var nodes = QA_NODES ? QA_NODES() : [];
+        var inQ = [], inA = [];
+        nodes.forEach(function (x) { if (hit(norm(x.q.q))) inQ.push(x); else if (hit(x.text)) inA.push(x); });
+        data.qa = inQ.concat(inA);
+        data.ch = (CH || []).filter(function (x) { return x._n ? hit(x._n) : false; });
+        data.dc = (DC || []).filter(function (x) { return hit(x._n); });
+        var n = data.qa.length + data.ch.length + data.dc.length;
+        sum.textContent = n ? "「" + q.value.trim() + "」答え " + data.qa.length + "件・章の中 " + data.ch.length + "か所・資料の中 " + data.dc.length + "か所" : "「" + q.value.trim() + "」に当てはまるものは見つかりませんでした。言葉を短くするか、別の言い方で探してください。";
+        if (scope !== "all" && !data[scope].length) scope = "all";
+        more = { qa: scope === "all" ? 6 : 40, ch: scope === "all" ? 5 : 40, dc: scope === "all" ? 5 : 40 };
+        scopes(); draw();
+      }
+      if (QA_LOAD) QA_LOAD(done); else done();
+      if (CH) done(); else getJSON("notes/chapters.json", function (j) { CH = (j || []).map(function (x) { x._n = norm(x.vt + " " + x.h + " " + x.x); return x; }); done(); });
+      if (DC) done(); else getJSON("notes/search.json", function (j) { DC = (j || []).map(function (x) { x._n = norm(x.t + " " + x.x); return x; }); done(); });
+    }
+    form.addEventListener("submit", function (e) { e.preventDefault(); scope = "all"; run(); q.blur(); });
+    q.addEventListener("input", function () { clearTimeout(T); T = setTimeout(function () { scope = "all"; run(); }, 260); });
+    // ホームの検索欄：探すのページへ切り替えて、そこで探す
+    var hf = $("home-find"), hq = $("home-q");
+    if (hf && hq) hf.addEventListener("submit", function (e) {
+      e.preventDefault();
+      q.value = hq.value; hq.blur();
+      saveY(); navIntent = "push";
+      if (location.hash === "#search") route(); else location.hash = "search";
+      scope = "all"; run();
+    });
+  })();
+
+  /* ── 事業で絞る（テーマのページに、選んだ事業の注意点を出す） ───── */
+  (function sector() {
+    var LIST = DATA.sectors || [], KEY = "dbs-guide-sector";
+    if (!LIST.length) return;
+    function cur() { var k = store.get(KEY); return LIST.filter(function (s) { return s.k === k; })[0] || null; }
+    function set(k) { store.set(KEY, k || ""); draw(); }
+    function opts(s) { return '<option value="">選ばない</option>' + LIST.map(function (x) { return '<option value="' + x.k + '"' + (s && s.k === x.k ? " selected" : "") + ">" + esc(x.t) + "</option>"; }).join(""); }
+    function draw() {
+      var s = cur();
+      var host = $("sec-home"), note = $("sec-note");
+      if (host) {
+        host.innerHTML = "";
+        LIST.forEach(function (x) {
+          var b = el("button", { class: "chip", type: "button", "aria-pressed": s && s.k === x.k ? "true" : "false" }, esc(x.t));
+          b.addEventListener("click", function () { set(s && s.k === x.k ? "" : x.k); });
+          host.appendChild(b);
+        });
+        note.innerHTML = s ? "テーマのページに「" + esc(s.t) + "」の注意点を出します。" + ' <a href="#sec-' + s.k + '">' + esc(s.t) + "の要点をすべて見る</a>"
+          : "選ぶと、テーマのページにその事業の注意点を出します。";
+      }
+      each(document.querySelectorAll(".th-sec"), function (box) {
+        var th = box.getAttribute("data-th"), items = s ? s.items.filter(function (it) { return it.th.indexOf(th) >= 0; }) : [];
+        box.classList.toggle("is-on", !!s);
+        box.innerHTML = '<label class="th-sel"><span>事業で絞る</span><select>' + opts(s) + "</select></label>" +
+          (s ? (items.length ? '<p class="th-st">' + esc(s.t) + "で気をつけること</p><ul>" + items.map(function (it) { return "<li>" + it.h + "</li>"; }).join("") + "</ul>" : "") +
+            '<a class="th-sa" href="#sec-' + s.k + '">' + esc(s.t) + "の要点をすべて見る</a>" : "");
+        box.querySelector("select").addEventListener("change", function (e) { set(e.target.value); });
+      });
+    }
+    draw();
+  })();
+
 /*@DOCS@*/
   route();
 

@@ -10,7 +10,7 @@
   function dDate(s) { return s ? s.slice(0, 4) + "." + s.slice(4, 6) + "." + s.slice(6, 8) : ""; }
   function pg(d, p) { return p + (d.poff || 0); }
   function pageLink(d, p, pe) {
-    var lab = "p." + pg(d, p) + (pe && pe > p ? "–" + pg(d, pe) : "");
+    var lab = (pg(d, p) < 1 ? "表紙" : "p." + pg(d, p)) + (pe && pe > p ? "–" + (pg(d, pe) < 1 ? "表紙" : pg(d, pe)) : "");   // 表紙に頁番号がない資料（印字頁で示す）
     if (d.ext !== "pdf") return '<span class="pc">' + lab + "</span>";
     return '<a class="pc" href="' + esc(d.u) + "#page=" + p + '" target="_blank" rel="noopener" aria-label="原本の' + lab + 'を開く">' + lab + "</a>";
   }
@@ -188,13 +188,24 @@
   })();
 
   EXT.push(function (id, intent, st) {
-    if (id === "qa" && QA_LOAD) { QA_LOAD(); return false; }
+    if (id === "qa" && QA_LOAD) { if (QA_THEME) QA_THEME(null); QA_LOAD(); return false; }
+    // テーマのページの「Q&Aをすべて見る」（#qa~テーマ）：そのテーマで絞った Q&A を出す
+    var tq = /^qa~([a-z]+)$/.exec(id);
+    if (tq && QA_LOAD && VIEWS.qa) {
+      var th = THEMES.filter(function (t) { return t.id === tq[1]; })[0] || null;
+      show(VIEWS.qa);
+      if (QA_THEME) QA_THEME(th);
+      QA_LOAD();
+      place(intent, st);
+      return true;
+    }
     var q = /^q[om]-[a-z0-9-]+$/.exec(id);
     if (q && QA_LOAD && VIEWS.qa) {
       show(VIEWS.qa);
       QA_LOAD(function () {
         var t = $(id);
         if (!t) { place(intent, st); return; }
+        if (QA_REVEAL) QA_REVEAL(t);
         t.open = true;
         requestAnimationFrame(function () { toTarget(t); reqCx(); });
       });

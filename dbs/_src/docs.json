@@ -536,7 +536,8 @@
    "d": "20261023",
    "np": 19,
    "ext": "pdf",
-   "mode": "notes"
+   "mode": "notes",
+   "poff": -1
   },
   {
    "slug": "junbi-ref",

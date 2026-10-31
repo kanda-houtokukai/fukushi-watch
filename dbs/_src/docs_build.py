@@ -39,7 +39,8 @@ def ref_html(r, ctx):
         return f'<a class="rf" href="#qo-{key}">Q&amp;A{H.escape(no)}</a>'
     d = ctx["docs"].get(r.get("doc"), {})
     p = int(r.get("p", 0) or 0)
-    lab = SHORT.get(r.get("doc"), d.get("t", r.get("doc", ""))[:12]) + " p." + str(p + d.get("poff", 0))
+    n = p + d.get("poff", 0)
+    lab = SHORT.get(r.get("doc"), d.get("t", r.get("doc", ""))[:12]) + (" 表紙" if n < 1 else " p." + str(n))
     best = None
     for it in ctx["notes"].get(r.get("doc"), []):
         if it.get("p") and it["p"] <= p <= (it.get("pe") or it["p"]):
@@ -72,6 +73,12 @@ def chapter_html(path, ctx):
                 head = "".join(f"<th>{H.escape(h)}</th>" for h in b.get("head", []))
                 rows = "".join("<tr>" + "".join((f"<th>{txt(cell)}</th>" if j == 0 else f"<td>{txt(cell)}</td>") for j, cell in enumerate(row)) + "</tr>" for row in b["rows"])
                 body.append(f'<div class="scroll"><table class="tbl"><thead><tr>{head}</tr></thead><tbody>{rows}</tbody></table></div>')
+            elif b["t"] == "flow":
+                # 段を順に並べた流れ図（スマホは縦・PCは横）。最後の段が「くり返す」なら輪の印を付ける
+                loop = ' class="loop"'
+                steps = "".join(f'<li{loop if st.get("loop") else ""}><b>{H.escape(st["h"])}</b><p>{txt(st)}</p></li>' for st in b["steps"])
+                cap = f'<figcaption><b>{H.escape(b["cap"])}</b></figcaption>' if b.get("cap") else ""
+                body.append(f'<figure class="fig flow"><ol class="flow-s">{steps}</ol>{cap}</figure>')
             elif b["t"] == "fig":
                 if b.get("svg"):
                     cap = f'<figcaption><b>{H.escape(b["cap"])}</b></figcaption>' if b.get("cap") else ""

@@ -6,7 +6,8 @@
 
 ## 進め方の決まり（神田さんと決めたもの）
 - 進めてよいのは、ページの確認（読む・検索する・資料を作業用のフォルダに保存して読む）と、`dbs/_src/live.json`（更新データ）の書き換え、`dbs/index.html` の組み立て、照合に合格した本文の事実の直し（`dbs/_src/sections/` の章・`dbs/_src/data.js` の Q&A・判定ツール・チェックリスト）、資料リンク集の台帳 `dbs/_src/links.json` への資料の追加、照合の記録 `dbs/_src/audit.json` の更新、それらの commit と push です。
-- それ以外のファイルには触りません。とくに福祉情報ウォッチ本体（index.html・scripts/・data/・docs/・台帳・CLAUDE.md）と、ガイドの部品（`dbs/_src/style.css`・`app.js`・`build.py`・`shell_*.html`・`svg/`）は書き換えません。force push はしません。
+- それ以外のファイルには触りません。とくに福祉情報ウォッチ本体（index.html・scripts/・data/・docs/・台帳・CLAUDE.md）と、ガイドの部品（`dbs/_src/style.css`・`app.js`・`build.py`・`shell_*.html`・`svg/`・`themes.json`・`themes_build.py`）は書き換えません。force push はしません。
+- テーマのページ（ホームの「テーマから探す」）は、章のリードと「この章の要点」・図・Q&A・資料・事業別の要点を `themes.json` の決まりで集めて組み立てるだけで、事実を持ちません。章や Q&A を直せば、build.py でテーマのページも同じ内容になります。`sections/17_sectors.html` の各項目に付いている `data-th`（どのテーマに出すかの印）と、章の「この章の要点」の箱（`<div class="points">`）は、本文を直すときも消さずに残します。
 - 「資料を読む」「法令の条文」「研修の進め方」「資料から回答」の材料（`dbs/_src/docs.json`・`notes/`・`law.json`・`qa_official.json`・`kenshu.json`・`qa_mat.json`・`docs_build.py`・`docs.js`）は、照合係2人の照合を通して作ったものなので書き換えません。
   `dbs/notes/`・`dbs/law.json`・`dbs/qa_official.json`・`dbs/qa_mat.json` は build.py の出力です（材料が変わらなければ中身は変わりません）。
   こども家庭庁が docs.json にある資料の新しい版（ガイドラインの改訂・Q&Aの改訂・研修資料の差し替えなど）や、docs.json にない新しい資料を出したときは、
