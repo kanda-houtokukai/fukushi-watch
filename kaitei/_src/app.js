@@ -96,6 +96,17 @@
     if (isNew(r) && !(opts && opts.noNew)) tags.push('<span class="newmark">' + mdw(lastDate(r)).replace(/（.）/, "") + " 更新</span>");
     return tags.join("");
   }
+  // 方向性の欄の見出し（段階で変える）。一覧の書き出しにも同じ言葉を付け、案を決まったことのように見せない
+  function dirHeadOf(r) {
+    var sl = r.stageLabel || "";
+    return /^確定/.test(sl) ? "決まった内容" : (sl === "調査" ? "調査の内容" : (sl ? "資料に書かれていること" : ((r.stage || 1) >= 4 ? "決まった内容" : ((r.stage || 1) === 3 ? "改定案の内容" : "検討の方向性（案）"))));
+  }
+  // 一覧に出す書き出し（方向性の最初の1文）
+  function leadOf(r) {
+    var t = String(r.houkousei || r.r9 || "").trim();
+    var m = t.match(/^[\s\S]*?。/);
+    return m ? m[0] : t;
+  }
   function card(r, opts) {
     opts = opts || {};
     var prim = typeof opts.primary === "function" ? opts.primary(r) : !!opts.primary;
@@ -107,7 +118,10 @@
     var d = el("details", attrs);
     if (READ[r.id]) d.classList.add("is-read");
     var svcLine = (r.services || []).join("・");
-    d.innerHTML = "<summary><span class=\"tags\">" + tagsHtml(r, opts) + '</span><span class="rt">' + esc(r.title) + "</span>" + (svcLine && !opts.noSvc ? '<span class="rs">' + esc(svcLine) + "</span>" : "") + "</summary>";
+    var lead = r.withdrawn || r.merged_into ? "" : leadOf(r);
+    d.innerHTML = "<summary><span class=\"tags\">" + tagsHtml(r, opts) + '</span><span class="rt">' + esc(r.title) + "</span>" +
+      (lead ? '<span class="rl"><i>' + esc(dirHeadOf(r)) + "</i>" + esc(lead) + "</span>" : "") +
+      (svcLine && !opts.noSvc ? '<span class="rs">' + esc(svcLine) + "</span>" : "") + "</summary>";
     d.addEventListener("toggle", function () { if (d.open && !d._built) { d._built = true; d.appendChild(body(r)); } }, { once: false });
     return d;
   }
@@ -117,8 +131,7 @@
     if (r.label) h += '<div class="lbl">' + esc(r.label) + "</div>";
     if (r.effective) h += '<div class="blk"><h5>適用</h5><p>' + esc(r.effective) + "</p></div>";
     if (r.genjo) h += '<div class="blk"><h5>現状・課題</h5><p>' + esc(r.genjo) + "</p></div>";
-    var sl = r.stageLabel || "";
-    var dirHead = /^確定/.test(sl) ? "決まった内容" : (sl === "調査" ? "調査の内容" : (sl ? "資料に書かれていること" : ((r.stage || 1) >= 4 ? "決まった内容" : ((r.stage || 1) === 3 ? "改定案の内容" : "検討の方向性（案）"))));
+    var dirHead = dirHeadOf(r);
     if (r.houkousei) h += '<div class="blk dirb"><h5>' + dirHead + "</h5><p>" + esc(r.houkousei) + "</p></div>";
     if (r.r9) h += '<div class="blk dirb"><h5>令和9年度改定での扱い</h5><p>' + esc(r.r9) + "</p></div>";
     if (r.kentou && r.kentou.length) h += '<div class="blk"><h5>想定される検討事項</h5><ul class="kj">' + r.kentou.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul></div>";

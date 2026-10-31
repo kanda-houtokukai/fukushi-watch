@@ -266,6 +266,10 @@ main { min-width: 0; padding-block: 24px 0; max-width: 1000px; }
 .rc[open] > summary { border-bottom: 1px solid var(--line-2); }
 .rc .rt { font-weight: 700; font-size: 15.5px; line-height: 1.55; }
 .rc .rs { font-size: 12.5px; color: var(--ink-3); line-height: 1.5; }
+/* 一覧で開かずに分かるよう、方向性の最初の1文を出す（2026-10-31）。見出しの札で「案」かどうかを示す。開いたら本文に任せて隠す */
+.rc .rl { font-size: 13.5px; color: var(--ink-2); line-height: 1.7; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.rc .rl i { font-style: normal; font-family: var(--f-mono); font-size: 11px; letter-spacing: .04em; color: var(--ac); border: 1px solid var(--line); border-radius: 3px; padding: 0 6px; margin-right: 7px; white-space: nowrap; vertical-align: 1px; }
+.rc[open] > summary .rl { display: none; }
 .rc .tags { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
 .rc .rb { padding: 6px 16px 16px; display: grid; gap: 14px; font-size: 14.5px; }
 .rc .blk h5 { margin: 10px 0 4px; font-size: 12px; font-family: var(--f-mono); letter-spacing: .1em; color: var(--ink-3); font-weight: 500; }

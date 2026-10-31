@@ -290,6 +290,10 @@ main { min-width: 0; padding-block: 24px 0; max-width: 1000px; }
 .rc[open] > summary { border-bottom: 1px solid var(--line-2); }
 .rc .rt { font-weight: 700; font-size: 15.5px; line-height: 1.55; }
 .rc .rs { font-size: 12.5px; color: var(--ink-3); line-height: 1.5; }
+/* 一覧で開かずに分かるよう、方向性の最初の1文を出す（2026-10-31）。見出しの札で「案」かどうかを示す。開いたら本文に任せて隠す */
+.rc .rl { font-size: 13.5px; color: var(--ink-2); line-height: 1.7; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.rc .rl i { font-style: normal; font-family: var(--f-mono); font-size: 11px; letter-spacing: .04em; color: var(--ac); border: 1px solid var(--line); border-radius: 3px; padding: 0 6px; margin-right: 7px; white-space: nowrap; vertical-align: 1px; }
+.rc[open] > summary .rl { display: none; }
 .rc .tags { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
 .rc .rb { padding: 6px 16px 16px; display: grid; gap: 14px; font-size: 14.5px; }
 .rc .blk h5 { margin: 10px 0 4px; font-size: 12px; font-family: var(--f-mono); letter-spacing: .1em; color: var(--ink-3); font-weight: 500; }
@@ -8158,6 +8162,17 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
     if (isNew(r) && !(opts && opts.noNew)) tags.push('<span class="newmark">' + mdw(lastDate(r)).replace(/（.）/, "") + " 更新</span>");
     return tags.join("");
   }
+  // 方向性の欄の見出し（段階で変える）。一覧の書き出しにも同じ言葉を付け、案を決まったことのように見せない
+  function dirHeadOf(r) {
+    var sl = r.stageLabel || "";
+    return /^確定/.test(sl) ? "決まった内容" : (sl === "調査" ? "調査の内容" : (sl ? "資料に書かれていること" : ((r.stage || 1) >= 4 ? "決まった内容" : ((r.stage || 1) === 3 ? "改定案の内容" : "検討の方向性（案）"))));
+  }
+  // 一覧に出す書き出し（方向性の最初の1文）
+  function leadOf(r) {
+    var t = String(r.houkousei || r.r9 || "").trim();
+    var m = t.match(/^[\s\S]*?。/);
+    return m ? m[0] : t;
+  }
   function card(r, opts) {
     opts = opts || {};
     var prim = typeof opts.primary === "function" ? opts.primary(r) : !!opts.primary;
@@ -8169,7 +8184,10 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
     var d = el("details", attrs);
     if (READ[r.id]) d.classList.add("is-read");
     var svcLine = (r.services || []).join("・");
-    d.innerHTML = "<summary><span class=\"tags\">" + tagsHtml(r, opts) + '</span><span class="rt">' + esc(r.title) + "</span>" + (svcLine && !opts.noSvc ? '<span class="rs">' + esc(svcLine) + "</span>" : "") + "</summary>";
+    var lead = r.withdrawn || r.merged_into ? "" : leadOf(r);
+    d.innerHTML = "<summary><span class=\"tags\">" + tagsHtml(r, opts) + '</span><span class="rt">' + esc(r.title) + "</span>" +
+      (lead ? '<span class="rl"><i>' + esc(dirHeadOf(r)) + "</i>" + esc(lead) + "</span>" : "") +
+      (svcLine && !opts.noSvc ? '<span class="rs">' + esc(svcLine) + "</span>" : "") + "</summary>";
     d.addEventListener("toggle", function () { if (d.open && !d._built) { d._built = true; d.appendChild(body(r)); } }, { once: false });
     return d;
   }
@@ -8179,8 +8197,7 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
     if (r.label) h += '<div class="lbl">' + esc(r.label) + "</div>";
     if (r.effective) h += '<div class="blk"><h5>適用</h5><p>' + esc(r.effective) + "</p></div>";
     if (r.genjo) h += '<div class="blk"><h5>現状・課題</h5><p>' + esc(r.genjo) + "</p></div>";
-    var sl = r.stageLabel || "";
-    var dirHead = /^確定/.test(sl) ? "決まった内容" : (sl === "調査" ? "調査の内容" : (sl ? "資料に書かれていること" : ((r.stage || 1) >= 4 ? "決まった内容" : ((r.stage || 1) === 3 ? "改定案の内容" : "検討の方向性（案）"))));
+    var dirHead = dirHeadOf(r);
     if (r.houkousei) h += '<div class="blk dirb"><h5>' + dirHead + "</h5><p>" + esc(r.houkousei) + "</p></div>";
     if (r.r9) h += '<div class="blk dirb"><h5>令和9年度改定での扱い</h5><p>' + esc(r.r9) + "</p></div>";
     if (r.kentou && r.kentou.length) h += '<div class="blk"><h5>想定される検討事項</h5><ul class="kj">' + r.kentou.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul></div>";
