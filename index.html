@@ -280,30 +280,19 @@
     .rail-col{border-left:1px solid var(--rule);padding-left:28px}
   }
 
-  /* ==== P38: PCのみ、一覧（.listscroll）を内側スクロールにする ====
-     「絞り込みは動かず、記事の一覧だけが流れる」形（P37のstickyはページ全体が流れるため置換）。
-     P37で挙げた副作用への対処:
-     ①題字・タブ・絞り込みは容器の外＝画面に留まる。一覧の高さはJS（sizeLists）が
-       「画面高 − 一覧の文書内位置」で与えるので、題字たちの分は自動的に差し引かれる。
-       題字を見たい・「このサイトについて」を読むときだけ全体スクロール（一覧の末尾で連鎖）
-     ②一覧側のスクロールバーは細く淡く（罫線色・地は透明）
-     ③ホイールは標準挙動のまま＝一覧上なら一覧・外ならページが動き、
-       一覧の末尾に達したらページへ連鎖する（overscroll-behavior は既定のまま）
-     ⚠️スマホは対象外（heightはJSが幅で判定して外す）。サイド欄の独立スクロールは維持 */
+  /* ==== 2026-11-01（P72）: PCも全体スクロールだけにする（P38〜P40の内側スクロールをやめた・ユーザー決定） ====
+     理由: 特設の帯・報道の帯・面の切り替えが上に積まれ、内側の一覧が 1280×800 で高さ313pxまで縮んだ
+     （上に何か足すたびに縮む作り）。スクロールが3つあるとカーソルの位置で動く所が変わる。
+     印刷すると一覧は見えていた分しか出なかった。
+     P38の狙い「絞り込みは動かず、記事だけが流れる」は、絞り込みの行を画面の上に貼り付けて残す。
+     サイド欄は記事と一緒に流れ、欄の下端が画面の下端に来たらそこで留まる（top はJSの sizeLists が
+     「画面高 − 欄の高さ」（0以下）で与える。欄が画面より低い日は上に留まる）。
+     ⚠️スマホ（<900px）は従来どおり（固定ヘッダー・通常の流れ）。.listscroll の名前は呼び出し元の互換のため残す */
   @media(min-width:900px){
-    .listscroll{overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--rule) transparent;
-      padding-right:10px}
-    .listscroll::-webkit-scrollbar{width:8px}
-    .listscroll::-webkit-scrollbar-thumb{background:var(--rule)}
-    .listscroll::-webkit-scrollbar-track{background:transparent}
-    /* サイド欄は独立して貼り付く（P37から継続）。画面より背が高い日は欄内スクロール。
-       P40: スクロールバーの濃さは一覧側（.listscroll）と同じ薄さに揃える */
-    .rail-col{position:sticky;top:0;align-self:start;
-      max-height:100vh;overflow-y:auto;scrollbar-width:thin;
-      scrollbar-color:var(--rule) transparent}
-    .rail-col::-webkit-scrollbar{width:8px}
-    .rail-col::-webkit-scrollbar-thumb{background:var(--rule)}
-    .rail-col::-webkit-scrollbar-track{background:transparent}
+    .chipbar,.gfilters{position:sticky;top:0;z-index:5;background:var(--paper)}
+    .chipbar{padding:10px 0;margin-top:6px}
+    .gfilters{padding:10px 0 2px;margin-top:4px}
+    .rail-col{position:sticky;top:0;align-self:start}
   }
 
   /* --- 本文 --- */
@@ -1006,7 +995,7 @@
       </div>
       </div><!-- /.chipbar -->
 
-      <div id="list" class="listscroll"></div><!-- P38: PCは内側スクロール（検索結果もここに描かれ同じ容器に乗る） -->
+      <div id="list" class="listscroll"></div><!-- 検索結果もここに描かれる（P72でPCの内側スクロールはやめた） -->
 
       <!-- 助成面(P24)。紙面とは別系統の data/grants.json を材料にする -->
       <section id="grantPane">
@@ -2034,35 +2023,20 @@
     }
   }
 
-  /* P38→P39: PCは一覧（.listscroll）だけを内側スクロールにする。
-     高さ＝画面高 −「画面上の位置」（サイド欄の sticky＋100vh と同じ**見えている画面**基準）。
-     ⚠️P38の「文書内位置」基準は、ページが少しでもスクロールされた状態（ブラウザの
-       スクロール復元・全体スクロール後）でその分だけ下端が浮いた。画面基準＋スクロール時の
-       再計測で、どのスクロール位置でも一覧の下端が画面下端（＝サイド欄の下端）に揃い続ける。
-     ⚠️topを0でクランプ: 絞り込みが画面外まで送られたら一覧は画面いっぱいで止まる。
-       これが無いと「送るほど伸びる」が際限なく続き、ページ末尾に到達できなくなる。
-     題字・タブ・ティッカー有無・絞り込みの折り返しへの自動追随（P38）は維持。
-     ⚠️スマホ（<900px）は height を外して通常フローに戻す（現状維持）。
-     呼びどころ: 起動/日送り（renderDay→renderTicker経由）・面の切替（setView）・resize・scroll */
+  /* P72: PCも全体スクロールだけ。一覧の高さは指定しない（内側スクロールのP38〜P39をやめた）。
+     サイド欄は「画面高 − 欄の高さ」（0以下）を top に与えて、欄の下端が画面の下端に来たら留まるようにする。
+     名前（sizeLists）は呼び出し元（起動/日送り・ティッカー・面の切替）の互換のため残す */
   function sizeLists() {
     const pc = window.matchMedia("(min-width:900px)").matches;
-    document.querySelectorAll(".listscroll").forEach((el) => {
-      if (!pc) { el.style.height = ""; return; }
-      if (!el.offsetParent) return; // 非表示の面は setView で表示されたときに測る
-      const top = Math.max(el.getBoundingClientRect().top, 0); // 画面上の位置（サイド欄と同じ基準）
-      el.style.height = `${Math.max(240, window.innerHeight - top)}px`;
-    });
+    document.querySelectorAll(".listscroll").forEach((el) => { el.style.height = ""; });
+    const rail = document.querySelector(".rail-col");
+    if (rail) rail.style.top = pc ? `${Math.min(0, window.innerHeight - rail.offsetHeight)}px` : "";
   }
   window.addEventListener("resize", sizeLists);
-  // ページのスクロールでも画面上の位置が変わるため再計測する（rAFで間引く・P39）
-  let sizeRaf = 0;
-  window.addEventListener("scroll", () => {
-    if (sizeRaf) return;
-    sizeRaf = requestAnimationFrame(() => { sizeRaf = 0; sizeLists(); });
-  }, { passive: true });
-  // resizeイベントに加えて文書ルートの寸法変化も監視する（回転・分割ビュー等の取りこぼし防止。
-  // 同値の再設定はレイアウトを変えないため無限ループにはならない）
+  // サイド欄の中身（期限・この7日など）が描かれて高さが変わったときも測り直す
   new ResizeObserver(sizeLists).observe(document.documentElement);
+  const railEl = document.querySelector(".rail-col");
+  if (railEl) new ResizeObserver(sizeLists).observe(railEl);
 
   async function setView(v) {
     state.view = v;
