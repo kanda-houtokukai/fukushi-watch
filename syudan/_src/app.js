@@ -29,6 +29,11 @@
   const itemOf = (docId) => DOCS.items.find((i) => i.id === docId);
   /* 点検・減算・年間（tenken.js）が足す画面と部品の差し込み口 */
   const EXT_ROUTES = [], ON_ROUTE = [], CH_EXTRA = [], SVC_EXTRA = [];
+  /* テーマ（themes_build.py が見出しを振り分けたもの）。THEME_CHIPS・THEME_VIS・SVC_TOP は tenken.js が足す
+     （障がいは、区分の中の国のサービスで絞る。高齢は、区分の中の資料で絞る） */
+  const TH = D.themes || null;
+  const TH_NAME = TH ? Object.fromEntries(TH.list.map((x) => [x.id, x.t])) : {};
+  const THEME_CHIPS = [], THEME_VIS = [], SVC_TOP = [];
 
   /* 章とその節を出てきた順に並べたもの（extract.py の index_segments と同じ並び）。
      f[h] = { t: 見出し, p: 頁, c: 章の番号（1から）, sec: 章の見出し（節のとき）} */
@@ -139,11 +144,19 @@
   function renderSvcIndex() {
     $("svc-index").innerHTML = SVC.map(svcCard).join("");
   }
-  function renderSvc(id) {
+  function renderSvc(id, chip) {
     const s = SV[id];
+    const withTh = TH && id !== "common";
+    chip = withTh ? okChip(s, chip) : "";
     let h = `<div class="svc-head"><h1 class="vh">${esc(s.t)}</h1>`;
     if (s.names !== s.t) h += `<p class="svc-names">${esc(s.names)}</p>`;
+    if (withTh) h += chipRow(s, chip, (v) => svcHref(id, v));
     h += findForm(s.docs.join(","), "q-svc", s.t + "の資料の中を探す", "この資料の中を探す") + "</div>";
+    if (withTh) {
+      h += SVC_TOP.map((fn) => fn(id, chip)).join("");
+      h += themeList(s, chip);
+      h += '<h2 class="sec-h2">県の資料の並びで読む</h2>';
+    }
     h += s.docs.filter((d) => BY[d]).map((d) => docBlock(BY[d])).join("");
     h += SVC_EXTRA.map((fn) => fn(id)).join("");
     const extra = DOCS.items.filter((it) => it.part === "説明資料" && !it.id && it.svc.includes(id) && it.kind !== "HTML");
@@ -183,9 +196,11 @@
       h += `<div class="it-bar"><button type="button" class="openall" aria-pressed="false">すべて開く</button></div><div class="its">`;
       s.sub.forEach((x, k) => {
         const hi = h0 + 1 + k, n = note(docId, hi);
-        h += `<details class="it" data-h="${hi}"${hi === openH ? " open" : ""}><summary><span class="t">${esc(x.t)}</span><span class="pg">p.${x.p}</span></summary>`
+        h += `<details class="it" data-h="${hi}"${hi === openH ? " open" : ""}><summary><span class="t">${esc(x.t)}</span><span class="pg">p.${x.p}</span>`
+          + (n && n.gist ? `<span class="g">${esc(n.gist)}</span>` : "") + "</summary>"
           + `<div class="it-b">${noteBody(n)}`
           + CH_EXTRA.map((fn) => fn(docId, hi)).join("")
+          + relRow(docId, hi)
           + A(pdf(doc.u, x.p), `PDFの${x.p}ページを開く` + EXT, "pdf-go")
           + "</div></details>";
       });
@@ -205,6 +220,168 @@
       `<li><a href="#ch-${docId}-${i + 1}"${i + 1 === c ? ' class="is-active" aria-current="page"' : ""}><span>${esc(x.t)}</span><span class="c">${x.sub.length || ""}</span></a></li>`).join("") + "</ol>");
     document.title = s.t + "｜" + doc.t;
   }
+  /* ── テーマ ── */
+  const svcHref = (id, chip) => `#svc-${id}` + (chip ? "?s=" + chip : "");
+  const thHref = (sid, tid, chip) => `#th-${sid}-${tid}` + (chip ? "?s=" + chip : "");
+  const gsOf = (doc, h) => (((TH && TH.gs) || {})[doc] || {})[String(h)];
+  const cmItems = (tid) => (((TH && TH.cm) || {}).items || {})[tid] || [];
+  // 見出しを短くした形（番号・根拠条文・対象の印・「（届出が必要）」のような添え書きを除く）。表示とテーマの一覧に使う
+  const LEAD = /^\s*(?:【[^】]*】|〔[^〕]*〕|\(\d+(?:-\d)?\)|\d+(?:-\d+)?[.．](?!\d)|\d+-\d+\s|第[0-9一二三四五六七八九十]+\s|[①-⑳]|[一二三四五六七八九十]+[、.]|\([ア-ン]\)|[ア-ン](?=\s)|[○〇◯●・]|\d+(?:\s|(?=[^\d.単円人回日月年分%])))\s*/;
+  const LAWP = /[(〔](?=[^()〔〕]*(?:基準省令|施設省令|入所基準|施設サービス基準|省令|条例|告示|老企|老計|老振|通知|規則|第\d|条))[^()〔〕]*(?:\([^()]*\)[^()〔〕]*)?[)〕]/g;
+  function shortT(t) {
+    let s = String(t || "").normalize("NFKC").replace(/[<〈][^>〉]*[>〉]/g, "").replace(LAWP, "")
+      .replace(/[(〔][^()〔〕]*(?:届出|単位|算定|準用|運輸局)[^()〔〕]*[)〕]/g, "");
+    const base = s;
+    for (let i = 0; i < 2; i++) s = s.replace(LEAD, "");
+    s = s.trim() || base.replace(/[【】〔〕()]/g, "").trim();
+    return s.replace(/\(/g, "（").replace(/\)/g, "）");
+  }
+  const numOf = (t) => { const m = String(t || "").normalize("NFKC").match(/^\s*\((\d+(?:-\d)?)\)/); return m ? "（" + m[1] + "）" : ""; };
+  function chipsOf(s) {
+    for (const fn of THEME_CHIPS) { const r = fn(s); if (r) return r; }
+    const ds = s.docs.filter((d) => BY[d] && BY[d].secs.length);
+    return ds.length > 1 ? ds.map((d) => ({ v: d, t: SHORT[d] || BY[d].t })) : [];
+  }
+  const okChip = (s, chip) => (chip && chipsOf(s).some((c) => c.v === chip) ? chip : "");
+  function chipRow(s, chip, href) {
+    const cs = chipsOf(s);
+    if (!cs.length) return "";
+    return '<nav class="svchips" aria-label="サービスで絞る">' + [{ v: "", t: "すべて" }].concat(cs).map((c) =>
+      `<a href="${href(c.v)}"${c.v === (chip || "") ? ' class="is-on" aria-current="true"' : ""}>${esc(c.t)}</a>`).join("") + "</nav>";
+  }
+  function visible(s, chip, doc, h) {
+    if (!chip) return true;
+    if (s.docs.includes(chip)) return doc === chip;
+    for (const fn of THEME_VIS) { const r = fn(doc, h, chip); if (r !== undefined) return r; }
+    return true;
+  }
+  // サービス（と絞り込み）のテーマの見出し。減算は、同じテーマの中に出ている基準の見出しの下に付ける（出ていなければ単独）
+  function themeItems(s, chip, tid) {
+    const all = [];
+    s.docs.forEach((doc) => {
+      const arr = (TH.th || {})[doc];
+      if (!arr || !BY[doc]) return;
+      if (!FLAT[doc].length) { if (arr[0] === tid && (!s.docs.includes(chip) || chip === doc)) all.push({ doc, h: -1 }); return; }
+      const xt = (TH.xt || {})[doc] || {};   // テーマが違う基準（例: 高齢の身体拘束は取扱方針）を、減算のテーマにも出す
+      arr.forEach((t, h) => { if ((t === tid || (xt[String(h)] || []).includes(tid)) && visible(s, chip, doc, h)) all.push({ doc, h }); });
+    });
+    const at = new Map(all.map((x) => [x.doc + ":" + x.h, x]));
+    let ng = 0;
+    all.forEach((x) => {
+      const bases = gsOf(x.doc, x.h);
+      if (!bases) return;
+      ng++;
+      const b = bases.find((bb) => at.has(x.doc + ":" + bb));
+      if (b != null) { const bx = at.get(x.doc + ":" + b); (bx.gs = bx.gs || []).push(x); x.under = true; }
+    });
+    return { items: all.filter((x) => !x.under), all, n: all.length, ng };
+  }
+  const titleOf = (x) => (x.h >= 0 ? FLAT[x.doc][x.h].t : BY[x.doc].t);
+  function themeList(s, chip) {
+    const rows = TH.list.map((t) => {
+      const r = themeItems(s, chip, t.id), cms = cmItems(t.id);
+      if (!r.n && !cms.length) return "";
+      const names = [...new Set(r.all.map((x) => shortT(titleOf(x)).replace(/について$/, "")))];
+      const meta = [r.n ? "見出し" + r.n : "", r.ng ? "うち減算" + r.ng : "", cms.length ? TH.cm.short + cms.length : ""].filter(Boolean).join("・");
+      return `<li><a href="${thHref(s.id, t.id, chip)}"><span class="t">${esc(t.t)}</span>`
+        + (names.length ? `<span class="g">${esc(names.slice(0, 4).join("・") + (names.length > 4 ? " ほか" : ""))}</span>` : "")
+        + `<span class="n">${meta}</span>${ARR}</a></li>`;
+    }).join("");
+    return `<section class="thl-w"><h2 class="sec-h2">テーマから見る</h2><ol class="chl thl">${rows}</ol></section>`;
+  }
+  // 見出しの添え書き（番号・PDFの頁・資料の並びで見る）
+  function tiLinks(x) {
+    const doc = BY[x.doc];
+    if (x.h < 0) return `<span class="ti-m">${A(pdf(doc.u), "PDF" + EXT)}</span>`;
+    const f = FLAT[x.doc][x.h];
+    return `<span class="ti-m">${numOf(f.t) ? `<span class="no">${numOf(f.t)}</span>` : ""}${A(pdf(doc.u, f.p), "p." + f.p + EXT)}<a href="${chHref(x.doc, f.c, x.h)}">資料の並びで見る</a></span>`;
+  }
+  function gsBox(g) {
+    const f = FLAT[g.doc][g.h], n = note(g.doc, g.h) || {};
+    return `<div class="gsb"><div class="gsb-h"><span class="gsb-k">関係する減算</span>${tiLinks(g)}</div>`
+      + `<b class="gsb-t">${esc(shortT(f.t))}</b>${noteBody(n)}</div>`;
+  }
+  function tiBody(x) {
+    return noteBody(x.h >= 0 ? note(x.doc, x.h) : note(x.doc, -1));
+  }
+  let curChip = "";   // テーマのページで絞り込んでいるサービス（国の確認項目の札をそのサービスだけにする）
+  function tiSide(x) {
+    return (x.gs || []).map(gsBox).join("") + (x.h >= 0 ? CH_EXTRA.map((fn) => fn(x.doc, x.h, curChip)).join("") : "");
+  }
+  function tiFull(x) {
+    const isG = !!gsOf(x.doc, x.h), side = tiSide(x);
+    return `<article class="ti${side ? " has-r" : ""}${isG ? " is-gs" : ""}"><div class="ti-l"><header class="ti-h"><h3>${isG ? '<span class="gs-k">減算</span>' : ""}${esc(shortT(titleOf(x)))}</h3>${tiLinks(x)}</header>`
+      + tiBody(x) + `</div>${side ? `<div class="ti-r">${side}</div>` : ""}</article>`;
+  }
+  function tiCompact(x) {
+    const isG = !!gsOf(x.doc, x.h), n = (x.h >= 0 ? note(x.doc, x.h) : note(x.doc, -1)) || {};
+    const ng = (x.gs || []).length;
+    return `<details class="it ti-c${isG ? " is-gs" : ""}"><summary><span class="t">${isG ? '<span class="gs-k">減算</span>' : ""}${esc(shortT(titleOf(x)))}${ng ? `<span class="gs-n">減算 ${ng}</span>` : ""}</span>`
+      + `<span class="pg">${x.h >= 0 ? "p." + FLAT[x.doc][x.h].p : ""}</span>${n.gist ? `<span class="g">${esc(n.gist)}</span>` : ""}</summary>`
+      + `<div class="it-b">${tiBody(x)}${tiSide(x)}<p class="ti-foot">${tiLinks(x)}</p></div></details>`;
+  }
+  function renderTheme(sid, tid, chip) {
+    const s = SV[sid];
+    chip = okChip(s, chip);
+    const r = themeItems(s, chip, tid), cms = cmItems(tid);
+    let h = `<p class="crumbs"><a href="${svcHref(sid, chip)}">${esc(s.t)}</a><span aria-hidden="true">›</span><span>テーマ</span></p>`
+      + `<h1 class="vh">${esc(TH_NAME[tid])}</h1>`
+      + `<div class="ch-meta"><span>見出し ${r.n}</span>${r.ng ? `<span>うち減算 ${r.ng}</span>` : ""}${cms.length ? `<span>${esc(TH.cm.short)} ${cms.length}</span>` : ""}</div>`
+      + chipRow(s, chip, (v) => thHref(sid, tid, v));
+    if (!r.items.length) h += `<p class="tk-empty">${chip ? "このサービスに当てはまる見出しはありません。" : "このテーマに当てはまる見出しはありません。"}</p>`;
+    const compact = r.items.length > 12;
+    // 資料ごとに、減算を添えた見出しを先に（同じ資料・同じ並びの中で）
+    const docOrder = s.docs.filter((d) => BY[d]);
+    const items = r.items.slice().sort((a, b) => (docOrder.indexOf(a.doc) - docOrder.indexOf(b.doc)) || ((b.gs ? 1 : 0) - (a.gs ? 1 : 0)) || (a.h - b.h));
+    const multi = new Set(items.map((x) => x.doc)).size > 1;
+    let lastDoc = null, lastCh = null;
+    curChip = chip;
+    h += `<div class="tis${compact ? " is-compact" : ""}">`;
+    items.forEach((x) => {
+      if (multi && x.doc !== lastDoc) { h += `<h2 class="ti-doc">${esc(BY[x.doc].t)}</h2>`; lastCh = null; }
+      lastDoc = x.doc;
+      const f = x.h >= 0 ? FLAT[x.doc][x.h] : null;
+      const ch = f && f.sec ? f.sec : null;
+      if (ch && ch !== lastCh) h += `<p class="ti-ch">${esc(ch)}</p>`;
+      lastCh = ch;
+      h += compact ? tiCompact(x) : tiFull(x);
+    });
+    h += "</div>";
+    if (cms.length) {
+      h += `<section class="cmb"><h2 class="sec-h2">${esc(TH.cm.label)}</h2><ul class="hits">` + cms.map(([d, hh]) => {
+        const f = FLAT[d][hh], n = note(d, hh);
+        return `<li><a class="hit" href="${chHref(d, f.c, hh)}"><span class="h">${esc(f.t)}</span><span class="c">${esc(SHORT[d] || BY[d].t)}</span>${n && n.gist ? `<span class="g">${esc(n.gist)}</span>` : ""}</a>${A(pdf(BY[d].u, f.p), `<span>PDF</span><span>p.${f.p}</span>`, "hit-pdf")}</li>`;
+      }).join("") + "</ul></section>";
+    }
+    $("th-body").innerHTML = h;
+    setSubnav(`<a class="sn-back" href="${svcHref(sid, chip)}">${ARL}<span>${esc(s.t)}</span></a><ol>` + TH.list.map((t) => {
+      const n = themeItems(s, chip, t.id).n, c = cmItems(t.id).length;
+      if (!n && !c) return "";
+      return `<li><a href="${thHref(sid, t.id, chip)}"${t.id === tid ? ' class="is-active" aria-current="page"' : ""}><span>${esc(t.t)}</span><span class="c">${n || ""}</span></a></li>`;
+    }).join("") + "</ol>");
+    document.title = TH_NAME[tid] + "｜" + s.t;
+  }
+  // 章のページの見出しに添える「同じ話題」（テーマ・減算と基準）
+  function relRow(docId, h) {
+    if (!TH || !(TH.th || {})[docId]) return "";
+    const sid = SVC_OF[docId], tid = TH.th[docId][h], parts = [];
+    if (tid && sid && sid !== "common") parts.push(`<a class="chip-a" href="${thHref(sid, tid)}">テーマ　${esc(TH_NAME[tid])}</a>`);
+    const gsm = (TH.gs || {})[docId] || {};
+    const mine = gsm[String(h)];
+    if (mine && mine.length) { const fb = FLAT[docId][mine[0]]; parts.push(`<a class="chip-a" href="${chHref(docId, fb.c, mine[0])}">基準　${esc(shortT(fb.t))}</a>`); }
+    Object.entries(gsm).forEach(([gh, bases]) => {
+      if (bases.includes(h)) { const fg = FLAT[docId][Number(gh)]; parts.push(`<a class="chip-a is-gs" href="${chHref(docId, fg.c, Number(gh))}">減算　${esc(shortT(fg.t))}</a>`); }
+    });
+    return parts.length ? `<div class="to-kk to-th"><span class="k">同じ話題</span>${parts.join("")}</div>` : "";
+  }
+  // 絞り込みは、戻る操作の行き先を増やさない（押す前のページに戻れるように）
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest(".svchips a");
+    if (!a) return;
+    e.preventDefault();
+    go(a.getAttribute("href"), true);
+  });
+
   $("ch-body").addEventListener("click", (e) => {
     const b = e.target.closest(".openall");
     if (!b) return;
@@ -373,7 +550,11 @@
     if (ext) { view = ext.view; g = ext.g; }
     else if (name === "svc" && SVC.length < 2) { view = "svcview"; g = "svc"; renderSvc("common"); }
     else if (name === "svc") { view = "svc"; g = "svc"; renderSvcIndex(); setSubnav(""); document.title = F.svcLabel + "｜" + F.titleTail; }
-    else if (name.startsWith("svc-") && SV[name.slice(4)]) { view = "svcview"; g = "svc"; renderSvc(name.slice(4)); }
+    else if (name.startsWith("svc-") && SV[name.slice(4)]) { view = "svcview"; g = "svc"; renderSvc(name.slice(4), params.get("s") || ""); }
+    else if ((m = name.match(/^th-([a-z]+)-([a-z]+)$/)) && TH && SV[m[1]] && m[1] !== "common" && TH_NAME[m[2]]) {
+      view = "thview"; g = "svc";
+      renderTheme(m[1], m[2], params.get("s") || "");
+    }
     else if ((m = name.match(/^ch-([a-z]+)-(\d+)$/)) && BY[m[1]] && BY[m[1]].secs[Number(m[2]) - 1]) {
       view = "chview"; g = "svc";
       openH = params.has("i") ? Number(params.get("i")) : null;
@@ -392,7 +573,7 @@
       if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
     });
     const shell = $("shell");
-    shell.classList.toggle("no-sub", view !== "svcview" && view !== "chview" && !(ext && ext.sub));
+    shell.classList.toggle("no-sub", view !== "svcview" && view !== "chview" && view !== "thview" && !(ext && ext.sub));
     shell.classList.toggle("is-home", view === "home");
     // 位置: 押して移ったときは先頭から（開く見出しの指定があればその見出し）、戻る・進むの操作では離れたときの位置
     lastKey = raw;

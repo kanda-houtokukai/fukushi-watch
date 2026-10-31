@@ -353,7 +353,23 @@ def build(toc, notes, docs):
         o.pop("g", None); o.pop("s", None); o.pop("xs", None)
         nk.append(o)
 
+    # 県の見出しが扱うサービス（その資料のすべてのサービスのときは持たない）。テーマのページの「サービスで絞る」に使う
+    ap = {}
+    for g in GROUP_T:
+        allg = set(ids_of[g])
+        for h, f in enumerate(FL[g]):
+            if APPLY[g][h] != allg:
+                ap.setdefault(g, {})[str(h)] = sorted(APPLY[g][h])
+    for e in order:
+        for d in e["docs"]:
+            if set(d["svcs"]) != set(ids_of[d["d"]]):
+                ap.setdefault(d["d"], {})[str(d["h"])] = sorted(d["svcs"])
+            else:
+                ap.get(d["d"], {}).pop(str(d["h"]), None)
+
     embed = {
+        "ap": ap,
+        "chipx": sorted(KEN_EXCLUDE),
         "groups": GROUP_T,
         "index": index,
         "k2n": k2n,

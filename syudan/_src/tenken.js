@@ -782,8 +782,31 @@
     const ss = svcsOfGroup(id);
     return `<section class="also kk-also"><h2>国の確認項目で点検する</h2><ul class="rows">${ss.map((s) => `<li><a href="#kk-${s.id}">${esc(s.t)}</a><span class="note">確認項目 ${s.n}${s.nk ? `・県の資料から ${s.nk}` : ""}</span></li>`).join("")}</ul></section>`;
   });
-  CH_EXTRA.push((docId, h) => {
-    const lst = (TK.k2n[docId] || {})[String(h)];
+  /* テーマのページ: 障がいは、区分の中の国のサービスで見出しを絞る（県の見出しの対象の印から。tenken_build.py の ap） */
+  const AP = TK.ap || null, CHIPX = new Set(TK.chipx || []);
+  THEME_CHIPS.push((s) => (AP && GT[s.id] ? svcsOfGroup(s.id).filter((x) => !CHIPX.has(x.id)).map((x) => ({ v: x.id, t: x.t })) : null));
+  THEME_VIS.push((doc, h, chip) => {
+    if (!AP || !SIX[chip]) return undefined;
+    if (SIX[chip].g !== doc) return true;   // 区分の資料ではない資料（こども性暴力防止法など）
+    const lst = (AP[doc] || {})[String(h)];
+    return lst ? lst.includes(chip) : true;
+  });
+  // サービスのページの上の「点検・減算・年間」
+  SVC_TOP.push((id, chip) => {
+    if (!GT[id] || !(HAS_GS || HAS_NK)) return "";
+    const one = chip && SIX[chip] ? SIX[chip] : null;
+    const ss = svcsOfGroup(id).filter((x) => !CHIPX.has(x.id));
+    const nItems = (one ? [one] : ss).reduce((n, x) => n + x.n + x.nk, 0);
+    const kk = one ? `#kk-${one.id}` : (ss.length === 1 ? `#kk-${ss[0].id}` : "#tenken");
+    return '<div class="prep svc-prep">'
+      + `<a class="prep-a" href="${kk}"><b>点検</b><span>${one || ss.length === 1 ? "" : ss.length + "サービス・"}確認項目 ${nItems.toLocaleString()}</span></a>`
+      + (HAS_GS ? `<a class="prep-a" href="#gensan"><b>減算</b><span>${TK.gensan.length}種類</span></a>` : "")
+      + (HAS_NK ? '<a class="prep-a" href="#nenkan"><b>年間</b><span>期限と回数</span></a>' : "")
+      + "</div>";
+  });
+  CH_EXTRA.push((docId, h, only) => {
+    let lst = (TK.k2n[docId] || {})[String(h)];
+    if (lst && only && SIX[only]) lst = lst.filter((x) => x[0] === only);
     if (!lst || !lst.length) return "";
     const mine = new Set(offices().flatMap((o) => o.svcs));
     const sorted = lst.slice().sort((a, b) => (mine.has(b[0]) ? 1 : 0) - (mine.has(a[0]) ? 1 : 0));

@@ -20,6 +20,7 @@ import linkbook  # noqa: E402  資料リンク集（scripts/linkbook.py）
 sys.path.insert(0, str(SRC))
 import tenken_build  # noqa: E402  点検・減算・年間（syudan/_src/tenken_build.py）
 import tenken_kaigo  # noqa: E402  高齢の点検（国の確認項目だけ）
+import themes_build  # noqa: E402  テーマ（見出しの振り分け・減算と基準の組み合わせ）
 import tempfile  # noqa: E402
 
 HEAD = """<!doctype html>
@@ -230,6 +231,10 @@ def build_field(fid):
         print(fid, "データに問題があります。書き出しを止めました:", *errs, sep="\n  ")
         sys.exit(1)
     notes, unmatched, missing = load_notes(toc, src)
+    themes, th_errs, _ = themes_build.build(fid, toc, notes)
+    if th_errs:
+        print(fid, "テーマの振り分けに問題があります。書き出しを止めました:", *th_errs, sep="\n  ")
+        sys.exit(1)
     tk, tk_files = None, {}
     if fid == "kourei" and (src / "tenken" / "kaigo.json").exists():
         tk, tk_files = tenken_kaigo.build(src / "tenken" / "kaigo.json", docs)
@@ -265,6 +270,8 @@ def build_field(fid):
     if left:
         print(fid, "部品の差し込みが残っています:", left); sys.exit(1)
     data = {"docs": docs, "toc": toc, "notes": notes, "field": conf}
+    if themes:
+        data["themes"] = themes
     if tk:
         data["tk"] = {k: v for k, v in tk.items() if k != "srclist"}
     head = HEAD.format(title=conf["title"], desc=txt["desc"], ogdesc=txt["ogdesc"], dir=FIELD_DIR[fid], up=up)
