@@ -1,8 +1,15 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-10-31T20:30:07.271Z",
+      "lastCrawled": "2026-11-01T21:15:56.153Z",
       "items": [
+        {
+          "hash": "d54c0bc3efb43a10",
+          "title": "令和8年秋の褒章受章者一覧について掲載しました",
+          "url": "https://www.cfa.go.jp/press/8b5ac1c0-7d11-4b5b-ae36-2919c1a88ab5",
+          "date": "2026-11-02",
+          "category": "報道発表"
+        },
         {
           "hash": "7e06f729e98df08e",
           "title": "中司大臣記者会見（令和8年10月30日）を掲載しました",
@@ -1224,7 +1231,7 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-10-31T20:30:07.661Z",
+      "lastCrawled": "2026-11-01T21:15:56.724Z",
       "items": [
         {
           "hash": "8761ff1679ca5982",
@@ -5177,7 +5184,7 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-10-31T20:30:08.837Z",
+      "lastCrawled": "2026-11-01T21:15:57.726Z",
       "items": [
         {
           "hash": "82a672754ae1202a",
@@ -7282,7 +7289,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-10-31T20:30:10.560Z",
+      "lastCrawled": "2026-11-01T21:15:58.600Z",
       "items": [
         {
           "hash": "d0b6b1021e2cc6dc",
@@ -7651,7 +7658,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-10-31T20:30:10.943Z",
+      "lastCrawled": "2026-11-01T21:15:59.237Z",
       "items": [
         {
           "hash": "c16f59eab0cefc3b",
@@ -8375,7 +8382,7 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-10-31T20:30:12.148Z",
+      "lastCrawled": "2026-11-01T21:16:00.590Z",
       "items": [
         {
           "hash": "a6cd3938268a1db7",
@@ -9472,7 +9479,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-10-31T20:30:11.312Z",
+      "lastCrawled": "2026-11-01T21:15:59.764Z",
       "items": [
         {
           "hash": "7977ecfb8934b1f6",
@@ -10121,7 +10128,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-10-31T20:30:12.993Z",
+      "lastCrawled": "2026-11-01T21:16:01.367Z",
       "items": [
         {
           "hash": "db72875230def8fb",
@@ -10652,7 +10659,7 @@
     }
   },
   "preferredModel": "gemini-3.5-flash-lite",
-  "lastSentDate": "2026-11-01",
-  "lastRunAt": "2026-11-01T02:20:41.296Z",
-  "lastCrawlDate": "2026-11-01"
+  "lastSentDate": "2026-11-02",
+  "lastRunAt": "2026-11-01T21:16:02.598Z",
+  "lastCrawlDate": "2026-11-02"
 }
