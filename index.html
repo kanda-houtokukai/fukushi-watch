@@ -1358,6 +1358,9 @@
   $("dayPop").addEventListener("click", (e) => {
     const nav = e.target.closest("#dpPrev, #dpNext");
     if (nav) {
+      // 2026-11-02: 月を描き直すと押したボタンが文書から外れ、下の「外側クリックで閉じる」が
+      // 外側と判定して一覧を閉じていた（‹ を押すと閉じるだけに見えた）。ここで止めて外へ伝えない
+      e.stopPropagation();
       const months = [...state.index.months].sort();
       popMonth = months[months.indexOf(popMonth) + (nav.id === "dpNext" ? 1 : -1)] ?? popMonth;
       renderDayPop();
