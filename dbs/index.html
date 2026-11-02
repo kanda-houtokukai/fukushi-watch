@@ -687,10 +687,10 @@ html.drawer-open { overflow: hidden; }
   body::before, .crumb, .topbar, .drawer, .tabbar, .subnav, .pager, .banner, .qa-tools, .dt-actions, .ck-count, .ck-meter, .tabbtns { display: none !important; }
   .shell { display: block; padding: 0; }
   main { max-width: none; }
-  .view { display: block !important; animation: none; }
+  /* 印刷するのは開いているページだけ（2026-11-02。以前はガイド全体の約200ページが出ていた） */
+  .view.is-active { display: block !important; animation: none; }
   .tabs > .pane { display: block !important; }
   details.more > .more-in, .qa .a { display: block !important; }
-  .chapter { break-before: page; }
   figure, .box, .card, table { break-inside: avoid; }
   a { color: inherit; }
 }
@@ -7617,8 +7617,13 @@ GUIDE_DATA.sectors = [{"k": "hoiku", "t": "こども園・保育所", "h": "認�
     if (q.value) run();
   })();
 
-  /* ── 印刷するときはすべて開く ────────── */
-  window.addEventListener("beforeprint", function () { each(document.querySelectorAll("details"), function (d) { d.open = true; }); });
+  /* ── 印刷するときは、開いているページの閉じた欄を開き、終わったら元に戻す ── */
+  var printOpened = [];
+  window.addEventListener("beforeprint", function () {
+    printOpened = [];
+    each(document.querySelectorAll(".view.is-active details:not([open])"), function (d) { d.open = true; printOpened.push(d); });
+  });
+  window.addEventListener("afterprint", function () { printOpened.forEach(function (d) { d.open = false; }); printOpened = []; });
 })();
 
 </script>

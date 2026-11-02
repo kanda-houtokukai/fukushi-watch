@@ -1197,6 +1197,11 @@
     if (q.value) run();
   })();
 
-  /* ── 印刷するときはすべて開く ────────── */
-  window.addEventListener("beforeprint", function () { each(document.querySelectorAll("details"), function (d) { d.open = true; }); });
+  /* ── 印刷するときは、開いているページの閉じた欄を開き、終わったら元に戻す ── */
+  var printOpened = [];
+  window.addEventListener("beforeprint", function () {
+    printOpened = [];
+    each(document.querySelectorAll(".view.is-active details:not([open])"), function (d) { d.open = true; printOpened.push(d); });
+  });
+  window.addEventListener("afterprint", function () { printOpened.forEach(function (d) { d.open = false; }); printOpened = []; });
 })();

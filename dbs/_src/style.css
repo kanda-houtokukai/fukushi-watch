@@ -663,10 +663,10 @@ html.drawer-open { overflow: hidden; }
   body::before, .crumb, .topbar, .drawer, .tabbar, .subnav, .pager, .banner, .qa-tools, .dt-actions, .ck-count, .ck-meter, .tabbtns { display: none !important; }
   .shell { display: block; padding: 0; }
   main { max-width: none; }
-  .view { display: block !important; animation: none; }
+  /* 印刷するのは開いているページだけ（2026-11-02。以前はガイド全体の約200ページが出ていた） */
+  .view.is-active { display: block !important; animation: none; }
   .tabs > .pane { display: block !important; }
   details.more > .more-in, .qa .a { display: block !important; }
-  .chapter { break-before: page; }
   figure, .box, .card, table { break-inside: avoid; }
   a { color: inherit; }
 }
