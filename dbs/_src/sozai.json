@@ -4,10 +4,10 @@
   "videos": [
     { "h": "従事者向け（法定の研修）", "lead": "こどもに接する業務に就く職員が受ける研修の動画です。", "src": "https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/jujisya", "items": [
       { "t": "研修動画（標準動画）", "len": "約90分・8本", "u": "https://www.youtube.com/playlist?list=PLlQ7HtehdR3Lw0MnIF2kMrT-MrxcABcQr", "note": "法定の研修は原則としてこれを受ける", "alt": [{ "t": "英語字幕版", "u": "https://www.youtube.com/playlist?list=PLlQ7HtehdR3IqufTDvTXL8IesXzyj30JA" }],
-        "sub": ["こども性暴力防止法の概要", "性暴力の防止に関する基礎", "安全確保措置 1.早期発見のための取組", "安全確保措置 2.疑いを把握した従事者の初期対応", "安全確保措置 3.疑いの報告後の組織的な対応", "犯罪事実確認", "防止措置", "情報管理措置"], "subh": "収録の内容", "ref": ["準備ガイド p.12", "研修の手引き p.9"] },
-      { "t": "研修動画（要点動画）", "len": "約17分", "u": "https://youtu.be/tK5ZpsTwRs0", "note": "不定期・短期間で働く人など、標準研修をすぐに受けるのが難しい人向け", "alt": [{ "t": "英語字幕版", "u": "https://youtu.be/d3f-lqLuwlo" }], "ref": ["準備ガイド p.12"] }
+        "sub": ["こども性暴力防止法の概要", "性暴力の防止に関する基礎", "安全確保措置 1.早期発見のための取組", "安全確保措置 2.疑いを把握した従事者の初期対応", "安全確保措置 3.疑いの報告後の組織的な対応", "犯罪事実確認", "防止措置", "情報管理措置"], "subh": "収録の内容", "ref": ["準備ガイド p.11", "研修の手引き p.9"] },
+      { "t": "研修動画（要点動画）", "len": "約17分", "u": "https://youtu.be/tK5ZpsTwRs0", "note": "不定期・短期間で働く人など、標準研修をすぐに受けるのが難しい人向け", "alt": [{ "t": "英語字幕版", "u": "https://youtu.be/d3f-lqLuwlo" }], "ref": ["準備ガイド p.11"] }
     ]},
-    { "h": "事業者向け（解説動画）", "lead": "管理者や制度の責任者・担当者向けです。受講は法律上の義務ではありませんが、実施が推奨されています。", "src": "https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/jigyousya", "items": [
+    { "h": "事業者向け（解説動画）", "lead": "管理者や制度の責任者・担当者向けです。受講は法律上の義務ではありませんが、実施が推奨されています。確認記録を扱う人には、着任時と定期的に情報管理の研修を行うことが求められています（GL p.258）。", "src": "https://www.cfa.go.jp/policies/child-safety/efforts/koseibouhou/jigyousya", "items": [
       { "t": "解説動画 基礎編", "len": "12本", "u": "https://www.youtube.com/playlist?list=PLlQ7HtehdR3JIMDFmG0DFVHR4R5qb6CT9", "note": "資料は「事業者向けの教材」に", "sub": ["こども性暴力防止法の概要", "性暴力の防止に関する基礎", "安全確保措置 1.未然防止", "安全確保措置 2.早期発見", "安全確保措置 3.疑いを把握した事業者の初期対応", "安全確保措置 4.調査", "安全確保措置 5.調査を踏まえた対応", "犯罪事実確認", "防止措置", "情報管理措置", "認定", "監督"], "subh": "収録の内容", "ref": ["研修の手引き p.9"] },
       { "t": "応用編 こどもへの聴き取りに関する留意点＜知識編＞", "u": "https://youtu.be/o0UH4Di8V2g", "doc": "kikitori-1" },
       { "t": "応用編 こどもへの聴き取りに関する留意点＜実践編①＞", "u": "https://youtu.be/aogzLE-R27Y", "doc": "kikitori-2" },
