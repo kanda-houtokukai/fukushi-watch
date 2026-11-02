@@ -421,7 +421,7 @@
     "通報": ["通報"], "家族": ["家族"], "預かり金": ["預り金", "金銭管理"], "お金": ["金銭", "預り金"], "金銭": ["金銭", "預り金"],
     "個人情報": ["個人情報", "秘密保持"], "守秘義務": ["秘密保持"], "サイン": ["署名", "確認"], "印鑑": ["押印", "署名"],
     "足りない": ["欠如", "不足"], "退職": ["退職"], "人手不足": ["人員基準", "欠如"], "欠員": ["欠如", "人員基準"],
-    "検便": ["検便"], "時間区分": ["時間区分", "所要時間"], "所要時間": ["所要時間", "時間区分"], "定着率": ["定着率", "定着"], "たん吸引": ["喀痰吸引", "たん吸引"], "痰吸引": ["喀痰吸引"],
+    "検便": ["検便"], "抑制": ["身体拘束", "抑制"], "ライフ": ["life", "科学的介護"], "重説": ["重要事項説明", "重要事項"], "重要事項説明書": ["重要事項説明", "重要事項"], "時間区分": ["時間区分", "所要時間"], "所要時間": ["所要時間", "時間区分"], "定着率": ["定着率", "定着"], "たん吸引": ["喀痰吸引", "たん吸引"], "痰吸引": ["喀痰吸引"],
     "pt": ["理学療法士"], "ot": ["作業療法士"], "st": ["言語聴覚士"], "bi": ["barthel", "bi"]
   };
   const SYN_F = {
@@ -569,7 +569,7 @@
     const us = [], marks = marksOf(kw.vocab, gs);
     docs.forEach((doc) => {
       const by = new Map();
-      const u = (h) => { if (!by.has(h)) by.set(h, { doc, h, segs: [], m: gs.map(() => false), nm: gs.map(() => false) }); return by.get(h); };
+      const u = (h) => { if (!by.has(h)) by.set(h, { doc, h, segs: [], m: gs.map(() => false), nm: gs.map(() => false), tm: gs.map(() => false) }); return by.get(h); };
       (kw.segs[doc.id] || []).forEach((sg) => {
         const m = marks.map((alts) => segHit(sg.ids, alts));
         if (!m.some(Boolean)) return;
@@ -578,13 +578,15 @@
         x.segs.push({ p: sg.p, m });
       });
       const dt = fold(doc.t).replace(/\s+/g, "");
+      const tmd = gs.map((g) => g.alts.some((a) => hitN(dt, a)));   // 資料の題名に出る語
       Object.entries(NOTE_TEXT[doc.id]).forEach(([hh, txt]) => {
-        const t2 = dt + txt;
-        const m = gs.map((g) => g.alts.some((a) => hitN(t2, a)));
+        const m = gs.map((g, i) => tmd[i] || g.alts.some((a) => hitN(txt, a)));
         if (!m.some(Boolean)) return;
         const x = u(Number(hh));
-        m.forEach((v, i) => { if (v) { x.m[i] = true; x.nm[i] = true; } });
+        m.forEach((v, i) => { if (v) { x.m[i] = true; if (tmd[i] && !gs[i].alts.some((a) => hitN(txt, a))) x.tm[i] = true; else x.nm[i] = true; } });
       });
+      // 題名で当たる語は、資料の最初（表紙・目次、または最初の見出し）に印を付けて先に出す
+      if (tmd.some(Boolean)) { const first = by.has(-1) ? by.get(-1) : u(Math.min(...[...by.keys()].filter((k) => k >= 0), 0)); first.cover = true; tmd.forEach((v, i) => { if (v) first.m[i] = true; }); }
       by.forEach((x) => us.push(x));
     });
     return us;
@@ -615,7 +617,7 @@
     us.forEach((x) => {
       x.pages = new Set(x.segs.filter((sg) => allReq(sg.m)).map((sg) => sg.p));
       x.any = new Set(x.segs.map((sg) => sg.p));
-      x.full = x.pages.size > 0 || allReq(x.nm);
+      x.full = x.pages.size > 0 || allReq(x.nm.map((v, i) => v || x.tm[i] || (x.cover && x.m[i])));
     });
     let hits = us.filter((x) => x.full), part = false;
     // サービス名の語や、加算・減算の名前が資料に無いときは、一部の語では出さない（ほかのサービス・ほかの加算を出してしまうため）
@@ -634,7 +636,9 @@
     // 並べ順: 見出しに語が出る > 要点の文に出る > PDFの頁だけ。資料も、いちばんよく合う見出しの順に
     hits.forEach((x) => {
       const ht = HEAD_TEXT[x.doc.id][x.h] || "";
-      x.rk = (part ? x.s * 10 : 0) + gs.reduce((s, g, i) => s + (g.alts.some((a) => hitN(ht, a)) ? 3 : (x.nm[i] ? 2 : (x.m[i] ? 1 : 0))), 0);
+      // 資料の題名だけで当たった語は、その資料の最初の見出しで重く、ほかの見出しでは軽く数える
+      // （サービス名の語は、題名にあればその資料全体がそのサービスのものなので、どの見出しでも重く数える）
+      x.rk = (part ? x.s * 10 : 0) + gs.reduce((s, g, i) => s + (g.alts.some((a) => hitN(ht, a)) ? 3 : (x.nm[i] ? 2 : ((x.tm[i] || x.m[i]) && x.cover ? 3 : (x.tm[i] ? (isSvc(g) ? 2 : 0.5) : (x.m[i] ? 1 : 0))))), 0);
     });
     const byDoc = new Map();
     hits.forEach((x) => { if (!byDoc.has(x.doc.id)) byDoc.set(x.doc.id, []); byDoc.get(x.doc.id).push(x); });
