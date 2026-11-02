@@ -17,9 +17,9 @@
         <text x="100" y="88" font-size="11" class="t2">確認済みを見てから</text>
         <text x="100" y="105" font-size="11" class="t2">業務に就かせる</text>
         <rect x="88" y="202" width="160" height="86" rx="5" class="f-surface s-ai"/>
-        <text x="100" y="226" font-size="12" class="tb">業務に就く日までに</text>
-        <text x="100" y="248" font-size="11" class="t2">確認書を受け取り</text>
-        <text x="100" y="265" font-size="11" class="t2">確認を終える</text>
+        <text x="100" y="226" font-size="12" class="tb">確認の状況を管理する</text>
+        <text x="100" y="248" font-size="11" class="t2">業務に就く日までに</text>
+        <text x="100" y="265" font-size="11" class="t2">確認を終えたかを見る</text>
         <line x1="148" y1="130" x2="148" y2="198" class="s-ink2" stroke-width="1.4" marker-end="url(#bt-ah)"/>
         <line x1="188" y1="198" x2="188" y2="132" class="s-ink2" stroke-width="1.4" marker-end="url(#bt-ah)"/>
         <text x="96" y="160" font-size="10.5" class="t2">知らせる</text>
@@ -42,7 +42,7 @@
         <text x="452" y="88" font-size="11" class="t2">初動の調査と</text>
         <text x="452" y="105" font-size="11" class="t2">当面の保護</text>
         <rect x="440" y="202" width="160" height="86" rx="5" class="f-surface s-ai"/>
-        <text x="452" y="226" font-size="12" class="tb">対応を決める</text>
+        <text x="452" y="226" font-size="12" class="tb">対応を検討する</text>
         <text x="452" y="248" font-size="11" class="t2">他の事業所も含めて</text>
         <text x="452" y="265" font-size="11" class="t2">再発を防ぐ</text>
         <line x1="520" y1="130" x2="520" y2="198" class="s-ink2" stroke-width="1.4" marker-end="url(#bt-ah)"/>
