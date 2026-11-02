@@ -559,13 +559,11 @@
    "result": "fixed"
   },
   "論点:shuro-a-01": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-03",
    "result": "ok"
   },
   "論点:shuro-b-01": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-03",
    "result": "ok"
   },
   "論点:shuro-oudan-01": {
@@ -605,9 +603,8 @@
    "result": "ok"
   },
   "論点:shuro-oudan-09": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 表現",
-   "result": "fixed"
+   "checked": "2026-11-03",
+   "result": "ok"
   },
   "論点:shuro-sentaku-01": {
    "checked": "2026-10-28",
@@ -625,8 +622,7 @@
    "result": "ok"
   },
   "論点:shuro-teichaku-01": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-03",
    "result": "ok"
   },
   "論点:tanki-nyusho-01": {
