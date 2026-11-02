@@ -256,8 +256,9 @@ def build(parts, ctx, ref_html, kenshu_body):
         if t.get("faq"):
             h.append('  <section class="th-b" aria-labelledby="t-%s-faq"><h3 id="t-%s-faq">よく聞かれること</h3><ul class="th-qa">' % (t["id"], t["id"])
                      + "".join(faq_item(k, t["id"]) for k in t["faq"]) + "</ul>"
-                     + '<a class="th-all" href="#qa~%s"><b>%sのQ&amp;A %d件をすべて見る</b><small>資料から回答 %d・公式Q&amp;A %d</small></a></section>'
-                     % (t["id"], H.escape(t["name"]), counts[t["id"]][0], counts[t["id"]][1], counts[t["id"]][2]))
+                     + ('<a class="th-all" href="#qa~%s"><b>%sのQ&amp;A %d件をすべて見る</b><small>資料から回答 %d・公式Q&amp;A %d</small></a>'
+                        % (t["id"], H.escape(t["name"]), counts[t["id"]][0], counts[t["id"]][1], counts[t["id"]][2]) if counts[t["id"]][0] else "")   # 0件なら出さない（2026-11-02）
+                     + "</section>")
         if t.get("ch"):
             rd = []
             for vid in t["ch"]:

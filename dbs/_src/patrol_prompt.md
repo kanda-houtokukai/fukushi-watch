@@ -5,8 +5,8 @@
 - 施行日は2026年12月25日。読者は児童発達支援・放課後等デイサービス・認定こども園・保育所・障害児入所施設などを運営する法人と協会の職員です。
 
 ## 進め方の決まり（神田さんと決めたもの）
-- 進めてよいのは、ページの確認（読む・検索する・資料を作業用のフォルダに保存して読む）と、`dbs/_src/live.json`（更新データ）の書き換え、`dbs/index.html` の組み立て、照合に合格した本文の事実の直し（`dbs/_src/sections/` の章・`dbs/_src/data.js` の Q&A・判定ツール・チェックリスト）、資料リンク集の台帳 `dbs/_src/links.json` への資料の追加、照合の記録 `dbs/_src/audit.json` の更新、それらの commit と push です。
-- それ以外のファイルには触りません。とくに福祉情報ウォッチ本体（index.html・scripts/・data/・docs/・台帳・CLAUDE.md）と、ガイドの部品（`dbs/_src/style.css`・`app.js`・`build.py`・`shell_*.html`・`svg/`・`themes.json`・`themes_build.py`）は書き換えません。force push はしません。
+- 進めてよいのは、ページの確認（読む・検索する・資料を作業用のフォルダに保存して読む）と、`dbs/_src/live.json`（更新データ）の書き換え、`dbs/index.html` の組み立て、照合に合格した本文の事実の直し（`dbs/_src/sections/` の章・`dbs/_src/data.js` の Q&A・判定ツール・チェックリスト・法人と事業所の分担のチェックリスト・`dbs/_src/sozai.json` の研修素材の動画）、資料リンク集の台帳 `dbs/_src/links.json` への資料の追加、照合の記録 `dbs/_src/audit.json` の更新、それらの commit と push です。
+- それ以外のファイルには触りません。とくに福祉情報ウォッチ本体（index.html・scripts/・data/・docs/・台帳・CLAUDE.md）と、ガイドの部品（`dbs/_src/style.css`・`app.js`・`build.py`・`shell_*.html`・`svg/`・`themes.json`・`themes_build.py`・`sozai_build.py`）は書き換えません。force push はしません。
 - テーマのページ（ホームの「テーマから探す」）は、章のリードと「この章の要点」・図・Q&A・資料・事業別の要点を `themes.json` の決まりで集めて組み立てるだけで、事実を持ちません。章や Q&A を直せば、build.py でテーマのページも同じ内容になります。`sections/17_sectors.html` の各項目に付いている `data-th`（どのテーマに出すかの印）と、章の「この章の要点」の箱（`<div class="points">`）は、本文を直すときも消さずに残します。
 - 「資料を読む」「法令の条文」「研修の進め方」「資料から回答」の材料（`dbs/_src/docs.json`・`notes/`・`law.json`・`qa_official.json`・`kenshu.json`・`qa_mat.json`・`docs_build.py`・`docs.js`）は、照合係2人の照合を通して作ったものなので書き換えません。
   `dbs/notes/`・`dbs/law.json`・`dbs/qa_official.json`・`dbs/qa_mat.json` は build.py の出力です（材料が変わらなければ中身は変わりません）。
@@ -43,9 +43,9 @@ live.json の watch に並ぶページを `scripts/fetchtext.py` で読んで確
 ### 4. 更新データを書き換える
 JSON の形を保ったまま、次のとおり書き換えます。日付は日本時間の ISO 形式（例 2026-11-06、時刻つきは 2026-11-06T14:00:00+09:00）。
 - checkedAt: 今の日時（見積もらずに `TZ=Asia/Tokyo date +%Y-%m-%dT%H:%M:00+09:00` で取る）。checkedPages: 今日開いて確かめたページの数。checkNote: 今日の確認の結果を1文で（例「こども家庭庁がQ&Aを改訂しました」「新しい発表はありませんでした」）。
-- updates（新しい発表）: 先頭に足します。項目は {date: 発表日, src: "国"|"自治体"|"研修"|"その他", title, url, impact, note, where}。impact は、ガイドの本文の書き換えが要るなら、手順5で反映できたものは "done"、反映できなかったものは "todo"、本文に影響しない参考情報なら "info"、更新データの書き換え（研修の追加など）だけで対応が済んだなら "done"。where はガイドの関係する章の #id（#now #checklist #schedule #tools #overview #scope #persons #check #timing #system #safety #inappropriate #incident #employment #info #docs #supervision #sectors #qa #events #kenshu #updates #open #sources #materials #law）。note は何が変わったかを1〜2文で具体的に。60件を超えたら古いものから消します。
+- updates（新しい発表）: 先頭に足します。項目は {date: 発表日, src: "国"|"自治体"|"研修"|"その他", title, url, impact, note, where}。impact は、ガイドの本文の書き換えが要るなら、手順5で反映できたものは "done"、反映できなかったものは "todo"、本文に影響しない参考情報なら "info"、更新データの書き換え（研修の追加など）だけで対応が済んだなら "done"。where はガイドの関係する章の #id（#now #checklist #buntan #schedule #tools #overview #scope #persons #check #timing #system #safety #inappropriate #incident #employment #info #docs #supervision #sectors #qa #events #kenshu #sozai #updates #open #sources #materials #law）。note は何が変わったかを1〜2文で具体的に。60件を超えたら古いものから消します。
 - events（研修・説明会）: 新しいものは既存と同じ項目（id は英小文字とハイフンで一意に、start, end, date, fmt: ["online"|"venue"|"ondemand"|"fukuoka"], kind: "official"|"municipal"|"private", title, org, place, target, fee, cap, how, url, note, status, featured）で足します。福岡県内の会場なら fmt に "fukuoka" を入れます。民間の営業を含むものは note に書きます。満席は status "waitlist"、中止は "cancelled"、公開日が決まっていないものは "planned"（planned のあいだは画面に「公開予定」と出る。公開・開催を主催者のページで確かめたら status を外す）。終了から60日を過ぎたものは消します。
-- library（いつでも見られる動画・資料）: アーカイブや資料が公開されたら足します（kind, title, note, url）。
+- library（研修素材のページ #sozai の「説明会・研修会の録画」「説明会の資料」に出る）: 説明会・研修会のアーカイブや資料が公開されたら足します（kind, title, note, url）。国の研修教材そのもの（従事者向けの研修動画・事業者向けの解説動画）は `dbs/_src/sozai.json` に載っているので、library には足しません。国の研修教材のページ（従事者向け研修教材・事業者向けの解説動画・資料）で動画が増えた・差し替わったときは、sozai.json の videos を手順5と同じ照合を通して直します（直した単位は「素材:動画」）。
 - milestones（ガイドのホームの「近づいている日程」）: 国が日付を確定・変更したら直します。たとえばシステムの暫定稼働日が発表されたら、その項目の date を確定日にし、approx と label を消します。
 - notices（ガイドの全ページの上に出るお知らせ）: 2週間以内に法人が動く必要がある急な変更だけを {title, body, until, link} で足します。until を過ぎたものは消します。
 - eventsFocus と eventsLocalNote: 福岡からの参加に関する案内を、事実に合わせて直します（until を過ぎた eventsFocus は消すか更新）。
@@ -61,7 +61,7 @@ JSON の形を保ったまま、次のとおり書き換えます。日付は日
 3. 2人とも合格とした直しだけを本文に当て、直した単位ごとに `python3 scripts/audit.py dbs --mark <単位> fixed --note "MM/DD ◯◯の改訂で直した"` を実行します（単位の名前は `python3 scripts/audit.py dbs --next 200` の unit で分かる）。不合格の直しは当てず、updates に impact "todo" で記録します。
 
 ### 6. 毎朝の見直し（すでに載っている本文の照合）
-1. `python3 scripts/audit.py dbs --next 4` で、照合がいちばん古い4つの単位（章・Q&Aの1問・判定ツール・チェックリスト・期限の一覧）を、本文と根拠の資料つきで出します。
+1. `python3 scripts/audit.py dbs --next 4` で、照合がいちばん古い4つの単位（章・Q&Aの1問・判定ツール・チェックリスト・法人と事業所の分担・研修素材の動画・期限の一覧）を、本文と根拠の資料つきで出します。
 2. それぞれ、根拠の資料の該当箇所を開き、事実を1つずつ原文と照らします（日付の役割と、今日より前になった期限にも気をつける）。
 3. 食い違いがなければ `python3 scripts/audit.py dbs --mark <単位> ok` を実行します。
 4. 食い違いがあれば、手順5と同じやり方（事実だけを最小限に直す→別の担当の照合→合格したものだけ当てる）で直し、`--mark <単位> fixed --note "何を直したか"` を実行します。
@@ -70,7 +70,7 @@ JSON の形を保ったまま、次のとおり書き換えます。日付は日
 
 ### 7. 組み立てて push する
 1. `python3 dbs/_src/build.py` を実行します（dbs/index.html が組み立て直されます）。止まったときは表示に直し方が出るので、それに従って直し、組み立て直します（例：画面の文に「まだ」「いま〇〇」があれば事実の言い方に直す。根拠の表記が資料に結びつかなければ links.json の cite を足すか表記を直す）。直せないときは push せず、理由を報告します。
-2. `git status --short` で、変わったのが `dbs/_src/live.json`・`dbs/index.html`・`dbs/_src/audit.json`・`dbs/_src/links.json`・`dbs/_src/sections/`・`dbs/_src/data.js`・`dbs/notes/`・`dbs/law.json`・`dbs/qa_official.json`・`dbs/qa_mat.json` の中だけであることを確かめます。ほかのファイルが変わっていたら push せずに止めます。
+2. `git status --short` で、変わったのが `dbs/_src/live.json`・`dbs/index.html`・`dbs/_src/audit.json`・`dbs/_src/links.json`・`dbs/_src/sections/`・`dbs/_src/data.js`・`dbs/_src/sozai.json`・`dbs/notes/`・`dbs/law.json`・`dbs/qa_official.json`・`dbs/qa_mat.json` の中だけであることを確かめます。ほかのファイルが変わっていたら push せずに止めます。
 3. commit します。メッセージは「ガイド: 毎朝の更新 MM/DD（新しい発表◯件・研修◯件・本文の直し◯件・照合◯件）」。
 4. `git fetch origin main` → `git rebase origin/main` → `git push origin HEAD:main`。`dbs/index.html` でぶつかったら、そのファイルを origin/main の版にしてから `python3 dbs/_src/build.py` を走らせ直し、`git add dbs/index.html` して `git rebase --continue` します（組み立ての出力なので、手で混ぜない）。拒否されたら同じ手順をもう1回だけ行い、それでも駄目なら止めて報告します。変化がなかった日も、最終確認の日時を更新するために push します。
 5. 公開URLの HTML に今日の checkedAt が入るまで、最長10分ほど確かめます（GitHub Pages の反映待ち）。

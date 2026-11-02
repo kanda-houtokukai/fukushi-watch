@@ -929,16 +929,6 @@ figure.fig.flow { max-width: 52em; }
 .bt-qa a { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 10px; padding: 10px 2px; border-bottom: 1px solid var(--line-2); text-decoration: none; color: var(--ink); font-size: 14.5px; line-height: 1.65; }
 .bt-qa a:hover { color: var(--ai); }
 .bt-qa .tk { justify-self: start; align-self: start; font-family: var(--f-mono); font-size: 11px; line-height: 1.6; padding: 1px 6px; border: 1px solid var(--ai); color: var(--ai); border-radius: 3px; margin-top: 2px; }
-.bt-role { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 6px 0 18px; max-width: 40em; }
-.bt-role button { font: inherit; text-align: left; cursor: pointer; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); border-radius: var(--r); padding: 12px 16px; display: grid; gap: 2px; }
-.bt-role button b { font-family: var(--f-display); font-size: 17px; }
-.bt-role button span { font-size: 12.5px; color: var(--ink-3); }
-.bt-role button[aria-pressed="true"] { border-color: var(--ai); background: var(--ai-soft); }
-.bt-role button[aria-pressed="true"] b { color: var(--ai); }
-.bt-hand { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 0 22px; max-width: 52em; }
-.bt-h { border: 1px solid var(--line); border-radius: var(--r); padding: 12px 16px; background: var(--surface); }
-.bt-hk { font-family: var(--f-mono); font-size: 11.5px; letter-spacing: .1em; color: var(--kin); }
-.bt-h ul { margin: 6px 0 0; padding-left: 1.2em; font-size: 14px; line-height: 1.7; display: grid; gap: 4px; }
 @media (max-width: 640px) {
   .bt-five > li { padding: 12px 14px 12px 46px; }
   .bt-five > li::before { left: 13px; }
@@ -950,11 +940,9 @@ figure.fig.flow { max-width: 52em; }
   .bt-tbl tbody td[data-l]:not([data-l=""])::before { content: attr(data-l); display: block; font-size: 11.5px; font-weight: 700; color: var(--ink-3); }
   .bt-tbl tbody td[data-l="法人本部"]::before { color: var(--ai); }
   .bt-qa a { grid-template-columns: 1fr; gap: 4px; }
-  .bt-hand { grid-template-columns: 1fr; }
-}
+  }
 @media print {
-  .bt-bar .seg, .bt-role { display: none !important; }
-  .bt-five > li, .bt-tbl tr { break-inside: avoid; }
+  .bt-bar .seg,   .bt-five > li, .bt-tbl tr { break-inside: avoid; }
 }
 
 /* ── 研修素材（2026-11-02） ── */
