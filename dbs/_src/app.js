@@ -373,29 +373,8 @@
         draw(list, (["all", "hq", "site"].indexOf(role0) >= 0) ? role0 : "all");
       } else {
         host.appendChild(list);
-        host.bt = list;
+        draw(list, "all");
       }
-    });
-    // 案B：冒頭の担当の選択で、受け渡しとやることを切り替える
-    var roleBtns = document.querySelectorAll("[data-bt-role]");
-    if (roleBtns.length) {
-      var rhost = document.querySelector('[data-buntan-ck="role"]');
-      var pick = function (r) {
-        each(roleBtns, function (x) { x.setAttribute("aria-pressed", String(x.getAttribute("data-bt-role") === r)); });
-        each(document.querySelectorAll("[data-bt-show]"), function (x) { x.hidden = x.getAttribute("data-bt-show") !== r; });
-        if (rhost && rhost.bt) draw(rhost.bt, r);
-      };
-      each(roleBtns, function (b) { b.addEventListener("click", function () { pick(b.getAttribute("data-bt-role")); store.set(RKEY, b.getAttribute("data-bt-role")); }); });
-      pick(role0 === "hq" ? "hq" : "site");
-    }
-    // 案B：分担の一覧と図は案Aのものを写して使う（同じ中身を二重に持たない）
-    each(document.querySelectorAll("[data-bt-copy]"), function (x) {
-      var src = document.querySelector("#" + x.getAttribute("data-bt-copy") + " .bt-tbl");
-      if (src) x.innerHTML = src.innerHTML;
-    });
-    each(document.querySelectorAll("[data-bt-copyfig]"), function (x) {
-      var src = document.querySelector("#" + x.getAttribute("data-bt-copyfig") + " figure.fig .canvas");
-      if (src) x.innerHTML = src.innerHTML.replace(/id="bt-ah(s?)"/g, 'id="bt-ah$1-b"').replace(/url\(#bt-ah(s?)\)/g, "url(#bt-ah$1-b)");
     });
   })();
 

@@ -40,7 +40,8 @@ def dbs_units():
         return list(dict.fromkeys(found))
     units = {}
     skip = {"updates", "sources", "events",           # 毎朝のデータで書かれる面（更新タスクが別に確かめる）
-            "kenshu", "materials", "doc", "law"}     # 照合係2人の照合を通した材料（kenshu.json・notes/・law.json）から組み立てる面（2026-10-30）。"docs" は「規程と書類」の章なので照合の対象に残す
+            "kenshu", "materials", "doc", "law",
+            "sozai"}                                   # 研修素材の章は見出しだけ（中身は sozai.json の単位「素材:動画」で照らす）     # 照合係2人の照合を通した材料（kenshu.json・notes/・law.json）から組み立てる面（2026-10-30）。"docs" は「規程と書類」の章なので照合の対象に残す
     for f in sorted((src / "sections").glob("*.html")):
         t = f.read_text(encoding="utf-8")
         t = re.sub(r"\{\{([A-Z0-9_]+)\}\}", lambda m: (src / "svg" / (m.group(1) + ".svg")).read_text(encoding="utf-8"), t)
@@ -66,6 +67,19 @@ def dbs_units():
     for ph in data.get("checklist", []):
         units["チェック:" + ph.get("title", "")] = {"title": ph.get("title", ""), "file": "dbs/_src/data.js",
                                                    "text": plain(json.dumps(ph.get("items", []), ensure_ascii=False)), "sources": []}
+    # 法人と事業所の分担のチェックリスト（2026-11-02）。時期ごとに1単位
+    bt = data.get("buntan") or {}
+    for w in bt.get("when", []):
+        its = [it for it in bt.get("items", []) if it.get("when") == w.get("k")]
+        if its:
+            units["分担:" + w.get("t", "")] = {"title": "法人と事業所の分担 " + w.get("t", ""), "file": "dbs/_src/data.js",
+                                              "text": plain(json.dumps(its, ensure_ascii=False)),
+                                              "sources": cites(" 、".join(r for it in its for r in it.get("r", [])))}
+    # 研修素材の動画（sozai.json。資料は docs.json の照合済みの題名を引くので、ここでは動画の掲載だけを照らす）
+    sz = json.loads((src / "sozai.json").read_text(encoding="utf-8"))
+    units["素材:動画"] = {"title": "研修素材の動画（sozai.json）", "file": "dbs/_src/sozai.json",
+                          "text": json.dumps(sz.get("videos", []), ensure_ascii=False),
+                          "sources": [g["src"] for g in sz.get("videos", []) if g.get("src")]}
     live = json.loads((src / "live.json").read_text(encoding="utf-8"))
     units["期限:milestones"] = {"title": "近づいている日程（live.json milestones）", "file": "dbs/_src/live.json",
                                 "text": json.dumps(live.get("milestones", []), ensure_ascii=False), "sources": []}
