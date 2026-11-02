@@ -216,7 +216,7 @@
      表記のゆれをそろえ（FOLD）、疑問の言葉や「どうなる」「下がる？」を外し（STOP）、略称・俗称に正式の言い方を足す（SYN）。
      語ごとに「どれか1つが含まれればよい」候補の組を作り、組をすべて含むものを探す。
      すべてを含むものが無ければ、珍しい語を多く含むものを「一部の語を含むもの」として出す */
-  var FOLD = [[/障がい|障碍/g, "障害"], [/子供|子ども/g, "こども"], [/放課後デイ/g, "放課後等デイ"], [/[ヶヵカケ]所/g, "か所"],
+  var FOLD = [[/障がい|障碍/g, "障害"], [/子供|子ども/g, "こども"], [/ディ/g, "デイ"], [/放課後デイ/g, "放課後等デイ"], [/[ヶヵカケ]所/g, "か所"],
     [/取り扱い|取扱い/g, "取扱"], [/見直し/g, "見直"], [/引き上げ|引上げ/g, "引上"], [/引き下げ|引下げ/g, "引下"],
     [/加算\(?([1-4])\)?(?![0-9])/g, function (m, d) { return "加算" + ["i", "ii", "iii", "iv"][d - 1]; }]];
   function fold(s) {
@@ -316,9 +316,10 @@
   function hitGroup(h, g, split) { return hasAny(h, g.alts) || (!!split && !!g.parts && g.parts.every(function (p) { return hasAny(h, p); })); }
   function hayOf(r) {
     if (r._hay == null) {
-      r._hay = fold([r.title, r.label, r.genjo, r.houkousei, r.r9, r.effective, r.point, r.notes, (r.services || []).join(" "), (r.kind || []).join(" "), (r.kentou || []).join(" "),
+      // 分野（訪問系・就労系など）と向き（新設・拡充など）も、カードの札に出る言葉なので探せるようにする
+      r._hay = fold([r.title, r.label, r.genjo, r.houkousei, r.r9, r.effective, r.point, r.notes, r.group, r.direction, (r.services || []).join(" "), (r.kind || []).join(" "), (r.kentou || []).join(" "),
         (r.numbers || []).map(function (n) { return n.text; }).join(" ")].join(" "));
-      r._t = fold(r.title); r._l = fold([r.label, (r.kind || []).join(" ")].join(" ")); r._s = fold((r.services || []).join(" "));
+      r._t = fold(r.title); r._l = fold([r.label, r.group, (r.kind || []).join(" ")].join(" ")); r._s = fold((r.services || []).join(" "));
     }
     return r._hay;
   }
@@ -442,9 +443,8 @@
         bw.appendChild(cardsOf(blist, { noNew: true }));
         return bw;
       }
-      // 前提のほうが語によく合う（題名などに出る）ときは、前提を先に出す
-      var top = function (xs) { return xs.length ? (xs[0]._rk || 0) : -1; };
-      var baseFirst = st.q && !res.part && top(blist) > top(list);
+      // 論点の一覧なので、論点を先に、前提をその下に出す（前提が先だと次の改定の議論が下に隠れる）
+      var baseFirst = false;
       if (baseFirst) box.appendChild(baseBox());
       if (list.length) {
         if (box === host && !baseFirst) fill(host, list);
