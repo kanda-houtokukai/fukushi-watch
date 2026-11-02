@@ -989,3 +989,14 @@ figure.fig.flow { max-width: 52em; }
   .topbar-in { gap: 6px; }
 }
 @media (max-width: 340px) { .countdown-chip { display: none; } }
+
+/* ── 研修の進め方：入口と区切りのページ（2026-11-02・P74） ── */
+.ks-pages { list-style: none; margin: 18px 0 22px; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 10px; max-width: 60em; }
+.ks-pages .tile { height: 100%; grid-template-columns: auto minmax(0, 1fr); column-gap: 12px; align-content: start; }
+.ks-pages .tile .kn { grid-row: span 2; font-family: var(--f-mono); font-size: 13px; color: var(--ai); padding-top: 2px; }
+.ks-pages .tile b { font-family: var(--f-display); font-size: 16px; line-height: 1.5; }
+.ks-pages .tile span:last-child { font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+.chapter .ch-no a { color: var(--ai); text-decoration: none; }
+.chapter .ch-no a:hover { text-decoration: underline; }
+.ch-no .ks-n { margin-left: 10px; color: var(--ink-3); }
+.sz-use { max-width: 52em; }

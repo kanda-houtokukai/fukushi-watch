@@ -624,8 +624,18 @@
     }
     each(tabs, function (b) { b.addEventListener("click", function () { show(b.getAttribute("data-sz")); }); });
     var k0 = "v";
-    try { k0 = store.get("dbs-guide-sozai-tab") === "d" ? "d" : "v"; } catch (e) { k0 = "v"; }
+    try { var sk = store.get("dbs-guide-sozai-tab"); k0 = (sk === "d" || sk === "u") ? sk : "v"; } catch (e) { k0 = "v"; }
     show(k0);
+    // 行き先（#ks5＝旧「国の教材とその使い方」、検索で見つけた見出しなど）がこのページの面の中なら、その面を開いてそこへ移る（P74）
+    function fromHash() {
+      var h = ""; try { h = decodeURIComponent((location.hash || "").slice(1)); } catch (e) { h = ""; }
+      var t = h && document.getElementById(h);
+      if (!t || !page.contains(t)) return;
+      var pn = t.closest("[data-sz-pane]");
+      if (pn && pn.classList.contains("is-off")) { show(pn.getAttribute("data-sz-pane")); requestAnimationFrame(function () { t.scrollIntoView({ block: "start" }); }); }
+    }
+    window.addEventListener("hashchange", fromHash);
+    fromHash();
     var have = {};
     each(page.querySelectorAll("a[href^='http']"), function (a) { have[a.getAttribute("href")] = 1; });
     var hv = $("sz-arch-v"), hd = $("sz-arch-d"), nv = 0, nd = 0;
@@ -656,7 +666,7 @@
   each(document.querySelectorAll(".view"), function (v) {
     var g = GROUPS.filter(function (x) { return x.k === v.getAttribute("data-group"); })[0];
     if (!g) return;
-    var info = { id: v.id, el: v, g: g, t: v.getAttribute("data-title") };
+    var info = { id: v.id, el: v, g: g, t: v.getAttribute("data-title"), parent: v.getAttribute("data-parent") || "" };   // parent: 研修の進め方の区切りのページ（P74）は入口の下に置く
     VIEWS[v.id] = info;
     if (!v.hasAttribute("data-hidden")) g.views.push(info);   // 資料のページ（#doc-…）は一覧・前後のページに出さない
   });
@@ -692,6 +702,25 @@
     if (next) nav.appendChild(pgLink("next", "#" + next.id, "次へ", dest(next)));
     v.el.appendChild(nav);
   });
+  // 研修の進め方の区切りのページ（P74）：入口と区切りのあいだで前後に移る。最後は入口へ戻る
+  (function () {
+    var kids = {};
+    each(document.querySelectorAll(".view[data-parent]"), function (e) {
+      var v = VIEWS[e.getAttribute("data-vid")]; if (!v) return;
+      (kids[v.parent] = kids[v.parent] || []).push(v);
+    });
+    Object.keys(kids).forEach(function (pid) {
+      var hub = VIEWS[pid], list = kids[pid];
+      if (!hub) return;
+      list.forEach(function (v, i) {
+        var prev = list[i - 1] || hub, next = list[i + 1];
+        var nav = el("nav", { class: "pager two", "aria-label": "前後のページ" });
+        nav.appendChild(pgLink("prev", "#" + prev.id, "前へ", prev.t));
+        nav.appendChild(next ? pgLink("next", "#" + next.id, "次へ", next.t) : pgLink("next", "#" + hub.id, "戻る", hub.t));
+        v.el.appendChild(nav);
+      });
+    });
+  })();
 
   /* ── メニュー（全ページ） ───────────── */
   var drawer = $("drawer"), drawerList = $("drawer-list"), menuBtn = $("menu-btn");
@@ -875,7 +904,8 @@
     var ol = el("ol");
     g.views.forEach(function (x, i) {
       var li = el("li");
-      li.appendChild(el("a", { href: "#" + x.id, class: x === v ? "is-active" : "", "aria-current": x === v ? "page" : "false" }, '<span class="n">' + (i < 9 ? "0" : "") + (i + 1) + "</span><span>" + x.t + "</span>"));
+      var on = x === v || x.id === v.parent;   // 区切りのページを開いているときは入口を光らせる
+      li.appendChild(el("a", { href: "#" + x.id, class: on ? "is-active" : "", "aria-current": on ? "page" : "false" }, '<span class="n">' + (i < 9 ? "0" : "") + (i + 1) + "</span><span>" + x.t + "</span>"));
       ol.appendChild(li);
     });
     subnav.appendChild(ol);
@@ -897,7 +927,7 @@
       a.classList.toggle("is-active", on);
       if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
     });
-    each(document.querySelectorAll(".drawer a[data-v]"), function (a) { a.classList.toggle("is-active", a.getAttribute("data-v") === v.id); });
+    each(document.querySelectorAll(".drawer a[data-v]"), function (a) { a.classList.toggle("is-active", a.getAttribute("data-v") === v.id || a.getAttribute("data-v") === v.parent); });
     document.title = (v.g.k === "home" ? "" : v.t.replace(/&amp;/g, "&") + "｜") + "こども性暴力防止法 実務ガイド";
   }
   function place(intent, st) {

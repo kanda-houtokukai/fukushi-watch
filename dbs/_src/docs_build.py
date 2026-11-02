@@ -51,40 +51,48 @@ def ref_html(r, ctx):
     return f'<a class="rf" href="{H.escape(href)}"{tgt}>{H.escape(lab)}</a>' if href else f'<span class="rf">{H.escape(lab)}</span>'
 
 
-def chapter_html(path, ctx):
-    """照合済みの章（kenshu.json など）を HTML にする。戻り値 (lead, body)"""
+def render_blocks(blocks, ctx):
+    """照合済みの章（kenshu.json など）の区切りの中身（blocks）を HTML にする。2026-11-02 に chapter_html から切り出した"""
     import html as H
-    c = json.loads(path.read_text(encoding="utf-8"))
     def refs(x):
         return " ".join(ref_html(r, ctx) for r in x.get("ref", []))
     def txt(x):
         return H.escape(x["x"]) + (" " + refs(x) if x.get("ref") else "")
     body = []
+    for b in blocks:
+        if b["t"] == "p":
+            body.append(f'<p class="prose">{txt(b)}</p>')
+        elif b["t"] == "note":
+            body.append(f'<div class="box note"><p>{txt(b)}</p></div>')
+        elif b["t"] == "ul":
+            body.append('<div class="prose"><ul>' + "".join(f"<li>{txt(i)}</li>" for i in b["items"]) + "</ul></div>")
+        elif b["t"] == "table":
+            head = "".join(f"<th>{H.escape(h)}</th>" for h in b.get("head", []))
+            rows = "".join("<tr>" + "".join((f"<th>{txt(cell)}</th>" if j == 0 else f"<td>{txt(cell)}</td>") for j, cell in enumerate(row)) + "</tr>" for row in b["rows"])
+            body.append(f'<div class="scroll"><table class="tbl"><thead><tr>{head}</tr></thead><tbody>{rows}</tbody></table></div>')
+        elif b["t"] == "flow":
+            # 段を順に並べた流れ図（スマホは縦・PCは横）。最後の段が「くり返す」なら輪の印を付ける
+            loop = ' class="loop"'
+            steps = "".join(f'<li{loop if st.get("loop") else ""}><b>{H.escape(st["h"])}</b><p>{txt(st)}</p></li>' for st in b["steps"])
+            cap = f'<figcaption><b>{H.escape(b["cap"])}</b></figcaption>' if b.get("cap") else ""
+            body.append(f'<figure class="fig flow"><ol class="flow-s">{steps}</ol>{cap}</figure>')
+        elif b["t"] == "fig":
+            if b.get("svg"):
+                cap = f'<figcaption><b>{H.escape(b["cap"])}</b></figcaption>' if b.get("cap") else ""
+                body.append(f'<figure class="fig"><div class="canvas">{b["svg"]}</div>{cap}</figure>')
+            else:
+                body.append(b["html"])
+    return "\n".join(body)
+
+
+def chapter_html(path, ctx):
+    """照合済みの章（kenshu.json など）を HTML にする。戻り値 (lead, body)"""
+    import html as H
+    c = json.loads(path.read_text(encoding="utf-8"))
+    body = []
     for sec in c["sections"]:
         body.append(f'<h3 id="{sec["id"]}">{H.escape(sec["h"])}</h3>')
-        for b in sec["blocks"]:
-            if b["t"] == "p":
-                body.append(f'<p class="prose">{txt(b)}</p>')
-            elif b["t"] == "note":
-                body.append(f'<div class="box note"><p>{txt(b)}</p></div>')
-            elif b["t"] == "ul":
-                body.append('<div class="prose"><ul>' + "".join(f"<li>{txt(i)}</li>" for i in b["items"]) + "</ul></div>")
-            elif b["t"] == "table":
-                head = "".join(f"<th>{H.escape(h)}</th>" for h in b.get("head", []))
-                rows = "".join("<tr>" + "".join((f"<th>{txt(cell)}</th>" if j == 0 else f"<td>{txt(cell)}</td>") for j, cell in enumerate(row)) + "</tr>" for row in b["rows"])
-                body.append(f'<div class="scroll"><table class="tbl"><thead><tr>{head}</tr></thead><tbody>{rows}</tbody></table></div>')
-            elif b["t"] == "flow":
-                # 段を順に並べた流れ図（スマホは縦・PCは横）。最後の段が「くり返す」なら輪の印を付ける
-                loop = ' class="loop"'
-                steps = "".join(f'<li{loop if st.get("loop") else ""}><b>{H.escape(st["h"])}</b><p>{txt(st)}</p></li>' for st in b["steps"])
-                cap = f'<figcaption><b>{H.escape(b["cap"])}</b></figcaption>' if b.get("cap") else ""
-                body.append(f'<figure class="fig flow"><ol class="flow-s">{steps}</ol>{cap}</figure>')
-            elif b["t"] == "fig":
-                if b.get("svg"):
-                    cap = f'<figcaption><b>{H.escape(b["cap"])}</b></figcaption>' if b.get("cap") else ""
-                    body.append(f'<figure class="fig"><div class="canvas">{b["svg"]}</div>{cap}</figure>')
-                else:
-                    body.append(b["html"])
+        body.append(render_blocks(sec["blocks"], ctx))
     return f'<p class="ch-lead">{H.escape(c.get("lead", ""))}</p>', "\n".join(body)
 
 

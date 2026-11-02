@@ -26,8 +26,8 @@ def _size(d):
     return ""
 
 
-def build():
-    """戻り値 (html, 問題の一覧)"""
+def build(use_html=""):
+    """戻り値 (html, 問題の一覧)。use_html は「使い方」（kenshu.json の ks5 を移したもの。P74）"""
     z = json.loads((SRC / "sozai.json").read_text(encoding="utf-8"))
     docs = {d["slug"]: d for d in json.loads((SRC / "docs.json").read_text(encoding="utf-8"))["docs"]}
     bad = []
@@ -94,9 +94,11 @@ def build():
 
     body = ('<div class="seg sz-tabs" role="group" aria-label="動画と資料">'
             f'<button type="button" data-sz="v" aria-pressed="true">動画 <span class="n" id="sz-nv">{nv}</span></button>'
-            f'<button type="button" data-sz="d" aria-pressed="false">資料 <span class="n" id="sz-nd">{nd}</span></button></div>'
+            f'<button type="button" data-sz="d" aria-pressed="false">資料 <span class="n" id="sz-nd">{nd}</span></button>'
+            + ('<button type="button" data-sz="u" aria-pressed="false">使い方</button>' if use_html else "") + '</div>'
             '<div class="sz-pane" data-sz-pane="v"><h3 class="sz-ph">動画</h3>' + "\n".join(vh) + "</div>"
-            '<div class="sz-pane" data-sz-pane="d"><h3 class="sz-ph">資料</h3>' + "\n".join(dh) + "</div>")
+            '<div class="sz-pane" data-sz-pane="d"><h3 class="sz-ph">資料</h3>' + "\n".join(dh) + "</div>"
+            + ('<div class="sz-pane sz-use" data-sz-pane="u"><h3 id="ks5" class="sz-ph">国の教材とその使い方</h3>' + use_html + "</div>" if use_html else ""))
     return body, bad
 
 

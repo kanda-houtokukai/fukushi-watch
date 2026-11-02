@@ -109,6 +109,39 @@ def links_with_dates(book, live):
     return items
 
 
+# 研修の進め方の区切りのページ（P74）。入口の一覧に出す説明（事実は持たない。中身の見出しの言い換え）
+KS_SUB = {"ks1": "法律上の義務と、誰が実施するか", "ks2": "対象者・受講の期限・研修の方法・実習生",
+          "ks3": "アからクまでの研修事項と、省略できる場合", "ks4": "演習の目標・方法・内容と、進めるときの工夫",
+          "ks6": "企画から見直しまでの流れと、受講の管理", "ks7": "様式例・受講の記録・定期報告"}
+KS_MOVED = {"ks5"}   # 国の教材とその使い方 → 研修素材のページの「使い方」へ（P74）
+
+
+def kenshu_pages(path, ctx):
+    """kenshu.json から、入口の中身・区切りごとのページ・テーマ用の本文・研修素材の「使い方」を作る。
+    戻り値 (lead, 入口の中身, 区切りのページの並び, テーマと索引に渡す本文（h3 の id は区切りの id）, 使い方)"""
+    c = json.loads(path.read_text(encoding="utf-8"))
+    secs = [x for x in c["sections"] if x["id"] not in KS_MOVED]
+    moved = [x for x in c["sections"] if x["id"] in KS_MOVED]
+    lead = '<p class="ch-lead">' + H.escape(c.get("lead", "")) + "</p>"
+    hubfig, pages, tb = "", [], []
+    for n, x in enumerate(secs, 1):
+        blocks = x["blocks"]
+        if not hubfig:   # 最初の図（研修の組み立て）は入口に置く
+            figs = [b for b in blocks if b["t"] == "fig"]
+            if figs:
+                hubfig = docs_build.render_blocks(figs[:1], ctx)
+                blocks = [b for b in blocks if b is not figs[0]]
+        inner = docs_build.render_blocks(blocks, ctx)
+        pages.append('<section class="chapter view ks-page" id="%s" data-group="events" data-title="%s" data-hidden="1" data-parent="kenshu">\n'
+                     '  <header>\n    <div class="ch-no"><a href="#kenshu">研修の進め方</a><span class="ks-n">%d / %d</span></div>\n'
+                     '    <h2>%s</h2>\n  </header>\n%s\n</section>' % (x["id"], H.escape(x["h"]), n, len(secs), H.escape(x["h"]), inner))
+        tb.append('<h3 id="%s">%s</h3>\n%s' % (x["id"], H.escape(x["h"]), inner))
+    cards = ('<ol class="ks-pages">' + "".join('<li><a class="tile" href="#%s"><span class="kn">%02d</span><b>%s</b><span>%s</span></a></li>'
+             % (x["id"], i, H.escape(x["h"]), H.escape(KS_SUB.get(x["id"], ""))) for i, x in enumerate(secs, 1)) + "</ol>")
+    use = "".join(docs_build.render_blocks(x["blocks"], ctx) for x in moved)
+    return lead, hubfig + cards, "\n".join(pages), hubfig + "\n" + "\n".join(tb), use
+
+
 def main():
     css = (SRC / "style.css").read_text(encoding="utf-8")
     shell_top = (SRC / "shell_top.html").read_text(encoding="utf-8")
@@ -121,18 +154,18 @@ def main():
         parts.append(t)
     data = (SRC / "data.js").read_text(encoding="utf-8")
     docs_js, docs_bad, docs_n, docs_ctx = docs_build.build(strict="--draft" not in sys.argv)
-    # 研修の進め方（照合済みの章 kenshu.json）
+    # 研修の進め方（照合済みの章 kenshu.json）。2026-11-02（P74）から、入口のページ＋区切りごとのページに分けた
     kj = SRC / "kenshu.json"
     if kj.exists():
-        k_lead, k_body = docs_build.chapter_html(kj, docs_ctx)
+        k_lead, k_hub, k_pages, k_body, k_use = kenshu_pages(kj, docs_ctx)
     else:
         if "--draft" not in sys.argv:
             sys.exit("kenshu.json がありません")
-        k_lead, k_body = '<p class="ch-lead">（作成中）</p>', ""
-    parts = [x.replace("<!--KENSHU-LEAD-->", k_lead).replace("<!--KENSHU-BODY-->", k_body) for x in parts]
-    # 研修素材（sozai.json・docs.json。2026-11-02）
+        k_lead, k_hub, k_pages, k_body, k_use = '<p class="ch-lead">（作成中）</p>', "", "", "", ""
+    parts = [x.replace("<!--KENSHU-LEAD-->", k_lead).replace("<!--KENSHU-BODY-->", k_hub).replace("<!--KENSHU-PAGES-->", k_pages) for x in parts]
+    # 研修素材（sozai.json・docs.json。2026-11-02）。「使い方」は kenshu.json の ks5（国の教材とその使い方）を移したもの
     import sozai_build
-    sz_body, sz_bad = sozai_build.build()
+    sz_body, sz_bad = sozai_build.build(k_use)
     if sz_bad and "--draft" not in sys.argv:
         sys.exit("研修素材: " + " / ".join(sz_bad))
     parts = [x.replace("<!--SOZAI-BODY-->", sz_body) for x in parts]
