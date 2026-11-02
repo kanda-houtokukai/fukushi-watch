@@ -671,6 +671,11 @@ a.hit:hover .h { color: var(--ac); text-decoration: underline; }
   .memo textarea { border: 0; padding: 0; resize: none; }
   .tkr { break-inside: avoid; }
 }
+/* 幅の狭いスマホ（320〜374px）で見出しの帯がはみ出さないように（P75） */
+@media (max-width: 374px) {
+  .brand { font-size: 13px; letter-spacing: 0; }
+  .fsw a { padding: 4px 8px; }
+}
 
 </style>
 </head>
@@ -1197,53 +1202,161 @@ a.hit:hover .h { color: var(--ac); text-decoration: underline; }
   });
 
   /* ── 探す（語の索引と要点の文で、見出しを引く） ── */
+  const RUN = /[一-龥々〆ヵヶ]+|[ァ-ヴー]+|[A-Za-z0-9]+/g;   // extract.py の WORD と同じ区切り
+  const JOIN = /[A-Za-z0-9]+[一-龥々〆ヵヶ]/g;               // extract.py の JOIN と同じ
+  const runsOf = (s) => {
+    const out = [];
+    (s.match(JOIN) || []).concat(s.replace(JOIN, " ").match(RUN) || []).forEach((r) => { if (!out.includes(r)) out.push(r); });
+    return out;
+  };
+  /* ── 探す語の扱い（P75。こども性暴力防止法ガイドの P71 と同じ考え方） ──
+     表記のゆれをそろえ（FOLD）、疑問の言葉・「何回」「必要？」などを外し（STOP）、略称・俗称に資料の言い方を足す（SYN）。
+     文で打たれたら、漢字・カタカナ・英数字の語を取り出して、それぞれを語とする。
+     語ごとに「どれか1つが含まれればよい」候補の組を作り、組をすべて含む見出しを探す。
+     すべてを含む見出しが無ければ、珍しい語を多く含む見出しを「一部の語を含むもの」として出す */
+  const FOLD = [[/障がい|障碍/g, "障害"], [/子供|子ども/g, "こども"], [/放課後デイ/g, "放課後等デイ"],
+    [/加算\(?([1-4])\)?(?![0-9])/g, (m, d) => "加算" + ["i", "ii", "iii", "iv"][d - 1]]];
+  const fold = (s) => FOLD.reduce((t, [re, to]) => t.replace(re, to), String(s || "").normalize("NFKC").toLowerCase());
+  const SYN_ALL = {
+    "障害": ["障がい"], "障害者": ["障がい者", "障害者"], "障害児": ["障がい児", "障害児"],
+    "実地指導": ["運営指導", "実地指導"], "監査": ["監査", "指導監査"], "指導監査": ["指導監査", "監査"],
+    "ショート": ["短期入所", "短期"], "ショートステイ": ["短期入所", "短期"], "サ責": ["サービス提供責任者"], "ナース": ["看護職員", "看護師"], "看護師": ["看護職員", "看護師"],
+    "bcp": ["業務継続計画", "bcp"], "業務継続": ["業務継続"], "ヒヤリハット": ["ヒヤリ", "ヒヤリハット"],
+    "カスハラ": ["ハラスメント"], "セクハラ": ["ハラスメント"], "パワハラ": ["ハラスメント"],
+    "スピーチロック": ["スピーチロック", "言葉による拘束", "身体拘束"], "不適切ケア": ["不適切なケア", "不適切"],
+    "押印": ["押印", "署名"], "はんこ": ["押印"], "ハンコ": ["押印"], "電子": ["電磁的", "電子"], "オンライン": ["テレビ電話", "オンライン"],
+    "持ち件数": ["担当件数", "取扱件数"], "何件": [], "給料": ["賃金", "処遇改善"], "給与": ["賃金", "処遇改善"],
+    "返還": ["返還", "過誤"], "過誤": ["過誤", "返還"], "おやつ": ["おやつ", "日常生活費", "実費"], "おやつ代": ["おやつ", "日常生活費", "実費"],
+    "シフト": ["勤務表", "勤務体制"], "シフト表": ["勤務表", "勤務体制"], "勤務表": ["勤務表", "勤務形態一覧表"],
+    "通報": ["通報"], "家族": ["家族"], "預かり金": ["預り金", "金銭管理"], "お金": ["金銭", "預り金"], "金銭": ["金銭", "預り金"],
+    "個人情報": ["個人情報", "秘密保持"], "守秘義務": ["秘密保持"], "サイン": ["署名", "確認"], "印鑑": ["押印", "署名"],
+    "足りない": ["欠如", "不足"], "退職": ["退職"], "人手不足": ["人員基準", "欠如"], "欠員": ["欠如", "人員基準"],
+    "検便": ["検便"], "抑制": ["身体拘束", "抑制"], "ライフ": ["life", "科学的介護"], "重説": ["重要事項説明", "重要事項"], "重要事項説明書": ["重要事項説明", "重要事項"], "時間区分": ["時間区分", "所要時間"], "所要時間": ["所要時間", "時間区分"], "定着率": ["定着率", "定着"], "たん吸引": ["喀痰吸引", "たん吸引"], "痰吸引": ["喀痰吸引"],
+    "pt": ["理学療法士"], "ot": ["作業療法士"], "st": ["言語聴覚士"], "bi": ["barthel", "bi"]
+  };
+  const SYN_F = {
+    shogai: {
+      "gh": ["共同生活援助", "グループホーム"], "グルホ": ["共同生活援助", "グループホーム"], "グループホーム": ["共同生活援助", "グループホーム"],
+      "放デイ": ["放課後等デイサービス"], "放課後等デイ": ["放課後等デイサービス"], "児発": ["児童発達支援"], "児発管": ["児童発達支援管理責任者"],
+      "サビ管": ["サービス管理責任者"], "行援": ["行動援護"], "重訪": ["重度訪問介護"], "同行": ["同行援護"], "ヘルパー": ["居宅介護", "ヘルパー", "従業者"],
+      "就b": ["就労継続支援b型", "b型"], "就労b": ["就労継続支援b型", "b型"], "b型": ["b型"], "就a": ["就労継続支援a型", "a型"], "就労a": ["就労継続支援a型", "a型"], "a型": ["a型"],
+      "就移": ["就労移行支援"], "就労移行": ["就労移行支援", "就労移行"], "就労定着": ["就労定着支援"], "生活訓練": ["自立訓練", "生活訓練"], "機能訓練": ["自立訓練", "機能訓練"],
+      "重心": ["重症心身障害"], "強行": ["強度行動障害"], "強度行動": ["強度行動障害"], "医ケア": ["医療的ケア"], "医ケア児": ["医療的ケア児", "医療的ケア"],
+      "相談員": ["相談支援専門員"], "計画相談": ["計画相談支援"], "入所": ["施設入所支援", "入所"], "上限管理": ["上限額管理", "上限管理"],
+      "家賃助成": ["家賃", "補足給付", "特定障害者特別給付費"], "家賃補助": ["家賃", "補足給付", "特定障害者特別給付費"]
+    },
+    kourei: {
+      "gh": ["認知症対応型共同生活介護", "グループホーム"], "グルホ": ["認知症対応型共同生活介護"], "グループホーム": ["認知症対応型共同生活介護", "グループホーム"],
+      "ケアマネ": ["介護支援専門員", "居宅介護支援"], "ケアマネジャー": ["介護支援専門員"], "ケアプラン": ["居宅サービス計画", "ケアプラン"],
+      "デイ": ["通所介護"], "デイサービス": ["通所介護"], "地域密着デイ": ["地域密着型通所介護"], "通リハ": ["通所リハビリテーション"], "デイケア": ["通所リハビリテーション"],
+      "訪看": ["訪問看護"], "訪問入浴": ["訪問入浴介護"], "ヘルパー": ["訪問介護員", "訪問介護"], "リハマネ": ["リハビリテーションマネジメント"],
+      "特養": ["介護老人福祉施設", "特別養護老人ホーム"], "老健": ["介護老人保健施設"], "介護医療院": ["介護医療院"], "特定施設": ["特定施設"],
+      "小多機": ["小規模多機能"], "看多機": ["看護小規模多機能"], "運推": ["運営推進会議"], "運営推進": ["運営推進会議"],
+      "2時間ルール": ["2時間"], "生活援助": ["生活援助"], "身体介護": ["身体介護"], "特例入所": ["特例入所"]
+    },
+    hoiku: {
+      "園バス": ["送迎用バス", "バス"], "送迎バス": ["送迎用バス", "バス"], "置き去り": ["置き去り", "所在確認"], "保育園": ["保育所"], "こども園": ["認定こども園", "こども園"],
+      "お昼寝": ["午睡", "睡眠"], "昼寝": ["午睡", "睡眠"], "午睡チェック": ["午睡", "睡眠"], "誤嚥": ["誤嚥", "窒息"], "窒息": ["窒息", "誤嚥"],
+      "アレルギー": ["アレルギー"], "除去食": ["除去食", "アレルギー"], "誤配": ["誤配", "誤食"], "誤食": ["誤食", "誤配"], "不適切保育": ["不適切な保育", "不適切"],
+      "プール": ["プール", "水遊び"], "水遊び": ["水遊び", "プール"], "散歩": ["散歩", "園外活動"], "配置基準": ["配置基準", "職員配置", "最低基準"]
+    }
+  };
+  const SYN = Object.assign({}, SYN_ALL, SYN_F[F.id] || {});
+  // 外す語（疑問の言葉・「必要？」「何回」など。探す手がかりにならないもの）
+  const STOP = ["何", "何回", "何人", "何件", "何分", "何か所", "何箇所", "何年", "何日", "何時間", "何%", "何割", "誰", "いつ", "いつから", "いつまで", "どこ", "どこまで",
+    "どう", "どうなる", "どうする", "どうすれば", "必要", "全部", "ダメ", "だめ", "いい", "よい", "大丈夫", "注意点", "方法", "仕方", "しかた", "やり方", "作り方", "書き方",
+    "について", "とは", "教えて", "知りたい", "よくある", "言われる", "多い", "来る", "できる", "できない", "場合", "とき", "ok", "本当", "毎回", "ある", "ない", "する", "いる", "要る",
+    "の", "は", "が", "を", "に", "で", "と", "も", "や", "か", "?"];
+  const SYNK = Object.keys(SYN).filter((k) => k.length >= 2).sort((a, b) => b.length - a.length);
+  const kata = (w) => w.replace(/[ぁ-ゖ]/g, (c) => String.fromCharCode(c.charCodeAt(0) + 0x60));
+  const altOf = (s) => ({ s, runs: runsOf(s) });
+  function groupOf(w) {
+    const out = [w].concat(SYN[w] || []);
+    if (/^[ぁ-ゖー]+$/.test(w)) out.push(kata(w));   // ひらがなだけの語はカタカナでも探す（例: ひやりはっと → ヒヤリハット）
+    return { w, alts: [...new Set(out.map(fold))].map(altOf).filter((a) => a.runs.length || /[ぁ-ゖ]/.test(a.s)) };
+  }
+  // 打ち込まれた文字 → 語の組の並び
+  function qgroups(raw) {
+    const toks = fold(raw).replace(/[?？!！、。,，「」『』()（）・/／]/g, " ").split(/\s+/).filter(Boolean);
+    const ws = [];
+    const push = (w) => { if (!ws.includes(w)) ws.push(w); };
+    toks.forEach((t) => {
+      if (SYN[t]) return push(t);
+      if (STOP.includes(t)) return;
+      if (/^[ぁ-ゖー]+$/.test(t)) { if (t.length >= 3) push(t); return; }
+      // 文のように打たれた語は、言い換えの語を切り出してから、漢字・カタカナ・英数字の語に分ける（1字の漢字は外す）
+      let rest = t;
+      SYNK.forEach((k) => { if (rest.includes(k) && k !== rest) { push(k); rest = rest.split(k).join(" "); } });
+      if (SYN[rest]) return push(rest);
+      const st = rest.replace(/[ぁ-ゖ]+$/, "");
+      if (SYN[st] || (st && !/[ぁ-ゖ]/.test(st) && runsOf(st).length === 1 && st === runsOf(st)[0])) return push(st || rest);
+      runsOf(rest).forEach((r) => { if (STOP.includes(r) || /^[一-龥々]$/.test(r)) return; push(r); });
+    });
+    const gs = ws.map(groupOf).filter((g) => g.alts.length);
+    if (gs.length) return gs;
+    return toks.map(groupOf).filter((g) => g.alts.length);   // 全部外れたら外さずに探す
+  }
+  const hitN = (t, a) => t.includes(a.s) || (a.runs.length > 0 && a.runs.every((r) => r.length >= 2 && t.includes(r)));
   let KW = null, kwLoading = null;
   function loadKW() {
     if (KW) return Promise.resolve(KW);
     if (!kwLoading) {
       kwLoading = fetch("kw.json", { cache: "no-cache" }).then((r) => r.json()).then((j) => {
-        // 索引のキーは「資料:頁:見出しの番号」。頁を見出しの位置で区切った単位ごとに語の集合を持つ
+        // 索引の区切りのキーは「資料:頁:見出しの番号」。区切りごとに語の表（vocab）の番号を持つ（英字は小文字にそろえる）。
+        // 形式2（extract.py の write_kw）: 番号は小さい順の差を36進で「.」区切り。形式1: 語そのものを「|」でつないだ文字列
+        let vocab, list;
+        if (j.vocab != null) {
+          vocab = j.vocab.split("|").map((w) => w.toLowerCase());
+          list = Object.entries(j.segs).map(([k, v]) => { let prev = 0; return [k, v ? v.split(".").map((x) => (prev += parseInt(x, 36))) : []]; });
+        } else {
+          const idx = new Map(); vocab = [];
+          list = Object.entries(j.pages).map(([k, v]) => [k, v.split("|").map((w) => {
+            w = w.toLowerCase();
+            if (!idx.has(w)) { idx.set(w, vocab.length); vocab.push(w); }
+            return idx.get(w);
+          })]);
+        }
         const segs = {};
         j.docs.forEach((id) => { segs[id] = []; });
-        Object.entries(j.pages).forEach(([k, v]) => {
-          const [di, p, h] = k.split(":").map(Number);
-          segs[j.docs[di]].push({ p, h, w: "|" + v + "|" });
-        });
-        KW = segs;
+        list.forEach(([k, ids]) => { const [di, p, h] = k.split(":").map(Number); segs[j.docs[di]].push({ p, h, ids }); });
+        KW = { vocab, segs };
         return KW;
       }).catch((e) => { kwLoading = null; throw e; });
     }
     return kwLoading;
   }
-  const RUN = /[一-龥々〆ヵヶ]+|[ァ-ヴー]+|[A-Za-z0-9]+/g;   // extract.py の WORD と同じ区切り
-  const JOIN = /[A-Za-z0-9]+[一-龥々〆ヵヶ]/g;               // extract.py の JOIN と同じ
-  function terms(q) {
-    q = (q || "").normalize("NFKC").trim();
-    // ひらがなだけの語はカタカナに直して探す（例: ひやりはっと → ヒヤリハット）
-    const parts = q.split(/\s+/).filter(Boolean).map((w) => /^[ぁ-ゖー]+$/.test(w) ? w.replace(/[ぁ-ゖ]/g, (c) => String.fromCharCode(c.charCodeAt(0) + 0x60)) : w);
-    const out = [];
-    const add = (r) => { if (!out.includes(r)) out.push(r); };
-    parts.forEach((w) => {
-      // 「A型」「33条」のような英数字＋漢字1字は、つながりのまま探す（extract.py の JOIN）。残りは連なりごとに
-      (w.match(JOIN) || []).forEach(add);
-      (w.replace(JOIN, " ").match(RUN) || []).forEach(add);
-    });
-    return out;
+  // 語の組ごと・候補ごとに、語の表のどれが当たるか（1字の語は同じ語だけ、2字以上は語の一部でも当たる）
+  function marksOf(vocab, gs) {
+    const cache = new Map();
+    const mk = (r) => {
+      if (!cache.has(r)) {
+        const m = new Uint8Array(vocab.length);
+        for (let i = 0; i < vocab.length; i++) if (r.length === 1 ? vocab[i] === r : vocab[i].includes(r)) m[i] = 1;
+        cache.set(r, m);
+      }
+      return cache.get(r);
+    };
+    return gs.map((g) => g.alts.filter((a) => a.runs.length).map((a) => a.runs.map(mk)));
   }
-  // 要点の文（見出し＋概要＋要点＋指摘）を、探すために空白を除いた形で持つ
-  const NOTE_TEXT = {};
+  const segHit = (ids, alts) => alts.some((runs) => runs.every((m) => ids.some((i) => m[i] === 1)));
+  // 要点の文（見出し＋概要＋要点＋指摘）を、探すために空白を除いた形で持つ。見出しだけのものも別に持つ（並べ順に使う）
+  const NOTE_TEXT = {}, HEAD_TEXT = {};
   TOC.forEach((d) => {
-    NOTE_TEXT[d.id] = {};
+    NOTE_TEXT[d.id] = {}; HEAD_TEXT[d.id] = {};
     const ids = FLAT[d.id].length ? FLAT[d.id].map((_, h) => h) : [-1];
     ids.forEach((h) => {
       const n = note(d.id, h) || {}, f = FLAT[d.id][h];
-      NOTE_TEXT[d.id][h] = [f ? f.t : d.t, n.gist, ...(n.points || []), ...(n.shiteki || [])].join(" ").normalize("NFKC").replace(/\s+/g, "");
+      NOTE_TEXT[d.id][h] = fold([f ? f.t : d.t, n.gist, ...(n.points || []), ...(n.shiteki || [])].join(" ")).replace(/\s+/g, "");
+      HEAD_TEXT[d.id][h] = fold(f ? f.t : d.t).replace(/\s+/g, "");
     });
   });
-  function mark(text, ts) {
+  function mark(text, gs) {
     let h = esc(text);
-    ts.forEach((t) => { h = h.split(esc(t)).join("<mark>" + esc(t) + "</mark>"); });
-    return h;
+    const ws = [...new Set(gs.flatMap((g) => g.alts.flatMap((a) => [a.s].concat(a.runs.filter((r) => r.length >= 2)))))].sort((a, b) => b.length - a.length);
+    if (!ws.length) return h;
+    const re = new RegExp("(" + ws.map((w) => esc(w).replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|") + ")", "gi");
+    // NFKC でそろえた語で印を付ける（元の文の全角英数字には付かないことがある）
+    return h.replace(re, "<mark>$1</mark>");
   }
   let scope = "";   // 絞り込む資料（toc の id を「,」で）。空ならすべて
   function renderScope() {
@@ -1252,11 +1365,47 @@ a.hit:hover .h { color: var(--ac); text-decoration: underline; }
     if (custom) opts.splice(1, 0, [scope, scope.split(",").map((x) => SHORT[x] || x).join("＋")]);
     $("scope").innerHTML = opts.map(([v, t]) => `<button type="button" data-v="${v}" aria-pressed="${v === scope}">${esc(t)}</button>`).join("");
   }
+  // サービスの名前（語にこれを含めば「サービス名の語」。一部の語で出すときも外さない）
+  const SVCN = {
+    shogai: ["居宅介護", "重度訪問介護", "同行援護", "行動援護", "生活介護", "短期入所", "施設入所", "自立訓練", "就労移行", "就労継続", "就労定着", "就労選択", "共同生活援助", "グループホーム",
+      "自立生活援助", "児童発達支援", "放課後等デイ", "保育所等訪問", "計画相談", "障害児相談", "地域移行支援", "地域定着支援", "療養介護", "重度障害者等包括"],
+    kourei: ["訪問介護", "訪問入浴", "訪問看護", "訪問リハ", "通所介護", "通所リハ", "短期入所", "特定施設", "介護老人福祉施設", "特別養護老人ホーム", "介護老人保健施設", "介護医療院",
+      "認知症対応型", "グループホーム", "小規模多機能", "居宅介護支援", "介護支援専門員", "福祉用具", "定期巡回", "夜間対応", "居宅療養管理指導"],
+    hoiku: []
+  }[F.id] || [];
+  const isSvc = (g) => g.alts.some((a) => SVCN.some((n) => a.s.includes(n)));
+  // 見出しごとに、語の組それぞれが当たるか（PDFの頁の語・要点の文。要点の文には資料の題名も含める）を集める
+  function unitsOf(kw, docs, gs) {
+    const us = [], marks = marksOf(kw.vocab, gs);
+    docs.forEach((doc) => {
+      const by = new Map();
+      const u = (h) => { if (!by.has(h)) by.set(h, { doc, h, segs: [], m: gs.map(() => false), nm: gs.map(() => false), tm: gs.map(() => false) }); return by.get(h); };
+      (kw.segs[doc.id] || []).forEach((sg) => {
+        const m = marks.map((alts) => segHit(sg.ids, alts));
+        if (!m.some(Boolean)) return;
+        const x = u(sg.h);
+        m.forEach((v, i) => { if (v) x.m[i] = true; });
+        x.segs.push({ p: sg.p, m });
+      });
+      const dt = fold(doc.t).replace(/\s+/g, "");
+      const tmd = gs.map((g) => g.alts.some((a) => hitN(dt, a)));   // 資料の題名に出る語
+      Object.entries(NOTE_TEXT[doc.id]).forEach(([hh, txt]) => {
+        const m = gs.map((g, i) => tmd[i] || g.alts.some((a) => hitN(txt, a)));
+        if (!m.some(Boolean)) return;
+        const x = u(Number(hh));
+        m.forEach((v, i) => { if (v) { x.m[i] = true; if (tmd[i] && !gs[i].alts.some((a) => hitN(txt, a))) x.tm[i] = true; else x.nm[i] = true; } });
+      });
+      // 題名で当たる語は、資料の最初（表紙・目次、または最初の見出し）に印を付けて先に出す
+      if (tmd.some(Boolean)) { const first = by.has(-1) ? by.get(-1) : u(Math.min(...[...by.keys()].filter((k) => k >= 0), 0)); first.cover = true; tmd.forEach((v, i) => { if (v) first.m[i] = true; }); }
+      by.forEach((x) => us.push(x));
+    });
+    return us;
+  }
   async function runSearch(q) {
-    const ts = terms(q);
+    const gs = qgroups(q);
     $("q-main").value = q || "";
     renderScope();
-    if (!ts.length) {
+    if (!gs.length) {
       $("s-sum").textContent = q ? "漢字・カタカナ・英数字を含む語で探してください" : "";
       $("s-res").innerHTML = "";
       return;
@@ -1265,45 +1414,79 @@ a.hit:hover .h { color: var(--ac); text-decoration: underline; }
     let kw;
     try { kw = await loadKW(); } catch (e) { $("s-sum").textContent = "索引を読み込めませんでした。時間をおいて開き直してください"; return; }
     const want = scope ? scope.split(",") : TOC.map((d) => d.id);
-    let total = 0, ndoc = 0, h = "";
-    TOC.filter((d) => want.includes(d.id)).forEach((doc) => {
-      // 見出しごとに、見つかったPDFのページを集める（資料の本文の語の索引）＋要点の文に含むもの
-      const byH = new Map();
-      (kw[doc.id] || []).forEach((sg) => {
-        if (!ts.every((t) => sg.w.includes(t))) return;
-        if (!byH.has(sg.h)) byH.set(sg.h, new Set());
-        byH.get(sg.h).add(sg.p);
-      });
-      Object.entries(NOTE_TEXT[doc.id]).forEach(([hh, txt]) => {
-        const k = Number(hh);
-        if (ts.every((t) => txt.includes(t)) && !byH.has(k)) byH.set(k, new Set());
-      });
-      if (!byH.size) return;
-      const hs = [...byH.keys()].sort((a, b) => a - b);
-      total += hs.length; ndoc++;
-      const rows = hs.map((k) => {
-        const f = FLAT[doc.id][k], n = note(doc.id, k);
-        const pages = [...byH.get(k)].sort((a, b) => a - b);
+    const docs = TOC.filter((d) => want.includes(d.id));
+    const us = unitsOf(kw, docs, gs);
+    const N = docs.reduce((n, d) => n + Math.max(1, FLAT[d.id].length), 0);
+    const df = gs.map((_, i) => us.filter((x) => x.m[i]).length);
+    const miss = gs.filter((_, i) => !df[i]).map((g) => g.w);
+    // 多くの見出しに出る語（「サービス」「利用者」など）は、ほかに語があれば、そろうことを求めない（並べ順にだけ使う）
+    const weak = gs.map((g, i) => gs.length > 1 && !isSvc(g) && df[i] > N * 0.3);
+    const req = gs.map((_, i) => !weak[i]);
+    if (req.every((v) => !v)) req.fill(true);
+    const allReq = (m) => m.every((v, i) => v || !req[i]);
+    us.forEach((x) => {
+      x.pages = new Set(x.segs.filter((sg) => allReq(sg.m)).map((sg) => sg.p));
+      x.any = new Set(x.segs.map((sg) => sg.p));
+      x.full = x.pages.size > 0 || allReq(x.nm.map((v, i) => v || x.tm[i] || (x.cover && x.m[i])));
+    });
+    let hits = us.filter((x) => x.full), part = false;
+    // サービス名の語や、加算・減算の名前が資料に無いときは、一部の語では出さない（ほかのサービス・ほかの加算を出してしまうため）
+    const svcMiss = gs.some((g, i) => !df[i] && (isSvc(g) || /(加算|減算)$/.test(g.w)));
+    if (!hits.length && gs.length >= 2 && !svcMiss) {
+      // 一部の語: 多くの見出しに出る語ほど軽く数える。サービス名の語は外さない
+      const wt = df.map((d) => (d ? Math.log((N + 1) / d) : 0));
+      const floor = Math.log((N + 1) / Math.max(2, N * 0.1));   // 見出しの1割より多くに出る語だけで当たるものは出さない
+      const cand = us.filter((x) => gs.every((g, i) => !isSvc(g) || x.m[i]));
+      // 数字・短い英字だけの語（例: 80%・1万円の「1」）は、それだけで当たったことにしない
+      const light = gs.map((g) => isSvc(g) || /^[0-9a-z]{1,3}$/.test(g.w));
+      cand.forEach((x) => { x.s = x.m.reduce((s, v, i) => s + (v && !light[i] ? wt[i] : 0), 0); });
+      const max = Math.max(0, ...cand.map((x) => x.s));
+      if (max >= floor) { hits = cand.filter((x) => x.s >= max * 0.6 && x.s >= floor); part = true; }
+    }
+    // 並べ順: 見出しに語が出る > 要点の文に出る > PDFの頁だけ。資料も、いちばんよく合う見出しの順に
+    hits.forEach((x) => {
+      const ht = HEAD_TEXT[x.doc.id][x.h] || "";
+      // 資料の題名だけで当たった語は、その資料の最初の見出しで重く、ほかの見出しでは軽く数える
+      // （サービス名の語は、題名にあればその資料全体がそのサービスのものなので、どの見出しでも重く数える）
+      x.rk = (part ? x.s * 10 : 0) + gs.reduce((s, g, i) => s + (g.alts.some((a) => hitN(ht, a)) ? 3 : (x.nm[i] ? 2 : ((x.tm[i] || x.m[i]) && x.cover ? 3 : (x.tm[i] ? (isSvc(g) ? 2 : 0.5) : (x.m[i] ? 1 : 0))))), 0);
+    });
+    const byDoc = new Map();
+    hits.forEach((x) => { if (!byDoc.has(x.doc.id)) byDoc.set(x.doc.id, []); byDoc.get(x.doc.id).push(x); });
+    const order = [...byDoc.entries()].map(([id, xs]) => [id, xs.sort((a, b) => b.rk - a.rk || a.h - b.h)])
+      .sort((a, b) => b[1][0].rk - a[1][0].rk || want.indexOf(a[0]) - want.indexOf(b[0]));
+    let total = 0, h = "";
+    order.forEach(([id, xs]) => {
+      const doc = BY[id];
+      total += xs.length;
+      const rows = xs.map((x) => {
+        const k = x.h, f = FLAT[doc.id][k], n = note(doc.id, k);
+        const pages = [...(x.pages.size ? x.pages : x.any)].sort((a, b) => a - b);
         const p0 = pages[0] || (f ? f.p : 1);
         const head = f ? f.t : (doc.secs.length ? "表紙・目次" : doc.t);
         const href = f ? chHref(doc.id, f.c, k) : (doc.secs.length ? null : `#svc-${SVC_OF[doc.id]}`);
-        const inner = `<span class="h">${mark(head, ts)}</span>`
+        const inner = `<span class="h">${mark(head, gs)}</span>`
           + (f && f.sec ? `<span class="c">${esc(f.sec)}</span>` : "")
-          + (n && n.gist ? `<span class="g">${mark(n.gist, ts)}</span>` : "");
+          + (n && n.gist ? `<span class="g">${mark(n.gist, gs)}</span>` : "");
         const main = href ? `<a class="hit" href="${href}">${inner}</a>` : `<span class="hit">${inner}</span>`;
         const pl = pages.length ? pages.slice(0, 4).map((p) => "p." + p).join("・") + (pages.length > 4 ? "ほか" : "") : "p." + p0;
         return `<li>${main}${A(pdf(doc.u, p0), `<span>PDF</span><span>${pl}</span>`, "hit-pdf")}</li>`;
       });
       const LIM = 30;
-      h += `<section class="s-doc"><h2>${esc(doc.t)}<small>${hs.length}件</small></h2><ul class="hits">${rows.slice(0, LIM).join("")}</ul>`
+      h += `<section class="s-doc"><h2>${esc(doc.t)}<small>${xs.length}件</small></h2><ul class="hits">${rows.slice(0, LIM).join("")}</ul>`
         + (rows.length > LIM ? `<ul class="hits" hidden>${rows.slice(LIM).join("")}</ul><button type="button" class="more">残り${rows.length - LIM}件を表示</button>` : "")
         + "</section>";
     });
-    const tl = ts.map((t) => "「" + t + "」").join("");
-    const long = ts.some((t) => t.length >= 4 && /^[一-龥々〆ヵヶ]+$/.test(t));
-    $("s-sum").innerHTML = total ? `${esc(tl)}が出てくる見出し <b>${total}</b>（${ndoc}編）`
-      : `${esc(tl)}が出てくる見出しは見つかりませんでした` + (long ? "。語を空白で区切ると見つかることがあります（例：虐待防止 委員会）" : "");
-    $("s-res").innerHTML = h;
+    const qt = (ws) => ws.map((w) => "「" + w + "」").join("");
+    const tl = qt(gs.map((g) => g.w));
+    if (part) {
+      $("s-sum").innerHTML = (miss.length ? `${esc(qt(miss))}は資料に出てきません。` : `${esc(tl)}がすべて出てくる見出しはありません。`)
+        + `一部の語が出てくる見出し <b>${total}</b>（${byDoc.size}編）`;
+    } else if (total) {
+      $("s-sum").innerHTML = `${esc(tl)}が出てくる見出し <b>${total}</b>（${byDoc.size}編）`;
+    } else {
+      $("s-sum").innerHTML = miss.length ? `${esc(qt(miss))}は資料に出てきません` : `${esc(tl)}が出てくる見出しは見つかりませんでした`;
+    }
+    $("s-res").innerHTML = part ? `<div data-part="1">${h}</div>` : h;
   }
   $("s-res").addEventListener("click", (e) => {
     const b = e.target.closest(".more");

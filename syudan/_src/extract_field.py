@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """高齢（介護保険の集団指導）と保育（保育所等の指導監査）の、県のページの資料の一覧と検索の索引を作る。
 
-  python3 syudan/_src/extract_field.py <kourei|hoiku> 作業用のフォルダ（リポジトリの外） [--if-changed] [--texts=フォルダ]
+  python3 syudan/_src/extract_field.py <kourei|hoiku> 作業用のフォルダ（リポジトリの外） [--if-changed] [--texts=フォルダ] [--ocr]
     --texts=フォルダ … PDFを取らず、フォルダの <添付の番号>.txt（fetchtext.py で取った文字）を使う
     --if-changed … 県のページの資料の並び（題名・URL・容量）が docs.json と同じなら、PDF を取らずに終わる（毎朝の確認用）。
                    変わっていたら docs.json を書き直し、見出しと要点の作り直しが要る資料を表示して終了コード 3 で終わる。
@@ -72,7 +72,9 @@ FIELDS = {
 
 
 def fetch(url, out):
-    r = subprocess.run([sys.executable, str(ROOT / "scripts" / "fetchtext.py"), url, "-o", str(out)] + (["--links"] if url.endswith(".html") else []),
+    # --ocr: 文字が線で描かれた頁を OCR で読む（検索の索引のため。tesseract の jpn が要る。毎朝のタスクは付けない）
+    r = subprocess.run([sys.executable, str(ROOT / "scripts" / "fetchtext.py"), url, "-o", str(out)] + (["--links"] if url.endswith(".html") else [])
+                       + (["--ocr"] if "--ocr" in sys.argv and not url.endswith(".html") else []),
                        capture_output=True, text=True)
     if r.returncode != 0:
         sys.exit("取得できませんでした: " + url + " " + r.stderr)
@@ -244,7 +246,7 @@ def main():
     if kw["docs"]:
         out = ROOT / "syudan" / fid
         out.mkdir(parents=True, exist_ok=True)
-        (out / "kw.json").write_text(json.dumps(kw, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        E.write_kw(out / "kw.json", kw)
     print(f"{fid}: 資料 {len(docs['items'])} 点・索引 {len(kw['pages'])} 区切り（{len(kw['docs'])} 編）")
     if changed and "--if-changed" in sys.argv:
         print("見出しと要点の作り直しが要る資料:", "、".join(changed))

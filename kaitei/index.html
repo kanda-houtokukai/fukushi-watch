@@ -282,6 +282,13 @@ main { min-width: 0; padding-block: 24px 0; max-width: 1000px; }
 
 /* ── 論点カード ─────────────────────── */
 .cards { display: grid; gap: 8px; }
+/* 探すの結果（P75）: 一部の語だけ含むもの・前提のページにあるもの */
+.part-note { margin: 0 0 8px; font-size: 13px; color: var(--ink-3); }
+.base-hits { margin-top: 22px; }
+.base-h { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin: 0 0 8px; font-size: 14px; font-weight: 700; color: var(--ink-2); }
+.base-h a { font-size: 12.5px; font-weight: 400; }
+.base-hits + .list-h { margin-top: 22px; }
+.base-hits:first-child, .part-note + .base-hits { margin-top: 4px; }
 .rc { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); scroll-margin-top: 76px; }
 .rc > summary { cursor: pointer; list-style: none; padding: 13px 44px 13px 16px; position: relative; display: grid; gap: 7px; }
 .rc > summary::-webkit-details-marker { display: none; }
@@ -559,6 +566,13 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
 @media (max-width: 560px) {
   .lk-i { grid-template-columns: minmax(0, 1fr); gap: 0; }
   .lk-d:empty { display: none; }
+}
+/* 幅の狭いスマホ（320〜374px）で見出しの帯がはみ出さないように（P75） */
+@media (max-width: 374px) {
+  .topbar-in { gap: 8px; }
+  .stage-chip { padding: 3px 8px; font-size: 0; gap: 0; }
+  .stage-chip b { font-size: 12px; }
+  .menu-btn { padding: 6px 8px; }
 }
 
 </style>
@@ -8458,10 +8472,179 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
     });
   })();
 
+  /* ── 探す語の扱い（P75。こども性暴力防止法ガイドの P71 と同じ考え方） ─────
+     表記のゆれをそろえ（FOLD）、疑問の言葉や「どうなる」「下がる？」を外し（STOP）、略称・俗称に正式の言い方を足す（SYN）。
+     語ごとに「どれか1つが含まれればよい」候補の組を作り、組をすべて含むものを探す。
+     すべてを含むものが無ければ、珍しい語を多く含むものを「一部の語を含むもの」として出す */
+  var FOLD = [[/障がい|障碍/g, "障害"], [/子供|子ども/g, "こども"], [/ディ/g, "デイ"], [/放課後デイ/g, "放課後等デイ"], [/[ヶヵカケ]所/g, "か所"],
+    [/取り扱い|取扱い/g, "取扱"], [/見直し/g, "見直"], [/引き上げ|引上げ/g, "引上"], [/引き下げ|引下げ/g, "引下"],
+    [/加算\(?([1-4])\)?(?![0-9])/g, function (m, d) { return "加算" + ["i", "ii", "iii", "iv"][d - 1]; }]];
+  function fold(s) {
+    var t = String(s || "").normalize("NFKC").toLowerCase();
+    for (var i = 0; i < FOLD.length; i++) t = t.replace(FOLD[i][0], FOLD[i][1]);
+    return t;
+  }
+  // 打ち込まれた語 → ガイドの中の言い方（打ち込まれた語そのものでも探す）
+  var SYN = {
+    "gh": ["共同生活援助"], "グループホーム": ["共同生活援助", "gh"], "グルホ": ["共同生活援助"],
+    "放デイ": ["放課後等デイサービス"], "放課後等デイ": ["放課後等デイサービス", "放デイ"], "児発": ["児童発達支援"], "児発管": ["児童発達支援管理責任者"],
+    "就b": ["就労継続支援b型", "b型"], "就労b": ["就労継続支援b型", "b型"], "b型": ["就労継続支援b型"],
+    "就a": ["就労継続支援a型", "a型"], "就労a": ["就労継続支援a型", "a型"], "a型": ["就労継続支援a型"],
+    "就移": ["就労移行支援"], "移行支援": ["就労移行支援", "地域移行支援"], "就労定着": ["就労定着支援", "定着"], "定着率": ["定着"],
+    "重訪": ["重度訪問介護"], "重度訪問": ["重度訪問介護"], "重度包括": ["重度障害者等包括支援"], "同行": ["同行援護"],
+    "ショート": ["短期入所"], "ショートステイ": ["短期入所"], "医療型ショート": ["医療型短期入所"],
+    "サビ管": ["サービス管理責任者"], "サ責": ["サービス提供責任者"], "相談員": ["相談支援専門員"],
+    "医ケア": ["医療的ケア"], "医ケア児": ["医療的ケア児", "医療的ケア"], "医療ケア": ["医療的ケア"],
+    "強行": ["強度行動障害"], "強度行動": ["強度行動障害"], "高次脳": ["高次脳機能障害"], "重心": ["重症心身障害"], "重心児": ["重症心身障害", "重心児"],
+    "ヘルパー": ["居宅介護", "訪問系", "従業者"], "訪問介護": ["居宅介護", "訪問系"], "家事援助": ["家事援助"],
+    "入所施設": ["施設入所支援", "障害者支援施設", "入所施設"], "施設入所": ["施設入所支援", "障害者支援施設"], "支援施設": ["障害者支援施設", "施設入所支援"],
+    "計画相談": ["計画相談支援"], "障害児相談": ["障害児相談支援"], "相談支援": ["相談支援", "計画相談"],
+    "単価": ["基本報酬", "単価", "単位数"], "報酬単価": ["基本報酬", "単価", "単位数"], "単位数": ["単位数", "基本報酬"],
+    "ベースアップ": ["処遇改善", "賃上げ"], "ベア": ["処遇改善", "賃上げ"], "ベースアップ加算": ["処遇改善加算"], "処遇改善手当": ["処遇改善"],
+    "賃上げ": ["賃上げ", "処遇改善"], "給料": ["処遇改善", "賃上げ"], "給与": ["処遇改善", "賃上げ"], "人件費": ["人件費", "処遇改善"],
+    "物価高騰": ["物価"], "物価高": ["物価"], "インフレ": ["物価"], "最低賃金": ["最低賃金", "賃金"],
+    "ict": ["ict", "テクノロジー", "生産性", "情報通信"], "dx": ["ict", "デジタル", "生産性"], "テクノロジー": ["テクノロジー", "ict"], "見守りセンサー": ["見守り", "テクノロジー", "ict"],
+    "電子申請": ["電子", "様式"], "書類": ["書類", "様式", "文書"], "事務負担": ["事務負担", "様式", "簡素化"], "ペーパーレス": ["電子", "様式", "簡素化"],
+    "bcp": ["bcp", "業務継続"], "業務継続計画": ["業務継続"], "身体拘束": ["身体拘束", "拘束"], "拘束": ["拘束"],
+    "65歳": ["65歳", "高齢", "介護保険"], "介護保険": ["介護保険"], "高齢化": ["高齢"],
+    "5領域": ["5領域", "総合的な支援", "領域"], "支援時間": ["支援時間", "時間区分"], "時間区分": ["時間区分", "支援時間"],
+    "夜勤": ["夜勤", "夜間"], "夜間": ["夜間", "夜勤"], "日中支援": ["日中支援", "日中サービス支援型"], "入院中": ["入院"],
+    "加配": ["加配"], "人員配置": ["人員配置", "配置"], "人員基準": ["人員基準", "人員配置"], "配置基準": ["配置", "人員基準"],
+    "ピアサポ": ["ピアサポート"], "ピア": ["ピアサポート"], "工賃": ["工賃"], "賃金": ["賃金"],
+    "r9": ["令和9"], "令和9年": ["令和9"], "r8": ["令和8"], "報酬改定": ["改定"], "改定率": ["改定率"],
+    "経営": ["経営", "収支"], "収支差": ["収支差"], "赤字": ["収支", "経営"], "利益": ["収支", "経営"],
+    "看取り": ["看取り"], "地域移行": ["地域移行"], "拠点": ["地域生活支援拠点", "拠点"], "地域生活支援拠点": ["地域生活支援拠点", "拠点"],
+    "ユニット": ["ユニット", "個室"], "個室": ["個室", "ユニット"], "送迎": ["送迎", "移動"], "車": ["自動車", "移動"], "移動": ["移動"],
+    "管理者": ["管理者"], "兼務": ["兼務"], "常勤": ["常勤"], "研修": ["研修"], "外部評価": ["外部評価", "第三者評価"], "第三者評価": ["第三者評価", "外部評価"],
+    "定員": ["定員"], "大規模": ["大規模"], "減算": ["減算"], "加算": ["加算"]
+  };
+  // 外す語（疑問の言葉・「どうなる」「下がる？」など、探す手がかりにならないもの）
+  var STOP = ["どう", "どうなる", "どうなるの", "どうなりますか", "どうする", "なる", "なに", "なん", "いつ", "いつから", "いつまで", "どこ", "だれ", "ある", "ない", "する", "される",
+    "上がる", "下がる", "上がって", "下がって", "増える", "減る", "変わる", "きつい", "厳しい", "足りない", "安すぎる", "高すぎる", "やってない", "やってないと", "使えば",
+    "について", "とは", "教えて", "知りたい", "影響", "今後", "次", "次回", "最新", "情報", "内容", "ok", "ng", "必要", "大丈夫", "本当", "?"];
+  var SYNK = Object.keys(SYN).sort(function (a, b) { return b.length - a.length; });
+  function stemOf(w) {
+    if (!/[一-龥々〆ァ-ヴーa-z0-9]/.test(w)) return w;
+    return w.replace(/[ぁ-ゖ]+$/, "") || w;
+  }
+  function altsOf(w) {
+    var a = [w], st = stemOf(w);
+    function add(x) { x = fold(x); if (x && a.indexOf(x) < 0) a.push(x); }
+    if (st !== w) add(st);
+    (SYN[w] || SYN[st] || []).forEach(add);
+    return a;
+  }
+  // つなげ書き（例: 放デイ基本報酬）を、言い換えの語と文字の種類の切れ目で分ける
+  // 長い漢字の語を分けるときの部品（例: 情報公表未報告減算 → 情報公表・未報告・減算）
+  var PIECES = ["情報公表", "未報告", "未作成", "未実施", "未策定", "未整備", "未設置", "体制", "配置", "要件", "基準", "指導員", "専門員", "職員", "計画", "確認", "評価", "支援"];
+  function splitRun(w) {
+    var out = [], rest = w;
+    SYNK.concat(PIECES).forEach(function (k) { if (k.length >= 2 && k !== w && rest.indexOf(k) >= 0) { out.push(k); rest = rest.split(k).join(" "); } });
+    rest.split(/\s+/).forEach(function (part) {
+      (part.match(/[一-龥々〆ヵヶ]+|[ァ-ヴー]+|[a-z0-9]+[型]?|[ぁ-ゖ]+/g) || []).forEach(function (x) {
+        if (/^[ぁ-ゖ]+$/.test(x)) return;
+        if (x.length >= 2 || SYN[x]) out.push(x);
+      });
+    });
+    return out;
+  }
+  function keepTok(w) {
+    if (SYN[w] || SYN[stemOf(w)]) return true;
+    if (STOP.indexOf(w) >= 0 || STOP.indexOf(stemOf(w)) >= 0) return false;
+    if (/^[ぁ-ゖー]+$/.test(w)) return false;                          // ひらがなだけの語（助詞・言い回し）
+    if (/[ぁ-ゖ]$/.test(w) && /^[一-龥々]$/.test(stemOf(w))) return false;   // 「上がる」「使えば」のような漢字1字＋かな
+    return true;
+  }
+  // 打ち込まれた文字 → 語の組の並び。組ごとに「どれか1つを含めばよい」候補を持つ
+  function qparse(raw) {
+    var toks = fold(raw).replace(/[?？!！、。,，「」『』()（）・/／]/g, " ").split(/\s+/).filter(Boolean);
+    var keep = toks.filter(keepTok);
+    if (!keep.length) keep = toks;
+    var out = [];
+    keep.forEach(function (w) {
+      var mm = stemOf(w).match(/^(.{2,}?)(?:体制)?未(?:整備|実施|策定|作成|報告|設置|提出)(減算)$/);
+      var parts = SYN[w] || SYN[stemOf(w)] ? [w] : (mm ? [mm[1], mm[2]] : splitRun(stemOf(w)));
+      if (!parts.length) parts = [w];
+      // 1語のときはそのままの形も残す（「処遇改善加算」は分けずに当たればそれでよい）
+      if (parts.length > 1) { out.push({ w: w, alts: altsOf(stemOf(w)), parts: parts.map(altsOf) }); }
+      else out.push({ w: w, alts: altsOf(parts[0]) });
+    });
+    return out;
+  }
+  function hasAny(h, alts) { for (var i = 0; i < alts.length; i++) if (h.indexOf(alts[i]) >= 0) return true; return false; }
+  // 組がその文に当たるか。つなげ書きの組（parts）は、split が真のときだけ分けた語がすべてあれば当たりとする
+  function hitGroup(h, g, split) { return hasAny(h, g.alts) || (!!split && !!g.parts && g.parts.every(function (p) { return hasAny(h, p); })); }
+  function hayOf(r) {
+    if (r._hay == null) {
+      // 分野（訪問系・就労系など）と向き（新設・拡充など）も、カードの札に出る言葉なので探せるようにする
+      r._hay = fold([r.title, r.label, r.genjo, r.houkousei, r.r9, r.effective, r.point, r.notes, r.group, r.direction, (r.services || []).join(" "), (r.kind || []).join(" "), (r.kentou || []).join(" "),
+        (r.numbers || []).map(function (n) { return n.text; }).join(" ")].join(" "));
+      r._t = fold(r.title); r._l = fold([r.label, r.group, (r.kind || []).join(" ")].join(" ")); r._s = fold((r.services || []).join(" "));
+    }
+    return r._hay;
+  }
+  // 並べ順の重み: 題名に出る語 > ラベル・種類 > サービス名（対象のサービスが少ないほど重い）> 本文
+  function rankOf(r, gs, split) {
+    return gs.reduce(function (s, g) {
+      if (hitGroup(r._t, g, split)) return s + 4;
+      if (hitGroup(r._l, g, split)) return s + 3;
+      if (hitGroup(r._s, g, split)) return s + ((r.services || []).length <= 3 ? 2 : 1);
+      return s;
+    }, 0);
+  }
+  var SVCN = [];
+  (C.groups || []).forEach(function (g) { (g.services || []).forEach(function (n) { n = fold(n); if (n.length >= 3 && SVCN.indexOf(n) < 0) SVCN.push(n); }); });
+  // 探す: 戻り値 { rows, part: 一部の語で出したか, miss: どこにも無い語 }
+  function search(pool, raw) {
+    var gs = qparse(raw);
+    if (!gs.length) return { rows: pool.slice(), part: false, miss: [] };
+    pool.forEach(hayOf);
+    function full(split) {
+      var xs = pool.filter(function (r) { return gs.every(function (g) { return hitGroup(r._hay, g, split); }); });
+      xs.forEach(function (r) { r._rk = rankOf(r, gs, split); });
+      return xs.sort(function (a, b) { return b._rk - a._rk; });   // 同じ重みは元の並び（新しい順）のまま
+    }
+    var f = full(false);
+    if (f.length) return { rows: f, part: false, miss: [] };
+    // つなげ書き・長い語（例: 放デイ基本報酬・地域移行等意向確認体制未整備減算）を分けた語がすべてそろうもの。
+    // その言い方のままでは載っていないので「一部の語」として出す
+    if (gs.some(function (g) { return g.parts; })) { f = full(true); if (f.length) return { rows: f, part: true, miss: [] }; }
+    var df = gs.map(function (g) { return pool.filter(function (r) { return hitGroup(r._hay, g, true); }).length; });
+    var miss = gs.filter(function (g, i) { return !df[i]; }).map(function (g) { return g.w; });
+    // 語が1つなら、ここまでで無ければ「載っていない」
+    if (gs.length < 2) return { rows: [], part: false, miss: miss };
+    // 語が2つ以上: 珍しい語を多く含むものを出す。多くの文に出る語（「報酬」「支援」など）ほど軽く数える。
+    // サービス名の語（例: 児発・生活介護）は外さない（ほかのサービスの論点を出さないため。サービス名の欄と題名で見る）
+    var N = pool.length;
+    var wt = df.map(function (d) { return d ? Math.log((N + 1) / d) : 0; });
+    var svc = gs.filter(function (g) { return g.alts.some(function (a) { return SVCN.some(function (n) { return a.indexOf(n) >= 0; }); }); });
+    var sc = pool.filter(function (r) { return svc.every(function (g) { return hitGroup(r._s, g, true) || hitGroup(r._t, g, true); }); })
+      .map(function (r) {
+        var on = gs.map(function (g) { return hitGroup(r._hay, g, true); });
+        return { r: r, s: on.reduce(function (s, x, i) { return s + (x ? wt[i] : 0); }, 0),
+          t: on.reduce(function (s, x, i) { return s + (x && svc.indexOf(gs[i]) < 0 ? wt[i] : 0); }, 0) };
+      });
+    // サービス名のほかに、多くの文には出ない語が当たること（何も絞れていないものは出さない）
+    var floor = Math.log((N + 1) / (N * 0.25));
+    var svcRows = sc.map(function (x) { return x.r; });
+    sc = sc.filter(function (x) { return x.t >= floor; });
+    // ほかの語が当たらないときは、打ち込まれたサービスのものを出す（そのサービスで何が議論されているかは分かる）
+    if (!sc.length && svc.length && svcRows.length) {
+      svcRows.forEach(function (r) { r._rk = rankOf(r, svc, true); });
+      return { rows: svcRows.sort(function (a, b) { return b._rk - a._rk; }), part: true, miss: miss, only: svc.map(function (g) { return g.w; }),
+        rest: gs.filter(function (g) { return svc.indexOf(g) < 0; }).map(function (g) { return g.w; }) };
+    }
+    if (!sc.length) return { rows: [], part: false, miss: miss };
+    var max = Math.max.apply(null, sc.map(function (x) { return x.s; }));
+    var rows = sc.filter(function (x) { return x.s >= max * 0.6; }).sort(function (a, b) { return b.s - a.s; }).slice(0, 15).map(function (x) { return x.r; });
+    return { rows: rows, part: true, miss: miss };
+  }
+
   /* ── 論点一覧（絞り込み） ─────────── */
   (function listView() {
     var host = $("list-cards"); if (!host) return;
     var all = ALL.slice().sort(byNewest);
+    var base = BASE.slice().sort(byNewest);
     var st = { g: "", dir: "", kind: "", q: "" };
     function mk(hostId, key, items) {
       var box = $(hostId);
@@ -8483,20 +8666,51 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
     var q = $("q");
     q.addEventListener("input", function () { st.q = q.value.trim(); draw(); });
     $("f-reset").addEventListener("click", function () { st = { g: "", dir: "", kind: "", q: "" }; q.value = ""; sync(); draw(); });
-    function hay(r) { return [r.title, r.label, r.genjo, r.houkousei, (r.services || []).join(" "), (r.kind || []).join(" "), (r.kentou || []).join(" ")].join(" "); }
+    function chipsOk(r) {
+      if (st.g === "横断" && r.group !== "横断") return false;
+      if (st.g && st.g !== "横断" && (r._g || []).indexOf(st.g) < 0) return false;
+      if (st.dir && dirClass(r) !== st.dir) return false;
+      if (st.kind && (r.kind || []).indexOf(st.kind) < 0) return false;
+      return true;
+    }
     function draw() {
-      var words = st.q ? st.q.split(/\s+/) : [];
-      var list = all.filter(function (r) {
-        if (st.g === "横断" && r.group !== "横断") return false;
-        if (st.g && st.g !== "横断" && (r._g || []).indexOf(st.g) < 0) return false;
-        if (st.dir && dirClass(r) !== st.dir) return false;
-        if (st.kind && (r.kind || []).indexOf(st.kind) < 0) return false;
-        if (words.length) { var h = hay(r); if (!words.every(function (w) { return h.indexOf(w) >= 0; })) return false; }
-        return true;
-      });
-      $("f-count").textContent = list.length + "件";
+      // 語があるときは、確定済みの前提・課題（#base）も一緒に探して論点の下に出す
+      var pool = all.filter(chipsOk), bpool = st.q ? base.filter(chipsOk) : [];
+      var res = st.q ? search(pool.concat(bpool), st.q) : { rows: pool, part: false };
+      var list = res.rows.filter(function (r) { return BASE.indexOf(r) < 0; });
+      var blist = res.rows.filter(function (r) { return BASE.indexOf(r) >= 0; });
+      $("f-count").textContent = blist.length ? "論点 " + list.length + "件・前提 " + blist.length + "件" : list.length + "件";
       $("f-reset").hidden = !(st.g || st.dir || st.kind || st.q);
-      fill(host, list);
+      host.innerHTML = "";
+      var miss = (res.miss || []).map(function (w) { return "「" + w + "」"; }).join("");
+      if (!list.length && !blist.length) {
+        host.appendChild(el("div", { class: "empty" }, miss ? esc(miss) + "を含む論点・前提はありません。" : "当てはまる論点はありません。"));
+        return;
+      }
+      var box = host;
+      if (res.part) {
+        box = el("div", { class: "part", "data-part": "1" });
+        var q2 = function (ws) { return ws.map(function (w) { return "「" + w + "」"; }).join(""); };
+        box.appendChild(el("p", { class: "part-note" }, esc(res.only
+          ? q2(res.rest) + "を含むものはありません。" + q2(res.only) + "の論点・前提です。"
+          : (miss ? miss + "を含むものはありません。ほかの語を含むものです。" : "すべての語をそのまま含むものはありません。一部の語を含むものです。"))));
+        host.appendChild(box);
+      }
+      function cardsOf(rows, opts) { var c = el("div", { class: "cards" }); fill(c, rows, opts); return c; }
+      function baseBox() {
+        var bw = el("div", { class: "base-hits", "data-base": "1" });
+        bw.appendChild(el("h3", { class: "base-h" }, '令和8年度の前提・課題 <a href="#base">前提のページ</a>'));
+        bw.appendChild(cardsOf(blist, { noNew: true }));
+        return bw;
+      }
+      // 論点の一覧なので、論点を先に、前提をその下に出す（前提が先だと次の改定の議論が下に隠れる）
+      var baseFirst = false;
+      if (baseFirst) box.appendChild(baseBox());
+      if (list.length) {
+        if (box === host && !baseFirst) fill(host, list);
+        else { if (baseFirst) box.appendChild(el("h3", { class: "base-h list-h" }, "論点")); box.appendChild(cardsOf(list)); }
+      }
+      if (blist.length && !baseFirst) box.appendChild(baseBox());
     }
     draw();
   })();

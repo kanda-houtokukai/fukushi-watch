@@ -43,11 +43,43 @@ INDEX_IDS = {"297176": "common", "297294": "kyotaku", "297178": "nicchu", "29717
 
 
 def fetch(url, out):
-    r = subprocess.run([sys.executable, str(ROOT / "scripts" / "fetchtext.py"), url, "-o", str(out)] + (["--links"] if url.endswith(".html") else []),
+    # --ocr: 文字が線で描かれた頁を OCR で読む（検索の索引のため。tesseract の jpn が要る。毎朝のタスクは付けない）
+    r = subprocess.run([sys.executable, str(ROOT / "scripts" / "fetchtext.py"), url, "-o", str(out)] + (["--links"] if url.endswith(".html") else [])
+                       + (["--ocr"] if "--ocr" in sys.argv and not url.endswith(".html") else []),
                        capture_output=True, text=True)
     if r.returncode != 0:
         sys.exit("取得できませんでした: " + url + " " + r.stderr)
     return out.read_text(encoding="utf-8")
+
+
+def write_kw(path, kw):
+    """検索の索引を書く（形式2・2026-11-02 P75）。語は資料全体の語の表（vocab。出てくる数の多い順）に1回だけ持ち、
+    区切り（資料:頁:見出しの番号）ごとには、表の番号を小さい順に並べて前との差を36進で「.」区切りにする。
+    高齢で 2.5MB → 1.0MB（gzip 0.65MB → 0.38MB）。app.js の loadKW が読む（形式1の {"docs","pages"} も読める）。"""
+    cnt = {}
+    for v in kw["pages"].values():
+        for w in v.split("|"):
+            cnt[w] = cnt.get(w, 0) + 1
+    vocab = sorted(cnt, key=lambda w: (-cnt[w], w))
+    idx = {w: i for i, w in enumerate(vocab)}
+    digits = "0123456789abcdefghijklmnopqrstuvwxyz"
+
+    def b36(n):
+        o = ""
+        while True:
+            o = digits[n % 36] + o
+            n //= 36
+            if not n:
+                return o
+    segs = {}
+    for k, v in kw["pages"].items():
+        prev, out = 0, []
+        for i in sorted(idx[w] for w in set(v.split("|"))):
+            out.append(b36(i - prev))
+            prev = i
+        segs[k] = ".".join(out)
+    data = {"v": 2, "docs": kw["docs"], "vocab": "|".join(vocab), "segs": segs}
+    pathlib.Path(path).write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 
 def nk(s):
@@ -349,7 +381,7 @@ def main():
         sys.exit("見出しと頁の対応が崩れています。書き出しを止めました")
     (SRC / "docs.json").write_text(json.dumps(docs, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     (SRC / "toc.json").write_text(json.dumps(strip_private(toc), ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    (ROOT / "syudan" / "kw.json").write_text(json.dumps(kw, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    write_kw(ROOT / "syudan" / "kw.json", kw)
     print(f"資料 {len(docs['items'])} 点・見出しを作った資料 {len(toc)} 編・索引 {len(kw['pages'])} 区切り")
     for d in toc:
         print(" ", d["id"], d["pages"], "頁", len(d["secs"]), "章", sum(len(s["sub"]) for s in d["secs"]), "節")

@@ -649,3 +649,8 @@ a.hit:hover .h { color: var(--ac); text-decoration: underline; }
   .memo textarea { border: 0; padding: 0; resize: none; }
   .tkr { break-inside: avoid; }
 }
+/* 幅の狭いスマホ（320〜374px）で見出しの帯がはみ出さないように（P75） */
+@media (max-width: 374px) {
+  .brand { font-size: 13px; letter-spacing: 0; }
+  .fsw a { padding: 4px 8px; }
+}
