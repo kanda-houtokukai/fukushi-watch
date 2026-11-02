@@ -11,7 +11,8 @@
 
 ## 障がいと違うところ
 - 見出しは、資料の目次の形がまちまちなため下書き係が県の資料の見出しを拾う（mode "free"）。共通資料（共通資料１〜６）だけは目次に合わせた固定の見出し（mode "fixed"・kourei_toc.py の COMMON）。
-- 県のPDFの一部の頁（共通資料３・４〜６など）は poppler（pdftotext）で文字が取れない（CIDフォント）。pdfminer で取れる（thin_fix.py）。
+- 県のPDFの一部の頁（共通資料３・４〜６など）は poppler（pdftotext）で文字が取れない。pdfminer で取れるのは一部（共通資料４〜６の p.60–61 など。thin_fix.py）で、
+  多くは文字が線で描かれていて pdfminer でも取れない（2026-11-02 に確かめた）。要点は画像で読んで作り、検索の索引は手順8の `--ocr` で作る。
   本当に画像だけの頁は pdftoppm で画像にし、下書き係・照合係が Read で読む（mk_chunks_k.py が img/<資料>/pN.png を作る）。
 
 ## 手順（作業用のフォルダ W を作り、このフォルダの tools/ と RULES_*.md を W にコピーして使う）
@@ -23,4 +24,7 @@
 6. `python3 W/tools/r2_k.py <組> <かたまり…>`（直した文の組 r2/<組>.json。原文は6〜9万字ほどに収める）→ 照合係X・Yに RULES_verify2_k.md で r2/<組>-X・-Y.json
 7. `python3 W/tools/final_k.py --write`（合格した文だけで toc.json と notes/ を書く。中の REPO を確かめる。`--draft` は照合前の下書きで画面を試すだけ。公開しない）
 8. `python3 syudan/_src/extract_field.py kourei W/xw/k --texts=W/ftxt`（見出しの頁で検索の索引を区切り直す。保育は hoiku）→ `python3 syudan/_src/build.py`
+   - 2026-11-02（P75）から、索引は `--ocr` を付けて作る（`--texts` を使わず PDF を取り直す）。県の資料には文字が線で描かれた頁があり（共通資料１〜６・条例と指導監査実施方針 など約250頁）、
+     poppler も pdfminer も文字が出ない。`--ocr` はその頁を tesseract（jpn）で読んで索引に入れる（誤読を含むので索引にだけ使う）。jpn が無ければ `apt-get install tesseract-ocr-jpn`。
+     毎朝のタスクの `--if-changed` は `--ocr` を付けないので、資料が差し替わって作り直された索引は線の頁を含まない。作り直しのときに `--ocr` で作り直す。
 - tools/next.py は待ち行列（queue_draft_todo.txt・queue_verify.txt）から次に立てる係を出す補助。

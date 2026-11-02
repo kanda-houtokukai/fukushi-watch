@@ -258,6 +258,13 @@ main { min-width: 0; padding-block: 24px 0; max-width: 1000px; }
 
 /* ── 論点カード ─────────────────────── */
 .cards { display: grid; gap: 8px; }
+/* 探すの結果（P75）: 一部の語だけ含むもの・前提のページにあるもの */
+.part-note { margin: 0 0 8px; font-size: 13px; color: var(--ink-3); }
+.base-hits { margin-top: 22px; }
+.base-h { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin: 0 0 8px; font-size: 14px; font-weight: 700; color: var(--ink-2); }
+.base-h a { font-size: 12.5px; font-weight: 400; }
+.base-hits + .list-h { margin-top: 22px; }
+.base-hits:first-child, .part-note + .base-hits { margin-top: 4px; }
 .rc { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); scroll-margin-top: 76px; }
 .rc > summary { cursor: pointer; list-style: none; padding: 13px 44px 13px 16px; position: relative; display: grid; gap: 7px; }
 .rc > summary::-webkit-details-marker { display: none; }

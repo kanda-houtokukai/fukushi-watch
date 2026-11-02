@@ -8,6 +8,7 @@ WebFetch はURLによって実行が許可待ちで止まることがあるた�
   python3 scripts/fetchtext.py URL                 # 文字を標準出力へ
   python3 scripts/fetchtext.py URL -o 保存先.txt    # 文字をファイルへ（リポジトリの外に置く）
   python3 scripts/fetchtext.py URL --links         # ページ内のリンク（文字とURL）も末尾に出す
+  python3 scripts/fetchtext.py URL --ocr           # PDFの文字の出ない頁を OCR で読む（検索の索引を作るときだけ。tesseract の jpn が要る）
 終了コード: 0=取得できた / 1=取得できなかった（理由は標準エラーへ）
 """
 import html
@@ -40,7 +41,67 @@ def fetch(url):
     return body, ctype, final or url
 
 
-def pdf_text(body):
+def fill_pages(path, text, ocr=False):
+    """pdftotext で文字がほとんど出ない頁だけを pdfminer で読み直して差し替える（2026-11-02・P75）。
+    県の資料には、頁によって日本語のフォント（CID）の文字が pdftotext で出ないものがある（集団指導の共通資料３・４〜６ など）。
+    頁の数と順（改ページ文字 \\f の数）は変えない。pdfminer のほうが文字が多い頁だけ差し替える。"""
+    ps = text.split("\f")
+    tail = ps[-1] if ps and not ps[-1].strip() else None
+    body = ps[:-1] if tail is not None else ps
+    low = [i for i, t in enumerate(body) if len(re.sub(r"\s", "", t)) < 40]
+    if not low or len(low) == len(body):   # 全頁が空なら pdf_text の側で全体を読み直す
+        return text
+    try:
+        from pdfminer.high_level import extract_text
+        alt = extract_text(path, page_numbers=set(low)).split("\f")
+    except Exception as e:  # pdfminer が無い・読めない
+        sys.stderr.write(f"文字の少ない頁を pdfminer で読み直せませんでした（{e}）\n")
+        return text
+    n = 0
+    for i, t in zip(low, alt):
+        if len(re.sub(r"\s", "", t)) > len(re.sub(r"\s", "", body[i])):
+            body[i] = t
+            n += 1
+    if n:
+        sys.stderr.write(f"pdftotext で文字が出なかった {n} 頁を pdfminer で読みました\n")
+    if ocr:
+        n = ocr_pages(path, body, [i for i in low if len(re.sub(r"\s", "", body[i])) < 40])
+        if n:
+            sys.stderr.write(f"文字が線で描かれている {n} 頁を OCR で読みました（誤読を含む。検索の索引にだけ使う）\n")
+    return "\f".join(body + ([tail] if tail is not None else []))
+
+
+def ocr_pages(path, body, idx):
+    """文字が図形（線）で描かれた頁を、画像にして tesseract（jpn）で読む。--ocr のときだけ（集団指導の検索の索引用・P75）。
+    誤読を含むので、毎朝のタスクが資料の文を確かめる読み方には使わない。tesseract か jpn が無ければ何もしない。"""
+    if not idx:
+        return 0
+    try:
+        langs = subprocess.run(["tesseract", "--list-langs"], capture_output=True, text=True).stdout.split()
+    except FileNotFoundError:
+        langs = []
+    if "jpn" not in langs:
+        sys.stderr.write("OCR は tesseract の jpn が無いため行いませんでした（apt-get install tesseract-ocr-jpn）\n")
+        return 0
+    n = 0
+    with tempfile.TemporaryDirectory() as d:
+        for i in idx:
+            img = os.path.join(d, "p")
+            subprocess.run(["pdftoppm", "-f", str(i + 1), "-l", str(i + 1), "-r", "300", "-gray", "-png", "-singlefile", path, img], capture_output=True)
+            if not os.path.exists(img + ".png"):
+                continue
+            r = subprocess.run(["tesseract", img + ".png", "-", "-l", "jpn", "--psm", "6"], capture_output=True)
+            t = r.stdout.decode("utf-8", "replace")
+            # 日本語の OCR は文字の間に空白が入るので詰める
+            t = re.sub(r"(?<=[^\x00-\x7f]) (?=[^\x00-\x7f])", "", t)
+            if len(re.sub(r"\s", "", t)) > len(re.sub(r"\s", "", body[i])):
+                body[i] = t
+                n += 1
+            os.unlink(img + ".png")
+    return n
+
+
+def pdf_text(body, ocr=False):
     with tempfile.TemporaryDirectory() as d:
         p = os.path.join(d, "a.pdf")
         with open(p, "wb") as f:
@@ -48,6 +109,7 @@ def pdf_text(body):
         r = subprocess.run(["pdftotext", "-layout", p, "-"], capture_output=True)
         text = r.stdout.decode("utf-8", "replace")
         pages = max(1, text.count("\f"))
+        text = fill_pages(p, text, ocr)
         if len(re.sub(r"\s", "", text)) < 40 * pages:
             # 日本語のフォントを埋め込んでいないPDFは pdftotext で文字が出ないので pdfminer で読み直す
             try:
@@ -105,14 +167,14 @@ def main():
     if not args or args[0].startswith("-"):
         print(__doc__)
         return 1
-    url, out, with_links = args[0], None, "--links" in args
+    url, out, with_links, ocr = args[0], None, "--links" in args, "--ocr" in args
     if "-o" in args:
         out = args[args.index("-o") + 1]
     body, ctype, final = fetch(url)
     if body is None:
         return 1
     if body[:5] == b"%PDF-" or "pdf" in (ctype or "").lower():
-        text = pdf_text(body)
+        text = pdf_text(body, ocr)
     else:
         text = html_text(decode(body, ctype), final, with_links)
     if not text.strip():
