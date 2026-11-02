@@ -130,6 +130,12 @@ def main():
             sys.exit("kenshu.json がありません")
         k_lead, k_body = '<p class="ch-lead">（作成中）</p>', ""
     parts = [x.replace("<!--KENSHU-LEAD-->", k_lead).replace("<!--KENSHU-BODY-->", k_body) for x in parts]
+    # 研修素材（sozai.json・docs.json。2026-11-02）
+    import sozai_build
+    sz_body, sz_bad = sozai_build.build()
+    if sz_bad and "--draft" not in sys.argv:
+        sys.exit("研修素材: " + " / ".join(sz_bad))
+    parts = [x.replace("<!--SOZAI-BODY-->", sz_body) for x in parts]
     # テーマのページ（themes.json）・章の見出しの行き先・横断検索の章の索引（notes/chapters.json）
     parts, themes_js, themes_bad, themes_n = themes_build.build(parts, docs_ctx, docs_build.ref_html, k_body)
     data += "\n" + docs_js + themes_js

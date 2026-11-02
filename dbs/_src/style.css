@@ -907,3 +907,86 @@ figure.fig.flow { max-width: 52em; }
   .flow-s li:not(:last-child)::after { left: 26px; }
   .th-g li a { padding-right: 22px; }
 }
+
+/* ── 法人と事業所の分担（2026-11-02） ── */
+.bt-five { list-style: none; counter-reset: bt; margin: 14px 0 18px; padding: 0; display: grid; gap: 10px; max-width: 52em; }
+.bt-five > li { counter-increment: bt; position: relative; padding: 12px 16px 12px 52px; border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); }
+.bt-five > li::before { content: counter(bt); position: absolute; left: 16px; top: 13px; width: 22px; height: 22px; border-radius: 50%; background: var(--kin); color: #fff; font-family: var(--f-mono); font-size: 12.5px; font-weight: 500; display: grid; place-items: center; }
+.bt-five > li > b { font-family: var(--f-display); font-size: 15.5px; }
+.bt-five p { margin: 4px 0 0; font-size: 14.5px; line-height: 1.75; }
+.bt-five p.bt-r { margin-top: 6px; display: flex; gap: 6px; flex-wrap: wrap; }
+.bt-src { font-size: 12.5px; color: var(--ink-3); line-height: 1.9; max-width: 52em; margin: 8px 0 22px; }
+.bt-tbl table.tbl { min-width: 0; }
+.bt-tbl th[scope], .bt-tbl tbody th { white-space: nowrap; }
+.bt-tbl tbody td { width: 40%; }
+.bt-bar { display: grid; gap: 4px; }
+.bt-list { display: grid; gap: 14px; }
+.ck label .bt-who { display: inline-block; font-size: 11px; line-height: 1.6; padding: 0 6px; border-radius: 3px; margin-right: 6px; vertical-align: 1px; font-weight: 700; }
+.bt-who.bt-hq { background: var(--ai-soft); color: var(--ai); }
+.bt-who.bt-site { background: var(--surface-2); color: var(--ink-2); }
+.ck label .bt-rr { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 4px; }
+.bt-qa { list-style: none; margin: 10px 0 24px; padding: 0; display: grid; gap: 0; max-width: 52em; border-top: 1px solid var(--line-2); }
+.bt-qa a { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 10px; padding: 10px 2px; border-bottom: 1px solid var(--line-2); text-decoration: none; color: var(--ink); font-size: 14.5px; line-height: 1.65; }
+.bt-qa a:hover { color: var(--ai); }
+.bt-qa .tk { justify-self: start; align-self: start; font-family: var(--f-mono); font-size: 11px; line-height: 1.6; padding: 1px 6px; border: 1px solid var(--ai); color: var(--ai); border-radius: 3px; margin-top: 2px; }
+.bt-role { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 6px 0 18px; max-width: 40em; }
+.bt-role button { font: inherit; text-align: left; cursor: pointer; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); border-radius: var(--r); padding: 12px 16px; display: grid; gap: 2px; }
+.bt-role button b { font-family: var(--f-display); font-size: 17px; }
+.bt-role button span { font-size: 12.5px; color: var(--ink-3); }
+.bt-role button[aria-pressed="true"] { border-color: var(--ai); background: var(--ai-soft); }
+.bt-role button[aria-pressed="true"] b { color: var(--ai); }
+.bt-hand { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 0 22px; max-width: 52em; }
+.bt-h { border: 1px solid var(--line); border-radius: var(--r); padding: 12px 16px; background: var(--surface); }
+.bt-hk { font-family: var(--f-mono); font-size: 11.5px; letter-spacing: .1em; color: var(--kin); }
+.bt-h ul { margin: 6px 0 0; padding-left: 1.2em; font-size: 14px; line-height: 1.7; display: grid; gap: 4px; }
+@media (max-width: 640px) {
+  .bt-five > li { padding: 12px 14px 12px 46px; }
+  .bt-five > li::before { left: 13px; }
+  .bt-tbl table.tbl, .bt-tbl thead, .bt-tbl tbody, .bt-tbl tr, .bt-tbl th, .bt-tbl td { display: block; width: auto; }
+  .bt-tbl thead { display: none; }
+  .bt-tbl tr { border: 1px solid var(--line); border-radius: var(--r); margin: 0 0 10px; overflow: hidden; }
+  .bt-tbl tbody th { background: var(--surface-2); border: 0; padding: 8px 12px; white-space: normal; }
+  .bt-tbl tbody td { border: 0; border-top: 1px solid var(--line-2); padding: 8px 12px; width: auto; }
+  .bt-tbl tbody td[data-l]:not([data-l=""])::before { content: attr(data-l); display: block; font-size: 11.5px; font-weight: 700; color: var(--ink-3); }
+  .bt-tbl tbody td[data-l="法人本部"]::before { color: var(--ai); }
+  .bt-qa a { grid-template-columns: 1fr; gap: 4px; }
+  .bt-hand { grid-template-columns: 1fr; }
+}
+@media print {
+  .bt-bar .seg, .bt-role { display: none !important; }
+  .bt-five > li, .bt-tbl tr { break-inside: avoid; }
+}
+
+/* ── 研修素材（2026-11-02） ── */
+.sz-tabs { margin: 4px 0 6px; }
+.sz-tabs button { font-size: 14.5px; padding: 8px 20px; }
+.sz-tabs .n { font-family: var(--f-mono); font-size: 12px; margin-left: 4px; opacity: .8; }
+.sz-pane.is-off { display: none; }
+.sz-ph { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.sz-lead { font-size: 14px; color: var(--ink-2); margin: -4px 0 10px; max-width: 52em; }
+.sz-list { list-style: none; margin: 8px 0 10px; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: 10px; }
+.sz-it { border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); padding: 12px 14px; display: grid; gap: 5px; align-content: start; min-width: 0; }
+.sz-m { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.sz-k { font-family: var(--f-mono); font-size: 11px; line-height: 1.6; padding: 0 7px; border-radius: 3px; border: 1px solid var(--line); color: var(--ink-2); background: var(--surface-2); }
+.sz-k.sz-v { border-color: var(--ai); color: var(--ai); background: var(--ai-soft); }
+.sz-len { font-family: var(--f-mono); font-size: 12px; color: var(--ink-3); }
+.sz-t { font-weight: 700; font-size: 15px; line-height: 1.6; color: var(--ink); text-decoration: none; overflow-wrap: anywhere; }
+.sz-t:hover { color: var(--ai); text-decoration: underline; }
+.sz-n { margin: 0; font-size: 13.5px; color: var(--ink-2); line-height: 1.65; }
+.sz-l { margin: 0; display: flex; gap: 6px 12px; flex-wrap: wrap; align-items: baseline; font-size: 13.5px; line-height: 1.65; }
+.sz-lk { font-size: 11.5px; color: var(--ink-3); }
+.sz-l a { overflow-wrap: anywhere; }
+.sz-yo { font-weight: 700; white-space: nowrap; }
+.sz-r { margin: 0; display: flex; gap: 5px; flex-wrap: wrap; }
+.sz-sub summary { cursor: pointer; font-size: 13px; color: var(--ink-2); }
+.sz-sub ul { margin: 4px 0 0; padding-left: 1.2em; font-size: 13.5px; line-height: 1.7; color: var(--ink-2); }
+.sz-src { font-size: 12.5px; color: var(--ink-3); margin: 0 0 22px; }
+.tile.ev-sozai { margin: 22px 0 8px; max-width: 40em; }
+.tile.ev-sozai span { font-size: 13.5px; color: var(--ink-2); }
+@media print {
+  .sz-tabs { display: none !important; }
+  .sz-pane.is-off { display: block !important; }
+  .sz-ph { position: static; width: auto; height: auto; clip: auto; }
+  .sz-sub[open] summary ~ *, .sz-sub > ul { display: block; }
+  .sz-it { break-inside: avoid; }
+}

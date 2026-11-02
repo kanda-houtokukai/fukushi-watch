@@ -303,6 +303,102 @@
     }
   })();
 
+  /* ── 法人と事業所の分担：本部・事業所の切り替えつきチェックリスト（2026-11-02） ── */
+  (function buntan() {
+    var B = DATA.buntan;
+    var hosts = document.querySelectorAll("[data-buntan-ck]");
+    if (!B || !hosts.length) return;
+    var KEY = "dbs-guide-buntan-v1", RKEY = "dbs-guide-buntan-role";
+    var saved = {};
+    try { saved = JSON.parse(store.get(KEY) || "{}") || {}; } catch (e) { saved = {}; }
+    var TAG = { law: '<span class="pill kakunin">法違反</span>', gimu: '<span class="pill gimu">義務</span>', rec: '<span class="pill doryoku">推奨</span>' };
+    var WHO = { hq: "本部", site: "事業所" };
+    function refs(r) { return (r || []).map(function (x) { return '<span class="ref">' + esc(x) + "</span>"; }).join(" "); }
+    function draw(box, role) {
+      box.innerHTML = "";
+      B.when.forEach(function (w) {
+        var its = B.items.filter(function (it) { return it.when === w.k && (role === "all" || it.who === role); });
+        if (!its.length) return;
+        var ph = el("section", { class: "ck-phase" });
+        var hd = el("header");
+        hd.appendChild(el("h4", null, esc(w.t) + (w.w ? ' <span class="when">' + esc(w.w) + "</span>" : "")));
+        var cnt = el("span", { class: "ck-count" });
+        hd.appendChild(cnt);
+        ph.appendChild(hd);
+        var meter = el("div", { class: "ck-meter" }, "<i></i>");
+        ph.appendChild(meter);
+        var ul = el("ul");
+        its.forEach(function (it) {
+          var li = el("li");
+          var lab = el("label");
+          var cb = el("input", { type: "checkbox" });
+          cb.checked = !!saved[it.id];
+          lab.appendChild(cb);
+          lab.appendChild(el("span", null, (role === "all" ? '<span class="bt-who bt-' + it.who + '">' + WHO[it.who] + "</span>" : "") + "<b>" + esc(it.t) + "</b>" +
+            (it.tag ? '<span class="who">' + TAG[it.tag] + "</span>" : "") + (it.d ? '<span class="d">' + esc(it.d) + "</span>" : "") + (it.r && it.r.length ? '<span class="bt-rr">' + refs(it.r) + "</span>" : "")));
+          cb.addEventListener("change", function () { saved[it.id] = cb.checked; store.set(KEY, JSON.stringify(saved)); update(); });
+          li.appendChild(lab); ul.appendChild(li);
+        });
+        ph.appendChild(ul);
+        function update() {
+          var n = its.filter(function (it) { return saved[it.id]; }).length;
+          cnt.textContent = n + " / " + its.length + " 完了";
+          meter.firstChild.style.width = (n / its.length * 100) + "%";
+        }
+        update();
+        box.appendChild(ph);
+      });
+    }
+    var role0 = "all";
+    try { role0 = store.get(RKEY) || "all"; } catch (e) { role0 = "all"; }
+    each(hosts, function (host) {
+      var mode = host.getAttribute("data-buntan-ck");
+      host.classList.add("ck");
+      var list = el("div", { class: "bt-list" });
+      if (mode === "all") {
+        var bar = el("div", { class: "bt-bar" });
+        var seg = el("div", { class: "seg", role: "group", "aria-label": "表示する担当" });
+        [["all", "すべて"], ["hq", "法人本部"], ["site", "事業所"]].forEach(function (o) {
+          var b = el("button", { type: "button", "data-r": o[0], "aria-pressed": String(o[0] === role0) }, o[1]);
+          b.addEventListener("click", function () {
+            each(seg.querySelectorAll("button"), function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+            store.set(RKEY, o[0]); draw(list, o[0]);
+          });
+          seg.appendChild(b);
+        });
+        bar.appendChild(seg);
+        bar.appendChild(el("div", { class: "legend" }, '<span><span class="pill kakunin">法違反</span>施行時に未実施ならそれ自体が法違反</span><span><span class="pill gimu">義務</span>法令上の義務</span><span><span class="pill doryoku">推奨</span>ガイドラインの例・実務上の必要</span>'));
+        host.appendChild(bar);
+        host.appendChild(list);
+        draw(list, (["all", "hq", "site"].indexOf(role0) >= 0) ? role0 : "all");
+      } else {
+        host.appendChild(list);
+        host.bt = list;
+      }
+    });
+    // 案B：冒頭の担当の選択で、受け渡しとやることを切り替える
+    var roleBtns = document.querySelectorAll("[data-bt-role]");
+    if (roleBtns.length) {
+      var rhost = document.querySelector('[data-buntan-ck="role"]');
+      var pick = function (r) {
+        each(roleBtns, function (x) { x.setAttribute("aria-pressed", String(x.getAttribute("data-bt-role") === r)); });
+        each(document.querySelectorAll("[data-bt-show]"), function (x) { x.hidden = x.getAttribute("data-bt-show") !== r; });
+        if (rhost && rhost.bt) draw(rhost.bt, r);
+      };
+      each(roleBtns, function (b) { b.addEventListener("click", function () { pick(b.getAttribute("data-bt-role")); store.set(RKEY, b.getAttribute("data-bt-role")); }); });
+      pick(role0 === "hq" ? "hq" : "site");
+    }
+    // 案B：分担の一覧と図は案Aのものを写して使う（同じ中身を二重に持たない）
+    each(document.querySelectorAll("[data-bt-copy]"), function (x) {
+      var src = document.querySelector("#" + x.getAttribute("data-bt-copy") + " .bt-tbl");
+      if (src) x.innerHTML = src.innerHTML;
+    });
+    each(document.querySelectorAll("[data-bt-copyfig]"), function (x) {
+      var src = document.querySelector("#" + x.getAttribute("data-bt-copyfig") + " figure.fig .canvas");
+      if (src) x.innerHTML = src.innerHTML.replace(/id="bt-ah(s?)"/g, 'id="bt-ah$1-b"').replace(/url\(#bt-ah(s?)\)/g, "url(#bt-ah$1-b)");
+    });
+  })();
+
   /* ── 日程：済んだこと・今日の印 ─────────── */
   (function schedule() {
     var ol = $("tl-main");
@@ -533,12 +629,34 @@
     draw();
   })();
 
+  /* 研修素材（2026-11-02）：動画｜資料の切り替えと、毎朝のタスクが足す録画・資料（live.json の library）のうちページに無いもの */
   (function library() {
-    var host = $("lib-list");
-    if (!host || !LIVE.library) return;
-    LIVE.library.forEach(function (l) {
-      host.appendChild(el("li", null, '<span class="evb k-' + l.kind + '">' + KIND[l.kind] + '</span><span><a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.title) + "</a><small>" + esc(l.note) + "</small></span>"));
+    var page = $("sozai");
+    if (!page) return;
+    var tabs = page.querySelectorAll("[data-sz]"), panes = page.querySelectorAll("[data-sz-pane]");
+    function show(k) {
+      each(tabs, function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-sz") === k)); });
+      each(panes, function (p) { p.classList.toggle("is-off", p.getAttribute("data-sz-pane") !== k); });
+      try { store.set("dbs-guide-sozai-tab", k); } catch (e) {}
+    }
+    each(tabs, function (b) { b.addEventListener("click", function () { show(b.getAttribute("data-sz")); }); });
+    var k0 = "v";
+    try { k0 = store.get("dbs-guide-sozai-tab") === "d" ? "d" : "v"; } catch (e) { k0 = "v"; }
+    show(k0);
+    var have = {};
+    each(page.querySelectorAll("a[href^='http']"), function (a) { have[a.getAttribute("href")] = 1; });
+    var hv = $("sz-arch-v"), hd = $("sz-arch-d"), nv = 0, nd = 0;
+    (LIVE.library || []).forEach(function (l) {
+      if (!l.url || have[l.url]) return;
+      var isDoc = /\.(pdf|pptx?|xlsx?|docx?)(\?|#|$)/i.test(l.url);
+      var li = el("li", { class: "sz-it" }, '<div class="sz-m"><span class="evb k-' + esc(l.kind) + '">' + esc(KIND[l.kind] || "") + "</span></div>" +
+        '<a class="sz-t" href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.title) + "</a>" + (l.note ? '<p class="sz-n">' + esc(l.note) + "</p>" : ""));
+      if (isDoc) { hd.appendChild(li); nd++; } else { hv.appendChild(li); nv++; }
     });
+    if (!nv) { $("sz-arch-vh").hidden = true; hv.hidden = true; }
+    if (!nd) { $("sz-arch-dh").hidden = true; hd.hidden = true; }
+    $("sz-nv").textContent = String(+$("sz-nv").textContent + nv);
+    $("sz-nd").textContent = String(+$("sz-nd").textContent + nd);
   })();
 
   /* ── ページ（ビュー）の一覧 ───────────── */
