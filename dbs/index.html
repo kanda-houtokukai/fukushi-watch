@@ -1006,6 +1006,14 @@ figure.fig.flow { max-width: 52em; }
   .sz-it { break-inside: avoid; }
 }
 
+/* 2026-11-02: 360px 幅で上の帯のメニューのボタンが8px はみ出していたので、狭い画面だけ詰める */
+@media (max-width: 374px) {
+  .countdown-chip { padding: 2px 6px; letter-spacing: 0; }
+  .menu-btn { padding: 6px 6px; gap: 4px; }
+  .topbar-in { gap: 6px; }
+}
+@media (max-width: 340px) { .countdown-chip { display: none; } }
+
 </style>
 </head>
 <body>
