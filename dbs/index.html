@@ -944,13 +944,14 @@ figure.fig.flow { max-width: 52em; }
 .bt-tbl th[scope], .bt-tbl tbody th { white-space: nowrap; }
 .bt-tbl tbody td { width: 40%; }
 .bt-bar { display: grid; gap: 4px; }
+.bt-pr { display: none; margin: 0; font-size: 12.5px; color: var(--ink-2); }
 .bt-list { display: grid; gap: 14px; }
 .ck label .bt-who { display: inline-block; font-size: 11px; line-height: 1.6; padding: 0 6px; border-radius: 3px; margin-right: 6px; vertical-align: 1px; font-weight: 700; }
 .bt-who.bt-hq { background: var(--ai-soft); color: var(--ai); }
 .bt-who.bt-site { background: var(--surface-2); color: var(--ink-2); }
 .ck label .bt-rr { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 4px; }
 .bt-qa { list-style: none; margin: 10px 0 24px; padding: 0; display: grid; gap: 0; max-width: 52em; border-top: 1px solid var(--line-2); }
-.bt-qa a { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 10px; padding: 10px 2px; border-bottom: 1px solid var(--line-2); text-decoration: none; color: var(--ink); font-size: 14.5px; line-height: 1.65; }
+.bt-qa a { display: grid; grid-template-columns: 108px minmax(0, 1fr); gap: 10px; padding: 10px 2px; border-bottom: 1px solid var(--line-2); text-decoration: none; color: var(--ink); font-size: 14.5px; line-height: 1.65; }
 .bt-qa a:hover { color: var(--ai); }
 .bt-qa .tk { justify-self: start; align-self: start; font-family: var(--f-mono); font-size: 11px; line-height: 1.6; padding: 1px 6px; border: 1px solid var(--ai); color: var(--ai); border-radius: 3px; margin-top: 2px; }
 @media (max-width: 640px) {
@@ -966,7 +967,9 @@ figure.fig.flow { max-width: 52em; }
   .bt-qa a { grid-template-columns: 1fr; gap: 4px; }
   }
 @media print {
-  .bt-bar .seg,   .bt-five > li, .bt-tbl tr { break-inside: avoid; }
+  .bt-bar .seg { display: none !important; }
+  .bt-pr { display: block !important; }
+  .bt-five > li, .bt-tbl tr { break-inside: avoid; }
 }
 
 /* ── 研修素材（2026-11-02） ── */
@@ -6499,15 +6502,19 @@ GUIDE_DATA.sectors = [{"k": "hoiku", "t": "こども園・保育所", "h": "認�
           var b = el("button", { type: "button", "data-r": o[0], "aria-pressed": String(o[0] === role0) }, o[1]);
           b.addEventListener("click", function () {
             each(seg.querySelectorAll("button"), function (x) { x.setAttribute("aria-pressed", String(x === b)); });
-            store.set(RKEY, o[0]); draw(list, o[0]);
+            store.set(RKEY, o[0]); draw(list, o[0]); prl.textContent = o[1] === "すべて" ? "法人本部と事業所の項目" : o[1] + "の項目";
           });
           seg.appendChild(b);
         });
         bar.appendChild(seg);
+        var prl = el("p", { class: "bt-pr" });   // 印刷したときに、どの担当の項目かを出す
+        bar.appendChild(prl);
         bar.appendChild(el("div", { class: "legend" }, '<span><span class="pill kakunin">法違反</span>施行時に未実施ならそれ自体が法違反</span><span><span class="pill gimu">義務</span>法令上の義務</span><span><span class="pill doryoku">推奨</span>ガイドラインの例・実務上の必要</span>'));
         host.appendChild(bar);
         host.appendChild(list);
-        draw(list, (["all", "hq", "site"].indexOf(role0) >= 0) ? role0 : "all");
+        var r0 = (["all", "hq", "site"].indexOf(role0) >= 0) ? role0 : "all";
+        draw(list, r0);
+        prl.textContent = r0 === "all" ? "法人本部と事業所の項目" : (r0 === "hq" ? "法人本部" : "事業所") + "の項目";
       } else {
         host.appendChild(list);
         draw(list, "all");

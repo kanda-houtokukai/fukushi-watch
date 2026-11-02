@@ -362,15 +362,19 @@
           var b = el("button", { type: "button", "data-r": o[0], "aria-pressed": String(o[0] === role0) }, o[1]);
           b.addEventListener("click", function () {
             each(seg.querySelectorAll("button"), function (x) { x.setAttribute("aria-pressed", String(x === b)); });
-            store.set(RKEY, o[0]); draw(list, o[0]);
+            store.set(RKEY, o[0]); draw(list, o[0]); prl.textContent = o[1] === "すべて" ? "法人本部と事業所の項目" : o[1] + "の項目";
           });
           seg.appendChild(b);
         });
         bar.appendChild(seg);
+        var prl = el("p", { class: "bt-pr" });   // 印刷したときに、どの担当の項目かを出す
+        bar.appendChild(prl);
         bar.appendChild(el("div", { class: "legend" }, '<span><span class="pill kakunin">法違反</span>施行時に未実施ならそれ自体が法違反</span><span><span class="pill gimu">義務</span>法令上の義務</span><span><span class="pill doryoku">推奨</span>ガイドラインの例・実務上の必要</span>'));
         host.appendChild(bar);
         host.appendChild(list);
-        draw(list, (["all", "hq", "site"].indexOf(role0) >= 0) ? role0 : "all");
+        var r0 = (["all", "hq", "site"].indexOf(role0) >= 0) ? role0 : "all";
+        draw(list, r0);
+        prl.textContent = r0 === "all" ? "法人本部と事業所の項目" : (r0 === "hq" ? "法人本部" : "事業所") + "の項目";
       } else {
         host.appendChild(list);
         draw(list, "all");
