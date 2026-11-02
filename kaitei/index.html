@@ -567,6 +567,13 @@ footer.foot { margin-top: 64px; padding-top: 18px; border-top: 2px solid var(--i
   .lk-i { grid-template-columns: minmax(0, 1fr); gap: 0; }
   .lk-d:empty { display: none; }
 }
+/* 幅の狭いスマホ（320〜374px）で見出しの帯がはみ出さないように（P75） */
+@media (max-width: 374px) {
+  .topbar-in { gap: 8px; }
+  .stage-chip { padding: 3px 8px; font-size: 0; gap: 0; }
+  .stage-chip b { font-size: 12px; }
+  .menu-btn { padding: 6px 8px; }
+}
 
 </style>
 </head>
