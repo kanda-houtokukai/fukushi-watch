@@ -1,0 +1,75 @@
+<svg class="wide v-pc" viewBox="0 0 960 330" role="img" aria-label="事業所と法人本部のあいだの受け渡しを、採用・異動、対象者の範囲、気づき・相談、確認記録、研修の5つの列で示した図。番号は漏れやすい5か所">
+        <defs>
+          <marker id="bt-ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="f-ink3"/></marker>
+        </defs>
+        <rect x="0" y="28" width="960" height="114" rx="6" class="f-s2"/>
+        <rect x="0" y="188" width="960" height="114" rx="6" class="f-aisoft"/>
+        <text x="14" y="90" font-size="13" class="tb">事業所</text>
+        <text x="14" y="250" font-size="13" class="tb tai">法人本部</text>
+        <text x="88" y="18" font-size="10.5" class="t3 t-mono">採用・異動</text>
+        <text x="264" y="18" font-size="10.5" class="t3 t-mono">対象者の範囲</text>
+        <text x="440" y="18" font-size="10.5" class="t3 t-mono">気づき・相談</text>
+        <text x="616" y="18" font-size="10.5" class="t3 t-mono">確認記録</text>
+        <text x="792" y="18" font-size="10.5" class="t3 t-mono">研修</text>
+
+        <rect x="88" y="42" width="160" height="86" rx="5" class="f-surface s-line"/>
+        <text x="100" y="66" font-size="12" class="tb">採用・異動を決める</text>
+        <text x="100" y="88" font-size="11" class="t2">確認済みを見てから</text>
+        <text x="100" y="105" font-size="11" class="t2">業務に就かせる</text>
+        <rect x="88" y="202" width="160" height="86" rx="5" class="f-surface s-ai"/>
+        <text x="100" y="226" font-size="12" class="tb">業務に就く日までに</text>
+        <text x="100" y="248" font-size="11" class="t2">確認書を受け取り</text>
+        <text x="100" y="265" font-size="11" class="t2">確認を終える</text>
+        <line x1="148" y1="130" x2="148" y2="198" class="s-ink2" stroke-width="1.4" marker-end="url(#bt-ah)"/>
+        <line x1="188" y1="198" x2="188" y2="132" class="s-ink2" stroke-width="1.4" marker-end="url(#bt-ah)"/>
+        <text x="96" y="160" font-size="10.5" class="t2">知らせる</text>
+        <text x="194" y="182" font-size="10.5" class="t2">確認済み</text>
+        <circle cx="168" cy="165" r="11" class="f-kin"/><text x="168" y="169.5" font-size="12" text-anchor="middle" class="tb tinv">1</text>
+
+        <rect x="264" y="42" width="160" height="86" rx="5" class="f-surface s-line"/>
+        <text x="276" y="66" font-size="12" class="tb">同じ基準で</text>
+        <text x="276" y="88" font-size="11" class="t2">対象者を名簿にする</text>
+        <rect x="264" y="202" width="160" height="86" rx="5" class="f-surface s-ai"/>
+        <text x="276" y="226" font-size="12" class="tb">範囲を法人で決める</text>
+        <text x="276" y="248" font-size="11" class="t2">運転手・調理員などは</text>
+        <text x="276" y="265" font-size="11" class="t2">3要件で判断</text>
+        <line x1="344" y1="198" x2="344" y2="132" class="s-ink2" stroke-width="1.4" marker-end="url(#bt-ah)"/>
+        <text x="352" y="152" font-size="10.5" class="t2">判断の基準</text>
+        <circle cx="344" cy="165" r="11" class="f-kin"/><text x="344" y="169.5" font-size="12" text-anchor="middle" class="tb tinv">2</text>
+
+        <rect x="440" y="42" width="160" height="86" rx="5" class="f-surface s-line"/>
+        <text x="452" y="66" font-size="12" class="tb">見守り・相談で気づく</text>
+        <text x="452" y="88" font-size="11" class="t2">初動の調査と</text>
+        <text x="452" y="105" font-size="11" class="t2">当面の保護</text>
+        <rect x="440" y="202" width="160" height="86" rx="5" class="f-surface s-ai"/>
+        <text x="452" y="226" font-size="12" class="tb">対応を決める</text>
+        <text x="452" y="248" font-size="11" class="t2">他の事業所も含めて</text>
+        <text x="452" y="265" font-size="11" class="t2">再発を防ぐ</text>
+        <line x1="520" y1="130" x2="520" y2="198" class="s-ink2" stroke-width="1.4" marker-end="url(#bt-ah)"/>
+        <text x="528" y="152" font-size="10.5" class="t2">報告</text>
+        <circle cx="520" cy="165" r="11" class="f-kin"/><text x="520" y="169.5" font-size="12" text-anchor="middle" class="tb tinv">3</text>
+
+        <rect x="616" y="42" width="160" height="86" rx="5" class="f-surface s-line"/>
+        <text x="628" y="66" font-size="12" class="tb">必要な範囲で受け取る</text>
+        <text x="628" y="88" font-size="11" class="t2">事業所どうしでは</text>
+        <text x="628" y="105" font-size="11" class="t2">直接渡さない</text>
+        <rect x="616" y="202" width="160" height="86" rx="5" class="f-surface s-ai"/>
+        <text x="628" y="226" font-size="12" class="tb">確認記録を管理する</text>
+        <text x="628" y="248" font-size="11" class="t2">責任者は法人単位</text>
+        <text x="628" y="265" font-size="11" class="t2">権限は異動ごとに設定</text>
+        <line x1="696" y1="198" x2="696" y2="132" class="s-ink2" stroke-width="1.4" marker-end="url(#bt-ah)"/>
+        <text x="704" y="152" font-size="10.5" class="t2">必要な範囲</text>
+        <circle cx="696" cy="165" r="11" class="f-kin"/><text x="696" y="169.5" font-size="12" text-anchor="middle" class="tb tinv">4</text>
+
+        <rect x="792" y="42" width="160" height="86" rx="5" class="f-surface s-line"/>
+        <text x="804" y="66" font-size="12" class="tb">研修を受ける</text>
+        <text x="804" y="88" font-size="11" class="t2">事業所・本部・外部の</text>
+        <text x="804" y="105" font-size="11" class="t2">どこで受けてもよい</text>
+        <rect x="792" y="202" width="160" height="86" rx="5" class="f-surface s-ai"/>
+        <text x="804" y="226" font-size="12" class="tb">受講したことを</text>
+        <text x="804" y="248" font-size="11" class="t2">法人として確認する</text>
+        <line x1="872" y1="130" x2="872" y2="198" class="s-ink2" stroke-width="1.4" marker-end="url(#bt-ah)"/>
+        <text x="880" y="152" font-size="10.5" class="t2">受講の記録</text>
+        <circle cx="872" cy="165" r="11" class="f-kin"/><text x="872" y="169.5" font-size="12" text-anchor="middle" class="tb tinv">5</text>
+        <text x="0" y="324" font-size="10.5" class="t3">番号の付いた矢印が、法人と事業所のあいだの受け渡し（漏れやすい所）</text>
+      </svg>
