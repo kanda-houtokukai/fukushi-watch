@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-11-02T23:56:23.143Z",
+      "lastCrawled": "2026-11-03T22:23:18.243Z",
       "items": [
         {
           "hash": "2a714edb68c9984b",
@@ -1266,7 +1266,7 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-11-02T23:56:23.530Z",
+      "lastCrawled": "2026-11-03T22:23:18.589Z",
       "items": [
         {
           "hash": "ab2c1fa21f056ad6",
@@ -1385,6 +1385,13 @@
           "title": "社会福祉施設職員等退職手当共済制度の在り方に関する検討会（第５回）配布資料",
           "url": "https://www.mhlw.go.jp/stf/newpage_77111.html",
           "date": "2026-11-02",
+          "category": "審議会等"
+        },
+        {
+          "hash": "43adec6c411f39ab",
+          "title": "第16回医師養成過程を通じた医師の偏在対策等に関する検討会",
+          "url": "https://www.mhlw.go.jp/stf/newpage_77137.html",
+          "date": "2026-11-01",
           "category": "審議会等"
         },
         {
@@ -4767,158 +4774,11 @@
           "url": "https://www.mhlw.go.jp/stf/newpage_75447.html",
           "date": "2026-09-07",
           "category": "その他"
-        },
-        {
-          "hash": "6024a9a209786423",
-          "title": "令和８年９月４日付大臣会見概要",
-          "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00965.html",
-          "date": "2026-09-04",
-          "category": "大臣会見等"
-        },
-        {
-          "hash": "0b91dcbe55f0d711",
-          "title": "採用情報（期間業務職員（保険局）募集情報）",
-          "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-hokenkyoku02.html",
-          "date": "2026-09-04",
-          "category": "採用情報"
-        },
-        {
-          "hash": "68abeb770ce099a4",
-          "title": "令和８年度地域医療介護総合確保基金（医療分）の第１回内示について",
-          "url": "https://www.mhlw.go.jp/stf/newpage_75985.html",
-          "date": "2026-09-04",
-          "category": "その他"
-        },
-        {
-          "hash": "a48fd3ceefedbf17",
-          "title": "上野厚生労働大臣の海外出張について",
-          "url": "https://www.mhlw.go.jp/stf/newpage_070516_00006.html",
-          "date": "2026-09-04",
-          "category": "報道発表"
-        },
-        {
-          "hash": "61513edb6e3a5d41",
-          "title": "建設業の人材確保・育成に向けた取組を進めていきます～厚生労働省・国土交通省の令和９年度予算概算要求の概要～",
-          "url": "https://www.mhlw.go.jp/stf/newpage_75797.html",
-          "date": "2026-09-04",
-          "category": "報道発表"
-        },
-        {
-          "hash": "38a84c227959c747",
-          "title": "ロシア連邦政府等から提供された抑留者に関する資料を日本側の資料と照合し、抑留中に死亡した者の個人を特定しました",
-          "url": "https://www.mhlw.go.jp/stf/newpage_75773.html",
-          "date": "2026-09-04",
-          "category": "報道発表"
-        },
-        {
-          "hash": "c799030989ef1dcc",
-          "title": "第５回2040年に向けた看護職員の養成・確保の在り方に関する検討会の開催について：開催案内",
-          "url": "https://www.mhlw.go.jp/stf/newpage_75692.html",
-          "date": "2026-09-04",
-          "category": "審議会等"
-        },
-        {
-          "hash": "f9e7c9469b3b37ca",
-          "title": "第１１１回社会保障審議会年金数理部会の開催について（オンラインセミナー形式）",
-          "url": "https://www.mhlw.go.jp/stf/newpage_75297.html",
-          "date": "2026-09-04",
-          "category": "審議会等"
-        },
-        {
-          "hash": "118162ed83767a47",
-          "title": "インフルエンザに関する報道発表資料を更新しました",
-          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou_00023.html",
-          "date": "2026-09-04",
-          "category": "報道発表"
-        },
-        {
-          "hash": "6aa6ad90d06acba8",
-          "title": "第４回事業場における労働者の健康保持増進の在り方に関する検討会議事録",
-          "url": "https://www.mhlw.go.jp/stf/newpage_76013.html",
-          "date": "2026-09-04",
-          "category": "審議会等"
-        },
-        {
-          "hash": "c22a3ab4daf58141",
-          "title": "第36回労働政策審議会勤労者生活分科会 議事録",
-          "url": "https://www.mhlw.go.jp/stf/newpage_75928.html",
-          "date": "2026-09-04",
-          "category": "審議会等"
-        },
-        {
-          "hash": "f1e48237f74e145a",
-          "title": "第２１回がん診療提供体制のあり方に関する検討会（議事録）",
-          "url": "https://www.mhlw.go.jp/stf/newpage_75822.html",
-          "date": "2026-09-04",
-          "category": "審議会等"
-        },
-        {
-          "hash": "4e3bf4ecf11b5780",
-          "title": "第１２回がん診療連携拠点病院等の指定要件に関するワーキンググループ（議事録）",
-          "url": "https://www.mhlw.go.jp/stf/newpage_75866.html",
-          "date": "2026-09-04",
-          "category": "審議会等"
-        },
-        {
-          "hash": "c84224ae5649ed0a",
-          "title": "毎月勤労統計調査［地方調査］－令和８年３月分結果概要",
-          "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/monthly/r08/0803/index.html",
-          "date": "2026-09-04",
-          "category": "統計情報"
-        },
-        {
-          "hash": "31839a3ba0a836e8",
-          "title": "第１回「国民年金第３号被保険者制度等に関する検討会」資料",
-          "url": "https://www.mhlw.go.jp/stf/newpage_75888.html",
-          "date": "2026-09-04",
-          "category": "審議会等"
-        },
-        {
-          "hash": "cd4b690da040802c",
-          "title": "第32回キャリアコンサルタント登録制度等に関する検討会 会議資料",
-          "url": "https://www.mhlw.go.jp/stf/newpage_75979.html",
-          "date": "2026-09-03",
-          "category": "審議会等"
-        },
-        {
-          "hash": "508d411c0f1bc3cb",
-          "title": "全ての都道府県で地域別最低賃金の答申がなされました",
-          "url": "https://www.mhlw.go.jp/stf/newpage_75950.html",
-          "date": "2026-09-03",
-          "category": "報道発表"
-        },
-        {
-          "hash": "6a0d6571a9ed9620",
-          "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
-          "url": "https://www.mhlw.go.jp/stf/newpage_76000.html",
-          "date": "2026-09-03",
-          "category": "報道発表"
-        },
-        {
-          "hash": "e4c2c7d5a81efd05",
-          "title": "検体採取の結果について（８月）",
-          "url": "https://www.mhlw.go.jp/stf/newpage_75897.html",
-          "date": "2026-09-03",
-          "category": "トピックス"
-        },
-        {
-          "hash": "65f5b743e0e1dfdc",
-          "title": "硫黄島戦没者遺骨引渡式の開催（令和８年９月）",
-          "url": "https://www.mhlw.go.jp/stf/newpage_75958.html",
-          "date": "2026-09-03",
-          "category": "報道発表"
-        },
-        {
-          "hash": "5d217aa1ae3734fe",
-          "title": "労働者派遣法及び職業安定法違反に係る告発について",
-          "url": "https://www.mhlw.go.jp/stf/newpage_75804.html",
-          "date": "2026-09-03",
-          "category": "報道発表"
         }
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-11-02T23:56:24.794Z",
+      "lastCrawled": "2026-11-03T22:23:19.524Z",
       "items": [
         {
           "hash": "ba9d1994b1447b0f",
@@ -7023,7 +6883,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-11-02T23:56:27.557Z",
+      "lastCrawled": "2026-11-03T22:23:20.314Z",
       "items": [
         {
           "hash": "d0b6b1021e2cc6dc",
@@ -7392,7 +7252,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-11-02T23:56:27.876Z",
+      "lastCrawled": "2026-11-03T22:23:20.629Z",
       "items": [
         {
           "hash": "c16f59eab0cefc3b",
@@ -8130,8 +7990,22 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-11-02T23:56:29.045Z",
+      "lastCrawled": "2026-11-03T22:23:21.745Z",
       "items": [
+        {
+          "hash": "5cda49fd0ec04d1c",
+          "title": "特養ケアマネの兼務、施設内から併設事業所へ 厚労省方針 複数サービスへの適用を視野 一部業務が対象",
+          "url": "https://www.joint-kaigo.com/articles/50102/",
+          "date": "2026-11-03",
+          "category": "超高齢化"
+        },
+        {
+          "hash": "449fe645a1a761b9",
+          "title": "老健の在宅復帰率、特養への退所も対象に 厚労省が指標の見直しを提案 介護報酬改定",
+          "url": "https://www.joint-kaigo.com/articles/50090/",
+          "date": "2026-11-03",
+          "category": "超高齢化"
+        },
         {
           "hash": "a84ea99ab6640b6c",
           "title": "介護・福祉職員の退職金共済、支給水準見直しへ 厚労省 財政難でテコ入れ 支給ルール変更も提案",
@@ -8151,7 +8025,7 @@
           "title": "特養の透析患者の支援を後押し 送迎以外も総合評価へ 厚労省が加算の見直しを提案",
           "url": "https://www.joint-kaigo.com/articles/50062/",
           "date": "2026-11-02",
-          "category": "超高齢化"
+          "category": "医療・看護"
         },
         {
           "hash": "dea5ac140721612f",
@@ -8186,7 +8060,7 @@
           "title": "介護報酬の地域区分、現行の単価も維持可能に 厚労省が経過措置を提案｜来年度改定",
           "url": "https://www.joint-kaigo.com/articles/50005/",
           "date": "2026-10-30",
-          "category": "自治体"
+          "category": "超高齢化"
         },
         {
           "hash": "6a8d94558d720367",
@@ -9255,20 +9129,20 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-11-02T23:56:28.054Z",
+      "lastCrawled": "2026-11-03T22:23:20.796Z",
       "items": [
+        {
+          "hash": "54ffb2a7b4942943",
+          "title": "消費生活用製品（福祉用具）の重大製品事故に係る公表について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/fukushiyougujiko2026.html",
+          "date": "2026年11月2日更新",
+          "category": ""
+        },
         {
           "hash": "7977ecfb8934b1f6",
           "title": "特別養護老人ホーム(指定介護老人福祉施設）の一覧",
           "url": "https://www.pref.fukuoka.lg.jp/contents/tokuyou.html",
           "date": "2026年11月1日更新",
-          "category": ""
-        },
-        {
-          "hash": "168fa493e6fcb94d",
-          "title": "消費生活用製品（福祉用具）の重大製品事故に係る公表について",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/fukushiyougujiko2026.html",
-          "date": "2026年10月8日更新",
           "category": ""
         },
         {
@@ -9535,6 +9409,13 @@
           "title": "令和8年度介護支援専門員実務研修受講試験",
           "url": "https://www.pref.fukuoka.lg.jp/contents/keamaneshiken.html",
           "date": "2026年10月5日更新",
+          "category": ""
+        },
+        {
+          "hash": "168fa493e6fcb94d",
+          "title": "消費生活用製品（福祉用具）の重大製品事故に係る公表について",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/fukushiyougujiko2026.html",
+          "date": "2026年10月8日更新",
           "category": ""
         },
         {
@@ -9911,7 +9792,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-11-02T23:56:29.883Z",
+      "lastCrawled": "2026-11-03T22:23:22.363Z",
       "items": [
         {
           "hash": "db72875230def8fb",
@@ -10442,7 +10323,7 @@
     }
   },
   "preferredModel": "gemini-3.5-flash-lite",
-  "lastSentDate": "2026-11-03",
-  "lastRunAt": "2026-11-03T03:57:23.123Z",
-  "lastCrawlDate": "2026-11-03"
+  "lastSentDate": "2026-11-04",
+  "lastRunAt": "2026-11-03T22:23:53.205Z",
+  "lastCrawlDate": "2026-11-04"
 }

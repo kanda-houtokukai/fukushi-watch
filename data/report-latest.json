@@ -1,6 +1,59 @@
 {
-  "generatedAt": "2026-11-03T03:57:23.051Z",
-  "model": null,
-  "items": [],
-  "press": []
+  "generatedAt": "2026-11-03T22:23:53.134Z",
+  "model": "gemini-3.5-flash-lite",
+  "items": [
+    {
+      "hash": "43adec6c411f39ab",
+      "source": "厚生労働省",
+      "title": "第16回医師養成過程を通じた医師の偏在対策等に関する検討会",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77137.html",
+      "date": "2026-11-01",
+      "category": "審議会等",
+      "summary": "医師の偏在対策に関する検討会の開催情報です。医療提供体制に関わる審議であり、福祉事業者における直接的な実務への影響は薄い内容です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医療提供体制や医師の偏在に関する審議会であり、福祉事業の運営・実務への直接的な影響がないため。"
+    },
+    {
+      "hash": "54ffb2a7b4942943",
+      "source": "福岡県（介護・高齢者福祉）",
+      "title": "消費生活用製品（福祉用具）の重大製品事故に係る公表について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/fukushiyougujiko2026.html",
+      "date": "2026年11月2日更新",
+      "category": "",
+      "summary": "福祉用具に関する重大製品事故の公表情報です。高齢者や障害者分野の事業所で用いる機器の安全管理や事故防止の確認に役立ちます。",
+      "importance": "中",
+      "fields": [
+        "高齢",
+        "障害"
+      ],
+      "reason": "福祉用具の事故情報は安全管理や点検の観点から把握しておくべき事項であるため。"
+    }
+  ],
+  "press": [
+    {
+      "hash": "5cda49fd0ec04d1c",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "特養ケアマネの兼務、施設内から併設事業所へ 厚労省方針 複数サービスへの適用を視野 一部業務が対象",
+      "url": "https://www.joint-kaigo.com/articles/50102/",
+      "date": "2026-11-03",
+      "category": "超高齢化",
+      "fields": [
+        "高齢"
+      ]
+    },
+    {
+      "hash": "449fe645a1a761b9",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "老健の在宅復帰率、特養への退所も対象に 厚労省が指標の見直しを提案 介護報酬改定",
+      "url": "https://www.joint-kaigo.com/articles/50090/",
+      "date": "2026-11-03",
+      "category": "超高齢化",
+      "fields": [
+        "高齢"
+      ]
+    }
+  ]
 }
