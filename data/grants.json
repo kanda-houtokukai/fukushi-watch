@@ -1,27 +1,6 @@
 {
- "updatedAt": "2026-11-03T22:30:39.430Z",
+ "updatedAt": "2026-11-04T22:46:41.627Z",
  "items": [
-  {
-   "hash": "45c00d1b0f531d29",
-   "source": "福岡県（子ども・青少年）",
-   "sourceKind": "",
-   "funder": "福岡県（子ども・青少年）",
-   "title": "2027年度ニッセイ財団「児童・少年の健全育成助成」及び「生き生きシニア活動顕彰」候補団体を募集します！",
-   "url": "https://www.pref.fukuoka.lg.jp/contents/nissei2027.html",
-   "postedAt": "2026-09-17",
-   "deadline": "2026-11-04",
-   "deadlineType": "date",
-   "deadlineRaw": "提出期限 2026-11-04",
-   "fields": [
-    "児童"
-   ],
-   "summary": "",
-   "uses": [],
-   "applicants": [],
-   "amount": "",
-   "conditions": [],
-   "via": "goryu"
-  },
   {
    "hash": "a5d178e8a97fa20c",
    "source": "全社協 福祉の助成情報",
@@ -754,5 +733,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-11-04"
+ "lastFetchDate": "2026-11-05"
 }

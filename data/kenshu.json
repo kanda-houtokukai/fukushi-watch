@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-03T22:32:28.033Z",
+ "updatedAt": "2026-11-04T22:48:42.522Z",
  "items": [
   {
    "hash": "21de85f937c57fa1",
@@ -203,7 +203,7 @@
    "sourceKind": "org",
    "via": "schedule",
    "title": "福祉職員キャリアパス対応生涯研修課程初任者コース",
-   "url": "https://fuku-shakyo-kenshu.jp/info/%e7%a6%8f%e7%a5%89%e8%81%b7%e5%93%a1%e3%82%ad%e3%83%a3%e3%83%aa%e3%82%a2%e3%83%91%e3%82%b9%e5%af%be%e5%bf%9c%e7%94%9f%e6%b6%af%e7%a0%94%e4%bf%ae%e8%aa%b2%e7%a8%8b-%e5%88%9d%e4%bb%bb%e8%80%85%e3%82%b3/",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/10/e9884305e5ec37f96e4c3bf628e95c9b-1.pdf",
    "deadline": "2026-12-02",
    "deadlineType": "date",
    "deadlineRaw": "一覧の申込終了日より 12月2日",
@@ -217,6 +217,23 @@
     "2027-01-20",
     "2027-01-21"
    ]
+  },
+  {
+   "hash": "cdaea3ed610fcb2d",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "via": "schedule",
+   "title": "広報力強化研修",
+   "url": "https://fuku-shakyo-kenshu.jp/info/%e5%ba%83%e5%a0%b1%e5%8a%9b%e5%bc%b7%e5%8c%96%e7%a0%94%e4%bf%ae%e3%81%ae%e9%96%8b%e5%82%ac%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/",
+   "deadline": "2026-12-10",
+   "deadlineType": "date",
+   "deadlineRaw": "一覧の申込終了日より 12月10日",
+   "openFrom": "2026-11-04",
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別",
+   "expireOn": "2027-03-10"
   },
   {
    "hash": "8601c55bc3f31a2c",
@@ -286,6 +303,23 @@
     }
    ],
    "outlineUrl": "https://www.f-kaigo.jp/upimg/y6a6985ab9e66f.pdf"
+  },
+  {
+   "hash": "d2763d1138f83f48",
+   "source": "福岡県（介護・高齢者福祉）",
+   "sourceKind": "",
+   "via": "goryu",
+   "title": "外国人介護職員介護技能等向上研修",
+   "url": "https://www.pref.fukuoka.lg.jp/contents/gaikokujinkaigo-kenshu.html",
+   "deadline": "2027-01-14",
+   "deadlineType": "date",
+   "deadlineRaw": "一覧の申込終了日より 参加申込締切 2027-01-14",
+   "openFrom": null,
+   "fields": [
+    "高齢"
+   ],
+   "kind": "テーマ別",
+   "expireOn": "2027-04-14"
   },
   {
    "hash": "6a1740a8bfc1c6a2",
@@ -601,7 +635,7 @@
    "url": "https://www.pref.fukuoka.lg.jp/contents/hakenn05.html",
    "deadline": "2027-03-31",
    "deadlineType": "date",
-   "deadlineRaw": "一覧の申込終了日より 派遣実施期間の終了日 2027-03-31",
+   "deadlineRaw": "一覧の申込終了日より 派遣実施期間 2027-03-31",
    "openFrom": null,
    "fields": [
     "高齢"
@@ -1042,25 +1076,6 @@
    "outlineUrl": "https://www.f-kaigo.jp/upimg/i6a7c1a5d036f1.pdf"
   },
   {
-   "hash": "7f7e3545d9f70ac0",
-   "source": "福祉・介護研修センター 年間予定表",
-   "sourceKind": "org",
-   "via": "schedule",
-   "title": "広報力強化研修",
-   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/#link3",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "1月14日開催予定",
-   "openFrom": null,
-   "fields": [
-    "共通"
-   ],
-   "kind": "テーマ別",
-   "preOpenNote": "1月~2月開催予定",
-   "preOpenSort": "2027-01",
-   "expireOn": "2027-03-31"
-  },
-  {
    "hash": "50fc77c32947d45a",
    "source": "福祉・介護研修センター 年間予定表",
    "sourceKind": "org",
@@ -1357,5 +1372,5 @@
    "kind": "テーマ別"
   }
  ],
- "lastFetchDate": "2026-11-04"
+ "lastFetchDate": "2026-11-05"
 }
