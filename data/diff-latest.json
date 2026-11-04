@@ -1,44 +1,6 @@
 {
-  "generatedAt": "2026-11-03T22:23:22.366Z",
-  "newItems": [
-    {
-      "source": "厚生労働省",
-      "kind": "gov",
-      "hash": "43adec6c411f39ab",
-      "title": "第16回医師養成過程を通じた医師の偏在対策等に関する検討会",
-      "url": "https://www.mhlw.go.jp/stf/newpage_77137.html",
-      "date": "2026-11-01",
-      "category": "審議会等"
-    },
-    {
-      "source": "福岡県（介護・高齢者福祉）",
-      "kind": "gov",
-      "hash": "54ffb2a7b4942943",
-      "title": "消費生活用製品（福祉用具）の重大製品事故に係る公表について",
-      "url": "https://www.pref.fukuoka.lg.jp/contents/fukushiyougujiko2026.html",
-      "date": "2026年11月2日更新",
-      "category": ""
-    }
-  ],
-  "newPress": [
-    {
-      "source": "介護ニュースJoint",
-      "kind": "press",
-      "hash": "5cda49fd0ec04d1c",
-      "title": "特養ケアマネの兼務、施設内から併設事業所へ 厚労省方針 複数サービスへの適用を視野 一部業務が対象",
-      "url": "https://www.joint-kaigo.com/articles/50102/",
-      "date": "2026-11-03",
-      "category": "超高齢化"
-    },
-    {
-      "source": "介護ニュースJoint",
-      "kind": "press",
-      "hash": "449fe645a1a761b9",
-      "title": "老健の在宅復帰率、特養への退所も対象に 厚労省が指標の見直しを提案 介護報酬改定",
-      "url": "https://www.joint-kaigo.com/articles/50090/",
-      "date": "2026-11-03",
-      "category": "超高齢化"
-    }
-  ],
+  "generatedAt": "2026-11-04T03:03:27.476Z",
+  "newItems": [],
+  "newPress": [],
   "crawlErrors": []
 }
