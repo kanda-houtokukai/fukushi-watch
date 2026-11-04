@@ -484,13 +484,11 @@
    "result": "ok"
   },
   "論点:shogaiji-tsusho-01": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-05",
    "result": "ok"
   },
   "論点:shogaiji-tsusho-02": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-05",
    "result": "ok"
   },
   "論点:shogaiji-tsusho-03": {
@@ -548,14 +546,12 @@
    "result": "ok"
   },
   "論点:shogaiji-zenpan-02": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-05",
    "result": "ok"
   },
   "論点:shogaiji-zenpan-03": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 表現",
-   "result": "fixed"
+   "checked": "2026-11-05",
+   "result": "ok"
   },
   "論点:shuro-a-01": {
    "checked": "2026-11-03",
