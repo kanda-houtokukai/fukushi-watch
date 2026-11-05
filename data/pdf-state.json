@@ -1333,7 +1333,7 @@
   "resultsVersion": 6
  },
  "_aiBudget": {
-  "date": "2026-11-05",
+  "date": "2026-11-06",
   "calls": 0
  },
  "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2025/06/e9884305e5ec37f96e4c3bf628e95c9b-2.pdf": {
@@ -1793,6 +1793,48 @@
      {
       "name": "ポイント",
       "value": "２ポイント"
+     }
+    ]
+   }
+  },
+  "resultsVersion": 6
+ },
+ "https://www.f-kaigo.jp/upimg/d6aebcb6c25136.pdf": {
+  "etag": "\"769db-65f7c70bb0148\"",
+  "lastModified": "Thu, 05 Nov 2026 00:18:52 GMT",
+  "contentLength": "485851",
+  "size": 485851,
+  "seenAt": "2026-11-06",
+  "results": {
+   "fc5547c7036a980f": {
+    "deadline": {
+     "iso": "2026-11-16",
+     "raw": "令和8年11月16日"
+    },
+    "outline": [
+     {
+      "name": "日時",
+      "value": "令和８年１２月１２日（土）１４：００～１５：３０（受付１３：３０～）"
+     },
+     {
+      "name": "会場",
+      "value": "米の山病院多目的室（福岡県大牟田市歴木４－１０・２Ｆ）"
+     },
+     {
+      "name": "講師",
+      "value": "米の山病院救急委員会看護師"
+     },
+     {
+      "name": "参加費",
+      "value": "会員、賛助会員、学生…無料非会員…２，０００円"
+     },
+     {
+      "name": "定員",
+      "value": "２０名"
+     },
+     {
+      "name": "ポイント",
+      "value": "１.５ポイント"
      }
     ]
    }

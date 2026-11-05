@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-04T22:48:42.522Z",
+ "updatedAt": "2026-11-05T22:48:45.193Z",
  "items": [
   {
    "hash": "21de85f937c57fa1",
@@ -65,7 +65,7 @@
    "sourceKind": "org",
    "via": "schedule",
    "title": "アンガーマネジメント研修",
-   "url": "https://fuku-shakyo-kenshu.jp/info/%e3%82%a2%e3%83%b3%e3%82%ac%e3%83%bc%e3%83%9e%e3%83%8d%e3%82%b8%e3%83%a1%e3%83%b3%e3%83%88%e7%a0%94%e4%bf%ae%e3%81%ae%e9%96%8b%e5%82%ac%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/10/e9884305e5ec37f96e4c3bf628e95c9b.pdf",
    "deadline": "2026-11-13",
    "deadlineType": "date",
    "deadlineRaw": "一覧の申込終了日より 11月13日",
@@ -79,6 +79,54 @@
    "heldDates": [
     "2026-12-17"
    ]
+  },
+  {
+   "hash": "fc5547c7036a980f",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "緊急・急変時対応研修~こんなときどうする?~",
+   "url": "https://www.f-kaigo.jp/training/detail_523.php",
+   "deadline": "2026-11-16",
+   "deadlineType": "date",
+   "deadlineRaw": "開催要綱PDFより 令和8年11月16日",
+   "heldDates": [
+    "2026-12-12"
+   ],
+   "expireOn": "2026-12-12",
+   "openFrom": null,
+   "fields": [
+    "高齢"
+   ],
+   "kind": "テーマ別",
+   "outline": [
+    {
+     "name": "日時",
+     "value": "令和８年１２月１２日（土）１４：００～１５：３０（受付１３：３０～）"
+    },
+    {
+     "name": "会場",
+     "value": "米の山病院多目的室（福岡県大牟田市歴木４－１０・２Ｆ）"
+    },
+    {
+     "name": "講師",
+     "value": "米の山病院救急委員会看護師"
+    },
+    {
+     "name": "参加費",
+     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
+    },
+    {
+     "name": "定員",
+     "value": "２０名"
+    },
+    {
+     "name": "ポイント",
+     "value": "１.５ポイント"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/d6aebcb6c25136.pdf",
+   "keepUntilHeld": true
   },
   {
    "hash": "77564d62306136e2",
@@ -196,6 +244,26 @@
    ],
    "outlineUrl": "https://www.f-kaigo.jp/upimg/p69eef6037b29e.pdf",
    "keepUntilHeld": true
+  },
+  {
+   "hash": "f80c9d7fdca0d8bf",
+   "source": "福祉・介護研修センター 新着",
+   "sourceKind": "org",
+   "via": "info",
+   "title": "業務改善研修",
+   "url": "https://fuku-shakyo-kenshu.jp/info/%e6%a5%ad%e5%8b%99%e6%94%b9%e5%96%84%e7%a0%94%e4%bf%ae%e3%81%ae%e9%96%8b%e5%82%ac%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/",
+   "deadline": "2026-12-01",
+   "deadlineType": "date",
+   "deadlineRaw": "一覧の申込終了日より 申込締切 2026-12-01",
+   "heldDates": [
+    "2027-01-14"
+   ],
+   "openFrom": null,
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別",
+   "expireOn": "2027-03-01"
   },
   {
    "hash": "78ad8a4e105b0f35",
@@ -1076,25 +1144,6 @@
    "outlineUrl": "https://www.f-kaigo.jp/upimg/i6a7c1a5d036f1.pdf"
   },
   {
-   "hash": "50fc77c32947d45a",
-   "source": "福祉・介護研修センター 年間予定表",
-   "sourceKind": "org",
-   "via": "schedule",
-   "title": "業務改善研修",
-   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/#link1",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "1月14日開催予定",
-   "openFrom": null,
-   "fields": [
-    "共通"
-   ],
-   "kind": "テーマ別",
-   "preOpenNote": "1月~2月開催予定",
-   "preOpenSort": "2027-01",
-   "expireOn": "2027-03-31"
-  },
-  {
    "hash": "2bd9cb946de3e713",
    "source": "福祉・介護研修センター 年間予定表",
    "sourceKind": "org",
@@ -1372,5 +1421,5 @@
    "kind": "テーマ別"
   }
  ],
- "lastFetchDate": "2026-11-05"
+ "lastFetchDate": "2026-11-06"
 }

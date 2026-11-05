@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-04T22:46:41.627Z",
+ "updatedAt": "2026-11-05T22:46:38.825Z",
  "items": [
   {
    "hash": "a5d178e8a97fa20c",
@@ -265,6 +265,52 @@
     }
    ],
    "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/261020susaki.html"
+  },
+  {
+   "hash": "8bf34610203b399f",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "第4回パーキンソン病QOL基金",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e7%ac%ac4%e5%9b%9e%e3%83%91%e3%83%bc%e3%82%ad%e3%83%b3%e3%82%bd%e3%83%b3%e7%97%85qol%e5%9f%ba%e9%87%91/",
+   "postedAt": "2026-11-05",
+   "deadline": "2027-01-08",
+   "deadlineType": "date",
+   "deadlineRaw": "2027/01/08 募集要項 https://np-foundation.or.jp/infor",
+   "openFrom": "2026-11-05",
+   "conditionsUrl": "https://np-foundation.or.jp/information/000431.html",
+   "summary": "パーキンソン病患者のQOL向上を目的とする研究や支援活動などの事業に対し、活動実績1年以上の団体・法人等を対象に助成します。",
+   "fields": [
+    "障害",
+    "高齢"
+   ],
+   "uses": [
+    "研究・調査"
+   ],
+   "applicants": [
+    "社会福祉法人",
+    "NPO・公益法人",
+    "任意団体"
+   ],
+   "amount": "5,000千円/1件",
+   "conditions": [
+    {
+     "axis": "所在地",
+     "quote": "・日本国内に活動の主となる事務所がある団体"
+    },
+    {
+     "axis": "事業の実施地",
+     "quote": "※ 本公募では日本国内で実施する事業が対象です。"
+    },
+    {
+     "axis": "設立・活動年数",
+     "quote": "・活動実績 1 年以上の団体・法人等(任意団体や営利法人を含む)"
+    },
+    {
+     "axis": "主体の付帯条件",
+     "quote": "助成電子申請システム「Graain(グラーイン)」にて必要事項を入力し、応募書類をご提出ください。"
+    }
+   ]
   },
   {
    "hash": "d55048e134c86218",
@@ -733,5 +779,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-11-05"
+ "lastFetchDate": "2026-11-06"
 }
