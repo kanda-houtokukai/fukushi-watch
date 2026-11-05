@@ -393,6 +393,11 @@
    "note": "全件照合（10/28）",
    "result": "ok"
   },
+  "論点:sabikan-02": {
+   "checked": "2026-11-06",
+   "note": "11/06 第68回の資料で新規作成",
+   "result": "fixed"
+  },
   "論点:seikatsu-kaigo-01": {
    "checked": "2026-10-28",
    "note": "全件照合（10/28）",
@@ -492,23 +497,19 @@
    "result": "ok"
   },
   "論点:shogaiji-tsusho-03": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-06",
    "result": "ok"
   },
   "論点:shogaiji-tsusho-04": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-06",
    "result": "ok"
   },
   "論点:shogaiji-tsusho-05": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-06",
    "result": "ok"
   },
   "論点:shogaiji-tsusho-06": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-06",
    "result": "ok"
   },
   "論点:shogaiji-tsusho-07": {
@@ -616,6 +617,46 @@
   "論点:shuro-teichaku-01": {
    "checked": "2026-11-03",
    "result": "ok"
+  },
+  "論点:soudan-01": {
+   "checked": "2026-11-06",
+   "note": "11/06 第68回の資料で新規作成",
+   "result": "fixed"
+  },
+  "論点:soudan-02": {
+   "checked": "2026-11-06",
+   "note": "11/06 第68回の資料で新規作成",
+   "result": "fixed"
+  },
+  "論点:soudan-03": {
+   "checked": "2026-11-06",
+   "note": "11/06 第68回の資料で新規作成",
+   "result": "fixed"
+  },
+  "論点:soudan-04": {
+   "checked": "2026-11-06",
+   "note": "11/06 第68回の資料で新規作成",
+   "result": "fixed"
+  },
+  "論点:soudan-05": {
+   "checked": "2026-11-06",
+   "note": "11/06 第68回の資料で新規作成",
+   "result": "fixed"
+  },
+  "論点:soudan-06": {
+   "checked": "2026-11-06",
+   "note": "11/06 第68回の資料で新規作成",
+   "result": "fixed"
+  },
+  "論点:soudan-07": {
+   "checked": "2026-11-06",
+   "note": "11/06 第68回の資料で新規作成",
+   "result": "fixed"
+  },
+  "論点:soudan-08": {
+   "checked": "2026-11-06",
+   "note": "11/06 第68回の資料で新規作成",
+   "result": "fixed"
   },
   "論点:tanki-nyusho-01": {
    "checked": "2026-10-28",
