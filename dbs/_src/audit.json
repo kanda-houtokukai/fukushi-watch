@@ -451,13 +451,13 @@
    "result": "fixed"
   },
   "章:buntan": {
-   "checked": "",
-   "note": "11/02 新設。照合係2人の照合と再照合を通した",
+   "checked": "2026-11-07",
    "result": "ok"
   },
   "章:check": {
-   "checked": "",
-   "result": "ok"
+   "checked": "2026-11-07",
+   "note": "11/07 いとま特例の条件を「その期間を過ぎても交付されない」に直した（Q&A基礎6-5）",
+   "result": "fixed"
   },
   "章:checklist": {
    "checked": "2026-10-30",
@@ -492,8 +492,9 @@
    "result": "fixed"
   },
   "章:now": {
-   "checked": "",
-   "result": "ok"
+   "checked": "2026-11-07",
+   "note": "11/07 犯歴閲覧権者の名称・内定取消しの条件「明示的に確認」を直した。11/4・11/6の過ぎた日程は書き換え候補（構成の変更が要る）",
+   "result": "fixed"
   },
   "章:open": {
    "checked": "2026-11-03",
@@ -531,8 +532,9 @@
    "result": "ok"
   },
   "章:supervision": {
-   "checked": "",
-   "result": "ok"
+   "checked": "2026-11-07",
+   "note": "11/07 情報管理違反の確認書留保の条件（法35条3項）・所轄庁の欄（GL図表106※）・帳簿の保存期間「5年間」を直した",
+   "result": "fixed"
   },
   "章:system": {
    "checked": "2026-10-31",
