@@ -1,26 +1,6 @@
 {
- "updatedAt": "2026-11-05T22:48:45.193Z",
+ "updatedAt": "2026-11-06T22:24:51.019Z",
  "items": [
-  {
-   "hash": "21de85f937c57fa1",
-   "source": "福祉・介護研修センター 新着",
-   "sourceKind": "org",
-   "via": "info",
-   "title": "第2回 福祉・介護現場のための対話力・調整力向上研修",
-   "url": "https://fuku-shakyo-kenshu.jp/info/%e7%a6%8f%e7%a5%89%e3%83%bb%e4%bb%8b%e8%ad%b7%e7%8f%be%e5%a0%b4%e3%81%ae%e3%81%9f%e3%82%81%e3%81%ae%e5%af%be%e8%a9%b1%e5%8a%9b%e3%83%bb%e8%aa%bf%e6%95%b4%e5%8a%9b%e5%90%91%e4%b8%8a%e7%a0%94%e4%bf%ae/",
-   "deadline": "2026-11-06",
-   "deadlineType": "date",
-   "deadlineRaw": "一覧の申込終了日より 申込締切 2026-11-06",
-   "heldDates": [
-    "2026-12-15"
-   ],
-   "openFrom": null,
-   "fields": [
-    "共通"
-   ],
-   "kind": "テーマ別",
-   "expireOn": "2027-02-06"
-  },
   {
    "hash": "e5172a841f826c10",
    "source": "福祉・介護研修センター 年間予定表",
@@ -712,55 +692,6 @@
    "expireOn": "2027-07-01"
   },
   {
-   "hash": "1bb00b502eaad38e",
-   "source": "福岡県介護福祉士会",
-   "sourceKind": "org",
-   "via": "fkaigo",
-   "title": "排泄ケアのファーストステップ【2日間研修】",
-   "url": "https://www.f-kaigo.jp/training/detail_497.php",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "開催要綱PDFより 令和8年9月3日（締切後も受け付けることがあります）",
-   "heldDates": [
-    "2026-09-18",
-    "2026-11-06"
-   ],
-   "expireOn": "2026-11-06",
-   "openFrom": null,
-   "fields": [
-    "高齢"
-   ],
-   "kind": "テーマ別",
-   "keepUntilHeld": true,
-   "outline": [
-    {
-     "name": "日時",
-     "value": "１日目令和８年９月１８日（金）１０:００～１２:００（受付９:３０～）\n２日目令和８年１１月６日（金）１０:００～１２:００（受付９:３０～）"
-    },
-    {
-     "name": "会場",
-     "value": "１日目福岡県介護福祉士会研修室（福岡市博多区博多駅東１－１－１６第２高田ビル２階）\n２日目ふくふくプラザ介護実習室（福岡市中央区荒戸３－３－３９）"
-    },
-    {
-     "name": "講師",
-     "value": "安武哲宏氏(作業療法士オムツフィッター１級)"
-    },
-    {
-     "name": "参加費",
-     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
-    },
-    {
-     "name": "定員",
-     "value": "２４名"
-    },
-    {
-     "name": "ポイント",
-     "value": "各２ポイント"
-    }
-   ],
-   "outlineUrl": "https://www.f-kaigo.jp/upimg/o6a6982bda4b95.pdf"
-  },
-  {
    "hash": "ea3584c8565cff8f",
    "source": "福岡県介護福祉士会",
    "sourceKind": "org",
@@ -1421,5 +1352,5 @@
    "kind": "テーマ別"
   }
  ],
- "lastFetchDate": "2026-11-06"
+ "lastFetchDate": "2026-11-07"
 }

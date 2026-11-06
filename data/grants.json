@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-05T22:46:38.825Z",
+ "updatedAt": "2026-11-06T22:23:00.472Z",
  "items": [
   {
    "hash": "a5d178e8a97fa20c",
@@ -265,6 +265,42 @@
     }
    ],
    "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/261020susaki.html"
+  },
+  {
+   "hash": "6a834dc2ce1c979e",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "大洋基金 ハラスメント研究助成",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e5%a4%a7%e6%b4%8b%e5%9f%ba%e9%87%91-%e3%83%8f%e3%83%a9%e3%82%b9%e3%83%a1%e3%83%b3%e3%83%88%e7%a0%94%e7%a9%b6%e5%8a%a9%e6%88%90-2/",
+   "postedAt": "2026-11-06",
+   "deadline": "2027-01-08",
+   "deadlineType": "date",
+   "deadlineRaw": "2027/01/08 募集要項 https://kosuikyo.com/wp-content/t",
+   "openFrom": "2026-11-04",
+   "conditionsUrl": "https://kosuikyo.com/%e5%8a%a9%e6%88%90%e9%87%91-2",
+   "summary": "組織におけるハラスメントの実態調査や要因分析、予防策の開発などの研究費用を助成するもので、研究機関所属の研究者やe-Rad研究者番号を持つ個人・グループが応募できます。",
+   "fields": [
+    "共通"
+   ],
+   "uses": [
+    "研究・調査"
+   ],
+   "applicants": [
+    "個人",
+    "研究者・大学"
+   ],
+   "amount": "500千円~600千円/1件",
+   "conditions": [
+    {
+     "axis": "主体の付帯条件",
+     "quote": "※応募フォームに必要書類を添付し、ご応募ください。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "対象 ハラスメントに関する研究"
+    }
+   ]
   },
   {
    "hash": "8bf34610203b399f",
@@ -598,48 +634,6 @@
    ]
   },
   {
-   "hash": "09c770cfa25f8f33",
-   "source": "助成財団センター 助成金募集ニュース",
-   "sourceKind": "org",
-   "funder": "",
-   "title": "2026年度 社会的養護施設（児童養護施設等）対象 設備・備品助成",
-   "url": "https://www.jfc.or.jp/news_subsidy/2026%e5%b9%b4%e5%ba%a6-%e7%a4%be%e4%bc%9a%e7%9a%84%e9%a4%8a%e8%ad%b7%e6%96%bd%e8%a8%ad%ef%bc%88%e5%85%90%e7%ab%a5%e9%a4%8a%e8%ad%b7%e6%96%bd%e8%a8%ad%e7%ad%89%ef%bc%89%e5%af%be%e8%b1%a1-%e8%a8%ad/",
-   "postedAt": "2026-10-15",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "11月20日(金) 13:00 募集要項 https://ysmf.or.jp/info/e",
-   "openFrom": "2026-10-06",
-   "conditionsUrl": "https://ysmf.or.jp/info/event_news/20261006/",
-   "summary": "社会的養護施設における生活環境改善のための設備や備品の購入費用を支援する助成で、児童養護施設や乳児院などの対象施設が応募できます。",
-   "fields": [
-    "児童"
-   ],
-   "uses": [
-    "設備・改修",
-    "機器・用具"
-   ],
-   "applicants": [],
-   "amount": "400千円/1件",
-   "conditions": [
-    {
-     "axis": "事業の実施地",
-     "quote": "・助成対象地域:全国"
-    },
-    {
-     "axis": "主体の付帯条件",
-     "quote": "・応募方法:助成業務システム「Graain(グラーイン)」よりオンライン申請"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "・助成対象施設:2026年10月1日現在で運営されている以下の施設 児童養護施設、児童心理治療施設、児童自立支援施設、乳児院、母子生活支援施設 児童自立生活援助事業所(I型)、女性自立支援施設"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "・運営・設置形態:公設民営(指定管理者制度または業務委託で運営)、民設民営の施設"
-    }
-   ]
-  },
-  {
    "hash": "8cf63c024f328db8",
    "source": "全社協 福祉の助成情報",
    "sourceKind": "org",
@@ -779,5 +773,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-11-06"
+ "lastFetchDate": "2026-11-07"
 }
