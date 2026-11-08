@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-11-07T20:59:03.797Z",
+      "lastCrawled": "2026-11-08T21:15:09.795Z",
       "items": [
         {
           "hash": "ea0d58f3bdec6b62",
@@ -1364,7 +1364,7 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-11-07T20:59:04.139Z",
+      "lastCrawled": "2026-11-08T21:15:10.157Z",
       "items": [
         {
           "hash": "b50dfd5443493a79",
@@ -5191,7 +5191,7 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-11-07T20:59:05.434Z",
+      "lastCrawled": "2026-11-08T21:15:11.086Z",
       "items": [
         {
           "hash": "bfb0ebbd766220c4",
@@ -7296,7 +7296,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-11-07T20:59:07.276Z",
+      "lastCrawled": "2026-11-08T21:15:12.153Z",
       "items": [
         {
           "hash": "7cbfac81c09eec7e",
@@ -7672,7 +7672,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-11-07T20:59:07.664Z",
+      "lastCrawled": "2026-11-08T21:15:12.530Z",
       "items": [
         {
           "hash": "c16f59eab0cefc3b",
@@ -8417,7 +8417,7 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-11-07T20:59:09.160Z",
+      "lastCrawled": "2026-11-08T21:15:13.818Z",
       "items": [
         {
           "hash": "90069c12e1c17eef",
@@ -9661,7 +9661,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-11-07T20:59:07.865Z",
+      "lastCrawled": "2026-11-08T21:15:12.718Z",
       "items": [
         {
           "hash": "54ffb2a7b4942943",
@@ -10352,7 +10352,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-11-07T20:59:10.036Z",
+      "lastCrawled": "2026-11-08T21:15:14.616Z",
       "items": [
         {
           "hash": "db72875230def8fb",
@@ -10883,7 +10883,7 @@
     }
   },
   "preferredModel": "gemini-3.1-flash-lite",
-  "lastSentDate": "2026-11-08",
-  "lastRunAt": "2026-11-08T02:33:47.667Z",
-  "lastCrawlDate": "2026-11-08"
+  "lastSentDate": "2026-11-09",
+  "lastRunAt": "2026-11-08T21:15:14.729Z",
+  "lastCrawlDate": "2026-11-09"
 }
