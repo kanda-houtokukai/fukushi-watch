@@ -1,46 +1,16 @@
 {
- "updatedAt": "2026-11-10T00:47:36.400Z",
- "lastFetchDate": "2026-11-10",
+ "updatedAt": "2026-11-10T22:28:14.307Z",
+ "lastFetchDate": "2026-11-11",
  "items": [
   {
-   "hash": "bdd6e3a4a501bb3b",
-   "day": "2026-11-05",
-   "source": "厚生労働省",
-   "title": "「第145回労働政策審議会障害者雇用分科会」を開催します（開催案内）",
-   "url": "https://www.mhlw.go.jp/stf/newpage_77012.html",
-   "deadline": "2026-11-10",
-   "label": "申込みの締切り",
-   "quote": "申込みの締切りは、11月10日(火)12:00必着とします。"
-  },
-  {
-   "hash": "e75db590e1fdd048",
-   "day": "2026-11-07",
-   "source": "厚生労働省",
-   "title": "「第３回 薬剤師のキャリアパスに関する懇談会」の開催について",
-   "url": "https://www.mhlw.go.jp/stf/newpage_77160.html",
-   "deadline": "2026-11-10",
+   "hash": "47294b6b438925e1",
+   "day": "2026-11-11",
+   "source": "こども家庭庁",
+   "title": "第5回ひとり親家庭支援ワーキンググループについて掲載しました",
+   "url": "https://www.cfa.go.jp/councils/shingikai/hinkon_hitorioya/db5ea08f",
+   "deadline": "2026-11-13",
    "label": "傍聴申込期限",
-   "quote": "傍聴(対面(報道関係者のみ)・YouTube)をご希望の方は、令和8年11月10日(火)までに、以下URLよりご登録ください。"
-  },
-  {
-   "hash": "55432bc1e16ab21c",
-   "day": "2026-11-07",
-   "source": "厚生労働省",
-   "title": "第131回社会保障審議会医療部会の開催について",
-   "url": "https://www.mhlw.go.jp/stf/newpage_77210.html",
-   "deadline": "2026-11-10",
-   "label": "傍聴申込締切",
-   "quote": "申し込みの締め切りは、11月10日(火)正午(厳守)までとさせていただきます。"
-  },
-  {
-   "hash": "e95abf4e48ce1b8d",
-   "day": "2026-11-10",
-   "source": "厚生労働省",
-   "title": "第220回社会保障審議会医療保険部会（ペーパーレス）の開催について",
-   "url": "https://www.mhlw.go.jp/stf/newpage_77211.html",
-   "deadline": "2026-11-10",
-   "label": "傍聴申込締切",
-   "quote": "傍聴の申込みは、委員会の開催の都度、実施します。 今回の傍聴申込み締切は11月10日(火)15時00分です。"
+   "quote": "傍聴を希望される方は、11月13日15時00分までに 申し込みフォーム から申し込みください。"
   },
   {
    "hash": "aebde44e576980a5",
@@ -61,6 +31,16 @@
    "deadline": "2026-11-16",
    "label": "申込期限",
    "quote": "申込期限、方法 2026年11月16日(月曜)17時 応募は電子申請システムでの提出によります。"
+  },
+  {
+   "hash": "d8e610a0fc0e99c2",
+   "day": "2026-11-11",
+   "source": "こども家庭庁",
+   "title": "令和8年度「こども・若者育成支援研修～地域における多様なアプローチを学ぶ～」に係る研修生募集要項を掲載しました",
+   "url": "https://www.cfa.go.jp/policies/youth/ikusei-hikikomori/youkou-r8",
+   "deadline": "2026-11-20",
+   "label": "応募期限",
+   "quote": "(5)応募期間 令和8年11月20日(金)(までにフォーム送信完了)"
   },
   {
    "hash": "a73e7b52b5c0bda8",

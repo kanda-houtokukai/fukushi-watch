@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-10T00:50:15.490Z",
+ "updatedAt": "2026-11-10T22:29:10.656Z",
  "items": [
   {
    "hash": "a5d178e8a97fa20c",
@@ -80,6 +80,62 @@
    "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/261022jpf.html"
   },
   {
+   "hash": "17458d9f96371c24",
+   "source": "中央共同募金会",
+   "sourceKind": "org",
+   "funder": "中央共同募金会",
+   "title": "赤い羽根福祉基金 2027年度事業助成の公募について",
+   "url": "https://www.akaihane.or.jp/subsidies/sub-kikin/50818/",
+   "postedAt": "2026-11-10",
+   "deadline": "2026-12-10",
+   "deadlineType": "date",
+   "deadlineRaw": "12/10締切",
+   "summary": "公的制度では対応できない福祉課題の解決に向けた直接支援、基盤づくり、調査・研究を行う非営利団体を支援する助成金です。",
+   "fields": [
+    "共通"
+   ],
+   "uses": [
+    "研究・調査"
+   ],
+   "applicants": [
+    "社会福祉法人",
+    "NPO・公益法人",
+    "任意団体"
+   ],
+   "amount": "1,000万円/年",
+   "conditions": [
+    {
+     "axis": "設立・活動年数",
+     "quote": "・応募時点で団体が設立されており、助成対象活動(事業)の実施体制が整っていること(活動年数は不問)"
+    },
+    {
+     "axis": "主体の付帯条件",
+     "quote": "「e応募 」による応募には事前の団体登録が必要となります。"
+    },
+    {
+     "axis": "主体の付帯条件",
+     "quote": "メールや郵送での応募は受け付けません。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "・社会福祉・地域福祉の推進を目的とする非営利の団体(法人格の有無は不問)"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "※応募主体が営利法人(株式会社、合同会社等)である場合、応募部門が非営利部門であっても助成対象外となります。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "・活動内容が、特定の宗教や政治思想を広めることを目的とするものでないこと"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "・反社会的勢力および反社会的勢力と密接な関わりがある団体でないこと"
+    }
+   ],
+   "conditionsUrl": "https://www.akaihane.or.jp/subsidies/sub-kikin/50818/"
+  },
+  {
    "hash": "7bace69fe009a891",
    "source": "全社協 福祉の助成情報",
    "sourceKind": "org",
@@ -143,47 +199,6 @@
    "amount": "",
    "conditions": [],
    "via": "goryu"
-  },
-  {
-   "hash": "5fcc081bbef40def",
-   "source": "助成財団センター 助成金募集ニュース",
-   "sourceKind": "org",
-   "funder": "",
-   "title": "第3回「Tethys基金～石垣島・海の教育事業助成～」公募",
-   "url": "https://www.jfc.or.jp/news_subsidy/%e7%ac%ac3%e5%9b%9e%e3%80%8ctethys%e5%9f%ba%e9%87%91%ef%bd%9e%e7%9f%b3%e5%9e%a3%e5%b3%b6%e3%83%bb%e6%b5%b7%e3%81%ae%e6%95%99%e8%82%b2%e4%ba%8b%e6%a5%ad%e5%8a%a9%e6%88%90%ef%bd%9e%e3%80%8d%e5%85%ac/",
-   "postedAt": "2026-10-15",
-   "deadline": "2026-12-17",
-   "deadlineType": "date",
-   "deadlineRaw": "2026/12/17 募集要項 https://np-foundation.or.jp/infor",
-   "openFrom": "2026-10-15",
-   "conditionsUrl": "https://np-foundation.or.jp/information/000432.html",
-   "summary": "石垣島および八重山地域における海洋環境保全に関する教育・科学・政策事業を支援する助成です。非営利法人や任意団体が応募できます。",
-   "fields": [
-    "共通"
-   ],
-   "uses": [
-    "事業・活動"
-   ],
-   "applicants": [
-    "社会福祉法人",
-    "NPO・公益法人",
-    "任意団体"
-   ],
-   "amount": "500千円~3,000千円/1件",
-   "conditions": [
-    {
-     "axis": "事業の実施地",
-     "quote": "石垣島および八重山地域で行われる地域・地域住民を対象とした流域(陸域)を含む海洋環境保全にかかわる教育、科学、政策事業"
-    },
-    {
-     "axis": "主体の付帯条件",
-     "quote": "助成電子申請システム「Graain」から、必要書類・団体情報をご提出いただきます。"
-    },
-    {
-     "axis": "提出書類",
-     "quote": "・応募用紙: 書式ダウンロード: 応募用紙_第3回Tethys基金石垣島・海の教育事業助成 ・団体の紹介資料 ・過去2事業年度の財務報告書 ・団体の今事業年度の収支予算書 ・登記簿謄本/履歴事項全部証明書の写し ・定款"
-    }
-   ]
   },
   {
    "hash": "2dbffd2b88875550",
@@ -398,6 +413,44 @@
    "amount": "",
    "conditions": [],
    "via": "goryu"
+  },
+  {
+   "hash": "2425193cab80dfa3",
+   "source": "全社協 福祉の助成情報",
+   "sourceKind": "org",
+   "funder": "全社協 令和8年度",
+   "title": "ＥＮＥＯＳ奨学助成",
+   "url": "https://www.shakyo.or.jp/guide/sponsor/p/261110eneos/index.html",
+   "postedAt": "2026-11-10",
+   "deadline": "2027-01-18",
+   "deadlineType": "date",
+   "deadlineRaw": "2027年1月18日",
+   "summary": "児童養護施設等の児童や退所後の若者が高等教育機関へ進学する際の金銭的支援を行い、社会的自立を応援する奨学助成です。",
+   "fields": [
+    "児童"
+   ],
+   "uses": [
+    "人材・研修"
+   ],
+   "applicants": [
+    "個人"
+   ],
+   "amount": "1名につき8万円",
+   "conditions": [
+    {
+     "axis": "併願・重複",
+     "quote": "※ 他の奨学金制度との併用可"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "高等学校卒業後、2027年度に大学・短期大学・専門学校等へ進学を予定している、児童養護施設等の児童、または退所・委託解除後の20歳未満の者"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "※ 児童養護施設、母子生活支援施設、里親家庭、ファミリーホーム"
+    }
+   ],
+   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/261110eneos/index.html"
   },
   {
    "hash": "f3162a4353a0ff64",
@@ -732,6 +785,58 @@
    ]
   },
   {
+   "hash": "86966180c6b375c1",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "中央共同募金会「赤い羽根福祉基金」",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e4%b8%ad%e5%a4%ae%e5%85%b1%e5%90%8c%e5%8b%9f%e9%87%91%e4%bc%9a%e3%80%8c%e8%b5%a4%e3%81%84%e7%be%bd%e6%a0%b9%e7%a6%8f%e7%a5%89%e5%9f%ba%e9%87%91%e3%80%8d-2/",
+   "postedAt": "2026-11-10",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "",
+   "conditionsUrl": "https://www.akaihane.or.jp/subsidies/sub-kikin/50818/",
+   "summary": "多様化・複合化する福祉課題の解決に向けた先駆的・モデル的な活動を資金面から応援する助成金です。",
+   "fields": [
+    "共通"
+   ],
+   "uses": [
+    "事業・活動"
+   ],
+   "applicants": [],
+   "amount": "10,000千円/1件",
+   "conditions": [
+    {
+     "axis": "設立・活動年数",
+     "quote": "・応募時点で団体が設立されており、助成対象活動(事業)の実施体制が整っていること(活動年数は不問)"
+    },
+    {
+     "axis": "主体の付帯条件",
+     "quote": "「e応募 」による応募には事前の団体登録が必要となります。"
+    },
+    {
+     "axis": "主体の付帯条件",
+     "quote": "メールや郵送での応募は受け付けません。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "・社会福祉・地域福祉の推進を目的とする非営利の団体(法人格の有無は不問)"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "※応募主体が営利法人(株式会社、合同会社等)である場合、応募部門が非営利部門であっても助成対象外となります。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "・活動内容が、特定の宗教や政治思想を広めることを目的とするものでないこと"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "・反社会的勢力および反社会的勢力と密接な関わりがある団体でないこと"
+    }
+   ]
+  },
+  {
    "hash": "e3392e5ccf02e958",
    "source": "中央競馬馬主社会福祉財団",
    "sourceKind": "org",
@@ -773,5 +878,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-11-10"
+ "lastFetchDate": "2026-11-11"
 }

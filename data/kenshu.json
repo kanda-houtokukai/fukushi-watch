@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-10T00:52:05.451Z",
+ "updatedAt": "2026-11-10T22:31:03.340Z",
  "items": [
   {
    "hash": "3e2b75a846a6a71a",
@@ -134,6 +134,23 @@
    ],
    "outlineUrl": "https://www.f-kaigo.jp/upimg/x6ae41e14e6292.pdf",
    "keepUntilHeld": true
+  },
+  {
+   "hash": "e5106872fdd962e6",
+   "source": "こども家庭庁",
+   "sourceKind": "",
+   "via": "goryu",
+   "title": "令和8年度「こども・若者育成支援研修～地域における多様なアプローチを学ぶ～」に係る研修生募集要項を掲載しました",
+   "url": "https://www.cfa.go.jp/policies/youth/ikusei-hikikomori/youkou-r8",
+   "deadline": "2026-11-20",
+   "deadlineType": "date",
+   "deadlineRaw": "一覧の申込終了日より 応募期限 2026-11-20",
+   "openFrom": null,
+   "fields": [
+    "児童"
+   ],
+   "kind": "テーマ別",
+   "expireOn": "2027-02-20"
   },
   {
    "hash": "6179db20eefef27b",
@@ -671,28 +688,6 @@
    "expireOn": "2027-07-01"
   },
   {
-   "hash": "e660bbd715ad27ea",
-   "source": "福祉・介護研修センター 新着",
-   "sourceKind": "org",
-   "via": "info",
-   "title": "福岡県高齢者権利擁護等推進研修看護実務者研修",
-   "url": "https://fuku-shakyo-kenshu.jp/info/%e7%a6%8f%e5%b2%a1%e7%9c%8c%e9%ab%98%e9%bd%a2%e8%80%85%e6%a8%a9%e5%88%a9%e6%93%81%e8%ad%b7%e7%ad%89%e6%8e%a8%e9%80%b2%e7%a0%94%e4%bf%ae%e7%9c%8b%e8%ad%b7%e5%ae%9f%e5%8b%99%e8%80%85%e7%a0%94%e4%bf%ae/",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "締切の記載なし",
-   "expireOn": "2026-12-15",
-   "heldDates": [
-    "2026-10-29",
-    "2026-11-10",
-    "2026-12-15"
-   ],
-   "openFrom": null,
-   "fields": [
-    "高齢"
-   ],
-   "kind": "法令対応"
-  },
-  {
    "hash": "a8257c06b7fabf79",
    "source": "福岡県介護福祉士会",
    "sourceKind": "org",
@@ -958,6 +953,28 @@
    "outlineUrl": "https://www.f-kaigo.jp/upimg/i6a7c1a5d036f1.pdf"
   },
   {
+   "hash": "e660bbd715ad27ea",
+   "source": "福祉・介護研修センター 新着",
+   "sourceKind": "org",
+   "via": "info",
+   "title": "福岡県高齢者権利擁護等推進研修看護実務者研修",
+   "url": "https://fuku-shakyo-kenshu.jp/info/%e7%a6%8f%e5%b2%a1%e7%9c%8c%e9%ab%98%e9%bd%a2%e8%80%85%e6%a8%a9%e5%88%a9%e6%93%81%e8%ad%b7%e7%ad%89%e6%8e%a8%e9%80%b2%e7%a0%94%e4%bf%ae%e7%9c%8b%e8%ad%b7%e5%ae%9f%e5%8b%99%e8%80%85%e7%a0%94%e4%bf%ae/",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "締切の記載なし",
+   "expireOn": "2026-12-15",
+   "heldDates": [
+    "2026-10-29",
+    "2026-11-10",
+    "2026-12-15"
+   ],
+   "openFrom": null,
+   "fields": [
+    "高齢"
+   ],
+   "kind": "法令対応"
+  },
+  {
    "hash": "2bd9cb946de3e713",
    "source": "福祉・介護研修センター 年間予定表",
    "sourceKind": "org",
@@ -1217,5 +1234,5 @@
    "kind": "テーマ別"
   }
  ],
- "lastFetchDate": "2026-11-10"
+ "lastFetchDate": "2026-11-11"
 }

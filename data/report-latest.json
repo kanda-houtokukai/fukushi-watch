@@ -1,6 +1,417 @@
 {
-  "generatedAt": "2026-11-10T04:41:02.680Z",
-  "model": null,
-  "items": [],
-  "press": []
+  "generatedAt": "2026-11-10T22:26:35.901Z",
+  "model": "gemini-3.5-flash",
+  "items": [
+    {
+      "hash": "fd5c95431fe92d99",
+      "source": "こども家庭庁",
+      "title": "こどもとともに成長する企業構想 フラッグシップ企業を発表しました",
+      "url": "https://www.cfa.go.jp/press/9b95e378-b813-45ae-9716-dbee3e54db8f",
+      "date": "2026-11-10",
+      "category": "報道発表",
+      "summary": "こども・子育て支援に積極的な企業を表彰する取組に関する報道発表です。",
+      "importance": "低",
+      "fields": [
+        "児童"
+      ],
+      "reason": "企業表彰に関する発表であり、福祉事業者の日常実務や制度対応に直接影響しないため。"
+    },
+    {
+      "hash": "9d1746a0a8bbbda4",
+      "source": "こども家庭庁",
+      "title": "中司大臣記者会見（令和8年11月10日）を掲載しました",
+      "url": "https://www.cfa.go.jp/speech/3e3dc13b",
+      "date": "2026-11-10",
+      "category": "会見",
+      "summary": "大臣の定例記者会見の実施および概要についての掲載情報です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "大臣記者会見の案内であり、事業者の実務対応を要する情報ではないため。"
+    },
+    {
+      "hash": "d8e610a0fc0e99c2",
+      "source": "こども家庭庁",
+      "title": "令和8年度「こども・若者育成支援研修～地域における多様なアプローチを学ぶ～」に係る研修生募集要項を掲載しました",
+      "url": "https://www.cfa.go.jp/policies/youth/ikusei-hikikomori/youkou-r8",
+      "date": "2026-11-10",
+      "category": "政策",
+      "summary": "こども・若者支援に関わる関係者を対象とした育成研修の受講生募集案内です。",
+      "importance": "中",
+      "fields": [
+        "児童"
+      ],
+      "reason": "こども・若者支援分野の職員向け研修募集であり、人材育成の機会として把握が推奨されるため。"
+    },
+    {
+      "hash": "661d3cf29d41c86f",
+      "source": "こども家庭庁",
+      "title": "第8回 こどものケアニーズに応じた支援の在り方に関する専門委員会の開催について掲載しました",
+      "url": "https://www.cfa.go.jp/press/944d3758-23fc-427e-8c38-120cc81d84be",
+      "date": "2026-11-10",
+      "category": "報道発表",
+      "summary": "障害児や医療的ケア児など、配慮が必要なこどもへの支援の在り方を検討する専門委員会の開催案内です。",
+      "importance": "中",
+      "fields": [
+        "障害",
+        "児童"
+      ],
+      "reason": "障害児支援等の施策の方向性を議論する会議であり、今後の制度・基準見直しの動向を把握しておくべきなため。"
+    },
+    {
+      "hash": "03e6d6402c84b812",
+      "source": "こども家庭庁",
+      "title": "第5回ひとり親家庭支援ワーキンググループの開催について掲載しました",
+      "url": "https://www.cfa.go.jp/press/dd446ba4-b3cb-40be-b893-ac3eb79b5edf",
+      "date": "2026-11-10",
+      "category": "報道発表",
+      "summary": "ひとり親家庭に対する経済的・生活支援施策を検討する作業部会の開催案内です。",
+      "importance": "中",
+      "fields": [
+        "児童"
+      ],
+      "reason": "ひとり親支援施策に関する行政の議論であり、児童福祉事業の今後の動向として把握が重要なため。"
+    },
+    {
+      "hash": "47294b6b438925e1",
+      "source": "こども家庭庁",
+      "title": "第5回ひとり親家庭支援ワーキンググループについて掲載しました",
+      "url": "https://www.cfa.go.jp/councils/shingikai/hinkon_hitorioya/db5ea08f",
+      "date": "2026-11-10",
+      "category": "会議等",
+      "summary": "ひとり親家庭への支援方針や具体策を検討する作業部会の開催資料に関する掲載情報です。",
+      "importance": "中",
+      "fields": [
+        "児童"
+      ],
+      "reason": "ひとり親支援に関する議論の内容であり、児童福祉関係の施策動向を把握しておくべきなため。"
+    },
+    {
+      "hash": "5454319baea86095",
+      "source": "こども家庭庁",
+      "title": "みて かんじて つながる劇体験～優良児童劇等公演事業～令和8年12月15日（火）鹿児島県日置市にて開催",
+      "url": "https://www.cfa.go.jp/press/52bdd846-b58c-4edf-aa17-f81609a965de",
+      "date": "2026-11-10",
+      "category": "報道発表",
+      "summary": "地域で開催される児童向けの劇公演事業（イベント）の開催案内です。",
+      "importance": "低",
+      "fields": [
+        "児童"
+      ],
+      "reason": "一般・子ども向け文化イベントの開催周知であり、福祉事業者の運営実務には直接関係しないため。"
+    },
+    {
+      "hash": "b119dd7f47892df7",
+      "source": "厚生労働省",
+      "title": "第８回 医療扶助・健康管理支援等に関する検討会 議事録",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77344.html",
+      "date": "2026-11-10",
+      "category": "審議会等",
+      "summary": "生活保護における医療扶助や被保護者の健康管理支援に関する検討会の議事録です。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "生活困窮者支援や医療連携に関わる重要施策の検討記録であり、福祉実務全般の動向として把握が必要なため。"
+    },
+    {
+      "hash": "bb8c0cc2ff769b36",
+      "source": "厚生労働省",
+      "title": "第212回労働政策審議会労働条件分科会 議事録（2026年10月14日）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77343.html",
+      "date": "2026-11-10",
+      "category": "審議会等",
+      "summary": "一般労働者の労働条件や労働法制全般を審議する分科会の議事録です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "一般労働施策に関する審議会記録であり、福祉事業特有の労務管理や制度に直結するものではないため。"
+    },
+    {
+      "hash": "934a3ae04a84854b",
+      "source": "厚生労働省",
+      "title": "令和８年１１月１０日付大臣会見概要",
+      "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00987.html",
+      "date": "2026-11-10",
+      "category": "大臣会見等",
+      "summary": "厚生労働省等の大臣記者会見の概要テキストの掲載案内です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "会見内容の概要公表であり、福祉事業者の実務手続や制度対応に影響しないため。"
+    },
+    {
+      "hash": "961a0e2431cc5c00",
+      "source": "厚生労働省",
+      "title": "毎月勤労統計調査の掲載表の訂正について（令和８年11月10日）",
+      "url": "https://www.mhlw.go.jp/toukei/list/30-1b.html",
+      "date": "2026-11-10",
+      "category": "統計情報",
+      "summary": "政府が実施する毎月勤労統計調査のデータ一部修正に関するお知らせです。",
+      "importance": "低",
+      "fields": [],
+      "reason": "一般統計数値の修正訂正であり、福祉事業の現場実務への直接的な影響はないため。"
+    },
+    {
+      "hash": "8ffee20adb158ca1",
+      "source": "厚生労働省",
+      "title": "第60回「ねむの木賞」「高木賞」の贈呈式が行われます",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77319.html",
+      "date": "2026-11-10",
+      "category": "報道発表",
+      "summary": "障害福祉・保健分野の発展に寄与した関係者・団体を表彰する贈呈式の案内です。",
+      "importance": "低",
+      "fields": [
+        "障害"
+      ],
+      "reason": "特定の表彰行事の案内であり、事業所の運営管理やサービス提供に直接影響しないため。"
+    },
+    {
+      "hash": "20ec5c68aa32f6cd",
+      "source": "厚生労働省",
+      "title": "第26回成年後見制度利用促進専門家会議 開催案内",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77165.html",
+      "date": "2026-11-10",
+      "category": "審議会等",
+      "summary": "高齢者・障害者等の権利擁護を推進する成年後見制度の利用促進に関する専門家会議の開催案内です。",
+      "importance": "中",
+      "fields": [
+        "障害",
+        "高齢"
+      ],
+      "reason": "利用者支援や権利擁護に直結する成年後見制度の運用・改正動向を把握しておくべきなため。"
+    },
+    {
+      "hash": "ff99138efe0e823e",
+      "source": "厚生労働省",
+      "title": "残留限度値を超えるΔ９-THCが検出された製品に対する注意喚起について",
+      "url": "https://www.mhlw.go.jp/stf/houdou/0000212707_00059.html",
+      "date": "2026-11-10",
+      "category": "その他",
+      "summary": "基準値を超える成分が検出された製品に対する安全・健康上の注意喚起です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "薬事・製品上の注意喚起であり、福祉事業所の直接の運営実務と関連が薄いため。"
+    },
+    {
+      "hash": "e6d6c54dd09580c3",
+      "source": "厚生労働省",
+      "title": "「第２回毎月勤労統計調査の調査手法の検討等に関するワーキンググループ」の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77176.html",
+      "date": "2026-11-10",
+      "category": "審議会等",
+      "summary": "毎月勤労統計調査の調査手法について専門的に検討する作業部会の開催案内です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "行政統計の手法検討であり、福祉事業の運営実務への影響がないため。"
+    },
+    {
+      "hash": "7f921f7a1b26484d",
+      "source": "厚生労働省",
+      "title": "食品中の放射性物質の検査結果について（１５２０報）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77150.html",
+      "date": "2026-11-10",
+      "category": "報道発表",
+      "summary": "流通食品における放射性物質のモニタリング検査結果の公表です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "一般的な食品安全検査結果の報告であり、福祉施設等の給食管理・運営に直接影響を及ぼす内容ではないため。"
+    },
+    {
+      "hash": "0fed7d7b89e86846",
+      "source": "厚生労働省",
+      "title": "第215回労働政策審議会労働条件分科会 開催案内",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76846.html",
+      "date": "2026-11-10",
+      "category": "審議会等",
+      "summary": "労働者の労働条件や労働関係法令の検討を行う審議会分科会の開催案内です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "一般労働施策に関する審議会の開催案内であり、福祉事業特有の運営に直結しないため。"
+    },
+    {
+      "hash": "a7402bb64112d979",
+      "source": "厚生労働省",
+      "title": "年金給付システムの最適化に係る設計・開発等",
+      "url": "https://www.mhlw.go.jp/stf/shinsei_boshu/choutatsujouhou/chotatu/j-wto-siryo/newpage_10537.html",
+      "date": "2026-11-10",
+      "category": "その他",
+      "summary": "政府の年金給付システム最適化に向けたシステム開発・設計の調達関連情報です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "省庁内部のシステム調達情報であり、福祉事業者の実務とは関係がないため。"
+    },
+    {
+      "hash": "926243c26eae2b18",
+      "source": "厚生労働省",
+      "title": "WEBマガジン「厚生労働」（特集[技能五輪国際大会]ほか更新）",
+      "url": "https://www.mhlw.go.jp/web_magazine/",
+      "date": "2026-11-10",
+      "category": "その他",
+      "summary": "厚生労働省が発行するWebマガジンの更新（記事追加）案内です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "広報マガジンの更新通知であり、事業者の実務対応を要する情報ではないため。"
+    },
+    {
+      "hash": "88636506490a18b0",
+      "source": "厚生労働省",
+      "title": "第56回建築物環境衛生管理技術者試験の合格発表",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77106.html",
+      "date": "2026-11-10",
+      "category": "報道発表",
+      "summary": "建築物環境衛生管理技術者国家試験の合格者発表に関する情報です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "資格試験の合格発表であり、福祉事業者一般の実務運営に直接関係しないため。"
+    },
+    {
+      "hash": "831be2f6ac115930",
+      "source": "厚生労働省",
+      "title": "公益事業に関する争議行為の予告公表ページについて更新されました",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudouseisaku/sougikoui/index.html",
+      "date": "2026-11-10",
+      "category": "政策分野",
+      "summary": "公益事業（福祉・医療等含む）において労働組合から提出された同盟罷業等の予告情報の公表一覧の更新です。",
+      "importance": "低",
+      "fields": [
+        "共通"
+      ],
+      "reason": "労働争議予告に関する情報の更新公示であり、個別の事業者に新たな実務対応を求めるものではないため。"
+    },
+    {
+      "hash": "bf2bab676e75c7ec",
+      "source": "WAM NET",
+      "title": "第220回 社会保障審議会 医療保険部会の開催について（令和8年11月11日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=23031&ct=070010030&from=rss",
+      "date": "2026-11-10",
+      "category": "行政資料",
+      "summary": "医療保険制度全般の見直しや財政等を議論する審議会部会の開催案内です。",
+      "importance": "中",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "医療保険制度の改正動向は高齢者医療や介護保険制度とも連動するため、将来の影響を見据えて把握が必要なため。"
+    },
+    {
+      "hash": "ebec8ca6bfe59595",
+      "source": "WAM NET",
+      "title": "第22回 こども家庭審議会 基本政策部会（令和8年11月16日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=23033&ct=070010010&from=rss",
+      "date": "2026-11-10",
+      "category": "行政資料",
+      "summary": "こども・子育て政策や児童福祉関連の基本方針を審議する審議会部会の開催案内です。",
+      "importance": "中",
+      "fields": [
+        "保育",
+        "児童"
+      ],
+      "reason": "保育・児童福祉分野の基本的施策や制度設計が議論されるため、今後の事業運営に影響する動向として把握が必要なため。"
+    },
+    {
+      "hash": "cfa41fc83ed27637",
+      "source": "WAM NET",
+      "title": "第3回 こどもの預かりサービスの在り方に関する専門委員会（令和8年11月9日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=23032&ct=090080345&from=rss",
+      "date": "2026-11-10",
+      "category": "行政資料",
+      "summary": "認可外施設を含むこどもの預かりサービスの基準や質の確保、在り方を検討する専門委員会の開催案内です。",
+      "importance": "中",
+      "fields": [
+        "保育",
+        "児童"
+      ],
+      "reason": "保育・預かり支援事業の基準や運営のあり方に関わる検討会であり、事業者として動向を追う必要があるため。"
+    },
+    {
+      "hash": "19d5f4414858fb1b",
+      "source": "福岡県（子ども・青少年）",
+      "title": "（参加者募集中！）【遠賀・中間地域】コミュニケーション力を育む「ふくおか地域リーダー育成キャンプ」",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/ikuseicamp2026nakama-onga.html",
+      "date": "2026年11月10日更新",
+      "category": "",
+      "summary": "青少年・地域リーダーの育成を目的としたキャンプイベントの参加者募集です。",
+      "importance": "低",
+      "fields": [
+        "児童"
+      ],
+      "reason": "地域住民・子ども向けの研修イベントの案内であり、福祉事業者の運営実務には直接影響しないため。"
+    },
+    {
+      "hash": "8c1ea1271776ee86",
+      "source": "福岡県（子ども・青少年）",
+      "title": "福岡県若者自立相談窓口「若まど」",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/wakamado2026.html",
+      "date": "2026年11月10日更新",
+      "category": "",
+      "summary": "福岡県が設置する若者の自立支援に関する相談窓口の周知情報であり、利用者の紹介や他機関連携の参考となる内容です。",
+      "importance": "低",
+      "fields": [
+        "児童"
+      ],
+      "reason": "行政の相談窓口案内・広報であり、事業者に直接的な対応や実務上の義務が生じないため。"
+    },
+    {
+      "hash": "fd5e8e4125f49168",
+      "source": "全国社会福祉協議会",
+      "kind": "org",
+      "title": "「ＥＮＥＯＳ奨学助成」",
+      "url": "https://www.shakyo.or.jp/guide/sponsor//p/261110eneos/index.html",
+      "date": "2026-11-10",
+      "category": "助成",
+      "summary": "児童養護施設等の退所者や進学希望者を支援する奨学助成金の公募案内であり、対象者への周知や申請支援に活用できます。",
+      "importance": "中",
+      "fields": [
+        "児童"
+      ],
+      "reason": "助成金の公募案内であり、該当する事業所で活用を検討すべき情報であるため。"
+    }
+  ],
+  "press": [
+    {
+      "hash": "04a1421b2d913ba3",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "特養のケアマネや看護職、配置基準を緩和 厚労省提案 過疎地など対象｜介護報酬改定",
+      "url": "https://www.joint-kaigo.com/articles/50318/",
+      "date": "2026-11-10",
+      "category": "超高齢化",
+      "fields": [
+        "高齢"
+      ]
+    },
+    {
+      "hash": "1c819c74ef42c2e3",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "ケアマネジメントの新時代を考える 九州・沖縄ブロック研究大会、来年2月に熊本で開催",
+      "url": "https://www.joint-kaigo.com/articles/50312/",
+      "date": "2026-11-10",
+      "category": "超高齢化",
+      "fields": [
+        "高齢"
+      ]
+    },
+    {
+      "hash": "467dfffcc61bf24d",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "障害福祉報酬改定、財務省が厳しい注文 費用急増や高い利益率で適正化を要求",
+      "url": "https://www.joint-kaigo.com/articles/50298/",
+      "date": "2026-11-10",
+      "category": "政府与党",
+      "fields": [
+        "障害"
+      ]
+    },
+    {
+      "hash": "d2573dd6289dae52",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "通所介護、看護職や相談員の配置基準を緩和 送迎負担に新加算も 過疎地など対象 厚労省提案｜来年度改定",
+      "url": "https://www.joint-kaigo.com/articles/50290/",
+      "date": "2026-11-10",
+      "category": "介護給付費分科会",
+      "fields": [
+        "高齢"
+      ]
+    }
+  ]
 }
