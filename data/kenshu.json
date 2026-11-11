@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-10T22:31:03.340Z",
+ "updatedAt": "2026-11-11T23:40:29.481Z",
  "items": [
   {
    "hash": "3e2b75a846a6a71a",
@@ -158,7 +158,7 @@
    "sourceKind": "org",
    "via": "schedule",
    "title": "記録技術研修(障がい児者分野)",
-   "url": "https://fuku-shakyo-kenshu.jp/info/%e8%a8%98%e9%8c%b2%e6%8a%80%e8%a1%93%e7%a0%94%e4%bf%ae%ef%bc%88%e9%9a%9c%e3%81%8c%e3%81%84%e5%85%90%e8%80%85%e5%88%86%e9%87%8e%ef%bc%89%e3%81%ae%e9%96%8b%e5%82%ac%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/",
+   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/10/開催要綱-1.pdf",
    "deadline": "2026-11-21",
    "deadlineType": "date",
    "deadlineRaw": "一覧の申込終了日より 11月21日",
@@ -1234,5 +1234,5 @@
    "kind": "テーマ別"
   }
  ],
- "lastFetchDate": "2026-11-11"
+ "lastFetchDate": "2026-11-12"
 }
