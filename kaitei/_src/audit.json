@@ -379,18 +379,15 @@
    "result": "fixed"
   },
   "論点:oudan-kihon": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-13",
    "result": "ok"
   },
   "論点:ryoyo-kaigo-01": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-13",
    "result": "ok"
   },
   "論点:ryoyo-kaigo-02": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-13",
    "result": "ok"
   },
   "論点:sabikan-02": {
@@ -639,8 +636,7 @@
    "result": "fixed"
   },
   "論点:tanki-nyusho-01": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-13",
    "result": "ok"
   }
  }
