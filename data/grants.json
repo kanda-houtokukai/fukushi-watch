@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-11T23:38:45.573Z",
+ "updatedAt": "2026-11-12T23:04:35.170Z",
  "items": [
   {
    "hash": "a5d178e8a97fa20c",
@@ -461,6 +461,46 @@
    ]
   },
   {
+   "hash": "793aec15305673f0",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "住まいとコミュニティづくり活動助成",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e4%bd%8f%e3%81%be%e3%81%84%e3%81%a8%e3%82%b3%e3%83%9f%e3%83%a5%e3%83%8b%e3%83%86%e3%82%a3%e3%81%a5%e3%81%8f%e3%82%8a%e6%b4%bb%e5%8b%95%e5%8a%a9%e6%88%90-2/",
+   "postedAt": "2026-11-12",
+   "deadline": "2027-01-12",
+   "deadlineType": "date",
+   "deadlineRaw": "2027/01/12 募集要項 https://www.hc-zaidan.or.jp/progr",
+   "openFrom": "2026-11-02",
+   "conditionsUrl": "https://www.hc-zaidan.or.jp/program.html",
+   "summary": "住まいや地域コミュニティの課題解決に取り組む市民による自発的な地域づくり活動を助成します。NPO法人や任意団体等の営利を目的としない民間団体が応募できます。",
+   "fields": [
+    "共通"
+   ],
+   "uses": [
+    "事業・活動"
+   ],
+   "applicants": [
+    "NPO・公益法人",
+    "任意団体"
+   ],
+   "amount": "1件1,200千円(交流会参加費用含む)",
+   "conditions": [
+    {
+     "axis": "その他の対象限定",
+     "quote": "営利を目的としない民間団体(特定非営利活動法人、法人化されていない任意の団体、また学生が主体となり活動する団体)。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "団体として、代表責任者が明確であること、意思決定のしくみが確立され、団体名義の口座を有しており、予算決算を含む会計処理や口座の管理等が適切に行われていること。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "今日の人口減少社会、少子高齢化社会等を背景にした住まいとコミュニティに関する課題に取り組む市民の自発的な地域づくり・住まいづくり活動で、地域住民が主体的に関わっている次に掲げるもの。"
+    }
+   ]
+  },
+  {
    "hash": "2425193cab80dfa3",
    "source": "全社協 福祉の助成情報",
    "sourceKind": "org",
@@ -878,5 +918,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-11-12"
+ "lastFetchDate": "2026-11-13"
 }

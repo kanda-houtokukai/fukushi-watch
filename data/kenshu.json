@@ -1,23 +1,6 @@
 {
- "updatedAt": "2026-11-11T23:40:29.481Z",
+ "updatedAt": "2026-11-12T23:06:20.797Z",
  "items": [
-  {
-   "hash": "3e2b75a846a6a71a",
-   "source": "福祉・介護研修センター 年間予定表",
-   "sourceKind": "org",
-   "via": "schedule",
-   "title": "接遇マナー向上研修",
-   "url": "https://fuku-shakyo-kenshu.jp/wp-content/uploads/2026/11/01-開催要綱.pdf",
-   "deadline": "2026-11-12",
-   "deadlineType": "date",
-   "deadlineRaw": "一覧の申込終了日より 11月12日",
-   "openFrom": "2026-11-01",
-   "fields": [
-    "共通"
-   ],
-   "kind": "テーマ別",
-   "expireOn": "2027-02-12"
-  },
   {
    "hash": "dd12d5c80e21f51e",
    "source": "福祉・介護研修センター 年間予定表",
@@ -1234,5 +1217,5 @@
    "kind": "テーマ別"
   }
  ],
- "lastFetchDate": "2026-11-12"
+ "lastFetchDate": "2026-11-13"
 }
