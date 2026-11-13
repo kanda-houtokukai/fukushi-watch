@@ -1,6 +1,404 @@
 {
-  "generatedAt": "2026-11-13T03:27:11.389Z",
-  "newItems": [],
-  "newPress": [],
+  "generatedAt": "2026-11-13T22:42:54.737Z",
+  "newItems": [
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "ed1e51085227e3fb",
+      "title": "一般競争入札：こども相談ガイド運用・保守及び改善業務一式を掲載しました",
+      "url": "https://www.cfa.go.jp/procurement/portal",
+      "date": "2026-11-13",
+      "category": "調達情報"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "0ba576332c1d1a3d",
+      "title": "旧優生保護法補償金等認定審査会（第2回）の会議資料を掲載しました",
+      "url": "https://www.cfa.go.jp/councils/kyuyusei-hoshokin/19f315bc",
+      "date": "2026-11-13",
+      "category": "会議等"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "bbb0c0e3bd2a5b6f",
+      "title": "人工妊娠中絶一時金認定審査部会（第21回）の会議資料を掲載しました",
+      "url": "https://www.cfa.go.jp/councils/jinkoninshinchuzetsu-ichijikin/ffc22b77",
+      "date": "2026-11-13",
+      "category": "会議等"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "21354ec5baceb609",
+      "title": "中司大臣記者会見（令和8年11月13日）を掲載しました",
+      "url": "https://www.cfa.go.jp/speech/e0b07d56",
+      "date": "2026-11-13",
+      "category": "会見"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "f14852535e1200f0",
+      "title": "第21回補償金・優生手術等一時金認定審査部会の審査結果について掲載しました",
+      "url": "https://www.cfa.go.jp/press/e1dbec42-c2aa-4131-b809-67083e5cc574",
+      "date": "2026-11-13",
+      "category": "報道発表"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "9dff4629138feddf",
+      "title": "一般競争入札：令和8年度全国ひとり親世帯等調査に係る調査票受付・審査、データ入力・集計業務を掲載しました",
+      "url": "https://www.cfa.go.jp/procurement/portal",
+      "date": "2026-11-13",
+      "category": "調達情報"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "6d66b97d1833deee",
+      "title": "補償金・優生手術等一時金認定審査部会（第21回）の議事要旨を掲載しました",
+      "url": "https://www.cfa.go.jp/councils/hoshokin-yuseishujutsu/9455a714",
+      "date": "2026-11-13",
+      "category": "会議等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "7506aab47e0eb892",
+      "title": "令和８年１１月１３日付大臣会見概要",
+      "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00988.html",
+      "date": "2026-11-13",
+      "category": "大臣会見等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "2293abdfa9f56c07",
+      "title": "Microsoft365の大規模障害について",
+      "url": "https://www.mhlw.go.jp/stf/kinkyu/20261113.html",
+      "date": "2026-11-13",
+      "category": "重要情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "92c4448d4a8922da",
+      "title": "硫黄島戦没者慰霊巡拝（第１次）の延期について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77399.html",
+      "date": "2026-11-13",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "0c13b4f249052249",
+      "title": "産業競争力強化法に基づく「新技術等実証計画」の認定について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76978.html",
+      "date": "2026-11-13",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "a5be72b118bacc9a",
+      "title": "第216回労働政策審議会職業安定分科会雇用保険部会（開催案内）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77421.html",
+      "date": "2026-11-13",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "1fcba12a92e79eae",
+      "title": "社会福祉功労者及びボランティア功労者厚生労働大臣表彰の受賞者を決定しました～令和８年度は個人894名、273団体の方々が受賞～",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77269.html",
+      "date": "2026-11-13",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "39df1d8013921aba",
+      "title": "第３７回厚生科学審議会がん登録部会の開催について（オンライン開催）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77359.html",
+      "date": "2026-11-13",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "c78ac116033a8643",
+      "title": "第221回社会保障審議会医療保険部会（ペーパーレス）の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77350.html",
+      "date": "2026-11-13",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "cb0651eeec3fde80",
+      "title": "第275回社会保障審議会介護給付費分科会（Web会議）を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77277.html",
+      "date": "2026-11-13",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "ed28e96187d6fbab",
+      "title": "「第45回社会保障審議会介護給付費分科会介護事業経営調査委員会」を開催します（開催案内）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77253.html",
+      "date": "2026-11-13",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "001f87788510caa7",
+      "title": "「令和８年度第１回薬事審議会 毒物劇物部会（ハイブリッド開催）」を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77218.html",
+      "date": "2026-11-13",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "ec57833931ef32e6",
+      "title": "原子力災害対策特別措置法第20条第２項の規定に基づく食品の出荷制限の解除",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77173.html",
+      "date": "2026-11-13",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "f507215c1fcaa41e",
+      "title": "第186回医学的検証作業グループ",
+      "url": "https://www.mhlw.go.jp/stf/newpage_76606.html",
+      "date": "2026-11-13",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "468557549856da99",
+      "title": "インフルエンザに関する報道発表資料を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou_00025.html",
+      "date": "2026-11-13",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "6f15059b01303088",
+      "title": "新型コロナウイルス感染症に関する報道発表資料を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00485.html",
+      "date": "2026-11-13",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "aaf0c3b8f9addf3f",
+      "title": "インフルエンザ・新型コロナウイルス感染症の定点当たり報告数の推移を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/houkokusuunosuii_00007.html",
+      "date": "2026-11-13",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "1248929f76dfb8b3",
+      "title": "インフルエンザの発生状況を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
+      "date": "2026-11-13",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "bd27641c394bff7e",
+      "title": "第３回 厚生科学審議会医療用医薬品迅速・安定供給部会 資料",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77390.html",
+      "date": "2026-11-13",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "8957ba65f5bf5677",
+      "title": "第４回創薬力向上のための官民協議会 施策検討・推進部会 資料",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77400.html",
+      "date": "2026-11-13",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "827db9f6e8bf8e28",
+      "title": "薬事工業生産動態統計令和8年8月分月報について",
+      "url": "https://www.mhlw.go.jp/toukei/list/105-1c.html",
+      "date": "2026-11-13",
+      "category": "統計情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "49282c5da06d0a47",
+      "title": "世界メンタルヘルスデー JAPAN 2026 特設サイト",
+      "url": "https://www.mhlw.go.jp/kokoro/mental_health_day/",
+      "date": "2026-11-13",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "5d2e0a4bd79da0cd",
+      "title": "原子力災害対策特別措置法第20条第２項の規定に基づく食品の出荷制限の設定",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77131.html",
+      "date": "2026-11-13",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "4a2a10ad3f69c4a5",
+      "title": "公益事業に関する争議行為の予告公表ページについて更新されました",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudouseisaku/sougikoui/index.html",
+      "date": "2026-11-13",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "dbc0f94f1472bc66",
+      "title": "厚生労働省本省係長級職員（一般職相当）採用選考 - 令和８年度第３期・第４期",
+      "url": "https://www.mhlw.go.jp/stf/newpage_33437.html",
+      "date": "2026-11-13",
+      "category": "採用情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "28153e65f761967a",
+      "title": "後発医薬品を製造販売する企業の安定供給の取組に関する評価結果を公表します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77371.html",
+      "date": "2026-11-13",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "154422a46f5faa2a",
+      "title": "第77回WHO西太平洋地域委員会",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/kokusai/tp210607-01_00022.html",
+      "date": "2026-11-12",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "177eb56c5d6050c2",
+      "title": "第13回自殺総合対策の推進に関する有識者会議資料",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77355.html",
+      "date": "2026-11-11",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "12b3fa64e1a36b9f",
+      "title": "令和８年度第２回献血推進調査会 資料",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77284.html",
+      "date": "2026-11-09",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "7629c46bc0fcb1e8",
+      "title": "第216回労働政策審議会職業安定分科会雇用保険部会（開催案内）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77276.html",
+      "date": "2026-11-06",
+      "category": "審議会等"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "1998b79041fc79bc",
+      "title": "第79回 厚生科学審議会予防接種・ワクチン分科会予防接種基本方針部会の開催について（令和8年11月19日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=23045&ct=070010010&from=rss",
+      "date": "2026-11-13",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "0c90306a6a766739",
+      "title": "第28回 厚生科学審議会 新型インフルエンザ対策に関する小委員会 ・第13回危機対応医薬品等に関する小委員会（令和8年11月18日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=23048&ct=010020210&from=rss",
+      "date": "2026-11-13",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "9c44022ce9664851",
+      "title": "第131回 社会保障審議会 医療部会（令和8年11月11日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=23047&ct=010010040&from=rss",
+      "date": "2026-11-13",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "3a1e72ee9bff0867",
+      "title": "第64回 社会保障審議会 生活保護基準部会（令和8年11月17日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=23046&ct=070010070&from=rss",
+      "date": "2026-11-13",
+      "category": "行政資料"
+    },
+    {
+      "source": "福岡県（障がい福祉）",
+      "kind": "gov",
+      "hash": "cbcb6d91aaa0045a",
+      "title": "障がい福祉サービス等従業者養成研修",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/kenshu.html",
+      "date": "2026年4月1日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（子ども・青少年）",
+      "kind": "gov",
+      "hash": "60a4860d32f4bcbb",
+      "title": "物価高対応福岡県子育て応援金を支給します！",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/fukuoka-kosodate-ouenkin.html",
+      "date": "2026年11月13日更新",
+      "category": ""
+    }
+  ],
+  "newPress": [
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "71f62a39cfab9424",
+      "title": "看護職員の「離職・流出が加速」 看護協会が警鐘 上野厚労相に賃上げを要請",
+      "url": "https://www.joint-kaigo.com/articles/50379/",
+      "date": "2026-11-13",
+      "category": "医療・看護"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "1946e356c2cfb5a3",
+      "title": "【天野尊明】介護報酬改定、いよいよ終盤戦へ 大幅プラスを勝ち取る交渉の急所",
+      "url": "https://www.joint-kaigo.com/articles/50375/",
+      "date": "2026-11-13",
+      "category": "政府与党"
+    }
+  ],
   "crawlErrors": []
 }

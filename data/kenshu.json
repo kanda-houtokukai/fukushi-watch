@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-12T23:06:20.797Z",
+ "updatedAt": "2026-11-13T23:05:38.926Z",
  "items": [
   {
    "hash": "dd12d5c80e21f51e",
@@ -1185,6 +1185,38 @@
    "expireOn": "2028-01-31"
   },
   {
+   "hash": "55c4d22a96cb92c9",
+   "source": "福岡県介護支援専門員協会 トップ",
+   "sourceKind": "org",
+   "via": "watch",
+   "title": "11/16(月)専門II・更新後期研修 Lコース 3日目受講予定の方へ",
+   "url": "https://fukuoka-cm.jp/news/news1.php#jp00001",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "募集情報あり",
+   "openFrom": null,
+   "fields": [
+    "高齢"
+   ],
+   "kind": "テーマ別"
+  },
+  {
+   "hash": "faef43e60a55acf8",
+   "source": "福岡県介護支援専門員協会 トップ",
+   "sourceKind": "org",
+   "via": "watch",
+   "title": "令和8年度ケアマネジャーの業務環境および安全確保に関するアンケート調査結果について",
+   "url": "https://fukuoka-cm.jp/news/news1.php#jp00002",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "募集情報あり",
+   "openFrom": null,
+   "fields": [
+    "高齢"
+   ],
+   "kind": "テーマ別"
+  },
+  {
    "hash": "07169107fe3fd985",
    "source": "福祉・介護研修センター 新着",
    "sourceKind": "org",
@@ -1217,5 +1249,5 @@
    "kind": "テーマ別"
   }
  ],
- "lastFetchDate": "2026-11-13"
+ "lastFetchDate": "2026-11-14"
 }
