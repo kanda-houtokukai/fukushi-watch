@@ -1,40 +1,6 @@
 {
- "updatedAt": "2026-11-14T21:36:21.615Z",
+ "updatedAt": "2026-11-15T21:55:45.117Z",
  "items": [
-  {
-   "hash": "a5d178e8a97fa20c",
-   "source": "全社協 福祉の助成情報",
-   "sourceKind": "org",
-   "funder": "雨宮児童福祉財団",
-   "title": "2026年度 修学助成金",
-   "url": "https://www.shakyo.or.jp/guide/sponsor/p/260911amemiya.html",
-   "postedAt": "2026-09-11",
-   "deadline": "2026-11-15",
-   "deadlineType": "date",
-   "deadlineRaw": "2026年11月15日",
-   "summary": "児童福祉施設に入所または里親のもとで養育されている児童の進学を支援する奨学金で、高等教育機関への進学を目指す該当児童が応募できます。",
-   "fields": [
-    "児童"
-   ],
-   "uses": [
-    "事業・活動"
-   ],
-   "applicants": [
-    "個人"
-   ],
-   "amount": "一人20万円",
-   "conditions": [
-    {
-     "axis": "併願・重複",
-     "quote": "民間団体からの奨学金を利用する方は対象外となります。"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "全国の児童福祉施設に入所している児童および里親のもとで養育されている児童で、2027年4月に「大学」「短大」「専門学校」に入学を希望する者"
-    }
-   ],
-   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/260911amemiya.html"
-  },
   {
    "hash": "59d815c0a62ed240",
    "source": "全社協 福祉の助成情報",
@@ -884,5 +850,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-11-15"
+ "lastFetchDate": "2026-11-16"
 }
