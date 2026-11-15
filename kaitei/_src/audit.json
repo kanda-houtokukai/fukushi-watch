@@ -30,8 +30,7 @@
    "result": "fixed"
   },
   "前提:base-daijin-sessho-r9-kento": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-16",
    "result": "ok"
   },
   "前提:base-jido-jinzai-ikusei": {
@@ -184,13 +183,11 @@
    "result": "fixed"
   },
   "前提:base-shogu-kaizen-kakuju": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 根拠のずれ",
-   "result": "fixed"
+   "checked": "2026-11-16",
+   "result": "ok"
   },
   "前提:base-shogu-kaizen-kasanritsu": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-16",
    "result": "ok"
   },
   "前提:base-shogu-kaizen-r9-kadai": {
@@ -214,9 +211,8 @@
    "result": "fixed"
   },
   "前提:base-shogu-kaizen-yoken": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 根拠のずれ",
-   "result": "fixed"
+   "checked": "2026-11-16",
+   "result": "ok"
   },
   "前提:base-shuro-iko-taisei-kasan": {
    "checked": "2026-10-28",
