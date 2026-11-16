@@ -191,24 +191,20 @@
    "result": "ok"
   },
   "前提:base-shogu-kaizen-r9-kadai": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-17",
    "result": "ok"
   },
   "前提:base-shogu-kaizen-shokuba-kankyo": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-17",
    "result": "ok"
   },
   "前提:base-shogu-kaizen-soudan-shinsetsu": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 根拠のずれ",
-   "result": "fixed"
+   "checked": "2026-11-17",
+   "result": "ok"
   },
   "前提:base-shogu-kaizen-tokurei": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 根拠のずれ",
-   "result": "fixed"
+   "checked": "2026-11-17",
+   "result": "ok"
   },
   "前提:base-shogu-kaizen-yoken": {
    "checked": "2026-11-16",
@@ -532,8 +528,19 @@
    "result": "ok"
   },
   "論点:shuro-b-01": {
-   "checked": "2026-11-03",
-   "result": "ok"
+   "checked": "2026-11-17",
+   "note": "11/16 第69回の資料で書き換え",
+   "result": "fixed"
+  },
+  "論点:shuro-b-02": {
+   "checked": "2026-11-17",
+   "note": "11/16 第69回の資料で書き換え",
+   "result": "fixed"
+  },
+  "論点:shuro-b-03": {
+   "checked": "2026-11-17",
+   "note": "11/16 第69回の資料で書き換え",
+   "result": "fixed"
   },
   "論点:shuro-oudan-01": {
    "checked": "2026-11-01",
@@ -575,6 +582,16 @@
    "checked": "2026-11-03",
    "result": "ok"
   },
+  "論点:shuro-oudan-11": {
+   "checked": "2026-11-17",
+   "note": "11/16 第69回の資料で書き換え",
+   "result": "fixed"
+  },
+  "論点:shuro-oudan-12": {
+   "checked": "2026-11-17",
+   "note": "11/16 第69回の資料で書き換え",
+   "result": "fixed"
+  },
   "論点:shuro-sentaku-01": {
    "checked": "2026-11-04",
    "result": "ok"
@@ -586,6 +603,21 @@
   "論点:shuro-sentaku-03": {
    "checked": "2026-11-04",
    "result": "ok"
+  },
+  "論点:shuro-sentaku-04": {
+   "checked": "2026-11-17",
+   "note": "11/16 第69回の資料で書き換え",
+   "result": "fixed"
+  },
+  "論点:shuro-sentaku-05": {
+   "checked": "2026-11-17",
+   "note": "11/16 第69回の資料で書き換え",
+   "result": "fixed"
+  },
+  "論点:shuro-sentaku-06": {
+   "checked": "2026-11-17",
+   "note": "11/16 第69回の資料で書き換え",
+   "result": "fixed"
   },
   "論点:shuro-teichaku-01": {
    "checked": "2026-11-03",
