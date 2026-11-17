@@ -10,13 +10,11 @@
  ],
  "units": {
   "前提:base-b-gata-kubun-kijun": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-18",
    "result": "ok"
   },
   "前提:base-b-gata-tanka-hyo": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-18",
    "result": "ok"
   },
   "前提:base-chiiki-kubun-genkou-keika": {
@@ -73,8 +71,7 @@
    "result": "ok"
   },
   "前提:base-kokko-futan-kijun": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-18",
    "result": "ok"
   },
   "前提:base-oukyu-tanka-b-gata": {
@@ -211,9 +208,8 @@
    "result": "ok"
   },
   "前提:base-shuro-iko-taisei-kasan": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 根拠のずれ",
-   "result": "fixed"
+   "checked": "2026-11-18",
+   "result": "ok"
   },
   "前提:base-shuro-shitei-guideline": {
    "checked": "2026-10-28",
