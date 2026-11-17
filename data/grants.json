@@ -1,50 +1,6 @@
 {
- "updatedAt": "2026-11-15T21:55:45.117Z",
+ "updatedAt": "2026-11-17T01:04:49.335Z",
  "items": [
-  {
-   "hash": "59d815c0a62ed240",
-   "source": "全社協 福祉の助成情報",
-   "sourceKind": "org",
-   "funder": "",
-   "title": "日本フィランソロピック財団 第4回「子どもすこやか基金」",
-   "url": "https://www.shakyo.or.jp/guide/sponsor/p/261022jpf.html",
-   "postedAt": "2026-10-22",
-   "deadline": "2026-11-16",
-   "deadlineType": "date",
-   "deadlineRaw": "2026年11月16日",
-   "summary": "生活困窮状況にある子どもたちへ食や生活必需品等を迅速に提供する事業を対象とした助成金です。活動実績が2年以上ある社会福祉法人などの非営利法人や任意団体が応募できます。",
-   "fields": [
-    "児童"
-   ],
-   "uses": [
-    "事業・活動"
-   ],
-   "applicants": [
-    "社会福祉法人",
-    "NPO・公益法人",
-    "任意団体"
-   ],
-   "amount": "1団体あたり50万円から500万円",
-   "conditions": [
-    {
-     "axis": "設立・活動年数",
-     "quote": "活動実績2年以上"
-    },
-    {
-     "axis": "主体の付帯条件",
-     "quote": "応募は電子申請システムでの提出によります。"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "食や生活必需品の支援提供等、生活困窮状況におかれる子どもたちの緊急度の高いニーズに対し迅速に支援を提供する事業。"
-    },
-    {
-     "axis": "その他の対象限定",
-     "quote": "社会福祉法人など、法人税法上の要件に該当する非営利法人、または任意団体"
-    }
-   ],
-   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/261022jpf.html"
-  },
   {
    "hash": "17458d9f96371c24",
    "source": "中央共同募金会",
@@ -338,6 +294,46 @@
    ]
   },
   {
+   "hash": "412bb7c5a3ea3573",
+   "source": "全社協 福祉の助成情報",
+   "sourceKind": "org",
+   "funder": "フィランソロピック財団",
+   "title": "パーキンソン病QOL基金",
+   "url": "https://www.shakyo.or.jp/guide/sponsor/p/261116jpf.html",
+   "postedAt": "2026-11-16",
+   "deadline": "2027-01-08",
+   "deadlineType": "date",
+   "deadlineRaw": "2027年1月8日",
+   "summary": "パーキンソン病患者のQOL向上や日常生活の維持を支える各種事業を助成するもので、活動実績1年以上のNPOや当事者団体・任意団体などが応募できます。",
+   "fields": [
+    "障害",
+    "高齢"
+   ],
+   "uses": [
+    "事業・活動"
+   ],
+   "applicants": [
+    "NPO・公益法人",
+    "任意団体"
+   ],
+   "amount": "1件あたり上限:500万円",
+   "conditions": [
+    {
+     "axis": "設立・活動年数",
+     "quote": "NPOや当事者団体等、活動実績1年以上の団体・法人等(任意団体、営利法人を含む)"
+    },
+    {
+     "axis": "主体の付帯条件",
+     "quote": "応募は電子申請システムでの提出によります。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "パーキンソン病患者が、自分らしく生活し続けられるよう、症状への対処や日常生活を支える取り組みなどの事業。"
+    }
+   ],
+   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/261116jpf.html"
+  },
+  {
    "hash": "6a834dc2ce1c979e",
    "source": "助成財団センター 助成金募集ニュース",
    "sourceKind": "org",
@@ -370,52 +366,6 @@
     {
      "axis": "その他の対象限定",
      "quote": "対象 ハラスメントに関する研究"
-    }
-   ]
-  },
-  {
-   "hash": "8bf34610203b399f",
-   "source": "助成財団センター 助成金募集ニュース",
-   "sourceKind": "org",
-   "funder": "",
-   "title": "第4回パーキンソン病QOL基金",
-   "url": "https://www.jfc.or.jp/news_subsidy/%e7%ac%ac4%e5%9b%9e%e3%83%91%e3%83%bc%e3%82%ad%e3%83%b3%e3%82%bd%e3%83%b3%e7%97%85qol%e5%9f%ba%e9%87%91/",
-   "postedAt": "2026-11-05",
-   "deadline": "2027-01-08",
-   "deadlineType": "date",
-   "deadlineRaw": "2027/01/08 募集要項 https://np-foundation.or.jp/infor",
-   "openFrom": "2026-11-05",
-   "conditionsUrl": "https://np-foundation.or.jp/information/000431.html",
-   "summary": "パーキンソン病患者のQOL向上を目的とする研究や支援活動などの事業に対し、活動実績1年以上の団体・法人等を対象に助成します。",
-   "fields": [
-    "障害",
-    "高齢"
-   ],
-   "uses": [
-    "研究・調査"
-   ],
-   "applicants": [
-    "社会福祉法人",
-    "NPO・公益法人",
-    "任意団体"
-   ],
-   "amount": "5,000千円/1件",
-   "conditions": [
-    {
-     "axis": "所在地",
-     "quote": "・日本国内に活動の主となる事務所がある団体"
-    },
-    {
-     "axis": "事業の実施地",
-     "quote": "※ 本公募では日本国内で実施する事業が対象です。"
-    },
-    {
-     "axis": "設立・活動年数",
-     "quote": "・活動実績 1 年以上の団体・法人等(任意団体や営利法人を含む)"
-    },
-    {
-     "axis": "主体の付帯条件",
-     "quote": "助成電子申請システム「Graain(グラーイン)」にて必要事項を入力し、応募書類をご提出ください。"
     }
    ]
   },
@@ -850,5 +800,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-11-16"
+ "lastFetchDate": "2026-11-17"
 }

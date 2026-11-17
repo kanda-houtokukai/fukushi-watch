@@ -1,6 +1,260 @@
 {
-  "generatedAt": "2026-11-16T02:52:34.307Z",
-  "newItems": [],
-  "newPress": [],
+  "generatedAt": "2026-11-17T00:53:25.947Z",
+  "newItems": [
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "101bbf6d99ea234c",
+      "title": "令和8年度「はたらく母子家庭・父子家庭応援企業表彰」の公募を11月16日（月）より開始します",
+      "url": "https://www.cfa.go.jp/press/a12593cd-d2fb-4da5-8593-c6c0de90c7ea",
+      "date": "2026-11-16",
+      "category": "報道発表"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "3f3822d76bed1436",
+      "title": "令和8年度「はたらく母子家庭・父子家庭応援企業表彰」について掲載しました",
+      "url": "https://www.cfa.go.jp/policies/hitori-oya/kigyohyosho-r08",
+      "date": "2026-11-16",
+      "category": "政策"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "4e1b92bead6c6827",
+      "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77453.html",
+      "date": "2026-11-16",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "4cc7b29257fd6308",
+      "title": "令和８年度（令和７年度からの繰越分）医療施設等施設整備費補助金の交付額について（４回目内示）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77273.html",
+      "date": "2026-11-16",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "7b921de2f8c30294",
+      "title": "令和８年度医療施設等施設整備費補助金の交付額の内示について （4回目内示）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77272.html",
+      "date": "2026-11-16",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "de96f87eb95896e2",
+      "title": "薬事審議会 医薬品第二部会を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77353.html",
+      "date": "2026-11-16",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "cdd0a9f4f9e0020f",
+      "title": "第７回2040年に向けた看護職員の養成・確保の在り方に関する検討会の開催について：開催案内",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77291.html",
+      "date": "2026-11-16",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "484b7bece610ce2e",
+      "title": "令和８年１１月１５日付大臣会見概要",
+      "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00989.html",
+      "date": "2026-11-16",
+      "category": "大臣会見等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "49b78304151ec709",
+      "title": "社会保障審議会（介護保険部会）",
+      "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126734_old2.html",
+      "date": "2026-11-12",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "e04d4d0fe49f6693",
+      "title": "社会保障審議会（介護保険部会）",
+      "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126734.html",
+      "date": "2026-11-09",
+      "category": "審議会等"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "7573f8aa94357a61",
+      "title": "第275回 社会保障審議会 介護給付費分科会（令和8年11月16日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=23049&ct=010010020&from=rss",
+      "date": "2026-11-16",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "320bb671a46687b9",
+      "title": "第221回 社会保障審議会 医療保険部会の開催について（令和8年11月17日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=23050&ct=070010030&from=rss",
+      "date": "2026-11-16",
+      "category": "行政資料"
+    },
+    {
+      "source": "福岡県（子ども・青少年）",
+      "kind": "gov",
+      "hash": "096f412849f993db",
+      "title": "こども性暴力防止法について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/kodomoseibouryokuboushihou.html",
+      "date": "2026年11月16日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（介護・高齢者福祉）",
+      "kind": "gov",
+      "hash": "0183cc40acdc5359",
+      "title": "行政と民間事業者が一体となって取り組む高齢者等の見守り活動「見守りネットふくおか」のご紹介",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/mimamorinetfukuoka.html",
+      "date": "2026年11月16日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（介護・高齢者福祉）",
+      "kind": "gov",
+      "hash": "cee37ae39b963cb9",
+      "title": "在宅医療・介護現場における利用者等からの暴力・ハラスメント対策について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/ztiryoukaigo-bouhara.html",
+      "date": "2026年11月16日更新",
+      "category": ""
+    },
+    {
+      "source": "全国社会福祉協議会",
+      "kind": "org",
+      "hash": "7ac8c11c7f93bd97",
+      "title": "提言・要望「『ともに生きる豊かな地域社会』を実現するために」",
+      "url": "https://www.shakyo.or.jp/tsuite/jigyo/teigen/index.html#linkj03",
+      "date": "2026-11-16",
+      "category": "案内"
+    },
+    {
+      "source": "全国社会福祉協議会",
+      "kind": "org",
+      "hash": "a645b979cad0d4c4",
+      "title": "「『令和8年熊本地震』ほか、豪雨による被害等、頻発する災害に関する緊急要望」（保育三団体）",
+      "url": "https://www.shakyo.or.jp/bunya/saigai/teigen/index.html",
+      "date": "2026-11-16",
+      "category": "案内"
+    },
+    {
+      "source": "全国社会福祉協議会",
+      "kind": "org",
+      "hash": "263663d78732b6bb",
+      "title": "カスタマーハラスメント防止ポスター（福祉サービス共通版）",
+      "url": "https://www.shakyo.or.jp/hassin/dl/Cposter/index.html",
+      "date": "2026-11-16",
+      "category": "案内"
+    },
+    {
+      "source": "全国社会福祉協議会",
+      "kind": "org",
+      "hash": "5a7740b574f2d8b3",
+      "title": "日本フィランソロピック財団「パーキンソン病QOL基金」",
+      "url": "https://www.shakyo.or.jp/guide/sponsor/p/261116jpf.html",
+      "date": "2026-11-16",
+      "category": "助成"
+    },
+    {
+      "source": "全国社会福祉協議会",
+      "kind": "org",
+      "hash": "a16e1f1d4668440d",
+      "title": "社会福祉振興・試験センター「オンデマンド研修」（障害者支援）",
+      "url": "https://www.shakyo.or.jp/news/sssc/index.html",
+      "date": "2026-11-16",
+      "category": "告知"
+    },
+    {
+      "source": "全国社会福祉協議会",
+      "kind": "org",
+      "hash": "feabb90d09553b09",
+      "title": "「ＥＮＥＯＳ奨学助成」",
+      "url": "https://www.shakyo.or.jp/guide/sponsor/p/261110eneos/index.html",
+      "date": "2026-11-10",
+      "category": "助成"
+    }
+  ],
+  "newPress": [
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "3764f80d9d19a020",
+      "title": "介護施設の生産性向上加算、委員会の開催頻度を柔軟化 タイムスタディ報告も任意に 厚労省提案｜来年度改定",
+      "url": "https://www.joint-kaigo.com/articles/50481/",
+      "date": "2026-11-16",
+      "category": "介護給付費分科会"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "bc8a76bd58550e66",
+      "title": "在宅介護にも生産性向上委員会の開催を義務化 訪問・通所・居宅など 厚労省提案 新加算の創設も｜来年度改定",
+      "url": "https://www.joint-kaigo.com/articles/50465/",
+      "date": "2026-11-16",
+      "category": "介護給付費分科会"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "8627e0e69585bb66",
+      "title": "処遇改善加算、来年度改定の新たな原資は介護従事者の基本給に 厚労省提案",
+      "url": "https://www.joint-kaigo.com/articles/50453/",
+      "date": "2026-11-16",
+      "category": "介護給付費分科会"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "a205235ec5b5ea51",
+      "title": "処遇改善加算、職場環境など3要件を廃止 別加算で評価 厚労省提案 区分も集約し簡素化",
+      "url": "https://www.joint-kaigo.com/articles/50437/",
+      "date": "2026-11-16",
+      "category": "介護給付費分科会"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "c3270f071f91e483",
+      "title": "障害福祉従事者、平均給与37万円 前年比2.1万円増 厚労省が最新調査",
+      "url": "https://www.joint-kaigo.com/articles/50424/",
+      "date": "2026-11-16",
+      "category": "処遇改善"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "299221c1920dfac1",
+      "title": "介護サービスの収支差率が低下 施設の苦境鮮明 約半数が赤字 経営実態調査",
+      "url": "https://www.joint-kaigo.com/articles/50408/",
+      "date": "2026-11-16",
+      "category": "介護給付費分科会"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "fc3508409a906dd3",
+      "title": "介護従事者の平均給与、月35万9710円 前年比1万6710円増 厚労省が最新調査",
+      "url": "https://www.joint-kaigo.com/articles/50390/",
+      "date": "2026-11-16",
+      "category": "介護給付費分科会"
+    }
+  ],
   "crawlErrors": []
 }

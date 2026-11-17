@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-15T21:57:24.779Z",
+ "updatedAt": "2026-11-17T01:06:38.166Z",
  "items": [
   {
    "hash": "dd12d5c80e21f51e",
@@ -21,54 +21,6 @@
    "heldDates": [
     "2026-12-17"
    ]
-  },
-  {
-   "hash": "fc5547c7036a980f",
-   "source": "福岡県介護福祉士会",
-   "sourceKind": "org",
-   "via": "fkaigo",
-   "title": "緊急・急変時対応研修~こんなときどうする?~",
-   "url": "https://www.f-kaigo.jp/training/detail_523.php",
-   "deadline": "2026-11-16",
-   "deadlineType": "date",
-   "deadlineRaw": "開催要綱PDFより 令和8年11月16日",
-   "heldDates": [
-    "2026-12-12"
-   ],
-   "expireOn": "2026-12-12",
-   "openFrom": null,
-   "fields": [
-    "高齢"
-   ],
-   "kind": "テーマ別",
-   "outline": [
-    {
-     "name": "日時",
-     "value": "令和８年１２月１２日（土）１４：００～１５：３０（受付１３：３０～）"
-    },
-    {
-     "name": "会場",
-     "value": "米の山病院多目的室（福岡県大牟田市歴木４－１０・２Ｆ）"
-    },
-    {
-     "name": "講師",
-     "value": "米の山病院救急委員会看護師"
-    },
-    {
-     "name": "参加費",
-     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
-    },
-    {
-     "name": "定員",
-     "value": "２０名"
-    },
-    {
-     "name": "ポイント",
-     "value": "１.５ポイント"
-    }
-   ],
-   "outlineUrl": "https://www.f-kaigo.jp/upimg/d6aebcb6c25136.pdf",
-   "keepUntilHeld": true
   },
   {
    "hash": "77564d62306136e2",
@@ -261,6 +213,23 @@
    ],
    "kind": "テーマ別",
    "expireOn": "2027-03-10"
+  },
+  {
+   "hash": "424f7eb0b2e22164",
+   "source": "全国社会福祉協議会",
+   "sourceKind": "",
+   "via": "goryu",
+   "title": "社会福祉振興・試験センター「オンデマンド研修」（障害者支援）",
+   "url": "https://www.shakyo.or.jp/news/sssc/index.html",
+   "deadline": "2026-12-14",
+   "deadlineType": "date",
+   "deadlineRaw": "一覧の申込終了日より 障害者支援オンデマンド研修 申込期限 2026-12-14",
+   "openFrom": null,
+   "fields": [
+    "障害"
+   ],
+   "kind": "テーマ別",
+   "expireOn": "2027-03-14"
   },
   {
    "hash": "8601c55bc3f31a2c",
@@ -768,6 +737,54 @@
    "keepUntilHeld": true
   },
   {
+   "hash": "fc5547c7036a980f",
+   "source": "福岡県介護福祉士会",
+   "sourceKind": "org",
+   "via": "fkaigo",
+   "title": "緊急・急変時対応研修~こんなときどうする?~",
+   "url": "https://www.f-kaigo.jp/training/detail_523.php",
+   "deadline": null,
+   "deadlineType": "unknown",
+   "deadlineRaw": "開催要綱PDFより 令和8年11月16日（締切後も受け付けることがあります）",
+   "heldDates": [
+    "2026-12-12"
+   ],
+   "expireOn": "2026-12-12",
+   "openFrom": null,
+   "fields": [
+    "高齢"
+   ],
+   "kind": "テーマ別",
+   "outline": [
+    {
+     "name": "日時",
+     "value": "令和８年１２月１２日（土）１４：００～１５：３０（受付１３：３０～）"
+    },
+    {
+     "name": "会場",
+     "value": "米の山病院多目的室（福岡県大牟田市歴木４－１０・２Ｆ）"
+    },
+    {
+     "name": "講師",
+     "value": "米の山病院救急委員会看護師"
+    },
+    {
+     "name": "参加費",
+     "value": "会員、賛助会員、学生…無料非会員…２，０００円"
+    },
+    {
+     "name": "定員",
+     "value": "２０名"
+    },
+    {
+     "name": "ポイント",
+     "value": "１.５ポイント"
+    }
+   ],
+   "outlineUrl": "https://www.f-kaigo.jp/upimg/d6aebcb6c25136.pdf",
+   "keepUntilHeld": true
+  },
+  {
    "hash": "6ebeb05fc3be6f41",
    "source": "福岡県介護福祉士会",
    "sourceKind": "org",
@@ -1179,5 +1196,5 @@
    "kind": "テーマ別"
   }
  ],
- "lastFetchDate": "2026-11-16"
+ "lastFetchDate": "2026-11-17"
 }
