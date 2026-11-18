@@ -75,19 +75,16 @@
    "result": "ok"
   },
   "前提:base-oukyu-tanka-b-gata": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 根拠のずれ",
-   "result": "fixed"
+   "checked": "2026-11-19",
+   "result": "ok"
   },
   "前提:base-oukyu-tanka-gaiyo": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 根拠のずれ",
-   "result": "fixed"
+   "checked": "2026-11-19",
+   "result": "ok"
   },
   "前提:base-oukyu-tanka-gh": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 根拠のずれ",
-   "result": "fixed"
+   "checked": "2026-11-19",
+   "result": "ok"
   },
   "前提:base-oukyu-tanka-houday": {
    "checked": "2026-10-28",
@@ -95,9 +92,8 @@
    "result": "fixed"
   },
   "前提:base-oukyu-tanka-jihatsu": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 根拠のずれ",
-   "result": "fixed"
+   "checked": "2026-11-19",
+   "result": "ok"
   },
   "前提:base-r6-go-jokyo-kadai": {
    "checked": "2026-10-28",
