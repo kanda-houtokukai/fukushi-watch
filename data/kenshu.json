@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-17T01:06:38.166Z",
+ "updatedAt": "2026-11-18T00:32:56.277Z",
  "items": [
   {
    "hash": "dd12d5c80e21f51e",
@@ -251,6 +251,26 @@
    ],
    "kind": "テーマ別",
    "expireOn": "2027-03-24"
+  },
+  {
+   "hash": "6a2dce16d594b2cd",
+   "source": "福祉・介護研修センター 年間予定表",
+   "sourceKind": "org",
+   "via": "schedule",
+   "title": "ファシリテーション技術向上研修",
+   "url": "https://fuku-shakyo-kenshu.jp/info/%e3%83%95%e3%82%a1%e3%82%b7%e3%83%aa%e3%83%86%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e6%8a%80%e8%a1%93%e5%90%91%e4%b8%8a%e7%a0%94%e4%bf%ae%e3%81%ae%e9%96%8b%e5%82%ac%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/",
+   "deadline": "2027-01-06",
+   "deadlineType": "date",
+   "deadlineRaw": "一覧の申込終了日より 1月6日",
+   "openFrom": "2026-11-17",
+   "fields": [
+    "共通"
+   ],
+   "kind": "テーマ別",
+   "expireOn": "2027-04-06",
+   "heldDates": [
+    "2027-02-02"
+   ]
   },
   {
    "hash": "4963d985ec807097",
@@ -1113,25 +1133,6 @@
    "expireOn": "2027-03-31"
   },
   {
-   "hash": "b51739d6a22d7bac",
-   "source": "福祉・介護研修センター 年間予定表",
-   "sourceKind": "org",
-   "via": "schedule",
-   "title": "ファシリテーション技術向上研修",
-   "url": "https://fuku-shakyo-kenshu.jp/schedule-r8/#link3",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "2月2日開催予定",
-   "openFrom": null,
-   "fields": [
-    "共通"
-   ],
-   "kind": "テーマ別",
-   "preOpenNote": "9月~12月開催予定",
-   "preOpenSort": "2027-09",
-   "expireOn": "2028-01-31"
-  },
-  {
    "hash": "55c4d22a96cb92c9",
    "source": "福岡県介護支援専門員協会 トップ",
    "sourceKind": "org",
@@ -1196,5 +1197,5 @@
    "kind": "テーマ別"
   }
  ],
- "lastFetchDate": "2026-11-17"
+ "lastFetchDate": "2026-11-18"
 }
