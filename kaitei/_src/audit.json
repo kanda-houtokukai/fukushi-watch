@@ -23,9 +23,8 @@
    "result": "ok"
   },
   "前提:base-chiiki-kubun-r9-minaoshi": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 根拠のずれ",
-   "result": "fixed"
+   "checked": "2026-11-20",
+   "result": "ok"
   },
   "前提:base-daijin-sessho-r9-kento": {
    "checked": "2026-11-16",
@@ -42,13 +41,11 @@
    "result": "fixed"
   },
   "前提:base-jido-tsusho-shien-naiyo": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-20",
    "result": "ok"
   },
   "前提:base-jinin-ketsujo-gensan-tokurei": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-20",
    "result": "ok"
   },
   "前提:base-kaiteiritsu-r8": {
@@ -87,9 +84,8 @@
    "result": "ok"
   },
   "前提:base-oukyu-tanka-houday": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 根拠のずれ",
-   "result": "fixed"
+   "checked": "2026-11-20",
+   "result": "ok"
   },
   "前提:base-oukyu-tanka-jihatsu": {
    "checked": "2026-11-19",
