@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-19T23:50:17.719Z",
+ "updatedAt": "2026-11-20T23:23:18.134Z",
  "items": [
   {
    "hash": "dd12d5c80e21f51e",
@@ -21,23 +21,6 @@
    "heldDates": [
     "2026-12-17"
    ]
-  },
-  {
-   "hash": "e5106872fdd962e6",
-   "source": "こども家庭庁",
-   "sourceKind": "",
-   "via": "goryu",
-   "title": "令和8年度「こども・若者育成支援研修～地域における多様なアプローチを学ぶ～」に係る研修生募集要項を掲載しました",
-   "url": "https://www.cfa.go.jp/policies/youth/ikusei-hikikomori/youkou-r8",
-   "deadline": "2026-11-20",
-   "deadlineType": "date",
-   "deadlineRaw": "一覧の申込終了日より 応募期限 2026-11-20",
-   "openFrom": null,
-   "fields": [
-    "児童"
-   ],
-   "kind": "テーマ別",
-   "expireOn": "2027-02-20"
   },
   {
    "hash": "6179db20eefef27b",
@@ -1197,5 +1180,5 @@
    "kind": "テーマ別"
   }
  ],
- "lastFetchDate": "2026-11-20"
+ "lastFetchDate": "2026-11-21"
 }
