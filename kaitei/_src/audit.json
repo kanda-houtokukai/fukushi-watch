@@ -18,8 +18,7 @@
    "result": "ok"
   },
   "前提:base-chiiki-kubun-genkou-keika": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-21",
    "result": "ok"
   },
   "前提:base-chiiki-kubun-r9-minaoshi": {
@@ -53,18 +52,15 @@
    "result": "ok"
   },
   "前提:base-keiei-jittai-chosa-komoku": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-21",
    "result": "ok"
   },
   "前提:base-keiei-jittai-chosa-r8": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-21",
    "result": "ok"
   },
   "前提:base-kensho-chosa-r8": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-21",
    "result": "ok"
   },
   "前提:base-kokko-futan-kijun": {
@@ -263,6 +259,11 @@
    "note": "11/01 第67回の資料で新規（前回不合格の版を原文の「検討してはどうか」に合わせて直し、再照合で2人とも合格）",
    "result": "fixed"
   },
+  "論点:gh-05": {
+   "checked": "2026-11-21",
+   "note": "11/21 第70回の資料で新規作成",
+   "result": "fixed"
+  },
   "論点:houmon-douko-01": {
    "checked": "2026-10-30",
    "result": "ok"
@@ -358,9 +359,39 @@
    "checked": "2026-11-15",
    "result": "ok"
   },
+  "論点:oudan-consul": {
+   "checked": "2026-11-21",
+   "note": "11/21 第70回の資料で新規作成",
+   "result": "fixed"
+  },
+  "論点:oudan-daihyo": {
+   "checked": "2026-11-21",
+   "note": "11/21 第70回の資料で新規作成",
+   "result": "fixed"
+  },
+  "論点:oudan-johokohyo": {
+   "checked": "2026-11-21",
+   "note": "11/21 第70回の資料で新規作成",
+   "result": "fixed"
+  },
   "論点:oudan-kihon": {
    "checked": "2026-11-13",
    "result": "ok"
+  },
+  "論点:oudan-koukoku": {
+   "checked": "2026-11-21",
+   "note": "11/21 第70回の資料で新規作成",
+   "result": "fixed"
+  },
+  "論点:oudan-seishin": {
+   "checked": "2026-11-21",
+   "note": "11/21 第70回の資料で新規作成",
+   "result": "fixed"
+  },
+  "論点:oudan-shitei": {
+   "checked": "2026-11-21",
+   "note": "11/21 第70回の資料で新規作成",
+   "result": "fixed"
   },
   "論点:ryoyo-kaigo-01": {
    "checked": "2026-11-13",
@@ -511,6 +542,11 @@
    "checked": "2026-11-05",
    "result": "ok"
   },
+  "論点:shogaiji-zenpan-04": {
+   "checked": "2026-11-21",
+   "note": "11/21 第70回の資料で新規作成",
+   "result": "fixed"
+  },
   "論点:shuro-a-01": {
    "checked": "2026-11-03",
    "result": "ok"
@@ -578,6 +614,11 @@
   "論点:shuro-oudan-12": {
    "checked": "2026-11-17",
    "note": "11/16 第69回の資料で書き換え",
+   "result": "fixed"
+  },
+  "論点:shuro-oudan-13": {
+   "checked": "2026-11-21",
+   "note": "11/21 第70回の資料で新規作成",
    "result": "fixed"
   },
   "論点:shuro-sentaku-01": {
