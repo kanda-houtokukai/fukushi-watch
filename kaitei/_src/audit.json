@@ -93,24 +93,20 @@
    "result": "ok"
   },
   "前提:base-r6-kadai-01-shisetsu": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-22",
    "result": "ok"
   },
   "前提:base-r6-kadai-02-gh-shitsu": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-22",
    "result": "ok"
   },
   "前提:base-r6-kadai-03-gh-kojin-kyotaku": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-22",
    "result": "ok"
   },
   "前提:base-r6-kadai-04-chiikisa": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 根拠のずれ",
-   "result": "fixed"
+   "checked": "2026-11-22",
+   "result": "ok"
   },
   "前提:base-r6-kadai-05-soudan-comm": {
    "checked": "2026-10-28",
