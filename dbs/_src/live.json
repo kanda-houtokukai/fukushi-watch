@@ -1,8 +1,8 @@
 {
  "schema": 1,
- "checkedAt": "2026-11-21T06:50:00+09:00",
- "checkedPages": 20,
- "checkNote": "こども家庭庁と福岡県の新しい発表はなく、研修・説明会の新しい告知も見つかりませんでした。福岡市のこども性暴力防止法のページは取得できなかったため翌日に確認します。",
+ "checkedAt": "2026-11-22T06:50:00+09:00",
+ "checkedPages": 17,
+ "checkNote": "福岡県がこども性暴力防止法の総合ページ（11月16日更新）を掲載していました。こども家庭庁の新しい発表と研修・説明会の新しい告知は見つかりませんでした。福岡市のこども性暴力防止法のページは取得できなかったため翌日に確認します。",
  "notices": [],
  "milestones": [
   {
@@ -71,6 +71,15 @@
   }
  ],
  "updates": [
+  {
+   "date": "2026-11-16",
+   "src": "自治体",
+   "title": "福岡県が「こども性暴力防止法について」のページを掲載（11月16日更新）",
+   "url": "https://www.pref.fukuoka.lg.jp/contents/kodomoseibouryokuboushihou.html",
+   "impact": "info",
+   "note": "制度の概要、こども家庭庁の準備ガイド・ひな型・研修教材・Q&A・全国説明会資料へのリンクと、こども家庭庁の専用ダイヤル（03-5357-1146、平日9時から17時）を掲載。認定の申請は法施行後からで、国からの案内があり次第掲載するとしています。",
+   "where": "#sources"
+  },
   {
    "date": "2026-11-11",
    "src": "研修",
@@ -826,6 +835,10 @@
   {
    "name": "福岡県 こども性暴力防止法（保育所・認定こども園・児童館）",
    "url": "https://www.pref.fukuoka.lg.jp/contents/kodomoseibouryokubousihou.html"
+  },
+  {
+   "name": "福岡県 こども性暴力防止法について（県の総合ページ）",
+   "url": "https://www.pref.fukuoka.lg.jp/contents/kodomoseibouryokuboushihou.html"
   },
   {
    "name": "福岡県 令和8年度 集団指導（障がい児 通所・入所）",
