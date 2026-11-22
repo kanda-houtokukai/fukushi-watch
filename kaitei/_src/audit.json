@@ -109,24 +109,20 @@
    "result": "ok"
   },
   "前提:base-r6-kadai-05-soudan-comm": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-23",
    "result": "ok"
   },
   "前提:base-r6-kadai-06-jido-shitsu": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-23",
    "result": "ok"
   },
   "前提:base-r6-kadai-07-kohei-koritsu": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-23",
    "result": "ok"
   },
   "前提:base-r6-kadai-08-shogu-jittai": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 根拠のずれ",
-   "result": "fixed"
+   "checked": "2026-11-23",
+   "result": "ok"
   },
   "前提:base-r6-kadai-09-keiei-bunseki": {
    "checked": "2026-10-28",
