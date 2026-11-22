@@ -1,7 +1,7 @@
 {
   "sources": {
     "こども家庭庁": {
-      "lastCrawled": "2026-11-21T22:14:09.061Z",
+      "lastCrawled": "2026-11-22T22:35:48.816Z",
       "items": [
         {
           "hash": "19ae326de65174af",
@@ -1679,7 +1679,7 @@
       ]
     },
     "厚生労働省": {
-      "lastCrawled": "2026-11-21T22:14:10.180Z",
+      "lastCrawled": "2026-11-22T22:35:49.899Z",
       "items": [
         {
           "hash": "6c1d078f58069693",
@@ -5478,7 +5478,7 @@
       ]
     },
     "WAM NET": {
-      "lastCrawled": "2026-11-21T22:14:11.612Z",
+      "lastCrawled": "2026-11-22T22:35:51.101Z",
       "items": [
         {
           "hash": "ffb81929ed367ac4",
@@ -7583,7 +7583,7 @@
       ]
     },
     "福岡県（障がい福祉）": {
-      "lastCrawled": "2026-11-21T22:14:13.228Z",
+      "lastCrawled": "2026-11-22T22:35:52.720Z",
       "items": [
         {
           "hash": "fc4e7882fdccad20",
@@ -7980,7 +7980,7 @@
       ]
     },
     "福岡県（子ども・青少年）": {
-      "lastCrawled": "2026-11-21T22:14:13.606Z",
+      "lastCrawled": "2026-11-22T22:35:53.067Z",
       "items": [
         {
           "hash": "822a0d4973bc020b",
@@ -8809,7 +8809,7 @@
       ]
     },
     "介護ニュースJoint": {
-      "lastCrawled": "2026-11-21T22:14:14.984Z",
+      "lastCrawled": "2026-11-22T22:35:54.647Z",
       "items": [
         {
           "hash": "d04406389830bbe0",
@@ -10312,7 +10312,7 @@
       ]
     },
     "福岡県（介護・高齢者福祉）": {
-      "lastCrawled": "2026-11-21T22:14:13.806Z",
+      "lastCrawled": "2026-11-22T22:35:53.410Z",
       "items": [
         {
           "hash": "3fc9e5f393e57c5d",
@@ -10434,6 +10434,13 @@
           "category": ""
         },
         {
+          "hash": "18950fdab1fd9971",
+          "title": "「新しい認知症観」を知るための認知症フォーラムを開催します！～認知症の本人とともにつくる地域社会～",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/r8ninchisyo-forum.html",
+          "date": "2026年9月14日更新",
+          "category": ""
+        },
+        {
           "hash": "cd78d49e4dc3c1e2",
           "title": "福岡県における認知症カフェ等実施状況",
           "url": "https://www.pref.fukuoka.lg.jp/contents/ninchisyocafe.html",
@@ -10445,13 +10452,6 @@
           "title": "令和８年度若年性認知症交流会を開催します！",
           "url": "https://www.pref.fukuoka.lg.jp/contents/r8ninchisyo-kouryuukai.html",
           "date": "2026年8月17日更新",
-          "category": ""
-        },
-        {
-          "hash": "cb57e17c4f669396",
-          "title": "9月21日は「認知症の日」～県内で認知症に関する理解を深める各種イベントを開催します～",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/r8ninchisyonohi.html",
-          "date": "2026年7月31日更新",
           "category": ""
         },
         {
@@ -10592,6 +10592,13 @@
           "title": "在宅医療・介護現場における利用者等からの暴力・ハラスメント対策について",
           "url": "https://www.pref.fukuoka.lg.jp/contents/ztiryoukaigo-bouhara.html",
           "date": "2026年11月16日更新",
+          "category": ""
+        },
+        {
+          "hash": "cb57e17c4f669396",
+          "title": "9月21日は「認知症の日」～県内で認知症に関する理解を深める各種イベントを開催します～",
+          "url": "https://www.pref.fukuoka.lg.jp/contents/r8ninchisyonohi.html",
+          "date": "2026年7月31日更新",
           "category": ""
         },
         {
@@ -10781,13 +10788,6 @@
           "title": "介護支援専門員証更新交付申請書の提出",
           "url": "https://www.pref.fukuoka.lg.jp/contents/keamanekoushinnkoufu.html",
           "date": "2026年10月2日更新",
-          "category": ""
-        },
-        {
-          "hash": "18950fdab1fd9971",
-          "title": "「新しい認知症観」を知るための認知症フォーラムを開催します！～認知症の本人とともにつくる地域社会～",
-          "url": "https://www.pref.fukuoka.lg.jp/contents/r8ninchisyo-forum.html",
-          "date": "2026年9月14日更新",
           "category": ""
         },
         {
@@ -11080,7 +11080,7 @@
       ]
     },
     "全国社会福祉協議会": {
-      "lastCrawled": "2026-11-21T22:14:16.177Z",
+      "lastCrawled": "2026-11-22T22:35:55.535Z",
       "items": [
         {
           "hash": "7ac8c11c7f93bd97",
@@ -11660,7 +11660,7 @@
     }
   },
   "preferredModel": "gemini-3.6-flash",
-  "lastSentDate": "2026-11-22",
-  "lastRunAt": "2026-11-22T03:16:56.181Z",
-  "lastCrawlDate": "2026-11-22"
+  "lastSentDate": "2026-11-23",
+  "lastRunAt": "2026-11-22T22:35:55.668Z",
+  "lastCrawlDate": "2026-11-23"
 }
