@@ -125,23 +125,19 @@
    "result": "ok"
   },
   "前提:base-r6-kadai-09-keiei-bunseki": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 根拠のずれ",
-   "result": "fixed"
+   "checked": "2026-11-24",
+   "result": "ok"
   },
   "前提:base-r6-kadai-10-jihatsu-chori": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-24",
    "result": "ok"
   },
   "前提:base-r6-kadai-10-shokuji-kasan": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 表現",
-   "result": "fixed"
+   "checked": "2026-11-24",
+   "result": "ok"
   },
   "前提:base-r6-kadai-11-hosoku-kyufu": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-24",
    "result": "ok"
   },
   "前提:base-r6-kadai-12-yoshiki": {
