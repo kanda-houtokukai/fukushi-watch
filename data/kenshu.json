@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-22T22:38:35.240Z",
+ "updatedAt": "2026-11-24T03:28:36.129Z",
  "items": [
   {
    "hash": "dd12d5c80e21f51e",
@@ -145,6 +145,23 @@
    ],
    "kind": "テーマ別",
    "expireOn": "2027-03-14"
+  },
+  {
+   "hash": "d34e28d4ca015889",
+   "source": "福岡県（介護・高齢者福祉）",
+   "sourceKind": "",
+   "via": "goryu",
+   "title": "令和８年度介護支援専門員実務研修受講試験の実施結果",
+   "url": "https://www.pref.fukuoka.lg.jp/contents/keamaneshikenkekka.html",
+   "deadline": "2026-12-24",
+   "deadlineType": "date",
+   "deadlineRaw": "一覧の申込終了日より 口頭による情報提供の請求期限 2026-12-24",
+   "openFrom": null,
+   "fields": [
+    "高齢"
+   ],
+   "kind": "資格要件",
+   "expireOn": "2027-03-24"
   },
   {
    "hash": "8601c55bc3f31a2c",
@@ -1111,5 +1128,5 @@
    "kind": "テーマ別"
   }
  ],
- "lastFetchDate": "2026-11-23"
+ "lastFetchDate": "2026-11-24"
 }

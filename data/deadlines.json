@@ -1,6 +1,6 @@
 {
- "updatedAt": "2026-11-22T22:35:58.044Z",
- "lastFetchDate": "2026-11-23",
+ "updatedAt": "2026-11-24T03:25:46.026Z",
+ "lastFetchDate": "2026-11-24",
  "items": [
   {
    "hash": "d4bd93ab69442f98",
@@ -121,6 +121,16 @@
    "deadline": "2026-12-21",
    "label": "申込期限",
    "quote": "申し込みの締め切りは、令和8年12月21日(月)17時までとさせていただきます。"
+  },
+  {
+   "hash": "bed5b9cd5b4d881e",
+   "day": "2026-11-24",
+   "source": "福岡県（介護・高齢者福祉）",
+   "title": "令和８年度介護支援専門員実務研修受講試験の実施結果",
+   "url": "https://www.pref.fukuoka.lg.jp/contents/keamaneshikenkekka.html",
+   "deadline": "2026-12-24",
+   "label": "口頭による情報提供の請求期限",
+   "quote": "介護支援専門員 実務研修受講試験 「総合得点」 及び 「分野別得点」 令和8年11月24日(火) ~ 令和8年12月24日(木)"
   },
   {
    "hash": "dd54f2f918240ec1",
