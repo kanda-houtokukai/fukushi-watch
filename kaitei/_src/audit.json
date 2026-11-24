@@ -35,9 +35,8 @@
    "result": "ok"
   },
   "前提:base-jido-nyusho-arikata": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 期限切れ",
-   "result": "fixed"
+   "checked": "2026-11-25",
+   "result": "ok"
   },
   "前提:base-jido-tsusho-shien-naiyo": {
    "checked": "2026-11-20",
@@ -141,19 +140,16 @@
    "result": "ok"
   },
   "前提:base-r6-kadai-12-yoshiki": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-25",
    "result": "ok"
   },
   "前提:base-seifu-hoshin-chinage": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-25",
    "result": "ok"
   },
   "前提:base-seifu-hoshin-shoryokuka": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 根拠のずれ",
-   "result": "fixed"
+   "checked": "2026-11-25",
+   "result": "ok"
   },
   "前提:base-shogu-kaizen-kakuju": {
    "checked": "2026-11-16",
