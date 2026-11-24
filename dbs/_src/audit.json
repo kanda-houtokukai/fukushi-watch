@@ -48,6 +48,20 @@
    "note": "札幌市は「対象外」ではなく「義務対象外」と書いている（11/03 照合係2人で確認）",
    "quote": "（※障害児相談支援事業所は義務対象外です。）",
    "url": "https://www.city.sapporo.jp/shogaifukushi/kodomoseiboryokubosiho.html"
+  },
+  {
+   "date": "2026-11-25",
+   "match": "対象月が2027年4月なら4〜6月",
+   "note": "GLには前後1か月の原則だけ。例外は7/8の分散方法の通知にある",
+   "quote": "令和９年４月が申請対象月の場合に限り、申請対象月の前後１か月ではなく、令和９年４～６月の３か月の間に申請が完了するようにしてください。",
+   "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/e8991b29/20260708_policies_child-safety_efforts_koseibouhou_54.pdf"
+  },
+  {
+   "date": "2026-11-25",
+   "match": "2027年3月までは申請できず",
+   "note": "根拠は7/8の分散方法の通知（GL・Q&Aにはない）",
+   "quote": "法施行日（令和８年12月25日）から令和９年３月までの期間は、新規採用者の優先確認期間としており、この期間は施行時現職者の犯罪事実確認は行いません。",
+   "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/80127231-8582-476e-a6e7-9347e725ed96/e8991b29/20260708_policies_child-safety_efforts_koseibouhou_54.pdf"
   }
  ],
  "units": {
@@ -378,24 +392,24 @@
    "result": "ok"
   },
   "判定:incident": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 誤り",
-   "result": "fixed"
+   "checked": "2026-11-25",
+   "note": "11/25 照合",
+   "result": "ok"
   },
   "判定:persons": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-25",
+   "note": "11/25 照合",
    "result": "ok"
   },
   "判定:scope": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-25",
+   "note": "11/25 照合（11/5改訂Q&Aで問番号のずれなし）",
    "result": "ok"
   },
   "判定:timing": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 表現",
-   "result": "fixed"
+   "checked": "2026-11-25",
+   "note": "11/25 照合。r_idou のシステム上のマニュアルの一文は照合係2人が不合格としたため書き換え候補（updates に todo）",
+   "result": "ok"
   },
   "期限:milestones": {
    "checked": "2026-10-28",
