@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-24T03:26:54.337Z",
+ "updatedAt": "2026-11-25T01:37:05.593Z",
  "items": [
   {
    "hash": "17458d9f96371c24",
@@ -251,6 +251,31 @@
      "quote": "※本公募においては、「子ども・若者」の年齢層は、20代までを想定しています。"
     }
    ]
+  },
+  {
+   "hash": "17cdf306c3584883",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "棚田の守り人応援基金～美しい棚田を、未来へつなぐために～",
+   "url": "https://www.jfc.or.jp/news_subsidy/%e6%a3%9a%e7%94%b0%e3%81%ae%e5%ae%88%e3%82%8a%e4%ba%ba%e5%bf%9c%e6%8f%b4%e5%9f%ba%e9%87%91%ef%bd%9e%e7%be%8e%e3%81%97%e3%81%84%e6%a3%9a%e7%94%b0%e3%82%92%e3%80%81%e6%9c%aa%e6%9d%a5%e3%81%b8%e3%81%a4-2/",
+   "postedAt": "2026-11-17",
+   "deadline": "2027-01-06",
+   "deadlineType": "date",
+   "deadlineRaw": "2027/01/06 募集要項 https://www.public.or.jp/project/",
+   "openFrom": "2026-11-16",
+   "conditionsUrl": "https://www.public.or.jp/project/f0188）の「お問い合わせフォーム」をご利用ください。",
+   "summary": "棚田をフィールドとしたハード整備や担い手育成、地域振興などの取り組みを支援するため、団体を対象に助成を行います。",
+   "fields": [
+    "共通"
+   ],
+   "uses": [
+    "設備・改修",
+    "機器・用具",
+    "行事・啓発"
+   ],
+   "applicants": [],
+   "amount": "1団体あたり100万円/年を上限とする助成金"
   },
   {
    "hash": "e480bc04e09cdaa2",
@@ -589,6 +614,54 @@
    ]
   },
   {
+   "hash": "b7efc46200e6f53c",
+   "source": "全社協 福祉の助成情報",
+   "sourceKind": "org",
+   "funder": "三菱財団",
+   "title": "社会福祉事業並びに研究助成",
+   "url": "https://www.shakyo.or.jp/guide/sponsor/p/261124mitsubishi.html",
+   "postedAt": "2026-11-24",
+   "deadline": "2027-01-15",
+   "deadlineType": "date",
+   "deadlineRaw": "2027年1月15日",
+   "summary": "社会福祉の向上に資することを目的に、現場における社会福祉の事業・活動および科学的調査研究を幅広く支援します。",
+   "fields": [
+    "共通"
+   ],
+   "uses": [
+    "研究・調査"
+   ],
+   "applicants": [
+    "社会福祉法人",
+    "NPO・公益法人",
+    "個人"
+   ],
+   "amount": "総額1億2,000万円の助成を予定",
+   "conditions": [
+    {
+     "axis": "主体の付帯条件",
+     "quote": "応募方法は、Web応募システムでの手続きによります。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "社会福祉を目的とし、社会的意義があり、他のモデルとなることが期待できるような非営利の民間の事業/活動。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "応募者は法人・団体に限ります。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "開拓的ないし実験的な社会福祉に関する科学的調査研究。"
+    },
+    {
+     "axis": "その他の対象限定",
+     "quote": "応募者は個人、法人・団体いずれも可です。"
+    }
+   ],
+   "conditionsUrl": "https://www.shakyo.or.jp/guide/sponsor/p/261124mitsubishi.html"
+  },
+  {
    "hash": "2425193cab80dfa3",
    "source": "全社協 福祉の助成情報",
    "sourceKind": "org",
@@ -882,5 +955,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-11-24"
+ "lastFetchDate": "2026-11-25"
 }
