@@ -30,8 +30,7 @@
    "result": "ok"
   },
   "前提:base-jido-jinzai-ikusei": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-26",
    "result": "ok"
   },
   "前提:base-jido-nyusho-arikata": {
@@ -87,8 +86,7 @@
    "result": "ok"
   },
   "前提:base-r6-go-jokyo-kadai": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-26",
    "result": "ok"
   },
   "前提:base-r6-kadai-01-shisetsu": {
@@ -184,13 +182,11 @@
    "result": "ok"
   },
   "前提:base-shuro-shitei-guideline": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-26",
    "result": "ok"
   },
   "前提:base-shuro-zaitaku-shien": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）",
+   "checked": "2026-11-26",
    "result": "ok"
   },
   "前提:base-shushisa-r6-service": {
