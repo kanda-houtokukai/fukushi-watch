@@ -190,13 +190,12 @@
    "result": "ok"
   },
   "前提:base-shushisa-r6-service": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 根拠のずれ",
-   "result": "fixed"
+   "checked": "2026-11-27",
+   "result": "ok"
   },
   "日程:timeline": {
-   "checked": "2026-10-28",
-   "note": "全件照合（10/28）で直した: 根拠のずれ・誤り",
+   "checked": "2026-11-27",
+   "note": "サービスごとの論点の説明に第69回・第71回の就労系を追記",
    "result": "fixed"
   },
   "論点:chiiki-seikatsu-01": {
@@ -269,11 +268,11 @@
    "result": "ok"
   },
   "論点:houmon-oudan-01": {
-   "checked": "2026-10-29",
+   "checked": "2026-11-27",
    "result": "ok"
   },
   "論点:houmon-oudan-02": {
-   "checked": "2026-10-29",
+   "checked": "2026-11-27",
    "result": "ok"
   },
   "論点:jiritsu-kunren-01": {
@@ -339,6 +338,11 @@
    "checked": "2026-11-15",
    "result": "ok"
   },
+  "論点:oudan-bcp": {
+   "checked": "2026-11-27",
+   "note": "11/26 第71回の資料で書き換え",
+   "result": "fixed"
+  },
   "論点:oudan-consul": {
    "checked": "2026-11-21",
    "note": "11/21 第70回の資料で新規作成",
@@ -349,9 +353,19 @@
    "note": "11/21 第70回の資料で新規作成",
    "result": "fixed"
   },
+  "論点:oudan-gyakutai": {
+   "checked": "2026-11-27",
+   "note": "11/26 第71回の資料で書き換え",
+   "result": "fixed"
+  },
   "論点:oudan-johokohyo": {
    "checked": "2026-11-21",
    "note": "11/21 第70回の資料で新規作成",
+   "result": "fixed"
+  },
+  "論点:oudan-kasuhara": {
+   "checked": "2026-11-27",
+   "note": "11/26 第71回の資料で書き換え",
    "result": "fixed"
   },
   "論点:oudan-kihon": {
@@ -363,6 +377,26 @@
    "note": "11/21 第70回の資料で新規作成",
    "result": "fixed"
   },
+  "論点:oudan-kousoku": {
+   "checked": "2026-11-27",
+   "note": "11/26 第71回の資料で書き換え",
+   "result": "fixed"
+  },
+  "論点:oudan-kyosei-houmon": {
+   "checked": "2026-11-27",
+   "note": "11/26 第71回の資料で書き換え",
+   "result": "fixed"
+  },
+  "論点:oudan-kyosei-tsusho": {
+   "checked": "2026-11-27",
+   "note": "11/26 第71回の資料で書き換え",
+   "result": "fixed"
+  },
+  "論点:oudan-rehab-eiyo": {
+   "checked": "2026-11-27",
+   "note": "11/26 第71回の資料で書き換え",
+   "result": "fixed"
+  },
   "論点:oudan-seishin": {
    "checked": "2026-11-21",
    "note": "11/21 第70回の資料で新規作成",
@@ -371,6 +405,16 @@
   "論点:oudan-shitei": {
    "checked": "2026-11-21",
    "note": "11/21 第70回の資料で新規作成",
+   "result": "fixed"
+  },
+  "論点:oudan-shokuji-taisei": {
+   "checked": "2026-11-27",
+   "note": "11/26 第71回の資料で書き換え",
+   "result": "fixed"
+  },
+  "論点:oudan-sougei": {
+   "checked": "2026-11-27",
+   "note": "11/26 第71回の資料で書き換え",
    "result": "fixed"
   },
   "論点:ryoyo-kaigo-01": {
@@ -458,6 +502,11 @@
    "checked": "2026-11-10",
    "result": "ok"
   },
+  "論点:shogaiji-shokuji": {
+   "checked": "2026-11-27",
+   "note": "11/26 第71回の資料で書き換え",
+   "result": "fixed"
+  },
   "論点:shogaiji-tsusho-01": {
    "checked": "2026-11-05",
    "result": "ok"
@@ -528,8 +577,9 @@
    "result": "fixed"
   },
   "論点:shuro-a-01": {
-   "checked": "2026-11-03",
-   "result": "ok"
+   "checked": "2026-11-27",
+   "note": "11/26 第71回の資料で書き換え",
+   "result": "fixed"
   },
   "論点:shuro-b-01": {
    "checked": "2026-11-17",
@@ -544,6 +594,21 @@
   "論点:shuro-b-03": {
    "checked": "2026-11-17",
    "note": "11/16 第69回の資料で書き換え",
+   "result": "fixed"
+  },
+  "論点:shuro-b-05": {
+   "checked": "2026-11-27",
+   "note": "11/26 第71回の資料で書き換え",
+   "result": "fixed"
+  },
+  "論点:shuro-ikou-01": {
+   "checked": "2026-11-27",
+   "note": "11/26 第71回の資料で書き換え",
+   "result": "fixed"
+  },
+  "論点:shuro-ikou-02": {
+   "checked": "2026-11-27",
+   "note": "11/26 第71回の資料で書き換え",
    "result": "fixed"
   },
   "論点:shuro-oudan-01": {
@@ -601,6 +666,21 @@
    "note": "11/21 第70回の資料で新規作成",
    "result": "fixed"
   },
+  "論点:shuro-oudan-14": {
+   "checked": "2026-11-27",
+   "note": "11/26 第71回の資料で書き換え",
+   "result": "fixed"
+  },
+  "論点:shuro-oudan-15": {
+   "checked": "2026-11-27",
+   "note": "11/26 第71回の資料で書き換え",
+   "result": "fixed"
+  },
+  "論点:shuro-oudan-16": {
+   "checked": "2026-11-27",
+   "note": "11/26 第71回の資料で書き換え",
+   "result": "fixed"
+  },
   "論点:shuro-sentaku-01": {
    "checked": "2026-11-04",
    "result": "ok"
@@ -631,6 +711,16 @@
   "論点:shuro-teichaku-01": {
    "checked": "2026-11-03",
    "result": "ok"
+  },
+  "論点:shuro-teichaku-02": {
+   "checked": "2026-11-27",
+   "note": "11/26 第71回の資料で書き換え",
+   "result": "fixed"
+  },
+  "論点:shuro-teichaku-03": {
+   "checked": "2026-11-27",
+   "note": "11/26 第71回の資料で書き換え",
+   "result": "fixed"
   },
   "論点:soudan-01": {
    "checked": "2026-11-06",
