@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-25T01:37:05.593Z",
+ "updatedAt": "2026-11-26T01:07:41.223Z",
  "items": [
   {
    "hash": "17458d9f96371c24",
@@ -56,6 +56,42 @@
     }
    ],
    "conditionsUrl": "https://www.akaihane.or.jp/subsidies/sub-kikin/50818/"
+  },
+  {
+   "hash": "c5fc8fcba8d83411",
+   "source": "助成財団センター 助成金募集ニュース",
+   "sourceKind": "org",
+   "funder": "",
+   "title": "2026年度 社会的養護施設等進学支度金助成",
+   "url": "https://www.jfc.or.jp/news_subsidy/2026%e5%b9%b4%e5%ba%a6%e3%80%80%e7%a4%be%e4%bc%9a%e7%9a%84%e9%a4%8a%e8%ad%b7%e6%96%bd%e8%a8%ad%e7%ad%89%e9%80%b2%e5%ad%a6%e6%94%af%e5%ba%a6%e9%87%91%e5%8a%a9%e6%88%90/",
+   "postedAt": "2026-11-25",
+   "deadline": "2026-12-15",
+   "deadlineType": "date",
+   "deadlineRaw": "2026/12/15 募集要項 https://ysmf.or.jp/program/requir",
+   "openFrom": "2026-11-10",
+   "conditionsUrl": "https://ysmf.or.jp/program/requirements/social_welfare_2026-3/",
+   "summary": "社会的養護施設等に在籍し、大学・短大・専門学校へ進学する生徒の新たな門出を応援するため、施設単位で進学支度金を給付します。",
+   "fields": [
+    "児童"
+   ],
+   "uses": [
+    "事業・活動"
+   ],
+   "applicants": [
+    "社会福祉法人",
+    "NPO・公益法人"
+   ],
+   "amount": "1名につき100,000円/1施設の上限400,000円",
+   "conditions": [
+    {
+     "axis": "事業の実施地",
+     "quote": "日本全国(進学先も日本国内に限る)"
+    },
+    {
+     "axis": "主体の付帯条件",
+     "quote": "助成業務システム「Graain(グラーイン)」よりお手続きください。"
+    }
+   ]
   },
   {
    "hash": "7bace69fe009a891",
@@ -955,5 +991,5 @@
    "conditionsUrl": "https://www.jra-umanushi-hukushi.or.jp/reiwa-8"
   }
  ],
- "lastFetchDate": "2026-11-25"
+ "lastFetchDate": "2026-11-26"
 }

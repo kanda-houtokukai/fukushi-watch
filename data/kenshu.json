@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-25T01:38:52.146Z",
+ "updatedAt": "2026-11-26T01:09:23.174Z",
  "items": [
   {
    "hash": "dd12d5c80e21f51e",
@@ -155,7 +155,7 @@
    "url": "https://www.pref.fukuoka.lg.jp/contents/keamaneshikenkekka.html",
    "deadline": "2026-12-24",
    "deadlineType": "date",
-   "deadlineRaw": "一覧の申込終了日より 口頭による情報提供の請求期限 2026-12-24",
+   "deadlineRaw": "一覧の申込終了日より 提供期間 2026-12-24",
    "openFrom": null,
    "fields": [
     "高齢"
@@ -590,54 +590,6 @@
    ],
    "kind": "テーマ別",
    "expireOn": "2027-07-01"
-  },
-  {
-   "hash": "f2dfe01aec9073f1",
-   "source": "福岡県介護福祉士会",
-   "sourceKind": "org",
-   "via": "fkaigo",
-   "title": "令和8年度介護職種の技能実習指導員講習(1回目)",
-   "url": "https://www.f-kaigo.jp/training/detail_506.php",
-   "deadline": null,
-   "deadlineType": "unknown",
-   "deadlineRaw": "開催要綱PDFより 令和8年7月31日（締切後も受け付けることがあります）",
-   "heldDates": [
-    "2026-11-25"
-   ],
-   "expireOn": "2026-11-25",
-   "openFrom": null,
-   "fields": [
-    "高齢"
-   ],
-   "kind": "テーマ別",
-   "outline": [
-    {
-     "name": "日時",
-     "value": "令和８年１１月２５日（水）09:00～18:00〔受付開始 08:45～〕"
-    },
-    {
-     "name": "会場",
-     "value": "博多バスターミナルビル９Ｆ第１・２ホール"
-    },
-    {
-     "name": "講師",
-     "value": "記載なし"
-    },
-    {
-     "name": "参加費",
-     "value": "無料"
-    },
-    {
-     "name": "定員",
-     "value": "５０名"
-    },
-    {
-     "name": "ポイント",
-     "value": "７pt"
-    }
-   ],
-   "outlineUrl": "https://www.f-kaigo.jp/upimg/l6a69868fcf722.pdf",
-   "keepUntilHeld": true
   },
   {
    "hash": "77564d62306136e2",
@@ -1128,5 +1080,5 @@
    "kind": "テーマ別"
   }
  ],
- "lastFetchDate": "2026-11-25"
+ "lastFetchDate": "2026-11-26"
 }

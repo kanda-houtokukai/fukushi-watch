@@ -1,6 +1,390 @@
 {
-  "generatedAt": "2026-11-25T05:31:10.456Z",
-  "model": null,
-  "items": [],
-  "press": []
+  "generatedAt": "2026-11-26T01:04:18.606Z",
+  "model": "gemini-3.5-flash-lite",
+  "items": [
+    {
+      "hash": "7a8ae79251b50abf",
+      "source": "こども家庭庁",
+      "title": "こどもまんなか社会実現プラットフォーム事業のチーム活動情報を掲載しました",
+      "url": "https://www.cfa.go.jp/policies/platform",
+      "date": "2026-11-26",
+      "category": "政策",
+      "summary": "こどもまんなか社会実現に向けたチームの活動情報が掲載されました。今後の子ども・子育て支援施策の方向性を把握するために参考となります。",
+      "importance": "中",
+      "fields": [
+        "保育",
+        "児童"
+      ],
+      "reason": "子ども・子育て政策の動向を把握するための情報であるため"
+    },
+    {
+      "hash": "d59165f9c180916b",
+      "source": "こども家庭庁",
+      "title": "意見招請：児童相談所におけるSNSを活用した全国一元的な相談支援体制の構築に係るシステムの運用・保守及び改修業務一式（令和9年度）を掲載しました",
+      "url": "https://www.cfa.go.jp/procurement",
+      "date": "2026-11-25",
+      "category": "調達情報",
+      "summary": "児童相談所のSNS相談システムに関する意見招請の情報です。行政の調達案件であり、福祉事業者の実務への直接の影響は薄いです。",
+      "importance": "低",
+      "fields": [],
+      "reason": "システムの調達・意見招請に関する情報のため"
+    },
+    {
+      "hash": "9823f8ac9c440231",
+      "source": "こども家庭庁",
+      "title": "第3回乳幼児の健康診査等のあり方に関する検討会の開催について掲載しました",
+      "url": "https://www.cfa.go.jp/press/b39826d5-5a3d-40da-bb6a-ff1d6bcbd021",
+      "date": "2026-11-25",
+      "category": "報道発表",
+      "summary": "乳幼児の健康診査のあり方に関する検討会の開催案内です。将来の母子保健政策や児童福祉施策に影響を与える可能性があります。",
+      "importance": "中",
+      "fields": [
+        "児童"
+      ],
+      "reason": "乳幼児健診に関する検討会の動向把握のため"
+    },
+    {
+      "hash": "327550a73c4a355c",
+      "source": "厚生労働省",
+      "title": "公益事業に関する争議行為の予告公表ページについて更新されました",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudouseisaku/sougikoui/index.html",
+      "date": "2026-11-26",
+      "category": "政策分野",
+      "summary": "公益事業における争議行為の予告公表ページが更新されました。一般労働政策に関する情報であり、福祉事業所の直接の運営実務には影響しません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "一般的な労働争議に関する情報のため"
+    },
+    {
+      "hash": "bebd51df72859204",
+      "source": "厚生労働省",
+      "title": "第139回社会保障審議会介護保険部会の資料について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77651.html",
+      "date": "2026-11-26",
+      "category": "審議会等",
+      "summary": "介護保険部会の資料が公開されました。介護保険制度の改正議論や今後の方向性を知る上で重要です。",
+      "importance": "中",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "介護保険制度の審議会資料であり先々の制度改正に影響するため"
+    },
+    {
+      "hash": "92f0fee0f344d17b",
+      "source": "厚生労働省",
+      "title": "社会保障審議会（介護保険部会）",
+      "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126734.html",
+      "date": "2026-11-26",
+      "category": "審議会等",
+      "summary": "社会保障審議会介護保険部会のページです。介護保険制度の見直し議論に関する基本的な情報源となります。",
+      "importance": "中",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "介護保険部会の開催や審議状況の把握のため"
+    },
+    {
+      "hash": "b371f313f46c3216",
+      "source": "厚生労働省",
+      "title": "第27回成年後見制度利用促進専門家会議 開催案内",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77496.html",
+      "date": "2026-11-25",
+      "category": "審議会等",
+      "summary": "成年後見制度利用促進専門家会議の開催案内です。高齢者や障害者の権利擁護に関わる制度の今後の方向性を把握できます。",
+      "importance": "中",
+      "fields": [
+        "高齢",
+        "障害"
+      ],
+      "reason": "成年後見制度の運用見直しに関する審議会のため"
+    },
+    {
+      "hash": "b652cc3d2f8dea6a",
+      "source": "厚生労働省",
+      "title": "第76回中央最低賃金審議会 資料",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77641.html",
+      "date": "2026-11-25",
+      "category": "審議会等",
+      "summary": "中央最低賃金審議会の資料が公開されました。最低賃金の改定は全福祉事業所の労務管理や人件費に直結します。",
+      "importance": "高",
+      "fields": [
+        "共通"
+      ],
+      "reason": "最低賃金の審議は全事業所の労務・給与管理に直接影響するため",
+      "action": "一般に、こうした通知では改定された最低賃金が自事業所の給与体系や人件費に与える影響の確認（賃金テーブルの改定や予算の見直し等の対応）が必要になります。"
+    },
+    {
+      "hash": "e3080cc75c406d5c",
+      "source": "厚生労働省",
+      "title": "労働基準法第113条の規定による公聴会",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77637.html",
+      "date": "2026-11-25",
+      "category": "審議会等",
+      "summary": "労働基準法に関する公聴会の開催案内です。労働法制の改正動向を把握することは労務管理上重要です。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "労働基準法に関連する公聴会であり労務管理の参考になるため"
+    },
+    {
+      "hash": "e0edcdd7b4a9392d",
+      "source": "厚生労働省",
+      "title": "令和８年度「社会保険労務士制度功労者厚生労働大臣表彰」の受賞者を決定しました",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77572.html",
+      "date": "2026-11-25",
+      "category": "報道発表",
+      "summary": "社労士制度功労者の厚生労働大臣表彰の受賞者決定に関する報道発表です。業界の表彰に関するもので実務上の影響はありません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "大臣表彰の受賞者発表であり個別の事業運営に関係しないため"
+    },
+    {
+      "hash": "1da30659a02893a2",
+      "source": "厚生労働省",
+      "title": "第277回社会保障審議会介護給付費分科会（Web会議）を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77542.html",
+      "date": "2026-11-25",
+      "category": "審議会等",
+      "summary": "介護給付費分科会の開催案内です。介護報酬改定や単位数に関わる重要な議論が行われます。",
+      "importance": "高",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "介護給付費（報酬）に関する分科会であり事業所の収支に直結するため",
+      "action": "一般に、こうした通知では介護報酬改定や単位数に関する議論の動向の確認（今後のサービス運営や収支シミュレーションへの反映等の対応）が必要になります。"
+    },
+    {
+      "hash": "b6472a525c1ce5d4",
+      "source": "厚生労働省",
+      "title": "第21回中高年者縦断調査（中高年者の生活に関する継続調査）の概況",
+      "url": "https://www.mhlw.go.jp/toukei/saikin/hw/judan/chukou26/",
+      "date": "2026-11-25",
+      "category": "統計情報",
+      "summary": "中高年者縦断調査の概況が公表されました。高齢化や社会保障の現状を知るための統計情報です。",
+      "importance": "中",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "高齢者層の生活実態に関する公的統計のため"
+    },
+    {
+      "hash": "875585bfd8c8739a",
+      "source": "厚生労働省",
+      "title": "技能実習法に基づく行政処分等を行いました",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77352.html",
+      "date": "2026-11-25",
+      "category": "報道発表",
+      "summary": "技能実習法に基づく行政処分等の公表です。適正な外国人材雇用のための参考情報となります。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "外国人材の雇用・コンプライアンスに関わる行政処分のため"
+    },
+    {
+      "hash": "4216a19ffa155c1f",
+      "source": "厚生労働省",
+      "title": "第50回匿名医療情報等の提供に関する専門委員会の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77616.html",
+      "date": "2026-11-24",
+      "category": "審議会等",
+      "summary": "匿名医療情報等の提供に関する専門委員会の開催案内です。医療データの利活用に関する審議が行われます。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医療データの利活用に関する専門委員会の情報であり福祉現場への影響は薄いため"
+    },
+    {
+      "hash": "45532489842fa456",
+      "source": "厚生労働省",
+      "title": "第23回医療介護総合確保促進会議の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77533.html",
+      "date": "2026-11-19",
+      "category": "審議会等",
+      "summary": "医療介護総合確保促進会議の開催案内です。地域医療介護総合確保基金の活用等に関わる重要な会議です。",
+      "importance": "中",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "医療介護の連携や基金の活用方針に関わる会議のため"
+    },
+    {
+      "hash": "153eb7f4cb6ce31a",
+      "source": "厚生労働省",
+      "title": "令和８年度地域医療介護総合確保基金（介護分）の内示（２回目）について",
+      "url": "https://www.mhlw.go.jp/stf/houdou/R8_2_00001.html",
+      "date": "2026-11-18",
+      "category": "報道発表",
+      "summary": "地域医療介護総合確保基金（介護分）の内示情報です。自治体を介して事業所の施設整備や介護人材確保等の補助金に影響します。",
+      "importance": "高",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "介護分野の補助金・基金の内示に関わるため",
+      "action": "一般に、こうした通知では地域医療介護総合確保基金の配分状況や補助金活用の可能性の確認（自治体を通じた申請手続きや事業計画の精査等の対応）が必要になります。"
+    },
+    {
+      "hash": "fe3222076c369f67",
+      "source": "WAM NET",
+      "title": "第50回 匿名医療情報等の提供に関する専門委員会（令和8年12月2日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=23089&ct=070010010&from=rss",
+      "date": "2026-11-26",
+      "category": "行政資料",
+      "summary": "匿名医療情報等専門委員会の開催予定に関する行政資料です。福祉事業所の実務に直接関わる内容ではありません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医療データの提供に関する専門委員会の資料のため"
+    },
+    {
+      "hash": "fc021a62c93c1af5",
+      "source": "WAM NET",
+      "title": "介護保険最新情報Vol.1552（PDF：1.7MB）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/1126094726317/ksvol.1552.pdf?from=rss",
+      "date": "2026-11-26",
+      "category": "行政資料",
+      "summary": "介護保険最新情報が発出されました。介護事業所の運営基準や解釈に関する通知が含まれており、迅速な確認が必要です。",
+      "importance": "高",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "介護保険の解釈通知や運営上の重要なお知らせが含まれるため",
+      "action": "一般に、こうした通知では運営基準や解釈の変更点に関する内容の確認（現場のマニュアル改訂やスタッフへの周知徹底等の対応）が必要になります。"
+    },
+    {
+      "hash": "65431b9e770abbcf",
+      "source": "WAM NET",
+      "title": "第139回 社会保障審議会 介護保険部会（令和8年11月26日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=23092&ct=010010030&from=rss",
+      "date": "2026-11-26",
+      "category": "行政資料",
+      "summary": "社会保障審議会介護保険部会の開催結果資料です。今後の制度改正の方向性を占う上で重要な資料となります。",
+      "importance": "中",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "介護保険部会の審議結果であり将来の制度改正に影響するため"
+    },
+    {
+      "hash": "59b48e5e6c2aed43",
+      "source": "WAM NET",
+      "title": "第222回 社会保障審議会 医療保険部会（令和8年11月26日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=23091&ct=010010050&from=rss",
+      "date": "2026-11-26",
+      "category": "行政資料",
+      "summary": "社会保障審議会医療保険部会の開催結果資料です。医療保険制度の動向に関する資料であり、高齢者福祉等に関連します。",
+      "importance": "中",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "医療保険部会の資料であり、高齢者医療の動向把握に役立つため"
+    },
+    {
+      "hash": "c7fc3ac7dd846cfd",
+      "source": "WAM NET",
+      "title": "第27回成年後見制度利用促進専門家会議について（令和8年12月1日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=23090&ct=070010010&from=rss",
+      "date": "2026-11-26",
+      "category": "行政資料",
+      "summary": "成年後見制度利用促進専門家会議の開催予定に関する行政資料です。権利擁護支援の動向を把握するために有用です。",
+      "importance": "中",
+      "fields": [
+        "高齢",
+        "障害"
+      ],
+      "reason": "成年後見制度の推進に関する行政資料のため"
+    },
+    {
+      "hash": "81c7288b499159d7",
+      "source": "福岡県（子ども・青少年）",
+      "title": "エイズ／ＨＩＶ対策の情報ページ",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/hiv-2025.html",
+      "date": "2026年11月25日更新",
+      "category": "",
+      "summary": "エイズおよびHIV対策に関する情報ページです。感染症対策の一般的な基礎知識や行政情報を掲載しています。",
+      "importance": "中",
+      "fields": [
+        "児童"
+      ],
+      "reason": "感染症対策に関する行政情報であるため"
+    },
+    {
+      "hash": "e8c816af5cf15b5a",
+      "source": "福岡県（子ども・青少年）",
+      "title": "福岡県保育士・保育所支援センターについて",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/hohocenter.html",
+      "date": "2026年9月30日更新",
+      "category": "",
+      "summary": "福岡県における保育士・保育所支援センターの案内です。保育人材の確保や求職者支援に関する情報です。",
+      "importance": "中",
+      "fields": [
+        "保育"
+      ],
+      "reason": "保育士の人材確保支援に関する情報のため"
+    },
+    {
+      "hash": "08488d538e86b4cf",
+      "source": "福岡県（介護・高齢者福祉）",
+      "title": "令和８年度介護支援専門員実務研修受講試験の実施結果",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/keamaneshikenkekka.html",
+      "date": "2026年11月25日更新",
+      "category": "",
+      "summary": "介護支援専門員実務研修受講試験の実施結果が発表されました。ケアマネジャーの試験合格者数や状況が分かります。",
+      "importance": "中",
+      "fields": [
+        "高齢"
+      ],
+      "reason": "介護支援専門員の資格試験結果であり、人材需給の把握に役立つため"
+    }
+  ],
+  "press": [
+    {
+      "hash": "a69ee5dc7f05b6b6",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "ケアプー「引っ越し」日程が決定 来年1月13日から介護WEBサービスへ 事業所は登録を！",
+      "url": "https://www.joint-kaigo.com/articles/50718/",
+      "date": "2026-11-25",
+      "category": "自治体",
+      "fields": [
+        "高齢"
+      ]
+    },
+    {
+      "hash": "1e0ebe2ceaf998c4",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "児発・放デイ、管理者の資格要件に実務経験 厚労省提案 経過措置も検討｜来年度改定",
+      "url": "https://www.joint-kaigo.com/articles/50713/",
+      "date": "2026-11-25",
+      "category": "自治体",
+      "fields": [
+        "児童"
+      ]
+    },
+    {
+      "hash": "a687c9ec440260f8",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "福祉用具専門相談員、担当利用者数に上限 半年ごとのモニタリングも 厚労省提案｜来年度報酬改定",
+      "url": "https://www.joint-kaigo.com/articles/50707/",
+      "date": "2026-11-25",
+      "category": "福祉用具",
+      "fields": [
+        "高齢",
+        "障害"
+      ]
+    },
+    {
+      "hash": "ca39ba6fbe8e814d",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "【田中紘太】ケアマネ試験結果の衝撃 人材不足の解消に追い風 居宅介護支援の経営はどう変わるか",
+      "url": "https://www.joint-kaigo.com/articles/50698/",
+      "date": "2026-11-25",
+      "category": "超高齢化",
+      "fields": [
+        "高齢"
+      ]
+    }
+  ]
 }
