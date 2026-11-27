@@ -1,6 +1,297 @@
 {
-  "generatedAt": "2026-11-26T05:12:07.683Z",
-  "model": null,
-  "items": [],
-  "press": []
+  "generatedAt": "2026-11-27T01:04:01.842Z",
+  "model": "gemini-3.5-flash-lite",
+  "items": [
+    {
+      "hash": "d8ce37937f120cd9",
+      "source": "こども家庭庁",
+      "title": "CDR（Child Death Review ：こどもの死亡検証）の制度のあり方に関する検討会（第5回）を掲載しました",
+      "url": "https://www.cfa.go.jp/councils/cdr-seidonoarikata/dafdc690",
+      "date": "2026-11-26",
+      "category": "会議等",
+      "summary": "こどもの死亡検証（CDR）の制度あり方に関する検討会の資料です。将来的な児童福祉政策や安全管理の方向性に影響します。",
+      "importance": "中",
+      "fields": [
+        "児童"
+      ],
+      "reason": "審議会の開催情報であり、先々の制度変更を把握するために重要です。"
+    },
+    {
+      "hash": "46abae837daeec76",
+      "source": "こども家庭庁",
+      "title": "第22回 補償金・優生手術等一時金認定審査部会の開催について掲載しました",
+      "url": "https://www.cfa.go.jp/press/41fce6af-7e92-4254-8ce5-6db68997d005",
+      "date": "2026-11-26",
+      "category": "報道発表",
+      "summary": "優生手術等一時金認定審査部会の開催に関する報道発表です。直接的な福祉事業の運営への影響はありません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "個別の人権救済や審査に関する行政情報であり、実務への影響が薄いため。"
+    },
+    {
+      "hash": "3c6d41c88935f26e",
+      "source": "こども家庭庁",
+      "title": "一般競争入札：子育て情報誌における「こども誰でも通園制度」編集タイアップ広告掲載等業務を掲載しました",
+      "url": "https://www.cfa.go.jp/procurement/portal",
+      "date": "2026-11-26",
+      "category": "調達情報",
+      "summary": "子育て情報誌での「こども誰でも通園制度」に関するタイアップ広告等の調達情報です。事業者向けの制度通達ではありません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "行政の調達情報（入札公告）であるため。"
+    },
+    {
+      "hash": "ff4a861764b263b2",
+      "source": "厚生労働省",
+      "title": "採用情報（任期付職員（発達障害施策調整官）募集情報）",
+      "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/ninkituki/ninki-hattatsushougaishisakuchouseikan.html",
+      "date": "2026-11-27",
+      "category": "採用情報",
+      "summary": "厚生労働省における発達障害施策担当の任期付職員の採用情報です。事業者の実務には直接影響しません。",
+      "importance": "低",
+      "fields": [],
+      "reason": "省庁の人事採用情報であるため。"
+    },
+    {
+      "hash": "c95b427f8653d9e2",
+      "source": "厚生労働省",
+      "title": "採用情報（任期付職員（歯科保健課長補佐又は主査）募集情報）",
+      "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/ninkituki/ninki-shikahokenka.html",
+      "date": "2026-11-27",
+      "category": "採用情報",
+      "summary": "厚生労働省の歯科保健課における任期付職員の採用情報です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "省庁の人事採用情報であるため。"
+    },
+    {
+      "hash": "7cca547a5dbf41ff",
+      "source": "厚生労働省",
+      "title": "第94回労働政策審議会雇用環境・均等分科会の資料を掲載しました。",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77686.html",
+      "date": "2026-11-26",
+      "category": "審議会等",
+      "summary": "労働政策審議会における雇用環境・均等分科会の資料掲載です。労働法制の動向把握に役立ちます。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "労働環境に関する審議会資料であり、労務管理に影響するため。"
+    },
+    {
+      "hash": "d37ff7dab41b8f16",
+      "source": "厚生労働省",
+      "title": "「第８回 ハローワーク業務改善コンクール」の授賞を決定しました",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77683.html",
+      "date": "2026-11-26",
+      "category": "報道発表",
+      "summary": "ハローワーク業務改善コンクールの受賞決定に関する報道発表です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "一般の広報・表彰に関する情報であり実務上の影響がないため。"
+    },
+    {
+      "hash": "bdad9e3da5db0b3b",
+      "source": "厚生労働省",
+      "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77679.html",
+      "date": "2026-11-26",
+      "category": "報道発表",
+      "summary": "厚生労働大臣の閣議後記者会見の案内です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "大臣の定例会見の案内であり個別の対応が必要ないため。"
+    },
+    {
+      "hash": "bd86e26fe45e2d57",
+      "source": "厚生労働省",
+      "title": "厚生労働省、農林水産省、経済産業省及びスポーツ庁が合同で日経健康経営・ロンジェビティEXPO 2026に出展・登壇します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77684.html",
+      "date": "2026-11-26",
+      "category": "報道発表",
+      "summary": "複数省庁等による健康経営・ロンジェビティEXPOへの出展に関するお知らせです。",
+      "importance": "低",
+      "fields": [],
+      "reason": "イベント出展の広報情報であるため。"
+    },
+    {
+      "hash": "48bd2266fbf39cd9",
+      "source": "厚生労働省",
+      "title": "第70回 医療上の必要性の高い未承認薬・適応外薬検討会議（オンライン会議）を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77599.html",
+      "date": "2026-11-26",
+      "category": "審議会等",
+      "summary": "医療上の必要性の高い未承認薬等に関する検討会議の開催案内です。医療分野が中心で福祉実務への影響は限定的です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医療品の承認に関する会議であり福祉事業者の実務に直接関係しないため。"
+    },
+    {
+      "hash": "74d2f331489ddfef",
+      "source": "厚生労働省",
+      "title": "令和８年度第２回医道審議会医師分科会医師国家試験等改善検討部会",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77579.html",
+      "date": "2026-11-26",
+      "category": "審議会等",
+      "summary": "医道審議会医師分科会の医師国家試験等改善検討部会の開催案内です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医師国家試験に関する事項であり福祉事業者への影響は薄い。"
+    },
+    {
+      "hash": "e1e4de0121eaff02",
+      "source": "厚生労働省",
+      "title": "令和８年度「援護事業功労者 厚生労働大臣表彰」の受賞者（被表彰者）を決定しました",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77527.html",
+      "date": "2026-11-26",
+      "category": "報道発表",
+      "summary": "援護事業功労者に対する厚生労働大臣表彰の受賞者決定に関する報道発表です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "表彰の告知であり事業者による実務上の対応が不要なため。"
+    },
+    {
+      "hash": "023c45eb59a38b7e",
+      "source": "厚生労働省",
+      "title": "「第15回 健康寿命をのばそう！アワード」",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77503.html",
+      "date": "2026-11-26",
+      "category": "報道発表",
+      "summary": "健康寿命をのばそう！アワードの受賞者等に関する報道発表です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "広報・表彰イベントに関する情報であるため。"
+    },
+    {
+      "hash": "d449ae4ca800e835",
+      "source": "厚生労働省",
+      "title": "採用情報（任期付職員（職員の育児休業期間の代替職員）政策統括官（情報政策担当））募集情報）",
+      "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-ninki-seisakutoukatukan_ikuzi_00001.html",
+      "date": "2026-11-26",
+      "category": "採用情報",
+      "summary": "情報政策担当の育児休業代替職員（任期付職員）の採用募集情報です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "省庁の内部職員の採用情報であるため。"
+    },
+    {
+      "hash": "8146c33b4e64e8a7",
+      "source": "厚生労働省",
+      "title": "第３回精神医療に関する地域医療構想検討ワーキンググループ：資料",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77662.html",
+      "date": "2026-11-25",
+      "category": "審議会等",
+      "summary": "精神医療に関する地域医療構想検討ワーキンググループの資料です。精神障害分野等の医療・福祉提供体制に影響します。",
+      "importance": "中",
+      "fields": [
+        "障害",
+        "高齢"
+      ],
+      "reason": "地域医療構想や精神医療の動向に関わる重要な審議資料のため。"
+    },
+    {
+      "hash": "c8750762b99bbeb0",
+      "source": "厚生労働省",
+      "title": "第48回 保険者による健診・保健指導等に関する検討会の開催について（オンライン会議・ペーパーレス）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77655.html",
+      "date": "2026-11-25",
+      "category": "その他",
+      "summary": "保険者による健診・保健指導等に関する検討会の開催案内です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医療保険者側の制度運営に関する検討会のため。"
+    },
+    {
+      "hash": "8a4c26ef918bfde3",
+      "source": "厚生労働省",
+      "title": "12月は「職場のハラスメント撲滅月間」です",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77623.html",
+      "date": "2026-11-24",
+      "category": "報道発表",
+      "summary": "12月の「職場のハラスメント撲滅月間」に関する周知・報道発表です。福祉事業所における労務管理・ハラスメント対策の再確認に繋がります。",
+      "importance": "中",
+      "fields": [
+        "共通"
+      ],
+      "reason": "労務管理におけるハラスメント防止の啓発であり、全事業所で意識共有が必要なため。"
+    },
+    {
+      "hash": "bf51a7659741b0bd",
+      "source": "厚生労働省",
+      "title": "先進医療会議の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77458.html",
+      "date": "2026-11-16",
+      "category": "審議会等",
+      "summary": "先進医療会議の開催に関する案内です。",
+      "importance": "低",
+      "fields": [],
+      "reason": "医療技術の評価に関する会議であり福祉事業への影響はないため。"
+    },
+    {
+      "hash": "329daf0bfc606d9e",
+      "source": "福岡県（障がい福祉）",
+      "title": "【第３号研修】 特定の者に対する喀痰吸引等の認定証の申請について",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/kakutan-ninteisyo.html",
+      "date": "2026年11月26日更新",
+      "category": "",
+      "summary": "特定の者に対する喀痰吸引等の第3号研修における認定証申請に関する手続きの案内です。障害福祉サービスや高齢者施設の実務に直結します。",
+      "importance": "高",
+      "fields": [
+        "障害",
+        "高齢"
+      ],
+      "reason": "喀痰吸引等の資格認定・申請手続きに関する実務的な重要情報のため。",
+      "action": "一般に、こうした通知では対象者における研修修了状況の把握や、都道府県への認定証交付申請手続きに向けた必要書類の確認が必要になります。"
+    }
+  ],
+  "press": [
+    {
+      "hash": "71f68b25e3799168",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "認知症グループホーム、2ユニット1人夜勤を可能に 厚労省提案 安全確保など条件 審議会では反対意見も",
+      "url": "https://www.joint-kaigo.com/articles/50771/",
+      "date": "2026-11-26",
+      "category": "介護給付費分科会",
+      "fields": [
+        "高齢"
+      ]
+    },
+    {
+      "hash": "e3b022449a6c3cca",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "通所介護の報酬を再編 集合住宅の利用者に別単価 送迎の有無を反映 厚労省提案｜来年度報酬改定",
+      "url": "https://www.joint-kaigo.com/articles/50765/",
+      "date": "2026-11-26",
+      "category": "介護給付費分科会",
+      "fields": [
+        "高齢"
+      ]
+    },
+    {
+      "hash": "f7bdd2fde02edab9",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "訪問介護の報酬を再編 集合住宅向けは別立てに 移動コストなど考慮 訪問回数で単価逓減 厚労省提案｜来年度改定",
+      "url": "https://www.joint-kaigo.com/articles/50750/",
+      "date": "2026-11-26",
+      "category": "介護給付費分科会",
+      "fields": [
+        "高齢"
+      ]
+    },
+    {
+      "hash": "adcd4b28c85e08c6",
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "title": "【障害福祉】虐待防止の指針整備、2028年度から義務化 未実施減算も引き上げ 厚労省提案｜来年度報酬改定",
+      "url": "https://www.joint-kaigo.com/articles/50733/",
+      "date": "2026-11-26",
+      "category": "自治体",
+      "fields": [
+        "障害"
+      ]
+    }
+  ]
 }
