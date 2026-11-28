@@ -1,6 +1,332 @@
 {
-  "generatedAt": "2026-11-27T05:09:47.022Z",
-  "newItems": [],
-  "newPress": [],
+  "generatedAt": "2026-11-28T00:36:06.373Z",
+  "newItems": [
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "df6b8360df7104ca",
+      "title": "中司大臣記者会見（令和8年11月27日）を掲載しました",
+      "url": "https://www.cfa.go.jp/speech/735de80e",
+      "date": "2026-11-27",
+      "category": "会見"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "68e3426c666ed4ca",
+      "title": "第45回「肢体不自由児・者の美術展／デジタル写真展」が行われます",
+      "url": "https://www.cfa.go.jp/press/da40b646-4b73-4d9e-b748-c0210f0870cc",
+      "date": "2026-11-27",
+      "category": "報道発表"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "6ad84732d2115766",
+      "title": "令和8年度 第4回「未来をつくる こどもまんなかアワード」表彰式を開催しました",
+      "url": "https://www.cfa.go.jp/policies/youth/kodomo-award/r08",
+      "date": "2026-11-27",
+      "category": "政策"
+    },
+    {
+      "source": "こども家庭庁",
+      "kind": "gov",
+      "hash": "25d3d6e86d1d821b",
+      "title": "令和8年度 第4回 未来をつくる こどもまんなかアワード 受賞者決定しました",
+      "url": "https://www.cfa.go.jp/press/c343f77d-ded2-4da6-8e9f-65cef8c7302a",
+      "date": "2026-11-27",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "1a2fda5c42b6eaa3",
+      "title": "令和８年１１月２７日付大臣会見概要",
+      "url": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00994.html",
+      "date": "2026-11-27",
+      "category": "大臣会見等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "31b2b714f8d90d9d",
+      "title": "第45回「肢体不自由児・者の美術展／デジタル写真展」の開催",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77691.html",
+      "date": "2026-11-27",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "1fce6e8e1f1447ee",
+      "title": "雇用保険コールセンターを設置します！",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000160564_00055.html",
+      "date": "2026-11-27",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "093dbb7fa5336c74",
+      "title": "薬事審議会 医療機器・体外診断薬部会を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77674.html",
+      "date": "2026-11-27",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "7df17421cdf5d9b8",
+      "title": "第229回労働政策審議会職業安定分科会を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_021225156_00116.html",
+      "date": "2026-11-27",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "3b126bd8342dc889",
+      "title": "労働災害発生状況",
+      "url": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei11/rousai-hassei/index.html",
+      "date": "2026-11-27",
+      "category": "統計情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "7bb7a66574daa34a",
+      "title": "最近の調剤医療費（電算処理分）の動向 令和8年度7月号",
+      "url": "https://www.mhlw.go.jp/topics/medias/c-med/2026/07/",
+      "date": "2026-11-27",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "69288cbe586c787c",
+      "title": "最近の歯科医療費（電算処理分）の動向 令和8年度7月号",
+      "url": "https://www.mhlw.go.jp/topics/medias/shika_iryou/2026/07/",
+      "date": "2026-11-27",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "5b5ccc1bffffc7fb",
+      "title": "最近の医科医療費（電算処理分）の動向 令和8年度7月号",
+      "url": "https://www.mhlw.go.jp/topics/medias/ika_iryou/2026/07/",
+      "date": "2026-11-27",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "c154051df2ef7262",
+      "title": "最近の医療費の動向-MEDIAS-令和8年度7月号",
+      "url": "https://www.mhlw.go.jp/topics/medias/month/26/07.html",
+      "date": "2026-11-27",
+      "category": "政策分野"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "55a4b2a7837a63ff",
+      "title": "第43回労働政策審議会労働政策基本部会を開催します",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77588.html",
+      "date": "2026-11-27",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "09eaf9d03ce5b144",
+      "title": "第94回労働政策審議会勤労者生活分科会中小企業退職金共済部会議事録",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77463.html",
+      "date": "2026-11-27",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "6d63c4c38c8b47f9",
+      "title": "令和７（2025）年 人口動態統計（確定数）の概況",
+      "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/kakutei25/index.html",
+      "date": "2026-11-27",
+      "category": "統計情報"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "dfe6d37eea4bf3e7",
+      "title": "インフルエンザに関する報道発表資料を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou_00025.html",
+      "date": "2026-11-27",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "0fc2a1cf7aea175c",
+      "title": "新型コロナウイルス感染症に関する報道発表資料を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00485.html",
+      "date": "2026-11-27",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "8b91d7a86bd37e82",
+      "title": "インフルエンザ・新型コロナウイルス感染症の定点当たり報告数の推移を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/houkokusuunosuii_00007.html",
+      "date": "2026-11-27",
+      "category": "その他"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "8e868355ae933ab7",
+      "title": "インフルエンザの発生状況を更新しました",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
+      "date": "2026-11-27",
+      "category": "報道発表"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "fb6e6c080d3d8c33",
+      "title": "「第20回薬局・薬剤師の機能強化等に関する検討会」の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77518.html",
+      "date": "2026-11-27",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "b713d820d2d5dfe7",
+      "title": "第217回労働政策審議会職業安定分科会雇用保険部会（開催案内）",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77668.html",
+      "date": "2026-11-26",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "3b679dbc2cc879b1",
+      "title": "令和８年度第２回医道審議会医師分科会医師臨床研修部会",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77529.html",
+      "date": "2026-11-19",
+      "category": "審議会等"
+    },
+    {
+      "source": "厚生労働省",
+      "kind": "gov",
+      "hash": "b691fabb7fddd5f6",
+      "title": "中央社会保険医療協議会診療報酬調査専門組織（入院・外来医療等の調査・評価分科会）の開催について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_77459.html",
+      "date": "2026-11-16",
+      "category": "審議会等"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "3e3e9dfa25f68fb3",
+      "title": "「介護保険資格確認等WEBサービスとの連携におけるAPI仕様書（第1.01版）」について",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=23073&ct=020050030&from=rss",
+      "date": "2026-11-27",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "a670cfefa84cfe83",
+      "title": "第277回 社会保障審議会 介護給付費分科会（令和8年11月26日開催）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=23096&ct=010010020&from=rss",
+      "date": "2026-11-27",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "71e3799194ccd41c",
+      "title": "介護保険最新情報Vol.1553（PDF：485KB）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/1127092746138/ksvol.1553.pdf?from=rss",
+      "date": "2026-11-27",
+      "category": "行政資料"
+    },
+    {
+      "source": "WAM NET",
+      "kind": "gov",
+      "hash": "8804f62d3e9c100f",
+      "title": "第160回 先進医療会議（令和8年12月3日開催予定）",
+      "url": "https://www.wam.go.jp/gyoseiShiryou/detail?gno=23094&ct=070010030&from=rss",
+      "date": "2026-11-27",
+      "category": "行政資料"
+    },
+    {
+      "source": "福岡県（障がい福祉）",
+      "kind": "gov",
+      "hash": "c9de42344a29e0f3",
+      "title": "福岡県のユニバーサルデザインに関する取組をご紹介します",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/universaldesign-fukuoka.html",
+      "date": "2026年11月27日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（子ども・青少年）",
+      "kind": "gov",
+      "hash": "a6648c62f0c16086",
+      "title": "【妊娠希望者等とその同居者向け】風しん抗体検査が無料で受けられます",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/fushinkoutai-2019.html",
+      "date": "2026年11月26日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（子ども・青少年）",
+      "kind": "gov",
+      "hash": "cdf2bda7c4f692ef",
+      "title": "（募集は終了しました！）嘉飯桂未来塾",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/kahankei2026.html",
+      "date": "2026年11月11日更新",
+      "category": ""
+    },
+    {
+      "source": "福岡県（介護・高齢者福祉）",
+      "kind": "gov",
+      "hash": "be854c19cff60ea2",
+      "title": "福岡県ノーリフティングケア普及促進事業（地域連絡協議会）",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/care-nolift-chiiki.html",
+      "date": "2026年11月27日更新",
+      "category": ""
+    }
+  ],
+  "newPress": [
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "41ec6f7965e33a46",
+      "title": "訪問介護・通所介護の報酬、集合住宅を軸に再編へ 移動コストなどを単価に反映 厚労省方針｜来年度改定",
+      "url": "https://www.joint-kaigo.com/articles/50805/",
+      "date": "2026-11-27",
+      "category": "介護給付費分科会"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "c552d46b8a8a7523",
+      "title": "【障害福祉】就労A型・B型などの送迎に新ルール 自力通所が難しい人に限定 厚労省提案｜来年度報酬改定",
+      "url": "https://www.joint-kaigo.com/articles/50795/",
+      "date": "2026-11-27",
+      "category": "共生社会"
+    },
+    {
+      "source": "介護ニュースJoint",
+      "kind": "press",
+      "hash": "91be9a116678e811",
+      "title": "LIFEへの直接入力を廃止 介護ソフトからのデータ提出を原則に 3年の移行期間を想定 厚労省案｜来年度改定",
+      "url": "https://www.joint-kaigo.com/articles/50787/",
+      "date": "2026-11-27",
+      "category": "超高齢化"
+    }
+  ],
   "crawlErrors": []
 }
